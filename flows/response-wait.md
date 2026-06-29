@@ -23,6 +23,32 @@ Text message  (wait: 2 hours)
 > If a valid response isn't received within the configured time, the step is marked
 > **"No Response"** and the No-response path runs.
 
+## Format validation (Text message only)
+
+When *Wait for specific time* is on for a **Text message** node, you can also enable
+**Check format** to require the reply to match a specific type. If the customer sends a
+reply that doesn't match, the node re-sends the **Invalid response text** and continues
+waiting.
+
+Supported format types:
+
+| Format | What the reply must be |
+| --- | --- |
+| **Text** | Any text reply |
+| **Number** | A numeric value |
+| **Email** | A valid e-mail address |
+| **Image** | An image attachment |
+| **Video** | A video attachment |
+| **File** | Any file/document |
+| **Location** | A shared location |
+| **Contact** | A shared contact card |
+| **Audio** | An audio or voice note |
+| **Sticker** | A sticker |
+| **Order** | A WhatsApp order |
+
+> **Check format** is only available on Text message nodes. Button and List messages don't
+> need it — the response IS the button tap or list row selection.
+
 ## Button & list messages
 
 Interactive **Button** and **List** messages inherently wait for the customer to tap a

@@ -32,15 +32,32 @@ before the flow continues.
 | --- | --- | --- |
 | **Destination number** | Yes | The recipient, with country code — usually a variable like `{{trigger.phone}}`. |
 | **Message body** | Yes | Free-form text. Supports **bold**, _italic_, ~strike~ and `{{variables}}` via **Insert Variable**. |
-| **Header** | No | Optional text header above the body. |
-| **Footer** | No | Optional small text below the body. |
-| **Wait for reply** | No | Toggle on to pause for a reply. Set a **value** + **unit** (seconds / minutes / hours / days; default minutes). |
-| **Validate reply** | No | Optionally require a valid response format and show a custom "invalid response" message. |
+| **Wait for specific time** | No | Toggle on to pause for a reply. Set a **unit** (seconds / minutes / hours / days) and **value**. |
+| **Check format** | No | Only available when *Wait for specific time* is on. Require the reply to match a specific type (see below). |
+| **Invalid response text** | No | Message sent back when the customer's reply fails format validation. Defaults to "Please provide a valid response". |
+
+### Reply format types
+
+When **Check format** is on, choose the expected reply type:
+
+| Format | Accepts |
+| --- | --- |
+| **Text** | Any text reply |
+| **Number** | A numeric value |
+| **Email** | A valid e-mail address |
+| **Image** | An image attachment |
+| **Video** | A video attachment |
+| **File** | Any file/document |
+| **Location** | A shared location |
+| **Contact** | A shared contact card |
+| **Audio** | An audio/voice note |
+| **Sticker** | A sticker |
+| **Order** | A WhatsApp order |
 
 ## Handles
 
 - **Next step** — the normal continuation.
-- **No response** — appears when *Wait for reply* is on; taken if no reply arrives in the window.
+- **No response** — appears when *Wait for specific time* is on; taken if no reply arrives in the window.
 
 ## Example
 

@@ -1,29 +1,53 @@
 # Save variable <span class="badge soon">Coming soon</span>
 
-> Store a value under a name so later steps can reuse it.
+> Store one or more named values so later steps can reuse them.
 
 > [!ATTENTION]
-> **Not yet live.** The Save variable node can be configured, but its **execution isn't wired
-> up** — it won't store anything when the flow runs. This page describes the intended
-> behavior.
+> **Not yet live.** The Save variable node can be configured and placed on the canvas, but its
+> **execution isn't wired up** — values will not be stored when the flow runs. This page
+> describes the intended behavior.
 
 <div class="img-slot">
   <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the Save variable node (preview)</strong>
-  <span>Add once the node is live.</span>
+  <strong>Screenshot — the Save variable node drawer</strong>
+  <span>Show the multi-variable list with a name field and a value field for each entry.</span>
   <span>Save as <code>assets/flows/node-save-variable.png</code></span>
 </div>
 
 ## What it will do
 
-Save a value (literal or `{{variable}}`) under a name, so later nodes can reference it by that
-name — handy for stashing a computed or captured value to reuse across several steps.
+Save one or more key–value pairs for later steps to read. Unlike
+**[Save data](flows/nodes/save-data.md)** (which writes rows to a data table), Save variable
+holds values in the flow's own working memory for the duration of the run — useful for
+stashing a computed or captured value you need in several downstream steps.
+
+## Settings
+
+Each node can hold **multiple variables**. For every entry:
+
+| Field | Notes |
+| --- | --- |
+| **Variable name** | An identifier for the value. Must start with a letter; only letters, numbers, and underscores are allowed. |
+| **Value** | A literal string or a `{{variable}}` expression. Use **Insert Variable** to pick from the flow context. |
+
+Click **Add variable** to add more name–value pairs in the same node.
+
+## Using the variables downstream
+
+Once the node executes, later nodes can reference stored values by name through the
+**Insert Variable** picker.
+
+## Variable name rules
+
+- Must start with a letter (A–Z, a–z).
+- Can contain letters, numbers, and underscores (`_`).
+- No spaces or other special characters.
 
 ## In the meantime
 
-- To persist values for reporting/later use, use the **[Save data](flows/nodes/save-data.md)**
+- To persist values for reporting or later retrieval, use the **[Save data](flows/nodes/save-data.md)**
   node (it writes to a data table).
-- Values from earlier nodes (like a captured reply or an API response) are already available
+- Values from earlier nodes (a captured reply, an API response) are already available
   downstream via **Insert Variable** — see [Triggers & variables](flows/triggers-and-variables.md).
 
 Next: **[Internal alert »](flows/nodes/internal-alert.md)**

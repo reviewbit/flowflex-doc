@@ -19,13 +19,15 @@
 Send an internal notification to your team when the flow hits this node — useful for
 **escalations** like "no response from customer" or "an angry reply was detected." Channels:
 
-| Channel | Fields |
-| --- | --- |
-| **Email** | Up to 4 recipients, subject, body. |
-| **SMS** | Up to 4 recipients, body. |
-| **WhatsApp** | Up to 4 recipients, using an approved template (like [Template message](flows/nodes/template-message.md)). |
+| Channel | Recipients | Fields |
+| --- | --- | --- |
+| **Email** | Up to 4 email addresses | Subject + body. Sent from `info@reviewbit.app`. |
+| **SMS** | Up to 4 phone numbers | Body only. |
+| **WhatsApp** | Up to 4 phone numbers | Pick an **approved template** (same categories as [Template message](flows/nodes/template-message.md): Marketing, Utility, or Authentication). Fill in any template variables. |
 
-> The channels are **email, SMS, and WhatsApp** — not Teams or Slack.
+You can configure any combination of the three channels in the same node — enabling Email, SMS, and WhatsApp simultaneously sends all three.
+
+> Channels are **email, SMS, and WhatsApp** — not Teams or Slack.
 
 ## In the meantime
 
