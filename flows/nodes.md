@@ -36,7 +36,7 @@ Branch and repeat — no message is sent.
 | --- | --- |
 | **[Condition split](flows/nodes/condition-split.md)** | A Yes / No branch on a condition. |
 | **[Condition branch](flows/nodes/condition-branch.md)** | A multi-path branch (first match wins, plus default). |
-| **[For loop](flows/nodes/for-loop.md)** | Repeat steps over a list or a fixed count. |
+| **[For loop](flows/nodes/for-loop.md)** | Repeat steps over each item in an array. |
 
 ## ⏱️ Timing nodes
 
