@@ -53,10 +53,41 @@ what the event actually sends.
 
 ## Using earlier nodes' output
 
-Nodes can expose values to later nodes — most importantly, a **message reply**. When a
-message node has **Wait for specific time** enabled and the customer replies, the reply is
-captured and available to downstream nodes (e.g. to branch on, or echo back). See
-[Waiting for a reply](flows/response-wait.md).
+Nodes expose their output to later nodes via the same `{{…}}` syntax. The path starts with
+the **node's title** (auto-assigned or renamed on the canvas), then the property:
+
+| Node | Example reference |
+| --- | --- |
+| **Message reply** (text, template, button, list) | `{{nodeName.response}}` |
+| **API node response** | `{{nodeName.data}}` (or a nested path into the JSON body) |
+| **Utils function result** | `{{nodeName.result}}` |
+
+Use the **Insert Variable** picker after placing a node — it lists all upstream nodes' available outputs. See [Waiting for a reply](flows/response-wait.md) for more on captured message replies.
+
+## Loop variables
+
+Inside a **For loop** body, two extra variables are available:
+
+| Variable | Value |
+| --- | --- |
+| `{{loop.item}}` | The current array element (object, string, number — whatever the array contains) |
+| `{{loop.index}}` | The current position, starting at 0 |
+
+These are only available **between** a Start loop and End loop node. See [For loop](flows/nodes/for-loop.md).
+
+## JavaScript expressions
+
+Inside `{{…}}` you can write simple JavaScript expressions — the resolver evaluates them
+if a plain variable path doesn't match:
+
+```
+{{trigger.price * 1.18}}          → price with 18% tax
+{{trigger.first_name + " " + trigger.last_name}}  → full name
+{{trigger.items.length}}          → array length
+```
+
+> Keep expressions simple. Complex logic is better placed in a
+> [Condition split](flows/nodes/condition-split.md) or an [API](flows/nodes/api.md) node.
 
 ## Files as variables
 

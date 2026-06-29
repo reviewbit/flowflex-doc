@@ -31,7 +31,7 @@ Templates are the only way to message a customer **outside the 24-hour session w
 | **Header** | If the template has one | Type can be **text, image, video, document, or location** — supply the value/media. |
 | **Button URL variables** | If the template has dynamic-URL buttons | Fill the URL parameter for each. |
 | **Copy-code / verification code** | For Authentication templates | The OTP / copy-code value. |
-| **Wait for reply** | No | Same value + unit (seconds / minutes / hours / days) as other message nodes. |
+| **Wait for specific time** | No | Toggle on to pause for a reply. Set a **unit** (seconds / minutes / hours / days) and **value**. |
 
 > [!NOTE]
 > Templates must be **created and approved** in WhatsApp before they appear here. The picker

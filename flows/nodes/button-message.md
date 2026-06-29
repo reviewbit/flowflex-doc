@@ -30,7 +30,7 @@ path, so the flow can branch on exactly which button the customer taps. The node
 | **Body** | Yes | The message text (supports variables and formatting). |
 | **Footer** | No | Small text under the body. |
 | **Buttons** | Yes (1–3) | Each button has a **title** (max **20** characters). IDs are assigned automatically (`BUTTON_1…3`). |
-| **Wait** | — | Always waits for a tap; set how long before the **No response** path is taken. |
+| **Wait for specific time** | No | Set how long to wait for a tap before the **No response** path is taken. |
 
 ## Handles
 
