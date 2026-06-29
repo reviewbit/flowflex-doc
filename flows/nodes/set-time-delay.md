@@ -24,12 +24,16 @@ The flow isn't burning resources while it waits.
 
 ## Settings
 
-| Mode | Fields |
+The node always starts with a **fixed duration**. The three checkboxes below it are
+**additive** — you can enable any combination of them to layer constraints.
+
+| Field | Notes |
 | --- | --- |
-| **Fixed duration** | A **value** + **unit**: seconds, minutes (default), hours, or days. |
-| **Until a time of day** | Toggle on; pick a **time** (15-minute increments) and a **timezone**. |
-| **Until a day of week** | Toggle on; pick one or more **days** (Sun–Sat). |
-| **Dynamic delay** | Toggle on; supply the delay from a **variable** (e.g. `{{trigger.delay_minutes}}`). |
+| **Set time delay** | A number ≥ 1. Default: `1`. |
+| **Unit** | Seconds, Minutes, Hours, or **Days** (default). |
+| **Delay until a scheduled time of day** | When checked: pick a **time** (15-minute increments, e.g. `9:00 am`) and a **UTC offset** for the timezone. The delay won't release until that time of day is reached in the chosen timezone. |
+| **Delay until scheduled days of the week** | When checked: pick one or more **days** (Sunday–Saturday). The delay won't release until the flow lands on one of those days. |
+| **Delay until a dynamic time of day** | When checked: supply the delay amount from a **variable** (e.g. `{{trigger.delay_minutes}}`). |
 
 ## Handles
 
@@ -44,9 +48,8 @@ Set time delay:  1 day
 
 ## Tips
 
-- Use **fixed duration** for "wait N hours/days"; use **until time / day** to land messages at
-  business-friendly hours.
-- This is different from **Wait for reply** — use that when you specifically want the
-  customer's response. See [Waiting for a reply](flows/response-wait.md).
+- Combine the checkboxes to be precise: e.g. **1 day** duration + **9:00 am** time-of-day + **Monday–Friday** days = "wait at least a day, then resume on a weekday morning."
+- Use **fixed duration** for simple waits ("2 hours after purchase"); layer the time/day constraints to land messages at business-friendly hours.
+- This is different from **Wait for specific time** — use that when you specifically want the customer's reply. See [Waiting for a reply](flows/response-wait.md).
 
 Next: **[API »](flows/nodes/api.md)**
