@@ -31,7 +31,7 @@ the row the customer selects. Like buttons, it **waits** for the selection.
 | **Footer** | No | 60 chars | Small text under the body. |
 | **List / button title** | Yes | 24 chars | The label on the button that opens the list. |
 | **Sections** | Yes | up to **10** | Each section has a **title** (max 24 chars). |
-| **Rows** | Yes | up to **10 total** | Across all sections. Each row: **title** (max 24) and optional **description** (max 72). IDs auto-assigned (`ROW_<section>.<row>`). |
+| **Rows** | Yes | up to **10 total** | Across all sections. Each row: **title** (max 24) and **description** (max 72, required). IDs auto-assigned (`ROW_<section>.<row>`). |
 
 ## Handles
 
