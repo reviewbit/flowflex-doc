@@ -1,0 +1,59 @@
+# List message
+
+> An interactive **selectable list** — branch on the row the customer picks. Use it when you
+> need more than 3 options.
+
+<div class="img-slot">
+  <span class="img-slot-icon">📷</span>
+  <strong>Screenshot — the List message drawer (sections + rows)</strong>
+  <span>Show sections with rows configured and the node's per-row handles on the canvas.</span>
+  <span>Save as <code>assets/flows/node-list-message.png</code></span>
+</div>
+
+## What it does
+
+Sends a message with a button that opens a **selectable list**. The list is organised into
+**sections**, each with **rows**. Each row is its own outgoing path, so the flow branches on
+the row the customer selects. Like buttons, it **waits** for the selection.
+
+## When to use
+
+- Menus with **more than 3 options** (where buttons don't fit).
+- Pick-from-a-list choices: products, branches, time slots, categories.
+
+## Settings
+
+| Field | Required | Limit | Notes |
+| --- | --- | --- | --- |
+| **Destination number** | Yes | — | Recipient with country code. |
+| **Header text** | No | 60 chars | Optional title row. |
+| **Body** | Yes | — | The message text. |
+| **Footer** | No | 60 chars | Small text under the body. |
+| **List / button title** | Yes | 24 chars | The label on the button that opens the list. |
+| **Sections** | Yes | up to **10** | Each section has a **title** (max 24 chars). |
+| **Rows** | Yes | up to **10 total** | Across all sections. Each row: **title** (max 24) and optional **description** (max 72). IDs auto-assigned (`ROW_<section>.<row>`). |
+
+## Handles
+
+- **One handle per row** — wire each to the path for that selection.
+- **No response** — taken if the customer doesn't pick within the wait window.
+
+## Example
+
+```
+List message  "Choose a service"
+  Section "Support"
+    • Track my order   ─▶ API (fetch order) …
+    • Talk to a human  ─▶ Internal alert
+  Section "Sales"
+    • See new arrivals ─▶ Media message (catalogue image)
+  (no response) ─▶ reminder
+```
+
+## Tips
+
+- The hard caps are **10 sections** and **10 rows total** — plan groupings accordingly.
+- Use the optional **row description** to clarify each choice.
+- For 3 options or fewer, a **[Button message](flows/nodes/button-message.md)** is simpler.
+
+Next: **[Media message »](flows/nodes/media-message.md)**

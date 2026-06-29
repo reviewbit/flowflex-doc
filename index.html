@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FlowFlex Docs</title>
+    <meta name="description" content="FlowFlex documentation — SDK, REST API, and Flows" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/flowflex-icon.png" />
+
+    <!-- Fonts: Inter (UI) + JetBrains Mono (code) — matches FlowFlex DESIGN.md -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Docsify base theme (heavily overridden below) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+
+    <style>
+      /* ===================================================================
+         FlowFlex design tokens (from frontend DESIGN.md)
+         =================================================================== */
+      :root {
+        --ff-primary: #7f56d9;
+        --ff-primary-hover: #6941c6;
+        --ff-primary-pressed: #53389e;
+        --ff-primary-subtle: #f4ebff;
+        --ff-accent: #9e76ff;
+        --ff-on-primary: #ffffff;
+
+        --ff-bg: #f9fafb;
+        --ff-surface: #ffffff;
+        --ff-surface-muted: #f2f4f7;
+        --ff-border: #e4e7ec;
+        --ff-border-strong: #d0d5dd;
+
+        --ff-text-primary: #100f0f;
+        --ff-text-heading: #414651;
+        --ff-text-secondary: #656565;
+        --ff-text-muted: #98a2b3;
+
+        --ff-success: #12b76a;
+        --ff-warning: #f79009;
+        --ff-error: #f04438;
+        --ff-info: #2e90fa;
+
+        --ff-radius-sm: 4px;
+        --ff-radius-md: 6px;
+        --ff-radius-lg: 8px;
+        --ff-radius-xl: 12px;
+
+        --ff-shadow-hover: 0 1px 3px rgba(16, 24, 40, 0.1);
+        --ff-shadow-float: 0 8px 24px rgba(16, 24, 40, 0.12);
+
+        --ff-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        --ff-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+        /* Docsify variables */
+        --theme-color: var(--ff-primary);
+        --sidebar-width: 17rem;
+        --ff-header-h: 56px;
+        --ff-toc-w: 16rem;
+      }
+
+      /* ===================================================================
+         Base / shell
+         =================================================================== */
+      html,
+      body {
+        font-family: var(--ff-sans);
+        background: var(--ff-bg);
+        color: var(--ff-text-primary);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .app-name-link,
+      body,
+      button,
+      input,
+      select,
+      textarea {
+        font-family: var(--ff-sans);
+      }
+
+      ::selection {
+        background: var(--ff-primary-subtle);
+        color: var(--ff-primary-pressed);
+      }
+
+      /* Slim, neutral scrollbars */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--ff-border-strong) transparent;
+      }
+      *::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      *::-webkit-scrollbar-thumb {
+        background: var(--ff-border-strong);
+        border-radius: var(--ff-radius-full, 9999px);
+      }
+      *::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      /* ===================================================================
+         Sidebar
+         =================================================================== */
+      .sidebar {
+        background: var(--ff-surface);
+        border-right: 1px solid var(--ff-border);
+        padding-top: 0;
+        top: var(--ff-header-h);
+        height: calc(100% - var(--ff-header-h));
+      }
+
+      /* Logo lives in the top header now — hide the sidebar's built-in one */
+      .sidebar > h1 {
+        display: none;
+      }
+
+      .sidebar-nav {
+        padding: 14px 12px 32px;
+        line-height: 1.5;
+      }
+
+      /* Section group labels (top-level <p> in sidebar) */
+      .sidebar-nav > ul > li > p,
+      .sidebar-nav > p {
+        margin: 18px 12px 6px;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--ff-text-muted);
+      }
+
+      .sidebar-nav ul {
+        margin: 0;
+      }
+      .sidebar-nav li {
+        margin: 1px 0;
+      }
+
+      .sidebar-nav a {
+        color: var(--ff-text-secondary);
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding: 7px 12px;
+        border-radius: var(--ff-radius-md);
+        display: block;
+        transition: background 0.12s ease, color 0.12s ease;
+        border-left: none;
+      }
+      .sidebar-nav a:hover {
+        color: var(--ff-text-primary);
+        background: var(--ff-surface-muted);
+        text-decoration: none;
+      }
+
+      /* Active item — violet subtle pill */
+      .sidebar-nav li.active > a,
+      .sidebar-nav li > a.active {
+        color: var(--ff-primary-pressed);
+        background: var(--ff-primary-subtle);
+        font-weight: 600;
+        border-left: none;
+      }
+
+      /* Nested active-page table of contents (current page's headings) */
+      .sidebar-nav .app-sub-sidebar {
+        margin: 2px 0 6px;
+        border-left: 1px solid var(--ff-border);
+        padding-left: 6px;
+      }
+      .sidebar-nav .app-sub-sidebar li::before {
+        content: "" !important;
+        display: none !important;
+      }
+      .sidebar-nav .app-sub-sidebar a {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        padding: 5px 12px;
+        color: var(--ff-text-muted);
+      }
+      .sidebar-nav .app-sub-sidebar a:hover {
+        color: var(--ff-text-primary);
+      }
+      .sidebar-nav .app-sub-sidebar li.active > a {
+        color: var(--ff-primary-pressed);
+        background: transparent;
+      }
+
+      /* Remove the default vue.css left border accent on active */
+      .sidebar ul li.active > a {
+        border-right: none;
+      }
+
+      /* Nested node-category labels (e.g. **WhatsApp nodes**) and their sub-items */
+      .sidebar-nav li > strong {
+        display: block;
+        padding: 8px 12px 4px;
+        margin-top: 4px;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--ff-text-heading);
+      }
+      .sidebar-nav li > strong + ul {
+        margin: 0 0 6px;
+        padding-left: 10px;
+        margin-left: 12px;
+        border-left: 1px solid var(--ff-border);
+      }
+      .sidebar-nav li > strong + ul a {
+        font-size: 0.8125rem;
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      /* Give the nav room so the last items aren't hidden behind the toggle */
+      .sidebar-nav {
+        padding-bottom: 56px;
+      }
+
+      /* Sidebar collapse toggle — docsify renders a translucent bar pinned to
+         the bottom-left that overlaps the nav. On desktop the sidebar is always
+         visible, so hide it; keep it only as the mobile menu button. */
+      @media (min-width: 769px) {
+        .sidebar-toggle {
+          display: none !important;
+        }
+        .sidebar-nav {
+          padding-bottom: 32px;
+        }
+      }
+
+      /* Mobile: make the toggle a clean solid button, not a translucent overlay */
+      .sidebar-toggle {
+        background-color: var(--ff-surface);
+        border-top: 1px solid var(--ff-border);
+        padding: 14px 24px;
+      }
+      .sidebar-toggle .sidebar-toggle-button .open,
+      .sidebar-toggle span {
+        background-color: var(--ff-text-secondary);
+      }
+
+      /* ===================================================================
+         Content area
+         =================================================================== */
+      .content {
+        background: var(--ff-bg);
+        padding-top: var(--ff-header-h);
+      }
+
+      .markdown-section {
+        max-width: 48rem;
+        padding: 28px 40px 80px;
+      }
+
+      /* On wide screens, reserve room on the right for the floating TOC so the
+         centered content column never slides under it. */
+      @media (min-width: 1240px) {
+        .content {
+          padding-right: var(--ff-toc-w);
+        }
+      }
+
+      .markdown-section p,
+      .markdown-section li {
+        color: var(--ff-text-primary);
+        font-size: 0.9375rem;
+        line-height: 1.7;
+      }
+
+      /* Headings */
+      .markdown-section h1,
+      .markdown-section h2,
+      .markdown-section h3,
+      .markdown-section h4 {
+        color: var(--ff-text-primary);
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+      .markdown-section h1 {
+        font-size: 1.875rem;
+        line-height: 2.375rem;
+        margin: 0 0 0.6em;
+      }
+      .markdown-section h2 {
+        font-size: 1.375rem;
+        line-height: 1.875rem;
+        margin: 2em 0 0.7em;
+        padding-bottom: 0.4em;
+        border-bottom: 1px solid var(--ff-border);
+      }
+      .markdown-section h3 {
+        font-size: 1.125rem;
+        line-height: 1.625rem;
+        margin: 1.6em 0 0.6em;
+        color: var(--ff-text-heading);
+      }
+
+      /* Links */
+      .markdown-section a {
+        color: var(--ff-primary);
+        font-weight: 500;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.12s ease, color 0.12s ease;
+      }
+      .markdown-section a:hover {
+        color: var(--ff-primary-hover);
+        border-bottom-color: var(--ff-primary-hover);
+      }
+
+      .markdown-section strong {
+        color: var(--ff-text-primary);
+        font-weight: 600;
+      }
+
+      /* ===================================================================
+         Inline code & code blocks
+         =================================================================== */
+      .markdown-section code,
+      .markdown-section pre {
+        font-family: var(--ff-mono);
+      }
+
+      .markdown-section :not(pre) > code {
+        background: var(--ff-primary-subtle);
+        color: var(--ff-primary-pressed);
+        font-size: 0.8125rem;
+        font-weight: 500;
+        padding: 2px 6px;
+        border-radius: var(--ff-radius-sm);
+        border: none;
+      }
+
+      .markdown-section pre {
+        background: #1d1b2e;
+        border-radius: var(--ff-radius-xl);
+        border: 1px solid var(--ff-border);
+        margin: 1.4em 0;
+        padding: 0;
+      }
+      .markdown-section pre > code {
+        background: transparent;
+        color: #e7e4f4;
+        font-size: 0.8125rem;
+        line-height: 1.55;
+        padding: 18px 20px;
+        display: block;
+      }
+
+      /* Prism token colors tuned to the violet/dark surface */
+      .token.comment,
+      .token.prolog,
+      .token.doctype,
+      .token.cdata {
+        color: #8b86a8;
+      }
+      .token.punctuation {
+        color: #c4bfe0;
+      }
+      .token.property,
+      .token.tag,
+      .token.boolean,
+      .token.number,
+      .token.constant,
+      .token.symbol {
+        color: #c4a6ff;
+      }
+      .token.selector,
+      .token.attr-name,
+      .token.string,
+      .token.char,
+      .token.builtin,
+      .token.inserted {
+        color: #9adcb0;
+      }
+      .token.operator,
+      .token.entity,
+      .token.url,
+      .token.variable {
+        color: #e7e4f4;
+      }
+      .token.atrule,
+      .token.attr-value,
+      .token.keyword {
+        color: #c4a6ff;
+      }
+      .token.function,
+      .token.class-name {
+        color: #ffd28a;
+      }
+
+      /* Copy-code button (docsify-copy-code) */
+      .docsify-copy-code-button {
+        background: rgba(255, 255, 255, 0.08) !important;
+        color: #d7d2ec !important;
+        font-family: var(--ff-sans) !important;
+        font-size: 0.75rem !important;
+        font-weight: 500 !important;
+        border-radius: var(--ff-radius-md) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        padding: 4px 10px !important;
+        opacity: 0;
+        transition: opacity 0.15s ease, background 0.15s ease;
+      }
+      .markdown-section pre:hover .docsify-copy-code-button {
+        opacity: 1;
+      }
+      .docsify-copy-code-button:hover {
+        background: var(--ff-primary) !important;
+        color: #fff !important;
+        border-color: var(--ff-primary) !important;
+      }
+      .docsify-copy-code-button span.label,
+      .docsify-copy-code-button span.error,
+      .docsify-copy-code-button span.success {
+        font-size: 0.75rem !important;
+      }
+
+      /* ===================================================================
+         Tables
+         =================================================================== */
+      .markdown-section table {
+        display: table;
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border: 1px solid var(--ff-border);
+        border-radius: var(--ff-radius-xl);
+        overflow: hidden;
+        margin: 1.4em 0;
+        font-size: 0.875rem;
+      }
+      .markdown-section table th,
+      .markdown-section table td {
+        border: none;
+        border-bottom: 1px solid var(--ff-border);
+        padding: 11px 16px;
+        text-align: left;
+        vertical-align: top;
+      }
+      .markdown-section table thead th {
+        background: var(--ff-surface-muted);
+        color: var(--ff-text-heading);
+        font-weight: 600;
+        font-size: 0.8125rem;
+      }
+      .markdown-section table tbody tr {
+        background: var(--ff-surface);
+      }
+      .markdown-section table tr:last-child td {
+        border-bottom: none;
+      }
+      .markdown-section table tbody tr:hover {
+        background: var(--ff-surface-muted);
+      }
+      /* override vue.css zebra striping */
+      .markdown-section table tr:nth-child(2n) {
+        background: var(--ff-surface);
+      }
+      .markdown-section table tbody tr:nth-child(2n):hover {
+        background: var(--ff-surface-muted);
+      }
+
+      /* ===================================================================
+         Blockquotes / callouts
+         =================================================================== */
+      .markdown-section blockquote {
+        background: var(--ff-primary-subtle);
+        border-left: 3px solid var(--ff-primary);
+        border-radius: var(--ff-radius-lg);
+        margin: 1.4em 0;
+        padding: 14px 18px;
+        color: var(--ff-text-heading);
+      }
+      .markdown-section blockquote p {
+        color: var(--ff-text-heading);
+        margin: 0;
+      }
+      .markdown-section blockquote a {
+        color: var(--ff-primary-pressed);
+      }
+
+      /* ===================================================================
+         Cards (the home page tables can stay; generic surfaces below)
+         =================================================================== */
+      .markdown-section hr {
+        border: none;
+        border-top: 1px solid var(--ff-border);
+        margin: 2.4em 0;
+      }
+
+      /* ===================================================================
+         HTTP method badges (used in API pages)
+         =================================================================== */
+      .badge {
+        display: inline-block;
+        padding: 2px 9px;
+        border-radius: 9999px;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-family: var(--ff-sans);
+      }
+      .badge.get {
+        background: #e6f0ff;
+        color: var(--ff-info);
+      }
+      .badge.post {
+        background: #e7f7ee;
+        color: var(--ff-success);
+      }
+      .badge.put {
+        background: #fff3e0;
+        color: var(--ff-warning);
+      }
+      .badge.delete {
+        background: #fdecea;
+        color: var(--ff-error);
+      }
+
+      /* ===================================================================
+         Search box (docsify search plugin)
+         =================================================================== */
+      .sidebar .search {
+        margin: 16px 16px 4px;
+        padding: 0;
+        border-bottom: none;
+      }
+      .sidebar .search input {
+        background: var(--ff-surface);
+        border: 1px solid var(--ff-border);
+        border-radius: var(--ff-radius-lg);
+        font-size: 0.875rem;
+        padding: 9px 12px;
+        color: var(--ff-text-primary);
+        transition: border-color 0.12s ease, box-shadow 0.12s ease;
+      }
+      .sidebar .search input::placeholder {
+        color: var(--ff-text-muted);
+      }
+      .sidebar .search input:focus {
+        outline: none;
+        border-color: var(--ff-primary);
+        box-shadow: 0 0 0 3px var(--ff-primary-subtle);
+      }
+      .sidebar .search .results-panel {
+        color: var(--ff-text-secondary);
+      }
+      .sidebar .search h2 {
+        color: var(--ff-text-muted);
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .sidebar .search .matching-post {
+        border-bottom: 1px solid var(--ff-border);
+      }
+      .sidebar .search p.search-keyword {
+        color: var(--ff-primary-pressed);
+        background: var(--ff-primary-subtle);
+      }
+      .sidebar .search a {
+        color: var(--ff-text-primary);
+      }
+
+      /* ===================================================================
+         Pagination (docsify-pagination)
+         =================================================================== */
+      .pagination-item-label {
+        color: var(--ff-primary);
+        font-weight: 500;
+      }
+      .pagination-item-title {
+        color: var(--ff-text-heading);
+        font-weight: 600;
+      }
+      .docsify-pagination-container {
+        border-top: 1px solid var(--ff-border);
+      }
+      .pagination-item:hover .pagination-item-label,
+      .pagination-item:hover .pagination-item-title {
+        color: var(--ff-primary-hover);
+      }
+
+      /* ===================================================================
+         Cover page
+         =================================================================== */
+      .cover.show {
+        background: radial-gradient(
+          1200px 600px at 50% -10%,
+          var(--ff-primary-subtle) 0%,
+          var(--ff-bg) 60%
+        ) !important;
+        color: var(--ff-text-primary);
+      }
+      .cover .cover-main > h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: var(--ff-text-primary);
+      }
+      .cover .cover-main > h1 a,
+      .cover .cover-main > h1 small {
+        color: var(--ff-text-primary);
+      }
+      .cover .cover-main > p {
+        color: var(--ff-text-secondary);
+        font-size: 1.125rem;
+        line-height: 1.6;
+      }
+      /* !important used deliberately to override docsify's CDN vue.css base
+         theme, which fills the last cover link by default. */
+      .cover.show .cover-main > p:last-child a {
+        border-radius: var(--ff-radius-lg);
+        font-weight: 600;
+        font-size: 0.9375rem;
+        padding: 11px 22px;
+        transition: all 0.14s ease;
+        /* Default: secondary = white, bordered */
+        background: var(--ff-surface) !important;
+        border: 1px solid var(--ff-border-strong) !important;
+        color: var(--ff-text-heading) !important;
+      }
+      .cover.show .cover-main > p:last-child a:hover {
+        border-color: var(--ff-primary) !important;
+        color: var(--ff-primary) !important;
+        background: var(--ff-surface) !important;
+      }
+      /* Single primary CTA = filled violet (first button) */
+      .cover.show .cover-main > p:last-child a:first-child {
+        background: var(--ff-primary) !important;
+        border: 1px solid var(--ff-primary) !important;
+        color: var(--ff-on-primary) !important;
+      }
+      .cover.show .cover-main > p:last-child a:first-child:hover {
+        background: var(--ff-primary-hover) !important;
+        border-color: var(--ff-primary-hover) !important;
+        color: var(--ff-on-primary) !important;
+        box-shadow: var(--ff-shadow-hover);
+      }
+      .cover .cover-main > p:first-of-type {
+        color: var(--ff-text-secondary);
+      }
+      .cover blockquote p {
+        color: var(--ff-text-secondary);
+        font-size: 1.25rem;
+      }
+
+      /* ===================================================================
+         Top header bar (GitBook-style) — built in JS, styled here
+         =================================================================== */
+      .ff-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--ff-header-h);
+        z-index: 40;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 0 20px 0 24px;
+        background: var(--ff-surface);
+        border-bottom: 1px solid var(--ff-border);
+      }
+      .ff-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        white-space: nowrap;
+        flex: 0 0 auto;
+        margin-right: auto;
+      }
+      .ff-logo img {
+        height: 26px;
+        width: auto;
+        display: block;
+      }
+      .ff-logo .ff-logo-docs {
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: var(--ff-text-muted);
+        letter-spacing: -0.01em;
+        border-left: 1px solid var(--ff-border);
+        padding-left: 10px;
+        margin-left: 2px;
+      }
+
+      /* Search relocated into the header */
+      .ff-header .search {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        flex: 0 1 380px;
+        width: 380px;
+        max-width: 40vw;
+        position: relative;
+      }
+      .ff-header .search .input-wrap {
+        margin: 0;
+      }
+      .ff-header .search input {
+        width: 100%;
+        background: var(--ff-surface-muted);
+        border: 1px solid var(--ff-border);
+        border-radius: var(--ff-radius-lg);
+        font-size: 0.875rem;
+        padding: 8px 12px;
+        margin: 0;
+        color: var(--ff-text-primary);
+        transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+      }
+      .ff-header .search input::placeholder {
+        color: var(--ff-text-muted);
+      }
+      .ff-header .search input:focus {
+        outline: none;
+        background: var(--ff-surface);
+        border-color: var(--ff-primary);
+        box-shadow: 0 0 0 3px var(--ff-primary-subtle);
+      }
+      /* Results render as a floating dropdown under the header search */
+      .ff-header .search .results-panel {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        left: auto;
+        width: 420px;
+        max-width: 80vw;
+        max-height: 70vh;
+        overflow-y: auto;
+        background: var(--ff-surface);
+        border: 1px solid var(--ff-border);
+        border-radius: var(--ff-radius-xl);
+        box-shadow: var(--ff-shadow-float);
+        padding: 6px;
+      }
+      .ff-header .search .results-panel.show,
+      .ff-header .search .results-panel:not(:empty) {
+        display: block;
+      }
+      .ff-header .search .matching-post {
+        border-bottom: 1px solid var(--ff-border);
+        padding: 10px 12px;
+      }
+      .ff-header .search .matching-post:last-child {
+        border-bottom: none;
+      }
+      .ff-header .search h2 {
+        color: var(--ff-text-primary);
+        font-size: 0.875rem;
+        margin: 0 0 4px;
+      }
+      .ff-header .search p {
+        color: var(--ff-text-secondary);
+        font-size: 0.8125rem;
+        margin: 0;
+      }
+      .ff-header .search p.search-keyword {
+        color: var(--ff-primary-pressed);
+        background: var(--ff-primary-subtle);
+        padding: 0 2px;
+        border-radius: 3px;
+      }
+
+      /* Header hidden on small screens; search falls back into the sidebar */
+      @media (max-width: 768px) {
+        .ff-header {
+          display: none;
+        }
+        :root {
+          --ff-header-h: 0px;
+        }
+      }
+
+      /* ===================================================================
+         Breadcrumbs (built in JS, above the page H1)
+         =================================================================== */
+      .ff-breadcrumbs {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 14px;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: var(--ff-text-muted);
+      }
+      .ff-breadcrumbs .crumb-sep {
+        color: var(--ff-border-strong);
+      }
+      .ff-breadcrumbs a {
+        color: var(--ff-text-secondary);
+        text-decoration: none;
+      }
+      .ff-breadcrumbs a:hover {
+        color: var(--ff-primary);
+      }
+      .ff-breadcrumbs .crumb-current {
+        color: var(--ff-text-heading);
+      }
+
+      /* ===================================================================
+         Right-hand "On this page" TOC (built in JS) — GitBook third column
+         =================================================================== */
+      .ff-toc {
+        position: fixed;
+        top: var(--ff-header-h);
+        right: 0;
+        width: var(--ff-toc-w);
+        height: calc(100% - var(--ff-header-h));
+        overflow-y: auto;
+        padding: 32px 24px 40px 8px;
+        box-sizing: border-box;
+        display: none;
+      }
+      .ff-toc-title {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--ff-text-muted);
+        margin-bottom: 10px;
+      }
+      .ff-toc ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-left: 1px solid var(--ff-border);
+      }
+      .ff-toc li {
+        margin: 0;
+      }
+      .ff-toc a {
+        display: block;
+        padding: 5px 12px;
+        margin-left: -1px;
+        border-left: 2px solid transparent;
+        color: var(--ff-text-secondary);
+        font-size: 0.8125rem;
+        line-height: 1.4;
+        text-decoration: none;
+        transition: color 0.12s ease, border-color 0.12s ease;
+      }
+      .ff-toc a.lvl-3 {
+        padding-left: 24px;
+        font-size: 0.78125rem;
+      }
+      .ff-toc a:hover {
+        color: var(--ff-text-primary);
+      }
+      .ff-toc a.active {
+        color: var(--ff-primary);
+        border-left-color: var(--ff-primary);
+        font-weight: 600;
+      }
+      @media (min-width: 1240px) {
+        .ff-toc {
+          display: block;
+        }
+      }
+      /* Don't float the page-TOC over the cover/landing splash */
+      body:has(.cover.show) .ff-toc {
+        display: none !important;
+      }
+
+      /* ===================================================================
+         Callout / hint cards (docsify-plugin-flexible-alerts)
+         =================================================================== */
+      .markdown-section .alert {
+        border: 1px solid var(--ff-border);
+        border-left-width: 3px;
+        border-radius: var(--ff-radius-lg);
+        padding: 14px 16px;
+        margin: 1.4em 0;
+        background: var(--ff-surface);
+      }
+      .markdown-section .alert p {
+        margin: 0;
+        color: var(--ff-text-heading);
+        font-size: 0.9375rem;
+      }
+      .markdown-section .alert p.title {
+        font-weight: 600;
+        font-size: 0.8125rem;
+        letter-spacing: 0.02em;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      /* The plugin's icon font isn't loaded; supply emoji glyphs per type. */
+      .markdown-section .alert p.title .icon {
+        font-style: normal;
+        font-family: var(--ff-sans);
+      }
+      .markdown-section .alert p.title .icon::before {
+        font-size: 0.95rem;
+      }
+      .markdown-section .alert.note {
+        border-left-color: var(--ff-info);
+        background: #f5faff;
+      }
+      .markdown-section .alert.note p.title {
+        color: var(--ff-info);
+      }
+      .markdown-section .alert.note p.title .icon::before {
+        content: "ℹ️";
+      }
+      .markdown-section .alert.tip {
+        border-left-color: var(--ff-primary);
+        background: var(--ff-primary-subtle);
+      }
+      .markdown-section .alert.tip p.title {
+        color: var(--ff-primary-pressed);
+      }
+      .markdown-section .alert.tip p.title .icon::before {
+        content: "💡";
+      }
+      .markdown-section .alert.warning {
+        border-left-color: var(--ff-warning);
+        background: #fffaf2;
+      }
+      .markdown-section .alert.warning p.title {
+        color: #b54708;
+      }
+      .markdown-section .alert.warning p.title .icon::before {
+        content: "⚠️";
+      }
+      .markdown-section .alert.attention,
+      .markdown-section .alert.danger {
+        border-left-color: var(--ff-error);
+        background: #fef4f3;
+      }
+      .markdown-section .alert.attention p.title,
+      .markdown-section .alert.danger p.title {
+        color: #b42318;
+      }
+      .markdown-section .alert.attention p.title .icon::before,
+      .markdown-section .alert.danger p.title .icon::before {
+        content: "🛑";
+      }
+
+      /* ===================================================================
+         Screenshot placeholder slots
+         Replace the <div class="img-slot"> with ![alt](assets/flows/x.png)
+         once you have the screenshot.
+         =================================================================== */
+      .markdown-section .img-slot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        text-align: center;
+        min-height: 200px;
+        margin: 1.4em 0;
+        padding: 28px 24px;
+        border: 2px dashed var(--ff-border-strong);
+        border-radius: var(--ff-radius-xl);
+        background: var(--ff-surface-muted);
+        color: var(--ff-text-secondary);
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+      .markdown-section .img-slot .img-slot-icon {
+        font-size: 1.75rem;
+        line-height: 1;
+      }
+      .markdown-section .img-slot strong {
+        color: var(--ff-text-heading);
+        font-size: 0.9375rem;
+      }
+      .markdown-section .img-slot code {
+        background: var(--ff-surface);
+        border: 1px solid var(--ff-border);
+        color: var(--ff-primary-pressed);
+      }
+
+      /* "Coming soon" inline tag for not-yet-live nodes */
+      .badge.soon {
+        background: var(--ff-surface-muted);
+        color: var(--ff-text-secondary);
+        border: 1px solid var(--ff-border);
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      /* ===================================================================
+         Misc polish
+         =================================================================== */
+      /* Anchor "#" on heading hover */
+      .markdown-section h1:hover .anchor,
+      .markdown-section h2:hover .anchor,
+      .markdown-section h3:hover .anchor {
+        color: var(--ff-primary);
+      }
+
+      /* Loading state */
+      #app {
+        color: var(--ff-text-muted);
+        font-weight: 500;
+        text-align: center;
+        margin-top: 30vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">Loading the FlowFlex docs…</div>
+    <script>
+      window.$docsify = {
+        name: "FlowFlex Docs",
+        // After you push to GitHub, set this to "your-org/your-repo" to show the
+        // "Edit on GitHub" / repo corner ribbon.
+        repo: "",
+        loadSidebar: true,
+        loadNavbar: false,
+        coverpage: true,
+        onlyCover: false,
+        auto2top: true,
+        maxLevel: 3,
+        // Page headings now live in the right-hand "On this page" TOC,
+        // so don't nest them into the left sidebar.
+        subMaxLevel: 0,
+        homepage: "README.md",
+        search: {
+          placeholder: "Search the docs…",
+          noData: "No results.",
+          depth: 3,
+        },
+        pagination: {
+          previousText: "Previous",
+          nextText: "Next",
+          crossChapter: true,
+        },
+        copyCode: {
+          buttonText: "Copy",
+          successText: "Copied",
+        },
+        plugins: [ffGitbookLayout],
+      };
+
+      /**
+       * Custom Docsify plugin that adds the GitBook-style chrome:
+       *  - a fixed top header (logo + relocated search box)
+       *  - breadcrumbs above each page title
+       *  - a right-hand "On this page" TOC with scroll-spy
+       */
+      function ffGitbookLayout(hook, vm) {
+        var spyHandler = null;
+
+        // Build the top header once, after the app shell mounts.
+        hook.mounted(function () {
+          if (document.querySelector(".ff-header")) return;
+          var header = document.createElement("header");
+          header.className = "ff-header";
+          header.innerHTML =
+            '<a class="ff-logo" href="#/" aria-label="FlowFlex">' +
+            '<img src="assets/flowflex-logo.png" alt="FlowFlex" />' +
+            '<span class="ff-logo-docs">Docs</span></a>' +
+            '<div class="ff-header-search"></div>';
+          document.body.appendChild(header);
+          window.addEventListener("resize", relocateSearch);
+        });
+
+        hook.doneEach(function () {
+          relocateSearch();
+          buildBreadcrumbs();
+          buildToc();
+        });
+
+        // Move docsify-search's box into the header on desktop; on mobile
+        // the header is hidden, so keep search in the sidebar instead.
+        function relocateSearch() {
+          var search = document.querySelector(".search");
+          if (!search) return;
+          if (window.innerWidth > 768) {
+            var slot = document.querySelector(".ff-header-search");
+            if (slot && search.parentElement !== slot) slot.appendChild(search);
+          } else {
+            var sidebar = document.querySelector(".sidebar");
+            var nav = sidebar && sidebar.querySelector(".sidebar-nav");
+            if (sidebar && search.parentElement !== sidebar) {
+              if (nav) sidebar.insertBefore(search, nav);
+              else sidebar.appendChild(search);
+            }
+          }
+        }
+
+        function buildBreadcrumbs() {
+          var section = document.querySelector(".markdown-section");
+          if (!section) return;
+          var h1 = section.querySelector("h1");
+          var old = section.querySelector(".ff-breadcrumbs");
+          if (old) old.remove();
+          if (!h1) return;
+
+          var active = document.querySelector(
+            ".sidebar-nav li.active > a, .sidebar-nav a.active"
+          );
+          var groupLabel = null;
+          if (active) {
+            // Walk up to the section <li> that carries a <p> label.
+            var node = active.parentElement;
+            while (node && node !== document) {
+              if (node.tagName === "LI") {
+                // Nearest group label: a nested category (**bold** → <strong>)
+                // or a top-level group heading (<p>).
+                var label = node.querySelector(":scope > strong, :scope > p");
+                if (label) {
+                  groupLabel = label.textContent.trim();
+                  break;
+                }
+              }
+              node = node.parentElement;
+            }
+          }
+
+          var title = (h1.textContent || "").trim();
+          var crumbs = '<a href="#/">Docs</a>';
+          if (groupLabel) {
+            crumbs +=
+              '<span class="crumb-sep">/</span><span>' + esc(groupLabel) + "</span>";
+          }
+          crumbs +=
+            '<span class="crumb-sep">/</span><span class="crumb-current">' +
+            esc(title) +
+            "</span>";
+
+          var bc = document.createElement("nav");
+          bc.className = "ff-breadcrumbs";
+          bc.innerHTML = crumbs;
+          section.insertBefore(bc, h1);
+        }
+
+        function buildToc() {
+          var existing = document.querySelector(".ff-toc");
+          if (existing) existing.remove();
+          if (spyHandler) {
+            window.removeEventListener("scroll", spyHandler);
+            spyHandler = null;
+          }
+
+          var section = document.querySelector(".markdown-section");
+          if (!section) return;
+          var heads = section.querySelectorAll("h2, h3");
+          if (!heads.length) return;
+
+          var items = [];
+          var html =
+            '<div class="ff-toc-title">On this page</div><ul>';
+          heads.forEach(function (h) {
+            var anchor = h.querySelector("a.anchor");
+            var href = anchor ? anchor.getAttribute("href") : "#";
+            var label = (h.textContent || "").trim();
+            var lvl = h.tagName === "H3" ? 3 : 2;
+            html +=
+              '<li><a class="lvl-' +
+              lvl +
+              '" href="' +
+              href +
+              '" data-id="' +
+              h.id +
+              '">' +
+              esc(label) +
+              "</a></li>";
+            items.push(h);
+          });
+          html += "</ul>";
+
+          var aside = document.createElement("aside");
+          aside.className = "ff-toc";
+          aside.innerHTML = html;
+          document.body.appendChild(aside);
+
+          // Scroll-spy: highlight the heading nearest the top of the viewport.
+          var links = aside.querySelectorAll("a");
+          spyHandler = function () {
+            var top = (parseInt(getComputedStyle(document.documentElement)
+              .getPropertyValue("--ff-header-h")) || 56) + 16;
+            var current = items[0];
+            for (var i = 0; i < items.length; i++) {
+              if (items[i].getBoundingClientRect().top - top <= 1) {
+                current = items[i];
+              } else {
+                break;
+              }
+            }
+            links.forEach(function (a) {
+              a.classList.toggle("active", a.getAttribute("data-id") === current.id);
+            });
+          };
+          window.addEventListener("scroll", spyHandler, { passive: true });
+          spyHandler();
+        }
+
+        function esc(s) {
+          return String(s)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+        }
+      }
+    </script>
+    <!-- Docsify core + plugins (all from CDN; nothing to build) -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@3/dist/docsify-copy-code.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+    <!-- GitBook-style hint/callout cards: > [!NOTE] | [!TIP] | [!WARNING] | [!ATTENTION] -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@1/dist/docsify-plugin-flexible-alerts.min.js"></script>
+    <!-- Syntax highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  </body>
+</html>
