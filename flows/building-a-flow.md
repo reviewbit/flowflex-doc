@@ -24,12 +24,7 @@ start. Click it and choose the event that should start this flow (e.g. your
 custom-integration event `order.placed`). The trigger exposes the event payload to every
 later node as `{{trigger.*}}` — see [Triggers & variables](flows/triggers-and-variables.md).
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — configuring the Trigger node</strong>
-  <span>Show the trigger drawer with an event selected and the sample payload.</span>
-  <span>Save as <code>assets/flows/trigger-setup.png</code></span>
-</div>
+![Trigger node setup](../assets/flows/trigger-setup.png)
 
 ## 2. Add a node from the toolbox
 
