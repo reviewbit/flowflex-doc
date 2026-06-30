@@ -15,12 +15,7 @@ The builder has three areas:
 - **Config drawer** (right) — opens when you click a node, for setting it up.
 - **Top bar** — **Save**, **Publish**, and (on localhost builds) **Test**.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the full builder layout</strong>
-  <span>Show the toolbox (left), canvas (center) and config drawer (right).</span>
-  <span>Save as <code>assets/flows/builder-overview.png</code>, then replace this box with <code>![Builder layout](assets/flows/builder-overview.png)</code></span>
-</div>
+![Builder layout](../assets/flows/builder-overview.png)
 
 ## 1. Start with the trigger
 
