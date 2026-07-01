@@ -15,7 +15,7 @@ The builder has three areas:
 - **Config drawer** (right) — opens when you click a node, for setting it up.
 - **Top bar** — **Save**, **Publish**, and (on localhost builds) **Test**.
 
-![Builder layout](../assets/flows/builder-overview.png)
+![Builder layout](../assets/flows/sample.gif)
 
 ## 1. Start with the trigger
 
