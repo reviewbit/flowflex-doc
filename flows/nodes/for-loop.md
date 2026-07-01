@@ -2,12 +2,7 @@
 
 > Repeat a set of steps — over each item in a list, or a fixed number of times.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — Start loop / End loop on the canvas</strong>
-  <span>Show the Start loop and End loop nodes with steps wired between them.</span>
-  <span>Save as <code>assets/flows/node-for-loop.png</code></span>
-</div>
+![Start loop and End loop nodes on the canvas](../../assets/flows/loop-nodes.png)
 
 ## What it does
 
@@ -49,19 +44,8 @@ Inside the loop body you can reference:
 - **Start loop** has one outgoing path — into the loop body.
 - **End loop** has one outgoing path — the "after loop" continuation.
 
-## Example
-
-```
-Start loop  over {{trigger.items}}   (limit: 5)
-   └─ Text message:  "Item {{loop.index}}: {{loop.item.name}} — ₹{{loop.item.price}}"
-End loop
-   └─ Text message:  "That's your full order 🧾"
-```
-
 ## Tips
 
 - Always point `loop_list` at a **variable** that resolves to an array (`{{trigger.items}}`, `{{apiStep.data.results}}`, etc.).
 - Use the **Loop limit** to guard against unexpectedly large lists — e.g. cap at 10 so a customer with 500 orders doesn't trigger 500 messages.
 - Keep per-iteration messaging mindful of WhatsApp rate/spam limits.
-
-Next: **[Set time delay »](flows/nodes/set-time-delay.md)**

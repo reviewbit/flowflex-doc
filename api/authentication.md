@@ -59,5 +59,3 @@ const auth = "Basic " + Buffer.from(`${apiKey}:${apiSecret}`).toString("base64")
 If a secret leaks, **rotate** the integration in the dashboard. This issues a new
 `apiKey` + `apiSecret` and invalidates the old pair. Update your environment variables and
 redeploy.
-
-Next: **[Send events »](api/events.md)**

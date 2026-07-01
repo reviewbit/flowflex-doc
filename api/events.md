@@ -89,5 +89,3 @@ Errors come back as JSON with a `code`. Common ones:
 
 > 401/404/422-class responses mean the call won't succeed on retry — fix the request.
 > 5xx/network errors are safe to retry with the same idempotency key.
-
-Next: **[Upload assets »](api/assets.md)**

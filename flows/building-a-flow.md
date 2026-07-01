@@ -44,12 +44,7 @@ and which path each branch takes.
 - **Condition** nodes have a handle per path (Yes/No, or each branch + a default).
 - An unconnected handle simply **ends that path**.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — connecting two nodes</strong>
-  <span>Show an edge being dragged from one node's handle to another.</span>
-  <span>Save as <code>assets/flows/connect-nodes.png</code></span>
-</div>
+![Connecting two nodes with an edge](../assets/flows/connect-node.gif)
 
 ## 4. Configure a node
 
@@ -58,37 +53,12 @@ destination number, condition, delay, and so on. Any text field accepts `{{…}}
 click **Insert Variable** to pick a field from the trigger payload (or an earlier node's
 output) instead of typing the path by hand.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — a node's config drawer + Insert Variable picker</strong>
-  <span>Show, e.g., a Text message drawer with the Insert Variable picker open.</span>
-  <span>Save as <code>assets/flows/node-drawer.png</code></span>
-</div>
+![A node's config drawer with the Insert Variable picker](../assets/flows/add-node.gif)
 
 ## 5. Save and publish
 
 **Save** keeps your work in progress. **Publish** makes the flow live so it runs whenever
 its trigger event fires. Until a flow is published, firing the event won't start it.
-
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the Save / Publish controls</strong>
-  <span>Show the top bar with the Save and Publish buttons.</span>
-  <span>Save as <code>assets/flows/save-publish.png</code></span>
-</div>
-
-## 6. Test before you ship
-
-On localhost builds, use the **Test** action to run the flow once against a sample payload —
-no need to wait for a real event. Confirm the right messages go out and the branches behave,
-then publish.
-
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — running a Test</strong>
-  <span>Show the Test action and a sample-payload run.</span>
-  <span>Save as <code>assets/flows/test-flow.png</code></span>
-</div>
 
 ## Tips
 
@@ -97,5 +67,3 @@ then publish.
   customer doesn't leave the flow stuck. See [Waiting for a reply](flows/response-wait.md).
 - **Personalize with variables** everywhere via **Insert Variable** — it only offers fields
   your trigger's sample payload actually contains.
-
-Next: **[Node reference »](flows/nodes.md)**

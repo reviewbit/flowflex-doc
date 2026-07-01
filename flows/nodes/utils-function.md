@@ -2,12 +2,7 @@
 
 > Run a built-in utility and use its result to branch or personalize downstream.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the Utils function drawer</strong>
-  <span>Show the function picker and the inputs for Calculate distance.</span>
-  <span>Save as <code>assets/flows/node-utils-function.png</code></span>
-</div>
+![The Utils function node and its config drawer](../../assets/flows/util-node.png)
 
 ## What it does
 
@@ -31,18 +26,7 @@ nearest store.
 
 - **Next step** — runs after the result is computed; the distance is available downstream.
 
-## Example
-
-```
-Utils function: Calculate distance
-  source = {{trigger.lat}}, {{trigger.lng}}
-  target = "Downtown branch"
-   └─ Condition split: distance less than 5 (km) → "Your nearest store is Downtown"
-```
-
 ## Tips
 
 - Combine with a **[Condition split](flows/nodes/condition-split.md)** to act on the distance.
 - More utility functions may be added over time; the picker lists what's available.
-
-Next: **[Webhook »](flows/nodes/webhook.md)**

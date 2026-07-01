@@ -7,12 +7,7 @@
 > **execution isn't wired up** — values will not be stored when the flow runs. This page
 > describes the intended behavior.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the Save variable node drawer</strong>
-  <span>Show the multi-variable list with a name field and a value field for each entry.</span>
-  <span>Save as <code>assets/flows/node-save-variable.png</code></span>
-</div>
+![The Save variable node and its config drawer](../../assets/flows/save-variable.png)
 
 ## What it will do
 
@@ -49,5 +44,3 @@ Once the node executes, later nodes can reference stored values by name through 
   node (it writes to a data table).
 - Values from earlier nodes (a captured reply, an API response) are already available
   downstream via **Insert Variable** — see [Triggers & variables](flows/triggers-and-variables.md).
-
-Next: **[Internal alert »](flows/nodes/internal-alert.md)**

@@ -66,5 +66,3 @@ await ff.sendEvent("order.placed", {
   idempotencyKey: "order_42_placed", // same key = processed once
 });
 ```
-
-Next: **[File attachments »](sdk/files.md)**

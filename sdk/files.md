@@ -108,5 +108,3 @@ ff.sendEvent("invoice.created", { payload: { invoice: file("invoice.pdf") } })
 ```
 
 The same three steps are documented for raw HTTP in [API → Upload assets](api/assets.md).
-
-Next: **[API reference »](sdk/reference.md)**

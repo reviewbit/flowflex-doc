@@ -3,12 +3,7 @@
 > Pause the flow before the next step — by a duration, until a time of day, until a day of
 > week, or by a dynamic amount.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the Set time delay drawer</strong>
-  <span>Show the duration value + unit, and the "delay until…" toggles.</span>
-  <span>Save as <code>assets/flows/node-set-time-delay.png</code></span>
-</div>
+![The Set time delay node and its config drawer](../../assets/flows/time-delay-node.png)
 
 ## What it does
 
@@ -39,17 +34,8 @@ The node always starts with a **fixed duration**. The three checkboxes below it 
 
 - **Next step** — runs once the wait elapses.
 
-## Example
-
-```
-Set time delay:  1 day
-   └─ Text message "Just checking in — still need a hand?"
-```
-
 ## Tips
 
 - Combine the checkboxes to be precise: e.g. **1 day** duration + **9:00 am** time-of-day + **Monday–Friday** days = "wait at least a day, then resume on a weekday morning."
 - Use **fixed duration** for simple waits ("2 hours after purchase"); layer the time/day constraints to land messages at business-friendly hours.
 - This is different from **Wait for specific time** — use that when you specifically want the customer's reply. See [Waiting for a reply](flows/response-wait.md).
-
-Next: **[API »](flows/nodes/api.md)**

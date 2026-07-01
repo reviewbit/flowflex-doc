@@ -8,7 +8,7 @@ delaying, calling APIs, and so on.
 ```
 Trigger ──▶ Text message ──▶ Wait for reply ──▶ Condition ──▶ … 
  (event)                                          ├─ yes ─▶ Template message
-                                                  └─ no  ─▶ Internal alert
+                                                  └─ no  ─▶ Reminder message
 ```
 
 ## The building blocks
@@ -39,7 +39,7 @@ Trigger ──▶ Text message ──▶ Wait for reply ──▶ Condition ─�
 > 2. **Text message** → `Hi {{trigger.name}}, order {{trigger.order_id}} is confirmed 🎉`
 >    — with **Wait for specific time** on, so it waits for a reply
 >    - **reply received** → **Button message** "Need help?" → branches per button
->    - **no response** → **Internal alert** to the support team
+>    - **no response** → a **reminder** message a bit later
 
 ## Good to know
 
@@ -49,5 +49,3 @@ Trigger ──▶ Text message ──▶ Wait for reply ──▶ Condition ─�
   Variable** picker — it reads the fields from your trigger's sample payload.
 - **Branching is explicit.** Each outgoing path is a separate edge from a node handle, so
   what you wire on the canvas is exactly what runs.
-
-Next: **[Building a flow »](flows/building-a-flow.md)**

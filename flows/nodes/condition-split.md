@@ -2,12 +2,7 @@
 
 > A **Yes / No** branch — the flow goes one way if a condition is met, the other way if not.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the Condition split drawer + Yes/No handles</strong>
-  <span>Show the condition builder (field, operator, value) and the node's two handles.</span>
-  <span>Save as <code>assets/flows/node-condition-split.png</code></span>
-</div>
+![The Condition split node and its config drawer](../../assets/flows/condition-split-node.png)
 
 ## What it does
 
@@ -40,17 +35,7 @@ otherwise the **No** path. Combine multiple conditions with **AND** / **OR**.
 - **Yes** — condition met.
 - **No** — condition not met.
 
-## Example
-
-```
-Condition split:  {{trigger.order_total}}  greater than  1000
-   ├─ Yes ─▶ Template message "VIP thank-you"
-   └─ No  ─▶ Text message "Thanks for your order"
-```
-
 ## Tips
 
 - For **more than two** outcomes, use a **[Condition branch](flows/nodes/condition-branch.md)**.
 - Pick the operator that matches the field type (e.g. case-insensitive text compare for replies).
-
-Next: **[Condition branch »](flows/nodes/condition-branch.md)**

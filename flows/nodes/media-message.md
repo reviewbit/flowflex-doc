@@ -2,12 +2,7 @@
 
 > Send an **image, video, document or audio** file — or share a **location** or **contacts**.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the Media message drawer</strong>
-  <span>Show the media-type dropdown and the file-source (Public URL vs Private assetId) options.</span>
-  <span>Save as <code>assets/flows/node-media-message.png</code></span>
-</div>
+![The Media message node and its config drawer](../../assets/flows/media-message-node.png)
 
 ## What it does
 
@@ -32,7 +27,9 @@ or by `assetId`). It can also send a **location** pin or one or more **contact c
 | **Contacts** | If type = contacts | Up to **10** contacts (name, org, phones, emails, websites, address). |
 
 **Supported file types:** image (jpg, jpeg, png), video (mp4, 3gp), audio (aac, amr, mp3, m4a,
-mp4, ogg), document (pdf, doc, docx, xls, xlsx, ppt, pptx, txt). Max **25 MB**.
+mp4, ogg), document (pdf, doc, docx, xls, xlsx, ppt, pptx, txt). The node validates the file
+**extension** against this list. WhatsApp additionally caps media at roughly **25 MB** (that
+limit is enforced by WhatsApp, not the node).
 
 ### Public vs Private (assetId)
 
@@ -45,20 +42,8 @@ mp4, ogg), document (pdf, doc, docx, xls, xlsx, ppt, pptx, txt). Max **25 MB**.
 
 - **Next step** — the normal continuation (plus **No response** if *Wait for reply* is on).
 
-## Example
-
-```
-Media message
-  Type: document
-  Source: Private file (assetId)
-  Asset ID: {{trigger.invoice}}
-  Caption: "Here's your invoice for order {{trigger.order_id}}"
-```
-
 ## Tips
 
 - For files you generate per-customer, send them via `ff.file(...)` in the
   [SDK](sdk/files.md) and reference the `assetId` here — don't expose a public URL.
 - `assetId`s expire after 48h; upload and fire the event close together.
-
-Next: **[Condition split »](flows/nodes/condition-split.md)**

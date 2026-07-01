@@ -3,12 +3,7 @@
 > An interactive message with **up to 3 quick-reply buttons** — branch on which one the
 > customer taps.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the Button message drawer + the node's per-button handles</strong>
-  <span>Show the buttons being configured and the canvas node with one handle per button.</span>
-  <span>Save as <code>assets/flows/node-button-message.png</code></span>
-</div>
+![The Button message node and its config drawer](../../assets/flows/button-message-node.png)
 
 ## What it does
 
@@ -37,20 +32,9 @@ path, so the flow can branch on exactly which button the customer taps. The node
 - **One handle per button** — wire each to the path that should run when that button is tapped.
 - **No response** — taken if the customer doesn't tap within the wait window.
 
-## Example
-
-```
-Button message  "How was your delivery?"
-  [👍 Great]  ─▶ Text message "Thanks! 🙌"
-  [👎 Bad]    ─▶ Internal alert to support
-  (no response) ─▶ reminder after 2h
-```
-
 ## Tips
 
 - WhatsApp allows **at most 3** quick-reply buttons. Need more options? Use a
   **[List message](flows/nodes/list-message.md)**.
 - Keep titles short (≤20 chars) — longer titles are rejected.
 - Always wire the **No response** path so a silent customer doesn't get stuck.
-
-Next: **[List message »](flows/nodes/list-message.md)**

@@ -7,13 +7,6 @@ drawer** when you click it, and all text fields accept `{{…}}`
 
 The toolbox groups nodes into four categories. Each node has its own page below.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the toolbox with its categories</strong>
-  <span>Show the toolbox expanded so the WhatsApp / Logic / Timing / Data groups are visible.</span>
-  <span>Save as <code>assets/flows/toolbox-categories.png</code></span>
-</div>
-
 ## 💬 WhatsApp message nodes
 
 The nodes that send something to the customer on WhatsApp. Every message node has a
@@ -51,9 +44,7 @@ Branch and repeat — no message is sent.
 | **[API](flows/nodes/api.md)** | Call an external HTTP API and use the response. |
 | **[Save data](flows/nodes/save-data.md)** | Write values into a flow data table. |
 | **[Utils function](flows/nodes/utils-function.md)** | Run a built-in utility (e.g. distance). |
-| **[Webhook](flows/nodes/webhook.md)** <span class="badge soon">Coming soon</span> | Pause for / react to a webhook. |
 | **[Save variable](flows/nodes/save-variable.md)** <span class="badge soon">Coming soon</span> | Store a value under a name. |
-| **[Internal alert](flows/nodes/internal-alert.md)** <span class="badge soon">Coming soon</span> | Notify your team (email / SMS / WhatsApp). |
 
 ## Handles & branching
 
@@ -73,5 +64,3 @@ These exist in the product but are hidden from the toolbox until their execution
 - **Subflow** — run another flow as a step. Hidden while end-to-end execution is completed.
 - **Catalogue message** — send a WhatsApp catalogue. Hidden until catalogue-capable templates
   are available.
-
-Next: **[Text message »](flows/nodes/text-message.md)**

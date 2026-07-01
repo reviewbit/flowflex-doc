@@ -3,12 +3,7 @@
 > A **multi-path** branch — the flow takes the **first** path whose condition matches, or a
 > **default** path if none do.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the Condition branch drawer with multiple paths</strong>
-  <span>Show several paths defined, each with its own condition, plus the default handle.</span>
-  <span>Save as <code>assets/flows/node-condition-branch.png</code></span>
-</div>
+![The Condition branch node and its config drawer](../../assets/flows/condition-branch-node.png)
 
 ## What it does
 
@@ -32,18 +27,7 @@ takes the **default** path.
 - **One handle per path** — wire each to its branch.
 - **Default** — taken when no path matches. Wire it so unmatched cases aren't dropped.
 
-## Example
-
-```
-Condition branch on {{trigger.plan}}
-   ├─ "enterprise" ─▶ Internal alert to sales
-   ├─ "pro"        ─▶ Template message "Pro tips"
-   └─ default      ─▶ Text message "Welcome!"
-```
-
 ## Tips
 
 - **Order matters** — the first matching path wins, so put the most specific conditions first.
 - **Always wire the default** so unexpected values still go somewhere.
-
-Next: **[For loop »](flows/nodes/for-loop.md)**

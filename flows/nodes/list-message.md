@@ -3,12 +3,7 @@
 > An interactive **selectable list** — branch on the row the customer picks. Use it when you
 > need more than 3 options.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the List message drawer (sections + rows)</strong>
-  <span>Show sections with rows configured and the node's per-row handles on the canvas.</span>
-  <span>Save as <code>assets/flows/node-list-message.png</code></span>
-</div>
+![The List message node and its config drawer](../../assets/flows/list-message-node.png)
 
 ## What it does
 
@@ -38,22 +33,8 @@ the row the customer selects. Like buttons, it **waits** for the selection.
 - **One handle per row** — wire each to the path for that selection.
 - **No response** — taken if the customer doesn't pick within the wait window.
 
-## Example
-
-```
-List message  "Choose a service"
-  Section "Support"
-    • Track my order   ─▶ API (fetch order) …
-    • Talk to a human  ─▶ Internal alert
-  Section "Sales"
-    • See new arrivals ─▶ Media message (catalogue image)
-  (no response) ─▶ reminder
-```
-
 ## Tips
 
 - The hard caps are **10 sections** and **10 rows total** — plan groupings accordingly.
-- Use the optional **row description** to clarify each choice.
+- The **row description** is required — use it to clarify each choice.
 - For 3 options or fewer, a **[Button message](flows/nodes/button-message.md)** is simpler.
-
-Next: **[Media message »](flows/nodes/media-message.md)**

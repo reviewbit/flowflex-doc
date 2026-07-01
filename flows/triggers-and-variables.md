@@ -94,5 +94,3 @@ if a plain variable path doesn't match:
 When you attach a file via the [SDK](sdk/files.md) (or upload one via the
 [API](api/assets.md)), the payload key holds an `assetId`. Reference it the same way — e.g.
 `{{trigger.invoice}}` — in a **Media Message** node set to **Private file (assetId)**.
-
-Next: **[Waiting for a reply »](flows/response-wait.md)**

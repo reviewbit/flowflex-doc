@@ -2,12 +2,7 @@
 
 > Write values from the flow into a **data table** for reporting or later use.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the Save data drawer</strong>
-  <span>Show the data-table dropdown and the column → value mapping.</span>
-  <span>Save as <code>assets/flows/node-save-data.png</code></span>
-</div>
+![The Save data node and its config drawer](../../assets/flows/save-data-node.png)
 
 ## What it does
 
@@ -31,19 +26,8 @@ table of rows you can report on later.
 
 - **Next step** — runs after the row is written.
 
-## Example
-
-```
-Save data → table "Delivery feedback"
-  customer   = {{trigger.name}}
-  order_id   = {{trigger.order_id}}
-  rating     = {{button_msg.response.button.id}}
-```
-
 ## Tips
 
 - Create the **data table** (with its columns) first; the node maps to that schema.
 - This is the supported way to persist values today — the **[Save variable](flows/nodes/save-variable.md)**
   node isn't live yet.
-
-Next: **[Utils function »](flows/nodes/utils-function.md)**

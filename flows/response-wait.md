@@ -14,12 +14,6 @@ setup.
      and the reply is captured for downstream nodes.
    - **No reply within the window** → the flow takes the **No response** path.
 
-```
-Text message  (wait: 2 hours)
-   ├─ reply received ─▶ Next step …
-   └─ no response   ─▶ No response …  (e.g. Internal alert, or a reminder)
-```
-
 > If a valid response isn't received within the configured time, the step is marked
 > **"No Response"** and the No-response path runs.
 

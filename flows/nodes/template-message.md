@@ -3,12 +3,7 @@
 > Send a pre-approved WhatsApp **template** — the way to start a conversation outside the
 > 24-hour window.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — the Template message drawer</strong>
-  <span>Show the template picker and the variable-fill fields ({{1}}, {{2}}…).</span>
-  <span>Save as <code>assets/flows/node-template-message.png</code></span>
-</div>
+![The Template message node and its config drawer](../../assets/flows/template-message-node.png)
 
 ## What it does
 
@@ -42,20 +37,8 @@ Templates are the only way to message a customer **outside the 24-hour session w
 - **Next step** — the normal continuation.
 - **No response** — appears when *Wait for reply* is on.
 
-## Example
-
-```
-Template message
-  Template: "order_update" (Utility)
-  {{1}} = {{trigger.name}}
-  {{2}} = {{trigger.order_id}}
-  Header (image) = {{trigger.product_image}}
-```
-
 ## Tips
 
 - If a customer recently messaged you (within 24h), a plain
   **[Text message](flows/nodes/text-message.md)** is simpler — no template needed.
 - Match the **category** to the use case; Marketing templates have stricter delivery rules.
-
-Next: **[Button message »](flows/nodes/button-message.md)**

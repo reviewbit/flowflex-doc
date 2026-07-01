@@ -26,9 +26,7 @@
     - [API](flows/nodes/api.md)
     - [Save data](flows/nodes/save-data.md)
     - [Utils function](flows/nodes/utils-function.md)
-    - [Webhook](flows/nodes/webhook.md)
     - [Save variable](flows/nodes/save-variable.md)
-    - [Internal alert](flows/nodes/internal-alert.md)
   - [Triggers & variables](flows/triggers-and-variables.md)
   - [Waiting for a reply](flows/response-wait.md)
 

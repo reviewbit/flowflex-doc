@@ -881,77 +881,97 @@
          Callout / hint cards (docsify-plugin-flexible-alerts)
          =================================================================== */
       .markdown-section .alert {
-        border: 1px solid var(--ff-border);
-        border-left-width: 3px;
-        border-radius: var(--ff-radius-lg);
-        padding: 14px 16px;
-        margin: 1.4em 0;
-        background: var(--ff-surface);
+        position: relative;
+        border: 0;
+        border-radius: var(--ff-radius-xl);
+        padding: 15px 18px 15px 20px;
+        margin: 1.5em 0;
+        background: var(--ff-surface-muted);
+        box-shadow: inset 0 0 0 1px rgba(16, 24, 40, 0.04);
+        overflow: hidden;
+      }
+      /* Accent rail down the left edge */
+      .markdown-section .alert::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--ff-border-strong);
       }
       .markdown-section .alert p {
         margin: 0;
         color: var(--ff-text-heading);
         font-size: 0.9375rem;
+        line-height: 1.6;
+      }
+      .markdown-section .alert p + p {
+        margin-top: 0.5em;
       }
       .markdown-section .alert p.title {
         font-weight: 600;
-        font-size: 0.8125rem;
-        letter-spacing: 0.02em;
-        margin-bottom: 5px;
+        font-size: 0.875rem;
+        letter-spacing: 0;
+        margin-bottom: 6px;
         display: flex;
         align-items: center;
-        gap: 7px;
+        gap: 8px;
       }
-      /* The plugin's icon font isn't loaded; supply emoji glyphs per type. */
+      /* Flat, crisp SVG icon (masked so it takes the title color) */
       .markdown-section .alert p.title .icon {
-        font-style: normal;
-        font-family: var(--ff-sans);
+        width: 18px;
+        height: 18px;
+        flex: none;
+        background-color: currentColor;
+        -webkit-mask: var(--ff-alert-ico) center / 18px 18px no-repeat;
+        mask: var(--ff-alert-ico) center / 18px 18px no-repeat;
       }
       .markdown-section .alert p.title .icon::before {
-        font-size: 0.95rem;
+        content: none;
       }
       .markdown-section .alert.note {
-        border-left-color: var(--ff-info);
         background: #f5faff;
+      }
+      .markdown-section .alert.note::before {
+        background: var(--ff-info);
       }
       .markdown-section .alert.note p.title {
         color: var(--ff-info);
-      }
-      .markdown-section .alert.note p.title .icon::before {
-        content: "ℹ️";
+        --ff-alert-ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E");
       }
       .markdown-section .alert.tip {
-        border-left-color: var(--ff-primary);
         background: var(--ff-primary-subtle);
+      }
+      .markdown-section .alert.tip::before {
+        background: var(--ff-primary);
       }
       .markdown-section .alert.tip p.title {
         color: var(--ff-primary-pressed);
-      }
-      .markdown-section .alert.tip p.title .icon::before {
-        content: "💡";
+        --ff-alert-ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z'/%3E%3C/svg%3E");
       }
       .markdown-section .alert.warning {
-        border-left-color: var(--ff-warning);
         background: #fffaf2;
+      }
+      .markdown-section .alert.warning::before {
+        background: var(--ff-warning);
       }
       .markdown-section .alert.warning p.title {
         color: #b54708;
-      }
-      .markdown-section .alert.warning p.title .icon::before {
-        content: "⚠️";
+        --ff-alert-ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z'/%3E%3C/svg%3E");
       }
       .markdown-section .alert.attention,
       .markdown-section .alert.danger {
-        border-left-color: var(--ff-error);
         background: #fef4f3;
+      }
+      .markdown-section .alert.attention::before,
+      .markdown-section .alert.danger::before {
+        background: var(--ff-error);
       }
       .markdown-section .alert.attention p.title,
       .markdown-section .alert.danger p.title {
         color: #b42318;
-      }
-      .markdown-section .alert.attention p.title .icon::before,
-      .markdown-section .alert.danger p.title .icon::before {
-        content: "🛑";
+        --ff-alert-ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E");
       }
 
       /* ===================================================================
