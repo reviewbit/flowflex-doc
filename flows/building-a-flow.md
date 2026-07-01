@@ -31,12 +31,7 @@ later node as `{{trigger.*}}` — see [Triggers & variables](flows/triggers-and-
 Find the node you want in the toolbox and **drag it onto the canvas**. Nodes are grouped by
 type (WhatsApp messages, Logic, Timing, Data) so related steps are easy to find.
 
-<div class="img-slot">
-  <span class="img-slot-icon">📷</span>
-  <strong>Screenshot — dragging a node from the toolbox</strong>
-  <span>Show the toolbox open with a node being dragged onto the canvas.</span>
-  <span>Save as <code>assets/flows/add-node.png</code></span>
-</div>
+![Dragging a node from the toolbox onto the canvas](../assets/flows/add-node.gif)
 
 ## 3. Connect nodes with edges
 
