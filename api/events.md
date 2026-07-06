@@ -41,7 +41,7 @@ the flow as `{{trigger.<key>}}` (nested keys with dots, arrays with `[n]`). See
 ### Example
 
 ```bash
-curl -X POST "https://app.flowflex.com/v1/events/ic_abc123" \
+curl -X POST "https://api.flowflex.ai/v1/events/ic_abc123" \
   -u "cik_xxx:cisk_yyy" \
   -H "x-event: order.placed" \
   -H "x-idempotency-key: 8f3c…-uuid" \
@@ -52,7 +52,7 @@ curl -X POST "https://app.flowflex.com/v1/events/ic_abc123" \
 ```ts
 // Node, no SDK
 const auth = "Basic " + Buffer.from("cik_xxx:cisk_yyy").toString("base64");
-await fetch("https://app.flowflex.com/v1/events/ic_abc123", {
+await fetch("https://api.flowflex.ai/v1/events/ic_abc123", {
   method: "POST",
   headers: {
     Authorization: auth,

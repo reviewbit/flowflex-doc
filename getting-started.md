@@ -37,17 +37,17 @@ become `{{trigger.*}}`.
 ### With the SDK (recommended)
 
 ```bash
-npm install @fantacode/flowflex
+npm install flowflex
 ```
 
 ```ts
-import { FlowFlex } from "@fantacode/flowflex";
+import { FlowFlex } from "flowflex";
 
 const ff = new FlowFlex({
   apiKey: process.env.FLOWFLEX_KEY!,         // cik_…
   apiSecret: process.env.FLOWFLEX_SECRET!,   // cisk_…
   integrationCode: "ic_abc123",
-  baseUrl: "https://app.flowflex.com",
+  baseUrl: "https://api.flowflex.ai",
 });
 
 await ff.sendEvent("order.placed", {
@@ -58,7 +58,7 @@ await ff.sendEvent("order.placed", {
 ### With raw HTTP
 
 ```bash
-curl -X POST "https://app.flowflex.com/v1/events/ic_abc123" \
+curl -X POST "https://api.flowflex.ai/v1/events/ic_abc123" \
   -u "cik_xxx:cisk_yyy" \
   -H "x-event: order.placed" \
   -H "x-idempotency-key: $(uuidgen)" \

@@ -30,7 +30,7 @@
   - [Triggers & variables](flows/triggers-and-variables.md)
   - [Waiting for a reply](flows/response-wait.md)
 
-- SDK
+- SDK (JavaScript & Python)
 
   - [Overview & install](sdk/overview.md)
   - [File attachments](sdk/files.md)

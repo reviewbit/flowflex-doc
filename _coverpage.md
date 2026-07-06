@@ -5,7 +5,7 @@
 > Build WhatsApp automation flows, fire events from your app, and attach files — via the SDK or the REST API.
 
 - 🧩 **Flows** — visual builder: triggers, messages, logic, delays
-- 📦 **SDK** — `@fantacode/flowflex` for Node & the browser
+- 📦 **SDK** — `flowflex` for Node & the browser
 - 🔌 **REST API** — fire custom-integration events directly
 
 [Get started](getting-started.md)

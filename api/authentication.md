@@ -6,7 +6,7 @@ the [SDK](sdk/overview.md) is just a convenience wrapper over these endpoints.
 ## Base URL
 
 ```
-https://app.flowflex.com
+https://api.flowflex.ai
 ```
 
 Use your own FlowFlex host if self-hosted. All endpoints below are under `/v1`.
@@ -33,7 +33,7 @@ Authorization: Basic base64("cik_xxx:cisk_yyy")
 With `curl`, `-u` builds the header for you:
 
 ```bash
-curl -u "cik_xxx:cisk_yyy" https://app.flowflex.com/v1/...
+curl -u "cik_xxx:cisk_yyy" https://api.flowflex.ai/v1/...
 ```
 
 Manually in Node:

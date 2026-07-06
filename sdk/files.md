@@ -4,6 +4,10 @@ Wrap any file in `ff.file(...)` and drop it into the payload. The SDK uploads it
 presigned URL and replaces it with an opaque `assetId` before the event is sent. **The
 file bytes go straight to storage — they never pass through the FlowFlex app server.**
 
+<!-- tabs:start -->
+
+#### **JavaScript**
+
 ```ts
 await ff.sendEvent("invoice.created", {
   payload: {
@@ -12,6 +16,17 @@ await ff.sendEvent("invoice.created", {
   },
 });
 ```
+
+#### **Python**
+
+```python
+ff.send_event("invoice.created", payload={
+    "invoice": ff.file("./invoice.pdf"),  # ← becomes "asset_…" on the wire
+    "customer_id": "cust_123",
+})
+```
+
+<!-- tabs:end -->
 
 Then in your flow's **Media Message** node:
 
@@ -25,6 +40,10 @@ Then in your flow's **Media Message** node:
 
 Put a `file()` anywhere in the payload — top-level, nested, or in arrays. The SDK uploads
 them **all in parallel** and swaps each for its `assetId`. Reference each by its path:
+
+<!-- tabs:start -->
+
+#### **JavaScript**
 
 ```ts
 await ff.sendEvent("order.shipped", {
@@ -41,8 +60,29 @@ await ff.sendEvent("order.shipped", {
 `result.uploadedAssets` maps each payload path to its assetId, e.g.
 `{ "invoice": "asset_a", "gallery[0]": "asset_c", "order.receipt": "asset_e" }`.
 
+#### **Python**
+
+```python
+ff.send_event("order.shipped", payload={
+    "invoice": ff.file("./invoice.pdf"),                    # {{trigger.invoice}}
+    "label":   ff.file("./label.png"),                      # {{trigger.label}}
+    "gallery": [ff.file("./a.jpg"), ff.file("./b.jpg")],    # {{trigger.gallery[0]}}, {{trigger.gallery[1]}}
+    "order":   {"receipt": ff.file("./receipt.pdf")},       # {{trigger.order.receipt}}
+    "note":    "non-file values pass through untouched",
+})
+```
+
+`result.uploaded_assets` maps each payload path to its assetId, e.g.
+`{"invoice": "asset_a", "gallery[0]": "asset_c", "order.receipt": "asset_e"}`.
+
+<!-- tabs:end -->
+
 **Reusing one file across nodes** — pass the *same* `file()` instance in multiple places
 and it's uploaded once, same `assetId` everywhere:
+
+<!-- tabs:start -->
+
+#### **JavaScript**
 
 ```ts
 const banner = ff.file("./banner.png");
@@ -51,10 +91,25 @@ await ff.sendEvent("promo.sent", {
 });
 ```
 
+#### **Python**
+
+```python
+banner = ff.file("./banner.png")
+ff.send_event("promo.sent", payload={
+    "header": banner, "footer": banner,  # one upload, same assetId
+})
+```
+
+<!-- tabs:end -->
+
 ## Supplying bytes other ways
 
-`file()` accepts a path (Node), a `Buffer`/`Uint8Array`, or a `Blob`/`File` (browser). When
-the type can't be inferred, pass `filename` and `mime`:
+`file()` accepts a file path, raw bytes, or a file-like object. When the type can't be
+inferred, pass `filename` and `mime`:
+
+<!-- tabs:start -->
+
+#### **JavaScript**
 
 ```ts
 ff.file(pdfBuffer, { filename: "invoice.pdf", mime: "application/pdf" });
@@ -64,6 +119,26 @@ ff.file(f); // name + type read from the File
 
 ff.file("./tmp-7f3a.pdf", { filename: "Invoice-2026.pdf" }); // override stored name
 ```
+
+Source types: path (string), `Buffer`/`Uint8Array`, or `Blob`/`File` (browser).
+
+#### **Python**
+
+```python
+# Raw bytes
+ff.file(pdf_bytes, filename="invoice.pdf", mime="application/pdf")
+
+# An open file object
+with open("invoice.pdf", "rb") as fh:
+    ff.send_event("invoice.created", payload={"invoice": ff.file(fh)})
+
+# Override the stored filename
+ff.file("./tmp-7f3a.pdf", filename="Invoice-2026.pdf")
+```
+
+Source types: path (`str` or `pathlib.Path`), `bytes`/`bytearray`, or any binary file-like object.
+
+<!-- tabs:end -->
 
 **Allowed types:** PDF, DOC(X), XLS(X), PPT(X), TXT, JPEG, PNG, MP4, 3GPP, AAC, AMR, MP3,
 OGG. **Max size:** 25 MB.
@@ -76,7 +151,7 @@ Files go to **private storage** only the FlowFlex backend can read — not a pub
 
 | Phase | Duration |
 | --- | --- |
-| Presigned upload URL valid | **2 hours** from `createUploadUrl` |
+| Presigned upload URL valid | **2 hours** from `createUploadUrl` / `create_upload_url` |
 | File kept in storage | **48 hours** from upload |
 | After 48 hours | File **deleted** + record removed (hourly cleanup job) |
 
@@ -84,9 +159,13 @@ What this means for you:
 
 - **Don't store `assetId` long-term** expecting to reuse it — it expires in 48h.
 - **Each send should get a fresh `assetId`** via a new `ff.file(...)`. The SDK handles the
-  upload automatically when you call `sendEvent`.
+  upload automatically when you call `sendEvent` / `send_event`.
 - Firing the event more than 48h after upload fails with `ASSET_FILE_MISSING`. Keep the
   send close to the upload.
+
+<!-- tabs:start -->
+
+#### **JavaScript**
 
 ```ts
 // ✅ Upload + fire together — always fresh
@@ -97,14 +176,13 @@ await ff.sendEvent("invoice.created", {
 // ❌ Don't stash an assetId and reuse it hours later — it's gone after 48h
 ```
 
-## How it works under the hood
+#### **Python**
 
-```
-ff.sendEvent("invoice.created", { payload: { invoice: file("invoice.pdf") } })
-   ├─ 1. POST /v1/assets/upload-url   → { assetId, uploadUrl }
-   ├─ 2. PUT  <uploadUrl>  (bytes straight to private storage)
-   └─ 3. POST /v1/events/<code>  with { invoice: "asset_…" }
-            └─ flow runs; media node resolves assetId → WhatsApp media at send time
+```python
+# ✅ Upload + fire together — always fresh
+ff.send_event("invoice.created", payload={"invoice": ff.file("./invoice.pdf")})
+
+# ❌ Don't store assetId and reuse it hours later — it's gone after 48h
 ```
 
-The same three steps are documented for raw HTTP in [API → Upload assets](api/assets.md).
+<!-- tabs:end -->

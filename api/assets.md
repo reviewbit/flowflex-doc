@@ -62,7 +62,7 @@ ID → `{{trigger.invoice}}`**.
 
 ```bash
 # 1. get a presigned URL
-RESP=$(curl -s -X POST "https://app.flowflex.com/v1/assets/upload-url" \
+RESP=$(curl -s -X POST "https://api.flowflex.ai/v1/assets/upload-url" \
   -u "cik_xxx:cisk_yyy" -H "Content-Type: application/json" \
   -d '{ "filename": "invoice.pdf", "mime": "application/pdf" }')
 ASSET_ID=$(echo "$RESP" | jq -r .assetId)
@@ -73,7 +73,7 @@ curl -s -X PUT "$UPLOAD_URL" \
   -H "Content-Type: application/pdf" --data-binary @invoice.pdf
 
 # 3. fire the event referencing the assetId
-curl -s -X POST "https://app.flowflex.com/v1/events/ic_abc123" \
+curl -s -X POST "https://api.flowflex.ai/v1/events/ic_abc123" \
   -u "cik_xxx:cisk_yyy" \
   -H "x-event: invoice.created" -H "x-idempotency-key: $(uuidgen)" \
   -H "Content-Type: application/json" \

@@ -12,7 +12,7 @@ There are three things to know about, and a page for each:
 | | What it is | Start here |
 | --- | --- | --- |
 | **Flows** | The visual automations themselves — triggers, message nodes, logic, delays. | [Flows → Overview](flows/overview.md) |
-| **SDK** | `@fantacode/flowflex` — a Node/browser library to fire events and attach files without touching presigned URLs. | [SDK → Overview](sdk/overview.md) |
+| **SDK** | `flowflex` — a Node/browser library to fire events and attach files without touching presigned URLs. | [SDK → Overview](sdk/overview.md) |
 | **REST API** | The raw HTTP endpoints the SDK calls — use these from any language. | [API → Authentication](api/authentication.md) |
 
 ## How it fits together
