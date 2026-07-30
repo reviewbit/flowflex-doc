@@ -20,6 +20,7 @@ The nodes that send something to the customer on WhatsApp. Every message node ha
 | **[Button message](flows/nodes/button-message.md)** | Up to 3 quick-reply buttons; branches per tap. |
 | **[List message](flows/nodes/list-message.md)** | A selectable list; branches per row. |
 | **[Media message](flows/nodes/media-message.md)** | Image, video, document, audio, location or contacts. |
+| **[Link button](flows/nodes/link.md)** | A message with one button that opens a URL. |
 
 ## 🔀 Logic nodes
 

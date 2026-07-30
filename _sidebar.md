@@ -16,6 +16,7 @@
     - [Button message](flows/nodes/button-message.md)
     - [List message](flows/nodes/list-message.md)
     - [Media message](flows/nodes/media-message.md)
+    - [Link button](flows/nodes/link.md)
   - **Logic nodes**
     - [Condition split](flows/nodes/condition-split.md)
     - [Condition branch](flows/nodes/condition-branch.md)
