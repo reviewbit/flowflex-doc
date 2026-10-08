@@ -19,7 +19,7 @@ Trigger ──▶ Text message ──▶ Wait for reply ──▶ Condition ─�
 | **Nodes** | The steps that run: messages, logic, delays, data actions. See the [Node reference](flows/nodes.md). |
 | **Edges** | The arrows connecting nodes — they decide the order and the branches. |
 | **Variables** | `{{trigger.*}}` from the event, plus values captured from earlier nodes (like a customer's reply). See [Triggers & variables](flows/triggers-and-variables.md). |
-| **Handles** | The little connection points on a node. Most nodes have a single **Next step**; interactive and logic nodes have several (one per button, list row, or condition path), plus a **No response** handle when waiting for a reply. |
+| **Handles** | The little connection points on a node. Most nodes have a single **Next step**; interactive and logic nodes have several (one per button, list row, condition path, or API outcome), plus a **No response** handle when waiting for a reply. |
 
 ## How an event becomes a running flow
 
@@ -43,9 +43,17 @@ Trigger ──▶ Text message ──▶ Wait for reply ──▶ Condition ─�
 
 ## Good to know
 
-- **Test before you ship.** Use the flow's **Test** action (on localhost builds) to run it
-  once against a sample payload without waiting for a real event.
+- **Learn by doing.** Open [Learn flow builder](flows/learning-the-builder.md) for a demo and practice without live messages.
+- **Version your changes.** Save creates a draft; Save and publish makes that version live. See [Versions](flows/versions-and-portability.md).
+- **Check before you publish.** Review message text, destination numbers, and every branch. Use the learning lesson to practice the basic steps.
 - **Personalize everything.** Any text field accepts `{{…}}` variables via the **Insert
   Variable** picker — it reads the fields from your trigger's sample payload.
 - **Branching is explicit.** Each outgoing path is a separate edge from a node handle, so
   what you wire on the canvas is exactly what runs.
+
+
+## Finish every path
+
+Every flow requires exactly one Trigger and one End. Connect every rendered output, including No response and API failure outputs, to another step or End. Unconnected outputs are validation errors.
+
+The current toolbox also includes [audience actions](flows/nodes/audience-actions.md), [Repeat until](flows/nodes/repeat-until.md), and [Identify Places](flows/nodes/utils-function.md).

@@ -53,14 +53,13 @@ what the event actually sends.
 
 ## Using earlier nodes' output
 
-Nodes expose their output to later nodes via the same `{{…}}` syntax. The path starts with
-the **node's title** (auto-assigned or renamed on the canvas), then the property:
+Nodes expose their output to later nodes via the same `{{…}}` syntax. Use the node's stable **Variable reference**, shown in its drawer, followed by the property. Changing the display label does not change this reference:
 
 | Node | Example reference |
 | --- | --- |
-| **Message reply** (text, template, button, list) | `{{nodeName.response}}` |
-| **API node response** | `{{nodeName.data}}` (or a nested path into the JSON body) |
-| **Utils function result** | `{{nodeName.result}}` |
+| **Message reply** (text, template, button, list) | `{{nodeReference.response}}` |
+| **API node response** | `{{nodeReference.data}}` (or a nested path into the JSON body) |
+| **Utils function result** | Select the function-specific output through Insert Variable. |
 
 Use the **Insert Variable** picker after placing a node — it lists all upstream nodes' available outputs. See [Waiting for a reply](flows/response-wait.md) for more on captured message replies.
 
@@ -77,8 +76,7 @@ These are only available **between** a Start loop and End loop node. See [For lo
 
 ## JavaScript expressions
 
-Inside `{{…}}` you can write simple JavaScript expressions — the resolver evaluates them
-if a plain variable path doesn't match:
+You can use simple expressions to calculate a value or combine text:
 
 ```
 {{trigger.price * 1.18}}          → price with 18% tax
@@ -94,3 +92,23 @@ if a plain variable path doesn't match:
 When you attach a file via the [SDK](sdk/files.md) (or upload one via the
 [API](api/assets.md)), the payload key holds an `assetId`. Reference it the same way — e.g.
 `{{trigger.invoice}}` — in a **Media Message** node set to **Private file (assetId)**.
+
+
+## WhatsApp Incoming Chat fields
+
+For a flow started by **WhatsApp Incoming Chat**, select:
+
+- **Trigger → from** for the message's Destination number.
+- **Trigger → name** to greet the customer by name.
+- **Trigger → text** to check what the customer said.
+
+For attachments or list selections, choose the relevant message details in Insert Variable. Only use fields that apply to the message you expect.
+
+## Additional outputs
+
+- For API results, select the returned information from your saved response examples. Use it to send an order status or decide the next step.
+- Save variable stores values under the configured variable names, for example `{{customer_name}}`.
+- Repeat until exposes `iterations`, `conditionMet`, and `exhausted` after End loop.
+- Identify Places exposes confirmed entities, count, error, and suggestions.
+
+Choose these values through Insert Variable to use them in later steps.

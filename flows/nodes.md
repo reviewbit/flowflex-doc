@@ -1,66 +1,74 @@
 # Node reference
 
-Nodes are the steps in a flow. Drag them from the toolbox onto the canvas and connect them
-with edges — see [Building a flow](flows/building-a-flow.md). Every node opens a **config
-drawer** when you click it, and all text fields accept `{{…}}`
-[variables](flows/triggers-and-variables.md).
+Add nodes from the toolbox or a source handle's next-step picker, configure them in a drawer, and connect their outputs.
 
-The toolbox groups nodes into four categories. Each node has its own page below.
+The toolbox groups nodes into **WhatsApp Blocks**, **Logic Blocks**, **Data Blocks**, **Audience Blocks**, and **Other Blocks**.
 
-## 💬 WhatsApp message nodes
+## WhatsApp Blocks
 
-The nodes that send something to the customer on WhatsApp. Every message node has a
-**Destination number** field and can optionally **wait for a reply**
-([details](flows/response-wait.md)).
-
-| Node | What it sends |
+| Node | Purpose |
 | --- | --- |
-| **[Text message](flows/nodes/text-message.md)** | A free-form text message (in-session). |
-| **[Template message](flows/nodes/template-message.md)** | A pre-approved template (works outside the 24h window). |
-| **[Button message](flows/nodes/button-message.md)** | Up to 3 quick-reply buttons; branches per tap. |
-| **[List message](flows/nodes/list-message.md)** | A selectable list; branches per row. |
-| **[Media message](flows/nodes/media-message.md)** | Image, video, document, audio, location or contacts. |
+| [Text message](flows/nodes/text-message.md) | Send free-form text. |
+| [Template message](flows/nodes/template-message.md) | Send an approved template. |
+| [Button message](flows/nodes/button-message.md) | Send quick replies and branch per button. |
+| [List message](flows/nodes/list-message.md) | Send choices and branch per row. |
+| [Media message](flows/nodes/media-message.md) | Send media or attachments. |
+| [Send location](flows/nodes/send-location.md) | Send a location pin. |
+| [Location request](flows/nodes/location-request.md) | Ask the customer to share a location. |
+| [Link button](flows/nodes/link-button.md) | Open a URL from a message button. |
 
-## 🔀 Logic nodes
+See [Waiting for a reply](flows/response-wait.md) for nodes with response-wait settings.
 
-Branch and repeat — no message is sent.
+## Logic Blocks
 
-| Node | What it does |
+| Node | Purpose |
 | --- | --- |
-| **[Condition split](flows/nodes/condition-split.md)** | A Yes / No branch on a condition. |
-| **[Condition branch](flows/nodes/condition-branch.md)** | A multi-path branch (first match wins, plus default). |
-| **[For loop](flows/nodes/for-loop.md)** | Repeat steps over each item in an array. |
+| [Condition split](flows/nodes/condition-split.md) | Yes/No routing. |
+| [Condition branch](flows/nodes/condition-branch.md) | Named condition paths. |
+| [Start loop / End loop](flows/nodes/for-loop.md) | Repeat a sequence for an array. |
+| [Repeat until](flows/nodes/repeat-until.md) | Repeat until a condition is met or the attempt limit is reached. |
 
-## ⏱️ Timing nodes
+Condition split and Condition branch also support [live contact-tag conditions](flows/nodes/contact-tag-conditions.md).
 
-| Node | What it does |
+## Data Blocks
+
+| Node | Purpose |
 | --- | --- |
-| **[Set time delay](flows/nodes/set-time-delay.md)** | Pause the flow (duration, time of day, day of week, or dynamic). |
+| [API](flows/nodes/api.md) | Call HTTP APIs, configure retries, and branch on response outcomes. |
+| [Save data](flows/nodes/save-data.md) | Write rows to a flow data table. |
 
-## 🔌 Data & integration nodes
+## Audience Blocks
 
-| Node | What it does |
+See [Audience actions](flows/nodes/audience-actions.md) for setup and behavior.
+
+| Node | Purpose |
 | --- | --- |
-| **[API](flows/nodes/api.md)** | Call an external HTTP API and use the response. |
-| **[Save data](flows/nodes/save-data.md)** | Write values into a flow data table. |
-| **[Utils function](flows/nodes/utils-function.md)** | Run a built-in utility (e.g. distance). |
-| **[Save variable](flows/nodes/save-variable.md)** <span class="badge soon">Coming soon</span> | Store a value under a name. |
+| **Save tag** | Add or remove customer tags. |
+| **Save audience** | Create or update a contact's profile fields. |
+| **Add Note** | Save a private conversation note. |
+| **Assign agent** | Hand the conversation to a specific agent, round robin, or least busy agent. |
 
-## Handles & branching
+## Other Blocks
 
-The little dots on a node are its **handles** — drag from one to the next node to draw an
-edge.
+| Node | Purpose |
+| --- | --- |
+| [Set time delay](flows/nodes/set-time-delay.md) | Pause before continuing. |
+| [Save variable](flows/nodes/save-variable.md) | Store named values for this run. |
+| [Utils function](flows/nodes/utils-function.md) | Calculate distance or identify places in text. |
 
-- Most nodes have a single **Next step** handle.
-- **Button / List** nodes have one handle per button/row, plus a **No response** handle
-  (when waiting).
-- **Condition** nodes have a handle per path (Yes/No, or each branch + default).
-- A node only follows the edges you draw — an unconnected handle simply ends that path.
+## Structural nodes and outputs
 
-## Hidden / not in the toolbox yet
+Every flow has one **Trigger** and one **[End](flows/nodes/end.md)**. These are structural nodes rather than toolbox actions.
 
-These exist in the product but are hidden from the toolbox until their execution is finished:
+Every rendered output must be connected to another node or End:
 
-- **Subflow** — run another flow as a step. Hidden while end-to-end execution is completed.
-- **Catalogue message** — send a WhatsApp catalogue. Hidden until catalogue-capable templates
-  are available.
+- **Next step** for ordinary continuation.
+- Per-button, per-row, or condition outputs for branches.
+- **No response** when response waiting is enabled.
+- **Success**, **Non-2xx response**, and **Request failed** for new API nodes.
+
+An unconnected output is a validation error. See [Building a flow](flows/building-a-flow.md).
+
+## Hidden nodes
+
+Subflow and Catalogue message remain hidden and disabled for new creation. Use the available toolbox options when building a new flow.

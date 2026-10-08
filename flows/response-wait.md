@@ -6,8 +6,8 @@ setup.
 
 ## How it works
 
-1. Enable **Wait for specific time** on a message node (Text, Media, Template, Button, or
-   List).
+1. Enable **Wait for specific time** on a message node (Text, Media, Template, Button,
+   List, or Location request).
 2. Set the **Unit** and **Value** (e.g. 2 hours) — the maximum time to wait for a reply.
 3. The node sends the message, then waits:
    - **A reply arrives in time** → the flow continues down the normal **Next step** path,
@@ -66,3 +66,10 @@ picker, which lists the message node's captured reply alongside the trigger fiel
   pause; use **Wait for specific time** when you specifically want the customer's reply.
 
 See the [Node reference](flows/nodes.md) for which nodes support waiting.
+
+
+## Reply matching
+
+A Button or List message continues when the customer selects one of its choices. A Location request waits for a shared location. Opening a Link button URL or reacting to a message does not count as an answer.
+
+Choose the captured reply through Insert Variable when configuring a later step.

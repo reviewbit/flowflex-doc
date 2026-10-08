@@ -39,3 +39,8 @@ otherwise the **No** path. Combine multiple conditions with **AND** / **OR**.
 
 - For **more than two** outcomes, use a **[Condition branch](flows/nodes/condition-branch.md)**.
 - Pick the operator that matches the field type (e.g. case-insensitive text compare for replies).
+
+
+## Live contact tags
+
+Choose Contact tags to use Has any, Has all, or Has none with the current contact. See [Contact-tag conditions](flows/nodes/contact-tag-conditions.md).

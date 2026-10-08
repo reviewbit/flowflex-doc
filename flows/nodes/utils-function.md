@@ -1,32 +1,34 @@
 # Utils function
 
-> Run a built-in utility and use its result to branch or personalize downstream.
+> Run a built-in helper and use its output in later steps.
 
 ![The Utils function node and its config drawer](../../assets/flows/util-node.png)
 
-## What it does
+Choose **Calculate distance** or **Identify Places**, configure inputs, and connect **Next step**.
 
-Runs a ready-made helper and exposes its result to later nodes. Today the available function
-is **Calculate distance**.
+## Calculate distance
 
-## Available functions
+Set **Source latitude**, **Source longitude**, and **Choose a target location** (a configured branch). Coordinates can come from variables, for example a captured customer location.
 
-### Calculate distance
-Computes the distance between a **source** location and a **target** location (one of your
-configured branches). Use the result to branch on proximity — e.g. route a customer to the
-nearest store.
+Select the result through Insert Variable and use a [Condition split](flows/nodes/condition-split.md) to route on proximity.
 
-| Field | Notes |
+## Identify Places
+
+Recognize places mentioned in customer text, for example a captured reply.
+
+| Setting | Notes |
 | --- | --- |
-| **Function** | Select **Calculate distance**. |
-| **Source latitude / longitude** | The source point — usually `{{variable}}`s from the payload. |
-| **Target branch** | Pick a branch; its stored location is used as the target. |
+| **Text** | Required; literal or variable input, up to 2,000 characters. |
+| **Entity type** | Country, State, or City in the current picker. |
+| **Language** | Any, English, Arabic, Hindi, Urdu, Malayalam, Tamil, Spanish, or Russian. |
+| **Country filter** | Optional two-letter ISO code, such as IN or AE, or a variable containing one. Leave blank to search all countries. |
 
-## Handles
+Use **Insert Variable** to select the information you need from the result:
 
-- **Next step** — runs after the result is computed; the distance is available downstream.
+| Output | Meaning |
+| --- | --- |
+| `entities` | Confirmed matches. |
+| `count` | Number of confirmed matches. |
+| `suggestions` | Ambiguous or approximate candidates. |
 
-## Tips
-
-- Combine with a **[Condition split](flows/nodes/condition-split.md)** to act on the distance.
-- More utility functions may be added over time; the picker lists what's available.
+For example, identify a city from the customer's reply, then use its name in a follow-up message. If no place is confirmed or several suggestions are returned, ask the customer to clarify before continuing.

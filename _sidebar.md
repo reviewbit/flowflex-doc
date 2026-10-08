@@ -9,6 +9,8 @@
 
   - [Overview](flows/overview.md)
   - [Building a flow](flows/building-a-flow.md)
+  - [Learn flow builder](flows/learning-the-builder.md)
+  - [Versions & JSON files](flows/versions-and-portability.md)
   - [Node reference](flows/nodes.md)
   - **WhatsApp nodes**
     - [Text message](flows/nodes/text-message.md)
@@ -16,10 +18,16 @@
     - [Button message](flows/nodes/button-message.md)
     - [List message](flows/nodes/list-message.md)
     - [Media message](flows/nodes/media-message.md)
+    - [Send location](flows/nodes/send-location.md)
+    - [Location request](flows/nodes/location-request.md)
+    - [Link button](flows/nodes/link-button.md)
   - **Logic nodes**
     - [Condition split](flows/nodes/condition-split.md)
     - [Condition branch](flows/nodes/condition-branch.md)
     - [For loop](flows/nodes/for-loop.md)
+    - [Repeat until](flows/nodes/repeat-until.md)
+    - [Contact-tag conditions](flows/nodes/contact-tag-conditions.md)
+    - [End](flows/nodes/end.md)
   - **Timing nodes**
     - [Set time delay](flows/nodes/set-time-delay.md)
   - **Data & integration nodes**
@@ -27,6 +35,11 @@
     - [Save data](flows/nodes/save-data.md)
     - [Utils function](flows/nodes/utils-function.md)
     - [Save variable](flows/nodes/save-variable.md)
+  - **Audience Blocks**
+    - [Save tag](flows/nodes/audience-actions.md#save-tag)
+    - [Save audience](flows/nodes/audience-actions.md#save-audience)
+    - [Add Note](flows/nodes/audience-actions.md#add-note)
+    - [Assign agent](flows/nodes/audience-actions.md#assign-agent)
   - [Triggers & variables](flows/triggers-and-variables.md)
   - [Waiting for a reply](flows/response-wait.md)
 
