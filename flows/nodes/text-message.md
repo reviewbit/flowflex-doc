@@ -1,43 +1,31 @@
-# Text message
+# Text message: send a reply or ask a question
 
-> Send a free-form WhatsApp text message — the most common node in a flow.
+Use Text message for a greeting, a simple answer, or a question during an active WhatsApp conversation. Use an approved [Template message](flows/nodes/template-message.md) when messaging outside the reply window.
 
-![The Text message node and its config drawer](../../assets/flows/text-message-node.png)
+## Send a personalized greeting
 
-## What it does
+1. Add **Text message** from WhatsApp Blocks and open it.
+2. Set a Node label, such as “Welcome”.
+3. In **Destination number**, open Insert Variable → Trigger → from for an incoming-chat flow.
+4. In **Text message**, type “Hi ”, insert Trigger → name, then type “, how can we help?”
+5. Review Live WhatsApp preview.
+6. Click **Save changes** and connect Next step to the next action or End.
 
-Sends a plain WhatsApp text message to the customer. The body is free-form, supports
-variables, and can be formatted. Optionally, the node can **wait for the customer's reply**
-before the flow continues.
+For a different trigger, choose its customer number and name fields. See [Select and insert variables](flows/using-variables.md).
 
-> [!NOTE]
-> Free-form text can only be sent **inside the 24-hour customer-service window** (i.e. within
-> 24 hours of the customer's last message). To start a conversation outside that window, use a
-> **[Template message](flows/nodes/template-message.md)** instead.
+## Ask a question and use the answer
 
-## When to use
+Write your question, then enable **Wait for specific time** and choose a Unit and Value. If the answer must be an email, number, or specific message type, enable **Check format** and configure the invalid-response text.
 
-- Confirmations, updates, reminders, and replies **during an active conversation**.
-- Any message where you want plain text rather than buttons, a list, or media.
-- When you want to **wait for a reply** and branch on whether one arrives.
+Connect Next step to the action that uses the reply and No response to a fallback. Follow [Wait for and validate a reply](flows/response-wait.md) for a complete email-collection example.
 
-## Settings
+## Settings to check
 
-| Field | Required | Notes |
-| --- | --- | --- |
-| **Destination number** | Yes | The recipient, with country code — usually a variable like `{{trigger.phone}}`. |
-| **Message body** | Yes | Free-form text. Supports **bold**, _italic_, ~strike~ and `{{variables}}` via **Insert Variable**. |
-| **Wait for specific time** | No | Toggle on to pause for a reply. Set a **unit** (seconds / minutes / hours / days) and **value**. |
-| **Check format** | No | Only available when *Wait for specific time* is on. Require the reply to match a specific type — see [Waiting for a reply](flows/response-wait.md). |
-| **Invalid response text** | No | Message sent back when the customer's reply fails format validation. Defaults to "Please provide a valid response". |
+| Field | Purpose |
+| --- | --- |
+| Destination number | The customer's number, including country code. |
+| Text message | The message content; supports variables and up to 4,096 characters. |
+| Internal description | Optional explanation for your team. |
+| Wait for specific time | Pause for an answer when needed. |
 
-## Handles
-
-- **Next step** — the normal continuation.
-- **No response** — appears when *Wait for specific time* is on; taken if no reply arrives in the window.
-
-## Tips
-
-- Keep the **destination number** a variable so the same flow works for every customer.
-- Use **Insert Variable** instead of typing `{{…}}` by hand — it guarantees a valid path.
-- Wire the **No response** path for anything important. See [Waiting for a reply](flows/response-wait.md).
+Keep the message clear and check personalized values fit within the limit. For delivery problems, see [WhatsApp troubleshooting](flows/troubleshooting.md#a-message-does-not-arrive).

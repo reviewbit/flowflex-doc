@@ -1,40 +1,27 @@
-# Button message
+# Button message: offer up to three choices
 
-> An interactive message with **up to 3 quick-reply buttons** — branch on which one the
-> customer taps.
+Use a Button message when the customer should choose between a few answers, such as “Track order”, “Talk to team”, and “Finish”. Each reply button leads to its own path.
 
-![The Button message node and its config drawer](../../assets/flows/button-message-node.png)
+## Build a small support menu
 
-## What it does
+1. Add **Button message** and open it.
+2. Set Destination number using the customer's phone variable.
+3. Write the message, for example “How can we help?”
+4. Add two or three reply buttons and give each a clear label.
+5. If needed, add the optional header or footer shown in the form.
+6. Set the response-wait window if you need a timed fallback.
+7. Review the preview and click **Save changes**.
+8. Connect each button output to its action. For example, Track order → API; Talk to team → Assign agent; Finish → End.
+9. Connect No response when it is displayed.
 
-Sends a message with **1–3 tappable quick-reply buttons**. Each button is its own outgoing
-path, so the flow can branch on exactly which button the customer taps. The node inherently
-**waits** for the tap.
+## Limits and content
 
-## When to use
+Use 1–3 buttons, each with a label up to 20 characters. The message body supports up to 1,024 characters. Optional text headers and footers support up to 60 characters.
 
-- Simple menus and yes/no/maybe style choices.
-- Any point where you want the customer to **choose**, and you branch on the choice.
+If the header offers a file source, follow [Choose files and media](flows/files-and-media.md). Use [Insert Variable](flows/using-variables.md) for personalized body content.
 
-## Settings
+## Before publishing
 
-| Field | Required | Notes |
-| --- | --- | --- |
-| **Destination number** | Yes | Recipient with country code. |
-| **Header** | No | Type: **none, text, image, video, or document**. |
-| **Body** | Yes | The message text (supports variables and formatting). |
-| **Footer** | No | Small text under the body. |
-| **Buttons** | Yes (1–3) | Each button has a **title** (max **20** characters). IDs are assigned automatically (`BUTTON_1…3`). |
-| **Wait for specific time** | No | Set how long to wait for a tap before the **No response** path is taken. |
+Check every choice is connected and the labels explain what happens next. Use [List message](flows/nodes/list-message.md) for more than three choices, or [Link button](flows/nodes/link-button.md) for opening a website.
 
-## Handles
-
-- **One handle per button** — wire each to the path that should run when that button is tapped.
-- **No response** — taken if the customer doesn't tap within the wait window.
-
-## Tips
-
-- WhatsApp allows **at most 3** quick-reply buttons. Need more options? Use a
-  **[List message](flows/nodes/list-message.md)**.
-- Keep titles short (≤20 chars) — longer titles are rejected.
-- Always wire the **No response** path so a silent customer doesn't get stuck.
+See [Response waiting](flows/response-wait.md) and [WhatsApp troubleshooting](flows/troubleshooting.md).

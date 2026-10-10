@@ -1,51 +1,39 @@
-# For loop
+# Start loop and End loop: repeat over a list
 
-> Repeat a set of steps — over each item in a list, or a fixed number of times.
+Use these two nodes to repeat a sequence for every item in an order or every result in an API list.
 
-![Start loop and End loop nodes on the canvas](../../assets/flows/loop-nodes.png)
+## Example: send each ordered item's name
 
-## What it does
+The trigger contains this list:
 
-Runs the steps placed **between a Start loop and an End loop** node repeatedly — once per item
-in a list, or a fixed number of times. Inside the loop, the current item and position are
-available as variables.
+```json
+{
+  "items": [
+    { "name": "Notebook", "quantity": 2 },
+    { "name": "Pen", "quantity": 1 }
+  ]
+}
+```
 
-## When to use
+1. Add **Start loop** from Logic Blocks and open it.
+2. In **Specify list**, open Insert Variable and select Trigger → items as the complete list.
+3. Optionally enable **Limit the loop** and set a maximum number of items to process.
+4. Save changes and add the action to repeat, for example a Text message.
+5. In that message, choose the Start loop's current item fields through Insert Variable rather than selecting the trigger's first item.
+6. Add **End loop**.
+7. Connect Start loop → repeated action → End loop.
+8. Connect End loop → the action that follows all items, or End.
 
-- Sending a message **per item** in an order (`{{trigger.items}}`).
-- Repeating an action a set number of times.
+The message runs once for Notebook and once for Pen. A message after End loop runs once after the whole list.
 
-## How it works on the canvas
+## Current item and position
 
-A loop requires **two** nodes placed on the canvas:
+Within the loop, the current item is available as `loop.item` and its position as `loop.index`, starting at zero. For this sample, `{{loop.item.name}}` is Notebook on the first pass and Pen on the second.
 
-1. **Start loop** — configure which list to iterate over; nodes after this are the loop body.
-2. **End loop** — marks the boundary; when a loop body completes, execution jumps back to Start loop for the next item.
+Use [the variable guide](flows/using-variables.md#choose-one-item-or-the-whole-list) for selecting lists and nested fields.
 
-Nodes wired **between** Start loop and End loop are repeated once per item. Nodes wired **after** End loop run once, after all iterations finish.
+## Before publishing
 
-## Settings (Start loop node)
+Check Specify list selects a list rather than one item, use a loop limit when the list could be large, and connect End loop to a clear continuation. Draw connections forward; the loop nodes handle repetition.
 
-| Field | Required | Notes |
-| --- | --- | --- |
-| **Specify list** | Yes | An array variable, e.g. `{{trigger.items}}`. Must be a variable; literal arrays are not supported. |
-| **Limit the loop** | No | Checkbox to cap how many iterations run. |
-| **Loop limit** | When limit is on | Maximum number of iterations (≥ 1). Only items up to this count are processed even if the array is larger. |
-
-### Loop variables
-
-Inside the loop body you can reference:
-
-- **`{{loop.item}}`** — the current array element (object, string, number — whatever the array contains).
-- **`{{loop.index}}`** — the current position, 0-based.
-
-## Handles
-
-- **Start loop** has one outgoing path — into the loop body.
-- **End loop** has one outgoing path — the "after loop" continuation.
-
-## Tips
-
-- Always point `loop_list` at a **variable** that resolves to an array (`{{trigger.items}}`, `{{apiStep.data.results}}`, etc.).
-- Use the **Loop limit** to guard against unexpectedly large lists — e.g. cap at 10 so a customer with 500 orders doesn't trigger 500 messages.
-- Keep per-iteration messaging mindful of WhatsApp rate/spam limits.
+For repeated attempts that stop when a rule matches, use [Repeat until](flows/nodes/repeat-until.md).

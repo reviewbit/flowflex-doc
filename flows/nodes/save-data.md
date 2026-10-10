@@ -1,33 +1,20 @@
-# Save data
+# Save data: record information in a flow data table
 
-> Write values from the flow into a **data table** for reporting or later use.
+Use Save data to record a survey answer, order detail, or other information in a selected flow data table. For a contact's profile, use [Save audience](flows/nodes/audience-actions.md#save-audience).
 
-![The Save data node and its config drawer](../../assets/flows/save-data-node.png)
+## Record a survey answer
 
-## What it does
+1. Create or choose the data table you want to use in the flow's saved-data area. Include columns such as customer_number and answer.
+2. Add **Save data** after the question's reply path.
+3. Open the node and select **Choose table**.
+4. For each displayed column, select its value with Insert Variable.
+5. Map customer_number to the trigger's contact number and answer to the question's captured reply.
+6. Save changes and connect Next step to a thank-you message or End.
 
-Records selected values into one of your flow **data tables**. When the node runs, each column
-in the chosen table is filled with the value (or `{{variable}}`) you map to it — building up a
-table of rows you can report on later.
+Selecting a different table changes the columns to fill, so review the mappings again.
 
-## When to use
+## Before publishing
 
-- Capturing customer replies, choices, or computed values for reporting.
-- Logging outcomes (e.g. who responded, what they picked) across many flow runs.
+Make sure the table exists, each intended column has the correct value, and the question waits for a reply before this step. Route silence separately so you do not record it as an answer.
 
-## Settings
-
-| Field | Required | Notes |
-| --- | --- | --- |
-| **Data table** | Yes | Pick an existing flow data table. |
-| **Column values** | Yes | The table's columns load automatically; map each to a value or `{{variable}}`. |
-
-## Handles
-
-- **Next step** — runs after the row is written.
-
-## Tips
-
-- Create the **data table** (with its columns) first; the node maps to that schema.
-- This is the supported way to persist values today — the **[Save variable](flows/nodes/save-variable.md)**
-  node isn't live yet.
+See [Insert Variable](flows/using-variables.md) and [Response waiting](flows/response-wait.md).
