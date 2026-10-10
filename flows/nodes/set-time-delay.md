@@ -1,41 +1,31 @@
-# Set time delay
+# Set time delay: pause before the next step
 
-> Pause the flow before the next step — by a duration, until a time of day, until a day of
-> week, or by a dynamic amount.
+Use Set time delay to space out updates or send a follow-up later. This pause does not end when the customer replies; for that, use [Response waiting](flows/response-wait.md).
 
-![The Set time delay node and its config drawer](../../assets/flows/time-delay-node.png)
+## Wait two hours before a follow-up
 
-## What it does
+1. Add **Set time delay** between the current action and the follow-up.
+2. Open the node and set **Set time delay** to 2.
+3. Set **Unit** to Hours.
+4. Save changes.
+5. Connect Next step to the follow-up.
 
-Holds the flow for a while before running the next node. This is an **unconditional** wait —
-unlike [Waiting for a reply](flows/response-wait.md), nothing the customer does ends it early.
-The flow isn't burning resources while it waits.
+The duration can use Seconds, Minutes, Hours, or Days.
 
-## When to use
+## Resume at a suitable time
 
-- A follow-up "still interested?" message **a day later**.
-- Sending something at a **specific time** (e.g. 9am) or on a **specific day**.
-- Spacing out steps so messages don't all fire at once.
+The scheduling checkboxes add constraints to the duration:
 
-## Settings
-
-The node always starts with a **fixed duration**. The three checkboxes below it are
-**additive** — you can enable any combination of them to layer constraints.
-
-| Field | Notes |
+| Option | What to set |
 | --- | --- |
-| **Set time delay** | A number ≥ 1. Default: `1`. |
-| **Unit** | Seconds, Minutes, Hours, or **Days** (default). |
-| **Delay until a scheduled time of day** | When checked: pick a **time** (15-minute increments, e.g. `9:00 am`) and a **UTC offset** for the timezone. The delay won't release until that time of day is reached in the chosen timezone. |
-| **Delay until scheduled days of the week** | When checked: pick one or more **days** (Sunday–Saturday). The delay won't release until the flow lands on one of those days. |
-| **Delay until a dynamic time of day** | When checked: supply the delay amount from a **variable** (e.g. `{{trigger.delay_minutes}}`). |
+| Delay until a scheduled time of day | Choose the time and timezone. |
+| Delay until scheduled days of the week | Select the allowed weekdays. |
+| Delay until a dynamic time of day | Supply the variable requested by the form. |
 
-## Handles
+For example, use a one-day duration with a morning time and weekday selection for a business-day follow-up. Check the chosen timezone matches your intention.
 
-- **Next step** — runs once the wait elapses.
+Use [Insert Variable](flows/using-variables.md) for dynamic values, and use the unit and meaning expected by the field rather than inserting a formatted date into an amount field.
 
-## Tips
+## Before publishing
 
-- Combine the checkboxes to be precise: e.g. **1 day** duration + **9:00 am** time-of-day + **Monday–Friday** days = "wait at least a day, then resume on a weekday morning."
-- Use **fixed duration** for simple waits ("2 hours after purchase"); layer the time/day constraints to land messages at business-friendly hours.
-- This is different from **Wait for specific time** — use that when you specifically want the customer's reply. See [Waiting for a reply](flows/response-wait.md).
+Review the duration and any additional restrictions together. After a long delay, the WhatsApp reply window may be closed; choose an approved [Template message](flows/nodes/template-message.md) for the follow-up when needed.

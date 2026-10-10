@@ -1,32 +1,39 @@
-# Utils function
+# Utils function: calculate distance or identify places
 
-> Run a built-in utility and use its result to branch or personalize downstream.
+Choose a built-in helper when you need to calculate proximity or understand a place mentioned in a customer's reply.
 
-![The Utils function node and its config drawer](../../assets/flows/util-node.png)
+## Calculate distance
 
-## What it does
+Use this function to check how far the customer is from a configured branch.
 
-Runs a ready-made helper and exposes its result to later nodes. Today the available function
-is **Calculate distance**.
+1. Ask for the customer's location using Location request and enable response waiting.
+2. Add **Utils function** on the reply path and open it.
+3. In **Choose a function**, select Calculate distance.
+4. Use Insert Variable to map **Source latitude** and **Source longitude** from the Location request's captured location.
+5. Select the branch in **Choose a target location**.
+6. Save changes and connect Next step to a condition or message.
+7. Select this function's result through Insert Variable in the later step.
 
-## Available functions
+Use a shared coordinate location rather than a street-address string. Verify the branch has the correct stored location. See [Location request](flows/nodes/location-request.md).
 
-### Calculate distance
-Computes the distance between a **source** location and a **target** location (one of your
-configured branches). Use the result to branch on proximity — e.g. route a customer to the
-nearest store.
+## Identify Places
 
-| Field | Notes |
-| --- | --- |
-| **Function** | Select **Calculate distance**. |
-| **Source latitude / longitude** | The source point — usually `{{variable}}`s from the payload. |
-| **Target branch** | Pick a branch; its stored location is used as the target. |
+Use this function to recognize a country, state, or city in customer text.
 
-## Handles
+1. Add **Utils function** after the step containing the text to read.
+2. Choose **Identify Places**.
+3. In **Text**, insert the captured customer reply or another text field.
+4. Choose **Entity type**: Country, State, or City.
+5. Choose **Language** or leave it as Any.
+6. Optionally restrict the search with **Country filter**, a two-letter code such as IN or AE.
+7. Save changes and connect Next step to a condition or message.
 
-- **Next step** — runs after the result is computed; the distance is available downstream.
+Text supports up to 2,000 characters. Available languages include English, Arabic, Hindi, Urdu, Malayalam, Tamil, Spanish, and Russian, as well as Any.
 
-## Tips
+### Use the result safely
 
-- Combine with a **[Condition split](flows/nodes/condition-split.md)** to act on the distance.
-- More utility functions may be added over time; the picker lists what's available.
+In Insert Variable, choose the Identify Places node to find confirmed entities, count, and suggestions. For example, use the confirmed city name in a follow-up question.
+
+Check that a place was confirmed before routing on it. Suggestions are possible matches, not confirmed answers. If several places are possible or none is confirmed, ask the customer to clarify or assign an agent.
+
+See [Select and insert variables](flows/using-variables.md) and [Set conditions](flows/setting-conditions.md).

@@ -1,40 +1,31 @@
-# List message
+# List message: create a menu of choices
 
-> An interactive **selectable list** — branch on the row the customer picks. Use it when you
-> need more than 3 options.
+Use List message when customers need more choices than fit in three reply buttons. The customer opens the list and selects one row; that row selects the next path.
 
-![The List message node and its config drawer](../../assets/flows/list-message-node.png)
+## Build a service menu
 
-## What it does
+1. Add **List message** and set Destination number.
+2. Write the Body, such as “Choose the service you need.”
+3. Set the list-opening button title, for example “View services”.
+4. Add a section title, such as “Support”.
+5. Add rows with clear titles and descriptions, such as “Delivery” / “Questions about your delivery”.
+6. Add another section if grouping the choices helps the customer.
+7. Configure the response-wait window when needed.
+8. Review the preview and click **Save changes**.
+9. Connect every row output to the relevant action and No response when displayed.
 
-Sends a message with a button that opens a **selectable list**. The list is organised into
-**sections**, each with **rows**. Each row is its own outgoing path, so the flow branches on
-the row the customer selects. Like buttons, it **waits** for the selection.
+## Limits
 
-## When to use
+| Part | Limit |
+| --- | --- |
+| Sections | Up to 10. |
+| Rows | Up to 10 across all sections combined. |
+| Section or row title | 24 characters. |
+| Row description | 72 characters; fill it in to explain the choice. |
+| List-opening button title | 24 characters. |
+| Header or footer | 60 characters. |
+| Message body | 1,024 characters. |
 
-- Menus with **more than 3 options** (where buttons don't fit).
-- Pick-from-a-list choices: products, branches, time slots, categories.
+For three choices or fewer, [Button message](flows/nodes/button-message.md) is simpler. Use [shared WhatsApp setup](flows/whatsapp-message-setup.md) and [response waiting](flows/response-wait.md) for recipient and timeout settings.
 
-## Settings
-
-| Field | Required | Limit | Notes |
-| --- | --- | --- | --- |
-| **Destination number** | Yes | — | Recipient with country code. |
-| **Header text** | No | 60 chars | Optional title row. |
-| **Body** | Yes | — | The message text. |
-| **Footer** | No | 60 chars | Small text under the body. |
-| **List / button title** | Yes | 24 chars | The label on the button that opens the list. |
-| **Sections** | Yes | up to **10** | Each section has a **title** (max 24 chars). |
-| **Rows** | Yes | up to **10 total** | Across all sections. Each row: **title** (max 24) and **description** (max 72, required). IDs auto-assigned (`ROW_<section>.<row>`). |
-
-## Handles
-
-- **One handle per row** — wire each to the path for that selection.
-- **No response** — taken if the customer doesn't pick within the wait window.
-
-## Tips
-
-- The hard caps are **10 sections** and **10 rows total** — plan groupings accordingly.
-- The **row description** is required — use it to clarify each choice.
-- For 3 options or fewer, a **[Button message](flows/nodes/button-message.md)** is simpler.
+If the wrong branch runs, check that each row is connected to the action its label promises.
