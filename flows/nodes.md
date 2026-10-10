@@ -1,6 +1,8 @@
 # Node reference
 
-Add nodes from the toolbox or a source handle's next-step picker, configure them in a drawer, and connect their outputs.
+Choose the task you want the flow to perform, then open its guide for setup steps, a practical example, and connections.
+
+For tasks used by several nodes, see [Insert Variable](flows/using-variables.md), [WhatsApp setup](flows/whatsapp-message-setup.md), [Files and media](flows/files-and-media.md), and [Conditions](flows/setting-conditions.md).
 
 The toolbox groups nodes into **WhatsApp Blocks**, **Logic Blocks**, **Data Blocks**, **Audience Blocks**, and **Other Blocks**.
 

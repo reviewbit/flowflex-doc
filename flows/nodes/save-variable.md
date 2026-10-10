@@ -1,20 +1,23 @@
-# Save variable
+# Save variable: remember a value for later steps
 
-> Store named values for later steps in the same run.
+Use Save variable when several later steps need the same value during this flow run. Use Save audience or Save data when you want to keep information beyond the run.
 
-![The Save variable node and its config drawer](../../assets/flows/save-variable.png)
+## Save a preferred delivery date
 
-Use **Save variable** in Other Blocks to remember values, such as a customer's preferred delivery date, for later steps. You can save several values in one node.
+1. Add **Save variable** after the step that supplies the date.
+2. Open the node.
+3. Enter a name, such as `preferred_date`.
+4. In its Value field, use Insert Variable to choose the date from the earlier step.
+5. Use **Add variable** if you need another named value.
+6. Save changes and connect Next step.
+7. In later steps, select the saved variable through Insert Variable.
 
-| Setting | Notes |
-| --- | --- |
-| **Variable name** | Start with a letter; use letters, numbers, and underscores. Choose a distinct name for each value. |
-| **Value** | A literal or variable expression selected with Insert Variable. |
+For example, you can use `{{preferred_date}}` in a confirmation message and a later API request.
 
-Use **Add variable** for more entries. Connect **Next step** to another action or End.
+## Names and values
 
-## Reading a stored value
+Start names with a letter and use letters, numbers, and underscores. Choose clear, distinct names. Values can be fixed text or selected from earlier steps.
 
-The value is stored under its variable name. For example, saving `customer_name` lets later steps use `{{customer_name}}`. The saved value is available to the steps that follow.
+Save variable does not create a contact profile field or a table row. Use [Save audience](flows/nodes/audience-actions.md#save-audience) for profiles, or [Save data](flows/nodes/save-data.md) for reporting.
 
-Saved variables last for the current flow run. Use [Save audience](flows/nodes/audience-actions.md) for contact profiles or [Save data](flows/nodes/save-data.md) for a flow data table.
+See [Select and insert variables](flows/using-variables.md).

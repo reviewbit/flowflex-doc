@@ -1,80 +1,74 @@
-# Building a flow
+# Build your first customer reply
 
-The **flow builder** is a drag-and-drop canvas where you lay out the steps of an
-automation. You drag **nodes** from the toolbox, connect them with **edges**, and
-configure each one in a side drawer. This page walks you through building a flow end to
-end. For what every node does, see the [Node reference](flows/nodes.md).
+Start with a short flow that replies to a WhatsApp message. Once it is configured correctly, add choices, conditions, or integrations.
 
-## The builder at a glance
+For a safe introduction using fictional data, open [Learn flow builder](flows/learning-the-builder.md).
 
-The builder has these main areas:
+## 1. Create a real flow
 
-- **Toolbox** (left) — the palette of nodes, grouped into WhatsApp, Logic, Data, Audience and Other Blocks.
-- **Canvas** (center) — where you place and connect nodes. Pan by dragging the background;
-  zoom with the scroll wheel or the zoom controls.
-- **Config drawer** (right) — opens when you click a node, for setting it up.
-- **Top bar** — **Save**, **Save and publish**, **Learn flow builder**, and **More actions** for version history and JSON files.
+1. Open Flows and start creating a flow.
+2. Enter a clear **Title**, such as “Customer welcome”.
+3. Enter its **Description** and select the intended WhatsApp **Channel**.
+4. Create the flow to open the builder.
 
-![Builder layout](../assets/flows/sample.gif)
+Check the channel before continuing. A practice lesson does not create or activate your real customer flow.
 
-## 1. Start with the trigger
+## 2. Select the trigger
 
-Every flow contains exactly one **Trigger** and one **End** node. It begins with the **Trigger** node — it's already on the canvas when you
-start. Click it and choose the event that should start this flow (e.g. your
-custom-integration event `order.placed`). The trigger exposes the event payload to every
-later node as `{{trigger.*}}` — see [Triggers & variables](flows/triggers-and-variables.md).
+Open Trigger, choose the source that offers WhatsApp Incoming Chat, and select that event. Save it.
 
-![Trigger node setup](../assets/flows/trigger-setup.png)
+Trigger starts the sequence. End finishes it. Keep exactly one of each on the canvas. See [Trigger setup](flows/triggers-and-variables.md).
 
-## 2. Add a node from the toolbox
+## 3. Add and configure a message
 
-Find the node you want in the searchable toolbox and **drag it onto the canvas**. You can also add a next step from a source handle's picker. Nodes are grouped by
-type (WhatsApp, Logic, Data, Audience, Other) so related steps are easy to find.
+1. Find **Text message** in WhatsApp Blocks and add it to the canvas.
+2. Open the node.
+3. In Destination number, use Insert Variable → Trigger → from.
+4. Write “Hi ”, insert Trigger → name, then add “, how can we help?”
+5. Check the preview and click Save changes.
 
-![Dragging a node from the toolbox onto the canvas](../assets/flows/add-node.gif)
+See [Select and insert variables](flows/using-variables.md) for nested JSON fields and [Text message](flows/nodes/text-message.md) for the full node setup.
 
-## 3. Connect nodes with edges
+## 4. Connect the sequence
 
-Each node has one or more **handles** — the small dots on its edges. Drag from a node's
-handle to the next node to draw an **edge**. The edges decide the **order** the flow runs in
-and which path each branch takes.
+Draw connections from the output of one node to the input of the next:
 
-- Most nodes have a single **Next step** handle.
-- **Button** and **List** nodes have one handle per button/row, plus a **No response** handle.
-- **Condition** nodes have a handle per configured path.
-- New **API** nodes have Success, Non-2xx response, and Request failed outputs.
-- Connect every rendered output to another node or the single **End** node. An unconnected output is a validation error.
+```text
+Trigger → Text message → End
+```
 
-![Connecting two nodes with an edge](../assets/flows/connect-node.gif)
+Connect Trigger's Next step to Text message, then Text message's Next step to End. A message does not run simply because it is placed beside Trigger; its connection determines when it runs.
 
-## 4. Configure a node
+You can also add a next step from a source connection's picker. Use Tidy layout to arrange the canvas, and Undo tidy to restore the previous positions.
 
-Click a node to open its **config drawer**. Fill in its settings — message body,
-destination number, condition, delay, and so on. Any text field accepts `{{…}}` variables:
-click **Insert Variable** to pick a field from the trigger payload (or an earlier node's
-output) instead of typing the path by hand.
+## 5. Check all paths before saving
 
-![A node's config drawer with the Insert Variable picker](../assets/flows/add-node.gif)
+If you enable response waiting or add choices, the node may show more outputs. Connect every displayed output, including No response, to another step or End.
 
-## 5. Save and publish
+For a flow with branches, completed paths can all lead to the same End node. Remove unused nodes and fix any errors shown before saving.
 
-**Save** creates a draft version. Use the arrow beside Save → **Save and publish** to publish your current edits. Publishing a saved version makes it available for its configured trigger. Incoming-message campaigns need their own setup and publication.
+## 6. Save and publish
 
-See [Versions, publishing & JSON files](flows/versions-and-portability.md) for history, import/export, and testing.
+**Save** keeps a draft version. Use the arrow beside Save → **Save and publish** to publish your current changes. Check the version status to confirm the intended version is published.
 
-## Tips
+For incoming WhatsApp messages, configure and publish the campaign that uses this flow and channel. Publishing the flow alone does not create its incoming-message campaign.
 
-- **Build the happy path first**, then add branches (conditions, No-response) once it works.
-- **Always wire the No-response path** on anything that waits for a reply, so a silent
-  customer doesn't leave the flow stuck. See [Waiting for a reply](flows/response-wait.md).
-- **Personalize with variables** everywhere via **Insert Variable** — it only offers fields
-  your trigger's sample payload actually contains.
+See [Versions and publishing](flows/versions-and-portability.md).
 
+## 7. Try the intended customer journey
 
-## Canvas tools and labels
+Use your own test contact in the configured channel. Check the greeting, recipient, and any choices or timeout behavior before using the flow for customers. A real customer journey can send real messages.
 
-Use **Tidy layout** to arrange nodes and **Undo tidy** to restore their previous positions.
+The learning lesson's conversation preview is separate and uses fictional information.
 
-Node drawers include a **Node label** and its **Variable reference**. Renaming the display label keeps the variable reference stable. Trigger and End labels are fixed.
+## Extend the flow
 
-For a guided demo and safe practice, open [Learn flow builder](flows/learning-the-builder.md).
+| Next customer task | Guide |
+| --- | --- |
+| Offer a small menu | [Button message](flows/nodes/button-message.md) |
+| Ask for and save an email address | [Response waiting](flows/response-wait.md) and [Save audience](flows/nodes/audience-actions.md#save-audience) |
+| Retrieve an order status | [API](flows/nodes/api.md) |
+| Send an approved order update | [Template message](flows/nodes/template-message.md) |
+| Hand over to a person | [Assign agent](flows/nodes/audience-actions.md#assign-agent) |
+
+If a message or flow does not behave as expected, use [Troubleshooting](flows/troubleshooting.md).

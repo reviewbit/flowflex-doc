@@ -8,7 +8,15 @@
 - Flows
 
   - [Overview](flows/overview.md)
-  - [Building a flow](flows/building-a-flow.md)
+  - [Build your first flow](flows/building-a-flow.md)
+  - **Common setup tasks**
+    - [Choose a trigger](flows/triggers-and-variables.md)
+    - [Select & insert variables](flows/using-variables.md)
+    - [WhatsApp message setup](flows/whatsapp-message-setup.md)
+    - [Choose files & media](flows/files-and-media.md)
+    - [Set conditions](flows/setting-conditions.md)
+    - [Wait for a reply](flows/response-wait.md)
+    - [Troubleshooting](flows/troubleshooting.md)
   - [Learn flow builder](flows/learning-the-builder.md)
   - [Versions & JSON files](flows/versions-and-portability.md)
   - [Node reference](flows/nodes.md)
@@ -40,8 +48,6 @@
     - [Save audience](flows/nodes/audience-actions.md#save-audience)
     - [Add Note](flows/nodes/audience-actions.md#add-note)
     - [Assign agent](flows/nodes/audience-actions.md#assign-agent)
-  - [Triggers & variables](flows/triggers-and-variables.md)
-  - [Waiting for a reply](flows/response-wait.md)
 
 - SDK (JavaScript & Python)
 

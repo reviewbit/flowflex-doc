@@ -1,75 +1,49 @@
-# Waiting for a reply
+# Wait for and validate a reply
 
-Message nodes can **pause the flow until the customer replies**, then branch on whether a
-reply arrived in time. This is the **"Wait for specific time"** option in a message node's
-setup.
+Use response waiting when the next step needs an answer, such as an email address, menu choice, or shared location.
 
-## How it works
+## Set up a waiting message
 
-1. Enable **Wait for specific time** on a message node (Text, Media, Template, Button,
-   List, or Location request).
-2. Set the **Unit** and **Value** (e.g. 2 hours) — the maximum time to wait for a reply.
-3. The node sends the message, then waits:
-   - **A reply arrives in time** → the flow continues down the normal **Next step** path,
-     and the reply is captured for downstream nodes.
-   - **No reply within the window** → the flow takes the **No response** path.
+1. Open a message node that offers **Wait for specific time**.
+2. Write the question and set Destination number.
+3. Enable **Wait for specific time**.
+4. Choose **Unit** and **Value**, for example 10 minutes.
+5. Click Save changes.
+6. Connect the reply output to the step that uses the answer and **No response** to a reminder, handoff, or End.
 
-> If a valid response isn't received within the configured time, the step is marked
-> **"No Response"** and the No-response path runs.
+For Button and List messages, connect every choice to its intended branch. For templates with quick replies, connect the quick-reply choices. Other waiting messages use Next step when an accepted reply arrives.
 
-## Format validation (Text message only)
+## Example: collect an email address
 
-When *Wait for specific time* is on for a **Text message** node, you can also enable
-**Check format** to require the reply to match a specific type. If the customer sends a
-reply that doesn't match, the node re-sends the **Invalid response text** and continues
-waiting.
+1. Add Text message and write “What email address should we send your receipt to?”
+2. Turn on Wait for specific time and set 10 minutes.
+3. Enable **Check format** and choose **Email**.
+4. Enter an **Invalid response text**, such as “Please enter an email address like alex@example.com.”
+5. Save and connect Next step to Save audience.
+6. In Save audience, use [Insert Variable](flows/using-variables.md#use-a-customers-reply) to select this question's captured reply for the email column.
+7. Connect No response to Assign agent or End.
 
-Supported format types:
+## Check format
 
-| Format | What the reply must be |
+Text message offers Check format while response waiting is enabled. You can request text, number, email, or supported message types such as image, video, document, location, contact, audio, sticker, or order.
+
+Choose the format that matches your question. When an invalid response is received, the configured invalid-response text helps the customer try again.
+
+## What counts as an answer
+
+| Waiting message | Expected answer |
 | --- | --- |
-| **Text** | Any text reply |
-| **Number** | A numeric value |
-| **Email** | A valid e-mail address |
-| **Image** | An image attachment |
-| **Video** | A video attachment |
-| **File** | Any file/document |
-| **Location** | A shared location |
-| **Contact** | A shared contact card |
-| **Audio** | An audio or voice note |
-| **Sticker** | A sticker |
-| **Order** | A WhatsApp order |
+| Text message | A reply that meets the configured format, if enabled. |
+| Button message | A matching reply-button selection. |
+| List message | A matching list-row selection. |
+| Location request | A shared location with coordinates. |
 
-> **Check format** is only available on Text message nodes. Button and List messages don't
-> need it — the response IS the button tap or list row selection.
+Opening a Link button URL or reacting to a message does not count as selecting a reply. Configure every No response output so silence has a clear next step.
 
-## Button & list messages
+## Choose a sensible waiting time
 
-Interactive **Button** and **List** messages inherently wait for the customer to tap a
-button or pick a row — that's how their per-button / per-row branches are chosen. The
-**Wait for specific time** value sets how long to wait for that interaction before giving
-up to the **No response** path.
+Give the customer enough time to answer, but decide what should happen if they leave the conversation. A long wait can move a later free-form message outside WhatsApp's reply window; use a template when appropriate.
 
-## Using the reply downstream
+For a pause that does not depend on an answer, use [Set time delay](flows/nodes/set-time-delay.md).
 
-When a reply is captured, later nodes can reference it (for example, to branch on what the
-customer said, or to store it with **Save data**). Insert it via the **Insert Variable**
-picker, which lists the message node's captured reply alongside the trigger fields.
-
-## Tips
-
-- **Pick realistic windows.** Hours/days are fine — the flow simply waits; it isn't
-  burning resources while idle.
-- **Always wire the No-response path** for anything important (a reminder, an internal
-  alert), so a silent customer doesn't leave the flow stuck with nothing to do.
-- **Delay vs. wait-for-reply are different.** Use **Set time delay** for an unconditional
-  pause; use **Wait for specific time** when you specifically want the customer's reply.
-
-See the [Node reference](flows/nodes.md) for which nodes support waiting.
-
-
-## Reply matching
-
-A Button or List message continues when the customer selects one of its choices. A Location request waits for a shared location. Opening a Link button URL or reacting to a message does not count as an answer.
-
-Choose the captured reply through Insert Variable when configuring a later step.
+See [WhatsApp setup](flows/whatsapp-message-setup.md) and [Troubleshooting](flows/troubleshooting.md#the-flow-waits-or-takes-no-response).

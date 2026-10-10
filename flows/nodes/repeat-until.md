@@ -1,32 +1,38 @@
-# Repeat until
+# Repeat until: try again until a condition is met
 
-> Repeat steps until a condition is met, with an attempt limit.
+Use Repeat until when you need several attempts, such as asking for a usable answer or checking whether an order is ready. The loop has an attempt limit so it does not repeat forever.
 
-1. Add **Repeat until** and configure its stop condition.
-2. Set **Maximum iterations** to an integer from 1–10 (default 5).
-3. Connect the repeated steps between Repeat until and **End loop**.
-4. Connect End loop to the actions that follow the loop.
+## Example: check an order until it is ready
 
-After each attempt, the flow checks whether your stop condition has been met. It repeats only until that happens or the attempt limit is reached.
+1. Add **Repeat until** and an API node that checks the existing order's status.
+2. Configure and save the API with a sample response containing that status.
+3. Open Repeat until and set the stop condition: choose the API status field, a text equals operator, and `ready`.
+4. Set **Maximum iterations**, for example 3. The available range is 1–10.
+5. Add a Set time delay in the repeated sequence to space the checks.
+6. Add **End loop** and connect the successful check sequence forward through it.
+7. Handle the API's error outputs with appropriate help or End paths.
+8. After End loop, add a condition to distinguish ready from an exhausted attempt limit.
 
-Connect the steps forward through Repeat until and End loop; these nodes handle the repetition.
+After each completed attempt, the flow checks the stop condition using the latest result. The repeated sequence runs before the first check.
 
-## Result
+Keep any action that creates an order outside this loop. Each pass should check the same existing order rather than create another one.
 
-After End loop, select the Repeat until output through **Insert Variable**:
+## Choose what happens after the attempts
 
-| Output | Meaning |
+Use Insert Variable to select the Repeat until result after End loop:
+
+| Field | What it tells you |
 | --- | --- |
-| `iterations` | Number of iterations run. |
-| `conditionMet` | Whether the stop condition became true. |
-| `exhausted` | Whether the attempt limit was reached without satisfying the condition. |
+| `conditionMet` | The stop condition became true. |
+| `exhausted` | The attempt limit was reached without meeting the condition. |
+| `iterations` | How many attempts ran. |
 
-Exhaustion is not success. Add a condition after the loop to route unsuccessful attempts to a fallback such as Assign agent.
+Add a Condition split checking conditionMet. Connect Yes to the ready message, and No to an agent handoff or another fallback. Reaching the limit is not success.
 
-## Examples
+## Ask for an answer again
 
-To ask again until a customer provides a usable answer, place the question and answer check inside the loop. Set a small attempt limit, connect the No response path, and offer an agent handoff if the customer still needs help.
+Place the question and answer check inside the repeated sequence. Enable response waiting on the question and connect No response explicitly. Do not pass an absent answer to an API or use it as if the customer replied.
 
-To check whether an order is ready, repeat the status check with a time delay between attempts. Check the existing order each time; keep the action that creates the order outside the loop.
+See [Set conditions](flows/setting-conditions.md), [Insert Variable](flows/using-variables.md), and [Response waiting](flows/response-wait.md).
 
-For an existing array, use [For loop](flows/nodes/for-loop.md).
+For processing an existing list, use [Start loop and End loop](flows/nodes/for-loop.md).

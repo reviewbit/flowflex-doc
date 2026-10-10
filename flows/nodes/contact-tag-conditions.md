@@ -1,20 +1,24 @@
-# Contact-tag conditions
+# Contact-tag conditions: route by customer tags
 
-Condition split and Condition branch support live contact tags.
+Use contact tags in Condition split or Condition branch to distinguish interested customers, VIPs, or other groups you label.
 
-1. Choose **Contact tags** in the condition drawer.
-2. Set **Contact number** with the variable picker.
-3. Choose an operator and one or more tags.
-4. Connect all resulting paths.
+## Example: send a follow-up to interested customers
 
-| Operator | Matches when |
-| --- | --- |
-| **Has any** | At least one selected tag is present. |
-| **Has all** | Every selected tag is present. |
-| **Has none** | None of the selected tags is present. |
+1. Add a Condition split and open its rules.
+2. Choose **Contact tags** as the rule source.
+3. Set **Contact number** with Insert Variable, for example Trigger → from.
+4. Choose **Has any** and select Interested.
+5. Save changes.
+6. Connect Yes to the follow-up and No to another action or End.
 
-The condition checks the selected contact's current tags. A contact without tags matches **Has none**.
+## Choose the matching rule
 
-For example, choose **Has any → Interested** to send a follow-up only to interested customers. Set the contact number once for the node's rules.
+| Operator | Meaning | Example |
+| --- | --- | --- |
+| Has any | At least one selected tag is present. | Interested or VIP. |
+| Has all | Every selected tag is present. | Interested and VIP. |
+| Has none | None of the selected tags is present. | Neither Interested nor VIP. |
 
-Combine tag and variable rules using AND/OR groups. [Save tag](flows/nodes/audience-actions.md) changes tags before a later condition.
+A contact with no tags matches Has none. The condition checks the contact's current tags when the step runs, so a preceding [Save tag](flows/nodes/audience-actions.md#save-tag) can affect the result.
+
+Set the contact number once for the node's tag rules. Combine with other conditions if needed; see [Set conditions](flows/setting-conditions.md).

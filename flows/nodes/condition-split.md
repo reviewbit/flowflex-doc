@@ -1,46 +1,29 @@
-# Condition split
+# Condition split: choose Yes or No
 
-> A **Yes / No** branch — the flow goes one way if a condition is met, the other way if not.
+Use Condition split for a decision with two outcomes, such as whether an order is paid or whether a reply is valid.
 
-![The Condition split node and its config drawer](../../assets/flows/condition-split-node.png)
+## Example: offer priority support for larger orders
 
-## What it does
+1. Add **Condition split** after the step that supplies the order information.
+2. Open the node and give it a clear label, such as “Large order?”.
+3. Add a condition and use Insert Variable to select the order total.
+4. Choose a number comparison: **greater than**.
+5. Enter `1000` as the comparison value.
+6. Save changes.
+7. Connect **Yes** to the priority-support action and **No** to the standard action or End.
 
-Evaluates one or more conditions and sends the flow down the **Yes** path if they're met,
-otherwise the **No** path. Combine multiple conditions with **AND** / **OR**.
+The value in this example is a rule you choose, not a built-in threshold. Select the actual total field available in your event or API response.
 
-## When to use
+## Add more rules
 
-- Simple two-way decisions: "is the order over ₹1000?", "did they reply 'yes'?", "is the
-  customer tagged VIP?".
+Use **AND** when all rules must match, or **OR** when any one is enough. For example, total is above 1000 AND payment is confirmed.
 
-## Settings
+For a customer's reply, use a text operator; for an optional field, check whether it exists first. See [Set conditions](flows/setting-conditions.md) for field types and rule groups.
 
-- **Condition(s)** — each is a **field** (a `{{variable}}`), an **operator**, and a **value**.
-- **Group logic** — combine multiple conditions with **AND** or **OR**.
+## Check contact tags
 
-**Operators** depend on the field's type:
+Choose Contact tags to route customers with particular tags. See [Contact-tag conditions](flows/nodes/contact-tag-conditions.md).
 
-| Type | Operators |
-| --- | --- |
-| **Number** | equals, not equals, greater than, greater than or equal, less than, less than or equal |
-| **Text** | equals, not equals, contains, does not contain, starts with, does not start with, ends with, does not end with — each **case-sensitive or case-insensitive** |
-| **Date / time** | before, on or before, equals, not equals, after, on or after |
-| **Boolean** | is true, is false |
-| **Array** | contains, does not contain, is empty, is null, is not null |
-| **Any** | exists, does not exist, is null, is not null |
+## Before publishing
 
-## Handles
-
-- **Yes** — condition met.
-- **No** — condition not met.
-
-## Tips
-
-- For **more than two** outcomes, use a **[Condition branch](flows/nodes/condition-branch.md)**.
-- Pick the operator that matches the field type (e.g. case-insensitive text compare for replies).
-
-
-## Live contact tags
-
-Choose Contact tags to use Has any, Has all, or Has none with the current contact. See [Contact-tag conditions](flows/nodes/contact-tag-conditions.md).
+Connect both Yes and No, check the field type and comparison, and decide what should happen when the rule does not match. Use [Insert Variable](flows/using-variables.md) to avoid selecting a sample field from the wrong source.

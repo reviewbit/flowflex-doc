@@ -1,35 +1,27 @@
-# Condition branch
+# Condition branch: route across named paths
 
-> A **multi-path** branch — the flow takes the first path whose condition matches.
+Use Condition branch when several rules should lead to different actions, such as routing orders by status. The first matching path wins.
 
-![The Condition branch node and its config drawer](../../assets/flows/condition-branch-node.png)
+## Example: route by order status
 
-## What it does
+1. Add **Condition branch** after the order lookup.
+2. Open the node and name its first path “Ready”.
+3. Add a rule: select the API's order status, choose a text equals operator, and enter `ready`.
+4. Name the second path “Pending” and compare the same field with `pending`.
+5. Add further paths only for the outcomes you need.
+6. Save changes.
+7. Connect each named output to its action, such as Ready → delivery message and Pending → waiting update.
 
-Like a switch statement: you define several **paths**, each with its own condition. The flow
-evaluates them **top to bottom** and takes the **first** one that matches. The current drawer exposes the configured paths; it does not add a separate Default output.
+Use [Insert Variable](flows/using-variables.md#use-an-api-response) to select the real field from the correct response example.
 
-## When to use
+## Order your rules
 
-- More than two outcomes: routing by category, tier, region, status, or a menu selection.
+Place specific paths before broader ones. If two paths match, only the first is selected. Check each path's rules and AND/OR groups using [Set conditions](flows/setting-conditions.md).
 
-## Settings
+## Plan for an unmatched value
 
-- **Paths** — starts with two ("Path 1", "Path 2"); add as many as you need.
-- **Per path** — a label and its condition(s), combined with **AND** / **OR** (same
-  [operators](flows/nodes/condition-split.md#settings) as Condition split).
+The current drawer does not add a separate Default output. If you need an explicit fallback for any other status, use a Condition split before the branch to check whether the status is one of the supported values. Connect its No path to help or End.
 
-## Handles
+## Before publishing
 
-- **One handle per path** — wire each to its branch.
-- Connect every configured path to another step or End.
-
-## Tips
-
-- **Order matters** — the first matching path wins, so put the most specific conditions first.
-- If you need an explicit unmatched route, use a Condition split with a No path.
-
-
-## Live contact tags
-
-Choose Contact tags to use Has any, Has all, or Has none with the current contact. See [Contact-tag conditions](flows/nodes/contact-tag-conditions.md).
+Connect every named output and consider a status you did not expect. You can also use [contact-tag conditions](flows/nodes/contact-tag-conditions.md) to route by customer tags.

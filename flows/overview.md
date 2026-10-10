@@ -1,59 +1,37 @@
-# Flows — overview
+# Build customer workflows with Flows
 
-A **flow** is a visual automation. It starts when an **event** fires (an order placed, a
-checkout abandoned, an invoice created) and then runs a sequence of **nodes** you arrange
-on a canvas — sending WhatsApp messages, waiting for replies, branching on conditions,
-delaying, calling APIs, and so on.
+A flow connects actions into a customer journey: greet a customer, offer choices, collect information, look up an order, or hand the conversation to your team.
 
+Start with [Build your first customer reply](flows/building-a-flow.md) or [Learn flow builder](flows/learning-the-builder.md) for guided practice.
+
+## How a flow works
+
+A **Trigger** starts the flow when the selected event happens. Each connected node performs a task, and **End** finishes a path.
+
+```text
+Trigger → Button message → Track order → API → Status message → End
+                           Talk to team → Assign agent → End
 ```
-Trigger ──▶ Text message ──▶ Wait for reply ──▶ Condition ──▶ … 
- (event)                                          ├─ yes ─▶ Template message
-                                                  └─ no  ─▶ Reminder message
-```
 
-## The building blocks
+Connect every choice and response output. Placing a node on the canvas does not connect it automatically.
 
-| Concept | What it is |
+## Common setup tasks
+
+| What you need | Guide |
 | --- | --- |
-| **Trigger** | The single starting node. It defines *which event* starts this flow and exposes the event payload as `{{trigger.*}}`. |
-| **Nodes** | The steps that run: messages, logic, delays, data actions. See the [Node reference](flows/nodes.md). |
-| **Edges** | The arrows connecting nodes — they decide the order and the branches. |
-| **Variables** | `{{trigger.*}}` from the event, plus values captured from earlier nodes (like a customer's reply). See [Triggers & variables](flows/triggers-and-variables.md). |
-| **Handles** | The little connection points on a node. Most nodes have a single **Next step**; interactive and logic nodes have several (one per button, list row, condition path, or API outcome), plus a **No response** handle when waiting for a reply. |
+| Choose what starts the flow | [Trigger setup](flows/triggers-and-variables.md) |
+| Select a name, phone number, or nested JSON field | [Select and insert variables](flows/using-variables.md) |
+| Choose a WhatsApp message type and recipient | [Shared WhatsApp setup](flows/whatsapp-message-setup.md) |
+| Fill a template's placeholders | [Template message](flows/nodes/template-message.md) |
+| Use information returned by another service | [API](flows/nodes/api.md) |
+| Upload a file or select a customer-specific attachment | [Files and media](flows/files-and-media.md) |
+| Route by an answer, order value, or tag | [Conditions](flows/setting-conditions.md) |
+| Capture and check a customer's reply | [Response waiting](flows/response-wait.md) |
+| Review drafts and publish changes | [Versions and publishing](flows/versions-and-portability.md) |
+| Fix a flow or WhatsApp message issue | [Troubleshooting](flows/troubleshooting.md) |
 
-## How an event becomes a running flow
+## Choose a node
 
-1. You build and **publish** a flow with a custom-integration **trigger**.
-2. Your app **fires that event** with a JSON payload — via the
-   [SDK](sdk/overview.md) or the [REST API](api/events.md).
-3. FlowFlex matches the event to the flow and starts it, with your payload available as
-   `{{trigger.*}}`.
-4. Each node runs in turn; branches follow the edge that matches (the button tapped, the
-   condition met, whether a reply arrived).
+Use the [Node reference](flows/nodes.md) for the available steps. Each guide explains when to use the node, which fields to fill, how to connect it, and what to check before publishing.
 
-## A typical flow
-
-> **Order confirmation with follow-up**
->
-> 1. **Trigger** — `order.placed` (payload: `name`, `order_id`, `phone`)
-> 2. **Text message** → `Hi {{trigger.name}}, order {{trigger.order_id}} is confirmed 🎉`
->    — with **Wait for specific time** on, so it waits for a reply
->    - **reply received** → **Button message** "Need help?" → branches per button
->    - **no response** → a **reminder** message a bit later
-
-## Good to know
-
-- **Learn by doing.** Open [Learn flow builder](flows/learning-the-builder.md) for a demo and practice without live messages.
-- **Version your changes.** Save creates a draft; Save and publish makes that version live. See [Versions](flows/versions-and-portability.md).
-- **Check before you publish.** Review message text, destination numbers, and every branch. Use the learning lesson to practice the basic steps.
-- **Personalize everything.** Any text field accepts `{{…}}` variables via the **Insert
-  Variable** picker — it reads the fields from your trigger's sample payload.
-- **Branching is explicit.** Each outgoing path is a separate edge from a node handle, so
-  what you wire on the canvas is exactly what runs.
-
-
-## Finish every path
-
-Every flow requires exactly one Trigger and one End. Connect every rendered output, including No response and API failure outputs, to another step or End. Unconnected outputs are validation errors.
-
-The current toolbox also includes [audience actions](flows/nodes/audience-actions.md), [Repeat until](flows/nodes/repeat-until.md), and [Identify Places](flows/nodes/utils-function.md).
+For a real incoming-message flow, configure its WhatsApp channel and campaign as well as publishing the flow. A saved draft or practice lesson does not activate customer messaging.
