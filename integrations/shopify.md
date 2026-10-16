@@ -34,7 +34,7 @@ Connect your Shopify store so its orders, checkouts and fulfilments can start Wh
 2. Fill in **API Key**, **API Secret**, **Access Token** and **Shop Domain**. All four are required.
 3. Click **Connect & sync**.
 
-<!-- screenshot: integrations/shopify-connect -->
+<img src="assets/integrations/shopify-connect.png" alt="Connecting a Shopify store">
 
 **Connect & sync** does three things:
 

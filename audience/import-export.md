@@ -33,7 +33,7 @@ Separate several tags in one cell with commas. Arjun's number has no `+`, so it 
 
 ### 1. Upload
 
-<!-- screenshot: audience/import-upload -->
+<img src="assets/audience/import-upload.png" alt="Import audience, step 1: Upload">
 
 1. Choose the **Destination**:
     - **All contacts**: import to the main audience. This is the default.

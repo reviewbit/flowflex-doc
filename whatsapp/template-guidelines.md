@@ -29,7 +29,7 @@ Hi {{1}}, your order {{2}} from Rangoli Store has been shipped.
 It should reach you by {{3}}. Track it using the button below.
 
 Footer: Reply HELP for support
-Button (Visit website, dynamic): Track order -> https://rangoli.store/track/{{1}}
+Button (Visit website, dynamic): Track order -> https://rangoli.example/track/{{1}}
 Body samples: {{1}} = Priya, {{2}} = ORD-48213, {{3}} = 18 Oct
 Button URL sample: {{1}} = ORD-48213
 ```

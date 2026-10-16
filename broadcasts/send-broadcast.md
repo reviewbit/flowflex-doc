@@ -4,6 +4,8 @@ Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Deta
 
 ## 1. Details & message
 
+<img src="assets/broadcasts/create-details.png" alt="Create broadcast, step 1: Details & message">
+
 1. **Broadcast name**: an internal name, such as `Diwali sale – repeat buyers – Oct 2026`.
 2. **Select channel**: Connected channels only.
 3. **Select Template**: only **Approved** templates from that channel's WABA are listed.
@@ -14,6 +16,8 @@ Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Deta
 6. **Media header**: keep the template's media, or click **Upload Header Image / Video / Document** to use different media for this broadcast. The template's size limits still apply.
 
 ## 2. Schedule & audience
+
+<img src="assets/broadcasts/create-schedule.png" alt="Create broadcast, step 2: Schedule & audience">
 
 | Field | Rule |
 | --- | --- |
@@ -30,6 +34,8 @@ If you see **Some audience members may not receive this broadcast**, the audienc
 For **Marketing** templates, contacts who opted out of WhatsApp marketing are excluded automatically, and FlowFlex shows how many.
 
 ## 3. Review & publish
+
+<!-- screenshot: broadcasts/publish-modal -->
 
 1. Check the **Broadcast summary**.
 2. Click **Publish broadcast**. The confirmation shows the number of eligible contacts, the batch size, and the date range.

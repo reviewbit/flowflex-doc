@@ -20,7 +20,7 @@ The START and STOP keywords from [Subscription Auto Replies](messaging/settings.
 
 ## The campaign list
 
-<!-- screenshot: flows/campaigns-list -->
+<img src="assets/flows/campaigns-list.png" alt="The Auto Campaign list">
 
 | Column | Shows |
 | --- | --- |

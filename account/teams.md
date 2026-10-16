@@ -6,7 +6,7 @@ Go to **Settings** → **Teams**. Only Admins see this page in the sidebar. The 
 
 ## All Users
 
-<!-- screenshot: account/team-members -->
+<img src="assets/account/team-members.png" alt="Teams, All Users">
 
 | Column | Shows |
 | --- | --- |

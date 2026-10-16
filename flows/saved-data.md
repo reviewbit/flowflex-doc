@@ -7,7 +7,7 @@
 
 Use a table to collect survey answers, review ratings, or order requests. Tables belong to the current branch.
 
-<!-- screenshot: flows/saved-data-tables -->
+<img src="assets/flows/saved-data-tables.png" alt="Saved data tables">
 
 ## The table list
 

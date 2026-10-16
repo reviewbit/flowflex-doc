@@ -28,7 +28,7 @@ Events are the things your system will tell FlowFlex about. Flows subscribe to t
 
 The form starts with one empty event. Click **+ Add event** for more, or **Remove event** to delete one.
 
-<!-- screenshot: integrations/custom-integration-events -->
+<img src="assets/integrations/custom-integration-events.png" alt="Adding events to a custom integration">
 
 | Field | Required | Rules |
 | --- | --- | --- |
@@ -70,7 +70,7 @@ gives you `{{trigger.customer.name}}`, `{{trigger.customer.phone}}`, `{{trigger.
 
 After you click **Create integration**, FlowFlex shows **Your integration is live**.
 
-<!-- screenshot: integrations/custom-integration-live -->
+<img src="assets/integrations/custom-integration-live.png" alt="A live custom integration with its webhook details">
 
 The **Credentials** card shows three values:
 

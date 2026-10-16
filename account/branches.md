@@ -20,7 +20,7 @@ Users see a branch only if their access includes it. See [Teams](account/teams.m
 
 Go to **Settings** → **Branches**. Only Admins see this page in the sidebar.
 
-<!-- screenshot: account/branches -->
+<img src="assets/account/branches.png" alt="Settings, Branches">
 
 | Column | Values |
 | --- | --- |

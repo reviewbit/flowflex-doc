@@ -2,6 +2,8 @@
 
 The **Broadcast** list shows totals across all broadcasts: Total Sent, Avg delivered rate, Avg read rate, Avg fail rate, Avg click rate, and CTR. Each row shows Recipients, Sent, Delivered, Read, Clicked, Replied, and Failed.
 
+<img src="assets/broadcasts/broadcast-list.png" alt="The Broadcast list with delivery, read and click stats">
+
 **Broadcast statuses:** Draft → Active → Completed. A broadcast can also be Paused (by you, or automatically), Stopped (by you, permanently), or Failed.
 
 Open a broadcast to see **Broadcast Insights**: recipients, enqueued, sent, delivered, read, replied, failed, link clicks, and CTR. You can export the recipient list for most of these. The page also shows **Error Messages**, a **Timeline**, and the **Template Preview**. From here you can **Pause**, **Resume**, **Stop**, or **Delete** the broadcast.

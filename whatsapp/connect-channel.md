@@ -23,6 +23,8 @@ Have ready:
 
 ## What the Channels table shows
 
+<img src="assets/whatsapp/channels-list.png" alt="Channel Management with the connected Rangoli Store number">
+
 | Column | Values | Meaning |
 | --- | --- | --- |
 | Status | Connected / Pending / Disconnected | Only **Connected** channels can create templates or send broadcasts. |

@@ -2,7 +2,7 @@
 
 FlowFlex has a sidebar on the left, a top bar, and the page you are working on in the middle. This page explains each part.
 
-<!-- screenshot: get-started/app-shell -->
+<img src="assets/get-started/app-shell.png" alt="The FlowFlex home page with the sidebar, top bar and setup checklist">
 
 ## Sidebar
 

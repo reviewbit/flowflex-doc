@@ -1,0 +1,476 @@
+{
+  "_comment": "Standard demo content for every docs screenshot. Fictional brand, people and numbers; never use real customer data.",
+  "workspace": {
+    "branch": "Kochi"
+  },
+  "brand": {
+    "name": "Rangoli Store",
+    "website": "https://rangoli.example",
+    "email": "hello@rangoli.example",
+    "description": "Handwoven sarees and kurtas, delivered across India.",
+    "address": "12 MG Road, Bengaluru 560001"
+  },
+  "channel": {
+    "displayName": "Rangoli Store"
+  },
+  "contacts": [
+    {
+      "name": "Priya Sharma",
+      "phone": "+919000000001",
+      "email": "priya.sharma@rangoli.example",
+      "city": "Bengaluru",
+      "tags": [
+        "repeat-buyer",
+        "vip"
+      ],
+      "owner": "Rahul"
+    },
+    {
+      "name": "Arjun Mehta",
+      "phone": "+919000000002",
+      "email": "arjun.mehta@rangoli.example",
+      "city": "Mumbai",
+      "tags": [
+        "repeat-buyer"
+      ],
+      "owner": "Rahul"
+    },
+    {
+      "name": "Fatima Khan",
+      "phone": "+919000000003",
+      "email": "fatima.khan@rangoli.example",
+      "city": "Hyderabad",
+      "tags": [
+        "new"
+      ],
+      "owner": null
+    },
+    {
+      "name": "Rohan Iyer",
+      "phone": "+919000000004",
+      "email": "rohan.iyer@rangoli.example",
+      "city": "Chennai",
+      "tags": [
+        "repeat-buyer"
+      ],
+      "owner": "Meera"
+    },
+    {
+      "name": "Sneha Nair",
+      "phone": "+919000000005",
+      "email": "sneha.nair@rangoli.example",
+      "city": "Kochi",
+      "tags": [
+        "whatsapp-chat"
+      ],
+      "owner": null
+    },
+    {
+      "name": "Vikram Singh",
+      "phone": "+919000000006",
+      "email": "",
+      "city": "Delhi",
+      "tags": [
+        "new"
+      ],
+      "owner": "Meera"
+    },
+    {
+      "name": "Ayesha Siddiqui",
+      "phone": "+919000000007",
+      "email": "ayesha.s@rangoli.example",
+      "city": "Lucknow",
+      "tags": [
+        "repeat-buyer",
+        "vip"
+      ],
+      "owner": "Rahul"
+    },
+    {
+      "name": "Karthik Rao",
+      "phone": "+919000000008",
+      "email": "karthik.rao@rangoli.example",
+      "city": "Bengaluru",
+      "tags": [
+        "whatsapp-chat"
+      ],
+      "owner": null
+    }
+  ],
+  "list": {
+    "name": "Repeat buyers – Oct 2026"
+  },
+  "templates": {
+    "marketing": {
+      "name": "diwali_sale_2026_en",
+      "category": "Marketing",
+      "language": "English",
+      "body": "Hi {{1}}, the Rangoli Store Diwali Sale is live. Get up to 40% off sarees and kurtas until 25 October.",
+      "samples": {
+        "1": "Priya"
+      },
+      "footer": "Tap \"Stop promotions\" to unsubscribe",
+      "buttons": [
+        {
+          "type": "Visit website",
+          "text": "Shop now",
+          "url": "https://rangoli.example/diwali"
+        },
+        {
+          "type": "Copy offer code",
+          "code": "DIWALI40"
+        },
+        {
+          "type": "Marketing opt-out",
+          "text": "Stop promotions"
+        }
+      ]
+    },
+    "utility": {
+      "name": "order_shipped_v1",
+      "category": "Utility",
+      "language": "English",
+      "body": "Hi {{1}}, your order {{2}} from Rangoli Store has been shipped. It should reach you by {{3}}.",
+      "samples": {
+        "1": "Priya",
+        "2": "ORD-48213",
+        "3": "18 Oct"
+      },
+      "footer": "Reply HELP for support",
+      "buttons": [
+        {
+          "type": "Visit website",
+          "text": "Track order",
+          "url": "https://rangoli.example/track/{{1}}",
+          "sample": "ORD-48213"
+        }
+      ]
+    }
+  },
+  "broadcast": {
+    "name": "Diwali Sale – Repeat buyers – Oct 2026",
+    "timeZone": "Asia/Kolkata",
+    "startDate": "2026-10-20 10:00",
+    "endDate": "2026-10-27 20:00",
+    "dailySendCount": "1000",
+    "variables": {
+      "1": {
+        "field": "Name",
+        "fallback": "there"
+      }
+    },
+    "testNumber": "+919000000001"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "user": {
+    "name": "Ananya",
+    "email": "ananya@rangoli.example",
+    "phone": "+919000000010"
+  },
+  "lists_and_more": {
+    "lists": [
+      {
+        "title": "Repeat buyers – Oct 2026",
+        "count": 1878,
+        "created": "2026-10-02T09:00:00.000Z"
+      },
+      {
+        "title": "Diwali early access",
+        "count": 642,
+        "created": "2026-09-28T09:00:00.000Z"
+      },
+      {
+        "title": "Wedding season enquiries",
+        "count": 215,
+        "created": "2026-09-12T09:00:00.000Z"
+      }
+    ],
+    "segments": [
+      {
+        "title": "Bengaluru repeat buyers",
+        "count": 734,
+        "created": "2026-10-05T09:00:00.000Z"
+      },
+      {
+        "title": "Read the Diwali sale but didn't click",
+        "count": 909,
+        "created": "2026-10-12T09:00:00.000Z"
+      },
+      {
+        "title": "Opted in, no order yet",
+        "count": 388,
+        "created": "2026-09-30T09:00:00.000Z"
+      }
+    ],
+    "tags": [
+      {
+        "name": "repeat-buyer",
+        "count": 1878,
+        "description": "Two or more orders"
+      },
+      {
+        "name": "new",
+        "count": 412,
+        "description": "Joined in the last 30 days"
+      },
+      {
+        "name": "vip",
+        "count": 96,
+        "description": "High-value customers"
+      },
+      {
+        "name": "whatsapp-chat",
+        "count": 1520,
+        "auto": true,
+        "description": "Added automatically from the Rangoli Store channel"
+      }
+    ],
+    "imports": [
+      {
+        "title": "rangoli-customers-oct.csv",
+        "status": "completed",
+        "count": 1878,
+        "created": "2026-10-02T09:00:00.000Z"
+      },
+      {
+        "title": "diwali-early-access.xlsx",
+        "status": "completed",
+        "count": 642,
+        "created": "2026-09-28T09:00:00.000Z"
+      }
+    ],
+    "exports": [
+      {
+        "title": "Repeat buyers – Oct 2026",
+        "count": 1878,
+        "created": "2026-10-10T09:00:00.000Z"
+      }
+    ],
+    "customFields": [
+      "City",
+      "Last order date",
+      "Favourite category"
+    ],
+    "quickReplies": [
+      {
+        "shortcut": "hours",
+        "message": "We're open 10 am to 8 pm, Monday to Saturday."
+      },
+      {
+        "shortcut": "track",
+        "message": "You can track your order here: https://rangoli.example/track"
+      },
+      {
+        "shortcut": "returns",
+        "message": "Returns are free within 7 days of delivery."
+      }
+    ],
+    "dataTables": [
+      {
+        "title": "Store visit requests",
+        "columns": [
+          "name",
+          "phone",
+          "city",
+          "preferred_date"
+        ]
+      },
+      {
+        "title": "Feedback after delivery",
+        "columns": [
+          "name",
+          "order_id",
+          "rating",
+          "comment"
+        ]
+      }
+    ],
+    "team": [
+      {
+        "name": "Ananya",
+        "email": "ananya@rangoli.example",
+        "phone": "+919000000010",
+        "role": "Admin",
+        "lastActive": "2026-10-16T09:40:00.000Z"
+      },
+      {
+        "name": "Rahul",
+        "email": "rahul@rangoli.example",
+        "phone": "+919000000011",
+        "role": "Support agent",
+        "lastActive": "2026-10-16T08:15:00.000Z"
+      },
+      {
+        "name": "Meera",
+        "email": "meera@rangoli.example",
+        "phone": "+919000000012",
+        "role": "Marketing manager",
+        "lastActive": "2026-10-15T17:05:00.000Z"
+      }
+    ],
+    "usage": [
+      {
+        "month": "2026-05",
+        "category": "marketing",
+        "value": 820
+      },
+      {
+        "month": "2026-05",
+        "category": "utility",
+        "value": 310
+      },
+      {
+        "month": "2026-05",
+        "category": "authentication",
+        "value": 40
+      },
+      {
+        "month": "2026-06",
+        "category": "marketing",
+        "value": 940
+      },
+      {
+        "month": "2026-06",
+        "category": "utility",
+        "value": 330
+      },
+      {
+        "month": "2026-06",
+        "category": "authentication",
+        "value": 45
+      },
+      {
+        "month": "2026-07",
+        "category": "marketing",
+        "value": 1010
+      },
+      {
+        "month": "2026-07",
+        "category": "utility",
+        "value": 360
+      },
+      {
+        "month": "2026-07",
+        "category": "authentication",
+        "value": 52
+      },
+      {
+        "month": "2026-08",
+        "category": "marketing",
+        "value": 1180
+      },
+      {
+        "month": "2026-08",
+        "category": "utility",
+        "value": 390
+      },
+      {
+        "month": "2026-08",
+        "category": "authentication",
+        "value": 60
+      },
+      {
+        "month": "2026-09",
+        "category": "marketing",
+        "value": 1420
+      },
+      {
+        "month": "2026-09",
+        "category": "utility",
+        "value": 420
+      },
+      {
+        "month": "2026-09",
+        "category": "authentication",
+        "value": 61
+      },
+      {
+        "month": "2026-10",
+        "category": "marketing",
+        "value": 1650
+      },
+      {
+        "month": "2026-10",
+        "category": "utility",
+        "value": 450
+      },
+      {
+        "month": "2026-10",
+        "category": "authentication",
+        "value": 70
+      }
+    ],
+    "chats": [
+      {
+        "name": "Priya Sharma",
+        "phone": "+919000000001",
+        "last": "Is the Diwali offer valid on silk sarees too?",
+        "unread": 2,
+        "agent": "Ananya"
+      },
+      {
+        "name": "Arjun Mehta",
+        "phone": "+919000000002",
+        "last": "Thanks! When will my order ORD-48213 arrive?",
+        "unread": 1,
+        "agent": "Rahul"
+      },
+      {
+        "name": "Fatima Khan",
+        "phone": "+919000000003",
+        "last": "Do you have this kurta in size M?",
+        "agent": null
+      },
+      {
+        "name": "Rohan Iyer",
+        "phone": "+919000000004",
+        "last": "Your order has been shipped 🎉",
+        "fromUs": true,
+        "agent": "Rahul",
+        "status": "pending"
+      },
+      {
+        "name": "Sneha Nair",
+        "phone": "+919000000005",
+        "last": "Can I visit the Kochi store this weekend?",
+        "agent": null
+      },
+      {
+        "name": "Karthik Rao",
+        "phone": "+919000000008",
+        "last": "Thank you for shopping with Rangoli Store!",
+        "fromUs": true,
+        "agent": "Ananya",
+        "status": "resolved",
+        "expired": true
+      }
+    ],
+    "thread": [
+      {
+        "out": true,
+        "broadcast": true,
+        "text": "Hi Priya, the Rangoli Store Diwali Sale is live. Get up to 40% off sarees and kurtas until 25 October.",
+        "at": "2026-10-16T05:00:00.000Z"
+      },
+      {
+        "out": false,
+        "text": "Wow, lovely! Is the offer valid on silk sarees too?",
+        "at": "2026-10-16T09:41:00.000Z"
+      },
+      {
+        "out": true,
+        "agent": true,
+        "text": "Yes, Priya! All silk sarees are included. Use code DIWALI40 at checkout.",
+        "at": "2026-10-16T09:44:00.000Z"
+      },
+      {
+        "out": false,
+        "text": "Is the Diwali offer valid on silk sarees too? Can I also exchange if the colour doesn't suit?",
+        "at": "2026-10-16T09:58:00.000Z"
+      }
+    ]
+  }
+}

@@ -18,7 +18,7 @@ WhatsApp charges are paid from your wallet in message credits. One credit is anc
 
 ## Billing Overview
 
-<!-- screenshot: account/billing-overview -->
+<img src="assets/account/billing-overview.png" alt="Billing Overview with message credits and usage">
 
 | Card | What it shows |
 | --- | --- |
@@ -86,7 +86,7 @@ The minimum recharge depends on your payment currency. If you enter less, the dr
 
 ### Set credit alert
 
-<!-- screenshot: account/set-credit-alert -->
+<img src="assets/account/set-credit-alert.png" alt="The Set credit alert drawer">
 
 1. Click **Set alert**.
 2. Check **Current credit threshold**.

@@ -22,7 +22,7 @@ The segment's members are then computed. See [Computing state](audience/segments
 
 ## Build conditions
 
-<!-- screenshot: audience/segment-builder -->
+<img src="assets/audience/segment-builder.png" alt="Building the Bengaluru repeat buyers segment">
 
 Conditions sit inside **condition groups**. Each condition has three parts: a property, a condition, and a value.
 

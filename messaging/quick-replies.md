@@ -22,7 +22,7 @@ Example:
 | --- | --- |
 | `/hours` | Rangoli Store is open Monday to Saturday, 10 am to 8 pm. |
 
-<!-- screenshot: messaging/quick-replies-table -->
+<img src="assets/messaging/quick-replies-table.png" alt="The Quick Reply table">
 
 ## Edit or delete a quick reply
 

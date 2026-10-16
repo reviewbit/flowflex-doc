@@ -53,7 +53,7 @@ Deleting a list does not delete its contacts.
 
 Merging copies every contact from one or more source lists into a destination list. Each contact appears only once in the destination.
 
-<!-- screenshot: audience/merge-list -->
+<img src="assets/audience/merge-list.png" alt="The Merge list drawer">
 
 1. In the List table, click ⋯ → **Merge list** on a source list. Or open the list and choose ⋯ → **Merge list**.
 2. **Source list**: the list you clicked is filled in. Add more lists if needed.

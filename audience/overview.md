@@ -2,7 +2,7 @@
 
 Audience is where you keep your contacts and group them for broadcasts and flows. Open it from **Audience** in the sidebar.
 
-<!-- screenshot: audience/overview-tabs -->
+<img src="assets/audience/overview-tabs.png" alt="The Audience page with its six tabs and overview cards">
 
 ## The six tabs
 
