@@ -14,7 +14,7 @@ apt-get download libnspr4 libnss3 libatk1.0-0t64 libatk-bridge2.0-0t64 libatspi2
   libwayland-server0 libexpat1 libpango-1.0-0 libcairo2 libavahi-common3 libavahi-client3 \
   libgnutls30t64 libxi6 libxrender1 libxtst6 libxshmfence1 libfontconfig1 libfreetype6 \
   libpng16-16t64 libbrotli1 libharfbuzz0b libglib2.0-0t64 libpcre2-8-0 libffi8 \
-  libgraphite2-3 fontconfig-config fonts-dejavu-core fonts-noto-core >/dev/null 2>&1 || true
+  libgraphite2-3 fontconfig-config fonts-dejavu-core fonts-noto-core fonts-inter >/dev/null 2>&1 || true
 for d in *.deb; do dpkg-deb -x "$d" "$CACHE/root"; done
 cat > "$CACHE/fonts.conf" <<CONF
 <?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "fonts.dtd">

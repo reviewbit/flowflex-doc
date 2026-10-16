@@ -133,6 +133,8 @@ for (const [name, run] of Object.entries(shots)) {
     await run(page);
     await page.waitForLoadState("networkidle").catch(() => {});
     await page.waitForTimeout(600);
+    // The app asks for Inter but does not load it; it must be installed locally (setup.sh).
+    if (!(await page.evaluate(() => document.fonts.check('14px "Inter"')))) console.log(`  warning: Inter font not available`);
     const file = path.join(OUT, `${name}.png`);
     fs.mkdirSync(path.dirname(file), { recursive: true });
     await page.screenshot({ path: file });
