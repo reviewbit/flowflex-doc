@@ -1,5 +1,9 @@
 # Send a broadcast
 
+Create a broadcast, schedule it, test it on your own phone, and publish it.
+
+In this guide, Rangoli Store sends its approved Diwali template to repeat buyers. It starts on 20 October at 10:00 AM, greets each person by name, and keeps sending until the sale ends a week later.
+
 Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Details & message** → **Schedule & audience** → **Review & publish**. You can **Save as draft** at any step.
 
 ## 1. Details & message
@@ -19,15 +23,15 @@ Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Deta
 
 <img src="assets/broadcasts/create-schedule.png" alt="Create broadcast, step 2: Schedule & audience">
 
-| Field | Rule |
-| --- | --- |
-| Time zone | Required. The start and end times use this time zone, so pick your audience's time zone. |
-| Schedule date | Required. It cannot be in the past, and there is no "send now", so set it a few minutes ahead. |
-| End date | Required. Defaults to one week after the start. Sending stops at the end date, even if some contacts were not reached. |
-| Daily send count | Optional. Empty means the channel's Portfolio limit. It cannot exceed that limit. Contacts are sent in 24-hour batches. |
-| Retry failed messages after 48 hrs | Optional. Retries once the messages Meta held back for health or rate limits. The schedule must be longer than 48 hours. |
-| Audience Type | **List**, **Segment**, or **Audience** (individual contacts). You can select several. |
-| Quick Import | Upload a CSV or XLSX file to create a list on the spot. Set **Default country code** for numbers without `+`. Invalid, non-mobile, and duplicate numbers are skipped. |
+Now decide **when** it goes out and **who** gets it.
+
+- **Time zone** (required): the start and end times follow this time zone, so choose the one your customers live in.
+- **Schedule date** (required): it can't be in the past, and there's no "send now", so set it a few minutes ahead if you're in a hurry.
+- **End date** (required): defaults to one week after the start. Sending stops on this date, even if some contacts haven't been reached yet.
+- **Daily send count** (optional): leave it empty to use your channel's Portfolio limit; it can't go higher than that. Contacts are sent in 24-hour batches.
+- **Retry failed messages after 48 hrs** (optional): gives messages Meta held back for health or rate limits one more try. The schedule must be longer than 48 hours.
+- **Audience Type:** choose **List**, **Segment**, or **Audience** (individual contacts). You can pick more than one.
+- **Quick Import:** got a fresh CSV or XLSX file? Upload it here to create a list on the spot. Set **Default country code** for numbers without `+`; invalid, non-mobile and duplicate numbers are skipped for you.
 
 If you see **Some audience members may not receive this broadcast**, the audience is larger than the daily send count × the number of days. Extend the end date or raise the daily count.
 
@@ -53,4 +57,12 @@ Publishing is blocked if:
 
 Charges are taken from your wallet in message credits. The cost depends on the message category and the recipient's country; see [Billing and wallet](account/billing-and-wallet.md). Meta charges only for delivered messages ([Meta – Pricing](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing)). Marketing costs the most.
 
-Next: follow the [Broadcast guidelines](broadcasts/broadcast-guidelines.md) to protect your number's quality.
+## What your customers see
+
+At 10:00 AM on 20 October, John Smith's phone lights up with "Hi John, the Rangoli Store Diwali Sale is live…", along with **Shop now**, an offer code to copy, and an opt-out button. A customer whose name you don't have sees "Hi there" instead. By the next morning, the broadcast shows who read it and who tapped **Shop now**.
+
+## See also
+
+- [Results and errors](broadcasts/results-and-errors.md): what each number and error means.
+- [Segments](audience/segments.md): follow up with everyone who **Clicked** or **Read** this broadcast.
+- [Broadcast guidelines](broadcasts/broadcast-guidelines.md): keep your number healthy as you send more.

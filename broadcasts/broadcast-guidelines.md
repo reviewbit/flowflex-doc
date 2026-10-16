@@ -43,7 +43,7 @@ The limit climbs in steps: 250, then 2,000, 10,000, 100,000, and finally unlimit
 - **From 250 to 2,000:** verify your business with Meta, or send good-quality templates to 2,000 different people within 30 days.
 - **Every step after that** happens on its own, usually within 6 hours, once you've used at least half of your current limit in the last 7 days and your messages are high quality.
 
-Conversations customers start don't use the limit. If John Smith messages Rangoli Store first, replying to him doesn't count.
+Conversations customers start don't use the limit. If John Smith messages Rangoli Store first, the replies to John don't count.
 
 ## Grow a new number gently
 
