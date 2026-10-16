@@ -2,15 +2,17 @@
 
 # FlowFlex Docs
 
-> Build WhatsApp automation flows, fire events from your app, and attach files — via the SDK or the REST API.
+> Send WhatsApp broadcasts, automate customer conversations with flows, and connect your own app.
 
-- 🧩 **Flows** — visual builder: triggers, messages, logic, delays
-- 📦 **SDK** — `flowflex` for Node & the browser
-- 🔌 **REST API** — fire custom-integration events directly
+- **WhatsApp setup**: connect your number and get templates approved
+- **Broadcasts**: message your contacts at scale, safely
+- **Flows**: build automated replies and journeys
+- **Developers**: SDK and REST API
 
 [Get started](getting-started.md)
-[SDK](sdk/overview.md)
-[API](api/authentication.md)
+[Broadcasts](broadcasts/overview.md)
+[Flows](flows/overview.md)
+[Developers](developers/quick-start.md)
 
 <!-- background color -->
 ![color](#f4ebff)

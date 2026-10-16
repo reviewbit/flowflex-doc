@@ -125,4 +125,4 @@ If offered, select **Upgrade request** or **Convert to response outputs** to use
 
 ## Before publishing
 
-Confirm required credentials are supplied, sample fields match actual responses, all outputs are connected, and failure paths do not assume success data exists. Use [API troubleshooting](flows/troubleshooting.md#my-api-request-fails) for request errors.
+Confirm required credentials are supplied, sample fields match actual responses, all outputs are connected, and failure paths do not assume success data exists. Use [API troubleshooting](help/troubleshooting.md#my-api-request-fails) for request errors.

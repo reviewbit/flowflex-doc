@@ -44,4 +44,4 @@ For sending custom events from your system, see [SDK setup](sdk/overview.md) or 
 
 - [Select and insert variables](flows/using-variables.md): choose nested JSON fields and earlier-node results.
 - [Build a flow](flows/building-a-flow.md): add and connect your first message.
-- [Troubleshooting](flows/troubleshooting.md#the-flow-does-not-start): check a flow that does not start.
+- [Troubleshooting](help/troubleshooting.md#the-flow-does-not-start): check a flow that does not start.

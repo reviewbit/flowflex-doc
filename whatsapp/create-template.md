@@ -2,7 +2,7 @@
 
 Go to **Templates** → **Create template**. The wizard has four steps: **Select channel** → **Set up template** → **Edit template** → **Submit for review**. Meta usually reviews a template within minutes, but it can take up to 24 hours.
 
-Read the [Template guidelines](broadcasts/template-guidelines.md) before you submit. They cover the most common reasons Meta rejects a template.
+Read the [Template guidelines](whatsapp/template-guidelines.md) before you submit. They cover the most common reasons Meta rejects a template.
 
 ## 1. Select channel
 

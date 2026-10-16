@@ -13,7 +13,7 @@ Use your own FlowFlex host if self-hosted. All endpoints below are under `/v1`.
 
 ## Credentials
 
-From a **Custom Integration** (see [Quick start](getting-started.md#1-create-a-custom-integration)):
+From a **Custom Integration** (see [Quick start](developers/quick-start.md#1-create-a-custom-integration)):
 
 | Credential | Looks like | Role |
 | --- | --- | --- |

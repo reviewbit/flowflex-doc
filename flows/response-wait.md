@@ -46,4 +46,4 @@ Give the customer enough time to answer, but decide what should happen if they l
 
 For a pause that does not depend on an answer, use [Set time delay](flows/nodes/set-time-delay.md).
 
-See [WhatsApp setup](flows/whatsapp-message-setup.md) and [Troubleshooting](flows/troubleshooting.md#the-flow-waits-or-takes-no-response).
+See [WhatsApp setup](flows/whatsapp-message-setup.md) and [Troubleshooting](help/troubleshooting.md#the-flow-waits-or-takes-no-response).

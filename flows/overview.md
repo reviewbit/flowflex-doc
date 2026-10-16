@@ -1,8 +1,8 @@
-# Build customer workflows with Flows
+# Flows overview
 
 A flow connects actions into a customer journey: greet a customer, offer choices, collect information, look up an order, or hand the conversation to your team.
 
-Start with [Build your first customer reply](flows/building-a-flow.md) or [Learn flow builder](flows/learning-the-builder.md) for guided practice.
+Start with [Build your first flow](flows/building-a-flow.md) or [Learn flow builder](flows/learning-the-builder.md) for guided practice.
 
 ## How a flow works
 
@@ -28,7 +28,7 @@ Connect every choice and response output. Placing a node on the canvas does not 
 | Route by an answer, order value, or tag | [Conditions](flows/setting-conditions.md) |
 | Capture and check a customer's reply | [Response waiting](flows/response-wait.md) |
 | Review drafts and publish changes | [Versions and publishing](flows/versions-and-portability.md) |
-| Fix a flow or WhatsApp message issue | [Troubleshooting](flows/troubleshooting.md) |
+| Fix a flow or WhatsApp message issue | [Troubleshooting](help/troubleshooting.md) |
 
 ## Choose a node
 

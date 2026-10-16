@@ -43,4 +43,4 @@ An incoming attachment's download URL is also temporary. Do not assume a saved U
 | Audio | AAC, AMR, MP3, MP4 audio, OGG | 16 MB |
 | Document | PDF, Word, Excel, PowerPoint, plain text | 100 MB |
 
-Choose a file type appropriate for the selected message or template header. If upload or sending fails, see [File troubleshooting](flows/troubleshooting.md#files-do-not-upload-or-send).
+Choose a file type appropriate for the selected message or template header. If upload or sending fails, see [File troubleshooting](help/troubleshooting.md#files-do-not-upload-or-send).
