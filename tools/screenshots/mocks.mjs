@@ -206,8 +206,8 @@ export function buildRewriters(data, opts = {}) {
     [/^\/api\/monthly-usage-history$/, (b) => ({ ...b, data: demo.usage })],
     [/^\/api\/subscription\/current$/, (b) => ({ ...b, data: { ...(b.data || {}),
       ...(b.data?.active_subscription ? { active_subscription: { ...b.data.active_subscription, amount: b.data.plan?.pricing?.inr ?? b.data.active_subscription.amount,
-        subscription_start_date: "2026-10-01T00:00:00.000Z", next_billing_date: "2026-11-01T00:00:00.000Z", subscription_end_date: "2026-11-01T00:00:00.000Z", addons: [] } } : {}),
-      ...(b.data?.subscription ? { subscription: { ...b.data.subscription, name: brand.name, website: brand.website, next_billing_date: "2026-11-01T00:00:00.000Z", subscription_end_date: "2026-11-01T00:00:00.000Z", subscription_start_date: "2026-10-01T00:00:00.000Z" } } : {}),
+        subscription_start_date: "2026-10-01T00:00:00.000Z", next_billing_date: "2027-01-01T00:00:00.000Z", subscription_end_date: "2027-01-01T00:00:00.000Z", addons: [] } } : {}),
+      ...(b.data?.subscription ? { subscription: { ...b.data.subscription, name: brand.name, website: brand.website, next_billing_date: "2027-01-01T00:00:00.000Z", subscription_end_date: "2027-01-01T00:00:00.000Z", subscription_start_date: "2026-10-01T00:00:00.000Z" } } : {}),
       addons: [], change_request: null, ...(b.data?.organisation ? { organisation: { ...b.data.organisation, name: brand.name, website: brand.website,
       business_address: { address1: brand.address, state: "Karnataka", city: "Bengaluru", zip: "560001" }, billing_details: { ...(b.data.organisation.billing_details || {}), full_name: demoUser.name, billing_name: brand.name, billing_email: brand.email } } } : {}) } })],
     [/^\/api\/roles$/, (b) => {

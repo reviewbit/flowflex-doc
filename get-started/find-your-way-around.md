@@ -27,7 +27,7 @@ The sidebar has two groups, **MAIN** and **SETTINGS**. Click the arrow on its ed
 
 | Item | What it is for |
 | --- | --- |
-| **Integrations** | Connect Shopify or your own systems. See [Integrations](integrations/overview.md). |
+| **Integrations** | Connect your own systems. See [Integrations](integrations/overview.md). |
 | **Billing** | Your billing overview and wallet. See [Billing and wallet](account/billing-and-wallet.md). |
 | **Settings** → **Account** | Your own profile. |
 | **Settings** → **Plans** | Compare and choose plans. See [Plans and add-ons](account/plans-and-add-ons.md). |

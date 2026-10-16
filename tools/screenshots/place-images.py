@@ -33,7 +33,6 @@ ALT = {
     "flows/campaigns-list": "The Auto Campaign list",
     "flows/saved-data-tables": "Saved data tables",
     "integrations/integrations-page": "The Integrations page",
-    "integrations/shopify-connect": "Connecting a Shopify store",
     "integrations/custom-integration-events": "Adding events to a custom integration",
     "integrations/custom-integration-live": "A live custom integration with its webhook details",
     "account/billing-overview": "Billing Overview with message credits and usage",
