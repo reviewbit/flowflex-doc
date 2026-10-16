@@ -1,0 +1,53 @@
+{
+  "_comment": "Standard demo content for every docs screenshot. Fictional brand, people and numbers; never use real customer data.",
+  "brand": {
+    "name": "Rangoli Store",
+    "website": "https://rangoli.example",
+    "email": "hello@rangoli.example",
+    "description": "Handwoven sarees and kurtas, delivered across India.",
+    "address": "12 MG Road, Bengaluru 560001"
+  },
+  "channel": { "displayName": "Rangoli Store" },
+  "contacts": [
+    { "name": "Priya Sharma", "phone": "+919000000001", "city": "Bengaluru", "tags": ["repeat-buyer"] },
+    { "name": "Arjun Mehta", "phone": "+919000000002", "city": "Mumbai", "tags": ["repeat-buyer"] },
+    { "name": "Fatima Khan", "phone": "+919000000003", "city": "Hyderabad", "tags": ["new"] }
+  ],
+  "list": { "name": "Repeat buyers – Oct 2026" },
+  "templates": {
+    "marketing": {
+      "name": "diwali_sale_2026_en",
+      "category": "Marketing",
+      "language": "English",
+      "body": "Hi {{1}}, the Rangoli Store Diwali Sale is live. Get up to 40% off sarees and kurtas until 25 October.",
+      "samples": { "1": "Priya" },
+      "footer": "Tap \"Stop promotions\" to unsubscribe",
+      "buttons": [
+        { "type": "Visit website", "text": "Shop now", "url": "https://rangoli.example/diwali" },
+        { "type": "Copy offer code", "code": "DIWALI40" },
+        { "type": "Marketing opt-out", "text": "Stop promotions" }
+      ]
+    },
+    "utility": {
+      "name": "order_shipped_v1",
+      "category": "Utility",
+      "language": "English",
+      "body": "Hi {{1}}, your order {{2}} from Rangoli Store has been shipped. It should reach you by {{3}}.",
+      "samples": { "1": "Priya", "2": "ORD-48213", "3": "18 Oct" },
+      "footer": "Reply HELP for support",
+      "buttons": [
+        { "type": "Visit website", "text": "Track order", "url": "https://rangoli.example/track/{{1}}", "sample": "ORD-48213" }
+      ]
+    }
+  },
+  "broadcast": {
+    "name": "Diwali Sale – Repeat buyers – Oct 2026",
+    "timeZone": "Asia/Kolkata",
+    "startDate": "2026-10-20 10:00",
+    "endDate": "2026-10-27 20:00",
+    "dailySendCount": "1000",
+    "variables": { "1": { "field": "Name", "fallback": "there" } },
+    "testNumber": "+919000000001"
+  },
+  "viewport": { "width": 1440, "height": 900 }
+}
