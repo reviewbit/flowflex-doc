@@ -67,10 +67,11 @@ curl -X POST "https://api.flowflex.ai/v1/events/ic_abc123" \
   -H "x-event: order.placed" \
   -H "x-idempotency-key: $(uuidgen)" \
   -H "Content-Type: application/json" \
-  -d '{ "payload": { "name": "Ada", "order_id": "ord_42", "phone": "919999999999" } }'
+  -d '{ "name": "Ada", "order_id": "ord_42", "phone": "919999999999" }'
 ```
 
-Both do the same thing. The keys you put in `payload` (`name`, `order_id`, `phone`) are
+Both do the same thing. With the SDK you pass the data as `payload`; with raw HTTP it is
+the whole JSON body. The keys (`name`, `order_id`, `phone`) are
 exactly what you reference in the flow as `{{trigger.name}}`, `{{trigger.order_id}}`,
 `{{trigger.phone}}`.
 

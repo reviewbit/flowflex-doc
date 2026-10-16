@@ -12,23 +12,29 @@ New to FlowFlex? Start with [Set up your account](getting-started.md).
 | --- | --- |
 | Connect my WhatsApp number | [Connect a WhatsApp channel](whatsapp/connect-channel.md) |
 | Create a message template and get it approved | [Create a template](whatsapp/create-template.md) · [Template guidelines](whatsapp/template-guidelines.md) |
+| Import my contacts or build a segment | [Import and export](audience/import-export.md) · [Segments](audience/segments.md) |
 | Send an offer or update to many contacts | [Send a broadcast](broadcasts/send-broadcast.md) |
+| Reply to customers from a shared inbox | [Conversations](messaging/conversations.md) |
 | Check why a broadcast message failed | [Results and errors](broadcasts/results-and-errors.md) |
 | Reply to customers automatically | [Build your first flow](flows/building-a-flow.md) |
 | Learn what each flow step does | [Node reference](flows/nodes.md) |
-| Send messages when something happens in my app | [Developer quick start](developers/quick-start.md) |
+| Connect Shopify or my own app | [Integrations](integrations/overview.md) |
+| Add teammates and control what they can do | [Teams](account/teams.md) · [Roles and permissions](account/roles-and-permissions.md) |
+| Add credits or change my plan | [Billing and wallet](account/billing-and-wallet.md) · [Plans and add-ons](account/plans-and-add-ons.md) |
 | Fix something that isn't working | [Troubleshooting](help/troubleshooting.md) |
 
 ## How the docs are organised
 
 | Section | What's in it |
 | --- | --- |
-| **Get started** | One-time account setup |
-| **WhatsApp setup** | Channels, templates, and Meta's template rules, shared by broadcasts and flows |
+| **Get started** | Sign-up, one-time setup, and a tour of the app |
+| **WhatsApp setup** | Channels, templates, and Meta's template rules |
+| **Audience** | Contacts, lists, segments, tags, import and export |
 | **Broadcasts** | Sending one template to a list or segment, with guidelines and error codes |
-| **Flows** | The visual builder: how-to guides for triggers, variables, messages, and conditions |
-| **Flow nodes** | A reference page for every node in the builder |
-| **Developers** | The SDK and REST API for firing events from your app |
+| **Messaging** | The shared inbox, quick replies, business hours and auto replies |
+| **Workflows** | The flow builder, campaigns, saved data, and every node |
+| **Integrations** | Shopify, and custom integrations through the SDK and REST API |
+| **Account** | Billing, plans, organisation, branches, teams, roles |
 | **Help** | Troubleshooting, and the Meta policies these guides follow |
 
 Use the search box at the top to jump to any topic.

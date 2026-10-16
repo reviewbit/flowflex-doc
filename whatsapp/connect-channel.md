@@ -16,7 +16,7 @@ Have ready:
 ## Steps
 
 1. Go to **Channels** → **Add New Channel**. During onboarding, the Home page shows **Continue with Facebook** instead.
-2. FlowFlex checks your plan's channel limit first. If you see **Channel limit reached**, buy an extra channel under **Billing**, or upgrade your plan.
+2. FlowFlex checks your plan's channel limit first. If you see **Channel limit reached**, add an extra channel under **Settings** → **Plans** → **Configure Add-ons**, or upgrade your plan. See [Plans and add-ons](account/plans-and-add-ons.md).
 3. In the Meta popup, pick or create the Business portfolio and WhatsApp Business Account (WABA). Add the number and verify it with the code Meta sends.
 4. Wait for **WhatsApp number configured successfully**. If you see **Finalizing channel setup**, registration is still running. Click **Refresh status** after a minute.
 5. Open the channel and fill in the **Business Profile**: description (up to 150 characters), address, email, and website.
