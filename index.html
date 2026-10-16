@@ -128,15 +128,29 @@
         line-height: 1.5;
       }
 
-      /* Section group labels (top-level <p> in sidebar) */
+      /* Section headers (top-level <p> in sidebar): a tree of collapsible
+         sections, each with its pages indented underneath. */
+      .sidebar-nav > ul > li {
+        margin: 2px 0;
+      }
       .sidebar-nav > ul > li > p,
       .sidebar-nav > p {
-        margin: 18px 12px 6px;
-        font-size: 0.6875rem;
+        margin: 0;
+        padding: 9px 30px 9px 12px;
+        font-size: 0.9375rem;
         font-weight: 600;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--ff-text-muted);
+        letter-spacing: 0;
+        text-transform: none;
+        color: var(--ff-text-heading);
+        border-radius: var(--ff-radius-md);
+      }
+      .sidebar-nav > ul > li > ul {
+        margin: 2px 0 8px 14px;
+        padding-left: 8px;
+        border-left: 1px solid var(--ff-border);
+      }
+      .sidebar-nav > ul > li.ff-section-active > p {
+        color: var(--ff-primary-pressed);
       }
 
       .sidebar-nav ul {
@@ -221,23 +235,27 @@
         padding-bottom: 6px;
       }
 
-      /* Collapsible sub-groups (e.g. **WhatsApp nodes**): the group holding the
-         current page opens; the rest start closed. */
-      .sidebar-nav li > strong.ff-group-toggle {
+      /* Collapsible sections and sub-groups (e.g. Broadcasts, **WhatsApp nodes**):
+         the ones holding the current page open; the rest start closed. */
+      .sidebar-nav li > strong.ff-group-toggle,
+      .sidebar-nav li > p.ff-group-toggle {
         cursor: pointer;
         position: relative;
         padding-right: 28px;
         border-radius: var(--ff-radius-md);
         user-select: none;
       }
-      .sidebar-nav li > strong.ff-group-toggle:hover {
+      .sidebar-nav li > strong.ff-group-toggle:hover,
+      .sidebar-nav li > p.ff-group-toggle:hover {
         background: var(--ff-surface-muted);
       }
-      .sidebar-nav li > strong.ff-group-toggle:focus-visible {
+      .sidebar-nav li > strong.ff-group-toggle:focus-visible,
+      .sidebar-nav li > p.ff-group-toggle:focus-visible {
         outline: 2px solid var(--ff-primary);
         outline-offset: 1px;
       }
-      .sidebar-nav li > strong.ff-group-toggle::after {
+      .sidebar-nav li > strong.ff-group-toggle::after,
+      .sidebar-nav li > p.ff-group-toggle::after {
         content: "";
         position: absolute;
         right: 12px;
@@ -249,10 +267,10 @@
         transform: translateY(-25%) rotate(45deg);
         transition: transform 0.12s ease;
       }
-      .sidebar-nav li.ff-collapsed > strong.ff-group-toggle::after {
+      .sidebar-nav li.ff-collapsed > .ff-group-toggle::after {
         transform: translateY(-50%) rotate(-45deg);
       }
-      .sidebar-nav li.ff-collapsed > strong + ul {
+      .sidebar-nav li.ff-collapsed > ul {
         display: none;
       }
 
@@ -1194,10 +1212,13 @@
           }
         }
 
-        // Make each **bold** sidebar sub-group collapsible. Runs on every route:
-        // wires new groups once, then opens the group that holds the active page.
+        // Make each sidebar section (top-level label) and **bold** sub-group
+        // collapsible. Runs on every route: wires new groups once, then opens
+        // the section and sub-group that hold the active page.
         function setupSidebarGroups() {
-          var labels = document.querySelectorAll(".sidebar-nav li > strong");
+          var labels = document.querySelectorAll(
+            ".sidebar-nav > ul > li > p, .sidebar-nav li > strong"
+          );
           labels.forEach(function (label) {
             var li = label.parentElement;
             if (!label.classList.contains("ff-group-toggle")) {
@@ -1220,8 +1241,10 @@
                 }
               });
             }
-            if (li.querySelector("li.active, a.active")) {
-              li.classList.remove("ff-collapsed");
+            var holdsActive = !!li.querySelector("li.active, a.active");
+            if (holdsActive) li.classList.remove("ff-collapsed");
+            if (label.tagName === "P") {
+              li.classList.toggle("ff-section-active", holdsActive);
             }
             label.setAttribute(
               "aria-expanded",
