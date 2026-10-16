@@ -106,5 +106,10 @@
   "viewport": {
     "width": 1440,
     "height": 900
+  },
+  "user": {
+    "name": "Ananya",
+    "email": "ananya@rangoli.example",
+    "phone": "+919000000010"
   }
 }

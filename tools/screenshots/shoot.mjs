@@ -9,6 +9,7 @@ import { chromium } from "playwright";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildRewriters } from "./mocks.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 loadEnv(path.join(here, ".env"));
@@ -74,20 +75,49 @@ const context = await browser.newContext({
     ? { username: process.env.DOCS_BASIC_USER, password: process.env.DOCS_BASIC_PASSWORD || "" }
     : undefined,
 });
-await context.route("**/*", (route) => {
+const rewriters = buildRewriters(data);
+const unmocked = new Set();
+let mocking = false; // switched on after sign-in and branch selection
+await context.route("**/*", async (route) => {
   const req = route.request();
   const url = new URL(req.url());
+  if (url.host !== API_HOST) return route.continue();
   const write = !["GET", "HEAD", "OPTIONS"].includes(req.method());
-  if (write && url.host === API_HOST && !WRITE_ALLOWED.some((re) => re.test(url.pathname))) {
-    console.log(`  blocked ${req.method()} ${url.pathname}`);
+  if (write && !WRITE_ALLOWED.some((re) => re.test(url.pathname))) {
+    if (process.env.DOCS_VERBOSE) console.log(`  blocked ${req.method()} ${url.pathname}`);
     return route.abort();
   }
-  return route.continue();
+  // Replace real customer data with demo data (see mocks.mjs).
+  const rw = mocking && req.method() === "GET" && rewriters.find((r) => r.re.test(url.pathname));
+  if (!rw) {
+    if (mocking && req.method() === "GET") unmocked.add(url.pathname.replace(/[0-9a-f]{24}/g, ":id"));
+    return route.continue();
+  }
+  const res = await route.fetch();
+  let body;
+  try { body = await res.json(); } catch { return route.fulfill({ response: res }); }
+  return route.fulfill({ response: res, json: rw.fn(body) });
 });
 const page = await context.newPage();
 page.setDefaultTimeout(60000);
+
+// DOCS_RECORD=1: log the *shape* (keys and types, never values) of every API response,
+// so mocks can match the real format without real data leaving the box.
+const shapes = {};
+if (process.env.DOCS_RECORD) {
+  page.on("response", async (res) => {
+    const url = new URL(res.url());
+    if (url.host !== API_HOST || !(res.headers()["content-type"] || "").includes("json")) return;
+    try {
+      const key = `${res.request().method()} ${url.pathname.replace(/[0-9a-f]{24}/g, ":id")}`;
+      shapes[key] = { query: [...url.searchParams.keys()], body: shapeOf(await res.json()) };
+    } catch {}
+  });
+}
 try {
   await signIn(page);
+  mocking = true;
+  await go(page, "/");
 } catch (e) {
   fs.mkdirSync(path.join(here, "out"), { recursive: true });
   await page.screenshot({ path: path.join(here, "out/sign-in-failed.png") });
@@ -112,8 +142,21 @@ for (const [name, run] of Object.entries(shots)) {
     console.log(`FAIL ${name}: ${e.message.split("\n")[0]}`);
   }
 }
+console.log(`not rewritten (check these screens for real data): ${[...unmocked].sort().join(", ")}`);
+if (process.env.DOCS_RECORD) {
+  fs.mkdirSync(path.join(here, "out"), { recursive: true });
+  fs.writeFileSync(path.join(here, "out/api-shapes.json"), JSON.stringify(shapes, null, 1));
+  console.log(`recorded ${Object.keys(shapes).length} endpoint shapes → out/api-shapes.json`);
+}
 await browser.close();
 process.exit(failed ? 1 : 0);
+
+function shapeOf(v, depth = 0) {
+  if (depth > 7) return "…";
+  if (Array.isArray(v)) return v.length ? [shapeOf(v[0], depth + 1)] : [];
+  if (v && typeof v === "object") return Object.fromEntries(Object.keys(v).map((k) => [k, shapeOf(v[k], depth + 1)]));
+  return v === null ? "null" : typeof v;
+}
 
 // ---------------------------------------------------------------------------
 async function signIn(p) {
@@ -155,6 +198,7 @@ async function selectBranch(p, name) {
   });
   if (!box) throw new Error("profile block not found in top bar");
   await p.mouse.click(box.x, box.y);
+  await p.waitForTimeout(1000);
   await p.getByText("Switch branch", { exact: true }).click();
   const drawer = p.locator(".ant-drawer-content:visible").last();
   await drawer.getByText(name, { exact: true }).first().click();
