@@ -93,8 +93,8 @@ export function buildRewriters(data, opts = {}) {
   const demoIntegration = (real = {}) => ({ ...real, _id: ID(750), name: "Rangoli Order Events", description: "Order and delivery events from the Rangoli Store website.", icon_url: null,
     api_key: "cik_xxxxxxxxxxxx", code: "ic_rangoli01", isActive: true, allow_adhoc_topics: false, deletedAt: null, org_id: real.org_id, branch_id: real.branch_id,
     createdAt: "2026-10-01T09:00:00.000Z", updatedAt: "2026-10-01T09:00:00.000Z",
-    events: [{ topic: "order.placed", title: "Order placed", description: "A customer places an order", category: "orders", sample_payload: { name: "Priya Sharma", phone: "+919000000001", order_id: "ORD-48213", total: "2499" } },
-             { topic: "order.shipped", title: "Order shipped", description: "An order leaves the warehouse", category: "orders", sample_payload: { name: "Priya Sharma", phone: "+919000000001", order_id: "ORD-48213", eta: "18 Oct" } }] });
+    events: [{ topic: "order.placed", title: "Order placed", description: "A customer places an order", category: "orders", sample_payload: { name: "John Smith", phone: "+919000000001", order_id: "ORD-48213", total: "2499" } },
+             { topic: "order.shipped", title: "Order shipped", description: "An order leaves the warehouse", category: "orders", sample_payload: { name: "John Smith", phone: "+919000000001", order_id: "ORD-48213", eta: "18 Oct" } }] });
   const contactRows = () => contacts.map((c, i) => ({
     _id: ID(950 + i), name: c.name, phone: c.phone, email: c.email || null, country: "India", state: "", addresses: [c.city],
     tags: c.tags.map((n, j) => ({ _id: ID(500 + j), name: n })), assigned_user: c.owner ? { full_name: c.owner, name: c.owner, email: `${c.owner.toLowerCase()}@rangoli.example` } : null,
@@ -201,8 +201,8 @@ export function buildRewriters(data, opts = {}) {
     // ---- Integrations ----
     [/^\/api\/custom-integrations$/, (b) => ({ ...b, data: [demoIntegration(b.data?.[0])] })],
     [/^\/api\/__unused_custom_integrations$/, (b) => ({ ...b, data: [{ ...(b.data?.[0] || {}), _id: ID(750), name: "Rangoli Order Events", description: "Order and delivery events from the Rangoli Store website.", icon_url: null, api_key: "cik_xxxxxxxxxxxx", code: "ic_rangoli01", isActive: true,
-      events: [{ topic: "order.placed", title: "Order placed", description: "A customer places an order", category: "orders", sample_payload: { name: "Priya Sharma", phone: "+919000000001", order_id: "ORD-48213", total: "2499" } },
-               { topic: "order.shipped", title: "Order shipped", description: "An order leaves the warehouse", category: "orders", sample_payload: { name: "Priya Sharma", phone: "+919000000001", order_id: "ORD-48213", eta: "18 Oct" } }] }] })],
+      events: [{ topic: "order.placed", title: "Order placed", description: "A customer places an order", category: "orders", sample_payload: { name: "John Smith", phone: "+919000000001", order_id: "ORD-48213", total: "2499" } },
+               { topic: "order.shipped", title: "Order shipped", description: "An order leaves the warehouse", category: "orders", sample_payload: { name: "John Smith", phone: "+919000000001", order_id: "ORD-48213", eta: "18 Oct" } }] }] })],
     [/^\/api\/custom-integrations\/[^/]+$/, () => ({ success: true, data: demoIntegration() }), { synthetic: true }],
     [/^\/api\/integration$/, (b) => (b.data ? { ...b, data: { ...b.data, config: { api_key: "••••••••", api_secret_key: "••••••••", access_token: "••••••••", shop_domain: "rangoli-store.myshopify.com" } } } : b)],
     // ---- Account ----
