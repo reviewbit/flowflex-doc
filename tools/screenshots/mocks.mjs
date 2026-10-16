@@ -157,6 +157,14 @@ export function buildRewriters(data, opts = {}) {
     [/^\/api\/audience\/overview$/, (b) => ({ ...b, data: { ...(b.data || {}), total_customers: 2734, total_email_subscribed: 2215, total_phone_subscribed: 2734, total_suppressed: 41 } })],
     [/^\/api\/storage\/upload-url$/, () => ({ uploadUrl: "https://docs-shots.invalid/upload/contacts.csv", publicUrl: "https://docs-shots.invalid/contacts.csv",
       path: "docs/contacts.csv", bucket: "flowflex" }), { synthetic: true }],
+    // Contact detail page (synthetic)
+    [/^\/api\/single-audience$/, () => ({ success: true, message: "OK", data: { ...contactRows()[0],
+      lists: [{ _id: ID(400), title: demo.lists[0].title }, { _id: ID(401), title: demo.lists[1].title }],
+      sms_marketing_consent: false, email_marketing_consent: true, created: "2026-08-12T10:00:00.000Z",
+      meta: { shopify: { orders_count: 6, total_spent: "18450.00" } } } }), { synthetic: true }],
+    [/^\/api\/audience-belongs-to-segment$/, () => ({ success: true, message: "OK", data: demo.segments.slice(0, 2).map((g, i) => ({ _id: ID(450 + i), title: g.title, audience_count: g.count })) }), { synthetic: true }],
+    // Saving a broadcast draft (publish dialog): answered here, never sent to the backend.
+    [/^\/api\/broadcast$/, () => ({ success: true, message: "Broadcast saved", data: { _id: ID(399), status: "draft" } }), { synthetic: true, methods: ["POST", "PUT", "PATCH"] }],
     // ---- Messaging ----
     [/^\/api\/business-hours$/, (b) => ({ ...b, data: { ...(b.data || {}), quick_reply: { ...(b.data?.quick_reply || {}), reply: [] },
       hours_mode: "custom",
@@ -232,7 +240,7 @@ export function buildRewriters(data, opts = {}) {
     ].map((x, i) => ({ ...(b.data?.transactions?.[0] || {}), _id: ID(870 + i), userId: ID(800), merchant_order_id: `order_RNG${1000 + i}`, currency: "INR",
       service_charges: Math.round(x.amount * 0.025), gst_amount: 0, net_amount: x.amount, updatedAt: x.createdAt, ...x })) } })],
     [/^\/api\/notifications$/, (b) => ({ ...b, data: Array.isArray(b.data) ? [] : b.data })],
-  ].map(([re, fn, opts]) => ({ re, fn, userName, synthetic: !!opts?.synthetic }));
+  ].map(([re, fn, opts]) => ({ re, fn, userName, synthetic: !!opts?.synthetic, methods: opts?.methods || ["GET"] }));
 }
 
 function renameUser(u, demo) {

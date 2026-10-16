@@ -20,7 +20,7 @@ New accounts start with a 14-day free trial. No credit card is needed.
 
 If the email is already registered, you see **An account with this email already exists.** Click **Log in instead**.
 
-<!-- screenshot: get-started/create-account -->
+<img src="assets/get-started/create-account.png" alt="The Create your account form, filled in for Ananya">
 
 ### Verify your account
 
@@ -76,7 +76,7 @@ All fields on this step are optional.
 
 Click **Finish setup**. FlowFlex creates the organisation and opens the app. Click **Back** to return to step 1.
 
-<!-- screenshot: get-started/create-organisation -->
+<img src="assets/get-started/create-organisation.png" alt="Creating the Rangoli Store organisation">
 
 ### If setup is interrupted
 

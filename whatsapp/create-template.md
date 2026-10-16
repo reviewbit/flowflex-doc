@@ -30,7 +30,7 @@ Choose the category carefully. Meta charges by category, and it re-categorises t
 
 ## 3. Edit template
 
-<!-- screenshot: whatsapp/template-edit -->
+<img src="assets/whatsapp/template-edit.png" alt="Create template: editing the Diwali sale template">
 
 | Part | Required | Limits in FlowFlex |
 | --- | --- | --- |

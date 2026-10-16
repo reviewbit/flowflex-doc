@@ -86,7 +86,7 @@ Only one of the two is sent. If the Away Message is off, the greeting is sent ou
 
 Customers send a keyword to subscribe to or unsubscribe from your marketing messages. Here you set those keywords and the confirmation replies, per language.
 
-<!-- screenshot: messaging/settings-subscription-auto-replies -->
+<img src="assets/messaging/settings-subscription-auto-replies.png" alt="Subscription Auto Replies with START and STOP keywords">
 
 **Default (English)** is always there and cannot be removed. Its defaults are:
 
