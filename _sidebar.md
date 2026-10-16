@@ -1,8 +1,8 @@
-<!-- _sidebar.md — grouped by what the customer is trying to do. Keep labels in sync with page titles. -->
+<!-- _sidebar.md — sections in the order customers need them; pages nest under their section, so labels can stay short. -->
 
 - Get started
 
-  - [Welcome to FlowFlex](README.md)
+  - [Welcome](README.md)
   - [Set up your account](getting-started.md)
 
 - WhatsApp setup
@@ -13,15 +13,15 @@
 
 - Broadcasts
 
-  - [Broadcasts overview](broadcasts/overview.md)
+  - [Overview](broadcasts/overview.md)
   - [Send a broadcast](broadcasts/send-broadcast.md)
   - [Broadcast guidelines](broadcasts/broadcast-guidelines.md)
   - [Results and errors](broadcasts/results-and-errors.md)
-  - [Pre-send checklist and FAQ](broadcasts/checklist-faq.md)
+  - [Checklist and FAQ](broadcasts/checklist-faq.md)
 
 - Flows
 
-  - [Flows overview](flows/overview.md)
+  - [Overview](flows/overview.md)
   - [Learn flow builder](flows/learning-the-builder.md)
   - [Build your first flow](flows/building-a-flow.md)
   - **How-to guides**
@@ -35,7 +35,7 @@
 
 - Flow nodes
 
-  - [Node reference](flows/nodes.md)
+  - [All nodes](flows/nodes.md)
   - **WhatsApp nodes**
     - [Text message](flows/nodes/text-message.md)
     - [Template message](flows/nodes/template-message.md)
@@ -63,11 +63,11 @@
 
 - Developers
 
-  - [Developer quick start](developers/quick-start.md)
+  - [Quick start](developers/quick-start.md)
   - **SDK**
-    - [Install and use the SDK](sdk/overview.md)
+    - [Install and use](sdk/overview.md)
     - [File attachments](sdk/files.md)
-    - [SDK reference](sdk/reference.md)
+    - [Reference](sdk/reference.md)
   - **REST API**
     - [Authentication](api/authentication.md)
     - [Send events](api/events.md)
@@ -76,4 +76,4 @@
 - Help
 
   - [Troubleshooting](help/troubleshooting.md)
-  - [Meta policies and sources](help/meta-policies.md)
+  - [Meta policies](help/meta-policies.md)
