@@ -14,7 +14,7 @@ Every flow has one **Trigger** and one **End**, and every path finishes at that 
 
 End has no outputs and no settings. You don't need a separate End for each path, and you can't add another one from the toolbox.
 
-Don't leave an output unconnected to mean "stop here". An unconnected output stops the flow from saving. See [Build your first flow](flows/building-a-flow.md?id=5-check-all-paths-before-saving).
+Don't leave an output unconnected to mean "stop here". An unconnected output stops the flow from saving. See [Build your first flow](flows/building-a-flow.md?id=check-every-path).
 
 ## See also
 
