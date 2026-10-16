@@ -1,62 +1,65 @@
 # Teams
 
-Teams is where you invite people to your organisation and control which branches and channels they can use. What they can do there comes from their role; see [Roles and permissions](account/roles-and-permissions.md).
+Invite people to your organisation and choose which branches and WhatsApp channels each person can use.
 
-Go to **Settings** → **Teams**. Only Admins see this page in the sidebar. The page has two tabs: **All Users** and **Roles**.
+Teams controls where someone works. What they can do there comes from their role; see [Roles and permissions](account/roles-and-permissions.md). Go to **Settings** → **Teams**. Only Admins see this page in the sidebar. The page has two tabs: **All Users** and **Roles**.
+
+Rangoli Store's team is small. Alex Lee is the Admin. Chris Taylor answers customer chats for the Kochi store, and Jordan Brown, the marketing manager, plans broadcasts for both stores. When the Kochi store got busier, Alex invited Taylor Morgan to help Chris with the chats.
 
 ## All Users
 
 <img src="assets/account/team-members.png" alt="Teams, All Users">
 
-| Column | Shows |
-| --- | --- |
-| **Member** | Name and email. Click the copy icon to copy the email. |
-| **Phone number** | Number and whether it is verified |
-| **Status** | **Active**, **Invited**, **Invite expired**, or **Disabled by Plan** |
-| **Role** | Role name, or **No role** |
-| **Last active** | Last activity time. **Never** for people who have not joined yet. |
-| **Actions** | See below |
+Each row shows a member's name and email (click the copy icon to copy the email), **Phone number** and whether it's verified, **Role** (or **No role**), and **Last active**, which reads **Never** for people who haven't joined yet.
 
-Filter the list with **Search by email or name**, **Status** (**Active**, **Invited**, **Disabled by plan**), and **Role**.
+**Status** is one of:
+
+- **Active:** the person has joined.
+- **Invited:** the invitation hasn't been accepted yet.
+- **Invite expired:** the invitation link ran out before it was used.
+- **Disabled by Plan:** your organisation has more users than your plan allows.
+
+Filter the list with **Search by email or name**, **Status** (**Active**, **Invited**, **Disabled by plan**) and **Role**.
 
 ### Actions
 
-| Action | When | What it does |
-| --- | --- | --- |
-| **Edit access** | Any member | Opens **Edit user** |
-| **Resend invitation** | Status is **Invited** | Sends a new invitation email |
-| **Cancel invitation** | Status is **Invited** | Removes the invitation |
-| **Delete user** | Active members | Removes the person from this organisation |
+The **Actions** column offers:
 
-You cannot edit or remove yourself or the organisation owner. Members marked **Disabled by Plan** cannot be edited until your plan has room for them.
+- **Edit access:** opens **Edit user** for any member.
+- **Resend invitation:** sends a new invitation email when the status is **Invited**.
+- **Cancel invitation:** removes an invitation when the status is **Invited**.
+- **Delete user:** removes an active member from this organisation.
+
+You can't edit or remove yourself or the organisation owner. Members marked **Disabled by Plan** can't be edited until your plan has room for them.
 
 ## Invite a user
 
-1. Click **Invite User**. You can also click your name at the top right and choose **Invite a user**.
-2. FlowFlex checks your user limit first.
-3. In **User email**, type one or more addresses. Separate them with a comma or space, such as `rahul@rangoli.example`.
-4. Pick a **Role**.
-5. Under **Access Control**, set **Branches** and **Channels** (see below).
-6. Click **Invite user**.
+Alex invites Taylor Morgan to answer Kochi chats.
 
-You see **Successfully sent an invitation to … with the role: ….** The invitation link is valid for 24 hours. After that, the status shows **Invite expired**; click **Resend invitation**.
+1. Click **Invite User**, or click your name at the top right and choose **Invite a user**. FlowFlex first checks that your plan has room for another user.
+2. In **User email**, type one or more addresses, such as `taylor@rangoli.example`. Separate several with a comma or space.
+3. Pick a **Role**, such as **Support agent**.
+4. Under **Access Control**, set **Branches** and **Channels**. See [Branch and channel access](account/teams.md?id=branch-and-channel-access).
+5. Click **Invite user**. You see **Successfully sent an invitation to … with the role: ….**
+
+The invitation link is valid for 24 hours. After that, the status shows **Invite expired**; click **Resend invitation** to send a new one.
 
 ### Branch and channel access
 
-| Option | Access |
-| --- | --- |
-| **Selected branches only** / **Selected channels only** | Only the branches or channels you pick. You must pick at least one. |
-| **All current branches** / **All current channels** | Everything that exists today. New ones are not added. |
-| **Current and future branches** / **Current and future channels** | Everything today, plus anything created later |
+**Branches** and **Channels** each offer three options:
+
+- **Selected branches only** / **Selected channels only:** only the ones you pick. Pick at least one.
+- **All current branches** / **All current channels:** everything that exists today. Branches or channels added later aren't included.
+- **Current and future branches** / **Current and future channels:** everything today, plus anything created later.
 
 The channel list shows each number with its branch name.
 
-Example: Rahul answers chats for the Kochi store only. Give him the **Support agent** role, **Selected branches only** → **Kochi**, and **Selected channels only** → the Kochi number.
+Taylor Morgan, like Chris Taylor, gets the **Support agent** role, **Selected branches only** → **Kochi**, and **Selected channels only** → the Kochi number. Taylor sees Kochi chats and nothing from Bengaluru. Jordan Brown works across both stores, so Jordan has **Current and future branches**, and a new store would appear for Jordan without any change.
 
 ## Edit a user
 
 1. Click **Edit access** on the member's row.
-2. Change **Name**, **Role**, **Branches**, or **Channels**. **User email** cannot be changed.
+2. Change **Name**, **Role**, **Branches** or **Channels**. **User email** can't be changed.
 3. Admins can also set and verify the member's **Phone number**.
 4. Click **Update user**.
 
@@ -68,7 +71,13 @@ Example: Rahul answers chats for the Kochi store only. Give him the **Support ag
 | **User limit reached. Please upgrade your plan to add more users.** | Your plan has no user add-on | Upgrade on [Plans](account/plans-and-add-ons.md) |
 | **Cannot invite N users. Your … plan allows only … users.** | You invited more people than you have seats | Invite fewer people, or add seats |
 | **Select at least one branch.** / **Select at least one channel.** | **Selected** is chosen with nothing picked | Pick one, or choose another option |
-| **Invalid email: …** | An address is mistyped | Fix it |
+| **Invalid email: …** | An address is mistyped | Correct the address |
 
 > [!NOTE]
-> Removing a user or cancelling an invitation cannot be undone. To bring the person back, invite them again.
+> Removing a user or cancelling an invitation can't be undone. To bring the person back, invite them again.
+
+## See also
+
+- [Roles and permissions](account/roles-and-permissions.md)
+- [Branches](account/branches.md)
+- [Plans and add-ons](account/plans-and-add-ons.md)
