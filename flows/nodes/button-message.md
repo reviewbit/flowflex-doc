@@ -24,4 +24,4 @@ If the header offers a file source, follow [Choose files and media](flows/files-
 
 Check every choice is connected and the labels explain what happens next. Use [List message](flows/nodes/list-message.md) for more than three choices, or [Link button](flows/nodes/link-button.md) for opening a website.
 
-See [Response waiting](flows/response-wait.md) and [WhatsApp troubleshooting](flows/troubleshooting.md).
+See [Response waiting](flows/response-wait.md) and [WhatsApp troubleshooting](help/troubleshooting.md).

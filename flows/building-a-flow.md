@@ -1,4 +1,4 @@
-# Build your first customer reply
+# Build your first flow
 
 Start with a short flow that replies to a WhatsApp message. Once it is configured correctly, add choices, conditions, or integrations.
 
@@ -71,4 +71,4 @@ The learning lesson's conversation preview is separate and uses fictional inform
 | Send an approved order update | [Template message](flows/nodes/template-message.md) |
 | Hand over to a person | [Assign agent](flows/nodes/audience-actions.md#assign-agent) |
 
-If a message or flow does not behave as expected, use [Troubleshooting](flows/troubleshooting.md).
+If a message or flow does not behave as expected, use [Troubleshooting](help/troubleshooting.md).
