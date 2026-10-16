@@ -10,7 +10,7 @@ never creates, submits to Meta, or sends anything.
 ```bash
 cd tools/screenshots
 ./setup.sh                 # once: Playwright + headless Chromium in ~/.cache/docs-shots (no sudo)
-cp .env.example .env       # then fill in the demo account
+./configure.sh             # asks for the logins (passwords hidden), saves .env
 node shoot.mjs             # all shots → assets/<section>/<name>.png
 node shoot.mjs broadcasts/create-details   # one shot
 ```
