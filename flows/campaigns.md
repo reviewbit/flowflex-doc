@@ -1,9 +1,13 @@
 # Campaigns
 
-A campaign switches on a published flow so that incoming WhatsApp messages start it. You find campaigns under **Automations** → **All campaigns**, on the **Auto Campaign** page.
+Switch on a published flow so that customers' incoming WhatsApp messages start it.
 
 > [!NOTE]
 > Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
+
+A campaign connects a flow to incoming messages on the flow's channel. You find campaigns under **Automations** → **All campaigns**, on the **Auto Campaign** page.
+
+Rangoli Store has published its order-tracking flow. To put it to work, the team creates a campaign called `Rangoli Store – Order help` and selects that flow. From then on, when Jane Doe messages the store, the flow replies with the **Track order** and **Talk to the team** buttons.
 
 ## How a campaign works
 
@@ -13,22 +17,17 @@ A campaign switches on a published flow so that incoming WhatsApp messages start
 
 Each contact goes through a campaign once. A second message from the same contact does not restart it until the campaign's end date passes.
 
-The START and STOP keywords from [Subscription Auto Replies](messaging/settings.md#subscription-auto-replies) never start a campaign.
+The START and STOP keywords from [Subscription Auto Replies](messaging/settings.md?id=subscription-auto-replies) never start a campaign.
 
-> [!TIP]
-> To react only to certain words, such as "price" or "offer", set a **Trigger filter** on the flow's incoming-message trigger. See [Choose the trigger](flows/triggers-and-variables.md).
+To react only to certain words, such as "price" or "offer", set a **Trigger filter** on the flow's incoming-message trigger. See [Choose the trigger](flows/triggers-and-variables.md).
 
 ## The campaign list
 
 <img src="assets/flows/campaigns-list.png" alt="The Auto Campaign list">
 
-| Column | Shows |
-| --- | --- |
-| **Campaign name** | Click it to open **Campaign Outcomes**. |
-| **Status** | **Active**, **Paused**, **Draft**, or **Completed**. |
-| **Actions** | The **⋯** menu. |
+The list shows each campaign's **Campaign name**, its **Status**, and an **Actions** column with the **⋯** menu. Click a name to open [Campaign Outcomes](flows/campaigns.md?id=campaign-outcomes).
 
-Use **Search by name** to find a campaign. Use **Filter by Status** to show one or more statuses.
+Use **Search by name** to find a campaign, and **Filter by Status** to show one or more statuses.
 
 ### Statuses and actions
 
@@ -56,25 +55,20 @@ Click **Create new campaign**. The wizard has three steps: **Details & flow** �
 
 ### 1. Details & flow
 
-| Field | Rule |
-| --- | --- |
-| **Campaign name** | Required. Must be unique in the branch, such as `Rangoli Store – Diwali enquiries`. |
-| **Description** | Optional. A note for your team. |
-| **Select flow** | Required. Only active flows with the WhatsApp incoming-message trigger are listed. Use **Search flows** to find one. |
+1. Enter a **Campaign name**, such as `Rangoli Store – Order help`. It's required and must be unique in the branch.
+2. Optionally add a **Description**, a note for your team.
+3. Under **Select flow**, pick the flow. Only active flows with the WhatsApp incoming-message trigger are listed. Use **Search flows** to find one.
+4. Check the preview on the right. It shows the flow's published version, read-only. Click **Expand preview** for a larger view.
+5. Click **Continue**.
 
-Flows marked **Not published** cannot be picked. Publish them first. See [Versions, publishing and JSON files](flows/versions-and-portability.md).
-
-The preview on the right shows the flow's published version, read-only. Click **Expand preview** for a larger view. Click **Continue**.
+Flows marked **Not published** can't be picked. Publish them first. See [Versions, publishing and JSON files](flows/versions-and-portability.md).
 
 ### 2. Duration
 
-| Field | Rule |
-| --- | --- |
-| **Start date** | Required. |
-| **Run for** | Required. **1 week**, **2 weeks**, **3 weeks**, **4 weeks**, or **Custom**. The default is **1 week**. FlowFlex shows the end date, such as "Ends 22 Oct 2026". |
-| **End date** | Shown for **Custom** only. Required, and must be on or after the start date. |
-
-Click **Review campaign**.
+1. Pick a **Start date**. It's required.
+2. Choose how long it should **Run for**: **1 week** (the default), **2 weeks**, **3 weeks**, **4 weeks**, or **Custom**. FlowFlex shows the end date, such as "Ends 22 Oct 2026".
+3. For **Custom**, pick an **End date**. It must be on or after the start date.
+4. Click **Review campaign**.
 
 ### 3. Review & publish
 
@@ -86,19 +80,20 @@ FlowFlex shows **Campaign published.** and the campaign becomes **Active**. If y
 
 Publishing fails if the flow is inactive, not published, or switched off by your plan's flow limit.
 
-> [!NOTE]
-> A campaign runs the flow version that was published when you published the campaign. Later changes to the flow do not reach the campaign on their own.
+A campaign runs the flow version that was published when you published the campaign. Later changes to the flow do not reach the campaign on their own.
 
 ## Campaign Outcomes
 
 Click a campaign's name to open **Campaign Outcomes**. It shows one row for each time the flow ran for a contact, with the data the flow collected.
 
-| Tool | What it does |
-| --- | --- |
-| **Select column** + search | Pick a column, then search inside it. |
-| **Filter** | Build conditions on the columns, then click **Apply Filter**. |
-| **Clear All Filters** | Removes the search and filters. |
-| **Show Columns** | Choose which columns are shown. |
-| **Export CSV** | Downloads the outcomes. |
+- **Select column and search:** pick a column, then search inside it.
+- **Filter:** build conditions on the columns, then click **Apply Filter**.
+- **Clear All Filters:** removes the search and filters.
+- **Show Columns:** choose which columns are shown.
+- **Export CSV:** downloads the outcomes.
 
-Related: [Saved data](flows/saved-data.md), [Audience actions](flows/nodes/audience-actions.md).
+## See also
+
+- [Build your first flow](flows/building-a-flow.md)
+- [Saved data](flows/saved-data.md)
+- [Audience actions](flows/nodes/audience-actions.md)

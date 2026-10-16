@@ -1,21 +1,23 @@
 # Select and insert variables
 
-Variables fill a field with information from the customer, the event that started the flow, or an earlier step. Use them to send each customer's own order number, reply to the correct person, or choose a path based on an API result.
+Fill any field with a customer's own details, such as their name, phone number or order status.
 
-You do not need to type a JSON path to use a variable. **Insert Variable** opens a picker where you choose the information you want.
+A variable is a value the flow fills in when it runs. It can come from the event that started the flow, from the customer's reply, or from an earlier step such as an API call. You don't type a path to use one: **Insert Variable** opens a picker where you choose the value.
+
+In Rangoli Store's order-tracking flow, one status message serves every customer. When John Smith taps **Track order**, the API looks up the order and the message reads "Hi John Smith, order ORD-1042 arrives on 12 October." For Jane Doe, the same message shows Jane Doe's order and date.
 
 ## Insert a variable into a field
 
-1. Open the node you want to configure.
+1. Open the node you want to set up.
 2. Click the field that should use customer-specific information.
 3. Open **Insert Variable**. In the API drawer, use the field's actions menu → **Insert variable**.
 4. In **Select Variable**, choose **Trigger** or the earlier node that supplies the information.
-5. Open the relevant fields until you reach the value you need, then select it.
-6. Check that a variable chip appears in your field, and click **Save changes** in the node drawer.
+5. Open the fields until you reach the value you need, then select it.
+6. Check that a variable chip appears in your field, then click **Save changes** in the node drawer.
 
-For **Destination number**, select just the phone number. For a message, you can mix ordinary text and variables: type `Hi `, insert the customer's name, then type the rest of your greeting.
+For **Destination number**, select only the phone number. In a message, you can mix text and variables: type `Hi `, insert the customer's name, then type the rest of your greeting.
 
-The value shown in the picker is an example. Each real flow run uses the information for that customer.
+The value shown in the picker is an example. Each real run uses that customer's information.
 
 ## Select a field from nested JSON
 
@@ -23,16 +25,16 @@ Suppose an order event has this sample:
 
 ```json
 {
-  "customer": { "name": "Alex", "phone": "919000000001" },
+  "customer": { "name": "John Smith", "phone": "919000000001" },
   "order": { "number": "ORD-1042", "total": 1250 },
   "items": [
-    { "name": "Notebook", "quantity": 2 },
-    { "name": "Pen", "quantity": 1 }
+    { "name": "Silk saree", "quantity": 2 },
+    { "name": "Cotton dupatta", "quantity": 1 }
   ]
 }
 ```
 
-Choose fields as follows:
+Choose fields like this:
 
 | What you want | Choices in Select Variable | Where to use it |
 | --- | --- | --- |
@@ -42,59 +44,63 @@ Choose fields as follows:
 | Order total | Trigger → order → total | A number condition |
 | The complete item list | Trigger → items, in a list-selection field | Start loop → Specify list |
 
-For the name, the inserted reference represents `{{trigger.customer.name}}`. Selecting it through the picker avoids typing mistakes.
+For the name, the inserted reference stands for `{{trigger.customer.name}}`. Selecting it in the picker avoids typing mistakes.
 
-**Search key...** filters the fields in the level you are viewing. If the field is nested, open its parent first. Use the back arrow or breadcrumbs to return to an earlier level.
+**Search key...** filters the fields at the level you're viewing. If the field is nested, open its parent first. Use the back arrow or the breadcrumbs to go back up a level.
 
 ## Choose one item or the whole list
 
-A list contains several items. Selecting the first item's name gives you only that item's name; it does not repeat the message for every item.
+A list holds several items. Selecting the first item's name gives you only that one name. It doesn't repeat the message for every item.
 
-To process all items, add a **Start loop** and choose the complete list in **Specify list**. The picker offers list selection for fields that require a list. Inside the loop, use the current item's fields. See [Repeat over a list](flows/nodes/for-loop.md).
+To work through all the items, add a **Start loop** and choose the complete list in **Specify list**. The picker offers list selection in fields that need a list. Inside the loop, use the current item's fields. See [Repeat over a list](flows/nodes/for-loop.md).
 
 ## Use an API response
 
-1. Configure and save the API node with a response example.
-2. Place the message or condition after the API's appropriate response output.
-3. Open Insert Variable and choose that API node.
-4. Choose the relevant response example, such as **200**, then open its nested fields.
-5. Select the value you need, such as **order → delivery_date**.
+1. Set up and save the API node with a response example.
+2. Place the message or condition after the API's matching response output.
+3. Open **Insert Variable** and choose that API node.
+4. Choose the response example, such as **200**, then open its nested fields.
+5. Select the value you need, such as **order** → **delivery_date**.
 
-For example, given this response:
+For example, with this response:
 
 ```json
 {
-  "order": { "number": "ORD-1042", "status": "ready", "delivery_date": "12 October" }
+  "order": { "number": "ORD-1042", "status": "shipped", "delivery_date": "12 October" }
 }
 ```
 
-Choose the API node → 200 → order → delivery_date to personalize a delivery message. The example helps you find the field; the service supplies the actual delivery date when the flow runs.
+Choose the API node → **200** → **order** → **delivery_date** to put the date in Rangoli Store's status message. The example helps you find the field. When the flow runs, the service supplies the real date.
 
-An error response can have different fields. On an error path, select fields from that error example rather than assuming the success fields exist. See [Set up an API request](flows/nodes/api.md).
+An error response can have different fields. On an error path, select fields from that error example rather than assuming the success fields exist. See [API](flows/nodes/api.md).
 
 ## Fill a template placeholder
 
-Template placeholders such as `{{1}}` are positions in the approved message. You fill each position with a value:
+Template placeholders such as `{{1}}` are positions in the approved message, and you fill each one with a value. For the approved message `Hi {{1}}, order {{2}} is confirmed.`:
 
-| Approved message | Fill this field | Select this value |
-| --- | --- | --- |
-| `Hi {{1}}, order {{2}} is confirmed.` | Body `{{1}}` | Trigger → customer → name |
-| Same message | Body `{{2}}` | Trigger → order → number |
+- **Body `{{1}}`:** select **Trigger** → **customer** → **name**.
+- **Body `{{2}}`:** select **Trigger** → **order** → **number**.
 
-The customer then receives “Hi Alex, order ORD-1042 is confirmed.” Use the picker inside each placeholder field; you do not need to rewrite the approved message. See [Template message](flows/nodes/template-message.md).
+The customer then receives "Hi John Smith, order ORD-1042 is confirmed." Use the picker in each placeholder field. You don't need to rewrite the approved message. See [Template message](flows/nodes/template-message.md).
 
 ## Use a customer's reply
 
-Enable response waiting on the question node and save it first. In a later node, choose that question in Insert Variable and select the captured reply. Use the reply path rather than the No response path for steps that need an answer.
+Turn on response waiting on the question node and save it first. In a later node, choose that question in **Insert Variable** and select its reply. Use the reply path, not the **No response** path, for steps that need the answer.
 
-For example, ask for an email address, enable **Check format → Email**, then use the saved reply in Save audience. See [Wait for and validate a reply](flows/response-wait.md).
+For example, ask for an email address, turn on **Check format** → **Email**, then use the reply in **Save audience**. See [Wait for and validate a reply](flows/response-wait.md).
 
 ## If a field is missing
 
-- For a custom trigger, check its sample includes the field you need. See [Set up the trigger](flows/triggers-and-variables.md).
+- For a custom trigger, check that its sample includes the field. See [Choose the trigger](flows/triggers-and-variables.md).
 - For an API, add or update its response example and save the node.
-- For a reply, enable response waiting and save the question node.
-- Confirm you selected the correct source and opened the correct nested object.
-- Use a condition to handle optional information before using it in a message.
+- For a reply, turn on response waiting and save the question node.
+- Check that you selected the right source and opened the right nested object.
+- Use a condition to handle optional information before you use it in a message.
 
-Changing a node's display label keeps its Variable reference. Use the picker when replacing a field or changing the source of a value.
+Renaming a node's display label keeps its variable references working. Use the picker when you replace a field or change where a value comes from.
+
+## See also
+
+- [Choose the trigger](flows/triggers-and-variables.md)
+- [API](flows/nodes/api.md)
+- [A variable is missing or has the wrong value](help/troubleshooting.md?id=a-variable-is-missing-or-has-the-wrong-value)

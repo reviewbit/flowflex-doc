@@ -1,30 +1,38 @@
 # Learn flow builder
 
-Open **Learn flow builder** from the flows list or builder header. The header opens a new tab so your current editor stays open.
+Practise building a flow on a sample customer, without sending any real WhatsApp messages.
 
-## Watch demo
+**Learn flow builder** has two parts: a guided demo you can watch, and a six-step lesson where you build a small flow yourself. Open it from the button on the **Flows** page or in the builder header. From the header it opens in a new tab, so the flow you're editing stays open.
 
-Watch a guided demonstration of choosing WhatsApp Incoming Chat, adding a Text message, selecting variables, connecting End, and trying the conversation.
+Before building Rangoli Store's order-tracking flow, Jordan Brown works through the lesson in a spare ten minutes. Jordan picks the sample trigger, writes a greeting, connects the steps and tries the conversation, all on sample data.
 
-Playback supports pause/resume, speed, seeking, and replay. Choose English, Malayalam, Arabic, or Hindi captions and explicitly enable voice for narration. Builder labels remain in English. Captions remain available if audio cannot play.
+## Watch the demo
 
-## Practice
+Click **Watch demo** to see a guided run-through: choosing **WhatsApp Incoming Chat**, adding a **Text message**, selecting variables, connecting **End**, and trying the conversation.
 
-The six-step lesson uses a fictional contact:
+You can pause and resume, change the speed, skip ahead and replay. Captions are available in English, Malayalam, Arabic and Hindi, and you turn on voice narration yourself. The builder's own labels stay in English. Captions keep working if audio can't play.
+
+## Practise the lesson
+
+The lesson uses a sample contact.
 
 1. Select the sample trigger.
-2. Add one Text message.
-3. Configure and save the message.
-4. Connect Trigger → Text message → End.
-5. Try the conversation.
-6. Save practice.
+2. Add one **Text message**.
+3. Set up the message and save it. Select **Trigger** → **from** for **Destination number**. Adding **Trigger** → **name** to the text is optional.
+4. Connect **Trigger** → **Text message** → **End**.
+5. Try the conversation. The preview sends no real WhatsApp messages.
+6. Click **Save practice**.
 
-Select **Trigger → from** for Destination number; **Trigger → name** is optional personalization. The supported practice preview sends no live WhatsApp messages.
+Your progress is saved in this browser. If you change a setting or a connection, try the conversation and save again. Moving nodes around doesn't need a new preview.
 
-Progress is saved in this browser. Changing settings or connections requires another preview and save; moving nodes does not.
+## Create your real flow
 
-## Create a real flow
+Click **Set up my real flow**. FlowFlex explains what you need, opens the form to create a flow, then guides you through setup in the real builder.
 
-**Set up my real flow** explains prerequisites and opens the creation form, followed by a setup guide in the real editor.
+Your practice isn't copied into the real flow, and nothing is published for you. In the real flow, set the trigger and channel, connect every step, then save and publish. To start the flow from incoming messages, also create and publish a [campaign](flows/campaigns.md).
 
-Practice is not copied into the real flow and nothing is published automatically. Configure the real trigger and channel, complete connections, then save and publish. Incoming-message campaigns also need their own setup and publication.
+## See also
+
+- [Build your first flow](flows/building-a-flow.md)
+- [Workflows overview](flows/overview.md)
+- [Select and insert variables](flows/using-variables.md)

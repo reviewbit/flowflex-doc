@@ -1,74 +1,80 @@
 # Build your first flow
 
-Start with a short flow that replies to a WhatsApp message. Once it is configured correctly, add choices, conditions, or integrations.
+Build a short flow that replies to a customer's WhatsApp message, then test and publish it.
 
-For a safe introduction using fictional data, open [Learn flow builder](flows/learning-the-builder.md).
+Start small: one trigger, one message and an End node. Once that works, add choices, conditions or a call to another service. To practise first on sample data, open [Learn flow builder](flows/learning-the-builder.md).
 
-## 1. Create a real flow
+Before building its order-tracking flow, Rangoli Store starts with a greeting. When John Smith messages the store, the flow replies "Hi John Smith, how can we help?" Later the team swaps the text for a message with **Track order** and **Talk to the team** buttons.
 
-1. Open Flows and start creating a flow.
-2. Enter a clear **Title**, such as “Customer welcome”.
-3. Enter its **Description** and select the intended WhatsApp **Channel**.
-4. Create the flow to open the builder.
+## Create the flow
 
-Check the channel before continuing. A practice lesson does not create or activate your real customer flow.
+1. Go to **Flows** and click **Create new**.
+2. Enter a **Title**, such as `Order help`, and a **Description**.
+3. Select the WhatsApp **Channel** for the flow. Check it carefully: it's the number the flow works with.
+4. Create the flow. The builder opens.
 
-## 2. Select the trigger
+A practice lesson in Learn flow builder doesn't create or switch on a real flow.
 
-Open Trigger, choose the source that offers WhatsApp Incoming Chat, and select that event. Save it.
+## Select the trigger
 
-Trigger starts the sequence. End finishes it. Keep exactly one of each on the canvas. See [Trigger setup](flows/triggers-and-variables.md).
+1. Open **Trigger** on the canvas.
+2. Choose the source that offers **WhatsApp Incoming Chat**, and select that event.
+3. Save the trigger.
 
-## 3. Add and configure a message
+Every flow has exactly one Trigger, which starts it, and one End, which finishes it. See [Choose the trigger](flows/triggers-and-variables.md).
 
-1. Find **Text message** in WhatsApp Blocks and add it to the canvas.
+## Add a message
+
+1. Find **Text message** in **WhatsApp Blocks** and add it to the canvas.
 2. Open the node.
-3. In Destination number, use Insert Variable → Trigger → from.
-4. Write “Hi ”, insert Trigger → name, then add “, how can we help?”
-5. Check the preview and click Save changes.
+3. In **Destination number**, use **Insert Variable** → **Trigger** → **from**. The reply goes to whoever sent the message.
+4. Type `Hi `, insert **Trigger** → **name**, then type `, how can we help?`
+5. Check the preview and click **Save changes**.
 
-See [Select and insert variables](flows/using-variables.md) for nested JSON fields and [Text message](flows/nodes/text-message.md) for the full node setup.
+See [Select and insert variables](flows/using-variables.md) for nested fields, and [Text message](flows/nodes/text-message.md) for every setting.
 
-## 4. Connect the sequence
+## Connect the steps
 
-Draw connections from the output of one node to the input of the next:
+1. Draw a connection from Trigger's **Next step** output to the Text message.
+2. Draw a connection from the Text message's **Next step** output to End.
 
 ```text
 Trigger → Text message → End
 ```
 
-Connect Trigger's Next step to Text message, then Text message's Next step to End. A message does not run simply because it is placed beside Trigger; its connection determines when it runs.
+A node placed beside Trigger doesn't run until it's connected. You can also add the next step from a connection's picker. **Tidy layout** arranges the canvas, and **Undo tidy** puts the nodes back where they were.
 
-You can also add a next step from a source connection's picker. Use Tidy layout to arrange the canvas, and Undo tidy to restore the previous positions.
+## Check every path
 
-## 5. Check all paths before saving
+If you turn on response waiting or add choices, a node shows more outputs. Connect every output, including **No response**, to another step or to End.
 
-If you enable response waiting or add choices, the node may show more outputs. Connect every displayed output, including No response, to another step or End.
+In a flow with branches, all finished paths can lead to the same End node. Remove nodes you don't use, and fix any errors the builder shows before you save.
 
-For a flow with branches, completed paths can all lead to the same End node. Remove unused nodes and fix any errors shown before saving.
+## Save and publish
 
-## 6. Save and publish
+1. Click **Save** to keep a draft version.
+2. Click the arrow beside **Save** and choose **Save and publish** to publish your changes.
+3. Check the version status to confirm the version you want is published.
 
-**Save** keeps a draft version. Use the arrow beside Save → **Save and publish** to publish your current changes. Check the version status to confirm the intended version is published.
+Publishing a flow doesn't start it for incoming messages. Create and publish a [campaign](flows/campaigns.md) that uses the flow. See [Versions and publishing](flows/versions-and-portability.md).
 
-For incoming WhatsApp messages, configure and publish the campaign that uses this flow and channel. Publishing the flow alone does not create its incoming-message campaign.
+## Test the flow
 
-See [Versions and publishing](flows/versions-and-portability.md).
+Message the channel from your own test number. Check the greeting, who receives it, and what happens with each choice or when you don't reply. A real flow sends real messages, so test it before customers reach it.
 
-## 7. Try the intended customer journey
-
-Use your own test contact in the configured channel. Check the greeting, recipient, and any choices or timeout behavior before using the flow for customers. A real customer journey can send real messages.
-
-The learning lesson's conversation preview is separate and uses fictional information.
+The conversation preview in Learn flow builder is separate and uses sample data.
 
 ## Extend the flow
 
-| Next customer task | Guide |
-| --- | --- |
-| Offer a small menu | [Button message](flows/nodes/button-message.md) |
-| Ask for and save an email address | [Response waiting](flows/response-wait.md) and [Save audience](flows/nodes/audience-actions.md#save-audience) |
-| Retrieve an order status | [API](flows/nodes/api.md) |
-| Send an approved order update | [Template message](flows/nodes/template-message.md) |
-| Hand over to a person | [Assign agent](flows/nodes/audience-actions.md#assign-agent) |
+- **Offer a small menu:** [Button message](flows/nodes/button-message.md), like Rangoli Store's **Track order** and **Talk to the team** buttons.
+- **Ask for and save an email address:** [Waiting for a reply](flows/response-wait.md) and [Save audience](flows/nodes/audience-actions.md?id=save-audience).
+- **Look up an order status:** [API](flows/nodes/api.md).
+- **Send an approved order update:** [Template message](flows/nodes/template-message.md).
+- **Hand over to a person:** [Assign agent](flows/nodes/audience-actions.md?id=assign-agent).
 
-If a message or flow does not behave as expected, use [Troubleshooting](help/troubleshooting.md).
+## See also
+
+- [Workflows overview](flows/overview.md)
+- [Campaigns](flows/campaigns.md)
+- [Node reference](flows/nodes.md)
+- [Troubleshooting](help/troubleshooting.md)

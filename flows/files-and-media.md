@@ -1,38 +1,44 @@
 # Choose files and media
 
-Use this guide when a Media message, template header, or message header needs a file.
+Attach a file to a Media message, a template header or a message header, either the same file for everyone or one for each customer.
 
-## Choose the file source
+Where a node needs a file, you choose a **File source**. The source decides whether every customer gets the same file or the flow picks one per customer:
 
-| File source | Use it for | What to provide |
-| --- | --- | --- |
-| **Upload new file** | The same brochure or image for every customer | Choose a file from your computer and wait for upload to finish. |
-| **Public URL** | A file accessible through a direct link | Paste the file URL or insert the variable that contains it. |
-| **Uploaded file** | A different private file for each customer | In **Asset ID**, insert the assetId supplied by your integration. |
+- **Upload new file:** the same file for every customer, such as a brochure or a store photo. You upload it from your computer.
+- **Public URL:** a file at a direct link. Paste the link, or insert the variable that holds it.
+- **Uploaded file:** a different private file for each customer, such as an invoice. In **Asset ID**, insert the assetId your integration supplies.
+
+Rangoli Store's order-tracking flow sends each customer's own invoice. The store's system uploads the invoice and passes its assetId in the order event. When David Chen taps **Track order**, the flow sends the status with David Chen's invoice attached.
 
 ## Upload one reusable file
 
-1. Choose the required media type.
-2. Set **File source → Upload new file**.
+1. Choose the media type.
+2. Set **File source** to **Upload new file**.
 3. Choose the file from your computer.
-4. Wait for upload to complete and check the preview.
+4. Wait for the upload to finish and check the preview.
 5. Save the node.
 
-This file is attached each time the node runs and stays available while the flow uses it.
+The node attaches this file every time it runs, and the file stays available while the flow uses it.
 
 ## Use a link
 
-Choose **Public URL** and enter a direct link to the file. Open the link without signing in to check that WhatsApp can download it. A link to a login page or a sharing page is not the same as a direct file link.
+1. Set **File source** to **Public URL**.
+2. Enter a direct link to the file. If each customer has a different link, use [Insert Variable](flows/using-variables.md) to select it.
+3. Open the link in a browser without signing in, to check that WhatsApp can download it.
+4. Save the node.
 
-If each customer has a different file URL, use [Insert Variable](flows/using-variables.md) to select it.
+A link to a sign-in page or a sharing page isn't a direct file link, and the file won't send.
 
 ## Use a private customer file
 
-Your integration uploads the file and includes its assetId in the event that starts the flow. Choose **Uploaded file** and, in **Asset ID**, insert that assetId field, for example **Trigger → invoice**.
+1. Make sure your integration uploads the file and includes its assetId in the event that starts the flow. See [SDK file attachments](sdk/files.md).
+2. Set **File source** to **Uploaded file**.
+3. In **Asset ID**, insert that assetId field, for example **Trigger** → **invoice**.
+4. Save the node.
 
-These event-uploaded files expire after 48 hours. Keep the upload and message close together; a long delay may require a fresh upload. Integration setup is covered in [SDK file attachments](sdk/files.md).
+Files uploaded this way expire after 48 hours, so keep the upload and the message close together. After a long delay, upload the file again.
 
-An incoming attachment's download URL is also temporary. Do not assume a saved URL will still work after a long delay.
+The download link of a file a customer sends you is temporary too. Don't rely on a saved link still working much later.
 
 ## File limits
 
@@ -43,4 +49,10 @@ An incoming attachment's download URL is also temporary. Do not assume a saved U
 | Audio | AAC, AMR, MP3, MP4 audio, OGG | 16 MB |
 | Document | PDF, Word, Excel, PowerPoint, plain text | 100 MB |
 
-Choose a file type appropriate for the selected message or template header. If upload or sending fails, see [File troubleshooting](help/troubleshooting.md#files-do-not-upload-or-send).
+Choose a file type that suits the message or template header you picked.
+
+## See also
+
+- [Media message](flows/nodes/media-message.md)
+- [Template message](flows/nodes/template-message.md)
+- [Files do not upload or send](help/troubleshooting.md?id=files-do-not-upload-or-send)
