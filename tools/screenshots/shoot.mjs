@@ -45,12 +45,18 @@ const shots = {
     p = await signedOutPage();
     await p.goto(`${USERS}/auth/register`, { waitUntil: "domcontentloaded", timeout: 180000 });
     await p.getByPlaceholder("e.g. Ravi Kulkarni").fill("Ananya Rao");
-    await p.getByPlaceholder("98765 43210").pressSequentially("9000000010", { delay: 30 });
+    const phone = p.getByPlaceholder("98765 43210");
+    await phone.click();
+    await p.keyboard.press("Control+A");
+    await p.keyboard.press("Backspace");
+    await phone.pressSequentially("+919000000010", { delay: 40 });
+    await snap(p, "phone");
     await p.getByPlaceholder("you@company.com").fill(data.user.email);
     return p;
   },
   "get-started/create-organisation": async (p) => {
     // Real path: sign in on the login app, then "Add an organisation" on the organisation picker.
+    mocking = false; // the login app reads some of the same responses; its form shows no account data
     p = await signedOutPage();
     await p.goto(`${USERS}/auth/login`, { waitUntil: "domcontentloaded", timeout: 180000 });
     await p.locator("#si-email").fill(process.env.DOCS_EMAIL);
@@ -58,11 +64,18 @@ const shots = {
     await p.locator("button[type=submit]").click();
     // With the demo data there is one organisation, so sign-in goes straight to the app;
     // the login app's session is set by then, so open its create-organisation page directly.
-    await p.waitForURL((u) => u.href.startsWith(APP), { timeout: 180000 });
+    // Without demo data, sign-in stops at the organisation picker; either way the login app's
+    // session is set, so open its create-organisation page directly (the picker is never captured).
+    await p.waitForURL((u) => u.href.startsWith(APP) || u.pathname.includes("/organisations"), { timeout: 180000 });
+    await snap(p, "signed-in");
     await p.goto(`${USERS}/users/create-organisation`, { waitUntil: "domcontentloaded", timeout: 180000 });
+    await snap(p, "create-org-loaded");
     await p.getByPlaceholder("e.g. Spicebox Foods").waitFor({ timeout: 120000 });
     await p.getByPlaceholder("e.g. Spicebox Foods").fill(data.brand.name);
     await p.getByPlaceholder("https://").fill(data.brand.website).catch(() => {});
+    await p.waitForTimeout(2500);
+    await snap(p, "filled");
+    mocking = true;
     return p;
   },
   "get-started/app-shell": async (p) => { await go(p, "/"); await p.getByText("Get flowflex fully ready").waitFor(); },
@@ -80,12 +93,15 @@ const shots = {
     await p.getByText("Marketing", { exact: true }).first().click();
     await clickButton(p, "Continue");
     await p.getByPlaceholder("order_confirmation").fill(t.marketing.name);
-    await p.getByText("Enter template body here...").first().click();
-    await p.keyboard.type("Hi ", { delay: 5 });
-    await p.getByRole("button", { name: /Add Variable/i }).last().click().catch(() => {});
-    await p.keyboard.type(t.marketing.body.split("{{1}}")[1], { delay: 2 });
-    await p.getByText("Enter template body here...").first().scrollIntoViewIfNeeded().catch(() => {});
-    await p.evaluate(() => window.scrollBy(0, -160));
+    await snap(p, "name");
+    const bodyLabel = p.getByText("Body", { exact: true }).first();
+    await bodyLabel.scrollIntoViewIfNeeded();
+    const lb = await bodyLabel.boundingBox();
+    await p.mouse.click(lb.x + 120, lb.y + lb.height + 40);
+    await p.keyboard.type(t.marketing.body, { delay: 4 });
+    await p.waitForTimeout(800);
+    await p.locator('input[placeholder*="ample"], input[placeholder*="Example"]').first().fill(t.marketing.samples["1"]).catch(() => {});
+    await snap(p, "body-typed");
   },
   // ---- Audience ----
   "audience/overview-tabs": async (p) => { await go(p, "/audience/profiles"); await p.getByText("Audience overview").first().waitFor(); },
@@ -98,6 +114,11 @@ const shots = {
     await d.getByPlaceholder("Enter phone number").fill(data.contacts[0].phone);
     await d.getByPlaceholder("Kerala").fill("Karnataka");
     await d.getByPlaceholder("Address 1, Near 1st street").fill("14 Indiranagar, Bengaluru");
+  },
+  "audience/contact-detail": async (p) => {
+    await go(p, "/audience/profile?id=6a1b2c3d4e5f60718293a950");
+    await p.getByText(data.contacts[0].name).first().waitFor();
+    await p.waitForTimeout(2000);
   },
   "audience/merge-list": async (p) => {
     await go(p, "/audience/list");
@@ -125,7 +146,7 @@ const shots = {
   "broadcasts/create-schedule": async (p) => { await broadcastStep2(p); },
   "broadcasts/publish-modal": async (p) => {
     await broadcastStep2(p);
-    await clickButton(p, /Review broadcast/); await clickButton(p, /Publish broadcast/);
+    await clickButton(p, /Review broadcast/); await snap(p, "review"); await clickButton(p, /Publish broadcast/); await p.waitForTimeout(1500);
   },
   // ---- Messaging ----
   "messaging/conversations-inbox": async (p) => { await go(p, "/chat"); await p.getByText(m.chats[0].name).first().waitFor(); await p.waitForTimeout(1500); },
@@ -143,8 +164,14 @@ const shots = {
     await go(p, "/chat/settings");
     const h = p.getByText("Subscription Auto Replies", { exact: true }).first();
     await h.waitFor();
-    await h.evaluate((n) => { const card = n.closest(".ant-card") || n.parentElement; card.scrollIntoView({ block: "start" }); });
-    await p.evaluate(() => { const sc = document.scrollingElement; sc.scrollBy(0, -100); for (const el of document.querySelectorAll("main, .ant-layout-content")) el.scrollBy?.(0, -100); });
+    await h.evaluate((n) => {
+      let sc = n.parentElement;
+      while (sc && !(sc.scrollHeight > sc.clientHeight + 10 && /auto|scroll/.test(getComputedStyle(sc).overflowY))) sc = sc.parentElement;
+      sc = sc || document.scrollingElement;
+      const top = n.getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop;
+      sc.scrollTop = Math.max(0, top - 140);
+    });
+    await p.waitForTimeout(500);
   },
   "messaging/quick-replies-table": async (p) => { await go(p, "/chat/settings"); await scrollTo(p, m.quickReplies[0].shortcut); },
   // ---- Workflows ----
@@ -169,6 +196,10 @@ const shots = {
   "account/team-members": async (p) => { await go(p, "/settings/teams/members"); await p.getByText(m.team[1].name).first().waitFor(); },
   "account/invite-user": async (p) => {
     await go(p, "/settings/teams/invite");
+    if (!(await p.getByPlaceholder("Enter name").first().waitFor({ timeout: 90000 }).then(() => true).catch(() => false))) {
+      await p.reload({ waitUntil: "domcontentloaded" });
+      await p.getByPlaceholder("Enter name").first().waitFor({ timeout: 120000 });
+    }
     await p.getByPlaceholder("Enter name").first().fill("Kiran");
     await p.getByPlaceholder("Enter email").first().fill("kiran@rangoli.example");
     await p.keyboard.press("Escape");
@@ -263,12 +294,14 @@ async function guard(route) {
   if (url.host !== API_HOST) return route.continue();
   const write = !["GET", "HEAD", "OPTIONS"].includes(req.method());
   const readPost = req.method() === "POST" && READ_POSTS.some((re) => re.test(url.pathname));
+  const fakeWrite = mocking && write && rewriters.find((r) => r.synthetic && r.methods.includes(req.method()) && r.re.test(url.pathname));
+  if (fakeWrite) return route.fulfill({ status: 200, contentType: "application/json", headers: { "access-control-allow-origin": req.headers()["origin"] || "*", "access-control-allow-credentials": "true" }, body: JSON.stringify(fakeWrite.fn({})) });
   if (write && !readPost && !WRITE_ALLOWED.some((re) => re.test(url.pathname))) {
     if (process.env.DOCS_VERBOSE) console.log(`  blocked ${req.method()} ${url.pathname}`);
     return route.abort();
   }
   // Replace real customer data with demo data (see mocks.mjs).
-  const rw = mocking && (req.method() === "GET" || readPost) && rewriters.find((r) => r.re.test(url.pathname));
+  const rw = mocking && (req.method() === "GET" || readPost) && rewriters.find((r) => (readPost || r.methods.includes("GET")) && r.re.test(url.pathname));
   if (readPost && !rw) return route.abort(); // never let real inbox data through unrewritten
   if (!rw) {
     if (mocking && req.method() === "GET") {
@@ -287,10 +320,20 @@ async function guard(route) {
 await context.route("**/*", guard);
 
 // A separate, signed-out browser tab for the sign-up screens (same write blocking).
+let activePage = null;
 async function signedOutPage() {
   const ctx = await browser.newContext(contextOptions);
   await ctx.route("**/*", guard);
-  return ctx.newPage();
+  activePage = await ctx.newPage();
+  return activePage;
+}
+
+// DOCS_DEBUG=1: save an image after each named step (out/debug/<shot>-<n>-<step>.png).
+let debugStep = 0;
+async function snap(p, label) {
+  if (!process.env.DOCS_DEBUG) return;
+  fs.mkdirSync(path.join(here, "out/debug"), { recursive: true });
+  await p.screenshot({ path: path.join(here, "out/debug", `${currentShot.replace("/", "__")}-${++debugStep}-${label}.png`) }).catch(() => {});
 }
 let page = await context.newPage();
 page.setDefaultTimeout(60000);
@@ -349,6 +392,8 @@ let failed = 0;
 for (const [name, run] of Object.entries(shots)) {
   if (wanted.length && !wanted.includes(name)) continue;
   currentShot = name;
+  activePage = null;
+  debugStep = 0;
   if (page.isClosed() || !browser.isConnected()) await relaunch();
   try {
     const target = (await run(page)) || page;
@@ -368,7 +413,7 @@ for (const [name, run] of Object.entries(shots)) {
     failed++;
     console.log(`FAIL ${name}: ${e.message.split("\n")[0]}`);
     fs.mkdirSync(path.join(here, "out/fail"), { recursive: true });
-    await page.screenshot({ path: path.join(here, "out/fail", `${name.replace("/", "__")}.png`) }).catch(() => {});
+    await (activePage && !activePage.isClosed() ? activePage : page).screenshot({ path: path.join(here, "out/fail", `${name.replace("/", "__")}.png`) }).catch(() => {});
     if (/has been closed|crashed/.test(e.message)) await relaunch().catch((err) => console.log(`  relaunch failed: ${err.message}`));
   }
 }
@@ -453,14 +498,16 @@ async function go(p, route) {
 // Last line of defence before a screenshot: devbox host names and real-looking database IDs on screen.
 async function scrubPage(p) {
   await p.addStyleTag({ content: "nextjs-portal, [data-nextjs-toast], #__next-build-watcher { display: none !important; }" }).catch(() => {});
-  await p.evaluate(() => {
+  await p.evaluate(([realEmail, demoEmail]) => {
+    const realLocal = realEmail ? realEmail.split("@")[0] : null;
     const fakeId = (m) => (m.startsWith("6a1b2c3d") ? m : "6a1b2c3d4e5f60718293a" + m.slice(-3));
-    const fix = (t) => t.replace(/https?:\/\/api\.zen-tesla\.flowflex\.ai/g, "https://api.flowflex.ai").replace(/[a-z0-9-]+\.zen-tesla\.flowflex\.ai/g, "app.flowflex.ai")
+    const fix = (t) => (realEmail ? t.split(realEmail).join(demoEmail) : t).replace(/https?:\/\/api\.zen-tesla\.flowflex\.ai/g, "https://api.flowflex.ai").replace(/[a-z0-9-]+\.zen-tesla\.flowflex\.ai/g, "app.flowflex.ai")
       .replace(/\b[0-9a-f]{24}\b/g, fakeId);
     const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     for (let n; (n = walk.nextNode()); ) { const v = fix(n.nodeValue); if (v !== n.nodeValue) n.nodeValue = v; }
     for (const el of document.querySelectorAll("input, textarea")) { const v = fix(el.value); if (v !== el.value) el.value = v; }
-  });
+    if (realLocal && realLocal.length > 3 && document.body.innerText.includes(realLocal)) console.warn("scrub: real account name still visible");
+  }, [process.env.DOCS_EMAIL || "", data.user.email]);
 }
 
 async function pickOption(p, select, text) {

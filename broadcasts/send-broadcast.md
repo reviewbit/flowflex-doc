@@ -35,7 +35,7 @@ For **Marketing** templates, contacts who opted out of WhatsApp marketing are ex
 
 ## 3. Review & publish
 
-<!-- screenshot: broadcasts/publish-modal -->
+<img src="assets/broadcasts/publish-modal.png" alt="The Publish broadcast confirmation with a test message">
 
 1. Check the **Broadcast summary**.
 2. Click **Publish broadcast**. The confirmation shows the number of eligible contacts, the batch size, and the date range.

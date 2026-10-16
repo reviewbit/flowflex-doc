@@ -118,7 +118,7 @@ To delete one contact, click the bin icon in its row and confirm with **Yes**.
 
 Click a contact's name to open its page. Click **Go back** to return.
 
-<!-- screenshot: audience/contact-detail -->
+<img src="assets/audience/contact-detail.png" alt="A contact's detail page">
 
 ### Header buttons
 
