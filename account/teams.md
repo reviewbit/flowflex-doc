@@ -42,6 +42,8 @@ Alex invites Taylor Morgan to answer Kochi chats.
 4. Under **Access Control**, set **Branches** and **Channels**. See [Branch and channel access](account/teams.md?id=branch-and-channel-access).
 5. Click **Invite user**. You see **Successfully sent an invitation to … with the role: ….**
 
+<img src="assets/account/invite-user.png" alt="Inviting taylor@rangoli.example as a Support agent with access to the Kochi branch">
+
 The invitation link is valid for 24 hours. After that, the status shows **Invite expired**; click **Resend invitation** to send a new one.
 
 ### Branch and channel access
