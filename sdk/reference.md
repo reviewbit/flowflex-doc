@@ -1,8 +1,12 @@
-# SDK — API reference
+# SDK reference
+
+Every method, return value and error class in the FlowFlex SDK for JavaScript and Python.
+
+The SDK has one client, a method that sends events, a helper that wraps files, and two lower-level upload helpers. The examples use Rangoli Store's `order.placed` and `invoice.created` events. To get set up, see [Install and use the SDK](sdk/overview.md).
 
 ## Constructor
 
-Creates a client. See [constructor options](sdk/overview.md#constructor-options).
+Creates a client. See [Constructor options](sdk/overview.md?id=constructor-options).
 
 <!-- tabs:start -->
 
@@ -22,7 +26,7 @@ ff = FlowFlex(api_key=..., api_secret=..., integration_code=..., base_url=...)
 
 ## Send event
 
-Uploads any `file()` found in the payload, then POSTs the event.
+Uploads any `file()` found in the payload, then sends the event.
 
 <!-- tabs:start -->
 
@@ -39,9 +43,9 @@ Returns:
 }
 ```
 
-- `event` — the event name; also sent as the `x-event` header.
-- `payload` — arbitrary JSON; becomes `{{trigger.*}}` in the flow. May contain `file()` refs.
-- `idempotencyKey` — optional; auto-generated UUID if omitted. Safe to retry.
+- `event`: the event name, also sent as the `x-event` header.
+- `payload`: any JSON; becomes `{{trigger.*}}` in the flow. May contain `file()` references.
+- `idempotencyKey`: optional; a UUID is generated if you omit it. Safe to retry.
 
 #### **Python**
 
@@ -54,16 +58,15 @@ result.response         # raw body from the events endpoint
 result.uploaded_assets  # dict: payload path → assetId
 ```
 
-- `event` — the event name; also sent as the `x-event` header.
-- `payload` — arbitrary dict; becomes `{{trigger.*}}` in the flow. May contain `file()` refs.
-- `idempotency_key` — optional; auto-generated UUID if omitted. Safe to retry.
+- `event`: the event name, also sent as the `x-event` header.
+- `payload`: any dict; becomes `{{trigger.*}}` in the flow. May contain `file()` references.
+- `idempotency_key`: optional; a UUID is generated if you omit it. Safe to retry.
 
 <!-- tabs:end -->
 
 ## File helper
 
-Returns a lazy file reference. Bytes are read only when the event is sent.
-See [File attachments](sdk/files.md).
+Returns a lazy file reference. The SDK reads the bytes only when the event is sent. See [SDK file attachments](sdk/files.md).
 
 <!-- tabs:start -->
 
@@ -83,7 +86,7 @@ See [File attachments](sdk/files.md).
 
 ## Lower-level helpers
 
-If you want to manage uploads yourself:
+Use these if you want to manage uploads yourself:
 
 <!-- tabs:start -->
 
@@ -152,32 +155,29 @@ Properties: `message`, `status`, `code`, `details`.
 
 <!-- tabs:end -->
 
-See [API → common error codes](api/events.md#error-codes) for the full list.
+For the full list of codes, see [Error codes](api/events.md?id=error-codes).
 
 ## Security
 
-Your `apiKey`/`apiSecret` (`api_key`/`api_secret` in Python) are integration-wide
-credentials — anyone who obtains them can fire events and upload files as you. Keep them
-in environment variables or a secrets manager, never in source control.
+Your `apiKey` and `apiSecret` (`api_key` and `api_secret` in Python) are credentials for the whole integration. Anyone who has them can send events and upload files as you. Keep them in environment variables or a secrets manager, never in source control.
 
-**The JavaScript SDK is server-only.** It is hard-blocked from the browser in two ways:
+The JavaScript SDK is server-only, and is blocked from the browser in two ways:
 
-- **Runtime** — the constructor **always throws** if it detects a browser (no opt-out).
-- **Bundle time** — browser bundlers (webpack/Vite/Next) resolve the package to a stub via
-  the `"browser"` export condition; that stub **throws on import**, so the SDK can't even be
-  built into client code.
+- **At runtime:** the constructor always throws if it detects a browser. There's no opt-out.
+- **At bundle time:** browser bundlers (webpack, Vite, Next) resolve the package to a stub through the `"browser"` export condition. The stub throws on import, so the SDK can't be built into client code.
 
-Built-in protections (both SDKs):
+Both SDKs also protect you in these ways:
 
-- **HTTPS enforced** — `baseUrl` / `base_url` must be `https://` (only `localhost` may use
-  `http`), so Basic-auth credentials are never sent in cleartext.
-- **No credential leakage** — the `Authorization` header is never included in error
-  messages, logs, or `FlowFlexError` details.
-- **Header-injection safe** — `event` and `idempotencyKey` / `idempotency_key` are rejected
-  if they contain control characters (CRLF).
-- **Path-injection safe** — `integrationCode` / `integration_code` is URL-encoded into the
-  request path.
-- **Per-request timeouts** (default 30 s) and a **client-side size cap** (default 25 MB).
+- **HTTPS enforced:** `baseUrl` / `base_url` must start with `https://` (only `localhost` may use `http`), so Basic-auth credentials are never sent in cleartext.
+- **No credential leakage:** the `Authorization` header never appears in error messages, logs or `FlowFlexError` details.
+- **Header-injection safe:** `event` and `idempotencyKey` / `idempotency_key` are rejected if they contain control characters (CRLF).
+- **Path-injection safe:** `integrationCode` / `integration_code` is URL-encoded into the request path.
+- **Limits:** per-request timeouts (default 30 s) and a client-side size cap (default 25 MB).
 
-If you must call FlowFlex from a browser, proxy through your own backend: the browser talks
-to your server, your server holds the secret and calls this SDK.
+If you need to call FlowFlex from a browser, proxy through your own server: the browser talks to your server, and your server holds the secret and calls the SDK.
+
+## See also
+
+- [Install and use the SDK](sdk/overview.md)
+- [SDK file attachments](sdk/files.md)
+- [Send events](api/events.md)

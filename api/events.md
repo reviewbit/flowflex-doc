@@ -1,11 +1,14 @@
-# REST API — send events
+# Send events
 
-Firing an event is what **starts a flow**. The event name is matched to a flow's trigger,
-and the JSON request body becomes the flow's `{{trigger.*}}` variables.
+Send an event to start every flow that uses it as its trigger.
+
+An event has a name and a JSON body. FlowFlex matches the name, sent in the `x-event` header, to the flows triggered by that event, and the body becomes the flow's `{{trigger.*}}` variables.
+
+When John Smith places order `RS-1042`, Rangoli Store's website sends `order.placed` with John's name, order number and phone number. The confirmation flow reads them as `{{trigger.name}}`, `{{trigger.order_id}}` and `{{trigger.phone}}`.
 
 ## <span class="badge post">POST</span> `/v1/events/{integrationCode}`
 
-Fire a custom-integration event.
+Send a custom-integration event.
 
 **Path**
 
@@ -17,26 +20,24 @@ Fire a custom-integration event.
 
 | Header | Value |
 | --- | --- |
-| `Authorization` | `Basic base64(apiKey:apiSecret)` — see [Authentication](api/authentication.md) |
+| `Authorization` | `Basic base64(apiKey:apiSecret)`. See [Authentication](api/authentication.md). |
 | `Content-Type` | `application/json` |
 | `x-event` | The event name, e.g. `order.placed` |
 | `x-idempotency-key` | A unique id for this logical event (recommended) |
 
 **Body**
 
-The body **is** the event data. Send the fields directly; don't wrap them in another object.
+The body is the event data. Send the fields directly; don't wrap them in another object.
 
 ```json
 {
-  "name": "Ada",
-  "order_id": "ord_42",
-  "phone": "919999999999"
+  "name": "John Smith",
+  "order_id": "RS-1042",
+  "phone": "919000000001"
 }
 ```
 
-The body is arbitrary JSON of your choosing. Each key is referenced in
-the flow as `{{trigger.<key>}}` (nested keys with dots, arrays with `[n]`). See
-[Triggers & variables](flows/triggers-and-variables.md).
+The body is any JSON you choose. The flow references each key as `{{trigger.<key>}}`, nested keys with dots and array items with `[n]`. See [Choose the trigger](flows/triggers-and-variables.md).
 
 ### Example
 
@@ -46,7 +47,7 @@ curl -X POST "https://api.flowflex.ai/v1/events/ic_abc123" \
   -H "x-event: order.placed" \
   -H "x-idempotency-key: 8f3c…-uuid" \
   -H "Content-Type: application/json" \
-  -d '{ "name": "Ada", "order_id": "ord_42", "phone": "919999999999" }'
+  -d '{ "name": "John Smith", "order_id": "RS-1042", "phone": "919000000001" }'
 ```
 
 ```ts
@@ -60,21 +61,24 @@ await fetch("https://api.flowflex.ai/v1/events/ic_abc123", {
     "x-event": "order.placed",
     "x-idempotency-key": crypto.randomUUID(),
   },
-  body: JSON.stringify({ name: "Ada", order_id: "ord_42" }),
+  body: JSON.stringify({ name: "John Smith", order_id: "RS-1042" }),
 });
 ```
 
 ### Attaching files
 
-To send media, first [upload the file](api/assets.md) to get an `assetId`, then put that
-`assetId` string in your request body where the flow's media node expects it. The
-[SDK](sdk/files.md) automates this; raw-HTTP callers do the two steps themselves.
+To send media:
+
+1. [Upload the file](api/assets.md) to get an `assetId`.
+2. Put that `assetId` string in the request body, under the key the flow's media node uses.
+
+The [SDK](sdk/files.md) does both steps for you.
 
 ## Idempotency
 
-Send a stable `x-idempotency-key` per logical event so retries (timeouts, restarts) don't
-fire the flow twice. The same key is treated as the same event. If you omit it, generate a
-UUID per attempt.
+Send a stable `x-idempotency-key` for each logical event, so retries after a timeout or restart don't run the flow twice. Requests with the same key count as the same event. If you don't have a stable key, generate a UUID for each attempt.
+
+For example, use `order_RS-1042_placed` for John Smith's order: if the website retries the request, the confirmation still goes out once.
 
 ## Error codes
 
@@ -87,5 +91,11 @@ Errors come back as JSON with a `code`. Common ones:
 | `UNAUTHORIZED` / `401` | Bad or missing Basic-auth credentials. |
 | `NOT_FOUND` / `404` | Unknown `integrationCode`. |
 
-> 401/404/422-class responses mean the call won't succeed on retry — fix the request.
-> 5xx/network errors are safe to retry with the same idempotency key.
+> [!TIP]
+> 401, 404 and 422-class responses won't succeed on retry, so fix the request first. 5xx and network errors are safe to retry with the same idempotency key.
+
+## See also
+
+- [REST API authentication](api/authentication.md)
+- [Upload assets](api/assets.md)
+- [SDK errors](sdk/reference.md?id=errors)

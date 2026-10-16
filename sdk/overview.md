@@ -1,10 +1,12 @@
-# SDK — overview & install
+# Install and use the SDK
 
-`flowflex` is the official SDK for firing **custom-integration events** and
-attaching **private files** to them — without dealing with presigned URLs,
-Basic-auth headers, or the multi-step upload dance yourself.
+Send custom-integration events, with files attached, from JavaScript, TypeScript or Python.
 
-Available for **JavaScript/TypeScript** and **Python**.
+`flowflex` is the official SDK for the custom-integration API. It builds the Basic-auth header, uploads any files in your payload through presigned URLs, and sends the event, so you make one call instead of several. It's available for JavaScript/TypeScript and Python.
+
+Rangoli Store's website uses the SDK to send `order.placed` when John Smith places order `RS-1042`. The confirmation flow reads the values as `{{trigger.name}}` and `{{trigger.order_id}}`.
+
+## Install
 
 <!-- tabs:start -->
 
@@ -14,8 +16,7 @@ Available for **JavaScript/TypeScript** and **Python**.
 npm install flowflex
 ```
 
-Requires **Node 18+** (for the built-in `fetch`) or any modern browser. Use it from a
-**server**, not the browser — see [Security](sdk/reference.md#security).
+Requires Node 18 or later, for the built-in `fetch`. Run it on a server, not in the browser. See [Security](sdk/reference.md?id=security).
 
 #### **Python**
 
@@ -23,11 +24,15 @@ Requires **Node 18+** (for the built-in `fetch`) or any modern browser. Use it f
 pip install flowflex
 ```
 
-Requires **Python 3.9+**. Uses `requests` under the hood.
+Requires Python 3.9 or later. It uses `requests` under the hood.
 
 <!-- tabs:end -->
 
 ## Quick start
+
+1. Create a custom integration and copy its API key, API secret and integration code. See [Custom integrations](integrations/custom-integration.md).
+2. Create a client with those values.
+3. Call `sendEvent` (JavaScript) or `send_event` (Python) with the event name and its data.
 
 <!-- tabs:start -->
 
@@ -45,7 +50,7 @@ const ff = new FlowFlex({
 
 // Plain event, no file
 await ff.sendEvent("order.placed", {
-  payload: { name: "Ada", order_id: "ord_42" },
+  payload: { name: "John Smith", order_id: "RS-1042" },
 });
 ```
 
@@ -62,13 +67,12 @@ ff = FlowFlex(
 )
 
 # Plain event, no file
-ff.send_event("order.placed", payload={"name": "Ada", "order_id": "ord_42"})
+ff.send_event("order.placed", payload={"name": "John Smith", "order_id": "RS-1042"})
 ```
 
 <!-- tabs:end -->
 
-In the flow builder these land under `trigger` — e.g. `{{trigger.name}}`,
-`{{trigger.order_id}}`.
+In the flow builder, the payload fields appear under `trigger`, for example `{{trigger.name}}` and `{{trigger.order_id}}`.
 
 ## Constructor options
 
@@ -86,10 +90,8 @@ In the flow builder these land under `trigger` — e.g. `{{trigger.name}}`,
 | `maxFileBytes` | number | no | Client-side size cap. Default `26214400` (25 MB). |
 | `fetch` | function | no | Custom fetch for runtimes without a global one. |
 
-> **Server-only.** This SDK cannot run in a browser — it throws if constructed in one,
-> and browser bundlers resolve it to a stub that throws on import. It uses your
-> integration `apiKey`/`apiSecret`, which must never reach client code. See
-> [Security](sdk/reference.md#security).
+> [!WARNING]
+> The JavaScript SDK is server-only. It throws if constructed in a browser, and browser bundlers resolve it to a stub that throws on import. It uses your integration's `apiKey` and `apiSecret`, which must never reach client code. See [Security](sdk/reference.md?id=security).
 
 #### **Python**
 
@@ -101,20 +103,19 @@ In the flow builder these land under `trigger` — e.g. `{{trigger.name}}`,
 | `base_url` | str | yes | FlowFlex host. Must be `https` (except `localhost`). |
 | `timeout_seconds` | float | no | Per-request timeout. Default `30.0`. |
 | `max_file_bytes` | int | no | Client-side size cap. Default `26214400` (25 MB). |
-| `session` | requests.Session | no | Custom session for connection pooling / proxies. |
+| `session` | requests.Session | no | Custom session for connection pooling or proxies. |
 
 <!-- tabs:end -->
 
 ## What you can do
 
-- **[Fire events](sdk/overview.md#quick-start)** — `sendEvent` / `send_event`.
-- **[Attach files](sdk/files.md)** — wrap files in `ff.file(...)` inside the payload.
-- **[Handle errors](sdk/reference.md#errors)** — typed `FlowFlexError` subclasses.
+- **Send events:** `sendEvent` / `send_event`. See [Quick start](sdk/overview.md?id=quick-start).
+- **Attach files:** wrap files in `ff.file(...)` inside the payload. See [SDK file attachments](sdk/files.md).
+- **Handle errors:** catch the typed `FlowFlexError` subclasses. See [Errors](sdk/reference.md?id=errors).
 
 ## Idempotency
 
-`sendEvent` / `send_event` auto-generates an `idempotencyKey` (UUID) if you don't pass
-one, so retrying the same call is safe. Pass your own to dedupe across process restarts:
+`sendEvent` / `send_event` generates an idempotency key (a UUID) if you don't pass one, so retrying the same call is safe. Pass your own key to avoid duplicates across process restarts. With the key below, John Smith gets one confirmation for order `RS-1042` even if the website retries the call.
 
 <!-- tabs:start -->
 
@@ -122,8 +123,8 @@ one, so retrying the same call is safe. Pass your own to dedupe across process r
 
 ```ts
 await ff.sendEvent("order.placed", {
-  payload: { order_id: "ord_42" },
-  idempotencyKey: "order_42_placed", // same key = processed once
+  payload: { order_id: "RS-1042" },
+  idempotencyKey: "order_RS-1042_placed", // same key = processed once
 });
 ```
 
@@ -131,9 +132,15 @@ await ff.sendEvent("order.placed", {
 
 ```python
 ff.send_event("order.placed",
-    payload={"order_id": "ord_42"},
-    idempotency_key="order_42_placed",  # same key = processed once
+    payload={"order_id": "RS-1042"},
+    idempotency_key="order_RS-1042_placed",  # same key = processed once
 )
 ```
 
 <!-- tabs:end -->
+
+## See also
+
+- [SDK reference](sdk/reference.md)
+- [SDK file attachments](sdk/files.md)
+- [Developer quick start](developers/quick-start.md)

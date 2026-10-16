@@ -1,7 +1,10 @@
-# REST API — authentication
+# REST API authentication
 
-The custom-integration API lets you fire events and upload files from **any language** —
-the [SDK](sdk/overview.md) is just a convenience wrapper over these endpoints.
+Authenticate your requests to the FlowFlex API with your custom integration's API key and secret.
+
+The custom-integration API lets you send events and upload files from any language. Every request uses HTTP Basic auth, with the API key as the username and the API secret as the password. The [SDK](sdk/overview.md) is a convenience wrapper over the same endpoints and builds the header for you.
+
+For example, when Rangoli Store's website sends `order.placed` for John Smith's order, it signs the request with the key and secret from its `Rangoli Order Events` integration.
 
 ## Base URL
 
@@ -9,11 +12,11 @@ the [SDK](sdk/overview.md) is just a convenience wrapper over these endpoints.
 https://api.flowflex.ai
 ```
 
-All endpoints below are under `/v1`.
+All endpoints are under `/v1`.
 
 ## Credentials
 
-From a **Custom Integration** (see [Quick start](developers/quick-start.md#1-create-a-custom-integration)):
+You get these from a custom integration. See [Create a custom integration](developers/quick-start.md?id=create-a-custom-integration).
 
 | Credential | Looks like | Role |
 | --- | --- | --- |
@@ -23,8 +26,7 @@ From a **Custom Integration** (see [Quick start](developers/quick-start.md#1-cre
 
 ## HTTP Basic auth
 
-Authenticate every `/v1` request (except the presigned `PUT` to storage) with an
-`Authorization: Basic` header — base64 of `apiKey:apiSecret`:
+Authenticate every `/v1` request with an `Authorization: Basic` header, the base64 of `apiKey:apiSecret`. The one exception is the presigned `PUT` that uploads file bytes, which carries its own token.
 
 ```
 Authorization: Basic base64("cik_xxx:cisk_yyy")
@@ -36,14 +38,14 @@ With `curl`, `-u` builds the header for you:
 curl -u "cik_xxx:cisk_yyy" https://api.flowflex.ai/v1/...
 ```
 
-Manually in Node:
+To build it yourself in Node:
 
 ```ts
 const auth = "Basic " + Buffer.from(`${apiKey}:${apiSecret}`).toString("base64");
 ```
 
-> **Always over HTTPS.** Basic auth sends credentials base64-encoded (not encrypted), so
-> the connection must be TLS. Only `localhost` should ever use `http`.
+> [!WARNING]
+> Always use HTTPS. Basic auth encodes credentials in base64 but doesn't encrypt them, so the connection must use TLS. Only `localhost` should ever use `http`.
 
 ## Headers summary
 
@@ -54,8 +56,16 @@ const auth = "Basic " + Buffer.from(`${apiKey}:${apiSecret}`).toString("base64")
 | `x-event` | events | the event name (e.g. `order.placed`) |
 | `x-idempotency-key` | events (recommended) | a unique id per logical event |
 
-## Rotating credentials
+## Rotate credentials
 
-If a secret leaks, **rotate** the integration in the dashboard. This issues a new
-`apiKey` + `apiSecret` and invalidates the old pair. Update your environment variables and
-redeploy.
+If a secret leaks, regenerate the integration's credentials:
+
+1. In FlowFlex, open the integration and click **Regenerate**. See [Regenerate credentials](integrations/custom-integration.md?id=regenerate-credentials).
+2. Copy the new API key and secret. The old pair stops working immediately.
+3. Update your environment variables and redeploy.
+
+## See also
+
+- [Send events](api/events.md)
+- [Upload assets](api/assets.md)
+- [Security](sdk/reference.md?id=security)

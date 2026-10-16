@@ -1,42 +1,43 @@
 # Developer quick start
 
-Use this when you want your own app or website to trigger WhatsApp messages, for example
-an order confirmation when an order is placed. It walks you end-to-end: create
-credentials, build a tiny flow, and fire your first event so a WhatsApp message goes out.
+Send an event from your own app or website and have FlowFlex reply to the customer on WhatsApp.
+
+Your app sends FlowFlex an event, such as `order.placed`, with some JSON data. The event starts every flow that uses it as its trigger, and the flow can put any field from the data into a WhatsApp message. You can send events with the FlowFlex SDK for JavaScript or Python, or with plain HTTP from any language.
+
+In this guide, Rangoli Store's website sends `order.placed` when John Smith places order `RS-1042`. A flow replies to John: "Hi John Smith, your order RS-1042 is confirmed!"
 
 > [!NOTE]
 > You need a connected WhatsApp channel first. See [Set up your account](getting-started.md).
 
-## 1. Create a custom integration
+## How it works
 
-In the FlowFlex dashboard, create a **Custom Integration**. You'll get three values:
+1. A custom integration gives you an API key, an API secret and an integration code.
+2. A flow uses one of the integration's events as its trigger.
+3. Your app sends the event to `/v1/events/<code>`, authenticated with the key and secret.
+4. The flow runs, and each key in the event data is available as `{{trigger.<key>}}`.
 
-| Value | Looks like | Use |
-| --- | --- | --- |
-| **API key** | `cik_…` | Identifies the integration (the “username” in Basic auth). |
-| **API secret** | `cisk_…` | The secret (the “password”). **Shown once — store it safely.** |
-| **Integration code** | `ic_abc123` | Goes in the event URL: `/v1/events/<code>`. |
+## Create a custom integration
+
+In FlowFlex, create a custom integration with an `order.placed` event. See [Custom integrations](integrations/custom-integration.md). You get three values:
+
+- **API key** (`cik_…`): identifies the integration. It's the username in Basic auth.
+- **API secret** (`cisk_…`): the password in Basic auth. It's shown once, so store it safely.
+- **Integration code** (`ic_abc123`): goes in the event URL, `/v1/events/<code>`.
 
 > [!WARNING]
-> The secret is only displayed at creation (and on rotate). If you lose it, rotate the
-> credentials to get a new one.
+> The secret is shown only when you create or regenerate the credentials. If you lose it, regenerate the credentials to get a new one.
 
-## 2. Build a flow with a custom trigger
+## Build a flow with a custom trigger
 
-In the **flow builder**:
-
-1. Add a **Trigger** node and choose your custom-integration event (e.g. `order.placed`).
+1. In the flow builder, add a **Trigger** and choose your integration's `order.placed` event.
 2. Add a **Text message** node and connect the trigger to it.
-3. In the message body, type a greeting and insert a variable from the event payload with
-   **Insert Variable** — e.g. `Hi {{trigger.name}}, your order {{trigger.order_id}} is confirmed!`
-4. Set the **Destination number** to the recipient — usually a variable like
-   `{{trigger.phone}}`.
-5. **Save / Publish** the flow.
+3. In the message, type a greeting and use **Insert Variable** to add fields from the event data, for example `Hi {{trigger.name}}, your order {{trigger.order_id}} is confirmed!`
+4. Set **Destination number** to the customer's number from the event, `{{trigger.phone}}`.
+5. Click the arrow beside **Save** and choose **Save and publish**.
 
-See [Flows → Triggers & variables](flows/triggers-and-variables.md) for how payload fields
-become `{{trigger.*}}`.
+A Text message reaches customers only during an active conversation. To message customers who haven't written to you recently, use an approved [Template message](flows/nodes/template-message.md) instead. See [Choose the trigger](flows/triggers-and-variables.md) for how event fields become `{{trigger.*}}` variables.
 
-## 3. Fire the event
+## Send the event
 
 ### With the SDK (recommended)
 
@@ -55,7 +56,7 @@ const ff = new FlowFlex({
 });
 
 await ff.sendEvent("order.placed", {
-  payload: { name: "Ada", order_id: "ord_42", phone: "919999999999" },
+  payload: { name: "John Smith", order_id: "RS-1042", phone: "919000000001" },
 });
 ```
 
@@ -67,30 +68,25 @@ curl -X POST "https://api.flowflex.ai/v1/events/ic_abc123" \
   -H "x-event: order.placed" \
   -H "x-idempotency-key: $(uuidgen)" \
   -H "Content-Type: application/json" \
-  -d '{ "name": "Ada", "order_id": "ord_42", "phone": "919999999999" }'
+  -d '{ "name": "John Smith", "order_id": "RS-1042", "phone": "919000000001" }'
 ```
 
-Both do the same thing. With the SDK you pass the data as `payload`; with raw HTTP it is
-the whole JSON body. The keys (`name`, `order_id`, `phone`) are
-exactly what you reference in the flow as `{{trigger.name}}`, `{{trigger.order_id}}`,
-`{{trigger.phone}}`.
+Both do the same thing. With the SDK you pass the data as `payload`; with raw HTTP it's the whole JSON body. The keys `name`, `order_id` and `phone` are what the flow uses as `{{trigger.name}}`, `{{trigger.order_id}}` and `{{trigger.phone}}`.
 
-## 4. Attach a file (optional)
+## Attach a file (optional)
 
-To send a PDF/image, wrap it with `ff.file(...)` and reference it in a **Media message** node — the
-SDK handles the upload for you:
+To send a PDF or image, wrap it with `ff.file(...)`. The SDK uploads it for you before sending the event:
 
 ```ts
 await ff.sendEvent("invoice.created", {
-  payload: { invoice: ff.file("./invoice.pdf"), phone: "919999999999" },
+  payload: { invoice: ff.file("./invoice.pdf"), phone: "919000000001" },
 });
 ```
 
-Then in the Media message node set **File source → Uploaded file** and the **Asset ID** to
-`{{trigger.invoice}}`. Full details in [SDK → File attachments](sdk/files.md).
+In the flow, add a **Media message** node, set **File source** to **Uploaded file**, and set **Asset ID** to `{{trigger.invoice}}`. See [SDK file attachments](sdk/files.md).
 
-## Where to next
+## See also
 
-- **[Flows → Overview](flows/overview.md)** — what each node does.
-- **[SDK → Overview](sdk/overview.md)** — full SDK usage.
-- **[API → Authentication](api/authentication.md)** — call the REST API from any language.
+- [Workflows overview](flows/overview.md): what each node does.
+- [Install and use the SDK](sdk/overview.md): full SDK usage.
+- [REST API authentication](api/authentication.md): call the API from any language.
