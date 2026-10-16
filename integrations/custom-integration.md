@@ -1,30 +1,29 @@
 # Custom integrations
 
-A custom integration lets any system start your flows by sending events to one webhook URL. FlowFlex gives each integration its own API key and secret.
+Start your flows from any system, such as your website, order system or CRM, by sending events to one webhook URL.
 
-Use it for systems FlowFlex has no ready-made integration for, such as your own website, order system or CRM. For the code side, see the [Developer quick start](developers/quick-start.md).
+A custom integration is a named set of events with its own webhook URL, API key and secret. Your system sends an event to the URL, and every flow subscribed to that event runs with the event's data. Use it for systems FlowFlex has no ready-made integration for. For the code side, see the [Developer quick start](developers/quick-start.md).
+
+Rangoli Store creates an integration called `Rangoli Order Events` with an `order.placed` event. When John Smith places order `RS-1042` on the website, the website sends `order.placed` with John's name, phone number, order number and total. A flow uses those values to send John a WhatsApp confirmation.
 
 ## Create a custom integration
 
-1. Go to **Integrations** and click **New** on the **Custom integrations** card.
-2. Fill in **Details** and **Events**, as described below.
-3. Click **Create integration**.
-
-The page title is **Create custom integration**. The right-hand side shows the **API / Webhook instructions** while you work.
+1. Go to **Integrations** and click **New** on the **Custom integrations** card. The **Create custom integration** page opens, with the **API / Webhook instructions** on the right.
+2. Fill in the [details](integrations/custom-integration.md?id=details).
+3. Add at least one [event](integrations/custom-integration.md?id=events).
+4. Click **Create integration**. FlowFlex shows your webhook URL and credentials. See [Your integration is live](integrations/custom-integration.md?id=your-integration-is-live).
 
 ### Details
 
-| Field | Required | Rules |
-| --- | --- | --- |
-| **Integration name** | Yes | Any name, for example `Rangoli Order Events`. |
-| **Description** | No | A short note on what these events represent. It shows on the integration's card. |
-| Icon | No | Click the avatar next to the title to upload a logo. JPG or PNG only, smaller than 5 MB. |
+Enter an **Integration name**, such as `Rangoli Order Events`. This is the only required detail.
 
-If you skip the icon, FlowFlex shows initials on a coloured circle. It uses the first letters of the first two words, so "Rangoli Order Events" shows **RO**.
+Add a **Description** if you like, a short note on what these events represent. It shows on the integration's card.
+
+To add a logo, click the avatar next to the title and upload a JPG or PNG smaller than 5 MB. If you skip the icon, FlowFlex shows initials on a coloured circle, from the first letters of the first two words: "Rangoli Order Events" shows **RO**.
 
 ### Events
 
-Events are the things your system will tell FlowFlex about. Flows subscribe to them by name. Add at least one event, or you see **Add at least one event**.
+Events are the things your system tells FlowFlex about, and flows subscribe to them by name. Add at least one event, or you see **Add at least one event**.
 
 The form starts with one empty event. Click **+ Add event** for more, or **Remove event** to delete one.
 
@@ -37,31 +36,31 @@ The form starts with one empty event. Click **+ Add event** for more, or **Remov
 | **Description** | No | What this event represents. |
 | **Expected payload** | No | A sample of the JSON data this event carries. |
 
-**Event value** rules:
+An **Event value**:
 
-- 1 to 64 characters.
-- Letters, numbers, dot (`.`), underscore (`_`) or hyphen (`-`).
-- Must start and end with a letter or number. `order.placed` is valid; `.order` and `order-` are not.
-- Must be unique within the integration. `Order.Placed` and `order.placed` count as the same value.
+- Has 1 to 64 characters.
+- Uses letters, numbers, dot (`.`), underscore (`_`) or hyphen (`-`).
+- Starts and ends with a letter or number. `order.placed` is valid; `.order` and `order-` are not.
+- Is unique within the integration. `Order.Placed` and `order.placed` count as the same value.
 
 ### Expected payload
 
 **Expected payload** describes the data your system sends with the event. Switch between two views:
 
-- **Code** — type or paste raw JSON. Invalid JSON shows **Invalid JSON** under the box.
-- **Tree** — edit the same JSON as a tree of keys and values.
+- **Code:** type or paste raw JSON. Invalid JSON shows **Invalid JSON** under the box.
+- **Tree:** edit the same JSON as a tree of keys and values.
 
-The sample powers the `{{trigger.*}}` hints in the flow builder. For example, this payload for `order.placed`:
+The sample powers the `{{trigger.*}}` hints in the flow builder. Rangoli Store uses this sample for `order.placed`:
 
 ```json
 {
-  "customer": { "name": "Ananya", "phone": "919000000001" },
+  "customer": { "name": "John Smith", "phone": "919000000001" },
   "order_id": "RS-1042",
   "total": 1499
 }
 ```
 
-gives you `{{trigger.customer.name}}`, `{{trigger.customer.phone}}`, `{{trigger.order_id}}` and `{{trigger.total}}`. See [Choose the trigger](flows/triggers-and-variables.md).
+It gives the flow builder `{{trigger.customer.name}}`, `{{trigger.customer.phone}}`, `{{trigger.order_id}}` and `{{trigger.total}}`. See [Choose the trigger](flows/triggers-and-variables.md).
 
 > [!TIP]
 > Use realistic sample values. The sample only describes the fields; each real event brings its own values.
@@ -83,7 +82,7 @@ The **Credentials** card shows three values:
 The secret is masked. Click **Reveal** to see it, and the copy icon to copy it.
 
 > [!WARNING]
-> The API secret is shown only once. Copy it or download the .env now. It can't be retrieved later. To get a new one, regenerate the credentials.
+> The API secret is shown only once. Copy it or download the .env now, because it can't be retrieved later. To get a new one, [regenerate the credentials](integrations/custom-integration.md?id=regenerate-credentials).
 
 Click **Download .env** to save a file with all three values:
 
@@ -93,7 +92,7 @@ FLOWFLEX_API_SECRET=cisk_xxxx
 FLOWFLEX_WEBHOOK_URL=https://<your-flowflex-host>/v1/events/ic_xxxx
 ```
 
-Click **Go to integrations** when you are done. Your new integration now has its own card.
+Click **Go to integrations** when you're done. Your new integration now has its own card.
 
 ## Send events
 
@@ -108,16 +107,11 @@ The **API / Webhook instructions** panel, under **How to send events**, sums up 
 | `x-idempotency-key` | Optional. A unique ID that stops a retried request from running twice |
 | Body | The event data, matching the expected payload |
 
-One integration has one webhook URL. The `x-event` header says which event it is. Every flow subscribed to that event runs.
+One integration has one webhook URL, and the `x-event` header says which event it is. Every flow subscribed to that event runs.
 
-Open **Attaching files to events** in the same panel to send a file, such as an invoice PDF. It uses three calls and accepts files up to 25 MB.
+To send a file with an event, such as John Smith's invoice PDF, open **Attaching files to events** in the same panel. It takes three calls and accepts files up to 25 MB.
 
-For full details, see:
-
-- [Developer quick start](developers/quick-start.md)
-- [Send events](api/events.md)
-- [Upload assets](api/assets.md)
-- [Install and use the SDK](sdk/overview.md)
+For the full developer guides, see the [Developer quick start](developers/quick-start.md), [Send events](api/events.md), [Upload assets](api/assets.md) and [Install and use the SDK](sdk/overview.md).
 
 ## Use the integration in a flow
 
@@ -134,42 +128,50 @@ On the **Integrations** page, click **Manage** on the integration's card. The pa
 
 ### Edit
 
-Click **Edit** to change the name, description or events. Click **Save changes** to keep them, or **Cancel**. The API key, secret and webhook URL do not change.
+1. Click **Edit**. The name, description and events become editable.
+2. Make your changes.
+3. Click **Save changes** to keep them, or **Cancel** to discard them.
+
+The API key, secret and webhook URL don't change when you edit.
 
 ### Regenerate credentials
 
-Click **Regenerate** in the **Credentials** panel, then confirm **Regenerate credentials?**.
-
-- FlowFlex creates a new API key and a new secret.
-- The old key and secret stop working immediately.
-- The webhook URL stays the same.
-- The new secret is shown once, with **Reveal** and copy. Update all callers before you close the page.
-
 Regenerate whenever the secret may have leaked.
+
+1. Click **Regenerate** in the **Credentials** panel.
+2. Confirm **Regenerate credentials?**. FlowFlex creates a new API key and secret, and the old pair stops working immediately. The webhook URL stays the same.
+3. Copy the new secret with **Reveal** and the copy icon. It's shown once, so update every system that sends events before you close the page.
 
 ### Revoke an integration
 
-Click **Revoke**, then confirm **Revoke this integration?**.
+1. Click **Revoke**.
+2. Confirm **Revoke this integration?**.
 
-- Callers can no longer start flows with this key.
-- The integration shows a **Revoked** tag and leaves the flow trigger list.
-- **Edit**, **Revoke** and **Regenerate** disappear. **Delete** appears.
+Systems can no longer start flows with this integration's key. The card shows a **Revoked** tag, and the integration leaves the flow trigger list. **Edit**, **Revoke** and **Regenerate** disappear, and **Delete** appears.
 
 You can't revoke an integration that is still a flow's trigger. FlowFlex shows **Can't revoke — integration in use** and lists those flows. Change their trigger first, then revoke.
 
 ### Delete an integration
 
-You can delete only a revoked integration. Click **Delete**, then confirm **Delete this integration?**.
+You can delete only a revoked integration.
 
-The integration is removed from your integrations list. This cannot be undone. Deletion is also blocked while any flow uses the integration (**Can't delete — integration in use**).
+1. Click **Delete**.
+2. Confirm **Delete this integration?**.
+
+The integration is removed from your integrations list, and this can't be undone. Deletion is also blocked while any flow uses the integration (**Can't delete — integration in use**).
 
 ## Permissions
 
-| Action | Permission needed |
-| --- | --- |
-| See integrations and open **Manage** | **Integration view** |
-| Create | **Integration create** |
-| Edit, change icon, regenerate | **Integration edit** |
-| Revoke, delete | **Integration delete** |
+- **Integration view:** see integrations and open **Manage**.
+- **Integration create:** create an integration.
+- **Integration edit:** edit, change the icon, and regenerate credentials.
+- **Integration delete:** revoke and delete.
 
 See [Roles and permissions](account/roles-and-permissions.md).
+
+## See also
+
+- [Integrations overview](integrations/overview.md)
+- [Developer quick start](developers/quick-start.md)
+- [Send events](api/events.md)
+- [Choose the trigger](flows/triggers-and-variables.md)

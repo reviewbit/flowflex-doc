@@ -1,8 +1,10 @@
-# SDK — file attachments
+# SDK file attachments
 
-Wrap any file in `ff.file(...)` and drop it into the payload. The SDK uploads it through a
-presigned URL and replaces it with an opaque `assetId` before the event is sent. **Files
-upload directly and securely.**
+Attach files, such as invoices or product photos, to an event by wrapping them in `ff.file(...)`.
+
+Put an `ff.file(...)` anywhere in the payload. When you send the event, the SDK uploads the file to private storage through a presigned URL and replaces it with an opaque `assetId`. The flow's media node then sends the file on WhatsApp.
+
+When Rangoli Store creates John Smith's invoice for order `RS-1042`, the website sends `invoice.created` with `invoice: ff.file("./invoice.pdf")`. The flow's **Media message** node sends the PDF to John.
 
 <!-- tabs:start -->
 
@@ -28,18 +30,16 @@ ff.send_event("invoice.created", payload={
 
 <!-- tabs:end -->
 
-Then in your flow's **Media message** node:
+Then set up the flow's **Media message** node:
 
-1. Set **File source** → **Uploaded file**
-2. Set the **Asset ID** field → `{{trigger.invoice}}`
+1. Set **File source** to **Uploaded file**.
+2. Set **Asset ID** to `{{trigger.invoice}}`.
 
-> The key you use in the payload is the key you reference in the flow. Send
-> `{ invoice: ff.file(...) }` → reference `{{trigger.invoice}}`.
+The key you use in the payload is the key you reference in the flow: send `{ invoice: ff.file(...) }` and reference `{{trigger.invoice}}`.
 
 ## Multiple files
 
-Put a `file()` anywhere in the payload — top-level, nested, or in arrays. The SDK uploads
-them **all in parallel** and swaps each for its `assetId`. Reference each by its path:
+Put a `file()` anywhere in the payload: at the top level, nested, or in arrays. The SDK uploads them all in parallel and swaps each for its `assetId`. Reference each one by its path:
 
 <!-- tabs:start -->
 
@@ -77,8 +77,9 @@ ff.send_event("order.shipped", payload={
 
 <!-- tabs:end -->
 
-**Reusing one file across nodes** — pass the *same* `file()` instance in multiple places
-and it's uploaded once, same `assetId` everywhere:
+### Reuse one file across nodes
+
+Pass the same `file()` instance in several places. It's uploaded once, with the same `assetId` everywhere:
 
 <!-- tabs:start -->
 
@@ -104,8 +105,7 @@ ff.send_event("promo.sent", payload={
 
 ## Supplying bytes other ways
 
-`file()` accepts a file path, raw bytes, or a file-like object. When the type can't be
-inferred, pass `filename` and `mime`:
+`file()` accepts a file path, raw bytes, or a file-like object. When the SDK can't infer the type, pass `filename` and `mime`:
 
 <!-- tabs:start -->
 
@@ -114,13 +114,12 @@ inferred, pass `filename` and `mime`:
 ```ts
 ff.file(pdfBuffer, { filename: "invoice.pdf", mime: "application/pdf" });
 
-const f = document.querySelector("input[type=file]").files[0];
-ff.file(f); // name + type read from the File
+ff.file(blob, { filename: "invoice.pdf" }); // a Blob or File; a File's name and type are read from it
 
 ff.file("./tmp-7f3a.pdf", { filename: "Invoice-2026.pdf" }); // override stored name
 ```
 
-Source types: path (string), `Buffer`/`Uint8Array`, or `Blob`/`File` (browser).
+Source types: path (string), `Buffer`/`Uint8Array`, or `Blob`/`File`.
 
 #### **Python**
 
@@ -140,49 +139,50 @@ Source types: path (`str` or `pathlib.Path`), `bytes`/`bytearray`, or any binary
 
 <!-- tabs:end -->
 
-**Allowed types:** PDF, DOC(X), XLS(X), PPT(X), TXT, JPEG, PNG, MP4, 3GPP, AAC, AMR, MP3,
-OGG. **Max size:** 25 MB.
+**Allowed types:** PDF, DOC(X), XLS(X), PPT(X), TXT, JPEG, PNG, MP4, 3GPP, AAC, AMR, MP3, OGG. **Maximum size:** 25 MB.
 
 ## File lifetime and cleanup
 
+> [!WARNING]
 > Read this before using file attachments in production.
 
-Files go to **private storage**, never a public URL.
+Files go to private storage, never to a public URL. They don't last long:
 
-| Phase | Duration |
-| --- | --- |
-| Presigned upload URL valid | **2 hours** from `createUploadUrl` / `create_upload_url` |
-| File kept in storage | **48 hours** from upload |
-| After 48 hours | File **deleted** |
+- **Upload URL:** valid for 2 hours from `createUploadUrl` / `create_upload_url`.
+- **File:** kept for 48 hours from upload, then deleted.
 
 What this means for you:
 
-- **Don't store `assetId` long-term** expecting to reuse it — it expires in 48h.
-- **Each send should get a fresh `assetId`** via a new `ff.file(...)`. The SDK handles the
-  upload automatically when you call `sendEvent` / `send_event`.
-- Firing the event more than 48h after upload fails with `ASSET_FILE_MISSING`. Keep the
-  send close to the upload.
+- Don't store an `assetId` to reuse later. It expires after 48 hours.
+- Give each send a fresh `assetId` with a new `ff.file(...)`. The SDK uploads the file when you call `sendEvent` / `send_event`.
+- Sending the event more than 48 hours after the upload fails with `ASSET_FILE_MISSING`. Keep the send close to the upload.
 
 <!-- tabs:start -->
 
 #### **JavaScript**
 
 ```ts
-// ✅ Upload + fire together — always fresh
+// ✅ Upload + send together, always fresh
 await ff.sendEvent("invoice.created", {
   payload: { invoice: ff.file("./invoice.pdf") },
 });
 
-// ❌ Don't stash an assetId and reuse it hours later — it's gone after 48h
+// ❌ Don't stash an assetId and reuse it hours later: it's gone after 48h
 ```
 
 #### **Python**
 
 ```python
-# ✅ Upload + fire together — always fresh
+# ✅ Upload + send together, always fresh
 ff.send_event("invoice.created", payload={"invoice": ff.file("./invoice.pdf")})
 
-# ❌ Don't store assetId and reuse it hours later — it's gone after 48h
+# ❌ Don't store an assetId and reuse it hours later: it's gone after 48h
 ```
 
 <!-- tabs:end -->
+
+## See also
+
+- [Upload assets](api/assets.md): the endpoints behind `ff.file(...)`.
+- [Media message](flows/nodes/media-message.md)
+- [SDK reference](sdk/reference.md)
