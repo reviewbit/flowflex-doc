@@ -44,7 +44,11 @@ const shots = {
   "get-started/create-account": async (p) => {
     p = await signedOutPage();
     await p.goto(`${USERS}/auth/register`, { waitUntil: "domcontentloaded", timeout: 180000 });
-    await p.getByPlaceholder("e.g. Ravi Kulkarni").fill("Ananya Rao");
+    await p.getByPlaceholder("e.g. Ravi Kulkarni").fill("Alex Lee");
+    // Trial length differs per agreement: keep it out of the public screenshot.
+    await p.evaluate(() => document.querySelectorAll("p, span, div").forEach((el) => {
+      if (el.children.length === 0 && /free trial/i.test(el.textContent || "")) el.style.visibility = "hidden";
+    }));
     const phone = p.getByPlaceholder("98765 43210");
     await phone.click();
     await p.keyboard.press("Control+A");
@@ -178,7 +182,17 @@ const shots = {
   "flows/campaigns-list": async (p) => { await go(p, "/campaigns"); await p.getByText("Order status replies").first().waitFor({ timeout: 120000 }); await p.waitForTimeout(1500); },
   "flows/saved-data-tables": async (p) => { await go(p, "/flows/saved_data"); await p.getByText(m.dataTables[0].title).first().waitFor(); },
   // ---- Integrations ----
-  "integrations/integrations-page": async (p) => { await go(p, "/integrations"); await p.getByText("Custom integrations").first().waitFor(); },
+  "integrations/integrations-page": async (p) => {
+    await go(p, "/integrations");
+    await p.getByText("Custom integrations").first().waitFor();
+    // Shopify setup goes through FlowFlex support, so the docs don't show its card.
+    await p.evaluate(() => {
+      const h = [...document.querySelectorAll("body *")].find((el) => el.children.length === 0 && el.textContent.trim() === "Shopify");
+      let card = h; for (let i = 0; i < 6 && card && !/Connect/.test(card.textContent.replace("Shopify", "")); i++) card = card.parentElement;
+      while (card && card.parentElement && card.parentElement.textContent.trim().length <= card.textContent.trim().length + 5) card = card.parentElement;
+      if (card) card.style.display = "none";
+    });
+  },
   "integrations/custom-integration-events": async (p) => {
     await go(p, "/integrations/custom");
     await p.getByPlaceholder(/Acme CRM Events/i).fill("Rangoli Order Events").catch(() => {});
@@ -194,18 +208,16 @@ const shots = {
   "account/team-members": async (p) => { await go(p, "/settings/teams/members"); await p.getByText(m.team[1].name).first().waitFor(); },
   "account/invite-user": async (p) => {
     await go(p, "/settings/teams/invite");
-    if (!(await p.getByPlaceholder("Enter name").first().waitFor({ timeout: 90000 }).then(() => true).catch(() => false))) {
-      await p.reload({ waitUntil: "domcontentloaded" });
-      await p.getByPlaceholder("Enter name").first().waitFor({ timeout: 120000 });
-    }
-    await p.getByPlaceholder("Enter name").first().fill("Kiran");
-    await p.getByPlaceholder("Enter email").first().fill("kiran@rangoli.example");
-    await p.keyboard.press("Escape");
-    await p.getByPlaceholder("+91 98765 43210").first().fill("+91 90000 00013").catch(() => {});
+    await p.getByText("User email").first().waitFor({ timeout: 180000 });
+    const email = p.locator(".ant-select", { hasText: "Enter email" }).first();
+    await email.click();
+    await p.keyboard.type("taylor@rangoli.example", { delay: 30 });
+    await p.keyboard.press("Enter").catch(() => {});
+    await p.keyboard.press("Escape").catch(() => {});
     await pickOption(p, p.locator(".ant-select", { hasText: "Select role" }).first(), "Support agent").catch(() => {});
-    await p.keyboard.press("Escape");
-    await p.locator("body").click({ position: { x: 5, y: 300 } }).catch(() => {});
+    await p.waitForTimeout(1000);
   },
+
   "account/create-role": async (p) => {
     await go(p, "/settings/teams/roles/create");
     await fillLabel(p, /Role name/i, "Support agent");
@@ -496,6 +508,10 @@ async function go(p, route) {
 // Last line of defence before a screenshot: devbox host names and real-looking database IDs on screen.
 async function scrubPage(p) {
   await p.addStyleTag({ content: "nextjs-portal, [data-nextjs-toast], #__next-build-watcher { display: none !important; }" }).catch(() => {});
+  // Trial length differs per agreement: never show it.
+  await p.evaluate(() => document.querySelectorAll("body *").forEach((el) => {
+    if (el.children.length <= 2 && /\d+[- ]day free trial/i.test(el.textContent || "") && (el.textContent || "").length < 80) el.style.visibility = "hidden";
+  })).catch(() => {});
   await p.evaluate(([realEmail, demoEmail]) => {
     const realLocal = realEmail ? realEmail.split("@")[0] : null;
     const fakeId = (m) => (m.startsWith("6a1b2c3d") ? m : "6a1b2c3d4e5f60718293a" + m.slice(-3));
