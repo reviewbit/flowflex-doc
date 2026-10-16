@@ -1,35 +1,35 @@
-# Media message: send a file or contact card
+# Media message
 
-Use Media message for a product image, video, voice/audio file, document, or contact card. For a map pin, use [Send location](flows/nodes/send-location.md).
+Send an image, video, audio file, document or contact card on WhatsApp.
 
-## Send a fixed brochure
+## When to use it
 
-1. Add **Media message** and open it.
-2. Set Destination number with the customer's phone variable.
-3. In **Type**, choose Document.
-4. In **File source**, choose **Upload new file** and pick your brochure.
-5. Wait for upload to finish and review the file preview.
-6. Fill any additional fields shown for that media type.
-7. Click Save changes and connect Next step to another action or End.
+Use a media message when the customer needs a file rather than text. Rangoli Store sends its Diwali catalogue as a PDF to every customer who asks for it, and sends each customer their own invoice after an order. To send a map pin, use [Send location](flows/nodes/send-location.md).
 
-The same uploaded brochure is attached each time this node runs.
+## Set it up
 
-## Send a different invoice for each customer
+1. Add **Media message** from **WhatsApp Blocks** and open it.
+2. In **Destination number**, insert the customer's phone number, such as **Trigger** → **from**.
+3. In **Type**, choose **Image**, **Video**, **Document**, **Audio** or **Contact**.
+4. In **File source**, choose where the file comes from:
+   - **Upload new file:** pick a file from your computer, such as the Diwali catalogue. The same file is sent every time the node runs.
+   - **Public URL:** insert a link to the file in **Media URL**, such as an invoice link from the trigger.
+   - **Uploaded file:** insert the file's **Asset ID** from the trigger, for a private file your system uploaded to FlowFlex.
+5. Optionally, add a **Caption (optional)**, such as `Your invoice for order ORD-48213`. Audio files and contact cards don't have captions.
+6. Click **Save changes**.
 
-Choose Document, then select **Public URL** if the event contains a direct invoice URL, or **Uploaded file** if it contains an assetId (insert it in **Asset ID**). Use [Insert Variable](flows/using-variables.md) to select that customer-specific field.
+Images can be up to 5 MB, video and audio up to 16 MB, and documents up to 100 MB. See [Choose files and media](flows/files-and-media.md) for how each file source works.
 
-See [Choose files and media](flows/files-and-media.md) for file sources, expiry, and the type-specific size limits. Image files can be up to 5 MB, video/audio up to 16 MB, and documents up to 100 MB.
+### Send a contact card
 
-## Add a caption
+Choose **Type** → **Contact** and fill in the name, such as **First name** and **Last name**, and the contact details, such as **Mobile number**. Rangoli Store sends its Kochi branch's contact this way. You can add up to 10 contacts in one message.
 
-Where the selected type offers a caption field, add a short explanation or a personalized message. Keep it within the displayed limit and check the preview. Audio messages and contact cards have different fields from images and documents.
+## Connect it
 
-## Send a contact card
+Connect **Next step** to the following step or to **End**. If you set a waiting time for a reply, connect **No response** too. See [Wait for and validate a reply](flows/response-wait.md).
 
-Choose **Type → Contact**, then fill the name and contact details shown in the form. Add further contact entries if needed, up to the supported limit of 10 contacts. Review the customer's card before saving.
+## See also
 
-## Wait for an answer
-
-If the form offers response waiting and you need an answer, enable it and connect No response as well as Next step. See [Response waiting](flows/response-wait.md).
-
-For failures, see [File troubleshooting](help/troubleshooting.md#files-do-not-upload-or-send) and [WhatsApp setup](flows/whatsapp-message-setup.md).
+- [Choose files and media](flows/files-and-media.md)
+- [Files do not upload or send](help/troubleshooting.md?id=files-do-not-upload-or-send)
+- [Template message](flows/nodes/template-message.md), for files outside the 24-hour window

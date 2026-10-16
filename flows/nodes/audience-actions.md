@@ -1,64 +1,72 @@
-# Audience actions: organize contacts and hand conversations to your team
+# Audience actions
 
-These actions use **Contact number** to identify the customer. For WhatsApp Incoming Chat, select Trigger → from. For another event, choose its customer phone field. See [Select and insert variables](flows/using-variables.md).
+Tag a contact, save details to their profile, leave a note for your team, or hand the chat to an agent, all from inside a flow.
+
+The four audience actions sit in **Audience Blocks**. Each one finds the customer by **Contact number**. For a flow started by an incoming WhatsApp message, insert **Trigger** → **from**; for another trigger, choose its customer phone field. See [Select and insert variables](flows/using-variables.md).
+
+None of these actions sends a message to the customer. Add a message node after them if the customer should hear something.
 
 ## Save tag
 
-Use Save tag to mark interest or remove an old status.
+Add or remove tags on the contact, so you can find them later or route them differently.
 
-1. Add **Save tag** from Audience Blocks and open it.
-2. Set Contact number using the customer's phone variable.
-3. Choose **Action → Add tag(s)** or **Remove tag(s)**.
-4. Select one or more tags, such as Interested.
-5. Save changes and connect Next step.
+**When to use it:** when Jane Doe taps **Tell me more** on Rangoli Store's Diwali offer, the flow adds the `interested` tag, then sends the details. A later [contact-tag condition](flows/nodes/contact-tag-conditions.md) or [segment](audience/segments.md) can pick up everyone with that tag.
 
-Example: after the customer chooses “Tell me more”, add Interested, then send the details. A later condition can check the contact's current tags; see [Contact-tag conditions](flows/nodes/contact-tag-conditions.md).
-
-Check the tags already exist and belong to your customer-tag list. Adding a tag does not itself send a message; connect a message node if you want one next.
+1. Add **Save tag** and open it.
+2. Set **Contact number**, for example **Trigger** → **from**.
+3. In **Action**, choose **Add tag(s)** or **Remove tag(s)**.
+4. In **Tags**, select one or more tags, such as `interested`.
+5. Click **Submit**, then connect **Next step**.
 
 ## Save audience
 
-Use Save audience to save collected information to the contact profile, creating the contact if it is not already in your audience.
+Save information the flow collected to the contact's profile. If the contact isn't in your audience yet, it's created.
 
-1. Add **Save audience** after the step supplying the information.
-2. Set Contact number with the customer's phone variable.
-3. Under **Columns**, choose an existing column or type a new name.
-4. For its value, insert the captured reply or another value.
-5. Add more rows for additional profile fields.
-6. Save changes and connect Next step.
+**When to use it:** Rangoli Store asks new customers for their email address, then saves the reply to the contact's email field.
 
-Example: collect an email address with a waiting Text message, then map its captured reply to the email column. Use an existing column when it already represents the information to avoid duplicate profile fields.
+1. Add **Save audience** after the step that collects the information, and open it.
+2. Set **Contact number**.
+3. Under **Columns**, choose a column from **Existing columns** or **Profile fields**, or type a new name.
+4. Enter its value, such as the customer's captured reply. See [Use a customer's reply](flows/using-variables.md?id=use-a-customers-reply).
+5. Click **Add column** for each extra field.
+6. Click **Submit**, then connect **Next step**.
 
-For a separate reporting table, use [Save data](flows/nodes/save-data.md). See [Response waiting](flows/response-wait.md) before mapping an answer.
+Choose an existing column when one already holds that information, so the profile doesn't end up with duplicate fields. To record answers in a table for reporting instead, use [Save data](flows/nodes/save-data.md).
 
 ## Add Note
 
-Use Add Note to give your team context without sending it to the customer.
+Add a private note to the customer's conversation. Your team sees it in the inbox; the customer doesn't.
 
-1. Add **Add Note** in a flow that has an existing customer conversation.
-2. Set Contact number.
-3. Write **Note**, such as “Customer requested a callback tomorrow.”
-4. Insert any useful customer answer or order details.
-5. Save changes and connect Next step, for example to Assign agent.
+**When to use it:** before handing a chat to an agent, Rangoli Store adds a note such as "Asked for a callback about order ORD-48213", so the agent has context straight away.
 
-The note appears privately in the conversation. It supports several lines of text. If there is no matching conversation, a note cannot be added; use this action for a conversation that already exists.
+1. Add **Add Note** and open it.
+2. Set **Contact number**.
+3. Write the **Note**. You can insert variables, such as the customer's answer or an order number.
+4. Click **Submit**, then connect **Next step**, for example to **Assign agent**.
+
+The note needs an existing conversation with the customer. Use it in flows that reply to a customer's message.
 
 ## Assign agent
 
-Use Assign agent to hand the customer conversation to a person on your team.
+Hand the conversation to a person on your team. The chat appears in that agent's inbox.
 
-1. Add **Assign agent** and set Contact number.
-2. Choose **Assign to** using the options below.
-3. For A specific agent, select the agent.
-4. Enable **Don't reassign if this chat already has an agent** when returning customers should stay with their current agent.
-5. Save changes and connect Next step to End or the action that follows the handoff.
+**When to use it:** in Rangoli Store's order-tracking flow, a customer who taps **Talk to the team** is assigned to an agent, who picks up the chat with the whole conversation in front of them.
 
-| Option | When to use it |
-| --- | --- |
-| A specific agent | A particular person handles this request. |
-| Round robin | Share assignments across the branch's eligible agents in rotation. |
-| Least busy | Assign an agent with the fewest open chats. |
+1. Add **Assign agent** and open it.
+2. Set **Contact number**.
+3. In **Assign to**, choose how to pick the agent:
+   - **A specific agent:** always assign one person, such as Chris Taylor. Select them in **Agent**.
+   - **Round robin (next agent in rotation):** share chats across the branch's agents in turn.
+   - **Least busy (fewest open chats):** assign the agent with the fewest open chats.
+4. Select **Don't reassign if this chat already has an agent** to keep returning customers with the agent who already knows them.
+5. Click **Submit**, then connect **Next step**, usually to **End**.
 
-If the current agent has left the branch, the configured strategy is used. Check the selected agent is active and belongs to the current branch.
+Only active agents with access to the branch are listed. If a customer's current agent has left the branch, the option you chose in **Assign to** picks a new one. The chat stays with the assigned agent until someone reassigns it in the inbox.
 
-Assigning an agent does not remove subsequent flow steps. Connect End if the automated sequence should finish at the handoff.
+The flow doesn't stop at the handover. Connect **Next step** to **End** if nothing else should happen.
+
+## See also
+
+- [Contact-tag conditions](flows/nodes/contact-tag-conditions.md)
+- [Save data](flows/nodes/save-data.md)
+- [Workflows overview](flows/overview.md)

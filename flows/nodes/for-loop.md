@@ -1,39 +1,41 @@
-# Start loop and End loop: repeat over a list
+# Start loop and End loop
 
-Use these two nodes to repeat a sequence for every item in an order or every result in an API list.
+Repeat the same steps for every item in a list, such as each product in an order.
 
-## Example: send each ordered item's name
+## When to use it
 
-The trigger contains this list:
+Use a loop when the trigger or an API response contains a list and you want to act on each item. When Rangoli Store's order system sends an order with two items, a loop sends one message per item, "Brass diya set: shipped" and then "Cotton kurta: shipped", and then one closing message after the loop.
+
+The examples below use this order:
 
 ```json
 {
   "items": [
-    { "name": "Notebook", "quantity": 2 },
-    { "name": "Pen", "quantity": 1 }
+    { "name": "Brass diya set", "quantity": 2 },
+    { "name": "Cotton kurta", "quantity": 1 }
   ]
 }
 ```
 
-1. Add **Start loop** from Logic Blocks and open it.
-2. In **Specify list**, open Insert Variable and select Trigger → items as the complete list.
-3. Optionally enable **Limit the loop** and set a maximum number of items to process.
-4. Save changes and add the action to repeat, for example a Text message.
-5. In that message, choose the Start loop's current item fields through Insert Variable rather than selecting the trigger's first item.
-6. Add **End loop**.
-7. Connect Start loop → repeated action → End loop.
-8. Connect End loop → the action that follows all items, or End.
+## Set it up
 
-The message runs once for Notebook and once for Pen. A message after End loop runs once after the whole list.
+1. Add **Start loop** from **Logic Blocks** and open it.
+2. In **Specify list**, use Insert Variable to select the whole list, such as **Trigger** → **items**, not a single item. See [Choose one item or the whole list](flows/using-variables.md?id=choose-one-item-or-the-whole-list).
+3. To cap how many items are processed, select **Limit the loop to a defined count.** and enter **Set the loop limit**.
+4. Click **Save**.
+5. Add the steps to repeat, such as a Text message. In it, insert the current item's fields from **Start loop** in Insert Variable, such as `{{loop.item.name}}`, rather than the trigger's first item.
+6. Add **End loop** after the repeated steps.
 
-## Current item and position
+Inside the loop, `loop.item` is the current item and `loop.index` is its position, starting at 0. On the first pass `{{loop.item.name}}` is "Brass diya set", and on the second it's "Cotton kurta".
 
-Within the loop, the current item is available as `loop.item` and its position as `loop.index`, starting at zero. For this sample, `{{loop.item.name}}` is Notebook on the first pass and Pen on the second.
+## Connect it
 
-Use [the variable guide](flows/using-variables.md#choose-one-item-or-the-whole-list) for selecting lists and nested fields.
+Connect **Start loop** → the repeated steps → **End loop**. Then connect End loop's **Next step** to what should happen once, after every item, or to **End**.
 
-## Before publishing
+Always draw connections forward. The loop nodes handle the repetition, so don't connect a step back to Start loop.
 
-Check Specify list selects a list rather than one item, use a loop limit when the list could be large, and connect End loop to a clear continuation. Draw connections forward; the loop nodes handle repetition.
+## See also
 
-For repeated attempts that stop when a rule matches, use [Repeat until](flows/nodes/repeat-until.md).
+- [Repeat until](flows/nodes/repeat-until.md), to repeat until a condition is met
+- [Select and insert variables](flows/using-variables.md)
+- [A repeated sequence never reaches the intended result](help/troubleshooting.md?id=a-repeated-sequence-never-reaches-the-intended-result)

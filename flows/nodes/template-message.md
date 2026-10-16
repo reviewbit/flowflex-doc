@@ -1,81 +1,38 @@
-# Template message: send an approved WhatsApp message
+# Template message
 
-Use Template message for order updates, reminders, authentication, or approved marketing messages. An approved template lets you contact a customer outside the 24-hour reply window.
+Send a WhatsApp template that Meta has approved, filled in with each customer's details.
 
-## Before you start
+## When to use it
 
-Create the template in Templates and wait for approval. See [Create a template](whatsapp/create-template.md) and [Template guidelines](whatsapp/template-guidelines.md). Choose a template belonging to the WhatsApp account used by your flow. The node's picker lists approved templates under Marketing, Utility, and Authentication.
+Use a template message for order updates, reminders, one-time codes and marketing, and whenever you message a customer outside the 24-hour reply window. When Rangoli Store's order system reports a shipment, the flow sends the `order_shipped_v1` template, so John Smith receives "Hi John, your order ORD-48213 from Rangoli Store has been shipped. It should reach you by 18 Oct."
 
-Read [Shared WhatsApp setup](flows/whatsapp-message-setup.md) for choosing the recipient and understanding the reply window.
+Create the template in **Templates** and wait for approval first. See [Create a template](whatsapp/create-template.md) and [Template guidelines](whatsapp/template-guidelines.md).
 
-## Example: personalize an order confirmation
+## Set it up
 
-Suppose your approved template says:
+1. Add **Template message** from **WhatsApp Blocks** and open it. Give it a **Node label**, such as `Shipping update`.
+2. In **Destination number**, insert the customer's phone field from the trigger. For a reply to an incoming WhatsApp message, use **Trigger** → **from**.
+3. Under **Choose a template**, search for the template and select it, such as `order_shipped_v1` under **Utility**. Only approved templates for this flow's WhatsApp number are listed, under **Marketing**, **Utility** and **Authentication**.
+4. Check the body, header, buttons and language are the ones you expect.
+5. Fill each placeholder in the body with Insert Variable. `order_shipped_v1` reads `Hi {{1}}, your order {{2}} from Rangoli Store has been shipped. It should reach you by {{3}}.`, so set `{{1}}` to the customer's first name, `{{2}}` to the order number and `{{3}}` to the delivery date. Use fixed text only when everyone should see the same value. See [Fill a template placeholder](flows/using-variables.md?id=fill-a-template-placeholder).
+6. Fill the header if the template has one (see the table below).
+7. Fill any button or code values the drawer shows. For a URL button such as `https://rangoli.example/orders/{{1}}`, enter only the order number; the fixed part of the address comes from the template. For an authentication template, insert the code generated for that customer, never a fixed code.
+8. To wait for a reply, turn on waiting and set the time. See [Wait for and validate a reply](flows/response-wait.md).
+9. Check the **Live WhatsApp preview** and click **Save changes**.
 
-```text
-Hi {{1}}, your order {{2}} is confirmed.
-```
-
-And the event contains the customer name and order number. You want each customer to receive their own information, such as “Hi Alex, your order ORD-1042 is confirmed.”
-
-### 1. Choose the template
-
-1. Add **Template message** from WhatsApp Blocks and open it.
-2. Set a clear Node label, such as “Order confirmation”.
-3. In **Destination number**, insert the customer's phone field. For an incoming-chat reply, select Trigger → from.
-4. Open **Choose a template**, search for your approved template by name, and select it.
-5. Review its body, header, buttons, and language to make sure you chose the correct approved message.
-
-Use **Create template** if you need to go to Templates first. A template that is pending or rejected is not ready to use here.
-
-### 2. Fill every body placeholder
-
-The drawer displays a field for each placeholder in the chosen template.
-
-| Placeholder | What this example needs | Choices in Insert Variable |
-| --- | --- | --- |
-| Body `{{1}}` | Customer name | Trigger → customer → name |
-| Body `{{2}}` | Order number | Trigger → order → number |
-
-Click the placeholder field, open Insert Variable, and choose its value. You can use fixed text when the same value should be sent to everyone. Fill all required placeholders before saving.
-
-A placeholder such as `{{1}}` is a position in the approved template. The customer-data variable you select is the value that fills that position. See [Fill a template placeholder](flows/using-variables.md#fill-a-template-placeholder).
-
-### 3. Supply a header when required
-
-The required fields depend on the approved template's header:
-
-| Header | What to supply |
+| Template header | What to fill in |
 | --- | --- |
-| Text with a placeholder | The value requested by the header field. |
-| Image, video, or document | The matching file using File source. |
-| Location | Latitude, longitude, and other location fields shown in the drawer. |
-| No header | No header settings are needed. |
+| Text with a placeholder | The value for the header placeholder. |
+| Image, video or document | A file of the same type, from **File source**. See [Choose files and media](flows/files-and-media.md). |
+| Location | The latitude, longitude and other location fields shown. |
+| None | Nothing. |
 
-For a fixed brochure, use **Upload new file**. For a customer invoice, insert its Public URL or Uploaded file value. See [Choose files and media](flows/files-and-media.md).
+## Connect it
 
-The header type comes from the selected template; a document template needs a document, not an image.
+A template with quick-reply buttons has one output per button, named after the button. A template without quick replies has **Next step**. If you turned on waiting, connect **No response** too. URL and phone buttons open a page or start a call, so they don't get their own output.
 
-### 4. Fill button or code values when shown
+## See also
 
-For a dynamic URL button, fill **Button** variables with the value required by the approved URL pattern. For example, if the template's fixed URL is `https://shop.example/orders/` followed by a placeholder, supply the order identifier rather than rewriting the fixed address.
-
-Authentication or copy-code templates show the code field. Select the code generated for that customer. Do not use the same fixed verification code for everyone.
-
-A URL or phone button is an action the customer opens; it does not create a quick-reply branch.
-
-### 5. Review, save, and connect
-
-1. Review Live WhatsApp preview and each selected value.
-2. If you need a reply, enable Wait for specific time and set the waiting window.
-3. Click **Save changes**.
-4. Connect the outputs displayed on the canvas.
-5. Save the flow, then Save and publish when ready.
-
-A template with quick replies has an output for each quick-reply choice. A template without quick replies uses Next step. When waiting is enabled, also connect No response. See [Response waiting](flows/response-wait.md).
-
-## Before publishing
-
-Check the template is approved and available, its language is correct, all placeholders are filled, its header is valid, and every response path is connected.
-
-If a template is missing or a message cannot be delivered, use [WhatsApp troubleshooting](help/troubleshooting.md).
+- [Create a template](whatsapp/create-template.md)
+- [Set up WhatsApp messages](flows/whatsapp-message-setup.md)
+- [My template is missing](help/troubleshooting.md?id=my-template-is-missing)

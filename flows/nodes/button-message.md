@@ -1,27 +1,29 @@
-# Button message: offer up to three choices
+# Button message
 
-Use a Button message when the customer should choose between a few answers, such as “Track order”, “Talk to team”, and “Finish”. Each reply button leads to its own path.
+Send a WhatsApp message with up to three reply buttons, and send each answer down its own path.
 
-## Build a small support menu
+## When to use it
 
-1. Add **Button message** and open it.
-2. Set Destination number using the customer's phone variable.
-3. Write the message, for example “How can we help?”
-4. Add two or three reply buttons and give each a clear label.
-5. If needed, add the optional header or footer shown in the form.
-6. Set the response-wait window if you need a timed fallback.
-7. Review the preview and click **Save changes**.
-8. Connect each button output to its action. For example, Track order → API; Talk to team → Assign agent; Finish → End.
-9. Connect No response when it is displayed.
+Use a button message when the customer picks from a few clear choices. Rangoli Store's order-tracking flow opens with "Hi, how can we help?" and two buttons, **Track order** and **Talk to the team**. Each button leads to a different next step.
 
-## Limits and content
+## Set it up
 
-Use 1–3 buttons, each with a label up to 20 characters. The message body supports up to 1,024 characters. Optional text headers and footers support up to 60 characters.
+1. Add **Button message** from **WhatsApp Blocks** and open it.
+2. In **Destination number**, insert the customer's phone number, such as **Trigger** → **from**. See [Set up WhatsApp messages](flows/whatsapp-message-setup.md?id=choose-the-recipient).
+3. Write the **Message**, such as `Hi {{trigger.name}}, how can we help?`.
+4. Under **Quick replies**, enter a label for each button. Click **+ Add response** to add another, up to three.
+5. Optionally, add a **Header** (text or a file) and, under **More message options**, a **Footer**.
+6. Under **Response handling**, set a waiting time if you want a fallback when the customer doesn't tap anything. See [Wait for and validate a reply](flows/response-wait.md).
+7. Check the **Live WhatsApp preview** and click **Save changes**.
 
-If the header offers a file source, follow [Choose files and media](flows/files-and-media.md). Use [Insert Variable](flows/using-variables.md) for personalized body content.
+Button labels can be up to 20 characters, the message up to 1,024, and a text header or footer up to 60. For a file header, see [Choose files and media](flows/files-and-media.md).
 
-## Before publishing
+## Connect it
 
-Check every choice is connected and the labels explain what happens next. Use [List message](flows/nodes/list-message.md) for more than three choices, or [Link button](flows/nodes/link-button.md) for opening a website.
+The node has one output per button, named after its label. Connect each one: Rangoli Store connects **Track order** to the API lookup and **Talk to the team** to **Assign agent**. If you set a waiting time, connect **No response** too.
 
-See [Response waiting](flows/response-wait.md) and [WhatsApp troubleshooting](help/troubleshooting.md).
+## See also
+
+- [List message](flows/nodes/list-message.md), for more than three choices
+- [Link button](flows/nodes/link-button.md), to open a website
+- [Workflows overview](flows/overview.md)

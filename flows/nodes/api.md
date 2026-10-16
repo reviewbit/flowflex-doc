@@ -1,128 +1,73 @@
 # API: look up information or call another service
 
-Use API to check an order, look up availability, or send information to another service. Ask the service provider for its endpoint, request method, and any required API key.
+Use API to fetch information from another service, such as an order's status, or to send information to it.
 
-## Before you start
+## When to use it
 
-Have a sample response available so you can choose the returned fields later. If you only want to practice, use sample values and a test service; the request test sends a real request.
+Use API when the answer a customer needs lives in another system. In Rangoli Store's order-tracking flow, a customer taps **Track order**, the API node asks the store's order system for the latest order on that phone number, and the next message replies with its status. Ask the service's provider for the URL, the method, and any key the request needs.
 
-## Example: look up an order and send its status
+## Set it up
 
-Build this sequence:
+1. Add **API** from **Data Blocks** and open it. Give it a **Node label**, such as `Look up order`, so you can find its fields later.
+2. Set **Method** to the one the service expects, such as `GET`, and enter the **URL**, such as `https://api.rangoli.example/orders`.
+3. On the **Headers** tab, add any headers the service requires, such as `Authorization`, exactly as the provider describes them.
+4. On the **Query params** tab, add the parameters the service expects. For example, add `phone` and insert **Trigger** → **from** with [Insert Variable](flows/using-variables.md). The service decides the names and format, so copy them from its instructions.
+5. If the service expects data in the request, open **Body** and choose its format: **none**, **x-www-form-urlencoded** for form fields, or **raw** for JSON, XML or plain text. `GET`, `HEAD` and `OPTIONS` requests send no body.
+6. Under **Response examples**, add an example of what the service returns for each status you use, starting with `200`. Later steps pick fields from these examples.
+7. Click **Save**.
 
-```text
-Trigger → API → Success → Text message → End
-              Non-2xx response → Assign agent → End
-              Request failed → Assign agent → End
+In a JSON body, keep inserted variables inside quotes and keep the JSON valid:
+
+```json
+{
+  "phone": "{{trigger.from}}",
+  "customer_name": "{{trigger.name}}"
+}
 ```
 
-### 1. Add the request
+The quoted variable still sends the original value, so a number stays a number.
 
-1. Add **API** from Data Blocks and open it.
-2. Give it a clear Node label, such as “Look up order”.
-3. Set **Method** to the method supplied by the service, for example GET.
-4. Set **URL** to its order endpoint. An illustrative URL is `https://api.example.com/orders`; use your provider's real URL.
-5. If the service accepts the order number as a query parameter, open **Query params**, add its required key, and select the order number with Insert variable. For the sample in our variable guide, choose Trigger → order → number.
-6. Add required **Headers**, such as Authorization, using the provider's exact instructions.
+### Test the request
 
-Do not add a parameter simply because it appears in this example; the connected service decides the required names and format. See [Select and insert variables](flows/using-variables.md).
+Save the flow first, then click **Test request**. Check the method, URL, headers and body, fill in sample values for any variables, and click **Send real request**. If the response looks right, click **Use as example** to save it as a response example.
 
-### 2. Add a body when the service requires one
+The test sends a real request, so use test data when the request creates a booking, payment or record.
 
-For GET, HEAD, and OPTIONS, no body is sent. For a request that sends information, open **Body** and select the format the service expects.
+### Import a cURL command
 
-| Service expects | Choose |
+If the provider gives you a cURL command, open the **URL** field's menu and choose **Import cURL**. Paste the command and click **Import**. This fills in the method, URL, headers, parameters and body without sending anything. Replace the sample customer values with variables before you save.
+
+### Use the response in later steps
+
+In the next message, open Insert Variable and choose the API node, then the response status, then the field. For Rangoli Store: **Look up order** → **200** → **order** → **status**. The customer receives the real value from the service, not the example. See [Use an API response](flows/using-variables.md?id=use-an-api-response).
+
+## Connect it
+
+| Output | When it's used |
 | --- | --- |
-| A JSON object | raw with JSON format |
-| Form fields | x-www-form-urlencoded |
-| Plain text, XML, HTML, or other supported text | raw and the matching format |
-| No body | none |
+| **Success** | The service returned a successful response. |
+| **Non-2xx response** | The service returned an error, such as "order not found". |
+| **Request failed** | The request didn't complete, for example because the service didn't answer in time. |
 
-In a JSON body, keep inserted variables quoted. For example:
-
-```json
-{
-  "order_number": "{{trigger.order.number}}",
-  "customer_name": "{{trigger.customer.name}}"
-}
-```
-
-Use the actual fields selected in your flow. Quote variables even when the selected value is a number or list; the field's whole-variable value retains the supplied type. Keep the surrounding JSON valid, with matching braces and commas.
-
-### 3. Try the request
-
-1. Open the drawer's request test.
-2. Review the URL, method, headers, and body.
-3. Supply sample values for the variables used by this request.
-4. Run the test and inspect the response status, body, and headers.
-5. Apply the returned response as an example if it matches what you need.
-
-A successful connection does not guarantee a successful business result. An order can still be pending or unavailable. If the request creates a booking or changes a record, use test data and follow the service's guidance for avoiding duplicate actions.
-
-### 4. Save response examples
-
-You can also enter examples manually in **Response body**. Choose the relevant status and provide a representative body, such as:
-
-```json
-{
-  "order": {
-    "number": "ORD-1042",
-    "status": "ready",
-    "delivery_date": "12 October"
-  }
-}
-```
-
-Add error examples if later steps need their fields. Save changes in the API node so its fields are available in the variable picker.
-
-### 5. Use the returned information
-
-1. Add a Text message on the API's Success path.
-2. Set its Destination number using the customer's phone variable.
-3. Type “Your order is expected on ” in the message.
-4. Open Insert Variable → Look up order → the 200 response → order → delivery_date.
-5. Save the message and connect it to End.
-
-The customer receives the real response value, not the example date. See [Select from an API response](flows/using-variables.md#use-an-api-response).
-
-## Connect every response path
-
-| Output | Meaning | Example next step |
-| --- | --- | --- |
-| **Success** | A successful HTTP response. | Check order status, then message the customer. |
-| **Non-2xx response** | The service returned an error response. | Handle an order-not-found response or assign an agent. |
-| **Request failed** | The request could not complete. | Offer help or assign an agent. |
-
-Connect all three outputs to an action or End. If you read an error field, choose it from the corresponding error response example.
+Connect all three. Rangoli Store sends **Success** to the status message, and both failure outputs to **Assign agent**, so a person follows up. If an older API node shows **Upgrade request** or **Convert to response outputs**, select it to get these three outputs, then connect each one.
 
 ## Time limits and retries
 
-Open **Settings** when you need to adjust waiting or retry behavior. Retries are off by default.
+Open the **Settings** tab to change how long the request waits and whether it tries again. Retries are off by default.
 
-| Setting | What it controls |
+| Field | What to enter |
 | --- | --- |
-| **Timeout per attempt** | How long one request can wait: 1–45 seconds. |
-| **Overall time limit** | All attempts and waiting combined: up to 10 minutes. |
-| **Maximum retries** | Additional attempts after the first request: 0–9. |
-| **Retry rate-limited requests** | Try again when the service asks you to slow down. Use the service's retry header or your chosen delay. |
-| **Retry other HTTP failures** | Try again for the error statuses you select. More options include connection failures and timeouts. |
+| **Timeout per attempt (seconds)** | How long one attempt can wait, from 1 to 45 seconds. |
+| **Overall time limit (seconds)** | The total time for all attempts and waits. |
+| **Maximum retries** | Extra attempts after the first request. |
+| **Retry rate-limited requests** | Try again when the service replies "too many requests". |
+| **Retry other HTTP failures** | Try again for the error statuses you pick in **Retry on HTTP status codes**. |
+| **Retry delay** | **Fixed interval**, or **Exponential backoff (increasing wait)**. |
 
-Choose a fixed interval or an increasing wait. The maximum wait must be at least the first wait. For bookings, payments, or record creation, only enable retries after checking how the provider prevents duplicates.
+The next step waits until the API node finishes, including retries. Only turn on retries for bookings, payments or new records after checking how the service avoids duplicates.
 
-## Import a supplied cURL example
+## See also
 
-1. Open the URL field's actions menu → **Import cURL**.
-2. Paste the command supplied by the service and import it.
-3. Review the populated method, URL, headers, parameters, and body.
-4. Replace sample customer data with flow variables.
-5. Add response examples, connect outputs, and save.
-
-Import fills the form without sending the request. If the command is unsupported, use the service's instructions to fill the form manually.
-
-## Update an older API node
-
-If offered, select **Upgrade request** or **Convert to response outputs** to use the current settings and three paths. Review the request and connect every new output before saving and publishing.
-
-## Before publishing
-
-Confirm required credentials are supplied, sample fields match actual responses, all outputs are connected, and failure paths do not assume success data exists. Use [API troubleshooting](help/troubleshooting.md#my-api-request-fails) for request errors.
+- [Select and insert variables](flows/using-variables.md)
+- [Condition branch](flows/nodes/condition-branch.md)
+- [My API request fails](help/troubleshooting.md?id=my-api-request-fails)
