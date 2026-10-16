@@ -4,7 +4,7 @@ Your plan sets how many users, branches, channels, and active workflows your org
 
 Go to **Settings** → **Plans**. Only Admins see this page in the sidebar. Plan prices are shown on the Plans page.
 
-<!-- screenshot: account/plans-page -->
+<img src="assets/account/plans-page.png" alt="The Plans page">
 
 ## Choose a currency and billing cycle
 

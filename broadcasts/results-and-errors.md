@@ -18,7 +18,7 @@ Meanings come from [Meta – WhatsApp error codes](https://developers.facebook.c
 | 130472 | Recipient in a Meta experiment | Not sent because the user is in a Meta experiment | Not retried | Nothing; outside your control |
 | 131026 | Message undeliverable | Not a WhatsApp number, terms not accepted, or an old app version | Not retried | Clean the list |
 | 131047 | Re-engagement message | More than 24 hours since the user last replied | Not retried | Use a template |
-| 131050 | – | The user stopped marketing messages from your business | – | Do not resend. Treat as an opt-out. |
+| 131050 | Recipient opted out of marketing | The customer chose to stop marketing messages from your business | Not retried; the contact's WhatsApp marketing consent is turned off | Nothing; they're excluded from future marketing broadcasts |
 | 130429, 131056, 80007 | Rate limit hit | Sending throughput reached | Retried after 48 h if retry is on | Lower the daily send count |
 | 131048 | Spam rate limit hit | Sending restricted, often because users blocked or reported you | Broadcast auto-pauses | Check quality in WhatsApp Manager; review content and audience |
 | 132015 / 132016 | Template paused / disabled | Low template quality | Broadcast auto-pauses | Create an improved template |

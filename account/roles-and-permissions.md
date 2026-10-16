@@ -29,8 +29,8 @@ The left panel shows **N of M enabled** and a count for each group. If nothing i
 | **All current permissions** | Every permission that exists today. Permissions added later are not included. |
 | **Current and future permissions** | Every permission today and any added later |
 
-> [!WARNING]
-> **Current and future permissions** gives the same full control as Admin, including Billing, Plans, Teams, and Branches. Use **All current permissions** for a power user who should not manage the organisation.
+> [!NOTE]
+> **Current and future permissions** gives the role everything, including any permission FlowFlex adds later, the same as Admin. Billing, Plans, Teams, and Branches are included. Pick **All current permissions** if new features should not be granted automatically.
 
 ## Copy, edit, or delete a role
 

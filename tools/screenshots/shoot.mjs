@@ -45,7 +45,7 @@ const shots = {
     p = await signedOutPage();
     await p.goto(`${USERS}/auth/register`, { waitUntil: "domcontentloaded", timeout: 180000 });
     await p.getByPlaceholder("e.g. Ravi Kulkarni").fill("Ananya Rao");
-    await p.getByPlaceholder("98765 43210").fill("+91 90000 00010");
+    await p.getByPlaceholder("98765 43210").pressSequentially("9000000010", { delay: 30 });
     await p.getByPlaceholder("you@company.com").fill(data.user.email);
     return p;
   },
@@ -139,14 +139,19 @@ const shots = {
     await p.waitForTimeout(800);
   },
   "messaging/settings-page": async (p) => { await go(p, "/chat/settings"); await p.getByText("Business hours").first().waitFor(); },
-  "messaging/settings-subscription-auto-replies": async (p) => { await go(p, "/chat/settings"); await scrollTo(p, "Subscription Auto Replies"); await p.evaluate(() => window.scrollBy(0, -120)); },
+  "messaging/settings-subscription-auto-replies": async (p) => {
+    await go(p, "/chat/settings");
+    const h = p.getByText("Subscription Auto Replies", { exact: true }).first();
+    await h.waitFor();
+    await h.evaluate((n) => { const card = n.closest(".ant-card") || n.parentElement; card.scrollIntoView({ block: "start" }); });
+    await p.evaluate(() => { const sc = document.scrollingElement; sc.scrollBy(0, -100); for (const el of document.querySelectorAll("main, .ant-layout-content")) el.scrollBy?.(0, -100); });
+  },
   "messaging/quick-replies-table": async (p) => { await go(p, "/chat/settings"); await scrollTo(p, m.quickReplies[0].shortcut); },
   // ---- Workflows ----
   "flows/campaigns-list": async (p) => { await go(p, "/campaigns"); await p.getByText("Order status replies").first().waitFor({ timeout: 120000 }); await p.waitForTimeout(1500); },
   "flows/saved-data-tables": async (p) => { await go(p, "/flows/saved_data"); await p.getByText(m.dataTables[0].title).first().waitFor(); },
   // ---- Integrations ----
   "integrations/integrations-page": async (p) => { await go(p, "/integrations"); await p.getByText("Custom integrations").first().waitFor(); },
-  "integrations/shopify-connect": async (p) => { await go(p, "/integrations/shopify"); await p.waitForTimeout(2000); },
   "integrations/custom-integration-events": async (p) => {
     await go(p, "/integrations/custom");
     await p.getByPlaceholder(/Acme CRM Events/i).fill("Rangoli Order Events").catch(() => {});
@@ -164,11 +169,13 @@ const shots = {
   "account/team-members": async (p) => { await go(p, "/settings/teams/members"); await p.getByText(m.team[1].name).first().waitFor(); },
   "account/invite-user": async (p) => {
     await go(p, "/settings/teams/invite");
-    await fillLabel(p, /^Name/i, "Kiran").catch(() => {});
-    await fillLabel(p, /email/i, "kiran@rangoli.example").catch(() => {});
+    await p.getByPlaceholder("Enter name").first().fill("Kiran");
+    await p.getByPlaceholder("Enter email").first().fill("kiran@rangoli.example");
     await p.keyboard.press("Escape");
-    await pickOption(p, p.getByLabel(/Role/i).first(), "Support agent").catch(() => {});
+    await p.getByPlaceholder("+91 98765 43210").first().fill("+91 90000 00013").catch(() => {});
+    await pickOption(p, p.locator(".ant-select", { hasText: "Select role" }).first(), "Support agent").catch(() => {});
     await p.keyboard.press("Escape");
+    await p.locator("body").click({ position: { x: 5, y: 300 } }).catch(() => {});
   },
   "account/create-role": async (p) => {
     await go(p, "/settings/teams/roles/create");

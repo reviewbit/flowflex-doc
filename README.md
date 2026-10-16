@@ -18,7 +18,7 @@ New to FlowFlex? Start with [Set up your account](getting-started.md).
 | Check why a broadcast message failed | [Results and errors](broadcasts/results-and-errors.md) |
 | Reply to customers automatically | [Build your first flow](flows/building-a-flow.md) |
 | Learn what each flow step does | [Node reference](flows/nodes.md) |
-| Connect Shopify or my own app | [Integrations](integrations/overview.md) |
+| Connect my own app or website | [Integrations](integrations/overview.md) |
 | Add teammates and control what they can do | [Teams](account/teams.md) · [Roles and permissions](account/roles-and-permissions.md) |
 | Add credits or change my plan | [Billing and wallet](account/billing-and-wallet.md) · [Plans and add-ons](account/plans-and-add-ons.md) |
 | Fix something that isn't working | [Troubleshooting](help/troubleshooting.md) |
@@ -33,7 +33,7 @@ New to FlowFlex? Start with [Set up your account](getting-started.md).
 | **Broadcasts** | Sending one template to a list or segment, with guidelines and error codes |
 | **Messaging** | The shared inbox, quick replies, business hours and auto replies |
 | **Workflows** | The flow builder, campaigns, saved data, and every node |
-| **Integrations** | Shopify, and custom integrations through the SDK and REST API |
+| **Integrations** | Custom integrations through the SDK and REST API |
 | **Account** | Billing, plans, organisation, branches, teams, roles |
 | **Help** | Troubleshooting, and the Meta policies these guides follow |
 

@@ -6,14 +6,15 @@ The Integrations page connects other systems to FlowFlex, so their events can st
 
 ## What you can connect
 
-Two integrations work today.
-
-| Integration | Use it to | Button | Guide |
-| --- | --- | --- | --- |
-| **Custom integrations** | Trigger flows from any system via webhook or API, with your own API key and secret | **New** | [Custom integrations](integrations/custom-integration.md) |
-| **Shopify** | Start flows from store events such as new orders, abandoned checkouts and fulfilments | **Connect** | [Connect Shopify](integrations/shopify.md) |
+| Integration | Use it to | Guide |
+| --- | --- | --- |
+| **Custom integrations** | Trigger flows from any system via webhook or API, with your own API key and secret | [Custom integrations](integrations/custom-integration.md) |
+| **Shopify** | Connect your Shopify store | Contact FlowFlex support to set it up |
 
 Other cards on the page show a greyed-out **Connect** button. Those integrations are not available yet.
+
+> [!TIP]
+> Want to connect Shopify? Contact FlowFlex support with the **WhatsApp support** button in the app, and the team will set it up with you.
 
 ## Your custom integrations
 
@@ -44,6 +45,5 @@ To change what a role can do, see [Roles and permissions](account/roles-and-perm
 
 ## Next steps
 
-- [Connect Shopify](integrations/shopify.md)
 - [Create a custom integration](integrations/custom-integration.md)
 - [Developer quick start](developers/quick-start.md)

@@ -71,7 +71,7 @@ Click **Try a different file** to start again.
 
 ### 2. Map columns
 
-<!-- screenshot: audience/import-map-columns -->
+<img src="assets/audience/import-map-columns.png" alt="Import audience, step 2: Map columns">
 
 Each column in your file is one row here. FlowFlex matches common column names for you.
 
@@ -130,11 +130,11 @@ A row whose phone number already exists in the branch does not create a new cont
 | --- | --- |
 | Destination list | The contact is added to the list |
 | Owner | Set to the **Assign owner** choice, if you picked one |
-| WhatsApp consent | Set from the consent column. If you did not map one, it is turned on. |
+| WhatsApp consent | Not changed, unless the consent column says `no`, which turns it off. An import never subscribes a contact who opted out. |
 | Name, email, tags, and other fields | Not changed |
 
-> [!WARNING]
-> Importing a contact who unsubscribed turns WhatsApp consent back on, unless you map a **WhatsApp marketing consent** column. Include that column with `no` for contacts who opted out.
+> [!NOTE]
+> A contact who opted out stays opted out after an import, even if the file says `yes`. They can subscribe again only themselves, for example by sending the START keyword.
 
 ### Skipped rows
 

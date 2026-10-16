@@ -81,7 +81,6 @@
 - Integrations
 
   - [Overview](integrations/overview.md)
-  - [Shopify](integrations/shopify.md)
   - **Custom integration**
     - [Set up a custom integration](integrations/custom-integration.md)
     - [Developer quick start](developers/quick-start.md)
