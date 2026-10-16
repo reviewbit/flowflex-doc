@@ -46,4 +46,4 @@ After that, Meta raises the limit one level at a time (10K, 100K, Unlimited), wi
 | --- | --- | --- |
 | Channel disconnected | The WhatsApp Business app was uninstalled or logged out on the phone | Reconnect from the channel page |
 | Display name declined | The name does not match the brand | Rename it to match the website or signage, then resubmit |
-| BSP setup issue | Meta shows the number as connected, but the provider setup blocks messages | Click **Contact Support** |
+| **Channel needs reconnecting** | The number is connected at Meta but FlowFlex can't send for it yet | Reconnect the channel from the channel page, or click **Contact Support** |

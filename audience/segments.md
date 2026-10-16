@@ -131,9 +131,6 @@ Case Insensitive treats `Pune`, `pune`, and `PUNE` as the same. Use it unless ca
 | **In** | is one of the selected users |
 | **Not In** | is none of the selected users |
 
-> [!NOTE]
-> Avoid **Not Equals** on dates and **Is empty** on Tags or List. They currently match no contacts. Use **Before** plus **After** in an **ANY** group, or **Is null**, instead.
-
 ### Broadcast activity
 
 Choose **Broadcast**, pick an operator, then pick the broadcast in **Select broadcast**.

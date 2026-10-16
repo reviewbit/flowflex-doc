@@ -24,6 +24,6 @@ Meanings come from [Meta – WhatsApp error codes](https://developers.facebook.c
 | 132015 / 132016 | Template paused / disabled | Low template quality | Broadcast auto-pauses | Create an improved template |
 | 132001 / 132007 | Template not found / policy violation | Not approved in that language, or breaks policy | Broadcast auto-pauses | Fix or replace the template |
 | 131042 | Payment issue | Problem with the Meta payment method | Broadcast auto-pauses | Fix billing in Meta Business Manager |
-| 131052 / 131053 | Media download / upload error | Media unreachable, or unsupported type or size | Retried after 1 minute | Use **Replace media** |
+| 131052 / 131053 | Media download / upload error | Media unreachable, or unsupported type or size | Retried automatically | Use **Replace media** |
 
 When a broadcast pauses automatically, the page names the reason, for example **Broadcast paused: Template unavailable**. Fix the cause, then click **Resume**.

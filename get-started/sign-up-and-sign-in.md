@@ -1,6 +1,6 @@
 # Sign up and sign in
 
-You create your FlowFlex account, sign in and pick your organisation in the FlowFlex login app. It runs on its own `users.` web address, separate from the main app.
+You create your FlowFlex account, sign in and pick your organisation in the FlowFlex login app. Sign-in happens on a separate FlowFlex page.
 
 The first screen says **Welcome to FlowFlex**. Click **Get started** to create an account, or **Sign in to existing account**.
 

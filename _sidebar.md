@@ -2,7 +2,7 @@
 
 - Get started
 
-  - [Welcome](README.md)
+  - [Home](README.md)
   - [Sign up and sign in](get-started/sign-up-and-sign-in.md)
   - [Set up your account](getting-started.md)
   - [Find your way around](get-started/find-your-way-around.md)

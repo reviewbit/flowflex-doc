@@ -3,7 +3,7 @@
 **Automations** → **Saved data** holds the data tables that your flows fill in. A flow writes a row each time it reaches a [Save data](flows/nodes/save-data.md) node.
 
 > [!NOTE]
-> The flow builder and Saved data are enabled per organisation. If you don't see **Flow builder** in the sidebar, contact FlowFlex support to enable it.
+> Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
 
 Use a table to collect survey answers, review ratings, or order requests. Tables belong to the current branch.
 

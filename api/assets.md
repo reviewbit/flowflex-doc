@@ -2,8 +2,8 @@
 
 To send a file (PDF, image, video, document) in a flow, you upload it to **private
 storage** and get an opaque `assetId`. You then put that `assetId` in your event payload;
-the flow's media node resolves it to a real WhatsApp media at send time. The file bytes go
-**straight to storage** via a presigned URL — never through the FlowFlex app server.
+the flow's media node resolves it to a real WhatsApp media at send time. Files upload
+directly and securely through a presigned URL.
 
 > The [SDK](sdk/files.md) does all of this for you with `ff.file(...)`. Use these raw
 > endpoints only if you're not using the SDK.
@@ -49,13 +49,14 @@ Upload the raw file bytes to the URL from step 1.
 
 ## <span class="badge post">POST</span> `/v1/events/{code}` (with the assetId)
 
-Reference the `assetId` in your payload where the flow's media node expects it:
+Send the `assetId` as a field of the event body (the body is the event data itself; see
+[Send events](api/events.md)):
 
 ```json
-{ "payload": { "invoice": "asset_…", "phone": "919999999999" } }
+{ "invoice": "asset_…", "phone": "919999999999" }
 ```
 
-In the flow's **Media Message** node: **File source → Private file (assetId)**, and **Asset
+In the flow's **Media message** node: **File source → Uploaded file**, and **Asset
 ID → `{{trigger.invoice}}`**.
 
 ## Full example (curl)
@@ -77,7 +78,7 @@ curl -s -X POST "https://api.flowflex.ai/v1/events/ic_abc123" \
   -u "cik_xxx:cisk_yyy" \
   -H "x-event: invoice.created" -H "x-idempotency-key: $(uuidgen)" \
   -H "Content-Type: application/json" \
-  -d "{ \"payload\": { \"invoice\": \"$ASSET_ID\", \"phone\": \"919999999999\" } }"
+  -d "{ \"invoice\": \"$ASSET_ID\", \"phone\": \"919999999999\" }"
 ```
 
 ## Limits & lifetime

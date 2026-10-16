@@ -29,14 +29,14 @@ Integrations are saved per branch. An integration you set up in one branch does 
 
 ## Permissions
 
-You see **Integrations** in the sidebar only if your role includes `integration.view`.
+You see **Integrations** in the sidebar only if your role includes **Integration view**.
 
 | Action | Permission needed |
 | --- | --- |
-| Open the Integrations page and view integrations | `integration.view` |
-| Create a custom integration | `integration.create` |
-| Edit a custom integration or regenerate its credentials | `integration.edit` |
-| Revoke or delete a custom integration | `integration.delete` |
+| Open the Integrations page and view integrations | **Integration view** |
+| Create a custom integration | **Integration create** |
+| Edit a custom integration or regenerate its credentials | **Integration edit** |
+| Revoke or delete a custom integration | **Integration delete** |
 
 To change what a role can do, see [Roles and permissions](account/roles-and-permissions.md).
 

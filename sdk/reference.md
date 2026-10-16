@@ -115,7 +115,7 @@ All errors extend `FlowFlexError`:
 | --- | --- |
 | `FlowFlexConfigError` | Bad/missing constructor options. |
 | `FlowFlexUploadError` | A file couldn't be read, or storage rejected it. |
-| `FlowFlexError` | API or network failure. `code` is the backend error code (e.g. `MIME_NOT_ALLOWED`, `ASSET_FILE_MISSING`). |
+| `FlowFlexError` | API or network failure. `code` is the API error code (e.g. `MIME_NOT_ALLOWED`, `ASSET_FILE_MISSING`). |
 
 <!-- tabs:start -->
 

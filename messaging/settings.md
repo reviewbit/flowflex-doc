@@ -26,7 +26,7 @@ Business hours decide when the **Away Message** is sent. Pick a mode from the me
 | **Always open** | Tick a day to keep it **Open 24 hours**. An unticked day is **Closed**. |
 
 > [!NOTE]
-> Hours use the time zone of the computer that saved them. Set them from a computer in your business's time zone.
+> Set the hours in your business's local time.
 
 ## Conversation assignment
 

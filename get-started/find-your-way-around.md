@@ -12,7 +12,7 @@ The sidebar has two groups, **MAIN** and **SETTINGS**. Click the arrow on its ed
 
 | Item | What it is for |
 | --- | --- |
-| **Flow builder** (Beta) | Build automated WhatsApp flows. See [Flows overview](flows/overview.md). Shown only when flows are enabled for your organisation. |
+| **Flow builder** (Beta) | Build automated WhatsApp flows. See [Flows overview](flows/overview.md). Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support. |
 | **Automations** → **All campaigns** | Run and track flows as campaigns. See [Campaigns](flows/campaigns.md). |
 | **Automations** → **Saved data** | Data your flows have saved. |
 | **Broadcast** | Send one message to many contacts. See [Broadcasts overview](broadcasts/overview.md). |
@@ -35,7 +35,7 @@ The sidebar has two groups, **MAIN** and **SETTINGS**. Click the arrow on its ed
 | **Settings** → **Branches** | Add and manage branches. See [Branches](account/branches.md). |
 
 > [!NOTE]
-> You only see the items your role allows. For example, **Broadcast** needs `broadcast.view`. **Billing**, **Plans**, **Teams** and **Branches** need full access. See [Roles and permissions](account/roles-and-permissions.md).
+> You only see the items your role allows. For example, **Broadcast** needs **Broadcast view**. **Billing**, **Plans**, **Teams** and **Branches** need **Full control**. See [Roles and permissions](account/roles-and-permissions.md).
 
 If your plan is not active, clicking a sidebar item shows **Upgrade Required** with an **Upgrade** button.
 
@@ -69,7 +69,7 @@ The chip with a coin icon shows your wallet balance. Hover over it to see the fu
 Click it to open your wallet. See [Billing and wallet](account/billing-and-wallet.md).
 
 > [!NOTE]
-> Message credit deductions are updated based on Meta usage. They may take up to 2 hours to reflect.
+> Recent usage can take a little while to appear in your balance.
 
 ### Your name and branch
 
