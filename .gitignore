@@ -1,0 +1,4 @@
+# Never commit local credentials, dependencies or screenshot scratch output
+.env
+node_modules/
+tools/screenshots/out/
