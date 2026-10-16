@@ -9,7 +9,7 @@ Alex Lee, the admin at Rangoli Store, works through this list on day one. By the
 ## Set up FlowFlex
 
 1. **Connect WhatsApp.** Link your WhatsApp Business number through Meta. See [Connect a WhatsApp channel](whatsapp/connect-channel.md).
-2. **Complete your profile.** Add a description, address, email and website to the channel. See [Connect a WhatsApp channel](whatsapp/connect-channel.md?id=steps).
+2. **Complete your profile.** Add a description, address, email and website to the channel. See [Connect a WhatsApp channel](whatsapp/connect-channel.md?id=connect-the-number).
 3. **Add contacts.** Import contacts under **Audience**, or let them arrive from WhatsApp chats. See [Import and export](audience/import-export.md).
 4. **Create a template.** Write a message and get it approved by Meta. See [Create a template](whatsapp/create-template.md).
 5. **Add wallet balance.** Messages are paid from your wallet under **Billing**. See [Billing and wallet](account/billing-and-wallet.md).
