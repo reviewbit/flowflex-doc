@@ -7,13 +7,14 @@ them from your own application. An event you fire from your app (an order placed
 checkout abandoned, an invoice generated) starts a flow that sends WhatsApp messages,
 waits for replies, branches on conditions, calls APIs, and more.
 
-There are three things to know about, and a page for each:
+There are four things to know about, and a page for each:
 
 | | What it is | Start here |
 | --- | --- | --- |
 | **Flows** | The visual automations themselves — triggers, message nodes, logic, delays. | [Flows → Overview](flows/overview.md) |
 | **SDK** | `flowflex` — a Node/browser library to fire events and attach files without touching presigned URLs. | [SDK → Overview](sdk/overview.md) |
 | **REST API** | The raw HTTP endpoints the SDK calls — use these from any language. | [API → Authentication](api/authentication.md) |
+| **Broadcasts** | Send an approved WhatsApp template to a contact list or segment, with Meta's guidelines. | [Broadcasts → Overview](broadcasts/overview.md) |
 
 ## How it fits together
 
