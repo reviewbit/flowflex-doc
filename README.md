@@ -26,9 +26,8 @@ New to FlowFlex? Start with [Set up your account](getting-started.md).
 | **Get started** | One-time account setup |
 | **WhatsApp setup** | Channels, templates, and Meta's template rules, shared by broadcasts and flows |
 | **Broadcasts** | Sending one template to a list or segment, with guidelines and error codes |
-| **Flows** | The visual builder: how-to guides for triggers, variables, messages, and conditions |
-| **Flow nodes** | A reference page for every node in the builder |
-| **Developers** | The SDK and REST API for firing events from your app |
+| **Workflows** | The flow builder: how-to guides, plus a reference page for every node |
+| **Integrations** | Connect your own app with the SDK and REST API |
 | **Help** | Troubleshooting, and the Meta policies these guides follow |
 
 Use the search box at the top to jump to any topic.

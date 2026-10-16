@@ -6,13 +6,13 @@
 
 - **WhatsApp setup**: connect your number and get templates approved
 - **Broadcasts**: message your contacts at scale, safely
-- **Flows**: build automated replies and journeys
-- **Developers**: SDK and REST API
+- **Workflows**: build automated replies and journeys
+- **Integrations**: connect your app with the SDK and REST API
 
 [Get started](getting-started.md)
 [Broadcasts](broadcasts/overview.md)
-[Flows](flows/overview.md)
-[Developers](developers/quick-start.md)
+[Workflows](flows/overview.md)
+[Integrations](developers/quick-start.md)
 
 <!-- background color -->
 ![color](#f4ebff)

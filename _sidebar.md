@@ -19,7 +19,7 @@
   - [Results and errors](broadcasts/results-and-errors.md)
   - [Checklist and FAQ](broadcasts/checklist-faq.md)
 
-- Flows
+- Workflows
 
   - [Overview](flows/overview.md)
   - [Learn flow builder](flows/learning-the-builder.md)
@@ -32,36 +32,34 @@
     - [Set conditions and choose paths](flows/setting-conditions.md)
     - [Wait for and validate a reply](flows/response-wait.md)
     - [Versions, publishing and JSON files](flows/versions-and-portability.md)
+  - **Nodes**
+    - [Overview](flows/nodes.md)
+    - **WhatsApp nodes**
+      - [Text message](flows/nodes/text-message.md)
+      - [Template message](flows/nodes/template-message.md)
+      - [Button message](flows/nodes/button-message.md)
+      - [List message](flows/nodes/list-message.md)
+      - [Media message](flows/nodes/media-message.md)
+      - [Send location](flows/nodes/send-location.md)
+      - [Location request](flows/nodes/location-request.md)
+      - [Link button](flows/nodes/link-button.md)
+    - **Logic nodes**
+      - [Condition split](flows/nodes/condition-split.md)
+      - [Condition branch](flows/nodes/condition-branch.md)
+      - [Contact-tag conditions](flows/nodes/contact-tag-conditions.md)
+      - [Start loop and End loop](flows/nodes/for-loop.md)
+      - [Repeat until](flows/nodes/repeat-until.md)
+      - [Set time delay](flows/nodes/set-time-delay.md)
+      - [End](flows/nodes/end.md)
+    - **Data and integration nodes**
+      - [API](flows/nodes/api.md)
+      - [Save data](flows/nodes/save-data.md)
+      - [Save variable](flows/nodes/save-variable.md)
+      - [Utils function](flows/nodes/utils-function.md)
+    - **Audience nodes**
+      - [Audience actions](flows/nodes/audience-actions.md)
 
-- Flow nodes
-
-  - [All nodes](flows/nodes.md)
-  - **WhatsApp nodes**
-    - [Text message](flows/nodes/text-message.md)
-    - [Template message](flows/nodes/template-message.md)
-    - [Button message](flows/nodes/button-message.md)
-    - [List message](flows/nodes/list-message.md)
-    - [Media message](flows/nodes/media-message.md)
-    - [Send location](flows/nodes/send-location.md)
-    - [Location request](flows/nodes/location-request.md)
-    - [Link button](flows/nodes/link-button.md)
-  - **Logic nodes**
-    - [Condition split](flows/nodes/condition-split.md)
-    - [Condition branch](flows/nodes/condition-branch.md)
-    - [Contact-tag conditions](flows/nodes/contact-tag-conditions.md)
-    - [Start loop and End loop](flows/nodes/for-loop.md)
-    - [Repeat until](flows/nodes/repeat-until.md)
-    - [Set time delay](flows/nodes/set-time-delay.md)
-    - [End](flows/nodes/end.md)
-  - **Data and integration nodes**
-    - [API](flows/nodes/api.md)
-    - [Save data](flows/nodes/save-data.md)
-    - [Save variable](flows/nodes/save-variable.md)
-    - [Utils function](flows/nodes/utils-function.md)
-  - **Audience nodes**
-    - [Audience actions](flows/nodes/audience-actions.md)
-
-- Developers
+- Integrations
 
   - [Quick start](developers/quick-start.md)
   - **SDK**

@@ -1,4 +1,4 @@
-# Flows overview
+# Workflows overview
 
 A flow connects actions into a customer journey: greet a customer, offer choices, collect information, look up an order, or hand the conversation to your team.
 
