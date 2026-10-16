@@ -1,4 +1,4 @@
-# Versions, publishing & JSON files
+# Versions, publishing and JSON files
 
 ## Save and publish
 

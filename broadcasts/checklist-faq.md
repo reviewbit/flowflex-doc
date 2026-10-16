@@ -27,7 +27,7 @@ Opted-out contacts are excluded and invalid or duplicate numbers are skipped. Me
 Set the schedule a few minutes ahead. The start time cannot be in the past.
 
 **How do I raise my daily limit?**
-Complete Meta Business Verification, keep quality High, and keep reaching more unique recipients. See [Grow the Portfolio limit](broadcasts/connect-channel.md#grow-the-portfolio-limit).
+Complete Meta Business Verification, keep quality High, and keep reaching more unique recipients. See [Grow the Portfolio limit](whatsapp/connect-channel.md#grow-the-portfolio-limit).
 
 **Do replies come into FlowFlex?**
 Yes, in **Messaging → Conversations**. Within 24 hours of a reply, your team can answer with free-form messages.

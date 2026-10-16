@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>FlowFlex Docs</title>
-    <meta name="description" content="FlowFlex documentation — SDK, REST API, and Flows" />
+    <meta name="description" content="FlowFlex documentation — WhatsApp setup, broadcasts, flows, SDK, and REST API" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="assets/flowflex-icon.png" />
 
@@ -219,6 +219,41 @@
         font-size: 0.8125rem;
         padding-top: 6px;
         padding-bottom: 6px;
+      }
+
+      /* Collapsible sub-groups (e.g. **WhatsApp nodes**): the group holding the
+         current page opens; the rest start closed. */
+      .sidebar-nav li > strong.ff-group-toggle {
+        cursor: pointer;
+        position: relative;
+        padding-right: 28px;
+        border-radius: var(--ff-radius-md);
+        user-select: none;
+      }
+      .sidebar-nav li > strong.ff-group-toggle:hover {
+        background: var(--ff-surface-muted);
+      }
+      .sidebar-nav li > strong.ff-group-toggle:focus-visible {
+        outline: 2px solid var(--ff-primary);
+        outline-offset: 1px;
+      }
+      .sidebar-nav li > strong.ff-group-toggle::after {
+        content: "";
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        width: 6px;
+        height: 6px;
+        border-right: 1.5px solid currentColor;
+        border-bottom: 1.5px solid currentColor;
+        transform: translateY(-25%) rotate(45deg);
+        transition: transform 0.12s ease;
+      }
+      .sidebar-nav li.ff-collapsed > strong.ff-group-toggle::after {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+      .sidebar-nav li.ff-collapsed > strong + ul {
+        display: none;
       }
 
       /* Give the nav room so the last items aren't hidden behind the toggle */
@@ -1135,6 +1170,7 @@
         });
 
         hook.doneEach(function () {
+          setupSidebarGroups();
           relocateSearch();
           buildBreadcrumbs();
           buildToc();
@@ -1156,6 +1192,42 @@
               else sidebar.appendChild(search);
             }
           }
+        }
+
+        // Make each **bold** sidebar sub-group collapsible. Runs on every route:
+        // wires new groups once, then opens the group that holds the active page.
+        function setupSidebarGroups() {
+          var labels = document.querySelectorAll(".sidebar-nav li > strong");
+          labels.forEach(function (label) {
+            var li = label.parentElement;
+            if (!label.classList.contains("ff-group-toggle")) {
+              label.classList.add("ff-group-toggle");
+              label.setAttribute("role", "button");
+              label.setAttribute("tabindex", "0");
+              li.classList.add("ff-collapsed");
+              var toggle = function () {
+                li.classList.toggle("ff-collapsed");
+                label.setAttribute(
+                  "aria-expanded",
+                  li.classList.contains("ff-collapsed") ? "false" : "true"
+                );
+              };
+              label.addEventListener("click", toggle);
+              label.addEventListener("keydown", function (e) {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  toggle();
+                }
+              });
+            }
+            if (li.querySelector("li.active, a.active")) {
+              li.classList.remove("ff-collapsed");
+            }
+            label.setAttribute(
+              "aria-expanded",
+              li.classList.contains("ff-collapsed") ? "false" : "true"
+            );
+          });
         }
 
         function buildBreadcrumbs() {

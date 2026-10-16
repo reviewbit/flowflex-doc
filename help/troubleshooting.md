@@ -1,4 +1,4 @@
-# WhatsApp and workflow troubleshooting
+# Troubleshooting
 
 Start by checking the flow's published version, its trigger or incoming-message campaign, and the settings on the step where the problem occurs.
 
@@ -25,7 +25,7 @@ A preview shows the message layout; it does not prove WhatsApp delivered it. See
 
 Check the template belongs to the WhatsApp account used by the flow, is approved, and matches your search. Clear the search and look under Marketing, Utility, or Authentication.
 
-If it is still pending or rejected, resolve that in Templates before configuring the node. See [Template message](flows/nodes/template-message.md).
+If it is still pending or rejected, resolve that in Templates before configuring the node. See [Create a template](whatsapp/create-template.md) and [Template message](flows/nodes/template-message.md).
 
 ## A variable is missing or has the wrong value
 
@@ -70,6 +70,16 @@ See [Set conditions](flows/setting-conditions.md).
 Check the Repeat until stop condition uses the latest answer or API result. After End loop, route on whether the condition was met. Reaching the attempt limit does not mean the task succeeded.
 
 See [Repeat until](flows/nodes/repeat-until.md).
+
+## A broadcast did not reach everyone
+
+Open the broadcast and check **Error Messages**. Each error shows Meta's code and what to do. See [Results and errors](broadcasts/results-and-errors.md).
+
+Opted-out, invalid, and duplicate contacts are skipped before sending. Contacts after the end date are never sent. See [Pre-send checklist and FAQ](broadcasts/checklist-faq.md).
+
+## My channel shows Disconnected or Limited
+
+See [Common problems](whatsapp/connect-channel.md#common-problems) in Connect a WhatsApp channel.
 
 ## Ask for help
 
