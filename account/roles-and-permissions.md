@@ -1,210 +1,145 @@
 # Roles and permissions
 
-A role is a named set of permissions. Every team member gets one role, and the branches and channels you give them in [Teams](account/teams.md) limit where the role applies.
+Decide what each team member can do in FlowFlex by giving them a role.
 
-Go to **Settings** → **Teams** → **Roles**.
+A role is a named set of permissions. Every team member gets one role, and the branches and channels you give them in [Teams](account/teams.md) limit where the role applies. Members see only the pages and actions their role allows.
+
+At Rangoli Store, Chris Taylor answers chats and doesn't need to see broadcasts or billing. Alex Lee creates a **Support agent** role with just the chat and contact permissions, and gives it to Chris.
+
+Go to **Settings** → **Teams** → **Roles** to create and manage roles.
 
 ## The Admin role
 
-Every organisation has an **Admin** role with **Full control**. It can do everything, including Billing, Plans, Teams, and Branches.
+Every organisation has an **Admin** role with **Full control**. It can do everything, including Billing, Plans, Teams and Branches.
 
-The Admin role is a default role. **Default roles cannot be edited** and **Default roles cannot be deleted**. You can copy it.
+Admin is a default role: **Default roles cannot be edited** and **Default roles cannot be deleted**. You can copy it.
 
 ## Create a role
 
 <img src="assets/account/create-role.png" alt="Creating the Support agent role">
 
 1. Click **Create New Role**.
-2. Enter **Role name**, such as `Support agent`. Up to 30 characters.
+2. Enter a **Role name**, such as `Support agent`. Up to 30 characters.
 3. Optional: enter a **Description**, such as `Answers customer chats`. Up to 200 characters.
-4. Choose a permission mode (see below).
+4. Choose a permission mode. See [Permission modes](account/roles-and-permissions.md?id=permission-modes).
 5. For **Selected permissions only**, open each group and turn on the permissions you need. Use **Search permissions** to find one. A group's switch turns on all its permissions.
 6. Click **Create role**.
 
 The left panel shows **N of M enabled** and a count for each group. If nothing is selected, you see **Please select at least one permission.**
 
-| Mode | What the role gets |
-| --- | --- |
-| **Selected permissions only** | Exactly the permissions you turn on |
-| **All current permissions** | Every permission that exists today. Permissions added later are not included. |
-| **Current and future permissions** | Every permission today and any added later |
+### Permission modes
+
+- **Selected permissions only:** exactly the permissions you turn on.
+- **All current permissions:** every permission that exists today. Permissions added later aren't included.
+- **Current and future permissions:** every permission today and any added later.
 
 > [!NOTE]
-> **Current and future permissions** gives the role everything, including any permission FlowFlex adds later, the same as Admin. Billing, Plans, Teams, and Branches are included. Pick **All current permissions** if new features should not be granted automatically.
+> **Current and future permissions** gives the role everything, including any permission FlowFlex adds later, the same as Admin. Billing, Plans, Teams and Branches are included. Pick **All current permissions** if new features shouldn't be granted automatically.
 
-## Copy, edit, or delete a role
+## Copy, edit or delete a role
 
-| Action | How | Notes |
-| --- | --- | --- |
-| Copy | Click **Copy role** | Opens **Copy role** with the name `Copy of …`. Click **Create copy**. |
-| Edit | Click **Edit role** | Click **Update role**. Changes apply to everyone with the role. |
-| Delete | Click **Delete role**, then **Yes** | Not available for default roles |
+The roles list shows each role's **Name**, **Created Date**, **Last updated** and **Permissions**. Use **Search by name** to find one.
 
-The roles list shows **Name**, **Created Date**, **Last updated**, and **Permissions**. Search with **Search by name**.
+- **Copy:** click **Copy role**. **Copy role** opens with the name `Copy of …`. Click **Create copy**.
+- **Edit:** click **Edit role**, make your changes, and click **Update role**. Changes apply to everyone with the role.
+- **Delete:** click **Delete role**, then **Yes**. Default roles can't be deleted.
 
 ## Permissions
 
 Permissions are grouped as they appear on the role screen.
 
-### Audience
+| Group | Permission | Allows |
+| --- | --- | --- |
+| Audience | **Audience view** | Open **Audience** and see contacts, lists and segments |
+| | **Audience create** | Add contacts |
+| | **Audience edit** | Edit contacts, lists, segments and tags |
+| | **Audience delete** | Delete contacts |
+| | **Audience import** | Import contacts from a file |
+| | **Audience export** | Export contacts |
+| | **Audience assign** | Assign contacts to team members |
+| Conversation | **Conversation view** | Open **Messaging** → **Conversations** and read chats |
+| | **Conversation view all** | See every conversation in their branches and channels, not just their own |
+| | **Conversation reply** | Send replies |
+| | **Conversation assign** | Assign a conversation to a team member |
+| | **Conversation reassign** | Move a conversation that is already assigned |
+| Messaging | **Messaging settings view** | Open **Messaging** → **Settings** |
+| | **Messaging settings edit** | Change messaging settings |
+| Branch | **Branch view** | View branches |
+| | **Branch create** | Create branches |
+| | **Branch edit** | Edit branches |
+| | **Branch delete** | Delete branches |
+| Channel | **Channel view** | Open **Channels** |
+| | **Channel create** | Connect a new channel |
+| | **Channel edit** | Change channel settings |
+| | **Channel delete** | Remove a channel |
+| | **Channel assign** | Assign channels |
+| Template | **Template view** | Open **Templates** |
+| | **Template create** | Create templates |
+| | **Template edit** | Edit templates |
+| | **Template delete** | Delete templates |
+| Broadcast | **Broadcast view** | Open **Broadcast** and see results |
+| | **Broadcast create** | Create broadcasts and drafts |
+| | **Broadcast edit** | Edit broadcasts |
+| | **Broadcast delete** | Delete broadcasts |
+| | **Broadcast publish** | Publish a broadcast so it sends |
+| | **Broadcast export** | Export broadcast reports |
+| Workflow | **Workflow view** | Open the Flow builder and **Automations** |
+| | **Workflow create** | Create flows |
+| | **Workflow edit** | Edit flows |
+| | **Workflow delete** | Delete flows |
+| | **Workflow publish** | Publish flows so they run |
+| Campaign | **Campaign view** | Open **Automations** → **All campaigns** |
+| | **Campaign create** | Create campaigns |
+| | **Campaign edit** | Edit campaigns |
+| | **Campaign delete** | Delete campaigns |
+| | **Campaign launch** | Launch campaigns |
+| Member | **View Team Members** | View team members and their access setup |
+| | **Invite Team Members** | Invite new members |
+| | **Edit Team Members** | Change a member's role and access |
+| | **Remove Team Members** | Remove members |
+| Billing | **Billing view** | View billing |
+| | **Billing manage** | Manage billing |
+| | **Billing export** | Export billing |
+| Integration | **Integration view** | Open **Integrations** |
+| | **Integration create** | Add integrations |
+| | **Integration edit** | Change integrations |
+| | **Integration delete** | Remove integrations |
 
-| Permission | Allows |
-| --- | --- |
-| **Audience view** | Open **Audience** and see contacts, lists, and segments |
-| **Audience create** | Add contacts |
-| **Audience edit** | Edit contacts, lists, segments, and tags |
-| **Audience delete** | Delete contacts |
-| **Audience import** | Import contacts from a file |
-| **Audience export** | Export contacts |
-| **Audience assign** | Assign contacts to team members |
+If you don't see the Flow builder with **Workflow view**, contact FlowFlex support.
 
-See [Audience](audience/overview.md).
-
-### Conversation
-
-| Permission | Allows |
-| --- | --- |
-| **Conversation view** | Open **Messaging** → **Conversations** and read chats |
-| **Conversation view all** | See every conversation in their branches and channels, not just their own |
-| **Conversation reply** | Send replies |
-| **Conversation assign** | Assign a conversation to a team member |
-| **Conversation reassign** | Move a conversation that is already assigned |
-
-See [Conversations](messaging/conversations.md).
-
-### Messaging
-
-| Permission | Allows |
-| --- | --- |
-| **Messaging settings view** | Open **Messaging** → **Settings** |
-| **Messaging settings edit** | Change messaging settings |
-
-See [Messaging settings](messaging/settings.md).
-
-### Branch
-
-| Permission | Allows |
-| --- | --- |
-| **Branch view** | View branches |
-| **Branch create** | Create branches |
-| **Branch edit** | Edit branches |
-| **Branch delete** | Delete branches |
-
-### Channel
-
-| Permission | Allows |
-| --- | --- |
-| **Channel view** | Open **Channels** |
-| **Channel create** | Connect a new channel |
-| **Channel edit** | Change channel settings |
-| **Channel delete** | Remove a channel |
-| **Channel assign** | Assign channels |
-
-See [Connect a WhatsApp channel](whatsapp/connect-channel.md).
-
-### Template
-
-| Permission | Allows |
-| --- | --- |
-| **Template view** | Open **Templates** |
-| **Template create** | Create templates |
-| **Template edit** | Edit templates |
-| **Template delete** | Delete templates |
-
-See [Create a template](whatsapp/create-template.md).
-
-### Broadcast
-
-| Permission | Allows |
-| --- | --- |
-| **Broadcast view** | Open **Broadcast** and see results |
-| **Broadcast create** | Create broadcasts and drafts |
-| **Broadcast edit** | Edit broadcasts |
-| **Broadcast delete** | Delete broadcasts |
-| **Broadcast publish** | Publish a broadcast so it sends |
-| **Broadcast export** | Export broadcast reports |
-
-See [Send a broadcast](broadcasts/send-broadcast.md).
-
-### Workflow
-
-| Permission | Allows |
-| --- | --- |
-| **Workflow view** | Open the Flow builder and **Automations**, if Flow builder is available on your account |
-| **Workflow create** | Create flows |
-| **Workflow edit** | Edit flows |
-| **Workflow delete** | Delete flows |
-| **Workflow publish** | Publish flows so they run |
-
-### Campaign
-
-| Permission | Allows |
-| --- | --- |
-| **Campaign view** | Open **Automations** → **All campaigns** |
-| **Campaign create** | Create campaigns |
-| **Campaign edit** | Edit campaigns |
-| **Campaign delete** | Delete campaigns |
-| **Campaign launch** | Launch campaigns |
-
-See [Campaigns](flows/campaigns.md).
-
-### Member
-
-| Permission | Allows |
-| --- | --- |
-| **View Team Members** | View team members and their access setup |
-| **Invite Team Members** | Invite new members |
-| **Edit Team Members** | Change a member's role and access |
-| **Remove Team Members** | Remove members |
-
-### Billing
-
-| Permission | Allows |
-| --- | --- |
-| **Billing view** | View billing |
-| **Billing manage** | Manage billing |
-| **Billing export** | Export billing |
-
-### Integration
-
-| Permission | Allows |
-| --- | --- |
-| **Integration view** | Open **Integrations** |
-| **Integration create** | Add integrations |
-| **Integration edit** | Change integrations |
-| **Integration delete** | Remove integrations |
-
-Members see only the pages and actions their role allows.
+More on each area: [Audience](audience/overview.md), [Conversations](messaging/conversations.md), [Messaging settings](messaging/settings.md), [Connect a WhatsApp channel](whatsapp/connect-channel.md), [Create a template](whatsapp/create-template.md), [Send a broadcast](broadcasts/send-broadcast.md) and [Campaigns](flows/campaigns.md).
 
 ## Example roles
 
 ### Support agent
 
-For Rahul, who answers customer chats at the Kochi store.
+Chris Taylor answers customer chats at the Kochi store. The **Support agent** role turns on:
 
-| Group | Permissions |
-| --- | --- |
-| Conversation | **Conversation view**, **Conversation reply**, **Conversation assign** |
-| Audience | **Audience view**, **Audience edit** |
-| Template | **Template view** |
-| Messaging | **Messaging settings view** |
+- **Conversation:** **Conversation view**, **Conversation reply**, **Conversation assign**
+- **Audience:** **Audience view**, **Audience edit**
+- **Template:** **Template view**
+- **Messaging:** **Messaging settings view**
 
-In [Teams](account/teams.md), give Rahul **Selected branches only** → **Kochi** and **Selected channels only** → the Kochi number. He sees **Messaging**, **Audience**, and **Templates**, and only Kochi chats.
+In [Teams](account/teams.md), Chris gets **Selected branches only** → **Kochi** and **Selected channels only** → the Kochi number. Chris sees **Messaging**, **Audience** and **Templates**, and only Kochi chats.
 
 ### Marketing manager
 
-For someone who plans broadcasts and campaigns for both stores.
+Jordan Brown plans broadcasts and campaigns for both stores. The **Marketing manager** role turns on:
 
-| Group | Permissions |
-| --- | --- |
-| Audience | **Audience view**, **Audience create**, **Audience edit**, **Audience import**, **Audience export** |
-| Template | **Template view**, **Template create**, **Template edit** |
-| Broadcast | **Broadcast view**, **Broadcast create**, **Broadcast edit**, **Broadcast publish**, **Broadcast export** |
-| Workflow | **Workflow view** |
-| Campaign | **Campaign view**, **Campaign create**, **Campaign edit**, **Campaign launch** |
-| Channel | **Channel view** |
+- **Audience:** **Audience view**, **Audience create**, **Audience edit**, **Audience import**, **Audience export**
+- **Template:** **Template view**, **Template create**, **Template edit**
+- **Broadcast:** **Broadcast view**, **Broadcast create**, **Broadcast edit**, **Broadcast publish**, **Broadcast export**
+- **Workflow:** **Workflow view**
+- **Campaign:** **Campaign view**, **Campaign create**, **Campaign edit**, **Campaign launch**
+- **Channel:** **Channel view**
 
-Give access to **All current branches** or **Current and future branches**. **Workflow view** is needed for the **Automations** menu that holds **All campaigns**.
+Jordan gets **All current branches** or **Current and future branches**. **Workflow view** is needed for the **Automations** menu that holds **All campaigns**.
 
 > [!TIP]
 > Start from the smallest set of permissions. Add more when someone hits a page they need.
+
+## See also
+
+- [Teams](account/teams.md)
+- [Branches](account/branches.md)
+- [Conversations](messaging/conversations.md)
