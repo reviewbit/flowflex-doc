@@ -23,6 +23,8 @@ Have ready:
 
 ## What the Channels table shows
 
+<!-- screenshot: whatsapp/channels-list -->
+
 | Column | Values | Meaning |
 | --- | --- | --- |
 | Status | Connected / Pending / Disconnected | Only **Connected** channels can create templates or send broadcasts. |

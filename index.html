@@ -1032,6 +1032,12 @@
          Replace the <div class="img-slot"> with ![alt](assets/flows/x.png)
          once you have the screenshot.
          =================================================================== */
+      /* Product screenshots */
+      .markdown-section img {
+        border: 1px solid var(--ff-border);
+        border-radius: 8px;
+        margin: 8px 0 4px;
+      }
       .markdown-section .img-slot {
         display: flex;
         flex-direction: column;
@@ -1371,6 +1377,7 @@
     <!-- Docsify core + plugins (all from CDN; nothing to build) -->
     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@3/dist/docsify-copy-code.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
     <!-- GitBook-style hint/callout cards: > [!NOTE] | [!TIP] | [!WARNING] | [!ATTENTION] -->
