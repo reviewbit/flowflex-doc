@@ -1,23 +1,29 @@
-# Save variable: remember a value for later steps
+# Save variable
 
-Use Save variable when several later steps need the same value during this flow run. Use Save audience or Save data when you want to keep information beyond the run.
+Store a value under a name you choose, so later steps in the same flow run can reuse it.
 
-## Save a preferred delivery date
+## When to use it
 
-1. Add **Save variable** after the step that supplies the date.
-2. Open the node.
-3. Enter a name, such as `preferred_date`.
-4. In its Value field, use Insert Variable to choose the date from the earlier step.
-5. Use **Add variable** if you need another named value.
-6. Save changes and connect Next step.
-7. In later steps, select the saved variable through Insert Variable.
+Use Save variable when several steps need the same value. Rangoli Store asks customers for their preferred delivery date, saves it as `preferred_date`, and uses it in the confirmation message and in the API request that books the delivery.
 
-For example, you can use `{{preferred_date}}` in a confirmation message and a later API request.
+## Set it up
 
-## Names and values
+1. Add **Save variable** from **Other Blocks** after the step that supplies the value, and open it.
+2. Under **Variables**, enter a name, such as `preferred_date`. Names start with a letter and can contain letters, numbers and underscores.
+3. Enter the value, either fixed text or a field from an earlier step selected with Insert Variable.
+4. Click **Add variable** to store another value.
+5. Click **Save**.
 
-Start names with a letter and use letters, numbers, and underscores. Choose clear, distinct names. Values can be fixed text or selected from earlier steps.
+In later steps, select the saved variable through Insert Variable, for example `{{preferred_date}}` in a message.
 
-Save variable does not create a contact profile field or a table row. Use [Save audience](flows/nodes/audience-actions.md#save-audience) for profiles, or [Save data](flows/nodes/save-data.md) for reporting.
+A saved variable lasts only for this run of the flow. It doesn't create a profile field or a table row. To keep the value, use [Save audience](flows/nodes/audience-actions.md#save-audience) for the contact's profile or [Save data](flows/nodes/save-data.md) for a table.
 
-See [Select and insert variables](flows/using-variables.md).
+## Connect it
+
+Connect **Next step** to the following step.
+
+## See also
+
+- [Select and insert variables](flows/using-variables.md)
+- [Save data](flows/nodes/save-data.md)
+- [Audience actions](flows/nodes/audience-actions.md)

@@ -1,24 +1,34 @@
-# Contact-tag conditions: route by customer tags
+# Contact-tag conditions
 
-Use contact tags in Condition split or Condition branch to distinguish interested customers, VIPs, or other groups you label.
+Route customers by the tags on their contact, inside a Condition split or Condition branch.
 
-## Example: send a follow-up to interested customers
+## When to use it
 
-1. Add a Condition split and open its rules.
-2. Choose **Contact tags** as the rule source.
-3. Set **Contact number** with Insert Variable, for example Trigger → from.
-4. Choose **Has any** and select Interested.
-5. Save changes.
-6. Connect Yes to the follow-up and No to another action or End.
+Use a contact-tag condition to treat tagged customers differently. Rangoli Store tags customers `interested` when they ask about the Diwali sale. A later step in the flow checks for that tag and sends those customers the sale details, while everyone else gets the regular menu.
 
-## Choose the matching rule
+## Set it up
 
-| Operator | Meaning | Example |
-| --- | --- | --- |
-| Has any | At least one selected tag is present. | Interested or VIP. |
-| Has all | Every selected tag is present. | Interested and VIP. |
-| Has none | None of the selected tags is present. | Neither Interested nor VIP. |
+1. Open a [Condition split](flows/nodes/condition-split.md) or [Condition branch](flows/nodes/condition-branch.md) and click **Add condition**.
+2. Change the condition source from **Flow variable** to **Contact tags**.
+3. Under **Match**, choose how the tags should match, such as **Has any of these tags**.
+4. In **Tags**, select one or more tags, such as `interested` and `vip`.
+5. Set **Contact number** with Insert Variable, for example **Trigger** → **from**. One contact number applies to all the tag conditions in the node.
+6. Click **Save**.
 
-A contact with no tags matches Has none. The condition checks the contact's current tags when the step runs, so a preceding [Save tag](flows/nodes/audience-actions.md#save-tag) can affect the result.
+| Match | A contact matches when |
+| --- | --- |
+| **Has any of these tags** | At least one of the selected tags is on the contact. |
+| **Has all of these tags** | Every selected tag is on the contact. |
+| **Has none of these tags** | None of the selected tags is on the contact. A contact with no tags matches. |
 
-Set the contact number once for the node's tag rules. Combine with other conditions if needed; see [Set conditions](flows/setting-conditions.md).
+The condition checks the contact's tags at the moment the step runs, so a [Save tag](flows/nodes/audience-actions.md#save-tag) earlier in the flow changes the result. You can combine tag conditions with other rules; see [Set conditions and choose paths](flows/setting-conditions.md).
+
+## Connect it
+
+Connect the outputs as usual for the node: **Yes** and **No** for a condition split, or one output per path for a condition branch.
+
+## See also
+
+- [Save tag](flows/nodes/audience-actions.md#save-tag)
+- [Tags](audience/tags.md)
+- [Segments](audience/segments.md)

@@ -1,31 +1,30 @@
-# Set time delay: pause before the next step
+# Set time delay
 
-Use Set time delay to space out updates or send a follow-up later. This pause does not end when the customer replies; for that, use [Response waiting](flows/response-wait.md).
+Pause the flow for a set time, or until a time of day you choose, before the next step.
 
-## Wait two hours before a follow-up
+## When to use it
 
-1. Add **Set time delay** between the current action and the follow-up.
-2. Open the node and set **Set time delay** to 2.
-3. Set **Unit** to Hours.
-4. Save changes.
-5. Connect Next step to the follow-up.
+Use a time delay to space out messages or follow up later. Two hours after a customer browses the Diwali sale without ordering, Rangoli Store sends a reminder. A delay doesn't end early when the customer replies; to wait for a reply, use [response waiting](flows/response-wait.md) on a message.
 
-The duration can use Seconds, Minutes, Hours, or Days.
+## Set it up
 
-## Resume at a suitable time
+1. Add **Set time delay** from **Other Blocks** between the two steps, and open it.
+2. In **Set time delay**, enter the amount, such as `2`.
+3. In **Unit**, choose **Seconds**, **Minutes**, **Hours** or **Days**, such as **Hours**.
+4. Optionally, add a schedule on top of the delay:
+   - **Delay until a scheduled time of day:** continue at a time you pick, in the time zone you pick.
+   - **Delay until a scheduled days of the week:** continue only on the days you select.
+   - **Delay until a dynamic time of day:** continue at a time taken from a variable in **Dynamic delay**, in the format the field asks for.
+5. Click **Save**.
 
-The scheduling checkboxes add constraints to the duration:
+To follow up on the next business morning, Rangoli Store combines a 1-day delay with 10:00 AM in Asia/Kolkata on Monday to Saturday. Check the time zone matches your customers.
 
-| Option | What to set |
-| --- | --- |
-| Delay until a scheduled time of day | Choose the time and timezone. |
-| Delay until scheduled days of the week | Select the allowed weekdays. |
-| Delay until a dynamic time of day | Supply the variable requested by the form. |
+## Connect it
 
-For example, use a one-day duration with a morning time and weekday selection for a business-day follow-up. Check the chosen timezone matches your intention.
+Connect **Next step** to the follow-up. After a long delay, the 24-hour reply window may have closed, so use an approved [Template message](flows/nodes/template-message.md) for the follow-up. See [The 24-hour reply window](flows/whatsapp-message-setup.md?id=the-24-hour-reply-window).
 
-Use [Insert Variable](flows/using-variables.md) for dynamic values, and use the unit and meaning expected by the field rather than inserting a formatted date into an amount field.
+## See also
 
-## Before publishing
-
-Review the duration and any additional restrictions together. After a long delay, the WhatsApp reply window may be closed; choose an approved [Template message](flows/nodes/template-message.md) for the follow-up when needed.
+- [Wait for and validate a reply](flows/response-wait.md)
+- [Template message](flows/nodes/template-message.md)
+- [Repeat until](flows/nodes/repeat-until.md)

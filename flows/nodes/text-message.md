@@ -1,31 +1,29 @@
-# Text message: send a reply or ask a question
+# Text message
 
-Use Text message for a greeting, a simple answer, or a question during an active WhatsApp conversation. Use an approved [Template message](flows/nodes/template-message.md) when messaging outside the reply window.
+Send a WhatsApp text message, or ask a question and wait for the answer.
 
-## Send a personalized greeting
+## When to use it
 
-1. Add **Text message** from WhatsApp Blocks and open it.
-2. Set a Node label, such as “Welcome”.
-3. In **Destination number**, open Insert Variable → Trigger → from for an incoming-chat flow.
-4. In **Text message**, type “Hi ”, insert Trigger → name, then type “, how can we help?”
-5. Review Live WhatsApp preview.
-6. Click **Save changes** and connect Next step to the next action or End.
+Use a text message to reply during an open conversation, such as a greeting or a short answer. When a customer messages Rangoli Store, the flow replies "Hi Maria Garcia, thanks for messaging Rangoli Store." To message a customer outside the 24-hour reply window, use an approved [Template message](flows/nodes/template-message.md) instead.
 
-For a different trigger, choose its customer number and name fields. See [Select and insert variables](flows/using-variables.md).
+## Set it up
 
-## Ask a question and use the answer
+1. Add **Text message** from **WhatsApp Blocks** and open it. Give it a **Node label**, such as `Welcome`.
+2. In **Destination number**, insert the customer's number. For a flow started by an incoming WhatsApp message, use **Trigger** → **from**. The number must include the country code.
+3. In **Text message**, write the message and insert variables where needed. Rangoli Store types `Hi `, inserts **Trigger** → **name**, and adds `, thanks for messaging Rangoli Store.` The message can be up to 4,096 characters, including inserted values.
+4. Optionally, add an **Internal description** under **More message options** to explain the step to your team.
+5. Check the **Live WhatsApp preview** and click **Save changes**.
 
-Write your question, then enable **Wait for specific time** and choose a Unit and Value. If the answer must be an email, number, or specific message type, enable **Check format** and configure the invalid-response text.
+### Ask a question
 
-Connect Next step to the action that uses the reply and No response to a fallback. Follow [Wait for and validate a reply](flows/response-wait.md) for a complete email-collection example.
+To collect an answer, write the question, then under **Response handling** select **Wait for specific time** and set the **Unit** and **Value**. To accept only a certain kind of answer, such as an email address, turn on **Check format** and write the message to send when the answer doesn't match. See [Wait for and validate a reply](flows/response-wait.md?id=example-collect-an-email-address) for a full example.
 
-## Settings to check
+## Connect it
 
-| Field | Purpose |
-| --- | --- |
-| Destination number | The customer's number, including country code. |
-| Text message | The message content; supports variables and up to 4,096 characters. |
-| Internal description | Optional explanation for your team. |
-| Wait for specific time | Pause for an answer when needed. |
+Connect **Next step** to the following step or to **End**. If the message waits for a reply, **Next step** is used when the customer answers; connect **No response** to a fallback.
 
-Keep the message clear and check personalized values fit within the limit. For delivery problems, see [WhatsApp troubleshooting](help/troubleshooting.md#a-message-does-not-arrive).
+## See also
+
+- [Wait for and validate a reply](flows/response-wait.md)
+- [Select and insert variables](flows/using-variables.md)
+- [A message does not arrive](help/troubleshooting.md?id=a-message-does-not-arrive)

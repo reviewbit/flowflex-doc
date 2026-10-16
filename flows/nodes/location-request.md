@@ -1,17 +1,27 @@
-# Location request: ask where the customer is
+# Location request
 
-Use Location request to ask a customer to share their location, for example to find a nearby store.
+Ask the customer to share their location on WhatsApp, and use it in later steps.
 
-## Ask and use the shared location
+## When to use it
 
-1. Add **Location request** and open it.
-2. Set **Destination number** using the customer's phone variable.
-3. Write **Message**, such as “Please share your location so we can find your nearest store.”
-4. Enable **Wait for specific time** and set a Unit and Value.
-5. Review the preview and click Save changes.
-6. Connect Next step to the action that uses the location, such as Calculate distance.
-7. Connect No response to Assign agent, another suitable fallback, or End.
+Use a location request when you need to know where the customer is. Rangoli Store asks "Share your location and we'll find your nearest store", then uses [Calculate distance](flows/nodes/utils-function.md#calculate-distance) to compare the customer's location with the Kochi and Bengaluru branches.
 
-In the later node, choose the saved Location request through [Insert Variable](flows/using-variables.md) and select its latitude and longitude fields. A text address is not the same as sharing a location pin.
+## Set it up
 
-See [Calculate distance](flows/nodes/utils-function.md#calculate-distance) and [Response waiting](flows/response-wait.md). To send your store's location instead, use [Send location](flows/nodes/send-location.md).
+1. Add **Location request** from **WhatsApp Blocks** and open it.
+2. In **Destination number**, insert the customer's phone number, such as **Trigger** → **from**.
+3. Write the **Message**, such as `Share your location and we'll find your nearest store.`
+4. Under **Response handling**, set how long the flow waits for the location with **Unit** and **Value**. It starts at 24 Hours; Rangoli Store uses 10 Minutes.
+5. Check the **Live WhatsApp preview** and click **Save changes**.
+
+In later steps, open Insert Variable, choose this Location request, and select its latitude and longitude fields. A typed address isn't the same as a shared location pin, and doesn't provide coordinates.
+
+## Connect it
+
+Connect **Next step** to the step that uses the location, such as **Utils function**. Connect **No response** to a fallback, such as **Assign agent** or **End**.
+
+## See also
+
+- [Utils function](flows/nodes/utils-function.md)
+- [Send location](flows/nodes/send-location.md), to send your own location
+- [Wait for and validate a reply](flows/response-wait.md)

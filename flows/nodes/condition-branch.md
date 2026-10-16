@@ -1,27 +1,29 @@
-# Condition branch: route across named paths
+# Condition branch
 
-Use Condition branch when several rules should lead to different actions, such as routing orders by status. The first matching path wins.
+Send the flow down one of several paths, depending on which set of rules matches first.
 
-## Example: route by order status
+## When to use it
 
-1. Add **Condition branch** after the order lookup.
-2. Open the node and name its first path “Ready”.
-3. Add a rule: select the API's order status, choose a text equals operator, and enter `ready`.
-4. Name the second path “Pending” and compare the same field with `pending`.
-5. Add further paths only for the outcomes you need.
-6. Save changes.
-7. Connect each named output to its action, such as Ready → delivery message and Pending → waiting update.
+Use a condition branch when there are more than two outcomes. After Rangoli Store's API node looks up an order, a condition branch checks the status: **Path 1** for `shipped` sends tracking details, and **Path 2** for `processing` tells the customer the order is being packed. For a simple Yes or No, use a [Condition split](flows/nodes/condition-split.md).
 
-Use [Insert Variable](flows/using-variables.md#use-an-api-response) to select the real field from the correct response example.
+## Set it up
 
-## Order your rules
+1. Add **Condition branch** from **Logic Blocks** after the step that supplies the value, and open it.
+2. In **Path 1**, click **Add condition**. Select the field with Insert Variable, such as the API's order status, choose an operator, and enter the value, such as `shipped`.
+3. In **Path 2**, add the rules for the next outcome, such as `processing`.
+4. Click **Add path** for each further outcome you need.
+5. Click **Save**.
 
-Place specific paths before broader ones. If two paths match, only the first is selected. Check each path's rules and AND/OR groups using [Set conditions](flows/setting-conditions.md).
+Each path can hold several rules and condition groups, combined with AND or OR. See [Set conditions and choose paths](flows/setting-conditions.md). To route by a contact's tags, see [Contact-tag conditions](flows/nodes/contact-tag-conditions.md).
 
-## Plan for an unmatched value
+## Connect it
 
-Condition branch has no default path. Use a Condition split if you need a fallback. If you need an explicit fallback for any other status, use a Condition split before the branch to check whether the status is one of the supported values. Connect its No path to help or End.
+The node has one output per path. Connect each one to its next step.
 
-## Before publishing
+Paths are checked in order and the first match wins, so put specific rules before broad ones. There is no "anything else" path. If a value might match none of your paths, put a [Condition split](flows/nodes/condition-split.md) before the branch that checks for the expected values, and connect its **No** output to a fallback such as **Assign agent**.
 
-Connect every named output and consider a status you did not expect. You can also use [contact-tag conditions](flows/nodes/contact-tag-conditions.md) to route by customer tags.
+## See also
+
+- [Condition split](flows/nodes/condition-split.md)
+- [Set conditions and choose paths](flows/setting-conditions.md)
+- [The wrong condition path runs](help/troubleshooting.md?id=the-wrong-condition-path-runs)

@@ -1,20 +1,27 @@
-# Save data: record information in a flow data table
+# Save data
 
-Use Save data to record a survey answer, order detail, or other information in a selected flow data table. For a contact's profile, use [Save audience](flows/nodes/audience-actions.md#save-audience).
+Add a row to one of your flow data tables, such as a survey answer or an order detail.
 
-## Record a survey answer
+## When to use it
 
-1. Create or choose the data table you want to use in the flow's saved-data area. Include columns such as customer_number and answer.
-2. Add **Save data** after the question's reply path.
-3. Open the node and select **Choose table**.
-4. For each displayed column, select its value with Insert Variable.
-5. Map customer_number to the trigger's contact number and answer to the question's captured reply.
-6. Save changes and connect Next step to a thank-you message or End.
+Use Save data to keep a record you can review later in **Saved data**. After a delivery, Rangoli Store asks "How would you rate your delivery, 1 to 5?" and saves each customer's number and answer to a `delivery_feedback` table. To save details to the contact's own profile instead, use [Save audience](flows/nodes/audience-actions.md#save-audience).
 
-Selecting a different table changes the columns to fill, so review the mappings again.
+## Set it up
 
-## Before publishing
+1. Create the table first, with columns such as `customer_number` and `rating`. See [Create a table](flows/saved-data.md?id=create-a-table).
+2. Add **Save data** from **Data Blocks** after the step that collects the answer, and open it.
+3. In **Choose table**, select the table. Its columns appear under **Columns**.
+4. For each column, enter the value or select it with Insert Variable. Rangoli Store maps `customer_number` to **Trigger** → **from**, and `rating` to the question's captured reply.
+5. Click **Save**.
 
-Make sure the table exists, each intended column has the correct value, and the question waits for a reply before this step. Route silence separately so you do not record it as an answer.
+If you pick a different table, the columns change, so check the values again.
 
-See [Insert Variable](flows/using-variables.md) and [Response waiting](flows/response-wait.md).
+## Connect it
+
+Connect **Next step** to a thank-you message or **End**. Make sure the question waits for a reply before this step, and send **No response** somewhere else, so silence isn't saved as an answer. See [Wait for and validate a reply](flows/response-wait.md).
+
+## See also
+
+- [Saved data](flows/saved-data.md)
+- [Save variable](flows/nodes/save-variable.md)
+- [Use a customer's reply](flows/using-variables.md?id=use-a-customers-reply)

@@ -1,16 +1,27 @@
-# Send location: share a store or pickup point
+# Send location
 
-Use Send location to send a known location as a WhatsApp map pin.
+Send a location as a WhatsApp map pin, such as your store or a pickup point.
 
-## Share a pickup point
+## When to use it
 
-1. Add **Send location** and open it.
-2. Set **Destination number** using the customer's phone variable.
-3. Fill **Latitude** and **Longitude** with the pickup point's coordinates, or select coordinate variables.
-4. Add **Location name**, such as “Main store”, and **Address** to help the customer recognize it.
-5. Review the preview and click Save changes.
-6. Connect Next step to another action or End.
+Use Send location when the customer needs to find a place. When a customer chooses store pickup, Rangoli Store sends a pin for the Kochi branch, so the customer can open directions in their maps app. To ask for the customer's location instead, use [Location request](flows/nodes/location-request.md).
 
-Latitude must be between -90 and 90; longitude between -180 and 180. Check that you have not swapped them. A name or street address alone does not supply the required coordinates.
+## Set it up
 
-To ask for the customer's location, use [Location request](flows/nodes/location-request.md). See [Insert Variable](flows/using-variables.md) and [WhatsApp setup](flows/whatsapp-message-setup.md).
+1. Add **Send location** from **WhatsApp Blocks** and open it.
+2. In **Destination number**, insert the customer's phone number, such as **Trigger** → **from**.
+3. Enter the **Latitude** and **Longitude**, or insert variables that hold them. Latitude is between -90 and 90, and longitude between -180 and 180; check you haven't swapped them.
+4. Add a **Location name**, such as `Rangoli Store Kochi`, and the **Address**, so the customer recognises the place.
+5. Check the **Live WhatsApp preview** and click **Save changes**.
+
+A name or street address on its own doesn't place the pin. The coordinates are required.
+
+## Connect it
+
+Connect **Next step** to the following step or to **End**.
+
+## See also
+
+- [Location request](flows/nodes/location-request.md)
+- [Set up WhatsApp messages](flows/whatsapp-message-setup.md)
+- [Select and insert variables](flows/using-variables.md)

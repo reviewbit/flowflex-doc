@@ -1,29 +1,27 @@
-# Condition split: choose Yes or No
+# Condition split
 
-Use Condition split for a decision with two outcomes, such as whether an order is paid or whether a reply is valid.
+Check a rule and send the flow down a **Yes** or a **No** path.
 
-## Example: offer priority support for larger orders
+## When to use it
 
-1. Add **Condition split** after the step that supplies the order information.
-2. Open the node and give it a clear label, such as “Large order?”.
-3. Add a condition and use Insert Variable to select the order total.
-4. Choose a number comparison: **greater than**.
-5. Enter `1000` as the comparison value.
-6. Save changes.
-7. Connect **Yes** to the priority-support action and **No** to the standard action or End.
+Use a condition split for a decision with two outcomes. Rangoli Store offers priority support on large orders: if the order total is greater than 5000, the chat goes to an agent straight away; otherwise the customer gets the standard reply. The threshold is a rule you choose, not a built-in value.
 
-The value in this example is a rule you choose, not a built-in threshold. Select the actual total field available in your event or API response.
+## Set it up
 
-## Add more rules
+1. Add **Condition split** from **Logic Blocks** after the step that supplies the value, and open it.
+2. Click **Add condition** and select the field with Insert Variable, such as the order total from the trigger or an API response.
+3. Choose an operator that matches the field type, such as **Greater than** for a number, and enter the value, such as `5000`.
+4. To check more than one thing, add more conditions and choose how they combine: AND (all must match) or OR (any one is enough). For example, total is greater than 5000 AND payment is confirmed.
+5. Click **Save**.
 
-Use **AND** when all rules must match, or **OR** when any one is enough. For example, total is above 1000 AND payment is confirmed.
+Use a text operator for a customer's reply, and check that an optional field exists before comparing it. See [Set conditions and choose paths](flows/setting-conditions.md). To check a contact's tags instead, see [Contact-tag conditions](flows/nodes/contact-tag-conditions.md).
 
-For a customer's reply, use a text operator; for an optional field, check whether it exists first. See [Set conditions](flows/setting-conditions.md) for field types and rule groups.
+## Connect it
 
-## Check contact tags
+Connect **Yes** to the step for a match and **No** to the step for everything else. Rangoli Store connects **Yes** to **Assign agent** and **No** to the standard message.
 
-Choose Contact tags to route customers with particular tags. See [Contact-tag conditions](flows/nodes/contact-tag-conditions.md).
+## See also
 
-## Before publishing
-
-Connect both Yes and No, check the field type and comparison, and decide what should happen when the rule does not match. Use [Insert Variable](flows/using-variables.md) to avoid selecting a sample field from the wrong source.
+- [Condition branch](flows/nodes/condition-branch.md), for more than two outcomes
+- [Set conditions and choose paths](flows/setting-conditions.md)
+- [Select and insert variables](flows/using-variables.md)
