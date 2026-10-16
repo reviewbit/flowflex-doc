@@ -1,14 +1,12 @@
 # Import and export contacts
 
-Bulk Import adds many contacts at once from a CSV or XLSX file. Export gives you a CSV of contacts to download.
+Add many contacts at once from a CSV or XLSX file, and download contacts as a CSV.
 
-## Bulk Import
+**Bulk Import** reads a file of contacts, lets you match its columns to FlowFlex fields, and adds the contacts to your audience, and to a list if you choose. **Export** creates a CSV of the contacts you pick, ready to download.
 
-Go to **Audience** → **Bulk Import** → **Import**. The **Import audience** wizard has three steps: **Upload** → **Map columns** → **Confirm**.
+Rangoli Store keeps its customers in a spreadsheet with a `city` column. Alex Lee uploads it to the Kochi branch, sends the contacts to the list `Repeat buyers – Oct 2026`, and keeps `city` as a custom field so the team can later build a segment of Kochi customers.
 
-Click **Watch a demo** on the Import History page to see the wizard in action.
-
-### File rules
+## Prepare your file
 
 | Rule | Limit |
 | --- | --- |
@@ -18,20 +16,22 @@ Click **Watch a demo** on the Import History page to see the wizard in action.
 | Header row | Required. The first row must hold the column names. |
 | Phone column | Required. Every contact needs a phone number. |
 
-Click **Download sample CSV** on the Upload step for a ready-made template.
-
-A file for Rangoli Store could look like this:
+Click **Download sample CSV** on the **Upload** step for a ready-made template. Rangoli Store's file looks like this:
 
 ```csv
 name,phone,email,tags,city
-Priya Sharma,+919000000001,priya@example.com,"repeat-buyer",Pune
-Arjun Mehta,9000000002,,"repeat-buyer,new",Delhi
-Fatima Khan,+919000000003,,new,Mumbai
+John Smith,+919000000001,john@rangoli.example,"repeat-buyer",Kochi
+Jane Doe,9000000002,,"repeat-buyer,new",Chennai
+Sam Wilson,+919000000003,,new,Kozhikode
 ```
 
-Separate several tags in one cell with commas. Arjun's number has no `+`, so it needs a default country code.
+Separate several tags in one cell with commas. Jane Doe's number has no `+`, so it needs a default country code.
 
-### 1. Upload
+## Import contacts
+
+Go to **Audience** → **Bulk Import** → **Import**. The **Import audience** wizard has three steps: **Upload**, **Map columns** and **Confirm**. To see the wizard in action first, click **Watch a demo** on the Import History page.
+
+### Step 1: Upload
 
 <img src="assets/audience/import-upload.png" alt="Import audience, step 1: Upload">
 
@@ -40,47 +40,41 @@ Separate several tags in one cell with commas. Arjun's number has no `+`, so it 
     - **To a list**: add the contacts to a list too. Pick it in **Select list**, or click **+ Create new list**. A list name can have up to 80 characters.
 2. **Assign owner** (optional): pick a team member to own every imported contact. Leave **Not assigned** to skip.
 3. **Default country code** (optional): pick a country for numbers written without `+`. Numbers that already include a country code stay unchanged.
-4. Drop the file on the box, or click **Click to upload**.
+4. Drop the file on the box, or click **Click to upload**. FlowFlex previews the first rows.
 5. Check the summary under the preview, then click **Next: Map columns**.
 
-FlowFlex previews the first rows. The summary tells you what will happen:
+The summary tells you what will happen:
 
-| Line | Meaning |
-| --- | --- |
-| **Phone column detected: phone** | FlowFlex found the phone column by its name |
-| **No phone column auto-detected. Map the phone column in the next step.** | Choose the phone column yourself in step 2 |
-| **N unique rows ready to import** | Rows with a valid, unique phone number |
-| **N local-format numbers will use India (+91)** | Numbers without `+` will get the default country code |
-| **N local-format numbers have no default country code selected.** | Pick a **Default country code**, or these rows may be skipped |
-| **N rows have an invalid or non-mobile phone number — they will be skipped.** | Fix these numbers in the file, or accept that they are skipped |
-| **N duplicate phone rows already appear earlier in the file — they will be skipped.** | Only the first row for each number is imported |
+- **Phone column detected: phone** means FlowFlex found the phone column by its name.
+- **No phone column auto-detected. Map the phone column in the next step.** means you choose the phone column yourself in step 2.
+- **N unique rows ready to import** counts rows with a valid, unique phone number.
+- **N local-format numbers will use India (+91)** means numbers without `+` get the default country code.
+- **N local-format numbers have no default country code selected.** means you should pick a **Default country code**, or these rows may be skipped.
+- **N rows have an invalid or non-mobile phone number — they will be skipped.** Fix these numbers in the file, or accept that they're skipped.
+- **N duplicate phone rows already appear earlier in the file — they will be skipped.** Only the first row for each number is imported.
 
 To use a different file, click **Replace**.
 
-#### Upload errors
+If the file can't be used, you see one of these errors. Click **Try a different file** to start again.
 
 | Error | Cause | Fix |
 | --- | --- | --- |
-| **Unsupported file format** | The file is not CSV or XLSX | Save it as CSV or XLSX |
+| **Unsupported file format** | The file isn't CSV or XLSX | Save it as CSV or XLSX |
 | **File too large** | Over 10 MB | Split the file and import in batches |
 | **Too many rows** | Over 100,000 rows | Split the file and import in batches |
 | **No data rows** | Headers but no contacts | Add at least one contact |
 | **Couldn't read the file** | No header row, or the file is damaged | Check the header row and save the file again |
 
-Click **Try a different file** to start again.
-
-### 2. Map columns
+### Step 2: Map columns
 
 <img src="assets/audience/import-map-columns.png" alt="Import audience, step 2: Map columns">
 
-Each column in your file is one row here. FlowFlex matches common column names for you.
+Each column in your file is one row here, and FlowFlex matches common column names for you. The counter shows how many columns are selected, such as **4 of 5 columns selected**, and the **Status** column shows a tick when a column is mapped.
 
 1. Tick **Import** for each column you want. Unticked columns are skipped.
 2. In **Import as**, pick the FlowFlex field for each column.
 3. Make sure one column is imported as **Phone**. Until then you see **Phone is required. Check the phone column and import it as Phone before continuing.**
 4. Click **Next: Confirm**.
-
-The counter shows how many columns are selected, such as **4 of 5 columns selected**. The **Status** column shows a tick when a column is mapped.
 
 | FlowFlex field | Column names matched automatically | Notes |
 | --- | --- | --- |
@@ -93,14 +87,14 @@ The counter shows how many columns are selected, such as **4 of 5 columns select
 | **Tags** | tags, tag, labels, label | Comma-separated. Missing tags are created. |
 | **Address line 1** | address, address 1, address line 1, street | |
 | **Address line 2** | address 2, address line 2 | |
-| **WhatsApp marketing consent** | whatsapp consent, whatsapp marketing consent, whatsapp subscribed | `no`, `false`, `0`, `n`, `opt-out`, `opted out`, `unsubscribe`, or `unsubscribed` means off. Anything else, or empty, means on. |
+| **WhatsApp marketing consent** | whatsapp consent, whatsapp marketing consent, whatsapp subscribed | `no`, `false`, `0`, `n`, `opt-out`, `opted out`, `unsubscribe` or `unsubscribed` means off. Anything else, or empty, means on. |
 | **Custom field** | Any other column | Creates a custom field. See below. |
 
-Matching ignores capitals, spaces, and punctuation, so `Mobile Number` matches **Phone**.
+Matching ignores capitals, spaces and punctuation, so `Mobile Number` matches **Phone**.
 
 When you map **Country**, you can tick **Use this country column to detect phone country codes**. Numbers without `+` then use each row's country.
 
-#### Custom fields
+#### Keep other data as custom fields
 
 Pick **Custom field** to keep any other data, such as `city` or `last_order_date`.
 
@@ -110,84 +104,63 @@ Pick **Custom field** to keep any other data, such as `city` or `last_order_date
 
 The custom field is created when the import runs. It then appears as a column in **Profiles**, on the contact's **Other** tab, and as a field in filters and [segments](audience/segments.md). Custom fields created by an import are text fields.
 
-You cannot use names already used by built-in fields, such as phone or email. You see **"name" is reserved — it would collide with a built-in field. Pick a different name.**
+You can't use names already used by built-in fields, such as phone or email. You see **"name" is reserved — it would collide with a built-in field. Pick a different name.**
 
-### 3. Confirm
+### Step 3: Confirm
 
-The last step lists each mapping: **Your imported headers** and **FlowFlex profile headers**. Click **Previous** to change anything.
+1. Check the mappings, listed as **Your imported headers** and **FlowFlex profile headers**. Click **Previous** to change anything.
+2. Click **Import contacts**. You see **Import queued** and how many contacts are on the way.
+3. Click **Done**.
 
-Click **Import contacts**. You see **Import queued** and how many contacts are on the way. Click **Done**.
+FlowFlex sends a notification when the import finishes, with a link to download any rows that couldn't be imported. If you see **Import didn't start**, your file and mapping are kept; click **Retry**.
 
-FlowFlex sends a notification when the import finishes. It includes a link to download any rows that could not be imported.
+## Contacts that already exist
 
-If you see **Import didn't start**, your file and mapping are kept. Click **Retry**.
+A row whose phone number already exists in the branch doesn't create a new contact. Instead:
 
-### What happens to existing contacts
-
-A row whose phone number already exists in the branch does not create a new contact. Instead:
-
-| Field | What happens |
-| --- | --- |
-| Destination list | The contact is added to the list |
-| Owner | Set to the **Assign owner** choice, if you picked one |
-| WhatsApp consent | Not changed, unless the consent column says `no`, which turns it off. An import never subscribes a contact who opted out. |
-| Name, email, tags, and other fields | Not changed |
+- **Destination list:** the contact is added to the list.
+- **Owner:** set to the **Assign owner** choice, if you picked one.
+- **WhatsApp consent:** not changed, unless the consent column says `no`, which turns it off.
+- **Name, email, tags and other fields:** not changed.
 
 > [!NOTE]
-> A contact who opted out stays opted out after an import, even if the file says `yes`. They can subscribe again only themselves, for example by sending the START keyword.
+> An import never re-subscribes a contact who opted out. FlowFlex keeps the opt-out even if the contact appears in a later import with `yes`. The contact can subscribe again only themselves, for example by sending the START keyword.
 
-### Skipped rows
+## Skipped rows
 
-| Reason | Example |
-| --- | --- |
-| No phone number | The phone cell is empty |
-| Invalid phone number | Wrong number of digits, or no country code and no default country |
-| Duplicate in the file | The same number appears in an earlier row |
+A row is skipped when:
 
-### Import History
+- **It has no phone number:** the phone cell is empty.
+- **The phone number is invalid:** it has the wrong number of digits, or no country code and no default country.
+- **It's a duplicate:** the same number appears in an earlier row of the file.
 
-The **Bulk Import** tab lists past imports. Search with **Search by file name**, and click **Refresh** to update statuses.
+## Import History
 
-| Column | Shows |
-| --- | --- |
-| Name | The import name |
-| Audience count | Contacts added or updated |
-| Status | **Pending** while running, **Completed** when done, or **Failed** |
-| Import date | When the import started |
-| Actions | Download the original file. Download the error file (red icon), when rows were skipped. Delete the record from the ⋯ menu. |
+The **Bulk Import** tab lists past imports with their **Name**, **Audience count** (contacts added or updated), **Status** and **Import date**. The status is **Pending** while the import runs, **Completed** when it's done, or **Failed**. Search with **Search by file name**, and click **Refresh** to update statuses.
 
-The error file is a CSV of the skipped rows with an extra `error` column. Fix the rows and import that file again.
+From each row you can download the original file, download the error file (red icon) when rows were skipped, or delete the record from the ⋯ menu. The error file is a CSV of the skipped rows with an extra `error` column: fix the rows and import that file again.
 
 > [!TIP]
 > To create a list from a file while building a broadcast, use **Quick Import** in [Send a broadcast](broadcasts/send-broadcast.md). It follows the same file rules.
 
-## Export
+## Export contacts
 
-Exports run in the background. You get a notification when the file is ready.
+Exports run in the background, and you get a notification when the file is ready. Start one from where your contacts are:
 
-### Start an export
+- **Selected contacts, or all contacts that match a filter:** in **Profiles**, select contacts (or **Select All**), then **More actions** → **Export** → **Confirm**.
+- **One list:** open the list, then ⋯ → **Export list** → **Confirm**.
+- **One contact:** open the contact, then ⋯ → **Export profile**.
 
-| What to export | Where |
-| --- | --- |
-| Selected contacts, or all contacts that match a filter | **Profiles** → select contacts (or **Select All**) → **More actions** → **Export** → **Confirm** |
-| One list | Open the list → ⋯ → **Export list** → **Confirm** |
-| One contact | Open the contact → ⋯ → **Export profile** |
+To download it, go to **Audience** → **Export**. The **Export List** table shows each export's **Name**, **Audience count**, **Status** and **Export date**. Click the download icon to get the CSV, or delete the record from the ⋯ menu. Search with **Search by file name**, and to delete several records, select them and choose **Delete Selected**.
 
-### Download an export
-
-Go to **Audience** → **Export**. The **Export List** table shows finished exports.
-
-| Column | Shows |
-| --- | --- |
-| Name | The export name |
-| Audience count | How many contacts it holds |
-| Status | The export status |
-| Export date | When it was created |
-| Actions | Download the CSV, or delete the record from the ⋯ menu |
-
-Search with **Search by file name**. To delete several records, select them and choose **Delete Selected**.
-
-The CSV holds the contacts' main fields, such as name, phone, email, marketing consent, and tags.
+The CSV holds the contacts' main fields, such as name, phone, email, marketing consent and tags.
 
 > [!WARNING]
 > Exports contain personal data. Store and share them only as your privacy policy allows.
+
+## See also
+
+- [Contacts](audience/contacts.md): add or edit one contact at a time.
+- [Lists](audience/lists.md): manage the lists you import into.
+- [Segments](audience/segments.md): group imported contacts by custom fields such as `city`.
+- [Send a broadcast](broadcasts/send-broadcast.md): send to the contacts you imported.
