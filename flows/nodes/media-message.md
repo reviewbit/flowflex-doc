@@ -32,4 +32,4 @@ Choose **Type → Contact**, then fill the name and contact details shown in the
 
 If the form offers response waiting and you need an answer, enable it and connect No response as well as Next step. See [Response waiting](flows/response-wait.md).
 
-For failures, see [File troubleshooting](flows/troubleshooting.md#files-do-not-upload-or-send) and [WhatsApp setup](flows/whatsapp-message-setup.md).
+For failures, see [File troubleshooting](help/troubleshooting.md#files-do-not-upload-or-send) and [WhatsApp setup](flows/whatsapp-message-setup.md).

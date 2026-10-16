@@ -1,4 +1,4 @@
-# Meta sources
+# Meta policies and sources
 
 These Meta pages back the rules in the broadcast guides. Meta changes limits and prices often, so check the live page before you rely on a number. Pages checked on 16 October 2026.
 

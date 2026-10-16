@@ -53,4 +53,4 @@ Free-form text and interactive messages are used within the customer service win
 
 A delay can move a later message outside the window. Review the message type after long delays.
 
-If a message cannot be sent, use [WhatsApp and workflow troubleshooting](flows/troubleshooting.md).
+If a message cannot be sent, use [WhatsApp and workflow troubleshooting](help/troubleshooting.md).

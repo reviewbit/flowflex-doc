@@ -28,4 +28,4 @@ Connect Next step to the action that uses the reply and No response to a fallbac
 | Internal description | Optional explanation for your team. |
 | Wait for specific time | Pause for an answer when needed. |
 
-Keep the message clear and check personalized values fit within the limit. For delivery problems, see [WhatsApp troubleshooting](flows/troubleshooting.md#a-message-does-not-arrive).
+Keep the message clear and check personalized values fit within the limit. For delivery problems, see [WhatsApp troubleshooting](help/troubleshooting.md#a-message-does-not-arrive).

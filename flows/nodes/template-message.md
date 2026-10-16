@@ -4,7 +4,7 @@ Use Template message for order updates, reminders, authentication, or approved m
 
 ## Before you start
 
-Create the template in Templates and wait for approval. Choose a template belonging to the WhatsApp account used by your flow. The node's picker lists approved templates under Marketing, Utility, and Authentication.
+Create the template in Templates and wait for approval. See [Create a template](whatsapp/create-template.md) and [Template guidelines](whatsapp/template-guidelines.md). Choose a template belonging to the WhatsApp account used by your flow. The node's picker lists approved templates under Marketing, Utility, and Authentication.
 
 Read [Shared WhatsApp setup](flows/whatsapp-message-setup.md) for choosing the recipient and understanding the reply window.
 
@@ -78,4 +78,4 @@ A template with quick replies has an output for each quick-reply choice. A templ
 
 Check the template is approved and available, its language is correct, all placeholders are filled, its header is valid, and every response path is connected.
 
-If a template is missing or a message cannot be delivered, use [WhatsApp troubleshooting](flows/troubleshooting.md).
+If a template is missing or a message cannot be delivered, use [WhatsApp troubleshooting](help/troubleshooting.md).
