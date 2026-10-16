@@ -49,6 +49,18 @@
     - [Add Note](flows/nodes/audience-actions.md#add-note)
     - [Assign agent](flows/nodes/audience-actions.md#assign-agent)
 
+- Broadcasts
+
+  - [Overview](broadcasts/overview.md)
+  - [Connect a WhatsApp channel](broadcasts/connect-channel.md)
+  - [Create a template](broadcasts/create-template.md)
+  - [Template guidelines](broadcasts/template-guidelines.md)
+  - [Send a broadcast](broadcasts/send-broadcast.md)
+  - [Broadcast guidelines](broadcasts/broadcast-guidelines.md)
+  - [Results and errors](broadcasts/results-and-errors.md)
+  - [Checklist & FAQ](broadcasts/checklist-faq.md)
+  - [Meta sources](broadcasts/meta-sources.md)
+
 - SDK (JavaScript & Python)
 
   - [Overview & install](sdk/overview.md)
