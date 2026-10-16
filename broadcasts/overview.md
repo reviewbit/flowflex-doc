@@ -8,13 +8,13 @@ Every broadcast goes through the same five steps. Each step lives in its own sid
 | --- | --- | --- |
 | 1. Connect a WhatsApp number | **Channels** | [Connect a WhatsApp channel](whatsapp/connect-channel.md) |
 | 2. Create a template and get it approved by Meta | **Templates** | [Create a template](whatsapp/create-template.md) · [Template guidelines](whatsapp/template-guidelines.md) |
-| 3. Prepare the audience | **Audience** | Import contacts, or build a list or segment |
+| 3. Prepare the audience | **Audience** | [Import and export](audience/import-export.md) · [Lists](audience/lists.md) · [Segments](audience/segments.md) |
 | 4. Create, test, and publish the broadcast | **Broadcast** | [Send a broadcast](broadcasts/send-broadcast.md) · [Broadcast guidelines](broadcasts/broadcast-guidelines.md) |
 | 5. Track results and fix failures | **Broadcast** → open a broadcast | [Results and errors](broadcasts/results-and-errors.md) |
 
 Before every send, run the [pre-send checklist](broadcasts/checklist-faq.md).
 
-The **Quick create** drawer has shortcuts for Broadcast, Template, Contact list, and Segment. The create pages have a **Watch a demo** button.
+The create pages have a **Watch a demo** button that walks through the steps with sample data.
 
 > [!NOTE]
 > Only templates with the status **Approved** can be broadcast, and only from a **Connected** channel. Meta's rules behind these guides are linked in [Meta policies and sources](help/meta-policies.md).

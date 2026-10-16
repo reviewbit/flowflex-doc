@@ -1,7 +1,7 @@
 # REST API — send events
 
 Firing an event is what **starts a flow**. The event name is matched to a flow's trigger,
-and the JSON `payload` becomes the flow's `{{trigger.*}}` variables.
+and the JSON request body becomes the flow's `{{trigger.*}}` variables.
 
 ## <span class="badge post">POST</span> `/v1/events/{integrationCode}`
 
@@ -24,17 +24,17 @@ Fire a custom-integration event.
 
 **Body**
 
+The body **is** the event data. Send the fields directly; don't wrap them in another object.
+
 ```json
 {
-  "payload": {
-    "name": "Ada",
-    "order_id": "ord_42",
-    "phone": "919999999999"
-  }
+  "name": "Ada",
+  "order_id": "ord_42",
+  "phone": "919999999999"
 }
 ```
 
-Everything under `payload` is arbitrary JSON of your choosing. Each key is referenced in
+The body is arbitrary JSON of your choosing. Each key is referenced in
 the flow as `{{trigger.<key>}}` (nested keys with dots, arrays with `[n]`). See
 [Triggers & variables](flows/triggers-and-variables.md).
 
@@ -46,7 +46,7 @@ curl -X POST "https://api.flowflex.ai/v1/events/ic_abc123" \
   -H "x-event: order.placed" \
   -H "x-idempotency-key: 8f3c…-uuid" \
   -H "Content-Type: application/json" \
-  -d '{ "payload": { "name": "Ada", "order_id": "ord_42", "phone": "919999999999" } }'
+  -d '{ "name": "Ada", "order_id": "ord_42", "phone": "919999999999" }'
 ```
 
 ```ts
@@ -60,14 +60,14 @@ await fetch("https://api.flowflex.ai/v1/events/ic_abc123", {
     "x-event": "order.placed",
     "x-idempotency-key": crypto.randomUUID(),
   },
-  body: JSON.stringify({ payload: { name: "Ada", order_id: "ord_42" } }),
+  body: JSON.stringify({ name: "Ada", order_id: "ord_42" }),
 });
 ```
 
 ### Attaching files
 
 To send media, first [upload the file](api/assets.md) to get an `assetId`, then put that
-`assetId` string in your payload where the flow's media node expects it. The
+`assetId` string in your request body where the flow's media node expects it. The
 [SDK](sdk/files.md) automates this; raw-HTTP callers do the two steps themselves.
 
 ## Idempotency

@@ -1,14 +1,15 @@
 # Set up your account
 
-Do these steps once, in this order. After that you can send broadcasts and run flows.
+Do these steps once, in this order. New to FlowFlex? Start with [Sign up and sign in](get-started/sign-up-and-sign-in.md). After that you can send broadcasts and run flows.
 
 | Step | What you do | Guide |
 | --- | --- | --- |
 | 1. Connect WhatsApp | Link your WhatsApp Business number through Meta | [Connect a WhatsApp channel](whatsapp/connect-channel.md) |
 | 2. Complete your profile | Add a description, address, email, and website to the channel | [Connect a WhatsApp channel](whatsapp/connect-channel.md#steps) |
-| 3. Add contacts | Import contacts under **Audience**, or let them arrive from WhatsApp chats | [Send a broadcast](broadcasts/send-broadcast.md) |
+| 3. Add contacts | Import contacts under **Audience**, or let them arrive from WhatsApp chats | [Import and export](audience/import-export.md) |
 | 4. Create a template | Write a message and get it approved by Meta | [Create a template](whatsapp/create-template.md) |
-| 5. Add wallet balance | Messages are charged from your wallet under **Billing** | [Send a broadcast](broadcasts/send-broadcast.md#cost) |
+| 5. Add wallet balance | Messages are charged from your wallet under **Billing** | [Billing and wallet](account/billing-and-wallet.md) |
+| 6. Invite your team | Add teammates and give each a role | [Teams](account/teams.md) |
 
 ## Then choose what to do
 
