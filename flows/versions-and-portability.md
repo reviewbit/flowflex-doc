@@ -1,27 +1,41 @@
 # Versions, publishing and JSON files
 
+Save changes as drafts, publish the version customers get, look back at earlier versions, and move a flow between workspaces as a JSON file.
+
+Each time you save, the flow gets a new version. A draft doesn't change what customers receive until you publish it, so you can edit a live flow safely.
+
+Rangoli Store wants to add a **Return an item** button to its order-tracking flow. Alex Lee adds the button and clicks **Save**. Customers keep getting the published version while Chris Taylor tests the draft. Once it works, Alex Lee publishes it.
+
 ## Save and publish
 
-**Save** creates a draft version without replacing the published version. Use the arrow beside Save → **Save and publish** to publish the graph you just saved. In view mode, **Publish** promotes the version on screen.
+1. Click **Save** to create a draft version. The published version stays as it is.
+2. To publish what you just saved, click the arrow beside **Save** and choose **Save and publish**.
+3. Check the version status in the editor, which shows the current version and whether it's published.
 
-The editor identifies the current version and whether it is published. **Show published** returns to the version customers receive. Fix validation errors before saving: exactly one Trigger and one End, connected nodes, and connections from every output.
+In view mode, **Publish** publishes the version on screen. **Show published** takes you back to the version customers receive.
 
-Incoming-message campaigns have separate configuration and publication; publishing a flow alone does not set up its campaign.
+Fix errors before saving: the flow needs exactly one Trigger and one End, every node connected, and a connection from every output.
+
+Publishing a flow doesn't set up its campaign. Incoming-message campaigns are created and published separately. See [Campaigns](flows/campaigns.md).
 
 ## Version history
 
-Open **More actions → Version history** to inspect saved versions. Historical views are read-only. Use **Edit** to return to editing, or publish the selected version when available.
+1. Open **More actions** → **Version history** to see saved versions.
+2. Select a version to view it. Earlier versions are read-only.
+3. Click **Edit** to go back to editing, or publish the selected version where that's offered.
 
-A newer draft can exist while an older version remains published. Check its status before assuming edits are live.
+A newer draft can exist while an older version is still published. Check the status before you assume your edits are live.
 
-## JSON export and import
+## Export and import JSON
 
-**More actions → Export as JSON** downloads the graph on screen, including a historical version. **Import from JSON** replaces the canvas in edit mode.
+1. To export, open **More actions** → **Export as JSON**. It downloads the version on screen, including an earlier one. Export works in view mode.
+2. To import, open the flow in edit mode and choose **Import from JSON**. The file replaces what's on the canvas.
 
-Exports omit workspace-specific configuration. Read the notice and reconfigure removed fields in the destination workspace. Imports require exactly one Trigger and one End. Review variables, integrations, and all connections before saving and publishing.
+Exports leave out settings that belong to your workspace. Read the notice, then set those fields again in the destination workspace. An imported flow needs exactly one Trigger and one End. Review variables, integrations and every connection before you save and publish.
 
-Export is available in view mode; import is an editing action.
+## See also
 
-## Practice before building
-
-Use [Learn flow builder](flows/learning-the-builder.md) to try a sample conversation without sending live messages.
+- [Build your first flow](flows/building-a-flow.md)
+- [Campaigns](flows/campaigns.md)
+- [Learn flow builder](flows/learning-the-builder.md)
+- [I cannot save the flow](help/troubleshooting.md?id=i-cannot-save-the-flow)
