@@ -6,7 +6,7 @@ The first screen says **Welcome to FlowFlex**. Click **Get started** to create a
 
 ## Create your account
 
-New accounts start with a 14-day free trial. No credit card is needed.
+New accounts can start with a free trial. A banner at the top of the app shows how many days are left.
 
 1. On **Create your account**, fill in the fields below.
 2. Tick the box to agree to the **Terms of Service** and **Privacy Policy**. **Create account** stays disabled until you do.

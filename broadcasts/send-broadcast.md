@@ -55,7 +55,7 @@ Publishing is blocked if:
 
 ## Cost
 
-Charges are taken from your wallet in message credits. The cost depends on the message category and the recipient's country; see [Billing and wallet](account/billing-and-wallet.md). Meta charges only for delivered messages ([Meta – Pricing](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing)). Marketing costs the most.
+Each delivered message is paid from your wallet in message credits. Your rates are on the **WhatsApp message charges** page in **Billing**; see [Billing and wallet](account/billing-and-wallet.md).
 
 ## What your customers see
 

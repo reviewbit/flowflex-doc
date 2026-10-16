@@ -188,9 +188,7 @@ const shots = {
   },
   "integrations/custom-integration-live": async (p) => { await go(p, "/integrations"); await clickButton(p, "Manage"); await p.getByText("Rangoli Order Events").first().waitFor(); await p.waitForTimeout(1500); },
   // ---- Account ----
-  "account/billing-overview": async (p) => { await go(p, "/settings/billing/overview"); await p.getByText(/Available message credits/i).first().waitFor({ timeout: 120000 }); await p.waitForTimeout(3000); },
   "account/set-credit-alert": async (p) => { await go(p, "/settings/billing/overview"); await clickButton(p, "Set alert"); },
-  "account/plans-page": async (p) => { await go(p, "/plans"); await p.waitForTimeout(3000); },
   "account/account-settings": async (p) => { await go(p, "/settings/account"); await p.getByText("Organisation Details").first().waitFor(); },
   "account/branches": async (p) => { await go(p, "/settings/branches"); await p.getByText(data.workspace.branch).first().waitFor(); },
   "account/team-members": async (p) => { await go(p, "/settings/teams/members"); await p.getByText(m.team[1].name).first().waitFor(); },

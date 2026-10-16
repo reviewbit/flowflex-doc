@@ -1,122 +1,48 @@
 # Plans and add-ons
 
-Your plan sets how many users, branches, channels, and active workflows your organisation can have. Add-ons raise those limits without changing plan.
+Choose a plan, add more users, branches, channels or workflows, and manage your subscription.
 
-Go to **Settings** → **Plans**. Only Admins see this page in the sidebar. Plan prices are shown on the Plans page.
+Your plan sets how many users, branches, WhatsApp channels and active workflows your organisation can have. Add-ons raise those limits without changing plan. Go to **Settings** → **Plans** to see your current subscription, the plans available to you, and what each one includes. Only Admins see this page.
 
-<img src="assets/account/plans-page.png" alt="The Plans page">
+Prices and what's included depend on your organisation's agreement with FlowFlex, so the Plans page in the app is always the place to check them. For a custom plan, click **Contact sales**.
 
-## Choose a currency and billing cycle
+## Subscribe, upgrade or add more
 
-| Control | Options |
-| --- | --- |
-| Currency | The Plans page shows prices in the currency available to your organisation. Once you subscribe, the currency is locked to your subscription. |
-| Billing cycle | **Monthly**, **Quarterly**, or **Yearly**. The page opens on your current cycle, or **Quarterly** if you have none. |
+When Rangoli Store opened a second branch in Kochi, the team didn't need a bigger plan, just one more branch. They clicked **Update Addons** on the current plan, set **Additional Branches** to 1, and confirmed.
 
-Each card shows the price per month, **Billed** cycle, users included, **Up to** N branches, and N active workflows.
+1. Choose a billing cycle at the top of the page: **Monthly**, **Quarterly** or **Yearly**.
+2. Click the button on a plan card: **Subscribe**, **Upgrade**, **Downgrade**, or **Update Addons** on your current plan.
+3. In **Configure Add-ons**, set how many extra channels, workflows, branches and users you need.
+4. Click **Next: Review**. The review screen shows exactly what you'll pay today, if anything, and when the change takes effect.
+5. Confirm and complete the payment. Allow pop-ups for the site so the payment window can open.
+6. Wait for **Your plan has been updated successfully!**
 
-## Plans
-
-| Plan | How to get it |
-| --- | --- |
-| Basic | Self-serve |
-| Growth | Self-serve |
-| Scale | Self-serve |
-| Enterprise | Custom limits, users, branches, workflows, integrations and APIs. Click **Contact sales** to talk to the team on WhatsApp. |
-
-The button on each card depends on your status:
-
-| Button | When |
-| --- | --- |
-| **Subscribe** | You are on trial, or your plan expired, was suspended, or was cancelled |
-| **Upgrade** | The plan is above your current plan |
-| **Downgrade** | The plan is below your current plan |
-| **Choose Plan** | Same tier, different billing cycle |
-| **Update Addons** | Your current plan (marked **Active**) |
-| **Contact support** | Your subscription was activated manually |
-
-## Plan comparison
-
-The table below the cards compares Basic, Growth, and Scale. What each plan includes is as listed on the Plans page.
-
-| Group | Rows |
-| --- | --- |
-| USERS | Users included, Each additional users |
-| BRANCH | Branches included, Each additional branches |
-| CHANNEL | WhatsApp number, Additional WhatsApp channel |
-| WORKFLOW | Active flows, Test flows |
-| MARKETING | Bulk broadcast, Broadcast limit, Segmentation, Opt-in facilitation, Drip marketing, Reply configuration, and other rows as listed on the Plans page |
-| FEATURES | Blue Tick Assistance, Support Group on WhatsApp, Account Manager, and other rows as listed on the Plans page |
-
-## Subscribe, upgrade, or change add-ons
-
-1. Click the plan's button. The **Configure Add-ons** drawer opens.
-2. Set **Additional Channels**, **Additional Workflows**, **Additional Branches**, and **Additional Users**. Each goes from 0 up to the maximum shown. The drawer shows the unit price.
-3. Click **Next: Review** (or **Next: Review change** if you already pay).
-4. Check the review screen, then confirm.
-5. Pay in the Razorpay window and authorise the payment mandate. Allow pop-ups for the site.
-6. Wait on **Updating Your Subscription** until you see **Your plan has been updated successfully!**
-
-| Review screen | What happens |
-| --- | --- |
-| **Review your subscription** (new subscription) | **You'll be charged X today.** The subscription auto-renews every cycle. Button: **Pay X & subscribe**. |
-| **Confirm upgrade** / **Confirm add-on update** | Takes effect now. Unused time on your current cycle is credited (**Unused credit**). You pay the prorated difference (**Charged today**). Button: **Pay X & upgrade** or **Pay X & add**. |
-| **Confirm downgrade** / **Confirm add-on removal** | **No charge today.** You keep the current plan and add-ons until renewal, then the change applies. |
-| **Nothing to change** | Your selection matches what you have. |
-
-Example: Rangoli Store opens a second branch in Kochi. Ananya clicks **Update Addons**, sets **Additional Branches** to 1, and pays the prorated amount today.
+Upgrades and new add-ons take effect straight away. Downgrades and removed add-ons take effect at your next renewal, and you keep everything you have until then.
 
 > [!NOTE]
-> If confirmation takes over 3 minutes, you see **Failed to confirm subscription status within 3 minutes. Please check back later.** Check **Billing** → **Transactions** before paying again.
+> If confirmation takes longer than a few minutes, check **Billing** → **Transactions** before paying again.
 
-## Authorise a new mandate
+If your plan was set up for you by FlowFlex, the page shows **This subscription was activated manually**, and plan changes go through FlowFlex support.
 
-Some plan changes ask you to authorise a new payment mandate. Authorise it before the change date, or service stops at renewal.
+## Authorise a new payment mandate
 
-- A banner reads **Your new plan starts on DATE. Authorize the mandate before then to keep service active.**
-- Click **Authorize now** to open Razorpay. If there is no link yet, FlowFlex emails you one.
-
-If a change is still being processed, the drawer shows **Pending change in progress**. Click **Cancel pending change** to start a different one.
+Some plan changes need you to authorise automatic payments again. A banner tells you the date: **Your new plan starts on DATE. Authorize the mandate before then to keep service active.** Click **Authorize now** and follow the steps, before that date, so your service continues at renewal.
 
 ## Cancel a subscription
 
-1. On the **Current Subscription** card, click **Cancel subscription**. It is shown only for subscriptions paid automatically through Razorpay.
+1. On the **Current Subscription** card, click **Cancel subscription**.
 2. Confirm with **Cancel subscription**, or click **Keep subscription**.
 
-The plan stays active until the billing end date. The card shows **Cancellation scheduled** and **Your subscription will end on DATE.**
+Your plan stays active until the end of the billing period, and the card shows **Cancellation scheduled**.
 
-## Current Subscription card
+## When something needs your attention
 
-| Item | Meaning |
-| --- | --- |
-| Status tag | Your status, **Cancellation scheduled**, or **Payment pending** |
-| **Automated via Razorpay** / **Manual subscription** | How you pay, and the billing cycle |
-| **Started**, **Next billing**, **Ends** | Key dates |
-| **Add-ons:** | Add-ons you pay for |
-| **Recurring amount** | What each renewal costs |
+A banner at the top of the app tells you when your trial is ending, a renewal payment is pending, or your plan has ended. Click **Upgrade Plan** or **Manage Billing** in the banner to sort it out.
 
-**Manual subscriptions.** If support activated your plan manually, you see **This subscription was activated manually**. Plan and add-on changes go through support.
+If your subscription expires, is cancelled or is suspended, most of FlowFlex, including **Broadcast**, **Templates**, flows and **Conversations**, opens the **Plans** page until you subscribe again. Reaching a limit, such as **Branch limit reached** or **User limit reached**, also opens **Plans** so you can add more.
 
-**Renewal pending.** If a renewal payment fails, you have a grace period. The card and banner show **Payment pending. Complete renewal in N days to avoid losing access.**
+## See also
 
-**Currency changes.** Currency cannot change mid-cycle. Let the subscription run to renewal, cancel it, and subscribe again in the new currency.
-
-## Banners and blocked pages
-
-A banner at the top of the app warns you about your subscription.
-
-| Banner | Button |
-| --- | --- |
-| **Your trial period ends in N days.** | **Upgrade Plan** |
-| **Your trial has expired.** | **Upgrade Plan** |
-| **Your plan has ended.** | **Upgrade Plan** |
-| **Your subscription will end on DATE.** | **Upgrade Plan** |
-| **Your subscription has been cancelled.** | **Upgrade Plan** |
-| **Your account has been suspended due to a payment failure.** | **Upgrade Plan** |
-| **Payment pending. Complete renewal in N days to avoid losing access.** | **Manage Billing** |
-| **Your new plan starts on DATE. Authorize the mandate before then to keep service active.** | **Authorize now** |
-
-> [!WARNING]
-> When the subscription is expired, cancelled, or suspended, these pages redirect to **Plans**: Flow builder, **Broadcast**, campaigns, **Templates**, **Integrations**, **Conversations**, **Teams**, and **Branches**. Subscribe again to unlock them.
-
-Hitting a limit also sends you here. For example, **Branch limit reached** or **User limit reached** opens **Plans** so you can add add-ons. See [Branches](account/branches.md) and [Teams](account/teams.md).
+- [Billing and wallet](account/billing-and-wallet.md)
+- [Branches](account/branches.md)
+- [Teams](account/teams.md)
