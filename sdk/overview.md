@@ -81,7 +81,7 @@ In the flow builder these land under `trigger` — e.g. `{{trigger.name}}`,
 | `apiKey` | string | yes | Custom-integration key (`cik_…`). |
 | `apiSecret` | string | yes | Custom-integration secret (`cisk_…`). |
 | `integrationCode` | string | yes | The `<code>` in `/v1/events/<code>`. |
-| `baseUrl` | string | yes | FlowFlex host. Must be `https` (except `localhost`). A trailing `/api` is stripped. |
+| `baseUrl` | string | yes | FlowFlex host. Must be `https` (except `localhost`). |
 | `timeoutMs` | number | no | Per-request timeout. Default `30000`. |
 | `maxFileBytes` | number | no | Client-side size cap. Default `26214400` (25 MB). |
 | `fetch` | function | no | Custom fetch for runtimes without a global one. |
@@ -98,7 +98,7 @@ In the flow builder these land under `trigger` — e.g. `{{trigger.name}}`,
 | `api_key` | str | yes | Custom-integration key (`cik_…`). |
 | `api_secret` | str | yes | Custom-integration secret. |
 | `integration_code` | str | yes | The `<code>` in `/v1/events/<code>`. |
-| `base_url` | str | yes | FlowFlex host. Must be `https` (except `localhost`). Trailing `/api` stripped. |
+| `base_url` | str | yes | FlowFlex host. Must be `https` (except `localhost`). |
 | `timeout_seconds` | float | no | Per-request timeout. Default `30.0`. |
 | `max_file_bytes` | int | no | Client-side size cap. Default `26214400` (25 MB). |
 | `session` | requests.Session | no | Custom session for connection pooling / proxies. |

@@ -77,7 +77,7 @@ exactly what you reference in the flow as `{{trigger.name}}`, `{{trigger.order_i
 
 ## 4. Attach a file (optional)
 
-To send a PDF/image, wrap it with `ff.file(...)` and reference it in a **Media** node — the
+To send a PDF/image, wrap it with `ff.file(...)` and reference it in a **Media message** node — the
 SDK handles the upload for you:
 
 ```ts
@@ -86,7 +86,7 @@ await ff.sendEvent("invoice.created", {
 });
 ```
 
-Then in the Media node set **File source → Private file (assetId)** and the **Asset ID** to
+Then in the Media message node set **File source → Uploaded file** and the **Asset ID** to
 `{{trigger.invoice}}`. Full details in [SDK → File attachments](sdk/files.md).
 
 ## Where to next

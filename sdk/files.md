@@ -1,8 +1,8 @@
 # SDK — file attachments
 
 Wrap any file in `ff.file(...)` and drop it into the payload. The SDK uploads it through a
-presigned URL and replaces it with an opaque `assetId` before the event is sent. **The
-file bytes go straight to storage — they never pass through the FlowFlex app server.**
+presigned URL and replaces it with an opaque `assetId` before the event is sent. **Files
+upload directly and securely.**
 
 <!-- tabs:start -->
 
@@ -28,9 +28,9 @@ ff.send_event("invoice.created", payload={
 
 <!-- tabs:end -->
 
-Then in your flow's **Media Message** node:
+Then in your flow's **Media message** node:
 
-1. Set **File source** → `Private file (assetId)`
+1. Set **File source** → **Uploaded file**
 2. Set the **Asset ID** field → `{{trigger.invoice}}`
 
 > The key you use in the payload is the key you reference in the flow. Send
@@ -147,13 +147,13 @@ OGG. **Max size:** 25 MB.
 
 > Read this before using file attachments in production.
 
-Files go to **private storage** only the FlowFlex backend can read — not a public URL.
+Files go to **private storage**, never a public URL.
 
 | Phase | Duration |
 | --- | --- |
 | Presigned upload URL valid | **2 hours** from `createUploadUrl` / `create_upload_url` |
 | File kept in storage | **48 hours** from upload |
-| After 48 hours | File **deleted** + record removed (hourly cleanup job) |
+| After 48 hours | File **deleted** |
 
 What this means for you:
 

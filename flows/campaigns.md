@@ -3,7 +3,7 @@
 A campaign switches on a published flow so that incoming WhatsApp messages start it. You find campaigns under **Automations** → **All campaigns**, on the **Auto Campaign** page.
 
 > [!NOTE]
-> The flow builder and Saved data are enabled per organisation. If you don't see **Flow builder** in the sidebar, contact FlowFlex support to enable it.
+> Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
 
 ## How a campaign works
 
@@ -11,7 +11,7 @@ A campaign switches on a published flow so that incoming WhatsApp messages start
 2. You create a campaign for that flow and set its dates.
 3. While the campaign is **Active**, a customer's message on the flow's channel starts the flow for that customer.
 
-Each contact goes through a campaign once. A second message from the same contact does not restart it until the campaign's end date passes (30 days at most).
+Each contact goes through a campaign once. A second message from the same contact does not restart it until the campaign's end date passes.
 
 The START and STOP keywords from [Subscription Auto Replies](messaging/settings.md#subscription-auto-replies) never start a campaign.
 

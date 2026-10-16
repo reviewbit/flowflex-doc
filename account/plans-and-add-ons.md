@@ -10,7 +10,7 @@ Go to **Settings** → **Plans**. Only Admins see this page in the sidebar. Plan
 
 | Control | Options |
 | --- | --- |
-| Currency | **INR** for organisations in India, **USD** for all others. Once you subscribe, the currency is locked to your subscription. |
+| Currency | The Plans page shows prices in the currency available to your organisation. Once you subscribe, the currency is locked to your subscription. |
 | Billing cycle | **Monthly**, **Quarterly**, or **Yearly**. The page opens on your current cycle, or **Quarterly** if you have none. |
 
 Each card shows the price per month, **Billed** cycle, users included, **Up to** N branches, and N active workflows.
@@ -51,7 +51,7 @@ The table below the cards compares Basic, Growth, and Scale. What each plan incl
 ## Subscribe, upgrade, or change add-ons
 
 1. Click the plan's button. The **Configure Add-ons** drawer opens.
-2. Set **Additional Channels**, **Additional Workflows**, **Additional Branches**, and **Additional Users**. Each goes from 0 up to the plan's maximum (at most 100). The drawer shows the unit price.
+2. Set **Additional Channels**, **Additional Workflows**, **Additional Branches**, and **Additional Users**. Each goes from 0 up to the maximum shown. The drawer shows the unit price.
 3. Click **Next: Review** (or **Next: Review change** if you already pay).
 4. Check the review screen, then confirm.
 5. Pay in the Razorpay window and authorise the payment mandate. Allow pop-ups for the site.
@@ -71,7 +71,7 @@ Example: Rangoli Store opens a second branch in Kochi. Ananya clicks **Update Ad
 
 ## Authorise a new mandate
 
-Some changes create a new Razorpay subscription. Authorise its mandate before the change date, or service stops at renewal.
+Some plan changes ask you to authorise a new payment mandate. Authorise it before the change date, or service stops at renewal.
 
 - A banner reads **Your new plan starts on DATE. Authorize the mandate before then to keep service active.**
 - Click **Authorize now** to open Razorpay. If there is no link yet, FlowFlex emails you one.
@@ -95,7 +95,7 @@ The plan stays active until the billing end date. The card shows **Cancellation 
 | **Add-ons:** | Add-ons you pay for |
 | **Recurring amount** | What each renewal costs |
 
-**Manual subscriptions.** If support activated your plan without a Razorpay mandate, you see **This subscription was activated manually**. Plan and add-on changes go through support.
+**Manual subscriptions.** If support activated your plan manually, you see **This subscription was activated manually**. Plan and add-on changes go through support.
 
 **Renewal pending.** If a renewal payment fails, you have a grace period. The card and banner show **Payment pending. Complete renewal in N days to avoid losing access.**
 

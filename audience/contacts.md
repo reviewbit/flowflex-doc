@@ -90,7 +90,7 @@ To change a contact, click the pencil icon in its row. The **Edit contact** draw
 | **Customer creation failed! Customer already exists** | A contact with this phone number already exists in the branch | Search for the number and edit that contact instead |
 
 > [!WARNING]
-> When you edit a contact, the consent checkbox applies again. If it is ticked, a contact who unsubscribed is re-subscribed to all three channels. Untick it to keep them unsubscribed.
+> Check the consent checkboxes before saving a contact; saving applies the consent shown.
 
 ## Bulk actions
 
@@ -108,9 +108,6 @@ To change a contact, click the pencil icon in its row. The **Edit contact** draw
 | **Assign owner** | Sets the owner. Leave it at **Not assigned** to clear the owner. |
 | **Export** | Starts a CSV export. Download it from the [Export tab](audience/import-export.md#export) when it finishes. |
 | **Delete** | Deletes the contacts permanently |
-
-> [!NOTE]
-> The **Subscribe** and **Unsubscribe** confirmation titles mention WhatsApp, but both change SMS and Email consent too.
 
 To delete one contact, click the bin icon in its row and confirm with **Yes**.
 

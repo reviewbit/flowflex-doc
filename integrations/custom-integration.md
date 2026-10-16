@@ -167,9 +167,9 @@ The integration is removed from your integrations list. This cannot be undone. D
 
 | Action | Permission needed |
 | --- | --- |
-| See integrations and open **Manage** | `integration.view` |
-| Create | `integration.create` |
-| Edit, change icon, regenerate | `integration.edit` |
-| Revoke, delete | `integration.delete` |
+| See integrations and open **Manage** | **Integration view** |
+| Create | **Integration create** |
+| Edit, change icon, regenerate | **Integration edit** |
+| Revoke, delete | **Integration delete** |
 
 See [Roles and permissions](account/roles-and-permissions.md).

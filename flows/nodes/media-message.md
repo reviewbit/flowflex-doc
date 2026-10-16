@@ -7,7 +7,7 @@ Use Media message for a product image, video, voice/audio file, document, or con
 1. Add **Media message** and open it.
 2. Set Destination number with the customer's phone variable.
 3. In **Type**, choose Document.
-4. In **File source**, choose Upload new file and pick your brochure.
+4. In **File source**, choose **Upload new file** and pick your brochure.
 5. Wait for upload to finish and review the file preview.
 6. Fill any additional fields shown for that media type.
 7. Click Save changes and connect Next step to another action or End.
@@ -16,7 +16,7 @@ The same uploaded brochure is attached each time this node runs.
 
 ## Send a different invoice for each customer
 
-Choose Document, then select **Public URL** if the event contains a direct invoice URL, or **Uploaded file** if it contains an assetId. Use [Insert Variable](flows/using-variables.md) to select that customer-specific field.
+Choose Document, then select **Public URL** if the event contains a direct invoice URL, or **Uploaded file** if it contains an assetId (insert it in **Asset ID**). Use [Insert Variable](flows/using-variables.md) to select that customer-specific field.
 
 See [Choose files and media](flows/files-and-media.md) for file sources, expiry, and the type-specific size limits. Image files can be up to 5 MB, video/audio up to 16 MB, and documents up to 100 MB.
 

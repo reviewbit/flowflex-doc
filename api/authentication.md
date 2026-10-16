@@ -9,7 +9,7 @@ the [SDK](sdk/overview.md) is just a convenience wrapper over these endpoints.
 https://api.flowflex.ai
 ```
 
-Use your own FlowFlex host if self-hosted. All endpoints below are under `/v1`.
+All endpoints below are under `/v1`.
 
 ## Credentials
 

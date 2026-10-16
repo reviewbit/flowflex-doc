@@ -43,7 +43,7 @@ Separate several tags in one cell with commas. Arjun's number has no `+`, so it 
 4. Drop the file on the box, or click **Click to upload**.
 5. Check the summary under the preview, then click **Next: Map columns**.
 
-FlowFlex reads the file in your browser first and shows the first 5 rows. The summary tells you what will happen:
+FlowFlex previews the first rows. The summary tells you what will happen:
 
 | Line | Meaning |
 | --- | --- |
@@ -110,7 +110,7 @@ Pick **Custom field** to keep any other data, such as `city` or `last_order_date
 
 The custom field is created when the import runs. It then appears as a column in **Profiles**, on the contact's **Other** tab, and as a field in filters and [segments](audience/segments.md). Custom fields created by an import are text fields.
 
-Some names belong to built-in fields and cannot be used, such as `phone`, `email`, `lists`, or `order_count`. You see **"name" is reserved — it would collide with a built-in field. Pick a different name.**
+You cannot use names already used by built-in fields, such as phone or email. You see **"name" is reserved — it would collide with a built-in field. Pick a different name.**
 
 ### 3. Confirm
 

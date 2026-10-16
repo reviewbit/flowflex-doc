@@ -51,6 +51,6 @@ Publishing is blocked if:
 
 ## Cost
 
-Charges are taken from the wallet at Meta's per-message rate. The rate depends on the template category and the recipient's country, and Meta charges only for delivered messages ([Meta – Pricing](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing)). Marketing costs the most. GST is added for organisations outside India.
+Charges are taken from your wallet in message credits. The cost depends on the message category and the recipient's country; see [Billing and wallet](account/billing-and-wallet.md). Meta charges only for delivered messages ([Meta – Pricing](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing)). Marketing costs the most.
 
 Next: follow the [Broadcast guidelines](broadcasts/broadcast-guidelines.md) to protect your number's quality.

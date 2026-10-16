@@ -36,7 +36,7 @@ If you use several groups, check the AND/OR setting within each group and betwee
 ## Choose the right node
 
 - **Condition split** gives you Yes and No, including an explicit route for unmatched cases.
-- **Condition branch** checks named paths in order and uses the first matching path. It does not add a separate Default output in the current drawer.
+- **Condition branch** checks named paths in order and uses the first matching path. Condition branch has no default path. Use a Condition split if you need a fallback.
 - **Repeat until** uses a condition to decide when to stop repeating.
 
 Connect every displayed path. For guaranteed fallback routing, use a Condition split's No output.

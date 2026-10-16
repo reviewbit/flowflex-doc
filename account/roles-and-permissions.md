@@ -6,7 +6,7 @@ Go to **Settings** → **Teams** → **Roles**.
 
 ## The Admin role
 
-Every organisation has an **Admin** role with **Full control** (`all.*`). It can do everything, including Billing, Plans, Teams, and Branches.
+Every organisation has an **Admin** role with **Full control**. It can do everything, including Billing, Plans, Teams, and Branches.
 
 The Admin role is a default role. **Default roles cannot be edited** and **Default roles cannot be deleted**. You can copy it.
 
@@ -130,7 +130,7 @@ See [Send a broadcast](broadcasts/send-broadcast.md).
 
 | Permission | Allows |
 | --- | --- |
-| **Workflow view** | Open the Flow builder and **Automations** |
+| **Workflow view** | Open the Flow builder and **Automations**, if Flow builder is available on your account |
 | **Workflow create** | Create flows |
 | **Workflow edit** | Edit flows |
 | **Workflow delete** | Delete flows |
@@ -174,28 +174,7 @@ See [Campaigns](flows/campaigns.md).
 | **Integration edit** | Change integrations |
 | **Integration delete** | Remove integrations |
 
-## What each permission shows in the sidebar
-
-A sidebar item appears only when the role has the permission below. A group disappears when none of its items are allowed.
-
-| Sidebar item | Needs |
-| --- | --- |
-| Flow builder | **Workflow view**, and Flow builder turned on for your organisation |
-| **Automations** | **Workflow view** |
-| **Automations** → **All campaigns** | **Workflow view** and **Campaign view** |
-| **Automations** → **Saved data** | **Workflow view**, and Flow builder turned on |
-| **Broadcast** | **Broadcast view** |
-| **Templates** | **Template view** |
-| **Channels** | **Channel view** |
-| **Audience** | **Audience view** |
-| **Messaging** | **Conversation view**, **Messaging settings view**, or **Messaging settings edit** |
-| **Messaging** → **Conversations** and chat folders | **Conversation view** |
-| **Messaging** → **Settings** | **Messaging settings view** or **Messaging settings edit** |
-| **Integrations** | **Integration view** |
-| **Settings** → **Account** | **Conversation view** |
-| **Billing**, **Settings** → **Plans**, **Teams**, **Branches** | Admin (Full control) |
-
-Opening a page by its URL without the matching permission sends the user back to the home page.
+Members see only the pages and actions their role allows.
 
 ## Example roles
 

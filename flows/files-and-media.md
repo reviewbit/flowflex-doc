@@ -8,7 +8,7 @@ Use this guide when a Media message, template header, or message header needs a 
 | --- | --- | --- |
 | **Upload new file** | The same brochure or image for every customer | Choose a file from your computer and wait for upload to finish. |
 | **Public URL** | A file accessible through a direct link | Paste the file URL or insert the variable that contains it. |
-| **Uploaded file** | A different private file for each customer | Select the assetId supplied by your integration. |
+| **Uploaded file** | A different private file for each customer | In **Asset ID**, insert the assetId supplied by your integration. |
 
 ## Upload one reusable file
 
@@ -28,7 +28,7 @@ If each customer has a different file URL, use [Insert Variable](flows/using-var
 
 ## Use a private customer file
 
-Your integration uploads the file and includes its assetId in the event that starts the flow. Choose **Uploaded file** and insert that assetId field, for example **Trigger → invoice**.
+Your integration uploads the file and includes its assetId in the event that starts the flow. Choose **Uploaded file** and, in **Asset ID**, insert that assetId field, for example **Trigger → invoice**.
 
 These event-uploaded files expire after 48 hours. Keep the upload and message close together; a long delay may require a fresh upload. Integration setup is covered in [SDK file attachments](sdk/files.md).
 

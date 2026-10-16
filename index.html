@@ -1032,6 +1032,93 @@
          Replace the <div class="img-slot"> with ![alt](assets/flows/x.png)
          once you have the screenshot.
          =================================================================== */
+      /* ===================================================================
+         Docs home (README.md): hero, section cards, help strip
+         =================================================================== */
+      .markdown-section .ff-home-hero {
+        padding: 8px 0 24px;
+        border-bottom: 1px solid var(--ff-border);
+        margin-bottom: 28px;
+      }
+      .markdown-section .ff-home-hero h1 {
+        margin: 0 0 10px;
+      }
+      .markdown-section .ff-home-hero p {
+        font-size: 1.0625rem;
+        color: var(--ff-text-secondary);
+        max-width: 640px;
+        margin: 0 0 18px;
+      }
+      .ff-home-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .markdown-section a.ff-btn {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: var(--ff-radius-md);
+        border: 1px solid var(--ff-border);
+        color: var(--ff-text-heading);
+        font-weight: 600;
+        text-decoration: none;
+        background: var(--ff-surface);
+      }
+      .markdown-section a.ff-btn-primary {
+        background: var(--ff-primary);
+        border-color: var(--ff-primary);
+        color: #fff;
+      }
+      .markdown-section a.ff-btn:hover {
+        border-color: var(--ff-primary);
+        text-decoration: none;
+      }
+      .ff-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 14px;
+        margin: 0 0 32px;
+      }
+      .markdown-section a.ff-card {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 16px;
+        border: 1px solid var(--ff-border);
+        border-radius: 10px;
+        background: var(--ff-surface);
+        text-decoration: none;
+        transition: border-color 0.12s ease, box-shadow 0.12s ease;
+      }
+      .markdown-section a.ff-card:hover {
+        border-color: var(--ff-primary);
+        box-shadow: 0 2px 8px rgba(127, 86, 217, 0.12);
+        text-decoration: none;
+      }
+      .markdown-section a.ff-card strong {
+        color: var(--ff-text-heading);
+        font-size: 0.975rem;
+      }
+      .markdown-section a.ff-card strong::after {
+        content: " →";
+        color: var(--ff-primary);
+      }
+      .markdown-section a.ff-card span {
+        color: var(--ff-text-secondary);
+        font-size: 0.875rem;
+        line-height: 1.45;
+      }
+      .markdown-section .ff-help-strip {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: baseline;
+        margin-top: 32px;
+        padding: 14px 16px;
+        border-radius: 10px;
+        background: var(--ff-primary-subtle);
+      }
+
       /* Product screenshots */
       .markdown-section img {
         border: 1px solid var(--ff-border);
@@ -1138,8 +1225,6 @@
         repo: "",
         loadSidebar: true,
         loadNavbar: false,
-        coverpage: true,
-        onlyCover: false,
         auto2top: true,
         maxLevel: 3,
         // Page headings now live in the right-hand "On this page" TOC,

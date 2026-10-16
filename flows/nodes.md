@@ -70,7 +70,3 @@ Every rendered output must be connected to another node or End:
 - **Success**, **Non-2xx response**, and **Request failed** for new API nodes.
 
 An unconnected output is a validation error. See [Building a flow](flows/building-a-flow.md).
-
-## Hidden nodes
-
-Subflow and Catalogue message remain hidden and disabled for new creation. Use the available toolbox options when building a new flow.

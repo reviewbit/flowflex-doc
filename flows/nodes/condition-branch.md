@@ -20,7 +20,7 @@ Place specific paths before broader ones. If two paths match, only the first is 
 
 ## Plan for an unmatched value
 
-The current drawer does not add a separate Default output. If you need an explicit fallback for any other status, use a Condition split before the branch to check whether the status is one of the supported values. Connect its No path to help or End.
+Condition branch has no default path. Use a Condition split if you need a fallback. If you need an explicit fallback for any other status, use a Condition split before the branch to check whether the status is one of the supported values. Connect its No path to help or End.
 
 ## Before publishing
 

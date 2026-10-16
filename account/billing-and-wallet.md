@@ -6,11 +6,10 @@ Go to **Billing**. The page has five tabs: **Billing Overview**, **Wallet**, **T
 
 ## How message charges work
 
-WhatsApp charges are paid from your wallet in message credits. One credit is anchored to ₹1.
+WhatsApp charges are paid from your wallet in message credits.
 
 - Meta charges per delivered message. The rate depends on the message category (Marketing, Utility, Authentication, Service) and the recipient's country. See [Meta – Pricing](https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing).
-- FlowFlex reads Meta's usage data and deducts credits in batches, so deductions can take up to 2 hours to show.
-- GST is added to message charges for organisations outside India.
+- Charges can take a short time to appear in your balance.
 - Current rates are on the **WhatsApp message charges** page. The link appears on the overview, in the **Add message credits** drawer, and on every plan card.
 
 > [!NOTE]
@@ -34,7 +33,7 @@ The bar compares **Usage** (credits used / credits recharged) with **Remaining u
 
 ### Platform usage breakdown by services
 
-A day-by-day table for the month you pick. Costs here may exclude taxes and fees.
+A day-by-day table for the month you pick.
 
 | Column | Meaning |
 | --- | --- |
@@ -52,7 +51,7 @@ A stacked chart of monthly spend by category: Marketing, Utility, Authentication
 
 ## Wallet
 
-The **Wallet** tab shows **Available message credits** and **Wallet activity**: recharges, adjustments, and migration entries.
+The **Wallet** tab shows **Available message credits** and **Wallet activity**: recharges and adjustments.
 
 | Column | Meaning |
 | --- | --- |
@@ -78,9 +77,8 @@ Filter by **Last 7 days**, **Last 30 days**, or **Custom Range**.
 | --- | --- |
 | **Message credits** | Credits you are buying |
 | **Amount to pay** | Credits converted to your payment currency |
-| **Service charges (2.5%)** | 2.5% of the amount to pay. Applies to every recharge. |
-| **GST (18%)** | 18% of amount plus service charges. Only for organisations in India paying in INR. |
-| **Total amount** | What Razorpay charges |
+| **Additional charges** | Shown in the payment summary before you pay. |
+| **Total amount** | The amount you pay |
 
 The minimum recharge depends on your payment currency. If you enter less, the drawer shows **Message credits must be at least N for CUR payments.**
 
@@ -91,13 +89,13 @@ The minimum recharge depends on your payment currency. If you enter less, the dr
 1. Click **Set alert**.
 2. Check **Current credit threshold**.
 3. Enter **New credit threshold**. It must be greater than 0.
-4. Optional: add **Additional email** addresses and **Phone number** entries.
+4. Optional: add **Additional email** addresses.
 5. Click **Set alert**.
 
-When credits fall below the threshold, FlowFlex emails a reminder with a link to the Wallet. It repeats every 24 hours a few times while the balance stays low.
+When credits fall below the threshold, FlowFlex sends an email reminder to the admin email and any additional emails, with a link to the Wallet. FlowFlex reminds you again if the balance stays low.
 
 > [!NOTE]
-> Low-balance reminders are sent by email to the addresses on the alert. Add every inbox that should hear about a low balance, such as `accounts@rangoli.example`.
+> Add every inbox that should hear about a low balance, such as `accounts@rangoli.example`.
 
 ## Transactions
 
@@ -136,7 +134,7 @@ These details print on receipts and invoices. Click the edit icon (**Edit billin
 | **Company name** | Optional. Defaults to the organisation name. |
 | **Billing email** | Required. Must be a valid email. |
 | **Use business address as billing address** | Copies the address from [Organisation settings](account/organisation.md) and locks the address fields |
-| **GSTIN (optional)** | India only. 15 characters, such as `29ABCDE1234F1Z5`. |
+| **GSTIN (optional)** | Your 15-character GSTIN, such as `29ABCDE1234F1Z5`. |
 | **Address line 1**, **Address line 2**, **City**, **State**, **Country**, **Postal code** | Billing address |
 
-Example: for Rangoli Store, set **Billing email** to `accounts@rangoli.example` and add the GSTIN so the GST on recharges can be claimed.
+Example: for Rangoli Store, set **Billing email** to `accounts@rangoli.example` and add your GSTIN so it appears on your invoices.

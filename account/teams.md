@@ -41,8 +41,6 @@ You cannot edit or remove yourself or the organisation owner. Members marked **D
 
 You see **Successfully sent an invitation to … with the role: ….** The invitation link is valid for 24 hours. After that, the status shows **Invite expired**; click **Resend invitation**.
 
-<!-- screenshot: account/invite-user -->
-
 ### Branch and channel access
 
 | Option | Access |

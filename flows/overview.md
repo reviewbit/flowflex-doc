@@ -1,7 +1,7 @@
 # Workflows overview
 
 > [!NOTE]
-> The flow builder is switched on per organisation. If you don't see **Flow builder** in the sidebar, contact FlowFlex support to enable it.
+> Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
 
 A flow connects actions into a customer journey: greet a customer, offer choices, collect information, look up an order, or hand the conversation to your team.
 
