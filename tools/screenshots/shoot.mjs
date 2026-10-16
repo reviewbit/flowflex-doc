@@ -85,7 +85,16 @@ await context.route("**/*", (route) => {
   return route.continue();
 });
 const page = await context.newPage();
-await signIn(page);
+page.setDefaultTimeout(60000);
+try {
+  await signIn(page);
+} catch (e) {
+  fs.mkdirSync(path.join(here, "out"), { recursive: true });
+  await page.screenshot({ path: path.join(here, "out/sign-in-failed.png") });
+  console.log(`sign-in failed at ${page.url().split("?")[0]}: ${e.message.split("\n")[0]} (see out/sign-in-failed.png)`);
+  await browser.close();
+  process.exit(1);
+}
 
 let failed = 0;
 for (const [name, run] of Object.entries(shots)) {
@@ -113,18 +122,56 @@ async function signIn(p) {
   await p.locator("#si-password").fill(process.env.DOCS_PASSWORD);
   await p.locator("button[type=submit]").click();
   const org = process.env.DOCS_ORG;
-  await p.waitForURL((u) => u.host === new URL(APP).host || u.pathname.includes("/organisations"), { timeout: 30000 });
+  await p.waitForURL((u) => u.host === new URL(APP).host || u.pathname.includes("/organisations"), { timeout: 180000 });
   if (!p.url().startsWith(APP)) {
     if (!org) throw new Error("Several organisations: set DOCS_ORG to the demo organisation's name");
     await p.getByText(org, { exact: true }).click();
-    await p.waitForURL((u) => u.href.startsWith(APP), { timeout: 30000 });
+    await p.getByRole("button", { name: "Continue" }).click();
+    await p.waitForURL((u) => u.href.startsWith(APP), { timeout: 180000 });
+  }
+  if ((await p.title()).includes("504") || (await p.content()).includes("504 Gateway")) {
+    await go(p, "/");
   }
   await p.waitForLoadState("networkidle").catch(() => {});
+  await selectBranch(p, process.env.DOCS_BRANCH || data.workspace.branch);
   console.log("signed in");
 }
 
+// Channels, templates, broadcasts and flows belong to a branch: switch to the demo one
+// (top bar name → Switch branch). The app keeps the choice in localStorage for later loads.
+async function selectBranch(p, name) {
+  // The name/branch block in the top bar opens the profile drawer.
+  await p.waitForFunction(() => document.querySelectorAll("header, .ant-layout-header, button").length > 3, null, { timeout: 120000 });
+  await p.waitForTimeout(3000);
+  const box = await p.evaluate(() => {
+    const w = window.innerWidth;
+    const hit = [...document.querySelectorAll("div, span")].find((el) => {
+      const r = el.getBoundingClientRect();
+      return r.top < 70 && r.left > w * 0.7 && r.height > 20 && getComputedStyle(el).cursor === "pointer" && !/\d/.test(el.textContent || "");
+    });
+    if (!hit) return null;
+    const r = hit.getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+  });
+  if (!box) throw new Error("profile block not found in top bar");
+  await p.mouse.click(box.x, box.y);
+  await p.getByText("Switch branch", { exact: true }).click();
+  const drawer = p.locator(".ant-drawer-content:visible").last();
+  await drawer.getByText(name, { exact: true }).first().click();
+  await p.waitForTimeout(2000);
+  const stored = await p.evaluate(() => localStorage.getItem("branch_id"));
+  console.log(`branch: ${name} (${stored ? "saved" : "NOT saved"})`);
+}
+
 async function go(p, route) {
-  await p.goto(APP + route);
+  // The devbox runs `next dev`, which compiles a page on first visit; allow for it.
+  // nginx returns 504 while a page compiles; wait and retry.
+  for (let attempt = 1; ; attempt++) {
+    const res = await p.goto(APP + route, { waitUntil: "domcontentloaded", timeout: 180000 });
+    if (!res || res.status() < 500 || attempt === 6) break;
+    console.log(`  ${route}: ${res.status()}, retrying (${attempt})`);
+    await p.waitForTimeout(20000);
+  }
   await p.waitForLoadState("networkidle").catch(() => {});
 }
 
