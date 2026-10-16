@@ -45,7 +45,7 @@ const shots = {
     p = await signedOutPage();
     await p.goto(`${USERS}/auth/register`, { waitUntil: "domcontentloaded", timeout: 180000 });
     await p.getByPlaceholder("e.g. Ravi Kulkarni").fill("Ananya Rao");
-    await p.getByPlaceholder("98765 43210").fill("90000 00010");
+    await p.getByPlaceholder("98765 43210").fill("+91 90000 00010");
     await p.getByPlaceholder("you@company.com").fill(data.user.email);
     return p;
   },
@@ -139,10 +139,10 @@ const shots = {
     await p.waitForTimeout(800);
   },
   "messaging/settings-page": async (p) => { await go(p, "/chat/settings"); await p.getByText("Business hours").first().waitFor(); },
-  "messaging/settings-subscription-auto-replies": async (p) => { await go(p, "/chat/settings"); await scrollTo(p, "Subscription Auto Replies"); await p.evaluate(() => window.scrollBy(0, -40)); },
+  "messaging/settings-subscription-auto-replies": async (p) => { await go(p, "/chat/settings"); await scrollTo(p, "Subscription Auto Replies"); await p.evaluate(() => window.scrollBy(0, -120)); },
   "messaging/quick-replies-table": async (p) => { await go(p, "/chat/settings"); await scrollTo(p, m.quickReplies[0].shortcut); },
   // ---- Workflows ----
-  "flows/campaigns-list": async (p) => { await go(p, "/campaigns"); await p.waitForTimeout(2000); },
+  "flows/campaigns-list": async (p) => { await go(p, "/campaigns"); await p.getByText("Order status replies").first().waitFor({ timeout: 120000 }); await p.waitForTimeout(1500); },
   "flows/saved-data-tables": async (p) => { await go(p, "/flows/saved_data"); await p.getByText(m.dataTables[0].title).first().waitFor(); },
   // ---- Integrations ----
   "integrations/integrations-page": async (p) => { await go(p, "/integrations"); await p.getByText("Custom integrations").first().waitFor(); },
@@ -156,7 +156,7 @@ const shots = {
   },
   "integrations/custom-integration-live": async (p) => { await go(p, "/integrations"); await clickButton(p, "Manage"); await p.getByText("Rangoli Order Events").first().waitFor(); await p.waitForTimeout(1500); },
   // ---- Account ----
-  "account/billing-overview": async (p) => { await go(p, "/settings/billing/overview"); await p.waitForTimeout(3000); },
+  "account/billing-overview": async (p) => { await go(p, "/settings/billing/overview"); await p.getByText(/Available message credits/i).first().waitFor({ timeout: 120000 }); await p.waitForTimeout(3000); },
   "account/set-credit-alert": async (p) => { await go(p, "/settings/billing/overview"); await clickButton(p, "Set alert"); },
   "account/plans-page": async (p) => { await go(p, "/plans"); await p.waitForTimeout(3000); },
   "account/account-settings": async (p) => { await go(p, "/settings/account"); await p.getByText("Organisation Details").first().waitFor(); },
@@ -350,6 +350,7 @@ for (const [name, run] of Object.entries(shots)) {
     // The app asks for Inter but does not load it; it must be installed locally (setup.sh).
     if (!(await target.evaluate(() => document.fonts.check('14px "Inter"')))) console.log(`  warning: Inter font not available`);
     if (name.startsWith("survey/")) { console.log(`ok   ${name}`); continue; }
+    await target.waitForFunction(() => [...document.images].every((i) => i.complete), null, { timeout: 15000 }).catch(() => {});
     await scrubPage(target);
     const file = path.join(OUT, `${name}.png`);
     fs.mkdirSync(path.dirname(file), { recursive: true });

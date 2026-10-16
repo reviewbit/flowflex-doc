@@ -6,7 +6,7 @@ Read the [Template guidelines](whatsapp/template-guidelines.md) before you submi
 
 ## 1. Select channel
 
-<!-- screenshot: whatsapp/template-select-channel -->
+<img src="assets/whatsapp/template-select-channel.png" alt="Create template, step 1: selecting the Rangoli Store channel">
 
 Pick a **Connected** channel. Each template belongs to that channel's WABA, so another WABA cannot use it.
 
@@ -63,7 +63,7 @@ The text is fixed. You can add a security recommendation and a code expiry time 
 
 ## 4. Submit for review
 
-<!-- screenshot: whatsapp/templates-list -->
+<img src="assets/whatsapp/templates-list.png" alt="Template Management listing the approved demo templates">
 
 After you submit, the template shows **In Review**. FlowFlex receives status changes from Meta automatically. Use **Sync from Meta** on a row, or **Refresh**, to pull them sooner.
 

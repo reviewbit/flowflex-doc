@@ -60,7 +60,8 @@ for md in glob.glob("**/*.md", recursive=True):
             missing.append(name)
             return m.group(0)
         placed += 1
-        return f"![{ALT.get(name, name)}]({img})"
+        # Raw <img>: Docsify rewrites markdown image paths relative to the page folder.
+        return f'<img src="{img}" alt="{ALT.get(name, name)}">'
     new = re.sub(r"<!-- screenshot: ([a-z0-9/-]+) -->", repl, text)
     if new != text:
         open(md, "w").write(new)

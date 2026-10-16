@@ -66,7 +66,7 @@ To remove the filter, click **Clear Filter** next to the **Filter** button.
 
 To change a contact, click the pencil icon in its row. The **Edit contact** drawer opens. Click **Update profile** to save.
 
-<!-- screenshot: audience/add-contact-drawer -->
+<img src="assets/audience/add-contact-drawer.png" alt="Adding Priya Sharma with Quick add">
 
 | Field | Rule |
 | --- | --- |

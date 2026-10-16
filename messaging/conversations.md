@@ -2,7 +2,7 @@
 
 **Messaging** → **Conversations** is your shared WhatsApp inbox. Your team reads, replies to, assigns, and organises customer chats here.
 
-<!-- screenshot: messaging/conversations-inbox -->
+<img src="assets/messaging/conversations-inbox.png" alt="The Conversations inbox">
 
 The screen has three parts:
 
@@ -95,7 +95,7 @@ On a phone, **⋮** also holds **Mark as pending** (or **Mark as reopened**) and
 
 ## Write a message
 
-<!-- screenshot: messaging/conversations-composer -->
+<img src="assets/messaging/conversations-composer.png" alt="Replying to a customer in Conversations">
 
 Type in the composer and press **Enter** to send. Press **Shift+Enter** for a new line.
 

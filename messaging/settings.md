@@ -4,7 +4,7 @@
 
 These settings apply to your whole organisation. The agent rotation order is set per branch.
 
-<!-- screenshot: messaging/settings-page -->
+<img src="assets/messaging/settings-page.png" alt="Messaging settings: business hours and assignment">
 
 ## Who can use this page
 

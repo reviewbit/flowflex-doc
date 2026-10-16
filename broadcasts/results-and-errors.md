@@ -2,7 +2,7 @@
 
 The **Broadcast** list shows totals across all broadcasts: Total Sent, Avg delivered rate, Avg read rate, Avg fail rate, Avg click rate, and CTR. Each row shows Recipients, Sent, Delivered, Read, Clicked, Replied, and Failed.
 
-<!-- screenshot: broadcasts/broadcast-list -->
+<img src="assets/broadcasts/broadcast-list.png" alt="The Broadcast list with delivery, read and click stats">
 
 **Broadcast statuses:** Draft → Active → Completed. A broadcast can also be Paused (by you, or automatically), Stopped (by you, permanently), or Failed.
 

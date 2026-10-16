@@ -12,7 +12,7 @@ The Admin role is a default role. **Default roles cannot be edited** and **Defau
 
 ## Create a role
 
-<!-- screenshot: account/create-role -->
+<img src="assets/account/create-role.png" alt="Creating the Support agent role">
 
 1. Click **Create New Role**.
 2. Enter **Role name**, such as `Support agent`. Up to 30 characters.

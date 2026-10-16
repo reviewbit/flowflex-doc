@@ -2,7 +2,7 @@
 
 The Integrations page connects other systems to FlowFlex, so their events can start your flows. Open it from the sidebar: **SETTINGS** → **Integrations**.
 
-<!-- screenshot: integrations/integrations-page -->
+<img src="assets/integrations/integrations-page.png" alt="The Integrations page">
 
 ## What you can connect
 

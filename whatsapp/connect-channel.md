@@ -23,7 +23,7 @@ Have ready:
 
 ## What the Channels table shows
 
-<!-- screenshot: whatsapp/channels-list -->
+<img src="assets/whatsapp/channels-list.png" alt="Channel Management with the connected Rangoli Store number">
 
 | Column | Values | Meaning |
 | --- | --- | --- |

@@ -6,7 +6,7 @@ Go to **Audience** → **Tags** to see every tag in the selected branch.
 
 ## The Tags table
 
-<!-- screenshot: audience/tags-table -->
+<img src="assets/audience/tags-table.png" alt="The Tags tab with manual and auto tags">
 
 | Column | Shows |
 | --- | --- |

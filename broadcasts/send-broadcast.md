@@ -4,7 +4,7 @@ Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Deta
 
 ## 1. Details & message
 
-<!-- screenshot: broadcasts/create-details -->
+<img src="assets/broadcasts/create-details.png" alt="Create broadcast, step 1: Details & message">
 
 1. **Broadcast name**: an internal name, such as `Diwali sale – repeat buyers – Oct 2026`.
 2. **Select channel**: Connected channels only.
@@ -17,7 +17,7 @@ Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Deta
 
 ## 2. Schedule & audience
 
-<!-- screenshot: broadcasts/create-schedule -->
+<img src="assets/broadcasts/create-schedule.png" alt="Create broadcast, step 2: Schedule & audience">
 
 | Field | Rule |
 | --- | --- |

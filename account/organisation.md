@@ -4,7 +4,7 @@ Account settings hold your organisation's details, its business address, and you
 
 Go to **Settings** → **Account**, or click your name in the top bar and choose **Account settings**. Admins see all sections. Agents see **Personal Settings** and **Change Password** only.
 
-<!-- screenshot: account/account-settings -->
+<img src="assets/account/account-settings.png" alt="Organisation and personal settings">
 
 ## Organisation Details
 
