@@ -8,7 +8,7 @@ Rangoli Store tags every customer who has ordered twice or more `repeat-buyer`. 
 
 Go to **Audience** → **Tags** to see every tag in the selected branch.
 
-![The Tags tab with manual and auto tags](../assets/audience/tags-table.png)
+![The Tags tab with manual and auto tags](../.gitbook/assets/tags-table.png)
 
 The table shows each tag's **Name**, how many **Contacts** carry it, whether it is an **Auto Tag** (**Yes** for tags FlowFlex manages, **No** for tags you create), and the date it was **Created**. Click a contact count to open **Profiles** filtered to those contacts. Use **Search tag name** to find a tag.
 
@@ -21,24 +21,23 @@ Creating and deleting tags needs edit access to Audience in the branch.
 3. Optionally add a **Description**, such as `Bought 2 or more times`.
 4. Click **Create tag**. The tag appears in the table with **Auto Tag** set to **No**.
 
-| Field | Rule | Message |
-| --- | --- | --- |
-| Name | Required | **Please enter a tag name** |
-| Name | Not only spaces | **Name cannot be empty or contain only spaces** |
-| Name | Up to 40 characters | **Name cannot exceed 40 characters** |
-| Name | Saved in lowercase. `VIP` becomes `vip`. | **Saved in lowercase so the same tag can't exist twice.** |
-| Name | Unique in the branch | **Tag already exists** |
-| Description | Optional, up to 200 characters | **Description cannot exceed 200 characters** |
+| Field       | Rule                                     | Message                                                   |
+| ----------- | ---------------------------------------- | --------------------------------------------------------- |
+| Name        | Required                                 | **Please enter a tag name**                               |
+| Name        | Not only spaces                          | **Name cannot be empty or contain only spaces**           |
+| Name        | Up to 40 characters                      | **Name cannot exceed 40 characters**                      |
+| Name        | Saved in lowercase. `VIP` becomes `vip`. | **Saved in lowercase so the same tag can't exist twice.** |
+| Name        | Unique in the branch                     | **Tag already exists**                                    |
+| Description | Optional, up to 200 characters           | **Description cannot exceed 200 characters**              |
 
 You can also create a tag while you work:
 
-- **Contact drawer:** in **Quick add** or **Edit contact**, type a name in **Tags** and click **Create tag: name**.
-- **Bulk tagging:** in Profiles → **More actions** → **Manage Tags**, the same way.
-- **Filters and segments:** on the **Tags** field, click **Create : name**.
-- **Imports:** in a [Bulk Import](import-export.md), a **Tags** column creates any tag that doesn't exist yet.
+* **Contact drawer:** in **Quick add** or **Edit contact**, type a name in **Tags** and click **Create tag: name**.
+* **Bulk tagging:** in Profiles → **More actions** → **Manage Tags**, the same way.
+* **Filters and segments:** on the **Tags** field, click **Create : name**.
+* **Imports:** in a [Bulk Import](import-export.md), a **Tags** column creates any tag that doesn't exist yet.
 
-> [!TIP]
-> Use short, lowercase names with hyphens, such as `repeat-buyer`. A space ends a tag in the contact drawer, so `repeat buyer` would become two tags.
+> \[!TIP] Use short, lowercase names with hyphens, such as `repeat-buyer`. A space ends a tag in the contact drawer, so `repeat buyer` would become two tags.
 
 ## Auto tags
 
@@ -59,9 +58,9 @@ New chats and messages from this channel now add these tags to the contact. Exis
 
 ## Add or remove tags on contacts
 
-- **One contact:** edit the contact and change **Tags**.
-- **Many contacts:** in **Profiles**, select them, then **More actions** → **Manage Tags**.
-- **From a flow:** use the tag action in [Audience actions](../flows/nodes/audience-actions.md).
+* **One contact:** edit the contact and change **Tags**.
+* **Many contacts:** in **Profiles**, select them, then **More actions** → **Manage Tags**.
+* **From a flow:** use the tag action in [Audience actions](../flows/nodes/audience-actions.md).
 
 To use tags afterwards, branch a flow with [Contact-tag conditions](../flows/nodes/contact-tag-conditions.md), or build a segment with the **Tags** field. See [Segments](segments.md#fields).
 
@@ -71,11 +70,11 @@ Click the bin icon at the end of the tag's row, then confirm with **Yes**. This 
 
 Deleting is blocked in two cases:
 
-- **Contacts still carry the tag.** The bin icon is greyed out, with a message such as **Remove this tag from 3 contacts before deleting.** Click the contact count, select all, and remove the tag with **Manage Tags**.
-- **A flow uses the tag.** **Tag is in use** lists each flow, with its status (such as **Draft** or **Published**) and version. Remove the tag from those flows, then delete it again. A flow uses a tag when a Save tag action or a tag condition refers to it.
+* **Contacts still carry the tag.** The bin icon is greyed out, with a message such as **Remove this tag from 3 contacts before deleting.** Click the contact count, select all, and remove the tag with **Manage Tags**.
+* **A flow uses the tag.** **Tag is in use** lists each flow, with its status (such as **Draft** or **Published**) and version. Remove the tag from those flows, then delete it again. A flow uses a tag when a Save tag action or a tag condition refers to it.
 
 ## See also
 
-- [Segments](segments.md): group contacts by their tags.
-- [Audience actions](../flows/nodes/audience-actions.md): tag contacts automatically in a flow.
-- [Contact-tag conditions](../flows/nodes/contact-tag-conditions.md): route flow contacts by their tags.
+* [Segments](segments.md): group contacts by their tags.
+* [Audience actions](../flows/nodes/audience-actions.md): tag contacts automatically in a flow.
+* [Contact-tag conditions](../flows/nodes/contact-tag-conditions.md): route flow contacts by their tags.

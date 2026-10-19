@@ -12,10 +12,10 @@ Rangoli Store already answers customers from the WhatsApp Business app at its Ko
 
 Have these ready:
 
-- **Business details:** the business's legal name and address.
-- **Display name:** the name shown on the WhatsApp profile. It must match the business's brand, or Meta declines it.
-- **Phone number:** for a new setup, a number not already registered on WhatsApp. For coexistence, the number already on the WhatsApp Business app.
-- **Meta access:** access to the business's Meta (Facebook) Business portfolio.
+* **Business details:** the business's legal name and address.
+* **Display name:** the name shown on the WhatsApp profile. It must match the business's brand, or Meta declines it.
+* **Phone number:** for a new setup, a number not already registered on WhatsApp. For coexistence, the number already on the WhatsApp Business app.
+* **Meta access:** access to the business's Meta (Facebook) Business portfolio.
 
 ## Connect the number
 
@@ -27,16 +27,16 @@ Have these ready:
 
 ## Check the channel
 
-![Channel Management with the connected Rangoli Store number](../assets/whatsapp/channels-list.png)
+![Channel Management with the connected Rangoli Store number](../.gitbook/assets/channels-list.png)
 
 The Channels table shows the state of each number:
 
-| Column | Values | Meaning |
-| --- | --- | --- |
-| Status | Connected / Pending / Disconnected | Only **Connected** channels can create templates or send broadcasts. |
-| Health | Available / Limited / Blocked | Limited or Blocked means Meta is restricting the number. Fix this before you broadcast. |
-| Portfolio limit | 250 / 1K / 2K / 10K / 100K / Unlimited | Unique recipients per rolling 24 hours, shared across the whole Business portfolio. |
-| Display Name | Editable | Change it with **Update Display Name**. Meta reviews every change. |
+| Column          | Values                                 | Meaning                                                                                 |
+| --------------- | -------------------------------------- | --------------------------------------------------------------------------------------- |
+| Status          | Connected / Pending / Disconnected     | Only **Connected** channels can create templates or send broadcasts.                    |
+| Health          | Available / Limited / Blocked          | Limited or Blocked means Meta is restricting the number. Fix this before you broadcast. |
+| Portfolio limit | 250 / 1K / 2K / 10K / 100K / Unlimited | Unique recipients per rolling 24 hours, shared across the whole Business portfolio.     |
+| Display Name    | Editable                               | Change it with **Update Display Name**. Meta reviews every change.                      |
 
 Open a channel to see its Quality Rating, Business Verification Status, Display Name Status, Official Business Account (blue tick) and Throughput Level.
 
@@ -48,14 +48,14 @@ After that, Meta raises the limit one level at a time (10K, 100K, Unlimited), wi
 
 ## Common problems
 
-| Message | Cause | Fix |
-| --- | --- | --- |
-| Channel disconnected | The WhatsApp Business app was uninstalled or logged out on the phone | Reconnect from the channel page. |
-| Display name declined | The name doesn't match the brand | Rename it to match the website or signage, then resubmit. |
-| **Channel needs reconnecting** | The number is connected at Meta but FlowFlex can't send for it yet | Reconnect the channel from the channel page, or click **Contact Support**. |
+| Message                        | Cause                                                                | Fix                                                                        |
+| ------------------------------ | -------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Channel disconnected           | The WhatsApp Business app was uninstalled or logged out on the phone | Reconnect from the channel page.                                           |
+| Display name declined          | The name doesn't match the brand                                     | Rename it to match the website or signage, then resubmit.                  |
+| **Channel needs reconnecting** | The number is connected at Meta but FlowFlex can't send for it yet   | Reconnect the channel from the channel page, or click **Contact Support**. |
 
 ## See also
 
-- [Create a template](create-template.md)
-- [Broadcast guidelines](../broadcasts/broadcast-guidelines.md)
-- [Plans and add-ons](../account/plans-and-add-ons.md)
+* [Create a template](create-template.md)
+* [Broadcast guidelines](../broadcasts/broadcast-guidelines.md)
+* [Plans and add-ons](../account/plans-and-add-ons.md)

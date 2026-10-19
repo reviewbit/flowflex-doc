@@ -14,15 +14,15 @@ New accounts can start with a free trial. A banner at the top of the app shows h
 2. Tick the box to agree to the **Terms of Service** and **Privacy Policy**. **Create account** stays disabled until you do.
 3. Click **Create account**. FlowFlex asks how to send your verification code.
 
-| Field | Required | Notes |
-| --- | --- | --- |
-| **Your name** | Yes | Your full name, for example `Alex Lee`. |
-| **Phone number** | Yes | Pick the country code; it defaults to India (+91). Must be a valid number. |
-| **Email** | Yes | Your work email, for example `alex@rangoli.example`. |
+| Field            | Required | Notes                                                                      |
+| ---------------- | -------- | -------------------------------------------------------------------------- |
+| **Your name**    | Yes      | Your full name, for example `Alex Lee`.                                    |
+| **Phone number** | Yes      | Pick the country code; it defaults to India (+91). Must be a valid number. |
+| **Email**        | Yes      | Your work email, for example `alex@rangoli.example`.                       |
 
 If the email is already registered, you see **An account with this email already exists.** Click **Log in instead**.
 
-![The Create your account form, filled in](../assets/get-started/create-account.png)
+![The Create your account form, filled in](../.gitbook/assets/create-account.png)
 
 ### Verify your account
 
@@ -41,10 +41,10 @@ Didn't get the code? Click **Resend**. It becomes available after 60 seconds. To
 
 The password must have:
 
-- **Minimum 8 characters**
-- **At least one lower case** letter
-- **At least one upper case** letter
-- **At least one number**
+* **Minimum 8 characters**
+* **At least one lower case** letter
+* **At least one upper case** letter
+* **At least one number**
 
 Each rule is ticked off as you type.
 
@@ -57,16 +57,16 @@ An organisation is your business workspace in FlowFlex. Setup has two steps. A *
 1. Fill in the fields below. Pick the **State** before the **City**.
 2. Click **Continue**.
 
-| Field | Required |
-| --- | --- |
-| **Business name** | Yes |
-| **Website** | No |
-| **Country of residence** | Yes |
-| **Business address** | No |
-| **State** | Yes |
-| **City** | Yes |
-| **Time zone** | Yes |
-| **Postal code** | Yes |
+| Field                    | Required |
+| ------------------------ | -------- |
+| **Business name**        | Yes      |
+| **Website**              | No       |
+| **Country of residence** | Yes      |
+| **Business address**     | No       |
+| **State**                | Yes      |
+| **City**                 | Yes      |
+| **Time zone**            | Yes      |
+| **Postal code**          | Yes      |
 
 Your currency is set from the country you pick.
 
@@ -74,21 +74,21 @@ Your currency is set from the country you pick.
 
 All fields on this step are optional.
 
-- **Choose your role:** Founder, Developer / PM, Marketer, Sales / BizDev, Customer Support, or Other.
-- **How did you discover FlowFlex?:** Instagram, LinkedIn, Google Search, YouTube, and more.
-- **Choose your industry:** Education, E-commerce, Travel Agency, Logistics, Health Industry, Marketing Agency, or Other.
-- **Your industry:** appears when you choose **Other** as the industry, so you can type your own.
+* **Choose your role:** Founder, Developer / PM, Marketer, Sales / BizDev, Customer Support, or Other.
+* **How did you discover FlowFlex?:** Instagram, LinkedIn, Google Search, YouTube, and more.
+* **Choose your industry:** Education, E-commerce, Travel Agency, Logistics, Health Industry, Marketing Agency, or Other.
+* **Your industry:** appears when you choose **Other** as the industry, so you can type your own.
 
 Click **Finish setup**. FlowFlex creates the organisation and opens the app. To change something on step 1, click **Back**.
 
-![Creating the Rangoli Store organisation](../assets/get-started/create-organisation.png)
+![Creating the Rangoli Store organisation](../.gitbook/assets/create-organisation.png)
 
 ### If setup is interrupted
 
 Sometimes setup takes longer, or the connection drops. The button then changes to **Continue setup**.
 
-- **Setup is still in progress. Select Continue setup to resume.** Wait a moment, then click **Continue setup**.
-- **Setup could not finish. Select Continue setup to retry.** Click **Continue setup** to try again with the same details.
+* **Setup is still in progress. Select Continue setup to resume.** Wait a moment, then click **Continue setup**.
+* **Setup could not finish. Select Continue setup to retry.** Click **Continue setup** to try again with the same details.
 
 If you come back later, you may see **Continue your workspace setup**. Click **Continue** followed by your organisation's name, for example **Continue Rangoli Store**.
 
@@ -104,9 +104,9 @@ If your email was never verified, FlowFlex sends you to **Enter verification cod
 
 What you see after signing in depends on how many organisations you belong to:
 
-- **None:** you see **No organisations found! Please create one** and go to organisation setup.
-- **One:** FlowFlex opens it straight away.
-- **More than one:** pick one on **Choose Your Organisation** and click **Continue**.
+* **None:** you see **No organisations found! Please create one** and go to organisation setup.
+* **One:** FlowFlex opens it straight away.
+* **More than one:** pick one on **Choose Your Organisation** and click **Continue**.
 
 To create another organisation from this screen, click **Add an organisation**. Inside the app you can switch organisations at any time. See [Find your way around](find-your-way-around.md#organisation-switcher).
 
@@ -120,6 +120,6 @@ To create another organisation from this screen, click **Add an organisation**. 
 
 ## See also
 
-- [Find your way around](find-your-way-around.md)
-- [Set up your account](../getting-started.md)
-- [Connect a WhatsApp channel](../whatsapp/connect-channel.md)
+* [Find your way around](find-your-way-around.md)
+* [Set up your account](../getting-started.md)
+* [Connect a WhatsApp channel](../whatsapp/connect-channel.md)

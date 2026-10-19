@@ -26,7 +26,7 @@ The **Wallet** tab lists every recharge and adjustment. Click **Download receipt
 
 ## Get a low-balance alert
 
-![The Set credit alert drawer](../assets/account/set-credit-alert.png)
+![The Set credit alert drawer](../.gitbook/assets/set-credit-alert.png)
 
 1. Click **Set alert**.
 2. Enter a **New credit threshold**.
@@ -47,5 +47,5 @@ The details on the **Billing details** tab are printed on your receipts and invo
 
 ## See also
 
-- [Plans and add-ons](plans-and-add-ons.md)
-- [Send a broadcast](../broadcasts/send-broadcast.md)
+* [Plans and add-ons](plans-and-add-ons.md)
+* [Send a broadcast](../broadcasts/send-broadcast.md)

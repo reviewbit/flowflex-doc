@@ -6,13 +6,13 @@ A branch keeps its own WhatsApp channels, audience and work apart from the other
 
 Each branch has its own:
 
-- WhatsApp channels, and the templates of each channel's WhatsApp Business Account
-- broadcasts
-- flows and campaigns
-- audience: contacts, lists, segments, custom fields, imports and exports
-- tags
-- conversations and custom chat folders
-- integrations
+* WhatsApp channels, and the templates of each channel's WhatsApp Business Account
+* broadcasts
+* flows and campaigns
+* audience: contacts, lists, segments, custom fields, imports and exports
+* tags
+* conversations and custom chat folders
+* integrations
 
 Users see a branch only if their access includes it. See [Teams](teams.md).
 
@@ -20,7 +20,7 @@ Users see a branch only if their access includes it. See [Teams](teams.md).
 
 Go to **Settings** → **Branches**. Only Admins see this page in the sidebar.
 
-![Settings, Branches](../assets/account/branches.png)
+![Settings, Branches](../.gitbook/assets/branches.png)
 
 The table lists each branch with its logo, **Name**, **Location** (the address from **Branch location**) and **Status**, which is **Active** or **Disabled by Plan**. Click the edit icon in the **Action** column to change a branch, and use **Search by name** to find one.
 
@@ -44,11 +44,11 @@ When Rangoli Store opened its Kochi store, Alex Lee added a Kochi branch so the 
 
 Your plan sets how many branches you can have. These messages tell you when you've reached the limit.
 
-| Message | Cause | Fix |
-| --- | --- | --- |
-| **Branch limit reached. You can purchase additional branches for … each in Billing.** | You use all the branches in your plan and add-ons | Add **Additional Branches** on [Plans](plans-and-add-ons.md). FlowFlex opens **Plans** for you. |
-| **Branch limit reached. Please upgrade your plan to add more branches.** | Your plan has no branch add-on | Upgrade on [Plans](plans-and-add-ons.md) |
-| **Disabled by Plan** | You have more branches than your plan allows, for example after a downgrade | Hover over the status to see why. Add branches back to your plan to re-enable it. |
+| Message                                                                               | Cause                                                                       | Fix                                                                                             |
+| ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Branch limit reached. You can purchase additional branches for … each in Billing.** | You use all the branches in your plan and add-ons                           | Add **Additional Branches** on [Plans](plans-and-add-ons.md). FlowFlex opens **Plans** for you. |
+| **Branch limit reached. Please upgrade your plan to add more branches.**              | Your plan has no branch add-on                                              | Upgrade on [Plans](plans-and-add-ons.md)                                                        |
+| **Disabled by Plan**                                                                  | You have more branches than your plan allows, for example after a downgrade | Hover over the status to see why. Add branches back to your plan to re-enable it.               |
 
 You can't edit or switch to a branch that is **Disabled by Plan**. Trying shows **Cannot edit branch.** with the reason.
 
@@ -60,11 +60,10 @@ You can't edit or switch to a branch that is **Disabled by Plan**. Trying shows 
 
 Click **Manage** in **My Branches** to open **Settings** → **Branches**.
 
-> [!TIP]
-> The branch name under your name shows where you are. Check it before you create a template or send a broadcast.
+> \[!TIP] The branch name under your name shows where you are. Check it before you create a template or send a broadcast.
 
 ## See also
 
-- [Teams](teams.md)
-- [Plans and add-ons](plans-and-add-ons.md)
-- [Connect a WhatsApp channel](../whatsapp/connect-channel.md)
+* [Teams](teams.md)
+* [Plans and add-ons](plans-and-add-ons.md)
+* [Connect a WhatsApp channel](../whatsapp/connect-channel.md)

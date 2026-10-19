@@ -6,15 +6,15 @@ Go to **Messaging** → **Settings** to open the **Conversation settings** page.
 
 Rangoli Store's Kochi team works 10:00 to 20:00, Monday to Saturday. Alex Lee sets those business hours, switches assignment to **Round-robin** so new chats are shared between Chris Taylor and the rest of the team, and turns on an Away Message. When Maria Garcia messages at 22:00, the Away Message tells Maria when the team will reply, and the chat is waiting for an agent in the morning.
 
-![Messaging settings: business hours and assignment](../assets/messaging/settings-page.png)
+![Messaging settings: business hours and assignment](../.gitbook/assets/settings-page.png)
 
 ## Who can use this page
 
-| Permission | Access |
-| --- | --- |
-| **Messaging settings view** | See the page, read-only. |
-| **Messaging settings edit** | Change the settings. |
-| Neither | The page shows **Access denied** with "You do not have permission to view messaging settings." |
+| Permission                  | Access                                                                                         |
+| --------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Messaging settings view** | See the page, read-only.                                                                       |
+| **Messaging settings edit** | Change the settings.                                                                           |
+| Neither                     | The page shows **Access denied** with "You do not have permission to view messaging settings." |
 
 See [Roles and permissions](../account/roles-and-permissions.md).
 
@@ -23,8 +23,8 @@ See [Roles and permissions](../account/roles-and-permissions.md).
 Business hours decide when the **Away Message** is sent. Set them in your business's local time.
 
 1. Pick a mode from the menu next to the **Business hours** title:
-   - **Open for selected hours:** each ticked day opens between **From** and **To**, in 24-hour time. The default is 09:00 to 17:30.
-   - **Always open:** each ticked day is **Open 24 hours**.
+   * **Open for selected hours:** each ticked day opens between **From** and **To**, in 24-hour time. The default is 09:00 to 17:30.
+   * **Always open:** each ticked day is **Open 24 hours**.
 2. Tick the days you're open. An unticked day shows **Closed**.
 3. For **Open for selected hours**, set **From** and **To** for each day, such as 10:00 to 20:00.
 
@@ -32,8 +32,8 @@ Business hours decide when the **Away Message** is sent. Set them in your busine
 
 This decides who gets a new conversation that has no agent. Pick an option from the menu next to the title:
 
-- **Not assigned:** new chats land in **Unassigned**, and agents pick them up.
-- **Round-robin:** new chats are handed to agents in turn.
+* **Not assigned:** new chats land in **Unassigned**, and agents pick them up.
+* **Round-robin:** new chats are handed to agents in turn.
 
 FlowFlex keeps an existing assignee first. If the contact already has an owner in Audience, the chat goes to that person. Round-robin is used only when neither applies.
 
@@ -47,9 +47,9 @@ New team members join the end of the list automatically, and people who leave ar
 
 Turn on **Mask prospect phone numbers** to hide most of each customer's number in Conversations, for example `+91 XXXXXX0001`.
 
-- Only users with **Full control** see this card.
-- Users with **Conversation view all** still see full numbers.
-- Masking applies to the chat screens only.
+* Only users with **Full control** see this card.
+* Users with **Conversation view all** still see full numbers.
+* Masking applies to the chat screens only.
 
 ## Greeting Message
 
@@ -69,12 +69,12 @@ The away message is sent instead of the greeting when a new conversation starts 
 
 A conversation counts as new when it is the customer's first message, or the chat had no activity for 24 hours.
 
-| Situation | Message sent |
-| --- | --- |
-| New conversation, outside business hours, Away Message enabled | **Away Message** |
-| New conversation, any other time, Greeting Message enabled | **Greeting Message** |
-| Ongoing conversation (activity in the last 24 hours) | None |
-| The contact is currently in a running flow | None |
+| Situation                                                      | Message sent         |
+| -------------------------------------------------------------- | -------------------- |
+| New conversation, outside business hours, Away Message enabled | **Away Message**     |
+| New conversation, any other time, Greeting Message enabled     | **Greeting Message** |
+| Ongoing conversation (activity in the last 24 hours)           | None                 |
+| The contact is currently in a running flow                     | None                 |
 
 Only one of the two is sent. If the Away Message is off, the greeting is sent outside hours too.
 
@@ -82,14 +82,14 @@ Only one of the two is sent. If the Away Message is off, the greeting is sent ou
 
 Customers send a keyword to subscribe to or unsubscribe from your marketing messages. The **Subscription Auto Replies** card sets those keywords and the confirmation replies, per language.
 
-![Subscription Auto Replies with START and STOP keywords](../assets/messaging/settings-subscription-auto-replies.png)
+![Subscription Auto Replies with START and STOP keywords](../.gitbook/assets/settings-subscription-auto-replies.png)
 
 Each language has a **Subscribe** card and an **Unsubscribe** card, each with a **Keyword** and an **Enable auto reply** option. **Default (English)** is always there and can't be removed. Its defaults are:
 
-| | Keyword | Auto reply |
-| --- | --- | --- |
-| **Subscribe** | `START` | You have been subscribed. Reply STOP to unsubscribe anytime. |
-| **Unsubscribe** | `STOP` | You have been unsubscribed. Reply START to subscribe again. |
+|                 | Keyword | Auto reply                                                   |
+| --------------- | ------- | ------------------------------------------------------------ |
+| **Subscribe**   | `START` | You have been subscribed. Reply STOP to unsubscribe anytime. |
+| **Unsubscribe** | `STOP`  | You have been unsubscribed. Reply START to subscribe again.  |
 
 Each **Keyword** is required, can be up to 100 characters, and must be unique across all languages. When **Enable auto reply** is ticked, the confirmation text is required. Untick it to change the contact's consent without replying.
 
@@ -116,6 +116,6 @@ The last card manages saved replies for agents. See [Quick replies](quick-replie
 
 ## See also
 
-- [Conversations](conversations.md): reply to and assign customer chats.
-- [Quick replies](quick-replies.md): save answers your team sends often.
-- [Roles and permissions](../account/roles-and-permissions.md): control who can change these settings.
+* [Conversations](conversations.md): reply to and assign customer chats.
+* [Quick replies](quick-replies.md): save answers your team sends often.
+* [Roles and permissions](../account/roles-and-permissions.md): control who can change these settings.

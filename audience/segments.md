@@ -8,11 +8,11 @@ The day after its Diwali broadcast, Rangoli Store creates a segment of repeat bu
 
 Some segments businesses build:
 
-- **Follow up a broadcast:** contacts who **Clicked**, or who **Read**, a particular broadcast.
-- **Reward loyal customers:** tag is `repeat-buyer` or `vip`.
-- **Welcome newcomers:** contacts created in the last week, or tagged `new`.
-- **Run a local offer:** a city custom field equals `Kochi`.
-- **Fix your list:** contacts whose message **Failed** with **Message undeliverable**.
+* **Follow up a broadcast:** contacts who **Clicked**, or who **Read**, a particular broadcast.
+* **Reward loyal customers:** tag is `repeat-buyer` or `vip`.
+* **Welcome newcomers:** contacts created in the last week, or tagged `new`.
+* **Run a local offer:** a city custom field equals `Kochi`.
+* **Fix your list:** contacts whose message **Failed** with **Message undeliverable**.
 
 Go to **Audience** → **Segments** to create and manage segments.
 
@@ -27,7 +27,7 @@ FlowFlex then works out who matches. See [While a segment computes](segments.md#
 
 ## Build conditions
 
-![Building a repeat buyers segment](../assets/audience/segment-builder.png)
+![Building a repeat buyers segment](../.gitbook/assets/segment-builder.png)
 
 Conditions sit inside **condition groups**. Each condition has three parts: a property, a condition, and a value.
 
@@ -44,26 +44,25 @@ You set the logic in two places. At the top of each group, **Match** decides how
 
 The builder shows **AND** or **OR** between conditions and groups, so you can read the logic at a glance.
 
-> [!TIP]
-> To mix AND and OR, put the OR conditions in their own group set to **ANY**, and leave **Condition type** on **ALL**. The example below does this.
+> \[!TIP] To mix AND and OR, put the OR conditions in their own group set to **ANY**, and leave **Condition type** on **ALL**. The example below does this.
 
 ### Fields
 
-| Field | Type | Notes |
-| --- | --- | --- |
-| **Created At** | Date | The date the contact was added |
-| **Name** | Text | |
-| **Tags** | Tags | Pick one or more tags. Type a new name and click **Create : name** to create a tag. |
-| **List** | Lists | Pick one or more lists |
-| **Broadcast** | Broadcast activity | What happened to a broadcast sent to the contact. See [Broadcast activity](segments.md#broadcast-activity). |
-| **Phone** | Text | |
-| **Email subscribed** | Yes/No | Email marketing consent |
-| **Sms subscribed** | Yes/No | SMS marketing consent |
-| **WhatsApp subscribed** | Yes/No | WhatsApp marketing consent |
-| **Email** | Text | |
-| **Country** | Text | |
-| **Assigned to** | User | The contact's owner |
-| Custom fields | Usually text | Fields from imports or integrations. The source shows under the name, such as **Custom**. |
+| Field                   | Type               | Notes                                                                                                       |
+| ----------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------- |
+| **Created At**          | Date               | The date the contact was added                                                                              |
+| **Name**                | Text               |                                                                                                             |
+| **Tags**                | Tags               | Pick one or more tags. Type a new name and click **Create : name** to create a tag.                         |
+| **List**                | Lists              | Pick one or more lists                                                                                      |
+| **Broadcast**           | Broadcast activity | What happened to a broadcast sent to the contact. See [Broadcast activity](segments.md#broadcast-activity). |
+| **Phone**               | Text               |                                                                                                             |
+| **Email subscribed**    | Yes/No             | Email marketing consent                                                                                     |
+| **Sms subscribed**      | Yes/No             | SMS marketing consent                                                                                       |
+| **WhatsApp subscribed** | Yes/No             | WhatsApp marketing consent                                                                                  |
+| **Email**               | Text               |                                                                                                             |
+| **Country**             | Text               |                                                                                                             |
+| **Assigned to**         | User               | The contact's owner                                                                                         |
+| Custom fields           | Usually text       | Fields from imports or integrations. The source shows under the name, such as **Custom**.                   |
 
 Once you pick a field, the condition list shows only the operators for its type.
 
@@ -85,14 +84,14 @@ Once you pick a field, the condition list shows only the operators for its type.
 
 Choose **Broadcast**, pick what happened, then pick the broadcast.
 
-| Operator | Matches contacts whose message… |
-| --- | --- |
-| **Sent** | was sent. Includes delivered and read messages. |
-| **Delivered** | was delivered. Includes read messages. |
-| **Read** | was read |
-| **Failed** | failed. You can also pick the failure reasons; each shows how many messages failed for it. |
-| **Replied** | got a reply from the contact |
-| **Clicked** | had a tracked link clicked by the contact |
+| Operator      | Matches contacts whose message…                                                            |
+| ------------- | ------------------------------------------------------------------------------------------ |
+| **Sent**      | was sent. Includes delivered and read messages.                                            |
+| **Delivered** | was delivered. Includes read messages.                                                     |
+| **Read**      | was read                                                                                   |
+| **Failed**    | failed. You can also pick the failure reasons; each shows how many messages failed for it. |
+| **Replied**   | got a reply from the contact                                                               |
+| **Clicked**   | had a tracked link clicked by the contact                                                  |
 
 Each operator matches contacts who reached that status. There isn't a "did not read" option.
 
@@ -103,11 +102,11 @@ Rangoli Store wants to follow up with repeat buyers in Kochi or Kozhikode who re
 1. Click **Create new** and enter the title `Kochi and Kozhikode repeat buyers – read Diwali sale`.
 2. Leave **Condition type** on **ALL**.
 3. In group 1, leave **Match** on **ALL** and add two conditions:
-    - **Tags** → **Contains** → `repeat-buyer`
-    - **Broadcast** → **Read** → `Diwali sale – repeat buyers – Oct 2026`
+   * **Tags** → **Contains** → `repeat-buyer`
+   * **Broadcast** → **Read** → `Diwali sale – repeat buyers – Oct 2026`
 4. Click **Add condition group**. In group 2, set **Match** to **ANY** and add:
-    - **city** → **Equals to Case Insensitive** → `Kochi`
-    - **city** → **Equals to Case Insensitive** → `Kozhikode`
+   * **city** → **Equals to Case Insensitive** → `Kochi`
+   * **city** → **Equals to Case Insensitive** → `Kozhikode`
 5. Click **Create**.
 
 The segment now reads: (tagged repeat-buyer AND read the Diwali broadcast) AND (city is Kochi OR city is Kozhikode).
@@ -136,17 +135,16 @@ The segment computes again with the new conditions.
 
 From a segment's ⋯ menu:
 
-- **Subscribe current audience** turns WhatsApp, SMS and email consent on for everyone in the segment right now.
-- **Unsubscribe current audience** turns all three off.
-- **Delete segment** removes the segment. Its contacts stay in your audience.
+* **Subscribe current audience** turns WhatsApp, SMS and email consent on for everyone in the segment right now.
+* **Unsubscribe current audience** turns all three off.
+* **Delete segment** removes the segment. Its contacts stay in your audience.
 
 To do the same for several segments, select them and use **More actions**. Subscribing and unsubscribing only change the contacts in the segment at that moment; people who join later aren't affected.
 
-> [!WARNING]
-> **Subscribe current audience** also re-subscribes contacts who opted out. Use it only for people who have agreed to receive marketing.
+> \[!WARNING] **Subscribe current audience** also re-subscribes contacts who opted out. Use it only for people who have agreed to receive marketing.
 
 ## See also
 
-- [Send a broadcast](../broadcasts/send-broadcast.md): choose **Audience Type** → **Segment**.
-- [Audience actions](../flows/nodes/audience-actions.md): tag customers automatically in a flow.
-- [Contact-tag conditions](../flows/nodes/contact-tag-conditions.md): route flow contacts by their tags.
+* [Send a broadcast](../broadcasts/send-broadcast.md): choose **Audience Type** → **Segment**.
+* [Audience actions](../flows/nodes/audience-actions.md): tag customers automatically in a flow.
+* [Contact-tag conditions](../flows/nodes/contact-tag-conditions.md): route flow contacts by their tags.

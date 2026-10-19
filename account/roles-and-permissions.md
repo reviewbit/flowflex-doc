@@ -16,7 +16,7 @@ Admin is a default role: **Default roles cannot be edited** and **Default roles 
 
 ## Create a role
 
-![Creating the Support agent role](../assets/account/create-role.png)
+![Creating the Support agent role](../.gitbook/assets/create-role.png)
 
 1. Click **Create New Role**.
 2. Enter a **Role name**, such as `Support agent`. Up to 30 characters.
@@ -29,81 +29,80 @@ The left panel shows **N of M enabled** and a count for each group. If nothing i
 
 ### Permission modes
 
-- **Selected permissions only:** exactly the permissions you turn on.
-- **All current permissions:** every permission that exists today. Permissions added later aren't included.
-- **Current and future permissions:** every permission today and any added later.
+* **Selected permissions only:** exactly the permissions you turn on.
+* **All current permissions:** every permission that exists today. Permissions added later aren't included.
+* **Current and future permissions:** every permission today and any added later.
 
-> [!NOTE]
-> **Current and future permissions** gives the role everything, including any permission FlowFlex adds later, the same as Admin. Billing, Plans, Teams and Branches are included. Pick **All current permissions** if new features shouldn't be granted automatically.
+> \[!NOTE] **Current and future permissions** gives the role everything, including any permission FlowFlex adds later, the same as Admin. Billing, Plans, Teams and Branches are included. Pick **All current permissions** if new features shouldn't be granted automatically.
 
 ## Copy, edit or delete a role
 
 The roles list shows each role's **Name**, **Created Date**, **Last updated** and **Permissions**. Use **Search by name** to find one.
 
-- **Copy:** click **Copy role**. **Copy role** opens with the name `Copy of …`. Click **Create copy**.
-- **Edit:** click **Edit role**, make your changes, and click **Update role**. Changes apply to everyone with the role.
-- **Delete:** click **Delete role**, then **Yes**. Default roles can't be deleted.
+* **Copy:** click **Copy role**. **Copy role** opens with the name `Copy of …`. Click **Create copy**.
+* **Edit:** click **Edit role**, make your changes, and click **Update role**. Changes apply to everyone with the role.
+* **Delete:** click **Delete role**, then **Yes**. Default roles can't be deleted.
 
 ## Permissions
 
 Permissions are grouped as they appear on the role screen.
 
-| Group | Permission | Allows |
-| --- | --- | --- |
-| Audience | **Audience view** | Open **Audience** and see contacts, lists and segments |
-| | **Audience create** | Add contacts |
-| | **Audience edit** | Edit contacts, lists, segments and tags |
-| | **Audience delete** | Delete contacts |
-| | **Audience import** | Import contacts from a file |
-| | **Audience export** | Export contacts |
-| | **Audience assign** | Assign contacts to team members |
-| Conversation | **Conversation view** | Open **Messaging** → **Conversations** and read chats |
-| | **Conversation view all** | See every conversation in their branches and channels, not just their own |
-| | **Conversation reply** | Send replies |
-| | **Conversation assign** | Assign a conversation to a team member |
-| | **Conversation reassign** | Move a conversation that is already assigned |
-| Messaging | **Messaging settings view** | Open **Messaging** → **Settings** |
-| | **Messaging settings edit** | Change messaging settings |
-| Branch | **Branch view** | View branches |
-| | **Branch create** | Create branches |
-| | **Branch edit** | Edit branches |
-| | **Branch delete** | Delete branches |
-| Channel | **Channel view** | Open **Channels** |
-| | **Channel create** | Connect a new channel |
-| | **Channel edit** | Change channel settings |
-| | **Channel delete** | Remove a channel |
-| | **Channel assign** | Assign channels |
-| Template | **Template view** | Open **Templates** |
-| | **Template create** | Create templates |
-| | **Template edit** | Edit templates |
-| | **Template delete** | Delete templates |
-| Broadcast | **Broadcast view** | Open **Broadcast** and see results |
-| | **Broadcast create** | Create broadcasts and drafts |
-| | **Broadcast edit** | Edit broadcasts |
-| | **Broadcast delete** | Delete broadcasts |
-| | **Broadcast publish** | Publish a broadcast so it sends |
-| | **Broadcast export** | Export broadcast reports |
-| Workflow | **Workflow view** | Open the Flow builder and **Automations** |
-| | **Workflow create** | Create flows |
-| | **Workflow edit** | Edit flows |
-| | **Workflow delete** | Delete flows |
-| | **Workflow publish** | Publish flows so they run |
-| Campaign | **Campaign view** | Open **Automations** → **All campaigns** |
-| | **Campaign create** | Create campaigns |
-| | **Campaign edit** | Edit campaigns |
-| | **Campaign delete** | Delete campaigns |
-| | **Campaign launch** | Launch campaigns |
-| Member | **View Team Members** | View team members and their access setup |
-| | **Invite Team Members** | Invite new members |
-| | **Edit Team Members** | Change a member's role and access |
-| | **Remove Team Members** | Remove members |
-| Billing | **Billing view** | View billing |
-| | **Billing manage** | Manage billing |
-| | **Billing export** | Export billing |
-| Integration | **Integration view** | Open **Integrations** |
-| | **Integration create** | Add integrations |
-| | **Integration edit** | Change integrations |
-| | **Integration delete** | Remove integrations |
+| Group        | Permission                  | Allows                                                                    |
+| ------------ | --------------------------- | ------------------------------------------------------------------------- |
+| Audience     | **Audience view**           | Open **Audience** and see contacts, lists and segments                    |
+|              | **Audience create**         | Add contacts                                                              |
+|              | **Audience edit**           | Edit contacts, lists, segments and tags                                   |
+|              | **Audience delete**         | Delete contacts                                                           |
+|              | **Audience import**         | Import contacts from a file                                               |
+|              | **Audience export**         | Export contacts                                                           |
+|              | **Audience assign**         | Assign contacts to team members                                           |
+| Conversation | **Conversation view**       | Open **Messaging** → **Conversations** and read chats                     |
+|              | **Conversation view all**   | See every conversation in their branches and channels, not just their own |
+|              | **Conversation reply**      | Send replies                                                              |
+|              | **Conversation assign**     | Assign a conversation to a team member                                    |
+|              | **Conversation reassign**   | Move a conversation that is already assigned                              |
+| Messaging    | **Messaging settings view** | Open **Messaging** → **Settings**                                         |
+|              | **Messaging settings edit** | Change messaging settings                                                 |
+| Branch       | **Branch view**             | View branches                                                             |
+|              | **Branch create**           | Create branches                                                           |
+|              | **Branch edit**             | Edit branches                                                             |
+|              | **Branch delete**           | Delete branches                                                           |
+| Channel      | **Channel view**            | Open **Channels**                                                         |
+|              | **Channel create**          | Connect a new channel                                                     |
+|              | **Channel edit**            | Change channel settings                                                   |
+|              | **Channel delete**          | Remove a channel                                                          |
+|              | **Channel assign**          | Assign channels                                                           |
+| Template     | **Template view**           | Open **Templates**                                                        |
+|              | **Template create**         | Create templates                                                          |
+|              | **Template edit**           | Edit templates                                                            |
+|              | **Template delete**         | Delete templates                                                          |
+| Broadcast    | **Broadcast view**          | Open **Broadcast** and see results                                        |
+|              | **Broadcast create**        | Create broadcasts and drafts                                              |
+|              | **Broadcast edit**          | Edit broadcasts                                                           |
+|              | **Broadcast delete**        | Delete broadcasts                                                         |
+|              | **Broadcast publish**       | Publish a broadcast so it sends                                           |
+|              | **Broadcast export**        | Export broadcast reports                                                  |
+| Workflow     | **Workflow view**           | Open the Flow builder and **Automations**                                 |
+|              | **Workflow create**         | Create flows                                                              |
+|              | **Workflow edit**           | Edit flows                                                                |
+|              | **Workflow delete**         | Delete flows                                                              |
+|              | **Workflow publish**        | Publish flows so they run                                                 |
+| Campaign     | **Campaign view**           | Open **Automations** → **All campaigns**                                  |
+|              | **Campaign create**         | Create campaigns                                                          |
+|              | **Campaign edit**           | Edit campaigns                                                            |
+|              | **Campaign delete**         | Delete campaigns                                                          |
+|              | **Campaign launch**         | Launch campaigns                                                          |
+| Member       | **View Team Members**       | View team members and their access setup                                  |
+|              | **Invite Team Members**     | Invite new members                                                        |
+|              | **Edit Team Members**       | Change a member's role and access                                         |
+|              | **Remove Team Members**     | Remove members                                                            |
+| Billing      | **Billing view**            | View billing                                                              |
+|              | **Billing manage**          | Manage billing                                                            |
+|              | **Billing export**          | Export billing                                                            |
+| Integration  | **Integration view**        | Open **Integrations**                                                     |
+|              | **Integration create**      | Add integrations                                                          |
+|              | **Integration edit**        | Change integrations                                                       |
+|              | **Integration delete**      | Remove integrations                                                       |
 
 If you don't see the Flow builder with **Workflow view**, contact FlowFlex support.
 
@@ -115,10 +114,10 @@ More on each area: [Audience](../audience/overview.md), [Conversations](../messa
 
 Chris Taylor answers customer chats at the Kochi store. The **Support agent** role turns on:
 
-- **Conversation:** **Conversation view**, **Conversation reply**, **Conversation assign**
-- **Audience:** **Audience view**, **Audience edit**
-- **Template:** **Template view**
-- **Messaging:** **Messaging settings view**
+* **Conversation:** **Conversation view**, **Conversation reply**, **Conversation assign**
+* **Audience:** **Audience view**, **Audience edit**
+* **Template:** **Template view**
+* **Messaging:** **Messaging settings view**
 
 In [Teams](teams.md), Chris gets **Selected branches only** → **Kochi** and **Selected channels only** → the Kochi number. Chris sees **Messaging**, **Audience** and **Templates**, and only Kochi chats.
 
@@ -126,20 +125,19 @@ In [Teams](teams.md), Chris gets **Selected branches only** → **Kochi** and **
 
 Jordan Brown plans broadcasts and campaigns for both stores. The **Marketing manager** role turns on:
 
-- **Audience:** **Audience view**, **Audience create**, **Audience edit**, **Audience import**, **Audience export**
-- **Template:** **Template view**, **Template create**, **Template edit**
-- **Broadcast:** **Broadcast view**, **Broadcast create**, **Broadcast edit**, **Broadcast publish**, **Broadcast export**
-- **Workflow:** **Workflow view**
-- **Campaign:** **Campaign view**, **Campaign create**, **Campaign edit**, **Campaign launch**
-- **Channel:** **Channel view**
+* **Audience:** **Audience view**, **Audience create**, **Audience edit**, **Audience import**, **Audience export**
+* **Template:** **Template view**, **Template create**, **Template edit**
+* **Broadcast:** **Broadcast view**, **Broadcast create**, **Broadcast edit**, **Broadcast publish**, **Broadcast export**
+* **Workflow:** **Workflow view**
+* **Campaign:** **Campaign view**, **Campaign create**, **Campaign edit**, **Campaign launch**
+* **Channel:** **Channel view**
 
 Jordan gets **All current branches** or **Current and future branches**. **Workflow view** is needed for the **Automations** menu that holds **All campaigns**.
 
-> [!TIP]
-> Start from the smallest set of permissions. Add more when someone hits a page they need.
+> \[!TIP] Start from the smallest set of permissions. Add more when someone hits a page they need.
 
 ## See also
 
-- [Teams](teams.md)
-- [Branches](branches.md)
-- [Conversations](../messaging/conversations.md)
+* [Teams](teams.md)
+* [Branches](branches.md)
+* [Conversations](../messaging/conversations.md)

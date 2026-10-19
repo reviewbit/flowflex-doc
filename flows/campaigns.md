@@ -2,8 +2,7 @@
 
 Switch on a published flow so that customers' incoming WhatsApp messages start it.
 
-> [!NOTE]
-> Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
+> \[!NOTE] Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
 
 A campaign connects a flow to incoming messages on the flow's channel. You find campaigns under **Automations** → **All campaigns**, on the **Auto Campaign** page.
 
@@ -23,7 +22,7 @@ To react only to certain words, such as "price" or "offer", set a **Trigger filt
 
 ## The campaign list
 
-![The Auto Campaign list](../assets/flows/campaigns-list.png)
+![The Auto Campaign list](../.gitbook/assets/campaigns-list.png)
 
 The list shows each campaign's **Campaign name**, its **Status**, and an **Actions** column with the **⋯** menu. Click a name to open [Campaign Outcomes](campaigns.md#campaign-outcomes).
 
@@ -31,15 +30,14 @@ Use **Search by name** to find a campaign, and **Filter by Status** to show one 
 
 ### Statuses and actions
 
-| Status | Meaning | **⋯** menu |
-| --- | --- | --- |
-| **Active** | Incoming messages start the flow. | **Pause**, **Delete** |
-| **Paused** | Stopped for now. Nothing starts. | **Resume**, **Delete** |
-| **Draft** | Saved, but publishing did not finish. | **Publish**, **Delete** |
-| **Completed** | Finished. | **Delete** |
+| Status        | Meaning                               | **⋯** menu              |
+| ------------- | ------------------------------------- | ----------------------- |
+| **Active**    | Incoming messages start the flow.     | **Pause**, **Delete**   |
+| **Paused**    | Stopped for now. Nothing starts.      | **Resume**, **Delete**  |
+| **Draft**     | Saved, but publishing did not finish. | **Publish**, **Delete** |
+| **Completed** | Finished.                             | **Delete**              |
 
-> [!WARNING]
-> **Delete** runs at once, with no confirmation. Pause a campaign instead if you may need it again.
+> \[!WARNING] **Delete** runs at once, with no confirmation. Pause a campaign instead if you may need it again.
 
 If you resume a campaign whose flow is switched off, you see **Campaign not resumed**. Activate the flow under **Flow builder** first, then click **Resume** again.
 
@@ -86,14 +84,14 @@ A campaign runs the flow version that was published when you published the campa
 
 Click a campaign's name to open **Campaign Outcomes**. It shows one row for each time the flow ran for a contact, with the data the flow collected.
 
-- **Select column and search:** pick a column, then search inside it.
-- **Filter:** build conditions on the columns, then click **Apply Filter**.
-- **Clear All Filters:** removes the search and filters.
-- **Show Columns:** choose which columns are shown.
-- **Export CSV:** downloads the outcomes.
+* **Select column and search:** pick a column, then search inside it.
+* **Filter:** build conditions on the columns, then click **Apply Filter**.
+* **Clear All Filters:** removes the search and filters.
+* **Show Columns:** choose which columns are shown.
+* **Export CSV:** downloads the outcomes.
 
 ## See also
 
-- [Build your first flow](building-a-flow.md)
-- [Saved data](saved-data.md)
-- [Audience actions](nodes/audience-actions.md)
+* [Build your first flow](building-a-flow.md)
+* [Saved data](saved-data.md)
+* [Audience actions](nodes/audience-actions.md)
