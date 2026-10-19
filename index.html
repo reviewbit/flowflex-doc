@@ -1033,28 +1033,9 @@
          once you have the screenshot.
          =================================================================== */
       /* ===================================================================
-         Docs home (README.md): hero, section cards, help strip
+         Docs home (README.md): buttons and section cards
          =================================================================== */
-      .markdown-section .ff-home-hero {
-        padding: 8px 0 24px;
-        border-bottom: 1px solid var(--ff-border);
-        margin-bottom: 28px;
-      }
-      .markdown-section .ff-home-hero h1 {
-        margin: 0 0 10px;
-      }
-      .markdown-section .ff-home-hero p {
-        font-size: 1.0625rem;
-        color: var(--ff-text-secondary);
-        max-width: 640px;
-        margin: 0 0 18px;
-      }
-      .ff-home-actions {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-      .markdown-section a.ff-btn {
+      .markdown-section a.button {
         display: inline-block;
         padding: 8px 16px;
         border-radius: var(--ff-radius-md);
@@ -1064,12 +1045,12 @@
         text-decoration: none;
         background: var(--ff-surface);
       }
-      .markdown-section a.ff-btn-primary {
+      .markdown-section a.button.primary {
         background: var(--ff-primary);
         border-color: var(--ff-primary);
         color: #fff;
       }
-      .markdown-section a.ff-btn:hover {
+      .markdown-section a.button:hover {
         border-color: var(--ff-primary);
         text-decoration: none;
       }
@@ -1107,16 +1088,6 @@
         color: var(--ff-text-secondary);
         font-size: 0.875rem;
         line-height: 1.45;
-      }
-      .markdown-section .ff-help-strip {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        align-items: baseline;
-        margin-top: 32px;
-        padding: 14px 16px;
-        border-radius: 10px;
-        background: var(--ff-primary-subtle);
       }
 
       /* Product screenshots */
@@ -1281,11 +1252,52 @@
         });
 
         hook.doneEach(function () {
+          buildCards();
+          routeHtmlLinks();
           setupSidebarGroups();
           relocateSearch();
           buildBreadcrumbs();
           buildToc();
         });
+
+        // README.md lists its section cards as a GitBook card table
+        // (title, description, hidden link). Render it as .ff-card tiles.
+        function buildCards() {
+          document
+            .querySelectorAll('.markdown-section table[data-view="cards"]')
+            .forEach(function (table) {
+              var grid = document.createElement("div");
+              grid.className = "ff-cards";
+              table.querySelectorAll("tbody tr").forEach(function (row) {
+                var cells = row.querySelectorAll("td");
+                var link = cells[2] && cells[2].querySelector("a");
+                if (!link) return;
+                var card = document.createElement("a");
+                card.className = "ff-card";
+                card.href = link.getAttribute("href");
+                card.innerHTML =
+                  "<strong>" + cells[0].textContent + "</strong>" +
+                  "<span>" + cells[1].textContent + "</span>";
+                grid.appendChild(card);
+              });
+              table.replaceWith(grid);
+            });
+        }
+
+        // Docsify routes Markdown links but leaves raw HTML links alone, so
+        // point relative .md hrefs (cards, buttons) at their Docsify route.
+        function routeHtmlLinks() {
+          document
+            .querySelectorAll('.markdown-section a[href$=".md"]')
+            .forEach(function (a) {
+              var href = a.getAttribute("href");
+              if (/^([a-z]+:|#|\/)/i.test(href)) return;
+              a.setAttribute(
+                "href",
+                vm.router.toURL(href, null, vm.router.getCurrentPath())
+              );
+            });
+        }
 
         // Move docsify-search's box into the header on desktop; on mobile
         // the header is hidden, so keep search in the sidebar instead.
