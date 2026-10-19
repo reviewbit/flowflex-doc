@@ -10,7 +10,7 @@ description: "Everything you need to reach customers on WhatsApp: connect your n
 
 ## What is FlowFlex?
 
-FlowFlex is a platform for running your business's WhatsApp. You connect your WhatsApp Business number through Meta, and then your team uses FlowFlex to:
+FlowFlex is a platform for businesses anywhere in the world to run their WhatsApp. You connect your WhatsApp Business number through Meta, and then your team uses FlowFlex to:
 
 - **Send broadcasts:** one approved message to many customers at once, with delivery, read and click results.
 - **Reply from a shared inbox:** answer customers together, with quick replies, business hours and automatic replies.
