@@ -1071,6 +1071,17 @@
         text-decoration: none;
         transition: border-color 0.12s ease, box-shadow 0.12s ease;
       }
+      .markdown-section a.ff-card img.ff-card-cover {
+        display: block;
+        width: calc(100% + 32px);
+        max-width: none;
+        aspect-ratio: 1342 / 632;
+        object-fit: cover;
+        margin: -16px -16px 6px;
+        border: 0;
+        border-bottom: 1px solid var(--ff-border);
+        border-radius: 10px 10px 0 0;
+      }
       .markdown-section a.ff-card:hover {
         border-color: var(--ff-primary);
         box-shadow: 0 2px 8px rgba(127, 86, 217, 0.12);
@@ -1261,21 +1272,32 @@
         });
 
         // README.md lists its section cards as a GitBook card table
-        // (title, description, hidden link). Render it as .ff-card tiles.
+        // (title, description, hidden cover and link columns). Render it
+        // as .ff-card tiles.
         function buildCards() {
           document
             .querySelectorAll('.markdown-section table[data-view="cards"]')
             .forEach(function (table) {
+              var heads = Array.prototype.slice.call(table.querySelectorAll("th"));
+              var col = function (attr) {
+                return heads.findIndex(function (th) { return th.hasAttribute(attr); });
+              };
+              var coverCol = col("data-card-cover");
+              var targetCol = col("data-card-target");
               var grid = document.createElement("div");
               grid.className = "ff-cards";
               table.querySelectorAll("tbody tr").forEach(function (row) {
                 var cells = row.querySelectorAll("td");
-                var link = cells[2] && cells[2].querySelector("a");
+                var link = cells[targetCol] && cells[targetCol].querySelector("a");
                 if (!link) return;
+                var cover = cells[coverCol] && cells[coverCol].querySelector("a");
                 var card = document.createElement("a");
                 card.className = "ff-card";
                 card.href = link.getAttribute("href");
                 card.innerHTML =
+                  (cover
+                    ? '<img class="ff-card-cover" src="' + cover.getAttribute("href") + '" alt="">'
+                    : "") +
                   "<strong>" + cells[0].textContent + "</strong>" +
                   "<span>" + cells[1].textContent + "</span>";
                 grid.appendChild(card);
@@ -1475,6 +1497,8 @@
     </script>
     <!-- Docsify core + plugins (all from CDN; nothing to build) -->
     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+    <!-- Hides the front matter GitBook adds to pages (cover, coverY, …). -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/front-matter.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@3/dist/docsify-copy-code.min.js"></script>
