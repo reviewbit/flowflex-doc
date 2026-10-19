@@ -43,6 +43,6 @@ If your subscription expires, is cancelled or is suspended, most of FlowFlex, in
 
 ## See also
 
-- [Billing and wallet](account/billing-and-wallet.md)
-- [Branches](account/branches.md)
-- [Teams](account/teams.md)
+- [Billing and wallet](billing-and-wallet.md)
+- [Branches](branches.md)
+- [Teams](teams.md)

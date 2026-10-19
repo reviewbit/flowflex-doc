@@ -4,7 +4,7 @@ Pause the flow for a set time, or until a time of day you choose, before the nex
 
 ## When to use it
 
-Use a time delay to space out messages or follow up later. Two hours after a customer browses the Diwali sale without ordering, Rangoli Store sends a reminder. A delay doesn't end early when the customer replies; to wait for a reply, use [response waiting](flows/response-wait.md) on a message.
+Use a time delay to space out messages or follow up later. Two hours after a customer browses the Diwali sale without ordering, Rangoli Store sends a reminder. A delay doesn't end early when the customer replies; to wait for a reply, use [response waiting](../response-wait.md) on a message.
 
 ## Set it up
 
@@ -21,10 +21,10 @@ To follow up on the next business morning, Rangoli Store combines a 1-day delay 
 
 ## Connect it
 
-Connect **Next step** to the follow-up. After a long delay, the 24-hour reply window may have closed, so use an approved [Template message](flows/nodes/template-message.md) for the follow-up. See [The 24-hour reply window](flows/whatsapp-message-setup.md?id=the-24-hour-reply-window).
+Connect **Next step** to the follow-up. After a long delay, the 24-hour reply window may have closed, so use an approved [Template message](template-message.md) for the follow-up. See [The 24-hour reply window](../whatsapp-message-setup.md#the-24-hour-reply-window).
 
 ## See also
 
-- [Wait for and validate a reply](flows/response-wait.md)
-- [Template message](flows/nodes/template-message.md)
-- [Repeat until](flows/nodes/repeat-until.md)
+- [Wait for and validate a reply](../response-wait.md)
+- [Template message](template-message.md)
+- [Repeat until](repeat-until.md)

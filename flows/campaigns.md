@@ -11,21 +11,21 @@ Rangoli Store has published its order-tracking flow. To put it to work, the team
 
 ## How a campaign works
 
-1. You build a flow whose trigger is **WhatsApp Incoming Chat**, and publish it. See [Choose the trigger](flows/triggers-and-variables.md).
+1. You build a flow whose trigger is **WhatsApp Incoming Chat**, and publish it. See [Choose the trigger](triggers-and-variables.md).
 2. You create a campaign for that flow and set its dates.
 3. While the campaign is **Active**, a customer's message on the flow's channel starts the flow for that customer.
 
 Each contact goes through a campaign once. A second message from the same contact does not restart it until the campaign's end date passes.
 
-The START and STOP keywords from [Subscription Auto Replies](messaging/settings.md?id=subscription-auto-replies) never start a campaign.
+The START and STOP keywords from [Subscription Auto Replies](../messaging/settings.md#subscription-auto-replies) never start a campaign.
 
-To react only to certain words, such as "price" or "offer", set a **Trigger filter** on the flow's incoming-message trigger. See [Choose the trigger](flows/triggers-and-variables.md).
+To react only to certain words, such as "price" or "offer", set a **Trigger filter** on the flow's incoming-message trigger. See [Choose the trigger](triggers-and-variables.md).
 
 ## The campaign list
 
-<img src="assets/flows/campaigns-list.png" alt="The Auto Campaign list">
+![The Auto Campaign list](../assets/flows/campaigns-list.png)
 
-The list shows each campaign's **Campaign name**, its **Status**, and an **Actions** column with the **⋯** menu. Click a name to open [Campaign Outcomes](flows/campaigns.md?id=campaign-outcomes).
+The list shows each campaign's **Campaign name**, its **Status**, and an **Actions** column with the **⋯** menu. Click a name to open [Campaign Outcomes](campaigns.md#campaign-outcomes).
 
 Use **Search by name** to find a campaign, and **Filter by Status** to show one or more statuses.
 
@@ -61,7 +61,7 @@ Click **Create new campaign**. The wizard has three steps: **Details & flow** �
 4. Check the preview on the right. It shows the flow's published version, read-only. Click **Expand preview** for a larger view.
 5. Click **Continue**.
 
-Flows marked **Not published** can't be picked. Publish them first. See [Versions, publishing and JSON files](flows/versions-and-portability.md).
+Flows marked **Not published** can't be picked. Publish them first. See [Versions, publishing and JSON files](versions-and-portability.md).
 
 ### 2. Duration
 
@@ -94,6 +94,6 @@ Click a campaign's name to open **Campaign Outcomes**. It shows one row for each
 
 ## See also
 
-- [Build your first flow](flows/building-a-flow.md)
-- [Saved data](flows/saved-data.md)
-- [Audience actions](flows/nodes/audience-actions.md)
+- [Build your first flow](building-a-flow.md)
+- [Saved data](saved-data.md)
+- [Audience actions](nodes/audience-actions.md)

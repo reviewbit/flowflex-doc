@@ -4,7 +4,7 @@ Send an image, video, audio file, document or contact card on WhatsApp.
 
 ## When to use it
 
-Use a media message when the customer needs a file rather than text. Rangoli Store sends its Diwali catalogue as a PDF to every customer who asks for it, and sends each customer their own invoice after an order. To send a map pin, use [Send location](flows/nodes/send-location.md).
+Use a media message when the customer needs a file rather than text. Rangoli Store sends its Diwali catalogue as a PDF to every customer who asks for it, and sends each customer their own invoice after an order. To send a map pin, use [Send location](send-location.md).
 
 ## Set it up
 
@@ -18,7 +18,7 @@ Use a media message when the customer needs a file rather than text. Rangoli Sto
 5. Optionally, add a **Caption (optional)**, such as `Your invoice for order ORD-48213`. Audio files and contact cards don't have captions.
 6. Click **Save changes**.
 
-Images can be up to 5 MB, video and audio up to 16 MB, and documents up to 100 MB. See [Choose files and media](flows/files-and-media.md) for how each file source works.
+Images can be up to 5 MB, video and audio up to 16 MB, and documents up to 100 MB. See [Choose files and media](../files-and-media.md) for how each file source works.
 
 ### Send a contact card
 
@@ -26,10 +26,10 @@ Choose **Type** → **Contact** and fill in the name, such as **First name** and
 
 ## Connect it
 
-Connect **Next step** to the following step or to **End**. If you set a waiting time for a reply, connect **No response** too. See [Wait for and validate a reply](flows/response-wait.md).
+Connect **Next step** to the following step or to **End**. If you set a waiting time for a reply, connect **No response** too. See [Wait for and validate a reply](../response-wait.md).
 
 ## See also
 
-- [Choose files and media](flows/files-and-media.md)
-- [Files do not upload or send](help/troubleshooting.md?id=files-do-not-upload-or-send)
-- [Template message](flows/nodes/template-message.md), for files outside the 24-hour window
+- [Choose files and media](../files-and-media.md)
+- [Files do not upload or send](../../help/troubleshooting.md#files-do-not-upload-or-send)
+- [Template message](template-message.md), for files outside the 24-hour window

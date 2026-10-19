@@ -2,7 +2,7 @@
 
 Authenticate your requests to the FlowFlex API with your custom integration's API key and secret.
 
-The custom-integration API lets you send events and upload files from any language. Every request uses HTTP Basic auth, with the API key as the username and the API secret as the password. The [SDK](sdk/overview.md) is a convenience wrapper over the same endpoints and builds the header for you.
+The custom-integration API lets you send events and upload files from any language. Every request uses HTTP Basic auth, with the API key as the username and the API secret as the password. The [SDK](../sdk/overview.md) is a convenience wrapper over the same endpoints and builds the header for you.
 
 For example, when Rangoli Store's website sends `order.placed` for John Smith's order, it signs the request with the key and secret from its `Rangoli Order Events` integration.
 
@@ -16,7 +16,7 @@ All endpoints are under `/v1`.
 
 ## Credentials
 
-You get these from a custom integration. See [Create a custom integration](developers/quick-start.md?id=create-a-custom-integration).
+You get these from a custom integration. See [Create a custom integration](../developers/quick-start.md#create-a-custom-integration).
 
 | Credential | Looks like | Role |
 | --- | --- | --- |
@@ -60,12 +60,12 @@ const auth = "Basic " + Buffer.from(`${apiKey}:${apiSecret}`).toString("base64")
 
 If a secret leaks, regenerate the integration's credentials:
 
-1. In FlowFlex, open the integration and click **Regenerate**. See [Regenerate credentials](integrations/custom-integration.md?id=regenerate-credentials).
+1. In FlowFlex, open the integration and click **Regenerate**. See [Regenerate credentials](../integrations/custom-integration.md#regenerate-credentials).
 2. Copy the new API key and secret. The old pair stops working immediately.
 3. Update your environment variables and redeploy.
 
 ## See also
 
-- [Send events](api/events.md)
-- [Upload assets](api/assets.md)
-- [Security](sdk/reference.md?id=security)
+- [Send events](events.md)
+- [Upload assets](assets.md)
+- [Security](../sdk/reference.md#security)

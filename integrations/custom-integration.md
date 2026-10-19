@@ -2,16 +2,16 @@
 
 Start your flows from any system, such as your website, order system or CRM, by sending events to one webhook URL.
 
-A custom integration is a named set of events with its own webhook URL, API key and secret. Your system sends an event to the URL, and every flow subscribed to that event runs with the event's data. Use it for systems FlowFlex has no ready-made integration for. For the code side, see the [Developer quick start](developers/quick-start.md).
+A custom integration is a named set of events with its own webhook URL, API key and secret. Your system sends an event to the URL, and every flow subscribed to that event runs with the event's data. Use it for systems FlowFlex has no ready-made integration for. For the code side, see the [Developer quick start](../developers/quick-start.md).
 
 Rangoli Store creates an integration called `Rangoli Order Events` with an `order.placed` event. When John Smith places order `RS-1042` on the website, the website sends `order.placed` with John's name, phone number, order number and total. A flow uses those values to send John a WhatsApp confirmation.
 
 ## Create a custom integration
 
 1. Go to **Integrations** and click **New** on the **Custom integrations** card. The **Create custom integration** page opens, with the **API / Webhook instructions** on the right.
-2. Fill in the [details](integrations/custom-integration.md?id=details).
-3. Add at least one [event](integrations/custom-integration.md?id=events).
-4. Click **Create integration**. FlowFlex shows your webhook URL and credentials. See [Your integration is live](integrations/custom-integration.md?id=your-integration-is-live).
+2. Fill in the [details](custom-integration.md#details).
+3. Add at least one [event](custom-integration.md#events).
+4. Click **Create integration**. FlowFlex shows your webhook URL and credentials. See [Your integration is live](custom-integration.md#your-integration-is-live).
 
 ### Details
 
@@ -27,7 +27,7 @@ Events are the things your system tells FlowFlex about, and flows subscribe to t
 
 The form starts with one empty event. Click **+ Add event** for more, or **Remove event** to delete one.
 
-<img src="assets/integrations/custom-integration-events.png" alt="Adding events to a custom integration">
+![Adding events to a custom integration](../assets/integrations/custom-integration-events.png)
 
 | Field | Required | Rules |
 | --- | --- | --- |
@@ -60,7 +60,7 @@ The sample powers the `{{trigger.*}}` hints in the flow builder. Rangoli Store u
 }
 ```
 
-It gives the flow builder `{{trigger.customer.name}}`, `{{trigger.customer.phone}}`, `{{trigger.order_id}}` and `{{trigger.total}}`. See [Choose the trigger](flows/triggers-and-variables.md).
+It gives the flow builder `{{trigger.customer.name}}`, `{{trigger.customer.phone}}`, `{{trigger.order_id}}` and `{{trigger.total}}`. See [Choose the trigger](../flows/triggers-and-variables.md).
 
 > [!TIP]
 > Use realistic sample values. The sample only describes the fields; each real event brings its own values.
@@ -69,7 +69,7 @@ It gives the flow builder `{{trigger.customer.name}}`, `{{trigger.customer.phone
 
 After you click **Create integration**, FlowFlex shows **Your integration is live**.
 
-<img src="assets/integrations/custom-integration-live.png" alt="A live custom integration with its webhook details">
+![A live custom integration with its webhook details](../assets/integrations/custom-integration-live.png)
 
 The **Credentials** card shows three values:
 
@@ -82,7 +82,7 @@ The **Credentials** card shows three values:
 The secret is masked. Click **Reveal** to see it, and the copy icon to copy it.
 
 > [!WARNING]
-> The API secret is shown only once. Copy it or download the .env now, because it can't be retrieved later. To get a new one, [regenerate the credentials](integrations/custom-integration.md?id=regenerate-credentials).
+> The API secret is shown only once. Copy it or download the .env now, because it can't be retrieved later. To get a new one, [regenerate the credentials](custom-integration.md#regenerate-credentials).
 
 Click **Download .env** to save a file with all three values:
 
@@ -111,11 +111,11 @@ One integration has one webhook URL, and the `x-event` header says which event i
 
 To send a file with an event, such as John Smith's invoice PDF, open **Attaching files to events** in the same panel. It takes three calls and accepts files up to 25 MB.
 
-For the full developer guides, see the [Developer quick start](developers/quick-start.md), [Send events](api/events.md), [Upload assets](api/assets.md) and [Install and use the SDK](sdk/overview.md).
+For the full developer guides, see the [Developer quick start](../developers/quick-start.md), [Send events](../api/events.md), [Upload assets](../api/assets.md) and [Install and use the SDK](../sdk/overview.md).
 
 ## Use the integration in a flow
 
-In the flow builder, choose the trigger source **Custom**, then your integration, then the event. Only active integrations appear in the list. See [Choose the trigger](flows/triggers-and-variables.md).
+In the flow builder, choose the trigger source **Custom**, then your integration, then the event. Only active integrations appear in the list. See [Choose the trigger](../flows/triggers-and-variables.md).
 
 ## Manage an integration
 
@@ -167,11 +167,11 @@ The integration is removed from your integrations list, and this can't be undone
 - **Integration edit:** edit, change the icon, and regenerate credentials.
 - **Integration delete:** revoke and delete.
 
-See [Roles and permissions](account/roles-and-permissions.md).
+See [Roles and permissions](../account/roles-and-permissions.md).
 
 ## See also
 
-- [Integrations overview](integrations/overview.md)
-- [Developer quick start](developers/quick-start.md)
-- [Send events](api/events.md)
-- [Choose the trigger](flows/triggers-and-variables.md)
+- [Integrations overview](overview.md)
+- [Developer quick start](../developers/quick-start.md)
+- [Send events](../api/events.md)
+- [Choose the trigger](../flows/triggers-and-variables.md)

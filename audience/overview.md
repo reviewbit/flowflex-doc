@@ -6,23 +6,23 @@ Audience holds every contact in a branch, with their tags, lists, custom fields 
 
 Rangoli Store imports its customer spreadsheet into the Kochi branch, tags its best customers `repeat-buyer`, and builds a segment of repeat buyers. When the Diwali sale starts, it sends one broadcast to that segment, and customers who opted out of WhatsApp marketing are skipped.
 
-<img src="assets/audience/overview-tabs.png" alt="The Audience page with its six tabs and overview cards">
+![The Audience page with its six tabs and overview cards](../assets/audience/overview-tabs.png)
 
 ## How it works
 
 1. **Add contacts.** Add them one at a time in **Profiles**, or upload a CSV or XLSX file in **Bulk Import**.
 2. **Label them.** Add tags such as `repeat-buyer` or `new`, by hand, in bulk, or from a flow.
 3. **Group them.** Put contacts in a list, or build a segment from conditions such as tags, custom fields and broadcast activity.
-4. **Reach them.** Pick the list or segment as the audience of a [broadcast](broadcasts/send-broadcast.md).
+4. **Reach them.** Pick the list or segment as the audience of a [broadcast](../broadcasts/send-broadcast.md).
 
 ## The six tabs
 
-- **Profiles:** see, search, filter, add and edit contacts, and run bulk actions. See [Contacts](audience/contacts.md).
-- **List:** group contacts by hand, merge lists, and subscribe or unsubscribe a list. See [Lists](audience/lists.md).
-- **Segments:** group contacts by rules. Membership updates on its own. See [Segments](audience/segments.md).
-- **Tags:** create and delete tags, and see how many contacts carry each one. See [Tags](audience/tags.md).
-- **Bulk Import:** upload a CSV or XLSX file of contacts, and see past imports. See [Import and export](audience/import-export.md).
-- **Export:** download finished contact exports. See [Export contacts](audience/import-export.md?id=export-contacts).
+- **Profiles:** see, search, filter, add and edit contacts, and run bulk actions. See [Contacts](contacts.md).
+- **List:** group contacts by hand, merge lists, and subscribe or unsubscribe a list. See [Lists](lists.md).
+- **Segments:** group contacts by rules. Membership updates on its own. See [Segments](segments.md).
+- **Tags:** create and delete tags, and see how many contacts carry each one. See [Tags](tags.md).
+- **Bulk Import:** upload a CSV or XLSX file of contacts, and see past imports. See [Import and export](import-export.md).
+- **Export:** download finished contact exports. See [Export contacts](import-export.md#export-contacts).
 
 Lists and segments are the two ways to pick an audience for a broadcast. A list changes only when you add or remove contacts, by hand, by bulk action or by import, so it suits a fixed group such as `Repeat buyers – Oct 2026`. A segment updates automatically as contact data changes, so it suits a rule such as "Tags contains repeat-buyer and Country is India".
 
@@ -49,7 +49,7 @@ Each contact has three marketing consent fields: WhatsApp, SMS and Email. A new 
 
 The **Subscribed to** column in Profiles shows a green icon for each channel the contact is subscribed to. On a contact's page, the **Overview** shows **WhatsApp**, **Email** and **SMS** as **Subscribed** or **Not Subscribed**.
 
-When you send a broadcast with a **Marketing** template, contacts with WhatsApp marketing consent turned off are skipped. See [Send a broadcast](broadcasts/send-broadcast.md).
+When you send a broadcast with a **Marketing** template, contacts with WhatsApp marketing consent turned off are skipped. See [Send a broadcast](../broadcasts/send-broadcast.md).
 
 ### What changes consent
 
@@ -73,14 +73,14 @@ Suppressed contacts stay in your lists and segments, and marketing broadcasts sk
 
 ## Get started
 
-- [Add and manage contacts](audience/contacts.md): add, edit, filter and act on contacts.
-- [Import and export contacts](audience/import-export.md): upload a file of contacts, or download a CSV.
-- [Create and manage lists](audience/lists.md): group contacts by hand.
-- [Build a segment](audience/segments.md): group contacts by rules.
-- [Use tags](audience/tags.md): label contacts for filters, segments and flows.
+- [Add and manage contacts](contacts.md): add, edit, filter and act on contacts.
+- [Import and export contacts](import-export.md): upload a file of contacts, or download a CSV.
+- [Create and manage lists](lists.md): group contacts by hand.
+- [Build a segment](segments.md): group contacts by rules.
+- [Use tags](tags.md): label contacts for filters, segments and flows.
 
 ## See also
 
-- [Send a broadcast](broadcasts/send-broadcast.md): send to a list or segment.
-- [Broadcast guidelines](broadcasts/broadcast-guidelines.md): keep marketing messages welcome.
-- [Flows overview](flows/overview.md): tag and route contacts automatically.
+- [Send a broadcast](../broadcasts/send-broadcast.md): send to a list or segment.
+- [Broadcast guidelines](../broadcasts/broadcast-guidelines.md): keep marketing messages welcome.
+- [Flows overview](../flows/overview.md): tag and route contacts automatically.

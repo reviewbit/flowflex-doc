@@ -8,7 +8,7 @@ Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Deta
 
 ## 1. Details & message
 
-<img src="assets/broadcasts/create-details.png" alt="Create broadcast, step 1: Details & message">
+![Create broadcast, step 1: Details & message](../assets/broadcasts/create-details.png)
 
 1. **Broadcast name**: an internal name, such as `Diwali sale – repeat buyers – Oct 2026`.
 2. **Select channel**: Connected channels only.
@@ -21,7 +21,7 @@ Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Deta
 
 ## 2. Schedule & audience
 
-<img src="assets/broadcasts/create-schedule.png" alt="Create broadcast, step 2: Schedule & audience">
+![Create broadcast, step 2: Schedule & audience](../assets/broadcasts/create-schedule.png)
 
 Now decide **when** it goes out and **who** gets it.
 
@@ -39,7 +39,7 @@ For **Marketing** templates, contacts who opted out of WhatsApp marketing are ex
 
 ## 3. Review & publish
 
-<img src="assets/broadcasts/publish-modal.png" alt="The Publish broadcast confirmation with a test message">
+![The Publish broadcast confirmation with a test message](../assets/broadcasts/publish-modal.png)
 
 1. Check the **Broadcast summary**.
 2. Click **Publish broadcast**. The confirmation shows the number of eligible contacts, the batch size, and the date range.
@@ -55,7 +55,7 @@ Publishing is blocked if:
 
 ## Cost
 
-Each delivered message is paid from your wallet in message credits. Your rates are on the **WhatsApp message charges** page in **Billing**; see [Billing and wallet](account/billing-and-wallet.md).
+Each delivered message is paid from your wallet in message credits. Your rates are on the **WhatsApp message charges** page in **Billing**; see [Billing and wallet](../account/billing-and-wallet.md).
 
 ## What your customers see
 
@@ -63,6 +63,6 @@ At 10:00 AM on 20 October, John Smith's phone lights up with "Hi John, the Rango
 
 ## See also
 
-- [Results and errors](broadcasts/results-and-errors.md): what each number and error means.
-- [Segments](audience/segments.md): follow up with everyone who **Clicked** or **Read** this broadcast.
-- [Broadcast guidelines](broadcasts/broadcast-guidelines.md): keep your number healthy as you send more.
+- [Results and errors](results-and-errors.md): what each number and error means.
+- [Segments](../audience/segments.md): follow up with everyone who **Clicked** or **Read** this broadcast.
+- [Broadcast guidelines](broadcast-guidelines.md): keep your number healthy as you send more.

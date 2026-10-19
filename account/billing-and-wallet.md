@@ -2,7 +2,7 @@
 
 Add message credits, keep an eye on your WhatsApp spend, and download receipts and invoices.
 
-WhatsApp messages are paid from your wallet in message credits. Your plan and add-ons are billed separately, on the [Plans](account/plans-and-add-ons.md) page. Go to **Billing** to manage both. Only Admins see it.
+WhatsApp messages are paid from your wallet in message credits. Your plan and add-ons are billed separately, on the [Plans](plans-and-add-ons.md) page. Go to **Billing** to manage both. Only Admins see it.
 
 What a message costs depends on its category (Marketing, Utility, Authentication or Service), the recipient's country, and your organisation's agreement with FlowFlex. The **WhatsApp message charges** link in **Billing** always shows your current rates.
 
@@ -26,7 +26,7 @@ The **Wallet** tab lists every recharge and adjustment. Click **Download receipt
 
 ## Get a low-balance alert
 
-<img src="assets/account/set-credit-alert.png" alt="The Set credit alert drawer">
+![The Set credit alert drawer](../assets/account/set-credit-alert.png)
 
 1. Click **Set alert**.
 2. Enter a **New credit threshold**.
@@ -43,9 +43,9 @@ The **Invoices** tab lists your invoices with their status. Download one, or tic
 
 ## Billing details
 
-The details on the **Billing details** tab are printed on your receipts and invoices. Click the edit icon, update them, and click **Save**. **Billing email** is required. Tick **Use business address as billing address** to copy the address from [Organisation settings](account/organisation.md), and add your **GSTIN** if you want it on your invoices.
+The details on the **Billing details** tab are printed on your receipts and invoices. Click the edit icon, update them, and click **Save**. **Billing email** is required. Tick **Use business address as billing address** to copy the address from [Organisation settings](organisation.md), and add your **GSTIN** if you want it on your invoices.
 
 ## See also
 
-- [Plans and add-ons](account/plans-and-add-ons.md)
-- [Send a broadcast](broadcasts/send-broadcast.md)
+- [Plans and add-ons](plans-and-add-ons.md)
+- [Send a broadcast](../broadcasts/send-broadcast.md)

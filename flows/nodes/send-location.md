@@ -4,7 +4,7 @@ Send a location as a WhatsApp map pin, such as your store or a pickup point.
 
 ## When to use it
 
-Use Send location when the customer needs to find a place. When a customer chooses store pickup, Rangoli Store sends a pin for the Kochi branch, so the customer can open directions in their maps app. To ask for the customer's location instead, use [Location request](flows/nodes/location-request.md).
+Use Send location when the customer needs to find a place. When a customer chooses store pickup, Rangoli Store sends a pin for the Kochi branch, so the customer can open directions in their maps app. To ask for the customer's location instead, use [Location request](location-request.md).
 
 ## Set it up
 
@@ -22,6 +22,6 @@ Connect **Next step** to the following step or to **End**.
 
 ## See also
 
-- [Location request](flows/nodes/location-request.md)
-- [Set up WhatsApp messages](flows/whatsapp-message-setup.md)
-- [Select and insert variables](flows/using-variables.md)
+- [Location request](location-request.md)
+- [Set up WhatsApp messages](../whatsapp-message-setup.md)
+- [Select and insert variables](../using-variables.md)

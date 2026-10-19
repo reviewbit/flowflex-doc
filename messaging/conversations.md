@@ -6,7 +6,7 @@ Read, reply to, assign and organise your customers' WhatsApp chats in one shared
 
 On a Monday morning, Chris Taylor, a support agent at Rangoli Store, opens **Unassigned** and finds a question from John Smith about a delayed order. Chris assigns the chat to themselves, replies with the `/hours` quick reply and a tracking update, and marks the chat **Resolved** once John confirms the parcel arrived.
 
-<img src="assets/messaging/conversations-inbox.png" alt="The Conversations inbox">
+![The Conversations inbox](../assets/messaging/conversations-inbox.png)
 
 ## Tabs and who sees what
 
@@ -16,7 +16,7 @@ The list has three tabs, and the active tab shows its count:
 - **Your chats** shows conversations assigned to you.
 - **Unassigned** shows conversations with no agent assigned.
 
-What you can see depends on your role. With the **Conversation view all** permission for every channel in the branch, **All** and **Unassigned** show the whole team's chats. Without it, you see only conversations assigned to you, or with contacts you own. See [Roles and permissions](account/roles-and-permissions.md) to change a role.
+What you can see depends on your role. With the **Conversation view all** permission for every channel in the branch, **All** and **Unassigned** show the whole team's chats. Without it, you see only conversations assigned to you, or with contacts you own. See [Roles and permissions](../account/roles-and-permissions.md) to change a role.
 
 ## Search and filter
 
@@ -28,7 +28,7 @@ To filter the list:
 2. Choose any of these:
    - **Channels**: only chats on the selected WhatsApp numbers.
    - **Status**: **Open**, **Pending** or **Resolved**.
-   - **Tags**: contacts with any of the selected tags. See [Tags](audience/tags.md).
+   - **Tags**: contacts with any of the selected tags. See [Tags](../audience/tags.md).
    - **Unread only**: only chats with unread messages.
 3. Click **Apply**. The filter icon becomes **Reset filters**; click it to clear all filters.
 
@@ -72,7 +72,7 @@ You need the **Audience create** permission to start a chat.
 4. Pick **Send from channel**.
 5. Click **Start chat**. The new chat opens.
 
-A new chat has no open 24-hour window, so your first message must be a template. See [The 24-hour window](messaging/conversations.md?id=the-24-hour-window).
+A new chat has no open 24-hour window, so your first message must be a template. See [The 24-hour window](conversations.md#the-24-hour-window).
 
 ## Chat header actions
 
@@ -88,7 +88,7 @@ On a phone, **⋮** also holds **Mark as pending** (or **Mark as reopened**) and
 
 ## Write a message
 
-<img src="assets/messaging/conversations-composer.png" alt="Replying to a customer in Conversations">
+![Replying to a customer in Conversations](../assets/messaging/conversations-composer.png)
 
 Type in the composer and press **Enter** to send. Press **Shift+Enter** for a new line.
 
@@ -96,9 +96,9 @@ The composer toolbar has:
 
 - **Bold**, **Italic**, **Bulleted list** and **Numbered list** to format your text.
 - **Emoji** to insert an emoji.
-- **Attach file** to add one file. See [Attachments](messaging/conversations.md?id=attachments).
+- **Attach file** to add one file. See [Attachments](conversations.md#attachments).
 - **Record a voice note** to record up to 4 minutes, then click **Send**. Click the bin icon to discard it.
-- **Assign** (@) to mention a teammate. See [Mentions and internal notes](messaging/conversations.md?id=mentions-and-internal-notes).
+- **Assign** (@) to mention a teammate. See [Mentions and internal notes](conversations.md#mentions-and-internal-notes).
 - **Choose template** to open the template drawer.
 - **Expand composer** to open a larger editor.
 
@@ -117,7 +117,7 @@ Hover over a message and click **Reply**. A **Replying to** strip appears above 
 
 ### Quick replies
 
-Type `/` to see your quick replies. Keep typing to narrow the list, such as `/hours`. Press **Enter** or click one to insert its text, then edit it before sending if you need to. See [Quick replies](messaging/quick-replies.md) to create them.
+Type `/` to see your quick replies. Keep typing to narrow the list, such as `/hours`. Press **Enter** or click one to insert its text, then edit it before sending if you need to. See [Quick replies](quick-replies.md) to create them.
 
 ## When a message can't be sent
 
@@ -129,7 +129,7 @@ If the chat's WhatsApp channel can't send right now, the **Send** button is disa
 
 If a message can't be sent, it still stays in the chat history, marked as failed. Hover over the red icon next to it to see the reason, for example:
 
-- **Not sent: your wallet balance is negative. Add message credits in Billing to send messages.** This applies to agent replies in Conversations only; flows aren't affected. See [Billing and wallet](account/billing-and-wallet.md).
+- **Not sent: your wallet balance is negative. Add message credits in Billing to send messages.** This applies to agent replies in Conversations only; flows aren't affected. See [Billing and wallet](../account/billing-and-wallet.md).
 - **Not sent: channel authorization failed. Reconnect this WhatsApp channel in Channels, or contact FlowFlex support.**
 
 Once you've fixed the cause, send your reply again.
@@ -167,10 +167,10 @@ You need the **Template view** permission to see templates.
 4. Fill in each field under **Dynamic variables**, such as the customer's name. For a location header, fill in **Latitude**, **Longitude**, **Location name** and **Address**.
 5. Click **Send to** followed by the contact's number. The template appears in the chat.
 
-If the list is empty, click **Create Template**. See [Create a template](whatsapp/create-template.md).
+If the list is empty, click **Create Template**. See [Create a template](../whatsapp/create-template.md).
 
 > [!WARNING]
-> If the contact has opted out of WhatsApp marketing, a dot appears on **Choose template**. Hover over it to see **This customer is not subscribed to WhatsApp marketing. Marketing templates will be skipped.** Send a Utility template instead, or ask the customer to reply START. See [Subscription Auto Replies](messaging/settings.md?id=subscription-auto-replies).
+> If the contact has opted out of WhatsApp marketing, a dot appears on **Choose template**. Hover over it to see **This customer is not subscribed to WhatsApp marketing. Marketing templates will be skipped.** Send a Utility template instead, or ask the customer to reply START. See [Subscription Auto Replies](settings.md#subscription-auto-replies).
 
 ## Customer Details
 
@@ -182,7 +182,7 @@ Click the contact's name or avatar in the header to open **Customer Details**. I
 - **Assigned to:** pick the agent who owns the chat.
 - **Events history:** status changes, assignments and other events on this chat.
 
-If **Mask prospect phone numbers** is on, you may see numbers like `+91 XXXXXX0001`. See [Conversation privacy](messaging/settings.md?id=conversation-privacy).
+If **Mask prospect phone numbers** is on, you may see numbers like `+91 XXXXXX0001`. See [Conversation privacy](settings.md#conversation-privacy).
 
 ## Read-only conversations
 
@@ -190,6 +190,6 @@ If the chat's WhatsApp channel was removed or is no longer available, the list s
 
 ## See also
 
-- [Messaging settings](messaging/settings.md): business hours, assignment and automatic replies.
-- [Quick replies](messaging/quick-replies.md): save answers your team sends often.
-- [Connect a channel](whatsapp/connect-channel.md): add or reconnect a WhatsApp number.
+- [Messaging settings](settings.md): business hours, assignment and automatic replies.
+- [Quick replies](quick-replies.md): save answers your team sends often.
+- [Connect a channel](../whatsapp/connect-channel.md): add or reconnect a WhatsApp number.

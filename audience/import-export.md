@@ -33,7 +33,7 @@ Go to **Audience** → **Bulk Import** → **Import**. The **Import audience** w
 
 ### Step 1: Upload
 
-<img src="assets/audience/import-upload.png" alt="Import audience, step 1: Upload">
+![Import audience, step 1: Upload](../assets/audience/import-upload.png)
 
 1. Choose the **Destination**:
     - **All contacts**: import to the main audience. This is the default.
@@ -67,7 +67,7 @@ If the file can't be used, you see one of these errors. Click **Try a different 
 
 ### Step 2: Map columns
 
-<img src="assets/audience/import-map-columns.png" alt="Import audience, step 2: Map columns">
+![Import audience, step 2: Map columns](../assets/audience/import-map-columns.png)
 
 Each column in your file is one row here, and FlowFlex matches common column names for you. The counter shows how many columns are selected, such as **4 of 5 columns selected**, and the **Status** column shows a tick when a column is mapped.
 
@@ -102,7 +102,7 @@ Pick **Custom field** to keep any other data, such as `city` or `last_order_date
 2. Check the **Custom field name**. FlowFlex suggests one from the column name, in lowercase with underscores.
 3. Change it if needed.
 
-The custom field is created when the import runs. It then appears as a column in **Profiles**, on the contact's **Other** tab, and as a field in filters and [segments](audience/segments.md). Custom fields created by an import are text fields.
+The custom field is created when the import runs. It then appears as a column in **Profiles**, on the contact's **Other** tab, and as a field in filters and [segments](segments.md). Custom fields created by an import are text fields.
 
 You can't use names already used by built-in fields, such as phone or email. You see **"name" is reserved — it would collide with a built-in field. Pick a different name.**
 
@@ -141,7 +141,7 @@ The **Bulk Import** tab lists past imports with their **Name**, **Audience count
 From each row you can download the original file, download the error file (red icon) when rows were skipped, or delete the record from the ⋯ menu. The error file is a CSV of the skipped rows with an extra `error` column: fix the rows and import that file again.
 
 > [!TIP]
-> To create a list from a file while building a broadcast, use **Quick Import** in [Send a broadcast](broadcasts/send-broadcast.md). It follows the same file rules.
+> To create a list from a file while building a broadcast, use **Quick Import** in [Send a broadcast](../broadcasts/send-broadcast.md). It follows the same file rules.
 
 ## Export contacts
 
@@ -160,7 +160,7 @@ The CSV holds the contacts' main fields, such as name, phone, email, marketing c
 
 ## See also
 
-- [Contacts](audience/contacts.md): add or edit one contact at a time.
-- [Lists](audience/lists.md): manage the lists you import into.
-- [Segments](audience/segments.md): group imported contacts by custom fields such as `city`.
-- [Send a broadcast](broadcasts/send-broadcast.md): send to the contacts you imported.
+- [Contacts](contacts.md): add or edit one contact at a time.
+- [Lists](lists.md): manage the lists you import into.
+- [Segments](segments.md): group imported contacts by custom fields such as `city`.
+- [Send a broadcast](../broadcasts/send-broadcast.md): send to the contacts you imported.

@@ -16,7 +16,7 @@ In view mode, **Publish** publishes the version on screen. **Show published** ta
 
 Fix errors before saving: the flow needs exactly one Trigger and one End, every node connected, and a connection from every output.
 
-Publishing a flow doesn't set up its campaign. Incoming-message campaigns are created and published separately. See [Campaigns](flows/campaigns.md).
+Publishing a flow doesn't set up its campaign. Incoming-message campaigns are created and published separately. See [Campaigns](campaigns.md).
 
 ## Version history
 
@@ -35,7 +35,7 @@ Exports leave out settings that belong to your workspace. Read the notice, then 
 
 ## See also
 
-- [Build your first flow](flows/building-a-flow.md)
-- [Campaigns](flows/campaigns.md)
-- [Learn flow builder](flows/learning-the-builder.md)
-- [I cannot save the flow](help/troubleshooting.md?id=i-cannot-save-the-flow)
+- [Build your first flow](building-a-flow.md)
+- [Campaigns](campaigns.md)
+- [Learn flow builder](learning-the-builder.md)
+- [I cannot save the flow](../help/troubleshooting.md#i-cannot-save-the-flow)

@@ -2,7 +2,7 @@
 
 Tag a contact, save details to their profile, leave a note for your team, or hand the chat to an agent, all from inside a flow.
 
-The four audience actions sit in **Audience Blocks**. Each one finds the customer by **Contact number**. For a flow started by an incoming WhatsApp message, insert **Trigger** → **from**; for another trigger, choose its customer phone field. See [Select and insert variables](flows/using-variables.md).
+The four audience actions sit in **Audience Blocks**. Each one finds the customer by **Contact number**. For a flow started by an incoming WhatsApp message, insert **Trigger** → **from**; for another trigger, choose its customer phone field. See [Select and insert variables](../using-variables.md).
 
 None of these actions sends a message to the customer. Add a message node after them if the customer should hear something.
 
@@ -10,7 +10,7 @@ None of these actions sends a message to the customer. Add a message node after 
 
 Add or remove tags on the contact, so you can find them later or route them differently.
 
-**When to use it:** when Jane Doe taps **Tell me more** on Rangoli Store's Diwali offer, the flow adds the `interested` tag, then sends the details. A later [contact-tag condition](flows/nodes/contact-tag-conditions.md) or [segment](audience/segments.md) can pick up everyone with that tag.
+**When to use it:** when Jane Doe taps **Tell me more** on Rangoli Store's Diwali offer, the flow adds the `interested` tag, then sends the details. A later [contact-tag condition](contact-tag-conditions.md) or [segment](../../audience/segments.md) can pick up everyone with that tag.
 
 1. Add **Save tag** and open it.
 2. Set **Contact number**, for example **Trigger** → **from**.
@@ -27,11 +27,11 @@ Save information the flow collected to the contact's profile. If the contact isn
 1. Add **Save audience** after the step that collects the information, and open it.
 2. Set **Contact number**.
 3. Under **Columns**, choose a column from **Existing columns** or **Profile fields**, or type a new name.
-4. Enter its value, such as the customer's captured reply. See [Use a customer's reply](flows/using-variables.md?id=use-a-customers-reply).
+4. Enter its value, such as the customer's captured reply. See [Use a customer's reply](../using-variables.md#use-a-customers-reply).
 5. Click **Add column** for each extra field.
 6. Click **Submit**, then connect **Next step**.
 
-Choose an existing column when one already holds that information, so the profile doesn't end up with duplicate fields. To record answers in a table for reporting instead, use [Save data](flows/nodes/save-data.md).
+Choose an existing column when one already holds that information, so the profile doesn't end up with duplicate fields. To record answers in a table for reporting instead, use [Save data](save-data.md).
 
 ## Add Note
 
@@ -67,6 +67,6 @@ The flow doesn't stop at the handover. Connect **Next step** to **End** if nothi
 
 ## See also
 
-- [Contact-tag conditions](flows/nodes/contact-tag-conditions.md)
-- [Save data](flows/nodes/save-data.md)
-- [Workflows overview](flows/overview.md)
+- [Contact-tag conditions](contact-tag-conditions.md)
+- [Save data](save-data.md)
+- [Workflows overview](../overview.md)

@@ -4,7 +4,7 @@ Ask the customer to share their location on WhatsApp, and use it in later steps.
 
 ## When to use it
 
-Use a location request when you need to know where the customer is. Rangoli Store asks "Share your location and we'll find your nearest store", then uses [Calculate distance](flows/nodes/utils-function.md#calculate-distance) to compare the customer's location with the Kochi and Bengaluru branches.
+Use a location request when you need to know where the customer is. Rangoli Store asks "Share your location and we'll find your nearest store", then uses [Calculate distance](utils-function.md#calculate-distance) to compare the customer's location with the Kochi and Bengaluru branches.
 
 ## Set it up
 
@@ -22,6 +22,6 @@ Connect **Next step** to the step that uses the location, such as **Utils functi
 
 ## See also
 
-- [Utils function](flows/nodes/utils-function.md)
-- [Send location](flows/nodes/send-location.md), to send your own location
-- [Wait for and validate a reply](flows/response-wait.md)
+- [Utils function](utils-function.md)
+- [Send location](send-location.md), to send your own location
+- [Wait for and validate a reply](../response-wait.md)

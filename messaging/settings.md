@@ -6,7 +6,7 @@ Go to **Messaging** → **Settings** to open the **Conversation settings** page.
 
 Rangoli Store's Kochi team works 10:00 to 20:00, Monday to Saturday. Alex Lee sets those business hours, switches assignment to **Round-robin** so new chats are shared between Chris Taylor and the rest of the team, and turns on an Away Message. When Maria Garcia messages at 22:00, the Away Message tells Maria when the team will reply, and the chat is waiting for an agent in the morning.
 
-<img src="assets/messaging/settings-page.png" alt="Messaging settings: business hours and assignment">
+![Messaging settings: business hours and assignment](../assets/messaging/settings-page.png)
 
 ## Who can use this page
 
@@ -16,7 +16,7 @@ Rangoli Store's Kochi team works 10:00 to 20:00, Monday to Saturday. Alex Lee se
 | **Messaging settings edit** | Change the settings. |
 | Neither | The page shows **Access denied** with "You do not have permission to view messaging settings." |
 
-See [Roles and permissions](account/roles-and-permissions.md).
+See [Roles and permissions](../account/roles-and-permissions.md).
 
 ## Set business hours
 
@@ -41,7 +41,7 @@ FlowFlex keeps an existing assignee first. If the contact already has an owner i
 
 With **Round-robin**, the agents in the branch are listed in order. Drag a name to reorder; FlowFlex saves it and shows **Rotation order saved**.
 
-New team members join the end of the list automatically, and people who leave are skipped. If nobody has access to the branch, you see **No agents have access to this branch yet**. See [Teams](account/teams.md).
+New team members join the end of the list automatically, and people who leave are skipped. If nobody has access to the branch, you see **No agents have access to this branch yet**. See [Teams](../account/teams.md).
 
 ## Conversation privacy
 
@@ -82,7 +82,7 @@ Only one of the two is sent. If the Away Message is off, the greeting is sent ou
 
 Customers send a keyword to subscribe to or unsubscribe from your marketing messages. The **Subscription Auto Replies** card sets those keywords and the confirmation replies, per language.
 
-<img src="assets/messaging/settings-subscription-auto-replies.png" alt="Subscription Auto Replies with START and STOP keywords">
+![Subscription Auto Replies with START and STOP keywords](../assets/messaging/settings-subscription-auto-replies.png)
 
 Each language has a **Subscribe** card and an **Unsubscribe** card, each with a **Keyword** and an **Enable auto reply** option. **Default (English)** is always there and can't be removed. Its defaults are:
 
@@ -106,16 +106,16 @@ The keyword must be the whole message or a button the customer taps. Matching ig
 
 ### Link with the Marketing opt-out button
 
-The **Marketing opt-out** button on a template uses your **Unsubscribe** keyword as its text. FlowFlex picks the keyword for the template's language, or falls back to Default (English). Tapping it unsubscribes the contact, just like typing the keyword. See [Create a template](whatsapp/create-template.md?id=buttons).
+The **Marketing opt-out** button on a template uses your **Unsubscribe** keyword as its text. FlowFlex picks the keyword for the template's language, or falls back to Default (English). Tapping it unsubscribes the contact, just like typing the keyword. See [Create a template](../whatsapp/create-template.md#buttons).
 
-Unsubscribed contacts are skipped for Marketing templates in broadcasts and chats. See [Broadcast guidelines](broadcasts/broadcast-guidelines.md).
+Unsubscribed contacts are skipped for Marketing templates in broadcasts and chats. See [Broadcast guidelines](../broadcasts/broadcast-guidelines.md).
 
 ## Quick Reply
 
-The last card manages saved replies for agents. See [Quick replies](messaging/quick-replies.md).
+The last card manages saved replies for agents. See [Quick replies](quick-replies.md).
 
 ## See also
 
-- [Conversations](messaging/conversations.md): reply to and assign customer chats.
-- [Quick replies](messaging/quick-replies.md): save answers your team sends often.
-- [Roles and permissions](account/roles-and-permissions.md): control who can change these settings.
+- [Conversations](conversations.md): reply to and assign customer chats.
+- [Quick replies](quick-replies.md): save answers your team sends often.
+- [Roles and permissions](../account/roles-and-permissions.md): control who can change these settings.

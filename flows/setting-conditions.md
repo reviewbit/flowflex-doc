@@ -10,12 +10,12 @@ In Rangoli Store's order-tracking flow, the API returns the order's status. A Co
 
 1. Open a Condition split, Condition branch or Repeat until node.
 2. Add or open a condition rule.
-3. Select the field with [Insert Variable](flows/using-variables.md).
+3. Select the field with [Insert Variable](using-variables.md).
 4. Choose an operator that matches the field's type.
 5. Enter the value to compare, if the operator needs one.
 6. Save the node and connect its outputs.
 
-For **Contact tags**, choose the contact number and the tags instead. See [Contact-tag conditions](flows/nodes/contact-tag-conditions.md).
+For **Contact tags**, choose the contact number and the tags instead. See [Contact-tag conditions](nodes/contact-tag-conditions.md).
 
 ## Match the operator to the value
 
@@ -47,6 +47,6 @@ Connect every path the node shows. For a guaranteed fallback, use a Condition sp
 
 ## See also
 
-- [Condition split](flows/nodes/condition-split.md)
-- [Condition branch](flows/nodes/condition-branch.md)
-- [The wrong condition path runs](help/troubleshooting.md?id=the-wrong-condition-path-runs)
+- [Condition split](nodes/condition-split.md)
+- [Condition branch](nodes/condition-branch.md)
+- [The wrong condition path runs](../help/troubleshooting.md#the-wrong-condition-path-runs)

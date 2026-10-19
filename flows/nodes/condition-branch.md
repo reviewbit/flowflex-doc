@@ -4,7 +4,7 @@ Send the flow down one of several paths, depending on which set of rules matches
 
 ## When to use it
 
-Use a condition branch when there are more than two outcomes. After Rangoli Store's API node looks up an order, a condition branch checks the status: **Path 1** for `shipped` sends tracking details, and **Path 2** for `processing` tells the customer the order is being packed. For a simple Yes or No, use a [Condition split](flows/nodes/condition-split.md).
+Use a condition branch when there are more than two outcomes. After Rangoli Store's API node looks up an order, a condition branch checks the status: **Path 1** for `shipped` sends tracking details, and **Path 2** for `processing` tells the customer the order is being packed. For a simple Yes or No, use a [Condition split](condition-split.md).
 
 ## Set it up
 
@@ -14,16 +14,16 @@ Use a condition branch when there are more than two outcomes. After Rangoli Stor
 4. Click **Add path** for each further outcome you need.
 5. Click **Save**.
 
-Each path can hold several rules and condition groups, combined with AND or OR. See [Set conditions and choose paths](flows/setting-conditions.md). To route by a contact's tags, see [Contact-tag conditions](flows/nodes/contact-tag-conditions.md).
+Each path can hold several rules and condition groups, combined with AND or OR. See [Set conditions and choose paths](../setting-conditions.md). To route by a contact's tags, see [Contact-tag conditions](contact-tag-conditions.md).
 
 ## Connect it
 
 The node has one output per path. Connect each one to its next step.
 
-Paths are checked in order and the first match wins, so put specific rules before broad ones. There is no "anything else" path. If a value might match none of your paths, put a [Condition split](flows/nodes/condition-split.md) before the branch that checks for the expected values, and connect its **No** output to a fallback such as **Assign agent**.
+Paths are checked in order and the first match wins, so put specific rules before broad ones. There is no "anything else" path. If a value might match none of your paths, put a [Condition split](condition-split.md) before the branch that checks for the expected values, and connect its **No** output to a fallback such as **Assign agent**.
 
 ## See also
 
-- [Condition split](flows/nodes/condition-split.md)
-- [Set conditions and choose paths](flows/setting-conditions.md)
-- [The wrong condition path runs](help/troubleshooting.md?id=the-wrong-condition-path-runs)
+- [Condition split](condition-split.md)
+- [Set conditions and choose paths](../setting-conditions.md)
+- [The wrong condition path runs](../../help/troubleshooting.md#the-wrong-condition-path-runs)

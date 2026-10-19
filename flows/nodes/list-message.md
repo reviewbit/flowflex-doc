@@ -14,7 +14,7 @@ Use a list message when there are more choices than fit on three buttons. Rangol
 4. In **List title**, enter the label of the button that opens the list, such as `View options`.
 5. Give the section a title, such as `Orders`, and add rows. Each row needs a title, and can have a description, such as `Track my order` / `See where your parcel is`.
 6. Click **Add Row** for more rows, or **Add Section** to group them. With more than one section, each section needs a title.
-7. Set a waiting time under response handling if you want a fallback when the customer doesn't pick anything. See [Wait for and validate a reply](flows/response-wait.md).
+7. Set a waiting time under response handling if you want a fallback when the customer doesn't pick anything. See [Wait for and validate a reply](../response-wait.md).
 8. Check the **Live WhatsApp preview** and click **Save changes**.
 
 | Part | Limit |
@@ -32,6 +32,6 @@ The node has one output per row, named after its title. Connect each row to the 
 
 ## See also
 
-- [Button message](flows/nodes/button-message.md), for three choices or fewer
-- [Set up WhatsApp messages](flows/whatsapp-message-setup.md)
-- [The wrong condition path runs](help/troubleshooting.md?id=the-wrong-condition-path-runs)
+- [Button message](button-message.md), for three choices or fewer
+- [Set up WhatsApp messages](../whatsapp-message-setup.md)
+- [The wrong condition path runs](../../help/troubleshooting.md#the-wrong-condition-path-runs)

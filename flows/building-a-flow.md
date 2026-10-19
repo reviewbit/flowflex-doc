@@ -2,7 +2,7 @@
 
 Build a short flow that replies to a customer's WhatsApp message, then test and publish it.
 
-Start small: one trigger, one message and an End node. Once that works, add choices, conditions or a call to another service. To practise first on sample data, open [Learn flow builder](flows/learning-the-builder.md).
+Start small: one trigger, one message and an End node. Once that works, add choices, conditions or a call to another service. To practise first on sample data, open [Learn flow builder](learning-the-builder.md).
 
 Before building its order-tracking flow, Rangoli Store starts with a greeting. When John Smith messages the store, the flow replies "Hi John Smith, how can we help?" Later the team swaps the text for a message with **Track order** and **Talk to the team** buttons.
 
@@ -21,7 +21,7 @@ A practice lesson in Learn flow builder doesn't create or switch on a real flow.
 2. Choose the source that offers **WhatsApp Incoming Chat**, and select that event.
 3. Save the trigger.
 
-Every flow has exactly one Trigger, which starts it, and one End, which finishes it. See [Choose the trigger](flows/triggers-and-variables.md).
+Every flow has exactly one Trigger, which starts it, and one End, which finishes it. See [Choose the trigger](triggers-and-variables.md).
 
 ## Add a message
 
@@ -31,7 +31,7 @@ Every flow has exactly one Trigger, which starts it, and one End, which finishes
 4. Type `Hi `, insert **Trigger** → **name**, then type `, how can we help?`
 5. Check the preview and click **Save changes**.
 
-See [Select and insert variables](flows/using-variables.md) for nested fields, and [Text message](flows/nodes/text-message.md) for every setting.
+See [Select and insert variables](using-variables.md) for nested fields, and [Text message](nodes/text-message.md) for every setting.
 
 ## Connect the steps
 
@@ -56,7 +56,7 @@ In a flow with branches, all finished paths can lead to the same End node. Remov
 2. Click the arrow beside **Save** and choose **Save and publish** to publish your changes.
 3. Check the version status to confirm the version you want is published.
 
-Publishing a flow doesn't start it for incoming messages. Create and publish a [campaign](flows/campaigns.md) that uses the flow. See [Versions and publishing](flows/versions-and-portability.md).
+Publishing a flow doesn't start it for incoming messages. Create and publish a [campaign](campaigns.md) that uses the flow. See [Versions and publishing](versions-and-portability.md).
 
 ## Test the flow
 
@@ -66,15 +66,15 @@ The conversation preview in Learn flow builder is separate and uses sample data.
 
 ## Extend the flow
 
-- **Offer a small menu:** [Button message](flows/nodes/button-message.md), like Rangoli Store's **Track order** and **Talk to the team** buttons.
-- **Ask for and save an email address:** [Waiting for a reply](flows/response-wait.md) and [Save audience](flows/nodes/audience-actions.md?id=save-audience).
-- **Look up an order status:** [API](flows/nodes/api.md).
-- **Send an approved order update:** [Template message](flows/nodes/template-message.md).
-- **Hand over to a person:** [Assign agent](flows/nodes/audience-actions.md?id=assign-agent).
+- **Offer a small menu:** [Button message](nodes/button-message.md), like Rangoli Store's **Track order** and **Talk to the team** buttons.
+- **Ask for and save an email address:** [Waiting for a reply](response-wait.md) and [Save audience](nodes/audience-actions.md#save-audience).
+- **Look up an order status:** [API](nodes/api.md).
+- **Send an approved order update:** [Template message](nodes/template-message.md).
+- **Hand over to a person:** [Assign agent](nodes/audience-actions.md#assign-agent).
 
 ## See also
 
-- [Workflows overview](flows/overview.md)
-- [Campaigns](flows/campaigns.md)
-- [Node reference](flows/nodes.md)
-- [Troubleshooting](help/troubleshooting.md)
+- [Workflows overview](overview.md)
+- [Campaigns](campaigns.md)
+- [Node reference](nodes.md)
+- [Troubleshooting](../help/troubleshooting.md)

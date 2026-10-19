@@ -183,6 +183,6 @@ ff.send_event("invoice.created", payload={"invoice": ff.file("./invoice.pdf")})
 
 ## See also
 
-- [Upload assets](api/assets.md): the endpoints behind `ff.file(...)`.
-- [Media message](flows/nodes/media-message.md)
-- [SDK reference](sdk/reference.md)
+- [Upload assets](../api/assets.md): the endpoints behind `ff.file(...)`.
+- [Media message](../flows/nodes/media-message.md)
+- [SDK reference](reference.md)

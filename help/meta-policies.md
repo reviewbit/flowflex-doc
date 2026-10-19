@@ -20,6 +20,6 @@ These Meta pages back the rules in the broadcast guides. Meta changes its limits
 | Experiments | [Marketing message experiment](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/experiments) | Some users receive no marketing templates (error 130472) |
 | Daily limit | [Messaging limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits) | 250 → 2,000 → 10K → 100K → Unlimited, shared per portfolio; grows within 6 h at half usage over 7 days |
 | Per-user limit | [Per-user marketing limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/marketing-templates/per-user-limits/) | Error 131049; wait 24 h; no marketing templates to US numbers |
-| Errors | [WhatsApp error codes](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes) | Error meanings in [Results and errors](broadcasts/results-and-errors.md) |
+| Errors | [WhatsApp error codes](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes) | Error meanings in [Results and errors](../broadcasts/results-and-errors.md) |
 
 FlowFlex is stricter than Meta in two places. Meta allows named variables and template names of up to 512 characters, but FlowFlex supports only numbered variables (`{{1}}`–`{{15}}`) and names of up to 100 characters.

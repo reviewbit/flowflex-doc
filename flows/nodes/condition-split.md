@@ -14,7 +14,7 @@ Use a condition split for a decision with two outcomes. Rangoli Store offers pri
 4. To check more than one thing, add more conditions and choose how they combine: AND (all must match) or OR (any one is enough). For example, total is greater than 5000 AND payment is confirmed.
 5. Click **Save**.
 
-Use a text operator for a customer's reply, and check that an optional field exists before comparing it. See [Set conditions and choose paths](flows/setting-conditions.md). To check a contact's tags instead, see [Contact-tag conditions](flows/nodes/contact-tag-conditions.md).
+Use a text operator for a customer's reply, and check that an optional field exists before comparing it. See [Set conditions and choose paths](../setting-conditions.md). To check a contact's tags instead, see [Contact-tag conditions](contact-tag-conditions.md).
 
 ## Connect it
 
@@ -22,6 +22,6 @@ Connect **Yes** to the step for a match and **No** to the step for everything el
 
 ## See also
 
-- [Condition branch](flows/nodes/condition-branch.md), for more than two outcomes
-- [Set conditions and choose paths](flows/setting-conditions.md)
-- [Select and insert variables](flows/using-variables.md)
+- [Condition branch](condition-branch.md), for more than two outcomes
+- [Set conditions and choose paths](../setting-conditions.md)
+- [Select and insert variables](../using-variables.md)

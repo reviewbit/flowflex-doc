@@ -22,7 +22,7 @@ New accounts can start with a free trial. A banner at the top of the app shows h
 
 If the email is already registered, you see **An account with this email already exists.** Click **Log in instead**.
 
-<img src="assets/get-started/create-account.png" alt="The Create your account form, filled in">
+![The Create your account form, filled in](../assets/get-started/create-account.png)
 
 ### Verify your account
 
@@ -81,7 +81,7 @@ All fields on this step are optional.
 
 Click **Finish setup**. FlowFlex creates the organisation and opens the app. To change something on step 1, click **Back**.
 
-<img src="assets/get-started/create-organisation.png" alt="Creating the Rangoli Store organisation">
+![Creating the Rangoli Store organisation](../assets/get-started/create-organisation.png)
 
 ### If setup is interrupted
 
@@ -108,7 +108,7 @@ What you see after signing in depends on how many organisations you belong to:
 - **One:** FlowFlex opens it straight away.
 - **More than one:** pick one on **Choose Your Organisation** and click **Continue**.
 
-To create another organisation from this screen, click **Add an organisation**. Inside the app you can switch organisations at any time. See [Find your way around](get-started/find-your-way-around.md?id=organisation-switcher).
+To create another organisation from this screen, click **Add an organisation**. Inside the app you can switch organisations at any time. See [Find your way around](find-your-way-around.md#organisation-switcher).
 
 ## Reset a forgotten password
 
@@ -120,6 +120,6 @@ To create another organisation from this screen, click **Add an organisation**. 
 
 ## See also
 
-- [Find your way around](get-started/find-your-way-around.md)
-- [Set up your account](getting-started.md)
-- [Connect a WhatsApp channel](whatsapp/connect-channel.md)
+- [Find your way around](find-your-way-around.md)
+- [Set up your account](../getting-started.md)
+- [Connect a WhatsApp channel](../whatsapp/connect-channel.md)

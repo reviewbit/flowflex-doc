@@ -6,7 +6,7 @@ Account settings hold the details that appear on your receipts, invoices and ema
 
 When Rangoli Store set up FlowFlex, Alex Lee added the shop's logo, website and time zone, then verified a phone number so FlowFlex could reach Alex on WhatsApp.
 
-<img src="assets/account/account-settings.png" alt="Organisation and personal settings">
+![Organisation and personal settings](../assets/account/account-settings.png)
 
 ## Organisation Details
 
@@ -22,13 +22,13 @@ When Rangoli Store set up FlowFlex, Alex Lee added the shop's logo, website and 
 
 Click **Save** when you're done.
 
-**Account Info** shows the **Organisation ID** (click the copy icon to copy it), **Created on** and **Plan**. **Manage in Billing →** opens [Billing](account/billing-and-wallet.md).
+**Account Info** shows the **Organisation ID** (click the copy icon to copy it), **Created on** and **Plan**. **Manage in Billing →** opens [Billing](billing-and-wallet.md).
 
 ## Business address
 
 Enter **Address line 1**, **City**, **State** and **Postal code**, then click **Save**. **Country** is fixed to the organisation's country.
 
-Billing can reuse this address. See **Use business address as billing address** in [Billing and wallet](account/billing-and-wallet.md).
+Billing can reuse this address. See **Use business address as billing address** in [Billing and wallet](billing-and-wallet.md).
 
 ## Personal Settings
 
@@ -84,6 +84,6 @@ One login can belong to several organisations, each with its own plan, wallet, b
 
 ## See also
 
-- [Billing and wallet](account/billing-and-wallet.md)
-- [Branches](account/branches.md)
-- [Teams](account/teams.md)
+- [Billing and wallet](billing-and-wallet.md)
+- [Branches](branches.md)
+- [Teams](teams.md)

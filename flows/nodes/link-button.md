@@ -18,10 +18,10 @@ Use a link button when the next step happens on a website. After an order ships,
 
 ## Connect it
 
-Connect **Next step** to the following step or to **End**. To let the customer's choice decide what happens next, use a [Button message](flows/nodes/button-message.md) instead.
+Connect **Next step** to the following step or to **End**. To let the customer's choice decide what happens next, use a [Button message](button-message.md) instead.
 
 ## See also
 
-- [Button message](flows/nodes/button-message.md)
-- [Select and insert variables](flows/using-variables.md)
-- [Set up WhatsApp messages](flows/whatsapp-message-setup.md)
+- [Button message](button-message.md)
+- [Select and insert variables](../using-variables.md)
+- [Set up WhatsApp messages](../whatsapp-message-setup.md)

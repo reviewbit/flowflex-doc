@@ -16,7 +16,7 @@ Use Save variable when several steps need the same value. Rangoli Store asks cus
 
 In later steps, select the saved variable through Insert Variable, for example `{{preferred_date}}` in a message.
 
-A saved variable lasts only for this run of the flow. It doesn't create a profile field or a table row. To keep the value, use [Save audience](flows/nodes/audience-actions.md#save-audience) for the contact's profile or [Save data](flows/nodes/save-data.md) for a table.
+A saved variable lasts only for this run of the flow. It doesn't create a profile field or a table row. To keep the value, use [Save audience](audience-actions.md#save-audience) for the contact's profile or [Save data](save-data.md) for a table.
 
 ## Connect it
 
@@ -24,6 +24,6 @@ Connect **Next step** to the following step.
 
 ## See also
 
-- [Select and insert variables](flows/using-variables.md)
-- [Save data](flows/nodes/save-data.md)
-- [Audience actions](flows/nodes/audience-actions.md)
+- [Select and insert variables](../using-variables.md)
+- [Save data](save-data.md)
+- [Audience actions](audience-actions.md)

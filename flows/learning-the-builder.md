@@ -29,10 +29,10 @@ Your progress is saved in this browser. If you change a setting or a connection,
 
 Click **Set up my real flow**. FlowFlex explains what you need, opens the form to create a flow, then guides you through setup in the real builder.
 
-Your practice isn't copied into the real flow, and nothing is published for you. In the real flow, set the trigger and channel, connect every step, then save and publish. To start the flow from incoming messages, also create and publish a [campaign](flows/campaigns.md).
+Your practice isn't copied into the real flow, and nothing is published for you. In the real flow, set the trigger and channel, connect every step, then save and publish. To start the flow from incoming messages, also create and publish a [campaign](campaigns.md).
 
 ## See also
 
-- [Build your first flow](flows/building-a-flow.md)
-- [Workflows overview](flows/overview.md)
-- [Select and insert variables](flows/using-variables.md)
+- [Build your first flow](building-a-flow.md)
+- [Workflows overview](overview.md)
+- [Select and insert variables](using-variables.md)

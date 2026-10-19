@@ -13,7 +13,7 @@ Four cards at the top count contacts in the selected branch:
 - **All Profiles:** every contact in the branch.
 - **Email Profiles:** contacts that have an email address.
 - **Phone Profiles:** contacts that have a phone number.
-- **Suppressed:** contacts with WhatsApp, SMS and Email consent all off. See [Suppressed contacts](audience/overview.md?id=suppressed-contacts).
+- **Suppressed:** contacts with WhatsApp, SMS and Email consent all off. See [Suppressed contacts](overview.md#suppressed-contacts).
 
 Click **Refresh** to update the cards and the table.
 
@@ -34,10 +34,10 @@ Type in **Search by email, mobile or name**. The table filters as you type.
 3. Click **Add condition** to add more rules, or **Add condition group** to add a group.
 4. Click **Apply Filter**. The table shows only the contacts that match.
 
-The filter drawer uses the same builder as segments. See [Build conditions](audience/segments.md?id=build-conditions) for every field and operator. To remove the filter, click **Clear Filter** next to the **Filter** button.
+The filter drawer uses the same builder as segments. See [Build conditions](segments.md#build-conditions) for every field and operator. To remove the filter, click **Clear Filter** next to the **Filter** button.
 
 > [!TIP]
-> A filter is temporary. To keep a rule and reuse it in broadcasts, save it as a [segment](audience/segments.md).
+> A filter is temporary. To keep a rule and reuse it in broadcasts, save it as a [segment](segments.md).
 
 ### Choose columns
 
@@ -53,7 +53,7 @@ The filter drawer uses the same builder as segments. See [Build conditions](audi
 2. Fill in the fields below. For Maria Garcia, Chris enters the name, picks **India** and types `9000000004`, and adds the tag `new`.
 3. Check the consent checkbox, then click **Create profile**. The contact appears in the table.
 
-<img src="assets/audience/add-contact-drawer.png" alt="Adding a new contact with Quick add">
+![Adding a new contact with Quick add](../assets/audience/add-contact-drawer.png)
 
 To change a contact, click the pencil icon in its row. The **Edit contact** drawer opens. Click **Update profile** to save.
 
@@ -92,7 +92,7 @@ To change a contact, click the pencil icon in its row. The **Edit contact** draw
     - **Subscribe:** turns WhatsApp, SMS and Email consent on.
     - **Manage Tags:** shows the tags on the selected contacts. Add a tag to add it to all of them, or remove one to remove it from all of them.
     - **Assign owner:** sets the owner. Leave it at **Not assigned** to clear the owner.
-    - **Export:** starts a CSV export. Download it from the [Export tab](audience/import-export.md?id=export-contacts) when it finishes.
+    - **Export:** starts a CSV export. Download it from the [Export tab](import-export.md#export-contacts) when it finishes.
     - **Delete:** deletes the contacts permanently.
 
 To delete one contact, click the bin icon in its row and confirm with **Yes**.
@@ -101,7 +101,7 @@ To delete one contact, click the bin icon in its row and confirm with **Yes**.
 
 Click a contact's name to open its page. Click **Go back** to return.
 
-<img src="assets/audience/contact-detail.png" alt="A contact's detail page">
+![A contact's detail page](../assets/audience/contact-detail.png)
 
 The buttons at the top:
 
@@ -123,7 +123,7 @@ The tabs below hold more detail:
 
 ## See also
 
-- [Import and export contacts](audience/import-export.md): add many contacts from a file.
-- [Lists](audience/lists.md): group contacts by hand.
-- [Segments](audience/segments.md): group contacts by rules.
-- [Tags](audience/tags.md): label contacts.
+- [Import and export contacts](import-export.md): add many contacts from a file.
+- [Lists](lists.md): group contacts by hand.
+- [Segments](segments.md): group contacts by rules.
+- [Tags](tags.md): label contacts.

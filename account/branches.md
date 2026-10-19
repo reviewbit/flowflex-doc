@@ -14,13 +14,13 @@ Each branch has its own:
 - conversations and custom chat folders
 - integrations
 
-Users see a branch only if their access includes it. See [Teams](account/teams.md).
+Users see a branch only if their access includes it. See [Teams](teams.md).
 
 ## Manage branches
 
 Go to **Settings** → **Branches**. Only Admins see this page in the sidebar.
 
-<img src="assets/account/branches.png" alt="Settings, Branches">
+![Settings, Branches](../assets/account/branches.png)
 
 The table lists each branch with its logo, **Name**, **Location** (the address from **Branch location**) and **Status**, which is **Active** or **Disabled by Plan**. Click the edit icon in the **Action** column to change a branch, and use **Search by name** to find one.
 
@@ -46,8 +46,8 @@ Your plan sets how many branches you can have. These messages tell you when you'
 
 | Message | Cause | Fix |
 | --- | --- | --- |
-| **Branch limit reached. You can purchase additional branches for … each in Billing.** | You use all the branches in your plan and add-ons | Add **Additional Branches** on [Plans](account/plans-and-add-ons.md). FlowFlex opens **Plans** for you. |
-| **Branch limit reached. Please upgrade your plan to add more branches.** | Your plan has no branch add-on | Upgrade on [Plans](account/plans-and-add-ons.md) |
+| **Branch limit reached. You can purchase additional branches for … each in Billing.** | You use all the branches in your plan and add-ons | Add **Additional Branches** on [Plans](plans-and-add-ons.md). FlowFlex opens **Plans** for you. |
+| **Branch limit reached. Please upgrade your plan to add more branches.** | Your plan has no branch add-on | Upgrade on [Plans](plans-and-add-ons.md) |
 | **Disabled by Plan** | You have more branches than your plan allows, for example after a downgrade | Hover over the status to see why. Add branches back to your plan to re-enable it. |
 
 You can't edit or switch to a branch that is **Disabled by Plan**. Trying shows **Cannot edit branch.** with the reason.
@@ -65,6 +65,6 @@ Click **Manage** in **My Branches** to open **Settings** → **Branches**.
 
 ## See also
 
-- [Teams](account/teams.md)
-- [Plans and add-ons](account/plans-and-add-ons.md)
-- [Connect a WhatsApp channel](whatsapp/connect-channel.md)
+- [Teams](teams.md)
+- [Plans and add-ons](plans-and-add-ons.md)
+- [Connect a WhatsApp channel](../whatsapp/connect-channel.md)

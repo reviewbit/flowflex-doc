@@ -20,7 +20,7 @@ You need the **Messaging settings edit** permission to add, edit or delete quick
 | **Short code** | Required. FlowFlex adds `/` at the start, turns spaces into `_`, and makes it lowercase. For example, `Store Hours` becomes `/store_hours`. |
 | **Content** | Required. The text that is inserted into the chat. |
 
-<img src="assets/messaging/quick-replies-table.png" alt="The Quick Reply table">
+![The Quick Reply table](../assets/messaging/quick-replies-table.png)
 
 ## Edit or delete a quick reply
 
@@ -40,9 +40,9 @@ In the **Quick Reply** table:
 If nothing matches, the list shows **No quick replies found**.
 
 > [!TIP]
-> Quick replies are free-form text, so you can send them only within the 24-hour window. After that, use a template. See [The 24-hour window](messaging/conversations.md?id=the-24-hour-window).
+> Quick replies are free-form text, so you can send them only within the 24-hour window. After that, use a template. See [The 24-hour window](conversations.md#the-24-hour-window).
 
 ## See also
 
-- [Conversations](messaging/conversations.md): reply to and assign customer chats.
-- [Messaging settings](messaging/settings.md): greeting, away and subscription messages.
+- [Conversations](conversations.md): reply to and assign customer chats.
+- [Messaging settings](settings.md): greeting, away and subscription messages.

@@ -10,13 +10,13 @@ Work out how far a customer's shared location is from one of your branches.
 
 **When to use it:** Rangoli Store asks the customer to share their location, then checks the distance to the Kochi branch. If the customer is nearby, the flow offers store pickup; otherwise it offers home delivery.
 
-1. Add a [Location request](flows/nodes/location-request.md) before this step.
+1. Add a [Location request](location-request.md) before this step.
 2. Add **Utils function** on the location request's **Next step**, open it, and choose **Calculate distance**.
 3. In **Source latitude** and **Source longitude**, insert the latitude and longitude from the location request.
 4. In **Choose a target location**, select the branch, such as **Kochi**.
 5. Click **Save**.
 
-Use the result in a [Condition split](flows/nodes/condition-split.md) or a message. The branch's stored location is used as the target, so check it's correct.
+Use the result in a [Condition split](condition-split.md) or a message. The branch's stored location is used as the target, so check it's correct.
 
 ## Identify Places
 
@@ -39,6 +39,6 @@ Connect **Next step** to a condition or message that uses the result.
 
 ## See also
 
-- [Location request](flows/nodes/location-request.md)
-- [Set conditions and choose paths](flows/setting-conditions.md)
-- [Select and insert variables](flows/using-variables.md)
+- [Location request](location-request.md)
+- [Set conditions and choose paths](../setting-conditions.md)
+- [Select and insert variables](../using-variables.md)

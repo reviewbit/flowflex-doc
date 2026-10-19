@@ -23,7 +23,7 @@ The node attaches this file every time it runs, and the file stays available whi
 ## Use a link
 
 1. Set **File source** to **Public URL**.
-2. Enter a direct link to the file. If each customer has a different link, use [Insert Variable](flows/using-variables.md) to select it.
+2. Enter a direct link to the file. If each customer has a different link, use [Insert Variable](using-variables.md) to select it.
 3. Open the link in a browser without signing in, to check that WhatsApp can download it.
 4. Save the node.
 
@@ -31,7 +31,7 @@ A link to a sign-in page or a sharing page isn't a direct file link, and the fil
 
 ## Use a private customer file
 
-1. Make sure your integration uploads the file and includes its assetId in the event that starts the flow. See [SDK file attachments](sdk/files.md).
+1. Make sure your integration uploads the file and includes its assetId in the event that starts the flow. See [SDK file attachments](../sdk/files.md).
 2. Set **File source** to **Uploaded file**.
 3. In **Asset ID**, insert that assetId field, for example **Trigger** → **invoice**.
 4. Save the node.
@@ -53,6 +53,6 @@ Choose a file type that suits the message or template header you picked.
 
 ## See also
 
-- [Media message](flows/nodes/media-message.md)
-- [Template message](flows/nodes/template-message.md)
-- [Files do not upload or send](help/troubleshooting.md?id=files-do-not-upload-or-send)
+- [Media message](nodes/media-message.md)
+- [Template message](nodes/template-message.md)
+- [Files do not upload or send](../help/troubleshooting.md#files-do-not-upload-or-send)

@@ -2,7 +2,7 @@
 
 Decide what each team member can do in FlowFlex by giving them a role.
 
-A role is a named set of permissions. Every team member gets one role, and the branches and channels you give them in [Teams](account/teams.md) limit where the role applies. Members see only the pages and actions their role allows.
+A role is a named set of permissions. Every team member gets one role, and the branches and channels you give them in [Teams](teams.md) limit where the role applies. Members see only the pages and actions their role allows.
 
 At Rangoli Store, Chris Taylor answers chats and doesn't need to see broadcasts or billing. Alex Lee creates a **Support agent** role with just the chat and contact permissions, and gives it to Chris.
 
@@ -16,12 +16,12 @@ Admin is a default role: **Default roles cannot be edited** and **Default roles 
 
 ## Create a role
 
-<img src="assets/account/create-role.png" alt="Creating the Support agent role">
+![Creating the Support agent role](../assets/account/create-role.png)
 
 1. Click **Create New Role**.
 2. Enter a **Role name**, such as `Support agent`. Up to 30 characters.
 3. Optional: enter a **Description**, such as `Answers customer chats`. Up to 200 characters.
-4. Choose a permission mode. See [Permission modes](account/roles-and-permissions.md?id=permission-modes).
+4. Choose a permission mode. See [Permission modes](roles-and-permissions.md#permission-modes).
 5. For **Selected permissions only**, open each group and turn on the permissions you need. Use **Search permissions** to find one. A group's switch turns on all its permissions.
 6. Click **Create role**.
 
@@ -107,7 +107,7 @@ Permissions are grouped as they appear on the role screen.
 
 If you don't see the Flow builder with **Workflow view**, contact FlowFlex support.
 
-More on each area: [Audience](audience/overview.md), [Conversations](messaging/conversations.md), [Messaging settings](messaging/settings.md), [Connect a WhatsApp channel](whatsapp/connect-channel.md), [Create a template](whatsapp/create-template.md), [Send a broadcast](broadcasts/send-broadcast.md) and [Campaigns](flows/campaigns.md).
+More on each area: [Audience](../audience/overview.md), [Conversations](../messaging/conversations.md), [Messaging settings](../messaging/settings.md), [Connect a WhatsApp channel](../whatsapp/connect-channel.md), [Create a template](../whatsapp/create-template.md), [Send a broadcast](../broadcasts/send-broadcast.md) and [Campaigns](../flows/campaigns.md).
 
 ## Example roles
 
@@ -120,7 +120,7 @@ Chris Taylor answers customer chats at the Kochi store. The **Support agent** ro
 - **Template:** **Template view**
 - **Messaging:** **Messaging settings view**
 
-In [Teams](account/teams.md), Chris gets **Selected branches only** → **Kochi** and **Selected channels only** → the Kochi number. Chris sees **Messaging**, **Audience** and **Templates**, and only Kochi chats.
+In [Teams](teams.md), Chris gets **Selected branches only** → **Kochi** and **Selected channels only** → the Kochi number. Chris sees **Messaging**, **Audience** and **Templates**, and only Kochi chats.
 
 ### Marketing manager
 
@@ -140,6 +140,6 @@ Jordan gets **All current branches** or **Current and future branches**. **Workf
 
 ## See also
 
-- [Teams](account/teams.md)
-- [Branches](account/branches.md)
-- [Conversations](messaging/conversations.md)
+- [Teams](teams.md)
+- [Branches](branches.md)
+- [Conversations](../messaging/conversations.md)

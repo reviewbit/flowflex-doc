@@ -7,7 +7,7 @@ Your app sends FlowFlex an event, such as `order.placed`, with some JSON data. T
 In this guide, Rangoli Store's website sends `order.placed` when John Smith places order `RS-1042`. A flow replies to John: "Hi John Smith, your order RS-1042 is confirmed!"
 
 > [!NOTE]
-> You need a connected WhatsApp channel first. See [Set up your account](getting-started.md).
+> You need a connected WhatsApp channel first. See [Set up your account](../getting-started.md).
 
 ## How it works
 
@@ -18,7 +18,7 @@ In this guide, Rangoli Store's website sends `order.placed` when John Smith plac
 
 ## Create a custom integration
 
-In FlowFlex, create a custom integration with an `order.placed` event. See [Custom integrations](integrations/custom-integration.md). You get three values:
+In FlowFlex, create a custom integration with an `order.placed` event. See [Custom integrations](../integrations/custom-integration.md). You get three values:
 
 - **API key** (`cik_…`): identifies the integration. It's the username in Basic auth.
 - **API secret** (`cisk_…`): the password in Basic auth. It's shown once, so store it safely.
@@ -35,7 +35,7 @@ In FlowFlex, create a custom integration with an `order.placed` event. See [Cust
 4. Set **Destination number** to the customer's number from the event, `{{trigger.phone}}`.
 5. Click the arrow beside **Save** and choose **Save and publish**.
 
-A Text message reaches customers only during an active conversation. To message customers who haven't written to you recently, use an approved [Template message](flows/nodes/template-message.md) instead. See [Choose the trigger](flows/triggers-and-variables.md) for how event fields become `{{trigger.*}}` variables.
+A Text message reaches customers only during an active conversation. To message customers who haven't written to you recently, use an approved [Template message](../flows/nodes/template-message.md) instead. See [Choose the trigger](../flows/triggers-and-variables.md) for how event fields become `{{trigger.*}}` variables.
 
 ## Send the event
 
@@ -83,10 +83,10 @@ await ff.sendEvent("invoice.created", {
 });
 ```
 
-In the flow, add a **Media message** node, set **File source** to **Uploaded file**, and set **Asset ID** to `{{trigger.invoice}}`. See [SDK file attachments](sdk/files.md).
+In the flow, add a **Media message** node, set **File source** to **Uploaded file**, and set **Asset ID** to `{{trigger.invoice}}`. See [SDK file attachments](../sdk/files.md).
 
 ## See also
 
-- [Workflows overview](flows/overview.md): what each node does.
-- [Install and use the SDK](sdk/overview.md): full SDK usage.
-- [REST API authentication](api/authentication.md): call the API from any language.
+- [Workflows overview](../flows/overview.md): what each node does.
+- [Install and use the SDK](../sdk/overview.md): full SDK usage.
+- [REST API authentication](../api/authentication.md): call the API from any language.

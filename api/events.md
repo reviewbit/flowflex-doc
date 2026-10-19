@@ -20,7 +20,7 @@ Send a custom-integration event.
 
 | Header | Value |
 | --- | --- |
-| `Authorization` | `Basic base64(apiKey:apiSecret)`. See [Authentication](api/authentication.md). |
+| `Authorization` | `Basic base64(apiKey:apiSecret)`. See [Authentication](authentication.md). |
 | `Content-Type` | `application/json` |
 | `x-event` | The event name, e.g. `order.placed` |
 | `x-idempotency-key` | A unique id for this logical event (recommended) |
@@ -37,7 +37,7 @@ The body is the event data. Send the fields directly; don't wrap them in another
 }
 ```
 
-The body is any JSON you choose. The flow references each key as `{{trigger.<key>}}`, nested keys with dots and array items with `[n]`. See [Choose the trigger](flows/triggers-and-variables.md).
+The body is any JSON you choose. The flow references each key as `{{trigger.<key>}}`, nested keys with dots and array items with `[n]`. See [Choose the trigger](../flows/triggers-and-variables.md).
 
 ### Example
 
@@ -69,10 +69,10 @@ await fetch("https://api.flowflex.ai/v1/events/ic_abc123", {
 
 To send media:
 
-1. [Upload the file](api/assets.md) to get an `assetId`.
+1. [Upload the file](assets.md) to get an `assetId`.
 2. Put that `assetId` string in the request body, under the key the flow's media node uses.
 
-The [SDK](sdk/files.md) does both steps for you.
+The [SDK](../sdk/files.md) does both steps for you.
 
 ## Idempotency
 
@@ -96,6 +96,6 @@ Errors come back as JSON with a `code`. Common ones:
 
 ## See also
 
-- [REST API authentication](api/authentication.md)
-- [Upload assets](api/assets.md)
-- [SDK errors](sdk/reference.md?id=errors)
+- [REST API authentication](authentication.md)
+- [Upload assets](assets.md)
+- [SDK errors](../sdk/reference.md#errors)

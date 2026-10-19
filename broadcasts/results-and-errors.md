@@ -10,7 +10,7 @@ In this guide, Jordan Brown at Rangoli Store checks "Diwali sale – repeat buye
 
 Go to **Broadcast**. The top of the page shows totals across all your broadcasts: **Total Sent**, **Avg delivered rate**, **Avg read rate**, **Avg fail rate**, **Avg click rate** and **CTR**. Each row shows the broadcast's Recipients, Sent, Delivered, Read, Clicked, Replied and Failed counts.
 
-<img src="assets/broadcasts/broadcast-list.png" alt="The Broadcast list with delivery, read and click stats">
+![The Broadcast list with delivery, read and click stats](../assets/broadcasts/broadcast-list.png)
 
 ## Statuses
 
@@ -34,7 +34,7 @@ Go to **Broadcast**. The top of the page shows totals across all your broadcasts
     - **Total link clicks:** unique recipients who clicked a tracked link, with the total number of clicks underneath.
     - **CTR:** the share of people who read the message and then clicked a link or replied.
 3. To get the people behind a number, click the download icon on the card, for example **Download clicked recipients**. Most cards can be downloaded as a recipient list.
-4. Check **Error Messages** to see why messages failed. [Common errors](broadcasts/results-and-errors.md?id=common-errors) explains each reason.
+4. Check **Error Messages** to see why messages failed. [Common errors](results-and-errors.md#common-errors) explains each reason.
 5. Open **Timeline** to see what happened and when. The **All**, **System** and **User** tabs show every event, only automatic ones, or only actions your team took. **Template Preview** shows the message customers received.
 
 Jordan sees that most repeat buyers read the Diwali message and many tapped **Shop now**. A few messages failed with **Message undeliverable**, so Jordan downloads the failed recipients to fix those numbers before the next send.
@@ -63,7 +63,7 @@ To stop a broadcast, click **Stop**. FlowFlex asks **Stop this broadcast permane
 FlowFlex pauses a broadcast when continuing could harm your number or would fail anyway. The detail page shows an alert that names the reason:
 
 - **Broadcast paused: WhatsApp account unavailable:** the channel can't send messages right now. Check the channel in **Channels**.
-- **Broadcast paused: Channel quality issue:** the channel's quality rating dropped too low. See [Channel quality](broadcasts/broadcast-guidelines.md?id=channel-quality).
+- **Broadcast paused: Channel quality issue:** the channel's quality rating dropped too low. See [Channel quality](broadcast-guidelines.md#channel-quality).
 - **Broadcast paused: Template unavailable:** the template can no longer be sent, for example because it is no longer Approved.
 - **Template paused by Meta:** Meta paused the template because of low quality. **Resume** appears once the template is Approved again.
 - **Broadcast paused: reupload media:** WhatsApp rejected the header media. Click **Replace media**, upload a new file, send a test message if you like, and then resume.
@@ -94,11 +94,11 @@ Each failed message has a reason in **Error Messages**. The codes come from [Met
 
 There's no button on the results page to create a segment. Instead, build one in **Audience** → **Segments** with the **Broadcast** field and one of **Sent**, **Delivered**, **Read**, **Failed**, **Replied** or **Clicked**. With **Failed**, you can also pick the failure reasons.
 
-Jordan builds a segment of everyone who **Clicked** the Diwali broadcast and sends them a reminder three days later. See [Broadcast activity](audience/segments.md?id=broadcast-activity).
+Jordan builds a segment of everyone who **Clicked** the Diwali broadcast and sends them a reminder three days later. See [Broadcast activity](../audience/segments.md#broadcast-activity).
 
 ## See also
 
-- [Send a broadcast](broadcasts/send-broadcast.md)
-- [Broadcast guidelines](broadcasts/broadcast-guidelines.md)
-- [Segments](audience/segments.md)
-- [Pre-send checklist](broadcasts/checklist-faq.md)
+- [Send a broadcast](send-broadcast.md)
+- [Broadcast guidelines](broadcast-guidelines.md)
+- [Segments](../audience/segments.md)
+- [Pre-send checklist](checklist-faq.md)

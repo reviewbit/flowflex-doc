@@ -6,12 +6,12 @@ Most rejections come from five mistakes: the wrong category, badly placed variab
 
 Rangoli Store's first shipping update, `Your order is ready {{1}}`, was rejected within minutes: it ended with a variable and never said who was writing. The team rewrote it as `order_shipped_v1`, with the shop's name, fixed text around each variable and a realistic order number as the sample. Meta approved it the same day.
 
-How a template's quality is rated after approval, and when Meta pauses it, is covered in [Template quality](broadcasts/broadcast-guidelines.md?id=template-quality).
+How a template's quality is rated after approval, and when Meta pauses it, is covered in [Template quality](../broadcasts/broadcast-guidelines.md#template-quality).
 
 ## Content rules
 
 - **Say who is writing.** Put the brand name in the body or header, so the customer recognises the sender at once.
-- **Match the category.** Utility is an update on an existing order, booking or account, with no promotion. Meta treats mixed or vague content as Marketing ([Meta rule](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization)). See [Choose the right category](broadcasts/broadcast-guidelines.md?id=choose-the-right-category).
+- **Match the category.** Utility is an update on an existing order, booking or account, with no promotion. Meta treats mixed or vague content as Marketing ([Meta rule](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-categorization)). See [Choose the right category](../broadcasts/broadcast-guidelines.md#choose-the-right-category).
 - **Give variables context.** A template can't start or end with a variable ([Meta rule](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-review)). Also avoid two variables side by side, or a body that is mostly variables.
 - **Number variables in order,** from `{{1}}` with no gaps. Don't use `#`, `$` or `%` inside a variable ([Meta rule](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/template-review)).
 - **Give realistic samples** for every variable and media header. Meta reviews the sample media too ([Meta rule](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview)).
@@ -78,6 +78,6 @@ Rangoli Store: your order {{1}} is ready for pickup.
 
 ## See also
 
-- [Create a template](whatsapp/create-template.md)
-- [Broadcast guidelines](broadcasts/broadcast-guidelines.md)
-- [Meta policies and sources](help/meta-policies.md)
+- [Create a template](create-template.md)
+- [Broadcast guidelines](../broadcasts/broadcast-guidelines.md)
+- [Meta policies and sources](../help/meta-policies.md)

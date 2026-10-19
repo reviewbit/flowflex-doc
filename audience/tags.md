@@ -8,7 +8,7 @@ Rangoli Store tags every customer who has ordered twice or more `repeat-buyer`. 
 
 Go to **Audience** → **Tags** to see every tag in the selected branch.
 
-<img src="assets/audience/tags-table.png" alt="The Tags tab with manual and auto tags">
+![The Tags tab with manual and auto tags](../assets/audience/tags-table.png)
 
 The table shows each tag's **Name**, how many **Contacts** carry it, whether it is an **Auto Tag** (**Yes** for tags FlowFlex manages, **No** for tags you create), and the date it was **Created**. Click a contact count to open **Profiles** filtered to those contacts. Use **Search tag name** to find a tag.
 
@@ -35,7 +35,7 @@ You can also create a tag while you work:
 - **Contact drawer:** in **Quick add** or **Edit contact**, type a name in **Tags** and click **Create tag: name**.
 - **Bulk tagging:** in Profiles → **More actions** → **Manage Tags**, the same way.
 - **Filters and segments:** on the **Tags** field, click **Create : name**.
-- **Imports:** in a [Bulk Import](audience/import-export.md), a **Tags** column creates any tag that doesn't exist yet.
+- **Imports:** in a [Bulk Import](import-export.md), a **Tags** column creates any tag that doesn't exist yet.
 
 > [!TIP]
 > Use short, lowercase names with hyphens, such as `repeat-buyer`. A space ends a tag in the contact drawer, so `repeat buyer` would become two tags.
@@ -61,9 +61,9 @@ New chats and messages from this channel now add these tags to the contact. Exis
 
 - **One contact:** edit the contact and change **Tags**.
 - **Many contacts:** in **Profiles**, select them, then **More actions** → **Manage Tags**.
-- **From a flow:** use the tag action in [Audience actions](flows/nodes/audience-actions.md).
+- **From a flow:** use the tag action in [Audience actions](../flows/nodes/audience-actions.md).
 
-To use tags afterwards, branch a flow with [Contact-tag conditions](flows/nodes/contact-tag-conditions.md), or build a segment with the **Tags** field. See [Segments](audience/segments.md?id=fields).
+To use tags afterwards, branch a flow with [Contact-tag conditions](../flows/nodes/contact-tag-conditions.md), or build a segment with the **Tags** field. See [Segments](segments.md#fields).
 
 ## Delete a tag
 
@@ -76,6 +76,6 @@ Deleting is blocked in two cases:
 
 ## See also
 
-- [Segments](audience/segments.md): group contacts by their tags.
-- [Audience actions](flows/nodes/audience-actions.md): tag contacts automatically in a flow.
-- [Contact-tag conditions](flows/nodes/contact-tag-conditions.md): route flow contacts by their tags.
+- [Segments](segments.md): group contacts by their tags.
+- [Audience actions](../flows/nodes/audience-actions.md): tag contacts automatically in a flow.
+- [Contact-tag conditions](../flows/nodes/contact-tag-conditions.md): route flow contacts by their tags.

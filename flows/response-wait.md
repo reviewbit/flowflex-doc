@@ -24,7 +24,7 @@ For Button and List messages, connect each choice to its own path. For templates
 3. Turn on **Check format** and choose **Email**.
 4. Enter an **Invalid response text**, such as "Please enter an email address like name@example.com."
 5. Save, and connect **Next step** to **Save audience**.
-6. In Save audience, use [Insert Variable](flows/using-variables.md?id=use-a-customers-reply) to select this question's reply for the email field.
+6. In Save audience, use [Insert Variable](using-variables.md#use-a-customers-reply) to select this question's reply for the email field.
 7. Connect **No response** to **Assign agent** or End.
 
 ## Check format
@@ -46,12 +46,12 @@ Opening a Link button's page or reacting to a message isn't an answer. Connect e
 
 ## Choose a sensible waiting time
 
-Give customers enough time to answer, and decide what happens if they leave the conversation. After a long wait, a later free-form message can fall outside WhatsApp's reply window. Use a template there. See [The 24-hour reply window](flows/whatsapp-message-setup.md?id=the-24-hour-reply-window).
+Give customers enough time to answer, and decide what happens if they leave the conversation. After a long wait, a later free-form message can fall outside WhatsApp's reply window. Use a template there. See [The 24-hour reply window](whatsapp-message-setup.md#the-24-hour-reply-window).
 
-For a pause that doesn't depend on an answer, use [Set time delay](flows/nodes/set-time-delay.md).
+For a pause that doesn't depend on an answer, use [Set time delay](nodes/set-time-delay.md).
 
 ## See also
 
-- [Set up WhatsApp messages](flows/whatsapp-message-setup.md)
-- [Select and insert variables](flows/using-variables.md)
-- [The flow waits or takes No response](help/troubleshooting.md?id=the-flow-waits-or-takes-no-response)
+- [Set up WhatsApp messages](whatsapp-message-setup.md)
+- [Select and insert variables](using-variables.md)
+- [The flow waits or takes No response](../help/troubleshooting.md#the-flow-waits-or-takes-no-response)

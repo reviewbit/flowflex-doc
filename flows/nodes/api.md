@@ -11,7 +11,7 @@ Use API when the answer a customer needs lives in another system. In Rangoli Sto
 1. Add **API** from **Data Blocks** and open it. Give it a **Node label**, such as `Look up order`, so you can find its fields later.
 2. Set **Method** to the one the service expects, such as `GET`, and enter the **URL**, such as `https://api.rangoli.example/orders`.
 3. On the **Headers** tab, add any headers the service requires, such as `Authorization`, exactly as the provider describes them.
-4. On the **Query params** tab, add the parameters the service expects. For example, add `phone` and insert **Trigger** → **from** with [Insert Variable](flows/using-variables.md). The service decides the names and format, so copy them from its instructions.
+4. On the **Query params** tab, add the parameters the service expects. For example, add `phone` and insert **Trigger** → **from** with [Insert Variable](../using-variables.md). The service decides the names and format, so copy them from its instructions.
 5. If the service expects data in the request, open **Body** and choose its format: **none**, **x-www-form-urlencoded** for form fields, or **raw** for JSON, XML or plain text. `GET`, `HEAD` and `OPTIONS` requests send no body.
 6. Under **Response examples**, add an example of what the service returns for each status you use, starting with `200`. Later steps pick fields from these examples.
 7. Click **Save**.
@@ -39,7 +39,7 @@ If the provider gives you a cURL command, open the **URL** field's menu and choo
 
 ### Use the response in later steps
 
-In the next message, open Insert Variable and choose the API node, then the response status, then the field. For Rangoli Store: **Look up order** → **200** → **order** → **status**. The customer receives the real value from the service, not the example. See [Use an API response](flows/using-variables.md?id=use-an-api-response).
+In the next message, open Insert Variable and choose the API node, then the response status, then the field. For Rangoli Store: **Look up order** → **200** → **order** → **status**. The customer receives the real value from the service, not the example. See [Use an API response](../using-variables.md#use-an-api-response).
 
 ## Connect it
 
@@ -68,6 +68,6 @@ The next step waits until the API node finishes, including retries. Only turn on
 
 ## See also
 
-- [Select and insert variables](flows/using-variables.md)
-- [Condition branch](flows/nodes/condition-branch.md)
-- [My API request fails](help/troubleshooting.md?id=my-api-request-fails)
+- [Select and insert variables](../using-variables.md)
+- [Condition branch](condition-branch.md)
+- [My API request fails](../../help/troubleshooting.md#my-api-request-fails)

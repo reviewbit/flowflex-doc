@@ -9,7 +9,7 @@ Use Repeat until when you need to try something more than once. Rangoli Store ch
 ## Set it up
 
 1. Add **Repeat until** from **Logic Blocks**.
-2. Add the steps to repeat after it, such as an [API](flows/nodes/api.md) node that looks up the order and a [Set time delay](flows/nodes/set-time-delay.md) of 1 hour. Save the API node with a response example that includes the status.
+2. Add the steps to repeat after it, such as an [API](api.md) node that looks up the order and a [Set time delay](set-time-delay.md) of 1 hour. Save the API node with a response example that includes the status.
 3. Add **End loop** after the repeated steps.
 4. Open Repeat until and set **Maximum iterations**, from 1 to 10, such as `3`.
 5. Under **Stop when (checked after each iteration)**, add the condition, such as the API's order status equals `shipped`.
@@ -23,7 +23,7 @@ To ask a question again until the customer gives a usable answer, put the questi
 
 ## Connect it
 
-Connect **Repeat until** → the repeated steps → **End loop**, and connect the API's failure outputs to a fallback. After End loop, add a [Condition split](flows/nodes/condition-split.md) on the result, because reaching the attempt limit isn't the same as success.
+Connect **Repeat until** → the repeated steps → **End loop**, and connect the API's failure outputs to a fallback. After End loop, add a [Condition split](condition-split.md) on the result, because reaching the attempt limit isn't the same as success.
 
 In Insert Variable, the Repeat until result has these fields:
 
@@ -37,6 +37,6 @@ Rangoli Store's condition split checks `conditionMet`: **Yes** sends the trackin
 
 ## See also
 
-- [Start loop and End loop](flows/nodes/for-loop.md), to repeat for each item in a list
-- [Set conditions and choose paths](flows/setting-conditions.md)
-- [A repeated sequence never reaches the intended result](help/troubleshooting.md?id=a-repeated-sequence-never-reaches-the-intended-result)
+- [Start loop and End loop](for-loop.md), to repeat for each item in a list
+- [Set conditions and choose paths](../setting-conditions.md)
+- [A repeated sequence never reaches the intended result](../../help/troubleshooting.md#a-repeated-sequence-never-reaches-the-intended-result)

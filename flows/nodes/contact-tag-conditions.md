@@ -8,7 +8,7 @@ Use a contact-tag condition to treat tagged customers differently. Rangoli Store
 
 ## Set it up
 
-1. Open a [Condition split](flows/nodes/condition-split.md) or [Condition branch](flows/nodes/condition-branch.md) and click **Add condition**.
+1. Open a [Condition split](condition-split.md) or [Condition branch](condition-branch.md) and click **Add condition**.
 2. Change the condition source from **Flow variable** to **Contact tags**.
 3. Under **Match**, choose how the tags should match, such as **Has any of these tags**.
 4. In **Tags**, select one or more tags, such as `interested` and `vip`.
@@ -21,7 +21,7 @@ Use a contact-tag condition to treat tagged customers differently. Rangoli Store
 | **Has all of these tags** | Every selected tag is on the contact. |
 | **Has none of these tags** | None of the selected tags is on the contact. A contact with no tags matches. |
 
-The condition checks the contact's tags at the moment the step runs, so a [Save tag](flows/nodes/audience-actions.md#save-tag) earlier in the flow changes the result. You can combine tag conditions with other rules; see [Set conditions and choose paths](flows/setting-conditions.md).
+The condition checks the contact's tags at the moment the step runs, so a [Save tag](audience-actions.md#save-tag) earlier in the flow changes the result. You can combine tag conditions with other rules; see [Set conditions and choose paths](../setting-conditions.md).
 
 ## Connect it
 
@@ -29,6 +29,6 @@ Connect the outputs as usual for the node: **Yes** and **No** for a condition sp
 
 ## See also
 
-- [Save tag](flows/nodes/audience-actions.md#save-tag)
-- [Tags](audience/tags.md)
-- [Segments](audience/segments.md)
+- [Save tag](audience-actions.md#save-tag)
+- [Tags](../../audience/tags.md)
+- [Segments](../../audience/segments.md)

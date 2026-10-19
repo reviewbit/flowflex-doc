@@ -20,7 +20,7 @@ The examples below use this order:
 ## Set it up
 
 1. Add **Start loop** from **Logic Blocks** and open it.
-2. In **Specify list**, use Insert Variable to select the whole list, such as **Trigger** → **items**, not a single item. See [Choose one item or the whole list](flows/using-variables.md?id=choose-one-item-or-the-whole-list).
+2. In **Specify list**, use Insert Variable to select the whole list, such as **Trigger** → **items**, not a single item. See [Choose one item or the whole list](../using-variables.md#choose-one-item-or-the-whole-list).
 3. To cap how many items are processed, select **Limit the loop to a defined count.** and enter **Set the loop limit**.
 4. Click **Save**.
 5. Add the steps to repeat, such as a Text message. In it, insert the current item's fields from **Start loop** in Insert Variable, such as `{{loop.item.name}}`, rather than the trigger's first item.
@@ -36,6 +36,6 @@ Always draw connections forward. The loop nodes handle the repetition, so don't 
 
 ## See also
 
-- [Repeat until](flows/nodes/repeat-until.md), to repeat until a condition is met
-- [Select and insert variables](flows/using-variables.md)
-- [A repeated sequence never reaches the intended result](help/troubleshooting.md?id=a-repeated-sequence-never-reaches-the-intended-result)
+- [Repeat until](repeat-until.md), to repeat until a condition is met
+- [Select and insert variables](../using-variables.md)
+- [A repeated sequence never reaches the intended result](../../help/troubleshooting.md#a-repeated-sequence-never-reaches-the-intended-result)

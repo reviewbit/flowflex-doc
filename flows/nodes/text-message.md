@@ -4,7 +4,7 @@ Send a WhatsApp text message, or ask a question and wait for the answer.
 
 ## When to use it
 
-Use a text message to reply during an open conversation, such as a greeting or a short answer. When a customer messages Rangoli Store, the flow replies "Hi Maria Garcia, thanks for messaging Rangoli Store." To message a customer outside the 24-hour reply window, use an approved [Template message](flows/nodes/template-message.md) instead.
+Use a text message to reply during an open conversation, such as a greeting or a short answer. When a customer messages Rangoli Store, the flow replies "Hi Maria Garcia, thanks for messaging Rangoli Store." To message a customer outside the 24-hour reply window, use an approved [Template message](template-message.md) instead.
 
 ## Set it up
 
@@ -16,7 +16,7 @@ Use a text message to reply during an open conversation, such as a greeting or a
 
 ### Ask a question
 
-To collect an answer, write the question, then under **Response handling** select **Wait for specific time** and set the **Unit** and **Value**. To accept only a certain kind of answer, such as an email address, turn on **Check format** and write the message to send when the answer doesn't match. See [Wait for and validate a reply](flows/response-wait.md?id=example-collect-an-email-address) for a full example.
+To collect an answer, write the question, then under **Response handling** select **Wait for specific time** and set the **Unit** and **Value**. To accept only a certain kind of answer, such as an email address, turn on **Check format** and write the message to send when the answer doesn't match. See [Wait for and validate a reply](../response-wait.md#example-collect-an-email-address) for a full example.
 
 ## Connect it
 
@@ -24,6 +24,6 @@ Connect **Next step** to the following step or to **End**. If the message waits 
 
 ## See also
 
-- [Wait for and validate a reply](flows/response-wait.md)
-- [Select and insert variables](flows/using-variables.md)
-- [A message does not arrive](help/troubleshooting.md?id=a-message-does-not-arrive)
+- [Wait for and validate a reply](../response-wait.md)
+- [Select and insert variables](../using-variables.md)
+- [A message does not arrive](../../help/troubleshooting.md#a-message-does-not-arrive)

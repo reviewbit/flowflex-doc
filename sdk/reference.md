@@ -2,11 +2,11 @@
 
 Every method, return value and error class in the FlowFlex SDK for JavaScript and Python.
 
-The SDK has one client, a method that sends events, a helper that wraps files, and two lower-level upload helpers. The examples use Rangoli Store's `order.placed` and `invoice.created` events. To get set up, see [Install and use the SDK](sdk/overview.md).
+The SDK has one client, a method that sends events, a helper that wraps files, and two lower-level upload helpers. The examples use Rangoli Store's `order.placed` and `invoice.created` events. To get set up, see [Install and use the SDK](overview.md).
 
 ## Constructor
 
-Creates a client. See [Constructor options](sdk/overview.md?id=constructor-options).
+Creates a client. See [Constructor options](overview.md#constructor-options).
 
 <!-- tabs:start -->
 
@@ -66,7 +66,7 @@ result.uploaded_assets  # dict: payload path → assetId
 
 ## File helper
 
-Returns a lazy file reference. The SDK reads the bytes only when the event is sent. See [SDK file attachments](sdk/files.md).
+Returns a lazy file reference. The SDK reads the bytes only when the event is sent. See [SDK file attachments](files.md).
 
 <!-- tabs:start -->
 
@@ -108,7 +108,7 @@ asset_id = ff.upload_file(ff.file("./x.pdf"))  # upload, get assetId
 
 <!-- tabs:end -->
 
-These map directly to the [Upload assets](api/assets.md) endpoints.
+These map directly to the [Upload assets](../api/assets.md) endpoints.
 
 ## Errors
 
@@ -155,7 +155,7 @@ Properties: `message`, `status`, `code`, `details`.
 
 <!-- tabs:end -->
 
-For the full list of codes, see [Error codes](api/events.md?id=error-codes).
+For the full list of codes, see [Error codes](../api/events.md#error-codes).
 
 ## Security
 
@@ -178,6 +178,6 @@ If you need to call FlowFlex from a browser, proxy through your own server: the 
 
 ## See also
 
-- [Install and use the SDK](sdk/overview.md)
-- [SDK file attachments](sdk/files.md)
-- [Send events](api/events.md)
+- [Install and use the SDK](overview.md)
+- [SDK file attachments](files.md)
+- [Send events](../api/events.md)

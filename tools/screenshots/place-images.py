@@ -57,8 +57,8 @@ for md in glob.glob("**/*.md", recursive=True):
             missing.append(name)
             return m.group(0)
         placed += 1
-        # Raw <img>: Docsify rewrites markdown image paths relative to the page folder.
-        return f'<img src="{img}" alt="{ALT.get(name, name)}">'
+        # Paths are relative to the page's folder, which both Docsify and GitBook expect.
+        return f'![{ALT.get(name, name)}]({os.path.relpath(img, os.path.dirname(md))})'
     new = re.sub(r"<!-- screenshot: ([a-z0-9/-]+) -->", repl, text)
     if new != text:
         open(md, "w").write(new)

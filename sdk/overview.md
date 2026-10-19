@@ -16,7 +16,7 @@ Rangoli Store's website uses the SDK to send `order.placed` when John Smith plac
 npm install flowflex
 ```
 
-Requires Node 18 or later, for the built-in `fetch`. Run it on a server, not in the browser. See [Security](sdk/reference.md?id=security).
+Requires Node 18 or later, for the built-in `fetch`. Run it on a server, not in the browser. See [Security](reference.md#security).
 
 #### **Python**
 
@@ -30,7 +30,7 @@ Requires Python 3.9 or later. It uses `requests` under the hood.
 
 ## Quick start
 
-1. Create a custom integration and copy its API key, API secret and integration code. See [Custom integrations](integrations/custom-integration.md).
+1. Create a custom integration and copy its API key, API secret and integration code. See [Custom integrations](../integrations/custom-integration.md).
 2. Create a client with those values.
 3. Call `sendEvent` (JavaScript) or `send_event` (Python) with the event name and its data.
 
@@ -91,7 +91,7 @@ In the flow builder, the payload fields appear under `trigger`, for example `{{t
 | `fetch` | function | no | Custom fetch for runtimes without a global one. |
 
 > [!WARNING]
-> The JavaScript SDK is server-only. It throws if constructed in a browser, and browser bundlers resolve it to a stub that throws on import. It uses your integration's `apiKey` and `apiSecret`, which must never reach client code. See [Security](sdk/reference.md?id=security).
+> The JavaScript SDK is server-only. It throws if constructed in a browser, and browser bundlers resolve it to a stub that throws on import. It uses your integration's `apiKey` and `apiSecret`, which must never reach client code. See [Security](reference.md#security).
 
 #### **Python**
 
@@ -109,9 +109,9 @@ In the flow builder, the payload fields appear under `trigger`, for example `{{t
 
 ## What you can do
 
-- **Send events:** `sendEvent` / `send_event`. See [Quick start](sdk/overview.md?id=quick-start).
-- **Attach files:** wrap files in `ff.file(...)` inside the payload. See [SDK file attachments](sdk/files.md).
-- **Handle errors:** catch the typed `FlowFlexError` subclasses. See [Errors](sdk/reference.md?id=errors).
+- **Send events:** `sendEvent` / `send_event`. See [Quick start](overview.md#quick-start).
+- **Attach files:** wrap files in `ff.file(...)` inside the payload. See [SDK file attachments](files.md).
+- **Handle errors:** catch the typed `FlowFlexError` subclasses. See [Errors](reference.md#errors).
 
 ## Idempotency
 
@@ -141,6 +141,6 @@ ff.send_event("order.placed",
 
 ## See also
 
-- [SDK reference](sdk/reference.md)
-- [SDK file attachments](sdk/files.md)
-- [Developer quick start](developers/quick-start.md)
+- [SDK reference](reference.md)
+- [SDK file attachments](files.md)
+- [Developer quick start](../developers/quick-start.md)

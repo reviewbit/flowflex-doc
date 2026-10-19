@@ -2,7 +2,7 @@
 
 Pick a fixed group of contacts by hand, then send broadcasts to it or use it in segments.
 
-A list holds exactly the contacts you put in it. Contacts join only when you add them, by hand, by bulk action or by import, and they stay until you remove them. To group contacts by a rule that updates on its own, use a [segment](audience/segments.md).
+A list holds exactly the contacts you put in it. Contacts join only when you add them, by hand, by bulk action or by import, and they stay until you remove them. To group contacts by a rule that updates on its own, use a [segment](segments.md).
 
 Before the Diwali sale, Jordan Brown at Rangoli Store creates the list `Repeat buyers – Oct 2026`, selects the customers who bought twice in September, including John Smith and Jane Doe, and adds them in one go. The broadcast `Diwali sale – repeat buyers – Oct 2026` then goes to exactly those customers.
 
@@ -19,7 +19,7 @@ The name can't be empty, and two lists in the same branch can't share a name: yo
 You can also create a list on the spot:
 
 - In Profiles → **More actions** → **Add to list**, type a new name and pick **+ Create new list: "name"**.
-- In **Bulk Import**, choose **To a list** → **+ Create new list**. See [Import and export](audience/import-export.md).
+- In **Bulk Import**, choose **To a list** → **+ Create new list**. See [Import and export](import-export.md).
 
 ## Add and remove contacts
 
@@ -43,7 +43,7 @@ Deleting a list doesn't delete its contacts.
 
 Merging copies every contact from one or more source lists into a destination list. Each contact appears only once in the destination. Rangoli Store, for example, could merge `Repeat buyers – Oct 2026` into a year-round loyalty list after the sale.
 
-<img src="assets/audience/merge-list.png" alt="The Merge list drawer">
+![The Merge list drawer](../assets/audience/merge-list.png)
 
 1. In the List table, click ⋯ → **Merge list** on a source list, or open the list and choose ⋯ → **Merge list**.
 2. **Source list**: the list you clicked is filled in. Add more lists if needed.
@@ -76,7 +76,7 @@ Click a list's name to see its members. The header shows **Total audience** and 
 
 The ⋯ menu on the list page has:
 
-- **Export list:** starts a CSV export of the list's members. Download it from the [Export tab](audience/import-export.md?id=export-contacts).
+- **Export list:** starts a CSV export of the list's members. Download it from the [Export tab](import-export.md#export-contacts).
 - **Quick add:** creates a new contact directly in this list.
 - **Merge list:** opens the merge drawer with this list as the source.
 - **Delete list:** deletes the list. The contacts stay in your audience.
@@ -87,6 +87,6 @@ Integrations and APIs sometimes ask for a list ID. Open the list: the ID is the 
 
 ## See also
 
-- [Send a broadcast](broadcasts/send-broadcast.md): choose **Audience Type** → **List**.
-- [Segments](audience/segments.md): use the **List** field with **Contains** to filter or segment by a list.
-- [Import and export contacts](audience/import-export.md): add a file of contacts straight to a list.
+- [Send a broadcast](../broadcasts/send-broadcast.md): choose **Audience Type** → **List**.
+- [Segments](segments.md): use the **List** field with **Contains** to filter or segment by a list.
+- [Import and export contacts](import-export.md): add a file of contacts straight to a list.

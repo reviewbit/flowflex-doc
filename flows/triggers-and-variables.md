@@ -20,13 +20,13 @@ Pick an event that matches the job. An order event suits an order confirmation, 
 
 Select **WhatsApp Incoming Chat** from the event list. To reply to the customer, use **Trigger** → **from** as the **Destination number**. Use **Trigger** → **name** in a greeting, and **Trigger** → **text** to check what the customer wrote.
 
-A real flow starts from incoming messages only once its channel is set and its [campaign](flows/campaigns.md) is published. Practice in Learn flow builder uses sample data and doesn't start a campaign.
+A real flow starts from incoming messages only once its channel is set and its [campaign](campaigns.md) is published. Practice in Learn flow builder uses sample data and doesn't start a campaign.
 
 ## Connected app events
 
 Choose the connected app and the event. What information you get depends on the event: an order event may include a customer object and an item list, while another event has a different structure.
 
-Open [Insert Variable](flows/using-variables.md) to see the fields the event really has, rather than copying paths from another event.
+Open [Insert Variable](using-variables.md) to see the fields the event really has, rather than copying paths from another event.
 
 ## Custom events and sample JSON
 
@@ -42,10 +42,10 @@ For a custom event, give a sample of the data your system sends. Include every f
 
 The sample only describes the fields. Each real event brings its own values. With this sample, choose **Trigger** → **customer** → **phone** for **Destination number**.
 
-To send custom events from your system, see [SDK setup](sdk/overview.md) or [Send events](api/events.md).
+To send custom events from your system, see [SDK setup](../sdk/overview.md) or [Send events](../api/events.md).
 
 ## See also
 
-- [Select and insert variables](flows/using-variables.md)
-- [Build your first flow](flows/building-a-flow.md)
-- [The flow does not start](help/troubleshooting.md?id=the-flow-does-not-start)
+- [Select and insert variables](using-variables.md)
+- [Build your first flow](building-a-flow.md)
+- [The flow does not start](../help/troubleshooting.md#the-flow-does-not-start)

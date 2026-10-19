@@ -21,8 +21,8 @@ Rangoli Store sent its first sale template, `big_sale_v1`, to every number it ha
 When Meta rejects, pauses or disables a template, it usually gives a reason, which you'll find in the status tooltip in **Templates**. The reasons fall into three groups:
 
 - **Policy:** the content is abusive, looks like a scam, or breaks the [WhatsApp Business Policy](https://business.whatsapp.com/policy). Rewrite it. Repeated policy problems put the whole account at risk.
-- **Wrong category:** the content doesn't match the category you picked, for example a "shipping update" with a discount code in it. Change the category or remove the promotion. See [Choose the right category](broadcasts/broadcast-guidelines.md?id=choose-the-right-category).
-- **Format:** something is technically wrong, such as two variables side by side (`{{1}}{{2}}`) with no text between them. Meta's message says what to fix. See the [template guidelines](whatsapp/template-guidelines.md).
+- **Wrong category:** the content doesn't match the category you picked, for example a "shipping update" with a discount code in it. Change the category or remove the promotion. See [Choose the right category](broadcast-guidelines.md#choose-the-right-category).
+- **Format:** something is technically wrong, such as two variables side by side (`{{1}}{{2}}`) with no text between them. Meta's message says what to fix. See the [template guidelines](../whatsapp/template-guidelines.md).
 
 A disabled template can't be used again. Create a new one with a new name, such as `big_sale_v2`, and change whatever people disliked.
 
@@ -106,7 +106,7 @@ Putting promotions in Utility templates again and again leads Meta to restrict y
 
 Meta's own advice is short: make each message personal and useful, avoid open-ended "Hi, we're here!" messages, and don't send too many in a day ([Meta rule](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages#message-quality)). Here's what that looks like in practice.
 
-**Send to the people it's for.** "Repeat buyers in Kochi" will always beat "everyone". Use a [segment](audience/segments.md) to pick contacts by what they bought, where they live, or how they reacted to your last broadcast. When Rangoli Store launched its silk collection, it sent the news only to customers who had bought silk before, and far more of them read it than usual.
+**Send to the people it's for.** "Repeat buyers in Kochi" will always beat "everyone". Use a [segment](../audience/segments.md) to pick contacts by what they bought, where they live, or how they reacted to your last broadcast. When Rangoli Store launched its silk collection, it sent the news only to customers who had bought silk before, and far more of them read it than usual.
 
 **Make it personal.** Start with the customer's name and add one detail that's theirs: their city, their last purchase, their appointment date. In FlowFlex, choose **Audience field** for a variable and fill in a fallback value, so nobody gets "Hi ," when a field is empty.
 
@@ -134,7 +134,7 @@ Meta's own advice is short: make each message personal and useful, avoid open-en
 
 **Keep enough wallet balance for the whole audience.** FlowFlex checks your balance when you publish and stops with **Insufficient wallet balance** if it's too low.
 
-When something does go wrong, [Results and errors](broadcasts/results-and-errors.md) explains each error and what to do about it.
+When something does go wrong, [Results and errors](results-and-errors.md) explains each error and what to do about it.
 
 ## Rules that catch people out
 
@@ -146,7 +146,7 @@ When something does go wrong, [Results and errors](broadcasts/results-and-errors
 
 ## See also
 
-- [Template guidelines](whatsapp/template-guidelines.md)
-- [Send a broadcast](broadcasts/send-broadcast.md)
-- [Pre-send checklist](broadcasts/checklist-faq.md)
-- [Meta policies and sources](help/meta-policies.md)
+- [Template guidelines](../whatsapp/template-guidelines.md)
+- [Send a broadcast](send-broadcast.md)
+- [Pre-send checklist](checklist-faq.md)
+- [Meta policies and sources](../help/meta-policies.md)

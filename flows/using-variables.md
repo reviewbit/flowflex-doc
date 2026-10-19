@@ -52,7 +52,7 @@ For the name, the inserted reference stands for `{{trigger.customer.name}}`. Sel
 
 A list holds several items. Selecting the first item's name gives you only that one name. It doesn't repeat the message for every item.
 
-To work through all the items, add a **Start loop** and choose the complete list in **Specify list**. The picker offers list selection in fields that need a list. Inside the loop, use the current item's fields. See [Repeat over a list](flows/nodes/for-loop.md).
+To work through all the items, add a **Start loop** and choose the complete list in **Specify list**. The picker offers list selection in fields that need a list. Inside the loop, use the current item's fields. See [Repeat over a list](nodes/for-loop.md).
 
 ## Use an API response
 
@@ -72,7 +72,7 @@ For example, with this response:
 
 Choose the API node → **200** → **order** → **delivery_date** to put the date in Rangoli Store's status message. The example helps you find the field. When the flow runs, the service supplies the real date.
 
-An error response can have different fields. On an error path, select fields from that error example rather than assuming the success fields exist. See [API](flows/nodes/api.md).
+An error response can have different fields. On an error path, select fields from that error example rather than assuming the success fields exist. See [API](nodes/api.md).
 
 ## Fill a template placeholder
 
@@ -81,17 +81,17 @@ Template placeholders such as `{{1}}` are positions in the approved message, and
 - **Body `{{1}}`:** select **Trigger** → **customer** → **name**.
 - **Body `{{2}}`:** select **Trigger** → **order** → **number**.
 
-The customer then receives "Hi John Smith, order ORD-1042 is confirmed." Use the picker in each placeholder field. You don't need to rewrite the approved message. See [Template message](flows/nodes/template-message.md).
+The customer then receives "Hi John Smith, order ORD-1042 is confirmed." Use the picker in each placeholder field. You don't need to rewrite the approved message. See [Template message](nodes/template-message.md).
 
 ## Use a customer's reply
 
 Turn on response waiting on the question node and save it first. In a later node, choose that question in **Insert Variable** and select its reply. Use the reply path, not the **No response** path, for steps that need the answer.
 
-For example, ask for an email address, turn on **Check format** → **Email**, then use the reply in **Save audience**. See [Wait for and validate a reply](flows/response-wait.md).
+For example, ask for an email address, turn on **Check format** → **Email**, then use the reply in **Save audience**. See [Wait for and validate a reply](response-wait.md).
 
 ## If a field is missing
 
-- For a custom trigger, check that its sample includes the field. See [Choose the trigger](flows/triggers-and-variables.md).
+- For a custom trigger, check that its sample includes the field. See [Choose the trigger](triggers-and-variables.md).
 - For an API, add or update its response example and save the node.
 - For a reply, turn on response waiting and save the question node.
 - Check that you selected the right source and opened the right nested object.
@@ -101,6 +101,6 @@ Renaming a node's display label keeps its variable references working. Use the p
 
 ## See also
 
-- [Choose the trigger](flows/triggers-and-variables.md)
-- [API](flows/nodes/api.md)
-- [A variable is missing or has the wrong value](help/troubleshooting.md?id=a-variable-is-missing-or-has-the-wrong-value)
+- [Choose the trigger](triggers-and-variables.md)
+- [API](nodes/api.md)
+- [A variable is missing or has the wrong value](../help/troubleshooting.md#a-variable-is-missing-or-has-the-wrong-value)

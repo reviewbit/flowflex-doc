@@ -6,7 +6,7 @@ A template is a message Meta has approved in advance. You need one to message cu
 
 For the Diwali sale, Jordan Brown, Rangoli Store's marketing manager, creates `diwali_sale_2026_en`: a Marketing template with a festive banner, a **Shop now** link and an opt-out button. It is approved within minutes, and the team builds the broadcast the same afternoon.
 
-Read the [Template guidelines](whatsapp/template-guidelines.md) before you submit. They cover the most common reasons Meta rejects a template.
+Read the [Template guidelines](template-guidelines.md) before you submit. They cover the most common reasons Meta rejects a template.
 
 ## Create the template
 
@@ -14,7 +14,7 @@ Go to **Templates** → **Create template**. The wizard has four steps: **Select
 
 ### 1. Select channel
 
-<img src="assets/whatsapp/template-select-channel.png" alt="Create template, step 1: selecting the Rangoli Store channel">
+![Create template, step 1: selecting the Rangoli Store channel](../assets/whatsapp/template-select-channel.png)
 
 Pick a **Connected** channel. The template is created in that channel's WABA.
 
@@ -25,14 +25,14 @@ Pick a **Connected** channel. The template is created in that channel's WABA.
    - **Utility:** updates about something the customer already did or bought, such as an order confirmation, shipping update or appointment reminder. One promotional sentence makes it Marketing.
    - **Authentication:** one-time passwords only. Meta fixes the content.
 
-   For worked examples, see [Choose the right category](broadcasts/broadcast-guidelines.md?id=choose-the-right-category).
+   For worked examples, see [Choose the right category](../broadcasts/broadcast-guidelines.md#choose-the-right-category).
 2. Enter a **Template name**: lowercase letters, numbers and underscores only. Spaces become `_`. Use at least 5 characters and keep it under 100. Names must be unique in the WABA, so use a pattern such as `diwali_sale_2026_en` or `order_shipped_v1`.
 3. Pick the **Language** of the content. For several languages, create one template per language with the same name.
 4. For a Marketing template, pick a **Template format**: **Standard** (one message) or **Carousel** (2 to 10 swipeable cards).
 
 ### 3. Edit template
 
-<img src="assets/whatsapp/template-edit.png" alt="Create template: editing the Diwali sale template">
+![Create template: editing the Diwali sale template](../assets/whatsapp/template-edit.png)
 
 Write the message. The preview shows how it will look on the customer's phone.
 
@@ -69,7 +69,7 @@ Check the preview and click **Submit for review**. The template appears in **Tem
 
 ## Track the review
 
-<img src="assets/whatsapp/templates-list.png" alt="Template Management listing the approved demo templates">
+![Template Management listing the approved demo templates](../assets/whatsapp/templates-list.png)
 
 FlowFlex receives status changes from Meta automatically. Click **Sync from Meta** on a row, or **Refresh**, to pull them sooner.
 
@@ -81,10 +81,10 @@ FlowFlex receives status changes from Meta automatically. Click **Sync from Meta
 | Paused | Paused after negative feedback or low read rates | Running broadcasts pause. Rework the content and audience. |
 | Disabled | Disabled after repeated low quality | Create a new, improved template. |
 
-Statuses follow [Meta – Template fundamentals](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview). To understand quality ratings and how long a pause lasts, see [Template quality](broadcasts/broadcast-guidelines.md?id=template-quality).
+Statuses follow [Meta – Template fundamentals](https://developers.facebook.com/documentation/business-messaging/whatsapp/templates/overview). To understand quality ratings and how long a pause lasts, see [Template quality](../broadcasts/broadcast-guidelines.md#template-quality).
 
 ## See also
 
-- [Template guidelines](whatsapp/template-guidelines.md)
-- [Send a broadcast](broadcasts/send-broadcast.md)
-- [Connect a WhatsApp channel](whatsapp/connect-channel.md)
+- [Template guidelines](template-guidelines.md)
+- [Send a broadcast](../broadcasts/send-broadcast.md)
+- [Connect a WhatsApp channel](connect-channel.md)

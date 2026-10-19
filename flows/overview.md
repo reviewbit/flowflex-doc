@@ -22,29 +22,29 @@ Trigger → Button message → Track order → API → Status message → End
 
 Placing a node on the canvas doesn't connect it. Connect every button, choice and response output, or customers who pick that option reach a dead end.
 
-To start a flow from incoming WhatsApp messages, publish it and switch it on with a [campaign](flows/campaigns.md). A saved draft, or a practice flow in Learn flow builder, doesn't message real customers.
+To start a flow from incoming WhatsApp messages, publish it and switch it on with a [campaign](campaigns.md). A saved draft, or a practice flow in Learn flow builder, doesn't message real customers.
 
 ## Get started
 
-- [Learn flow builder](flows/learning-the-builder.md): practise on guided lessons with sample data.
-- [Build your first flow](flows/building-a-flow.md): build, test and publish a flow step by step.
-- [Campaigns](flows/campaigns.md): switch a published flow on for incoming messages.
+- [Learn flow builder](learning-the-builder.md): practise on guided lessons with sample data.
+- [Build your first flow](building-a-flow.md): build, test and publish a flow step by step.
+- [Campaigns](campaigns.md): switch a published flow on for incoming messages.
 
 ## Common tasks
 
-- [Choose the trigger](flows/triggers-and-variables.md): decide what starts the flow.
-- [Select and insert variables](flows/using-variables.md): use a customer's name, phone number or order details in any step.
-- [Set up WhatsApp messages](flows/whatsapp-message-setup.md): pick the message type and who receives it.
-- [Template message](flows/nodes/template-message.md): send an approved template and fill its placeholders.
-- [API](flows/nodes/api.md): use information from another service, such as an order status.
-- [Choose files and media](flows/files-and-media.md): send a file, or one that's specific to each customer.
-- [Set conditions and choose paths](flows/setting-conditions.md): route by an answer, an order value or a tag.
-- [Waiting for a reply](flows/response-wait.md): capture and check what the customer types.
-- [Versions and publishing](flows/versions-and-portability.md): review drafts and publish changes.
+- [Choose the trigger](triggers-and-variables.md): decide what starts the flow.
+- [Select and insert variables](using-variables.md): use a customer's name, phone number or order details in any step.
+- [Set up WhatsApp messages](whatsapp-message-setup.md): pick the message type and who receives it.
+- [Template message](nodes/template-message.md): send an approved template and fill its placeholders.
+- [API](nodes/api.md): use information from another service, such as an order status.
+- [Choose files and media](files-and-media.md): send a file, or one that's specific to each customer.
+- [Set conditions and choose paths](setting-conditions.md): route by an answer, an order value or a tag.
+- [Waiting for a reply](response-wait.md): capture and check what the customer types.
+- [Versions and publishing](versions-and-portability.md): review drafts and publish changes.
 
-Every step you can add is listed in the [Node reference](flows/nodes.md).
+Every step you can add is listed in the [Node reference](nodes.md).
 
 ## See also
 
-- [Saved data](flows/saved-data.md)
-- [Troubleshooting](help/troubleshooting.md)
+- [Saved data](saved-data.md)
+- [Troubleshooting](../help/troubleshooting.md)

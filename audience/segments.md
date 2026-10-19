@@ -2,7 +2,7 @@
 
 Group contacts by what they do and who they are, and let FlowFlex keep the group up to date for you.
 
-A segment is a set of conditions, such as "tagged repeat-buyer and read the Diwali broadcast". FlowFlex finds every contact who matches, and keeps the membership current as tags, lists, contact details and broadcast results change. To pick contacts by hand instead, use a [list](audience/lists.md).
+A segment is a set of conditions, such as "tagged repeat-buyer and read the Diwali broadcast". FlowFlex finds every contact who matches, and keeps the membership current as tags, lists, contact details and broadcast results change. To pick contacts by hand instead, use a [list](lists.md).
 
 The day after its Diwali broadcast, Rangoli Store creates a segment of repeat buyers who clicked **Shop now**. It sends them a "last day of the sale" reminder, and leaves everyone else alone. More customers click over the next few hours, and the segment picks them up on its own.
 
@@ -20,14 +20,14 @@ Go to **Audience** → **Segments** to create and manage segments.
 
 1. Click **Create new**. The **Create segment** drawer opens.
 2. Enter a **Title**, such as `Kochi repeat buyers who clicked the Diwali sale`. It needs 2 to 100 characters and must be unique in the branch.
-3. Build the conditions. See [Build conditions](audience/segments.md?id=build-conditions).
+3. Build the conditions. See [Build conditions](segments.md#build-conditions).
 4. Click **Create**.
 
-FlowFlex then works out who matches. See [While a segment computes](audience/segments.md?id=while-a-segment-computes).
+FlowFlex then works out who matches. See [While a segment computes](segments.md#while-a-segment-computes).
 
 ## Build conditions
 
-<img src="assets/audience/segment-builder.png" alt="Building a repeat buyers segment">
+![Building a repeat buyers segment](../assets/audience/segment-builder.png)
 
 Conditions sit inside **condition groups**. Each condition has three parts: a property, a condition, and a value.
 
@@ -55,7 +55,7 @@ The builder shows **AND** or **OR** between conditions and groups, so you can re
 | **Name** | Text | |
 | **Tags** | Tags | Pick one or more tags. Type a new name and click **Create : name** to create a tag. |
 | **List** | Lists | Pick one or more lists |
-| **Broadcast** | Broadcast activity | What happened to a broadcast sent to the contact. See [Broadcast activity](audience/segments.md?id=broadcast-activity). |
+| **Broadcast** | Broadcast activity | What happened to a broadcast sent to the contact. See [Broadcast activity](segments.md#broadcast-activity). |
 | **Phone** | Text | |
 | **Email subscribed** | Yes/No | Email marketing consent |
 | **Sms subscribed** | Yes/No | SMS marketing consent |
@@ -147,6 +147,6 @@ To do the same for several segments, select them and use **More actions**. Subsc
 
 ## See also
 
-- [Send a broadcast](broadcasts/send-broadcast.md): choose **Audience Type** → **Segment**.
-- [Audience actions](flows/nodes/audience-actions.md): tag customers automatically in a flow.
-- [Contact-tag conditions](flows/nodes/contact-tag-conditions.md): route flow contacts by their tags.
+- [Send a broadcast](../broadcasts/send-broadcast.md): choose **Audience Type** → **Segment**.
+- [Audience actions](../flows/nodes/audience-actions.md): tag customers automatically in a flow.
+- [Contact-tag conditions](../flows/nodes/contact-tag-conditions.md): route flow contacts by their tags.
