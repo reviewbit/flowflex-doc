@@ -41,4 +41,4 @@ Rangoli Store's condition split checks `conditionMet`: **Yes** sends the trackin
 
 - [Start loop and End loop](for-loop.md), to repeat for each item in a list
 - [Set conditions and choose paths](../setting-conditions.md)
-- [A repeated sequence never reaches the intended result](../../help/troubleshooting.md#a-repeated-sequence-never-reaches-the-intended-result)
+- [A repeated sequence never reaches the intended result](../../help/troubleshooting.md#why-doesnt-a-repeated-sequence-reach-the-result-i-expect)

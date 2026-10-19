@@ -21,4 +21,4 @@ Don't leave an output unconnected to mean "stop here". An unconnected output sto
 ## See also
 
 - [Workflows overview](../overview.md)
-- [I cannot save the flow](../../help/troubleshooting.md#i-cannot-save-the-flow)
+- [I cannot save the flow](../../help/troubleshooting.md#why-cant-i-save-my-flow)

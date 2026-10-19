@@ -28,4 +28,4 @@ Paths are checked in order and the first match wins, so put specific rules befor
 
 - [Condition split](condition-split.md)
 - [Set conditions and choose paths](../setting-conditions.md)
-- [The wrong condition path runs](../../help/troubleshooting.md#the-wrong-condition-path-runs)
+- [The wrong condition path runs](../../help/troubleshooting.md#why-does-my-flow-take-the-wrong-condition-path)

@@ -28,4 +28,4 @@ Connect **Next step** to the following step or to **End**. If the message waits 
 
 - [Wait for and validate a reply](../response-wait.md)
 - [Select and insert variables](../using-variables.md)
-- [A message does not arrive](../../help/troubleshooting.md#a-message-does-not-arrive)
+- [A message does not arrive](../../help/troubleshooting.md#why-didnt-my-whatsapp-message-arrive)

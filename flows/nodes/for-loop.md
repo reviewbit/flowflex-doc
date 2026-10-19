@@ -40,4 +40,4 @@ Always draw connections forward. The loop nodes handle the repetition, so don't 
 
 - [Repeat until](repeat-until.md), to repeat until a condition is met
 - [Select and insert variables](../using-variables.md)
-- [A repeated sequence never reaches the intended result](../../help/troubleshooting.md#a-repeated-sequence-never-reaches-the-intended-result)
+- [A repeated sequence never reaches the intended result](../../help/troubleshooting.md#why-doesnt-a-repeated-sequence-reach-the-result-i-expect)

@@ -37,4 +37,4 @@ A template with quick-reply buttons has one output per button, named after the b
 
 - [Create a template](../../whatsapp/create-template.md)
 - [Set up WhatsApp messages](../whatsapp-message-setup.md)
-- [My template is missing](../../help/troubleshooting.md#my-template-is-missing)
+- [My template is missing](../../help/troubleshooting.md#why-cant-i-find-my-template)

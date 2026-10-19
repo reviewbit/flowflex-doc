@@ -22,22 +22,28 @@ Before Rangoli Store publishes "Diwali sale – repeat buyers – Oct 2026", Ale
 
 ## FAQ
 
-**Why can't I see my template in Select Template?**
+### Why can't I see my template in Select Template?
+
 It isn't Approved yet, or it belongs to a different channel's WhatsApp Business Account.
 
-**Can I edit an approved template?**
+### Can I edit an approved template?
+
 Create a new version, such as `diwali_sale_2026_en_v2`, and submit it for review. Don't change the wording while a broadcast is running.
 
-**Why did fewer people receive it than I selected?**
+### Why did fewer people receive it than I selected?
+
 Opted-out contacts are left out, and invalid or duplicate numbers are skipped. Meta also holds some messages back (131049, 130472), and batches scheduled after the end date are never sent. See [Common errors](results-and-errors.md#common-errors).
 
-**Can I send immediately?**
+### Can I send immediately?
+
 Set the start time a few minutes ahead. It can't be in the past.
 
-**How do I raise my daily limit?**
+### How do I raise my daily limit?
+
 Complete Meta Business Verification, keep quality High, and keep reaching more unique recipients. See [Grow the Portfolio limit](../whatsapp/connect-channel.md#grow-the-portfolio-limit).
 
-**Do replies come into FlowFlex?**
+### Do replies come into FlowFlex?
+
 Yes, in **Messaging** → **Conversations**. For 24 hours after a customer replies, your team can answer with free-form messages.
 
 ## See also

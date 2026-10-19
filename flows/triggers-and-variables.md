@@ -50,4 +50,4 @@ To send custom events from your system, see [SDK setup](../sdk/overview.md) or [
 
 - [Select and insert variables](using-variables.md)
 - [Build your first flow](building-a-flow.md)
-- [The flow does not start](../help/troubleshooting.md#the-flow-does-not-start)
+- [The flow does not start](../help/troubleshooting.md#why-doesnt-my-flow-start)

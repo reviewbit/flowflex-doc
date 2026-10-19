@@ -57,4 +57,4 @@ Choose a file type that suits the message or template header you picked.
 
 - [Media message](nodes/media-message.md)
 - [Template message](nodes/template-message.md)
-- [Files do not upload or send](../help/troubleshooting.md#files-do-not-upload-or-send)
+- [Files do not upload or send](../help/troubleshooting.md#why-wont-my-file-upload-or-send)

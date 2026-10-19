@@ -40,4 +40,4 @@ Exports leave out settings that belong to your workspace. Read the notice, then 
 - [Build your first flow](building-a-flow.md)
 - [Campaigns](campaigns.md)
 - [Learn flow builder](learning-the-builder.md)
-- [I cannot save the flow](../help/troubleshooting.md#i-cannot-save-the-flow)
+- [I cannot save the flow](../help/troubleshooting.md#why-cant-i-save-my-flow)

@@ -51,4 +51,4 @@ Connect every path the node shows. For a guaranteed fallback, use a Condition sp
 
 - [Condition split](nodes/condition-split.md)
 - [Condition branch](nodes/condition-branch.md)
-- [The wrong condition path runs](../help/troubleshooting.md#the-wrong-condition-path-runs)
+- [The wrong condition path runs](../help/troubleshooting.md#why-does-my-flow-take-the-wrong-condition-path)

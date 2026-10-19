@@ -67,4 +67,4 @@ A delay can push a later message outside the window, so check the message type a
 
 - [Node reference](nodes.md)
 - [Choose files and media](files-and-media.md)
-- [A message does not arrive](../help/troubleshooting.md#a-message-does-not-arrive)
+- [A message does not arrive](../help/troubleshooting.md#why-didnt-my-whatsapp-message-arrive)

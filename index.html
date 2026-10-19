@@ -1267,6 +1267,7 @@
         });
 
         hook.doneEach(function () {
+          matchGitbookAnchors();
           showDescription();
           resolveHtmlImages();
           buildCards();
@@ -1276,6 +1277,25 @@
           buildBreadcrumbs();
           buildToc();
         });
+
+        // GitBook drops apostrophes from heading anchors ("can't" -> "cant"),
+        // while Docsify keeps them as "39". Use GitBook's form, so the same
+        // section links work on both sites.
+        function matchGitbookAnchors() {
+          document
+            .querySelectorAll(".markdown-section [id]")
+            .forEach(function (h) {
+              if (!/^H[1-6]$/.test(h.tagName) || !/['\u2019]/.test(h.textContent)) return;
+              var oldId = h.id;
+              h.id = oldId.split("39").join("");
+              h.querySelectorAll("a[href]").forEach(function (a) {
+                a.setAttribute("href", a.getAttribute("href").replace("id=" + oldId, "id=" + h.id));
+              });
+            });
+          var id = (location.hash.match(/[?&]id=([^&]+)/) || [])[1];
+          var target = id && document.getElementById(decodeURIComponent(id));
+          if (target) target.scrollIntoView();
+        }
 
         // Pages keep their summary sentence in a front-matter description,
         // which GitBook shows under the title. Show it there in Docsify too.

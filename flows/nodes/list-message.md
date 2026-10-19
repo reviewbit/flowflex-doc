@@ -36,4 +36,4 @@ The node has one output per row, named after its title. Connect each row to the 
 
 - [Button message](button-message.md), for three choices or fewer
 - [Set up WhatsApp messages](../whatsapp-message-setup.md)
-- [The wrong condition path runs](../../help/troubleshooting.md#the-wrong-condition-path-runs)
+- [The wrong condition path runs](../../help/troubleshooting.md#why-does-my-flow-take-the-wrong-condition-path)

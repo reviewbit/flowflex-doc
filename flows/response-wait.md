@@ -56,4 +56,4 @@ For a pause that doesn't depend on an answer, use [Set time delay](nodes/set-tim
 
 - [Set up WhatsApp messages](whatsapp-message-setup.md)
 - [Select and insert variables](using-variables.md)
-- [The flow waits or takes No response](../help/troubleshooting.md#the-flow-waits-or-takes-no-response)
+- [The flow waits or takes No response](../help/troubleshooting.md#why-does-my-flow-keep-waiting-or-take-the-no-response-path)

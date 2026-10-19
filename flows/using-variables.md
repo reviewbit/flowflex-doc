@@ -105,4 +105,4 @@ Renaming a node's display label keeps its variable references working. Use the p
 
 - [Choose the trigger](triggers-and-variables.md)
 - [API](nodes/api.md)
-- [A variable is missing or has the wrong value](../help/troubleshooting.md#a-variable-is-missing-or-has-the-wrong-value)
+- [A variable is missing or has the wrong value](../help/troubleshooting.md#why-is-a-variable-missing-or-showing-the-wrong-value)

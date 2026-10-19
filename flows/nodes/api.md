@@ -72,4 +72,4 @@ The next step waits until the API node finishes, including retries. Only turn on
 
 - [Select and insert variables](../using-variables.md)
 - [Condition branch](condition-branch.md)
-- [My API request fails](../../help/troubleshooting.md#my-api-request-fails)
+- [My API request fails](../../help/troubleshooting.md#why-does-my-api-request-fail)

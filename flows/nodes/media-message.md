@@ -33,5 +33,5 @@ Connect **Next step** to the following step or to **End**. If you set a waiting 
 ## See also
 
 - [Choose files and media](../files-and-media.md)
-- [Files do not upload or send](../../help/troubleshooting.md#files-do-not-upload-or-send)
+- [Files do not upload or send](../../help/troubleshooting.md#why-wont-my-file-upload-or-send)
 - [Template message](template-message.md), for files outside the 24-hour window
