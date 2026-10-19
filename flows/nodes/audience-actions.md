@@ -1,6 +1,8 @@
-# Audience actions
+---
+description: "Tag a contact, save details to their profile, leave a note for your team, or hand the chat to an agent, all from inside a flow."
+---
 
-Tag a contact, save details to their profile, leave a note for your team, or hand the chat to an agent, all from inside a flow.
+# Audience actions
 
 The four audience actions sit in **Audience Blocks**. Each one finds the customer by **Contact number**. For a flow started by an incoming WhatsApp message, insert **Trigger** → **from**; for another trigger, choose its customer phone field. See [Select and insert variables](../using-variables.md).
 

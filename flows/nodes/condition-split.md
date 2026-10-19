@@ -1,6 +1,8 @@
-# Condition split
+---
+description: "Check a rule and send the flow down a Yes or a No path."
+---
 
-Check a rule and send the flow down a **Yes** or a **No** path.
+# Condition split
 
 ## When to use it
 

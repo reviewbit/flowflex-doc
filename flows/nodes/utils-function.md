@@ -1,6 +1,8 @@
-# Utils function
+---
+description: "Use a ready-made helper to work out how far a customer is from a branch, or to recognise a place name in a customer's message."
+---
 
-Use a ready-made helper to work out how far a customer is from a branch, or to recognise a place name in a customer's message.
+# Utils function
 
 Add **Utils function** from **Other Blocks**, open it, and pick a helper in **Choose a function**. Each helper's result is available to later steps through Insert Variable.
 

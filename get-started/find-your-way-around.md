@@ -1,6 +1,8 @@
-# Find your way around
+---
+description: "Find any page in FlowFlex from the sidebar, the top bar or quick search, and switch between branches and organisations."
+---
 
-Find any page in FlowFlex from the sidebar, the top bar or quick search, and switch between branches and organisations.
+# Find your way around
 
 FlowFlex has a sidebar on the left, a top bar along the top, and the page you are working on in the middle. What you see in the sidebar depends on your role.
 

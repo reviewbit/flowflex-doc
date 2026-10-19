@@ -1,6 +1,8 @@
-# Sign up and sign in
+---
+description: "Create your FlowFlex account, set up your organisation, and sign in to the right workspace."
+---
 
-Create your FlowFlex account, set up your organisation, and sign in to the right workspace.
+# Sign up and sign in
 
 You do all of this in the FlowFlex login app, a separate page from the main app. The first screen says **Welcome to FlowFlex**. Click **Get started** to create an account, or **Sign in to existing account** if you already have one.
 

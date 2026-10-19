@@ -1,6 +1,8 @@
-# Repeat until
+---
+description: "Repeat a set of steps until a condition is met or the attempt limit is reached."
+---
 
-Repeat a set of steps until a condition is met or the attempt limit is reached.
+# Repeat until
 
 ## When to use it
 

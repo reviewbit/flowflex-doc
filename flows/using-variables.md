@@ -1,6 +1,8 @@
-# Select and insert variables
+---
+description: "Fill any field with a customer's own details, such as their name, phone number or order status."
+---
 
-Fill any field with a customer's own details, such as their name, phone number or order status.
+# Select and insert variables
 
 A variable is a value the flow fills in when it runs. It can come from the event that started the flow, from the customer's reply, or from an earlier step such as an API call. You don't type a path to use one: **Insert Variable** opens a picker where you choose the value.
 

@@ -1,6 +1,8 @@
-# Import and export
+---
+description: "Add many contacts at once from a CSV or XLSX file, and download contacts as a CSV."
+---
 
-Add many contacts at once from a CSV or XLSX file, and download contacts as a CSV.
+# Import and export
 
 **Bulk Import** reads a file of contacts, lets you match its columns to FlowFlex fields, and adds the contacts to your audience, and to a list if you choose. **Export** creates a CSV of the contacts you pick, ready to download.
 

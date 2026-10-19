@@ -1,6 +1,8 @@
-# Save variable
+---
+description: "Store a value under a name you choose, so later steps in the same flow run can reuse it."
+---
 
-Store a value under a name you choose, so later steps in the same flow run can reuse it.
+# Save variable
 
 ## When to use it
 

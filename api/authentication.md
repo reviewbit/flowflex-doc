@@ -1,6 +1,8 @@
-# REST API authentication
+---
+description: "Authenticate your requests to the FlowFlex API with your custom integration's API key and secret."
+---
 
-Authenticate your requests to the FlowFlex API with your custom integration's API key and secret.
+# REST API authentication
 
 The custom-integration API lets you send events and upload files from any language. Every request uses HTTP Basic auth, with the API key as the username and the API secret as the password. The [SDK](../sdk/overview.md) is a convenience wrapper over the same endpoints and builds the header for you.
 

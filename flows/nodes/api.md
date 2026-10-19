@@ -1,6 +1,8 @@
-# API: look up information or call another service
+---
+description: "Use API to fetch information from another service, such as an order's status, or to send information to it."
+---
 
-Use API to fetch information from another service, such as an order's status, or to send information to it.
+# API: look up information or call another service
 
 ## When to use it
 

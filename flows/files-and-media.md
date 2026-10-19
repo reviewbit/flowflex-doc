@@ -1,6 +1,8 @@
-# Choose files and media
+---
+description: "Attach a file to a Media message, a template header or a message header, either the same file for everyone or one for each customer."
+---
 
-Attach a file to a Media message, a template header or a message header, either the same file for everyone or one for each customer.
+# Choose files and media
 
 Where a node needs a file, you choose a **File source**. The source decides whether every customer gets the same file or the flow picks one per customer:
 

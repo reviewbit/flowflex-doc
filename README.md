@@ -1,11 +1,10 @@
 ---
 cover: .gitbook/assets/flowflex-docs-cover (1).svg
 coverY: 0
+description: "Everything you need to reach customers on WhatsApp: connect your number, send broadcasts, reply from a shared inbox, and automate conversations with workflows."
 ---
 
-# Home
-
-Everything you need to reach customers on WhatsApp: connect your number, send broadcasts, reply from a shared inbox, and automate conversations with workflows.
+# FlowFlex documentation
 
 <a href="getting-started.md" class="button primary">Set up your account</a> <a href="get-started/find-your-way-around.md" class="button secondary">Tour the app</a>
 

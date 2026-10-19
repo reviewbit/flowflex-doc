@@ -1,6 +1,8 @@
-# Broadcast guidelines
+---
+description: "Send broadcasts that customers look forward to, and keep your WhatsApp number healthy enough to reach more of them every month."
+---
 
-Send broadcasts that customers look forward to, and keep your WhatsApp number healthy enough to reach more of them every month.
+# Broadcast guidelines
 
 WhatsApp rewards businesses whose messages people read and act on, and slows down the ones people block. Almost every rule on this page comes back to that one idea. Follow along with Rangoli Store, a saree shop in Kochi, as it goes from its first broadcast to its busiest festive season.
 

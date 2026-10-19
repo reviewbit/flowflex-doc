@@ -1,6 +1,8 @@
-# Roles and permissions
+---
+description: "Decide what each team member can do in FlowFlex by giving them a role."
+---
 
-Decide what each team member can do in FlowFlex by giving them a role.
+# Roles and permissions
 
 A role is a named set of permissions. Every team member gets one role, and the branches and channels you give them in [Teams](teams.md) limit where the role applies. Members see only the pages and actions their role allows.
 

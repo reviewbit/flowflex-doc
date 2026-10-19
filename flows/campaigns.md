@@ -1,6 +1,8 @@
-# Campaigns
+---
+description: "Switch on a published flow so that customers' incoming WhatsApp messages start it."
+---
 
-Switch on a published flow so that customers' incoming WhatsApp messages start it.
+# Campaigns
 
 > \[!NOTE] Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
 

@@ -1,6 +1,8 @@
-# Lists
+---
+description: "Pick a fixed group of contacts by hand, then send broadcasts to it or use it in segments."
+---
 
-Pick a fixed group of contacts by hand, then send broadcasts to it or use it in segments.
+# Lists
 
 A list holds exactly the contacts you put in it. Contacts join only when you add them, by hand, by bulk action or by import, and they stay until you remove them. To group contacts by a rule that updates on its own, use a [segment](segments.md).
 

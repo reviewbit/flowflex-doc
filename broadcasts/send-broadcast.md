@@ -1,6 +1,8 @@
-# Send a broadcast
+---
+description: "Create a broadcast, schedule it, test it on your own phone, and publish it."
+---
 
-Create a broadcast, schedule it, test it on your own phone, and publish it.
+# Send a broadcast
 
 In this guide, Rangoli Store sends its approved Diwali template to repeat buyers. It starts on 20 October at 10:00 AM, greets each person by name, and keeps sending until the sale ends a week later.
 

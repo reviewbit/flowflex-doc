@@ -1,6 +1,8 @@
-# Condition branch
+---
+description: "Send the flow down one of several paths, depending on which set of rules matches first."
+---
 
-Send the flow down one of several paths, depending on which set of rules matches first.
+# Condition branch
 
 ## When to use it
 

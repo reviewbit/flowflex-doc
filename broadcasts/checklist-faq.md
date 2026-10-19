@@ -1,6 +1,8 @@
-# Pre-send checklist and FAQ
+---
+description: "Check these items before you publish a broadcast, and find quick answers to common questions."
+---
 
-Check these items before you publish a broadcast, and find quick answers to common questions.
+# Pre-send checklist and FAQ
 
 Most broadcast problems come from a few things: an unhealthy channel, a missing fallback, a broken link, or a schedule too short for the audience. A few minutes with this list catches them before your customers do.
 

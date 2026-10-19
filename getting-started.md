@@ -1,6 +1,8 @@
-# Set up your account
+---
+description: "Get FlowFlex ready to send WhatsApp messages by connecting your number, adding contacts and inviting your team."
+---
 
-Get FlowFlex ready to send WhatsApp messages by connecting your number, adding contacts and inviting your team.
+# Set up your account
 
 You do these steps once, in this order. New to FlowFlex? Start with [Sign up and sign in](get-started/sign-up-and-sign-in.md). When you finish, you can send broadcasts and run flows.
 

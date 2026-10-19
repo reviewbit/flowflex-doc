@@ -1,6 +1,8 @@
-# Set up a custom integration
+---
+description: "Start your flows from any system, such as your website, order system or CRM, by sending events to one webhook URL."
+---
 
-Start your flows from any system, such as your website, order system or CRM, by sending events to one webhook URL.
+# Set up a custom integration
 
 A custom integration is a named set of events with its own webhook URL, API key and secret. Your system sends an event to the URL, and every flow subscribed to that event runs with the event's data. Use it for systems FlowFlex has no ready-made integration for. For the code side, see the [Developer quick start](../developers/quick-start.md).
 

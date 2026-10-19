@@ -1,6 +1,8 @@
-# Button message
+---
+description: "Send a WhatsApp message with up to three reply buttons, and send each answer down its own path."
+---
 
-Send a WhatsApp message with up to three reply buttons, and send each answer down its own path.
+# Button message
 
 ## When to use it
 

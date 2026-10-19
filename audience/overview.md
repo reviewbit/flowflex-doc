@@ -1,6 +1,8 @@
-# Overview
+---
+description: "Keep your customers' contact details in one place, and group them for broadcasts and flows."
+---
 
-Keep your customers' contact details in one place, and group them for broadcasts and flows.
+# Audience overview
 
 Audience holds every contact in a branch, with their tags, lists, custom fields and marketing consent. You group contacts in two ways: a **list** is a fixed group you pick by hand, and a **segment** is a rule that FlowFlex keeps up to date as contact data changes. Open it from **Audience** in the sidebar.
 

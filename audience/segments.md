@@ -1,6 +1,8 @@
-# Segments
+---
+description: "Group contacts by what they do and who they are, and let FlowFlex keep the group up to date for you."
+---
 
-Group contacts by what they do and who they are, and let FlowFlex keep the group up to date for you.
+# Segments
 
 A segment is a set of conditions, such as "tagged repeat-buyer and read the Diwali broadcast". FlowFlex finds every contact who matches, and keeps the membership current as tags, lists, contact details and broadcast results change. To pick contacts by hand instead, use a [list](lists.md).
 

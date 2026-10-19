@@ -1,6 +1,8 @@
-# SDK file attachments
+---
+description: "Attach files, such as invoices or product photos, to an event by wrapping them in ff.file(...)."
+---
 
-Attach files, such as invoices or product photos, to an event by wrapping them in `ff.file(...)`.
+# SDK file attachments
 
 Put an `ff.file(...)` anywhere in the payload. When you send the event, the SDK uploads the file to private storage through a presigned URL and replaces it with an opaque `assetId`. The flow's media node then sends the file on WhatsApp.
 

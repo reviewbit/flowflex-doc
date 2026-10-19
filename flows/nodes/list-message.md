@@ -1,6 +1,8 @@
-# List message
+---
+description: "Send a menu of up to 10 choices that the customer opens and picks from, and send each choice down its own path."
+---
 
-Send a menu of up to 10 choices that the customer opens and picks from, and send each choice down its own path.
+# List message
 
 ## When to use it
 

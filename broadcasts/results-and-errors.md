@@ -1,6 +1,8 @@
-# Results and errors
+---
+description: "See how a broadcast performed, why some messages failed, and what to do when a broadcast pauses."
+---
 
-See how a broadcast performed, why some messages failed, and what to do when a broadcast pauses.
+# Results and errors
 
 Every broadcast keeps its own results: how many people it reached, who read it, who clicked, and which messages failed and why. You can pause, resume or stop a broadcast from the same page.
 

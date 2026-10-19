@@ -1,6 +1,8 @@
-# Troubleshooting
+---
+description: "Find the likely cause and the fix for common problems with flows, messages, broadcasts and channels."
+---
 
-Find the likely cause and the fix for common problems with flows, messages, broadcasts and channels.
+# Troubleshooting
 
 Each section below starts with a symptom. Most flow problems come down to three things: which version is published, how the flow is triggered, and the settings on the step where it goes wrong. Check those first.
 

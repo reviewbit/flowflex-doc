@@ -1,6 +1,8 @@
-# SDK reference
+---
+description: "Every method, return value and error class in the FlowFlex SDK for JavaScript and Python."
+---
 
-Every method, return value and error class in the FlowFlex SDK for JavaScript and Python.
+# SDK reference
 
 The SDK has one client, a method that sends events, a helper that wraps files, and two lower-level upload helpers. The examples use Rangoli Store's `order.placed` and `invoice.created` events. To get set up, see [Install and use the SDK](overview.md).
 

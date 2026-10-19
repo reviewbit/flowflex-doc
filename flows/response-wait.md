@@ -1,6 +1,8 @@
-# Wait for and validate a reply
+---
+description: "Pause a flow until the customer answers, check the answer's format, and choose what happens if no answer comes."
+---
 
-Pause a flow until the customer answers, check the answer's format, and choose what happens if no answer comes.
+# Wait for and validate a reply
 
 Response waiting is a setting on message nodes. Turn it on when the next step needs something from the customer, such as an email address, a menu choice or a location. The node then gets a reply output and a **No response** output for when time runs out.
 

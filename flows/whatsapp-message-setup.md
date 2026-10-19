@@ -1,6 +1,8 @@
-# Set up WhatsApp messages
+---
+description: "Pick the right message type, send it to the right customer, and decide what happens after it's sent."
+---
 
-Pick the right message type, send it to the right customer, and decide what happens after it's sent.
+# Set up WhatsApp messages
 
 These settings are shared by the Text message, Template message, Button message, List message, Media message, Send location, Location request and Link button nodes. Each node's own page covers the rest.
 

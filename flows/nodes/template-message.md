@@ -1,6 +1,8 @@
-# Template message
+---
+description: "Send a WhatsApp template that Meta has approved, filled in with each customer's details."
+---
 
-Send a WhatsApp template that Meta has approved, filled in with each customer's details.
+# Template message
 
 ## When to use it
 

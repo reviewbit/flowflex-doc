@@ -1035,6 +1035,10 @@
       /* ===================================================================
          Docs home (README.md): buttons and section cards
          =================================================================== */
+      .markdown-section p.ff-lead {
+        font-size: 1.0625rem;
+        color: var(--ff-text-secondary);
+      }
       .markdown-section a.button {
         display: inline-block;
         padding: 8px 16px;
@@ -1263,6 +1267,7 @@
         });
 
         hook.doneEach(function () {
+          showDescription();
           buildCards();
           routeHtmlLinks();
           setupSidebarGroups();
@@ -1270,6 +1275,18 @@
           buildBreadcrumbs();
           buildToc();
         });
+
+        // Pages keep their summary sentence in a front-matter description,
+        // which GitBook shows under the title. Show it there in Docsify too.
+        function showDescription() {
+          var desc = vm.frontmatter && vm.frontmatter.description;
+          var h1 = document.querySelector(".markdown-section h1");
+          if (!desc || !h1) return;
+          var lead = document.createElement("p");
+          lead.className = "ff-lead";
+          lead.textContent = desc;
+          h1.insertAdjacentElement("afterend", lead);
+        }
 
         // README.md lists its section cards as a GitBook card table
         // (title, description, hidden cover and link columns). Render it

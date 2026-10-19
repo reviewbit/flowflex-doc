@@ -1,6 +1,8 @@
-# Workflows overview
+---
+description: "Answer customers, collect details and look up orders automatically, at any hour, and hand over to your team when a person is needed."
+---
 
-Answer customers, collect details and look up orders automatically, at any hour, and hand over to your team when a person is needed.
+# Workflows overview
 
 > [!NOTE]
 > Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support.

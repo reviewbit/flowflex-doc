@@ -1,6 +1,8 @@
-# Send location
+---
+description: "Send a location as a WhatsApp map pin, such as your store or a pickup point."
+---
 
-Send a location as a WhatsApp map pin, such as your store or a pickup point.
+# Send location
 
 ## When to use it
 

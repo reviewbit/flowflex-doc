@@ -2,7 +2,7 @@
 
 ## Get started
 
-* [Home](README.md)
+* [FlowFlex documentation](README.md)
 * [Sign up and sign in](get-started/sign-up-and-sign-in.md)
 * [Set up your account](getting-started.md)
 * [Find your way around](get-started/find-your-way-around.md)
@@ -15,7 +15,7 @@
 
 ## Audience
 
-* [Overview](audience/overview.md)
+* [Audience overview](audience/overview.md)
 * [Contacts](audience/contacts.md)
 * [Lists](audience/lists.md)
 * [Segments](audience/segments.md)
@@ -24,7 +24,7 @@
 
 ## Broadcasts
 
-* [Overview](broadcasts/overview.md)
+* [Broadcasts overview](broadcasts/overview.md)
 * [Send a broadcast](broadcasts/send-broadcast.md)
 * [Broadcast guidelines](broadcasts/broadcast-guidelines.md)
 * [Results and errors](broadcasts/results-and-errors.md)
@@ -38,7 +38,7 @@
 
 ## Workflows
 
-* [Overview](flows/overview.md)
+* [Workflows overview](flows/overview.md)
 * [Learn flow builder](flows/learning-the-builder.md)
 * [Build your first flow](flows/building-a-flow.md)
 * [Campaigns](flows/campaigns.md)
@@ -74,7 +74,7 @@
 
 ## Integrations
 
-* [Overview](integrations/overview.md)
+* [Integrations overview](integrations/overview.md)
 * [Set up a custom integration](integrations/custom-integration.md)
   * [Developer quick start](developers/quick-start.md)
   * [Install and use the SDK](sdk/overview.md)

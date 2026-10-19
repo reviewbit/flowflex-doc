@@ -1,6 +1,8 @@
-# Contacts
+---
+description: "Find, add, edit and act on the contacts in a branch from the Profiles tab."
+---
 
-Find, add, edit and act on the contacts in a branch from the **Profiles** tab.
+# Contacts
 
 Each contact, or profile, holds a customer's phone number, name, email, tags, owner, marketing consent and any custom fields. Go to **Audience** → **Profiles** to see every contact in the selected branch.
 

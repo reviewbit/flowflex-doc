@@ -1,6 +1,8 @@
-# Template guidelines
+---
+description: "Write WhatsApp templates that Meta approves the first time and customers are glad to receive."
+---
 
-Write WhatsApp templates that Meta approves the first time and customers are glad to receive.
+# Template guidelines
 
 Most rejections come from five mistakes: the wrong category, badly placed variables, vague samples, a missing brand name, or prohibited content. Rules marked **Meta rule** come from Meta and link to the source. Everything else is FlowFlex's advice.
 

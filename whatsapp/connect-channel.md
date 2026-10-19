@@ -1,6 +1,8 @@
-# Connect a WhatsApp channel
+---
+description: "Connect your business's WhatsApp number to FlowFlex so you can send templates, broadcasts and replies from it."
+---
 
-Connect your business's WhatsApp number to FlowFlex so you can send templates, broadcasts and replies from it.
+# Connect a WhatsApp channel
 
 A channel is one WhatsApp number. You connect it through Meta's Embedded Signup popup, which links the number's Business portfolio and WhatsApp Business Account (WABA) to FlowFlex. You can't type in a WABA ID or phone number ID by hand.
 

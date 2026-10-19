@@ -1,6 +1,8 @@
-# Link button
+---
+description: "Send a message with a button that opens a web page, such as an order page or a help article."
+---
 
-Send a message with a button that opens a web page, such as an order page or a help article.
+# Link button
 
 ## When to use it
 

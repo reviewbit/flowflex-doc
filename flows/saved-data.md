@@ -1,6 +1,8 @@
-# Saved data
+---
+description: "Collect answers from your flows in tables, such as survey replies, review ratings or order requests."
+---
 
-Collect answers from your flows in tables, such as survey replies, review ratings or order requests.
+# Saved data
 
 > \[!NOTE] Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
 

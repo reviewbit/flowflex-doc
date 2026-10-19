@@ -1,6 +1,8 @@
-# Organisation and personal settings
+---
+description: "Update your organisation's details and business address, manage your own profile and password, and work across several organisations."
+---
 
-Update your organisation's details and business address, manage your own profile and password, and work across several organisations.
+# Organisation and personal settings
 
 Account settings hold the details that appear on your receipts, invoices and email notifications, plus your personal login details. Go to **Settings** → **Account**, or click your name in the top bar and choose **Account settings**. Admins see every section. Agents see **Personal Settings** and **Change Password** only.
 

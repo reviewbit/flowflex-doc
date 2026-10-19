@@ -1,6 +1,8 @@
-# End
+---
+description: "Finish a path in a FlowFlex flow with the End node."
+---
 
-Finish a path in the flow.
+# End
 
 ## When to use it
 

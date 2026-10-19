@@ -1,6 +1,8 @@
-# Quick replies
+---
+description: "Save answers you send often, and insert them into any chat by typing / and a short code."
+---
 
-Save answers you send often, and insert them into any chat by typing `/` and a short code.
+# Quick replies
 
 A quick reply is a piece of saved text, such as your opening hours or return policy. Quick replies are shared by everyone in your organisation, so the whole team answers common questions the same way.
 

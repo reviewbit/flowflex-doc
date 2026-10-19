@@ -1,6 +1,8 @@
-# Learn flow builder
+---
+description: "Practise building a flow on a sample customer, without sending any real WhatsApp messages."
+---
 
-Practise building a flow on a sample customer, without sending any real WhatsApp messages.
+# Learn flow builder
 
 **Learn flow builder** has two parts: a guided demo you can watch, and a six-step lesson where you build a small flow yourself. Open it from the button on the **Flows** page or in the builder header. From the header it opens in a new tab, so the flow you're editing stays open.
 

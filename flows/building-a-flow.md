@@ -1,6 +1,8 @@
-# Build your first flow
+---
+description: "Build a short flow that replies to a customer's WhatsApp message, then test and publish it."
+---
 
-Build a short flow that replies to a customer's WhatsApp message, then test and publish it.
+# Build your first flow
 
 Start small: one trigger, one message and an End node. Once that works, add choices, conditions or a call to another service. To practise first on sample data, open [Learn flow builder](learning-the-builder.md).
 

@@ -1,6 +1,8 @@
-# Save data
+---
+description: "Add a row to one of your flow data tables, such as a survey answer or an order detail."
+---
 
-Add a row to one of your flow data tables, such as a survey answer or an order detail.
+# Save data
 
 ## When to use it
 

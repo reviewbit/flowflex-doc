@@ -1,6 +1,8 @@
-# Install and use the SDK
+---
+description: "Send custom-integration events, with files attached, from JavaScript, TypeScript or Python."
+---
 
-Send custom-integration events, with files attached, from JavaScript, TypeScript or Python.
+# Install and use the SDK
 
 `flowflex` is the official SDK for the custom-integration API. It builds the Basic-auth header, uploads any files in your payload through presigned URLs, and sends the event, so you make one call instead of several. It's available for JavaScript/TypeScript and Python.
 

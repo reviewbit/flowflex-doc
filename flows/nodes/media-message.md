@@ -1,6 +1,8 @@
-# Media message
+---
+description: "Send an image, video, audio file, document or contact card on WhatsApp."
+---
 
-Send an image, video, audio file, document or contact card on WhatsApp.
+# Media message
 
 ## When to use it
 

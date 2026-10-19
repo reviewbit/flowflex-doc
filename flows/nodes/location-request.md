@@ -1,6 +1,8 @@
-# Location request
+---
+description: "Ask the customer to share their location on WhatsApp, and use it in later steps."
+---
 
-Ask the customer to share their location on WhatsApp, and use it in later steps.
+# Location request
 
 ## When to use it
 

@@ -1,6 +1,8 @@
-# Choose the trigger
+---
+description: "Decide what starts your flow, such as a customer's WhatsApp message or a new order in a connected app."
+---
 
-Decide what starts your flow, such as a customer's WhatsApp message or a new order in a connected app.
+# Choose the trigger
 
 The **Trigger** is the first node in every flow, and each flow has exactly one. Besides starting the flow, it supplies the event's information, such as the sender's number or the order details, for later steps to use.
 

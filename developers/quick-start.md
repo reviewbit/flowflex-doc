@@ -1,6 +1,8 @@
-# Developer quick start
+---
+description: "Send an event from your own app or website and have FlowFlex reply to the customer on WhatsApp."
+---
 
-Send an event from your own app or website and have FlowFlex reply to the customer on WhatsApp.
+# Developer quick start
 
 Your app sends FlowFlex an event, such as `order.placed`, with some JSON data. The event starts every flow that uses it as its trigger, and the flow can put any field from the data into a WhatsApp message. You can send events with the FlowFlex SDK for JavaScript or Python, or with plain HTTP from any language.
 

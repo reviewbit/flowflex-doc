@@ -1,6 +1,8 @@
-# Plans and add-ons
+---
+description: "Choose a plan, add more users, branches, channels or workflows, and manage your subscription."
+---
 
-Choose a plan, add more users, branches, channels or workflows, and manage your subscription.
+# Plans and add-ons
 
 Your plan sets how many users, branches, WhatsApp channels and active workflows your organisation can have. Add-ons raise those limits without changing plan. Go to **Settings** → **Plans** to see your current subscription, the plans available to you, and what each one includes. Only Admins see this page.
 

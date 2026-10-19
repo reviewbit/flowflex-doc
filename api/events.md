@@ -1,6 +1,8 @@
-# Send events
+---
+description: "Send an event to start every flow that uses it as its trigger."
+---
 
-Send an event to start every flow that uses it as its trigger.
+# Send events
 
 An event has a name and a JSON body. FlowFlex matches the name, sent in the `x-event` header, to the flows triggered by that event, and the body becomes the flow's `{{trigger.*}}` variables.
 

@@ -1,6 +1,8 @@
-# Branches
+---
+description: "Split your organisation into separate workspaces, such as one per store or city, and switch between them."
+---
 
-Split your organisation into separate workspaces, such as one per store or city, and switch between them.
+# Branches
 
 A branch keeps its own WhatsApp channels, audience and work apart from the other branches. Rangoli Store runs a **Bengaluru** branch and a **Kochi** branch. The Kochi team sends offers to Kochi customers from the Kochi number, and never sees Bengaluru's chats or contacts.
 

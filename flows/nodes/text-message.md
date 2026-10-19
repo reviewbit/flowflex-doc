@@ -1,6 +1,8 @@
-# Text message
+---
+description: "Send a WhatsApp text message, or ask a question and wait for the answer."
+---
 
-Send a WhatsApp text message, or ask a question and wait for the answer.
+# Text message
 
 ## When to use it
 

@@ -1,6 +1,8 @@
-# Teams
+---
+description: "Invite people to your organisation and choose which branches and WhatsApp channels each person can use."
+---
 
-Invite people to your organisation and choose which branches and WhatsApp channels each person can use.
+# Teams
 
 Teams controls where someone works. What they can do there comes from their role; see [Roles and permissions](roles-and-permissions.md). Go to **Settings** → **Teams**. Only Admins see this page in the sidebar. The page has two tabs: **All Users** and **Roles**.
 

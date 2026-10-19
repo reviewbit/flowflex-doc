@@ -1,6 +1,8 @@
-# Contact-tag conditions
+---
+description: "Route customers by the tags on their contact, inside a Condition split or Condition branch."
+---
 
-Route customers by the tags on their contact, inside a Condition split or Condition branch.
+# Contact-tag conditions
 
 ## When to use it
 

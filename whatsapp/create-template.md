@@ -1,6 +1,8 @@
-# Create a template
+---
+description: "Create a WhatsApp message template and send it to Meta for approval, so you can use it in broadcasts."
+---
 
-Create a WhatsApp message template and send it to Meta for approval, so you can use it in broadcasts.
+# Create a template
 
 A template is a message Meta has approved in advance. You need one to message customers outside the 24-hour window after they last wrote to you, and for every broadcast. Each template belongs to one channel's WhatsApp Business Account (WABA), so another WABA can't use it. Meta usually reviews a template within minutes, but it can take up to 24 hours.
 

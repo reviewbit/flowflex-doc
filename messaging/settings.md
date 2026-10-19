@@ -1,6 +1,8 @@
-# Messaging settings
+---
+description: "Set your opening hours, decide who gets new chats, and choose the messages customers receive automatically."
+---
 
-Set your opening hours, decide who gets new chats, and choose the messages customers receive automatically.
+# Messaging settings
 
 Go to **Messaging** → **Settings** to open the **Conversation settings** page. Its cards cover business hours, conversation assignment, privacy, greeting and away messages, subscription keywords and quick replies. Most changes save automatically. These settings apply to your whole organisation; only the agent rotation order is set per branch.
 

@@ -1,6 +1,8 @@
-# Versions, publishing and JSON files
+---
+description: "Save changes as drafts, publish the version customers get, look back at earlier versions, and move a flow between workspaces as a JSON file."
+---
 
-Save changes as drafts, publish the version customers get, look back at earlier versions, and move a flow between workspaces as a JSON file.
+# Versions, publishing and JSON files
 
 Each time you save, the flow gets a new version. A draft doesn't change what customers receive until you publish it, so you can edit a live flow safely.
 

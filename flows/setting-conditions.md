@@ -1,6 +1,8 @@
-# Set conditions and choose paths
+---
+description: "Send each customer down the right path, based on an order's details, an API result, a reply or a contact tag."
+---
 
-Send each customer down the right path, based on an order's details, an API result, a reply or a contact tag.
+# Set conditions and choose paths
 
 A condition compares a value from the flow with something you choose, such as "order status equals `shipped`". Condition split, Condition branch and Repeat until all use conditions. Each one then takes the path that matches.
 

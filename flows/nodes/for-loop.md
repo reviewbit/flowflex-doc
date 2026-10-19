@@ -1,6 +1,8 @@
-# Start loop and End loop
+---
+description: "Repeat the same steps for every item in a list, such as each product in an order."
+---
 
-Repeat the same steps for every item in a list, such as each product in an order.
+# Start loop and End loop
 
 ## When to use it
 

@@ -1,6 +1,8 @@
-# Billing and wallet
+---
+description: "Add message credits, keep an eye on your WhatsApp spend, and download receipts and invoices."
+---
 
-Add message credits, keep an eye on your WhatsApp spend, and download receipts and invoices.
+# Billing and wallet
 
 WhatsApp messages are paid from your wallet in message credits. Your plan and add-ons are billed separately, on the [Plans](plans-and-add-ons.md) page. Go to **Billing** to manage both. Only Admins see it.
 

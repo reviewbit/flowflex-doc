@@ -1,6 +1,8 @@
-# Set time delay
+---
+description: "Pause the flow for a set time, or until a time of day you choose, before the next step."
+---
 
-Pause the flow for a set time, or until a time of day you choose, before the next step.
+# Set time delay
 
 ## When to use it
 

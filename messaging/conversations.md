@@ -1,6 +1,8 @@
-# Conversations
+---
+description: "Read, reply to, assign and organise your customers' WhatsApp chats in one shared inbox."
+---
 
-Read, reply to, assign and organise your customers' WhatsApp chats in one shared inbox.
+# Conversations
 
 **Messaging** → **Conversations** shows every chat your team can see. The screen has three parts: the conversation list on the left, the open chat in the middle with its header and composer, and the **Customer Details** panel, which opens when you click the contact's name.
 

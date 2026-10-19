@@ -1,6 +1,8 @@
-# Overview
+---
+description: "Connect your other systems to FlowFlex, so events such as a new order start your flows automatically."
+---
 
-Connect your other systems to FlowFlex, so events such as a new order start your flows automatically.
+# Integrations overview
 
 An integration links FlowFlex to another system. The system sends FlowFlex an event when something happens, such as an order being placed, and every flow that listens for that event runs. Go to **SETTINGS** → **Integrations** to see what you can connect and manage what you've set up.
 

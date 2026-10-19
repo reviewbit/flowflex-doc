@@ -1,6 +1,8 @@
-# Node reference
+---
+description: "Find the node for each job in your flow, and open its page for setup steps and examples."
+---
 
-Find the node for each job in your flow, and open its page for setup steps and examples.
+# Node reference
 
 A node is one step in a flow. The builder's toolbox groups nodes into **WhatsApp Blocks**, **Logic Blocks**, **Data Blocks**, **Audience Blocks** and **Other Blocks**. Every flow also has a **Trigger** and an **End**, which aren't in the toolbox.
 

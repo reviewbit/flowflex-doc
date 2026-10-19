@@ -1,6 +1,8 @@
-# Upload assets
+---
+description: "Upload a file, such as an invoice PDF, so a flow can send it on WhatsApp."
+---
 
-Upload a file, such as an invoice PDF, so a flow can send it on WhatsApp.
+# Upload assets
 
 You upload the file to private storage and get back an opaque `assetId`. You then put the `assetId` in your event body, and the flow's media node sends the file when it runs. The upload goes straight to storage through a presigned URL.
 

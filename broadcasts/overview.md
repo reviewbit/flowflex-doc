@@ -1,6 +1,8 @@
-# Broadcasts overview
+---
+description: "Send one WhatsApp message to many customers at once, at the time you choose, and see who read it and acted on it."
+---
 
-Send one WhatsApp message to many customers at once, at the time you choose, and see who read it and acted on it.
+# Broadcasts overview
 
 A broadcast sends an approved template to a list or segment of contacts. Each customer gets it as a personal message in their own chat, with their name and details filled in, and any reply comes straight to your team in **Messaging**. Afterwards, the broadcast shows how many people received it, read it, clicked, and replied.
 

@@ -1,3 +1,7 @@
+---
+description: "The Meta policy and developer pages behind the WhatsApp rules in these guides, with what each one backs."
+---
+
 # Meta policies and sources
 
 These Meta pages back the rules in the broadcast guides. Meta changes its limits and rules often, so check the live page before you rely on a number. Pages checked on 16 October 2026.

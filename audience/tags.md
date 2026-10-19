@@ -1,6 +1,8 @@
-# Tags
+---
+description: "Label contacts with short tags, then use those tags to filter contacts, build segments and branch flows."
+---
 
-Label contacts with short tags, then use those tags to filter contacts, build segments and branch flows.
+# Tags
 
 A tag is a short label on a contact, such as `repeat-buyer` or `new`. A contact can carry many tags. FlowFlex creates some tags for you (auto tags), and you create the rest (manual tags).
 
