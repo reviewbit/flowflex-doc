@@ -3,138 +3,87 @@ version: 1
 site:
   title: FlowFlex documentation
   structure:
-    - type: section
-      key: section-get-started
+    - type: space
+      key: space-get-started
       title: Get started
       path: get-started
       default: true
-      children:
-        - type: space
-          key: space-get-started
-          title: Get started
-          path: get-started
-          default: true
-          content:
-            directory: ./get-started
+      content:
+        directory: ./get-started
 
-    - type: section
-      key: section-whatsapp
+    - type: space
+      key: space-whatsapp
       title: WhatsApp setup
       path: whatsapp
-      children:
-        - type: space
-          key: space-whatsapp
-          title: WhatsApp setup
-          path: whatsapp
-          default: true
-          content:
-            directory: ./whatsapp
+      content:
+        directory: ./whatsapp
 
-    - type: section
-      key: section-audience
+    - type: space
+      key: space-audience
       title: Audience
       path: audience
-      children:
-        - type: space
-          key: space-audience
-          title: Audience
-          path: audience
-          default: true
-          content:
-            directory: ./audience
+      content:
+        directory: ./audience
 
-    - type: section
-      key: section-broadcasts
+    - type: space
+      key: space-broadcasts
       title: Broadcasts
       path: broadcasts
-      children:
-        - type: space
-          key: space-broadcasts
-          title: Broadcasts
-          path: broadcasts
-          default: true
-          content:
-            directory: ./broadcasts
+      content:
+        directory: ./broadcasts
 
-    - type: section
-      key: section-messaging
+    - type: space
+      key: space-messaging
       title: Messaging
       path: messaging
-      children:
-        - type: space
-          key: space-messaging
-          title: Messaging
-          path: messaging
-          default: true
-          content:
-            directory: ./messaging
+      content:
+        directory: ./messaging
 
-    - type: section
-      key: section-workflows
+    - type: space
+      key: space-flows
       title: Workflows
-      path: workflows
-      children:
-        - type: space
-          key: space-flows
-          title: Workflows
-          path: flows
-          default: true
-          content:
-            directory: ./flows
+      path: flows
+      content:
+        directory: ./flows
 
-    - type: section
-      key: section-integrations
+    - type: space
+      key: space-integrations
       title: Integrations
       path: integrations
-      children:
-        - type: space
-          key: space-integrations
-          title: Integrations overview
-          path: overview
-          default: true
-          content:
-            directory: ./integrations
-        - type: space
-          key: space-developers
-          title: Developer quick start
-          path: developers
-          content:
-            directory: ./developers
-        - type: space
-          key: space-sdk
-          title: SDK
-          path: sdk
-          content:
-            directory: ./sdk
-        - type: space
-          key: space-api
-          title: REST API
-          path: api
-          content:
-            directory: ./api
+      content:
+        directory: ./integrations
 
-    - type: section
-      key: section-account
+    - type: space
+      key: space-developers
+      title: Developer quick start
+      path: developers
+      content:
+        directory: ./developers
+
+    - type: space
+      key: space-sdk
+      title: SDK
+      path: sdk
+      content:
+        directory: ./sdk
+
+    - type: space
+      key: space-api
+      title: REST API
+      path: api
+      content:
+        directory: ./api
+
+    - type: space
+      key: space-account
       title: Account
       path: account
-      children:
-        - type: space
-          key: space-account
-          title: Account
-          path: account
-          default: true
-          content:
-            directory: ./account
+      content:
+        directory: ./account
 
-    - type: section
-      key: section-help
+    - type: space
+      key: space-help
       title: Help
       path: help
-      children:
-        - type: space
-          key: space-help
-          title: Help
-          path: help
-          default: true
-          content:
-            directory: ./help
+      content:
+        directory: ./help
