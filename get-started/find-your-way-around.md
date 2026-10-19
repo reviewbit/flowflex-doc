@@ -8,7 +8,7 @@ FlowFlex has a sidebar on the left, a top bar along the top, and the page you ar
 
 When Alex Lee signs in to Rangoli Store, the Home page shows the setup checklist. Alex clicks **Add members** to invite Chris Taylor, then uses **Switch branch** to move from **Kochi** to **Bengaluru** and check that branch's broadcasts.
 
-![The FlowFlex home page with the sidebar, top bar and setup checklist](../.gitbook/assets/app-shell.png)
+<figure><img src="../.gitbook/assets/app-shell.png" alt="FlowFlex home page with the main sidebar, wallet balance and user in the top bar, a get-started banner and a setup checklist at 75%"><figcaption><p>The FlowFlex home page with the sidebar, top bar and setup checklist</p></figcaption></figure>
 
 ## Sidebar
 

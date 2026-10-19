@@ -35,7 +35,7 @@ Go to **Audience** → **Bulk Import** → **Import**. The **Import audience** w
 
 ### Step 1: Upload
 
-![Import audience, step 1: Upload](../.gitbook/assets/import-upload.png)
+<figure><img src="../.gitbook/assets/import-upload.png" alt="Import audience step 1, Upload, with All contacts chosen as the destination and a drop zone for a CSV or XLSX file"><figcaption><p>Import audience, step 1: Upload</p></figcaption></figure>
 
 1. Choose the **Destination**:
    * **All contacts**: import to the main audience. This is the default.
@@ -69,7 +69,7 @@ If the file can't be used, you see one of these errors. Click **Try a different 
 
 ### Step 2: Map columns
 
-![Import audience, step 2: Map columns](../.gitbook/assets/import-map-columns.png)
+<figure><img src="../.gitbook/assets/import-map-columns.png" alt="Import audience step 2, Map columns, with name, phone, email and tags matched to FlowFlex fields and the city column left out"><figcaption><p>Import audience, step 2: Map columns</p></figcaption></figure>
 
 Each column in your file is one row here, and FlowFlex matches common column names for you. The counter shows how many columns are selected, such as **4 of 5 columns selected**, and the **Status** column shows a tick when a column is mapped.
 

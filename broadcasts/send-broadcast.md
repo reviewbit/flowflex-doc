@@ -10,7 +10,7 @@ Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Deta
 
 ## 1. Details & message
 
-![Create broadcast, step 1: Details & message](../.gitbook/assets/create-details.png)
+<figure><img src="../.gitbook/assets/create-details.png" alt="Create broadcast step 1 with the broadcast name, the Rangoli Store channel and the diwali_sale_2026_en template, beside a live WhatsApp preview"><figcaption><p>Create broadcast, step 1: Details &amp; message</p></figcaption></figure>
 
 1. **Broadcast name**: an internal name, such as `Diwali sale – repeat buyers – Oct 2026`.
 2. **Select channel**: Connected channels only.
@@ -23,7 +23,7 @@ Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Deta
 
 ## 2. Schedule & audience
 
-![Create broadcast, step 2: Schedule & audience](../.gitbook/assets/create-schedule.png)
+<figure><img src="../.gitbook/assets/create-schedule.png" alt="Create broadcast step 2 with start and end dates, a daily send count of 1,000 and the Repeat buyers – Oct 2026 list as the audience"><figcaption><p>Create broadcast, step 2: Schedule &amp; audience</p></figcaption></figure>
 
 Now decide **when** it goes out and **who** gets it.
 
@@ -41,7 +41,7 @@ For **Marketing** templates, contacts who opted out of WhatsApp marketing are ex
 
 ## 3. Review & publish
 
-![The Publish broadcast confirmation with a test message](../.gitbook/assets/publish-modal.png)
+<figure><img src="../.gitbook/assets/publish-modal.png" alt="Publish broadcast confirmation dialog with a Send a test message button, over the broadcast summary"><figcaption><p>The Publish broadcast confirmation with a test message</p></figcaption></figure>
 
 1. Check the **Broadcast summary**.
 2. Click **Publish broadcast**. The confirmation shows the number of eligible contacts, the batch size, and the date range.

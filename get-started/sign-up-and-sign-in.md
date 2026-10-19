@@ -24,7 +24,7 @@ New accounts can start with a free trial. A banner at the top of the app shows h
 
 If the email is already registered, you see **An account with this email already exists.** Click **Log in instead**.
 
-![The Create your account form, filled in](../.gitbook/assets/create-account.png)
+<figure><img src="../.gitbook/assets/create-account.png" alt="FlowFlex Create your account form with name Alex Lee, an Indian phone number, email alex@rangoli.example, a terms checkbox and the Create account button"><figcaption><p>The Create your account form, filled in</p></figcaption></figure>
 
 ### Verify your account
 
@@ -83,7 +83,7 @@ All fields on this step are optional.
 
 Click **Finish setup**. FlowFlex creates the organisation and opens the app. To change something on step 1, click **Back**.
 
-![Creating the Rangoli Store organisation](../.gitbook/assets/create-organisation.png)
+<figure><img src="../.gitbook/assets/create-organisation.png" alt="Business details step of workspace setup, with business name Rangoli Store and website filled in, and fields for country, address, state, city, time zone and postal code"><figcaption><p>Creating the Rangoli Store organisation</p></figcaption></figure>
 
 ### If setup is interrupted
 

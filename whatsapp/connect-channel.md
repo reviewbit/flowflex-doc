@@ -29,7 +29,7 @@ Have these ready:
 
 ## Check the channel
 
-![Channel Management with the connected Rangoli Store number](../.gitbook/assets/channels-list.png)
+<figure><img src="../.gitbook/assets/channels-list.png" alt="Channel Management table showing the Rangoli Store WhatsApp number as Connected, with its WABA ID, Available health and a 2K portfolio limit"><figcaption><p>Channel Management with the connected Rangoli Store number</p></figcaption></figure>
 
 The Channels table shows the state of each number:
 

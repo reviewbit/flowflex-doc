@@ -10,7 +10,7 @@ Rangoli Store's team is small. Alex Lee is the Admin. Chris Taylor answers custo
 
 ## All Users
 
-![Teams, All Users](../.gitbook/assets/team-members.png)
+<figure><img src="../.gitbook/assets/team-members.png" alt="Team Members list with Alex Lee and Chris Taylor as Admins and Jordan Brown as Channel Manager, with phone, status and last active time"><figcaption><p>Teams, All Users</p></figcaption></figure>
 
 Each row shows a member's name and email (click the copy icon to copy the email), **Phone number** and whether it's verified, **Role** (or **No role**), and **Last active**, which reads **Never** for people who haven't joined yet.
 
@@ -44,7 +44,7 @@ Alex invites Taylor Morgan to answer Kochi chats.
 4. Under **Access Control**, set **Branches** and **Channels**. See [Branch and channel access](teams.md#branch-and-channel-access).
 5. Click **Invite user**. You see **Successfully sent an invitation to … with the role: ….**
 
-![Inviting taylor@rangoli.example as a Support agent with access to the Kochi branch](../.gitbook/assets/invite-user.png)
+<figure><img src="../.gitbook/assets/invite-user.png" alt="Invite user form for taylor@rangoli.example with the Support agent role, the Kochi branch and access to current and future channels"><figcaption><p>Inviting taylor@rangoli.example as a Support agent with access to the Kochi branch</p></figcaption></figure>
 
 The invitation link is valid for 24 hours. After that, the status shows **Invite expired**; click **Resend invitation** to send a new one.
 

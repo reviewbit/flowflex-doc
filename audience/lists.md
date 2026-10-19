@@ -45,7 +45,7 @@ Deleting a list doesn't delete its contacts.
 
 Merging copies every contact from one or more source lists into a destination list. Each contact appears only once in the destination. Rangoli Store, for example, could merge `Repeat buyers – Oct 2026` into a year-round loyalty list after the sale.
 
-![The Merge list drawer](../.gitbook/assets/merge-list.png)
+<figure><img src="../.gitbook/assets/merge-list.png" alt="Merge list drawer merging Repeat buyers – Oct 2026 into Diwali early access, with Yes, keep source list selected"><figcaption><p>The Merge list drawer</p></figcaption></figure>
 
 1. In the List table, click ⋯ → **Merge list** on a source list, or open the list and choose ⋯ → **Merge list**.
 2. **Source list**: the list you clicked is filled in. Add more lists if needed.

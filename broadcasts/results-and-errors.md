@@ -12,7 +12,7 @@ In this guide, Jordan Brown at Rangoli Store checks "Diwali sale – repeat buye
 
 Go to **Broadcast**. The top of the page shows totals across all your broadcasts: **Total Sent**, **Avg delivered rate**, **Avg read rate**, **Avg fail rate**, **Avg click rate** and **CTR**. Each row shows the broadcast's Recipients, Sent, Delivered, Read, Clicked, Replied and Failed counts.
 
-![The Broadcast list with delivery, read and click stats](../.gitbook/assets/broadcast-list.png)
+<figure><img src="../.gitbook/assets/broadcast-list.png" alt="Broadcast page with sent, delivered, read, failed and click rate cards above a table of three broadcasts: active, completed and draft"><figcaption><p>The Broadcast list with delivery, read and click stats</p></figcaption></figure>
 
 ## Statuses
 

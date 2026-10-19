@@ -10,7 +10,7 @@ Rangoli Store tags every customer who has ordered twice or more `repeat-buyer`. 
 
 Go to **Audience** → **Tags** to see every tag in the selected branch.
 
-![The Tags tab with manual and auto tags](../.gitbook/assets/tags-table.png)
+<figure><img src="../.gitbook/assets/tags-table.png" alt="Tags table listing repeat-buyer, new, vip and the automatic whatsapp-chat tag, with the number of contacts for each"><figcaption><p>The Tags tab with manual and auto tags</p></figcaption></figure>
 
 The table shows each tag's **Name**, how many **Contacts** carry it, whether it is an **Auto Tag** (**Yes** for tags FlowFlex manages, **No** for tags you create), and the date it was **Created**. Click a contact count to open **Profiles** filtered to those contacts. Use **Search tag name** to find a tag.
 

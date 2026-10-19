@@ -8,7 +8,7 @@ Go to **Messaging** → **Settings** to open the **Conversation settings** page.
 
 Rangoli Store's Kochi team works 10:00 to 20:00, Monday to Saturday. Alex Lee sets those business hours, switches assignment to **Round-robin** so new chats are shared between Chris Taylor and the rest of the team, and turns on an Away Message. When Maria Garcia messages at 22:00, the Away Message tells Maria when the team will reply, and the chat is waiting for an agent in the morning.
 
-![Messaging settings: business hours and assignment](../.gitbook/assets/settings-page.png)
+<figure><img src="../.gitbook/assets/settings-page.png" alt="Business hours of 10:00 to 20:00 Monday to Saturday with Sunday closed, and round-robin assignment across Alex Lee, Chris Taylor and Jordan Brown"><figcaption><p>Messaging settings: business hours and assignment</p></figcaption></figure>
 
 ## Who can use this page
 
@@ -84,7 +84,7 @@ Only one of the two is sent. If the Away Message is off, the greeting is sent ou
 
 Customers send a keyword to subscribe to or unsubscribe from your marketing messages. The **Subscription Auto Replies** card sets those keywords and the confirmation replies, per language.
 
-![Subscription Auto Replies with START and STOP keywords](../.gitbook/assets/settings-subscription-auto-replies.png)
+<figure><img src="../.gitbook/assets/settings-subscription-auto-replies.png" alt="Subscription Auto Replies with English and Hindi tabs, the START and STOP keywords and the confirmation message for each"><figcaption><p>Subscription Auto Replies with START and STOP keywords</p></figcaption></figure>
 
 Each language has a **Subscribe** card and an **Unsubscribe** card, each with a **Keyword** and an **Enable auto reply** option. **Default (English)** is always there and can't be removed. Its defaults are:
 

@@ -28,7 +28,7 @@ The **Wallet** tab lists every recharge and adjustment. Click **Download receipt
 
 ## Get a low-balance alert
 
-![The Set credit alert drawer](../.gitbook/assets/set-credit-alert.png)
+<figure><img src="../.gitbook/assets/set-credit-alert.png" alt="Set credit alert drawer with the current threshold of 1,000 credits and fields for a new threshold, an extra email and a phone number"><figcaption><p>The Set credit alert drawer</p></figcaption></figure>
 
 1. Click **Set alert**.
 2. Enter a **New credit threshold**.

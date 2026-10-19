@@ -22,7 +22,7 @@ You need the **Messaging settings edit** permission to add, edit or delete quick
 | **Short code** | Required. FlowFlex adds `/` at the start, turns spaces into `_`, and makes it lowercase. For example, `Store Hours` becomes `/store_hours`. |
 | **Content**    | Required. The text that is inserted into the chat.                                                                                          |
 
-![The Quick Reply table](../.gitbook/assets/quick-replies-table.png)
+<figure><img src="../.gitbook/assets/quick-replies-table.png" alt="Quick Reply table with the hours, track and returns short codes and the reply text for each"><figcaption><p>The Quick Reply table</p></figcaption></figure>
 
 ## Edit or delete a quick reply
 

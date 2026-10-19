@@ -8,7 +8,7 @@ Account settings hold the details that appear on your receipts, invoices and ema
 
 When Rangoli Store set up FlowFlex, Alex Lee added the shop's logo, website and time zone, then verified a phone number so FlowFlex could reach Alex on WhatsApp.
 
-![Organisation and personal settings](../.gitbook/assets/account-settings.png)
+<figure><img src="../.gitbook/assets/account-settings.png" alt="Account Settings with Rangoli Store&#x27;s organisation name, website, India time zone, INR currency and admin notify email"><figcaption><p>Organisation and personal settings</p></figcaption></figure>
 
 ## Organisation Details
 

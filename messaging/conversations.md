@@ -8,7 +8,7 @@ description: "Read, reply to, assign and organise your customers' WhatsApp chats
 
 On a Monday morning, Chris Taylor, a support agent at Rangoli Store, opens **Unassigned** and finds a question from John Smith about a delayed order. Chris assigns the chat to themselves, replies with the `/hours` quick reply and a tracking update, and marks the chat **Resolved** once John confirms the parcel arrived.
 
-![The Conversations inbox](../.gitbook/assets/conversations-inbox.png)
+<figure><img src="../.gitbook/assets/conversations-inbox.png" alt="Conversations inbox listing six customer chats with their status, channel and assigned agent, with no chat open"><figcaption><p>The Conversations inbox</p></figcaption></figure>
 
 ## Tabs and who sees what
 
@@ -90,7 +90,7 @@ On a phone, **⋮** also holds **Mark as pending** (or **Mark as reopened**) and
 
 ## Write a message
 
-![Replying to a customer in Conversations](../.gitbook/assets/conversations-composer.png)
+<figure><img src="../.gitbook/assets/conversations-composer.png" alt="John Smith&#x27;s open chat about the Diwali sale, with his tags at the top and a reply about free exchanges typed in the message box"><figcaption><p>Replying to a customer in Conversations</p></figcaption></figure>
 
 Type in the composer and press **Enter** to send. Press **Shift+Enter** for a new line.
 

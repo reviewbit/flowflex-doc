@@ -29,7 +29,7 @@ FlowFlex then works out who matches. See [While a segment computes](segments.md#
 
 ## Build conditions
 
-![Building a repeat buyers segment](../.gitbook/assets/segment-builder.png)
+<figure><img src="../.gitbook/assets/segment-builder.png" alt="Create segment drawer for a segment titled Bengaluru repeat buyers, with an empty condition group set to match all conditions"><figcaption><p>Building a repeat buyers segment</p></figcaption></figure>
 
 Conditions sit inside **condition groups**. Each condition has three parts: a property, a condition, and a value.
 

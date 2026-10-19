@@ -18,7 +18,7 @@ Admin is a default role: **Default roles cannot be edited** and **Default roles 
 
 ## Create a role
 
-![Creating the Support agent role](../.gitbook/assets/create-role.png)
+<figure><img src="../.gitbook/assets/create-role.png" alt="Create new role form for Support agent with its description and the permission list, set to selected permissions only"><figcaption><p>Creating the Support agent role</p></figcaption></figure>
 
 1. Click **Create New Role**.
 2. Enter a **Role name**, such as `Support agent`. Up to 30 characters.

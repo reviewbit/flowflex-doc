@@ -24,7 +24,7 @@ To react only to certain words, such as "price" or "offer", set a **Trigger filt
 
 ## The campaign list
 
-![The Auto Campaign list](../.gitbook/assets/campaigns-list.png)
+<figure><img src="../.gitbook/assets/campaigns-list.png" alt="Auto Campaign list with four flow campaigns: two active, one paused and one draft"><figcaption><p>The Auto Campaign list</p></figcaption></figure>
 
 The list shows each campaign's **Campaign name**, its **Status**, and an **Actions** column with the **⋯** menu. Click a name to open [Campaign Outcomes](campaigns.md#campaign-outcomes).
 

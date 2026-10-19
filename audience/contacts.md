@@ -54,7 +54,7 @@ The filter drawer uses the same builder as segments. See [Build conditions](segm
 2. Fill in the fields below. For Maria Garcia, Chris enters the name, picks **India** and types `9000000004`, and adds the tag `new`.
 3. Check the consent checkbox, then click **Create profile**. The contact appears in the table.
 
-![Adding a new contact with Quick add](../.gitbook/assets/add-contact-drawer.png)
+<figure><img src="../.gitbook/assets/add-contact-drawer.png" alt="Add new contact drawer filled in for John Smith with email, phone, state Karnataka and a Bengaluru address, beside the contact list"><figcaption><p>Adding a new contact with Quick add</p></figcaption></figure>
 
 To change a contact, click the pencil icon in its row. The **Edit contact** drawer opens. Click **Update profile** to save.
 
@@ -101,7 +101,7 @@ To delete one contact, click the bin icon in its row and confirm with **Yes**.
 
 Click a contact's name to open its page. Click **Go back** to return.
 
-![A contact's detail page](../.gitbook/assets/contact-detail.png)
+<figure><img src="../.gitbook/assets/contact-detail.png" alt="John Smith&#x27;s contact page with his customer details, the repeat-buyer and vip tags, a Bengaluru address and the two lists he belongs to"><figcaption><p>A contact's detail page</p></figcaption></figure>
 
 The buttons at the top:
 

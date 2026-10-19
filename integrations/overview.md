@@ -8,7 +8,7 @@ An integration links FlowFlex to another system. The system sends FlowFlex an ev
 
 Rangoli Store takes orders on its own website. The team creates a custom integration called `Rangoli Order Events` with one event, `order.placed`. When John Smith places order `RS-1042`, the website sends that event to FlowFlex, and a flow sends John a WhatsApp confirmation with the order number and total.
 
-![The Integrations page](../.gitbook/assets/integrations-page.png)
+<figure><img src="../.gitbook/assets/integrations-page.png" alt="Integrations page with the Custom integrations card, the Rangoli Order Events integration and apps such as Google Sheet, NocoDB, Zoho and LeadSquared"><figcaption><p>The Integrations page</p></figcaption></figure>
 
 ## How it works
 

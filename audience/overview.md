@@ -8,7 +8,7 @@ Audience holds every contact in a branch, with their tags, lists, custom fields 
 
 Rangoli Store imports its customer spreadsheet into the Kochi branch, tags its best customers `repeat-buyer`, and builds a segment of repeat buyers. When the Diwali sale starts, it sends one broadcast to that segment, and customers who opted out of WhatsApp marketing are skipped.
 
-![The Audience page with its six tabs and overview cards](../.gitbook/assets/overview-tabs.png)
+<figure><img src="../.gitbook/assets/overview-tabs.png" alt="Audience page on the Profiles tab, with cards counting all, email, phone and suppressed profiles above the contact list"><figcaption><p>The Audience page with its six tabs and overview cards</p></figcaption></figure>
 
 ## How it works
 

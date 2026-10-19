@@ -1268,6 +1268,7 @@
 
         hook.doneEach(function () {
           showDescription();
+          resolveHtmlImages();
           buildCards();
           routeHtmlLinks();
           setupSidebarGroups();
@@ -1286,6 +1287,20 @@
           lead.className = "ff-lead";
           lead.textContent = desc;
           h1.insertAdjacentElement("afterend", lead);
+        }
+
+        // Screenshots are GitBook <figure> HTML, whose src Docsify leaves
+        // alone, so resolve it from the page's own folder.
+        function resolveHtmlImages() {
+          var folder = (vm.route.file || "").replace(/[^/]*$/, "");
+          if (!folder) return;
+          document
+            .querySelectorAll(".markdown-section figure img[src]")
+            .forEach(function (img) {
+              var src = img.getAttribute("src");
+              if (/^([a-z]+:|\/|#)/i.test(src)) return;
+              img.setAttribute("src", folder + src);
+            });
         }
 
         // README.md lists its section cards as a GitBook card table

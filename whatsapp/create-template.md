@@ -16,7 +16,7 @@ Go to **Templates** → **Create template**. The wizard has four steps: **Select
 
 ### 1. Select channel
 
-![Create template, step 1: selecting the Rangoli Store channel](../.gitbook/assets/template-select-channel.png)
+<figure><img src="../.gitbook/assets/template-select-channel.png" alt="Create template step 1, Select channel, with the Rangoli Store WhatsApp channel and its business account chosen"><figcaption><p>Create template, step 1: selecting the Rangoli Store channel</p></figcaption></figure>
 
 Pick a **Connected** channel. The template is created in that channel's WABA.
 
@@ -35,7 +35,7 @@ Pick a **Connected** channel. The template is created in that channel's WABA.
 
 ### 3. Edit template
 
-![Create template: editing the Diwali sale template](../.gitbook/assets/template-edit.png)
+<figure><img src="../.gitbook/assets/template-edit.png" alt="Edit template step with the name diwali_sale_2026_en, English language, Standard format and the sale message body, beside a live WhatsApp preview"><figcaption><p>Create template: editing the Diwali sale template</p></figcaption></figure>
 
 Write the message. The preview shows how it will look on the customer's phone.
 
@@ -72,7 +72,7 @@ Check the preview and click **Submit for review**. The template appears in **Tem
 
 ## Track the review
 
-![Template Management listing the approved demo templates](../.gitbook/assets/templates-list.png)
+<figure><img src="../.gitbook/assets/templates-list.png" alt="Template Management table with two approved English templates on the Rangoli Store channel: diwali_sale_2026_en (Marketing) and order_shipped_v1 (Utility)"><figcaption><p>Template Management listing the approved demo templates</p></figcaption></figure>
 
 FlowFlex receives status changes from Meta automatically. Click **Sync from Meta** on a row, or **Refresh**, to pull them sooner.
 

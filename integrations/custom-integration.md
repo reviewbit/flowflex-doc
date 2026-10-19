@@ -29,7 +29,7 @@ Events are the things your system tells FlowFlex about, and flows subscribe to t
 
 The form starts with one empty event. Click **+ Add event** for more, or **Remove event** to delete one.
 
-![Adding events to a custom integration](../.gitbook/assets/custom-integration-events.png)
+<figure><img src="../.gitbook/assets/custom-integration-events.png" alt="Create custom integration form for Rangoli Order Events with an order.placed event, beside the webhook URL, headers and a sample curl request"><figcaption><p>Adding events to a custom integration</p></figcaption></figure>
 
 | Field                | Required | Rules                                                                                                      |
 | -------------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
@@ -70,7 +70,7 @@ It gives the flow builder `{{trigger.customer.name}}`, `{{trigger.customer.phone
 
 After you click **Create integration**, FlowFlex shows **Your integration is live**.
 
-![A live custom integration with its webhook details](../.gitbook/assets/custom-integration-live.png)
+<figure><img src="../.gitbook/assets/custom-integration-live.png" alt="Rangoli Order Events integration with its order.placed and order.shipped events and sample payloads, and the API key in the credentials panel"><figcaption><p>A live custom integration with its webhook details</p></figcaption></figure>
 
 The **Credentials** card shows three values:
 

@@ -22,7 +22,7 @@ Users see a branch only if their access includes it. See [Teams](teams.md).
 
 Go to **Settings** → **Branches**. Only Admins see this page in the sidebar.
 
-![Settings, Branches](../.gitbook/assets/branches.png)
+<figure><img src="../.gitbook/assets/branches.png" alt="Branches table with the active Kochi and Bengaluru branches and their locations"><figcaption><p>Settings, Branches</p></figcaption></figure>
 
 The table lists each branch with its logo, **Name**, **Location** (the address from **Branch location**) and **Status**, which is **Active** or **Disabled by Plan**. Click the edit icon in the **Action** column to change a branch, and use **Search by name** to find one.
 

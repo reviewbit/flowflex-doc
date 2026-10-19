@@ -10,7 +10,7 @@ description: "Collect answers from your flows in tables, such as survey replies,
 
 At the end of its order-tracking flow, Rangoli Store asks customers to rate their order. The team creates a table called `diwali_reviews` with the columns `customer_number`, `rating` and `comment`. When Maria Garcia replies with a rating, the flow saves a row, and the team reads all the ratings in one place.
 
-![Saved data tables](../.gitbook/assets/saved-data-tables.png)
+<figure><img src="../.gitbook/assets/saved-data-tables.png" alt="Saved data with two tables, Store visit requests and Feedback after delivery, and the columns each one collects"><figcaption><p>Saved data tables</p></figcaption></figure>
 
 ## The table list
 
