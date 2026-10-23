@@ -4,6 +4,8 @@ description: "Connect your business's WhatsApp number to FlowFlex so you can sen
 
 # Connect a WhatsApp channel
 
+Connect your business's WhatsApp number to FlowFlex so you can send templates, broadcasts and replies from it.
+
 A channel is one WhatsApp number. You connect it through Meta's Embedded Signup popup, which links the number's Business portfolio and WhatsApp Business Account (WABA) to FlowFlex. You can't type in a WABA ID or phone number ID by hand.
 
 FlowFlex connects in **coexistence** mode, so the business can keep using the WhatsApp Business app on the phone. The app's contacts and chat history are synced into FlowFlex.
@@ -23,7 +25,7 @@ Have these ready:
 
 1. Go to **Channels** → **Add New Channel**. During onboarding, the Home page shows **Continue with Facebook** instead.
 2. If you see **Channel limit reached**, your plan has no free channel. Add an extra channel under **Settings** → **Plans** → **Configure Add-ons**, or upgrade your plan. See [Plans and add-ons](../account/plans-and-add-ons.md).
-3. In the Meta popup, pick or create the Business portfolio and the WhatsApp Business Account. Add the number and verify it with the code Meta sends.
+3. In the Meta popup, pick or create the Business portfolio and the WhatsApp Business Account. Add the number and verify it with the code Meta sends. You have up to 15 minutes to finish. After that you see **WhatsApp signup timed out. Please restart connection.**: start again from step 1.
 4. Wait for **WhatsApp number configured successfully**. If you see **Finalizing channel setup**, registration is still running. Click **Refresh status** after a minute.
 5. Open the channel and fill in the **Business Profile**: description (up to 150 characters), address, email and website. Customers see these details on your WhatsApp profile.
 
@@ -35,12 +37,38 @@ The Channels table shows the state of each number:
 
 | Column          | Values                                 | Meaning                                                                                 |
 | --------------- | -------------------------------------- | --------------------------------------------------------------------------------------- |
-| Status          | Connected / Pending / Disconnected     | Only **Connected** channels can create templates or send broadcasts.                    |
+| Status          | Connected / Pending / Disconnected     | Only **Connected** channels can create templates or send broadcasts. Hover **Disconnected** to see why. |
 | Health          | Available / Limited / Blocked          | Limited or Blocked means Meta is restricting the number. Fix this before you broadcast. |
 | Portfolio limit | 250 / 1K / 2K / 10K / 100K / Unlimited | Unique recipients per rolling 24 hours, shared across the whole Business portfolio.     |
 | Display Name    | Editable                               | Change it with **Update Display Name**. Meta reviews every change.                      |
 
+The actions on each row include **Connect** (to reconnect a disconnected channel), **Refresh status** and delete.
+
 Open a channel to see its Quality Rating, Business Verification Status, Display Name Status, Official Business Account (blue tick) and Throughput Level.
+
+## If a channel is disconnected in Meta
+
+A channel shows **Disconnected** when Meta removed FlowFlex's access to the WhatsApp account, or when a Coexistence number was disconnected. Hover the badge to see the reason, for example "FlowFlex access to this WhatsApp account was removed in Meta. Reconnect the channel to resume messaging."
+
+For a Coexistence number, the reason is one of these:
+
+* The number was disconnected from FlowFlex in the WhatsApp Business app.
+* The WhatsApp Business app number was changed.
+* The number was re-registered on another device.
+* The WhatsApp Business app was inactive for too long.
+* The business account was downgraded in Meta.
+
+The channel page shows the same reason under **Errors & Warnings**, as **Disconnected in Meta** or **WhatsApp Business app disconnected**.
+
+While a channel is disconnected, FlowFlex can't send from it: chat replies, flows and broadcasts on that number stop. A reply from **Conversations** fails with "This WhatsApp number was disconnected from FlowFlex in Meta. Reconnect the channel to send messages."
+
+To fix it, click **Connect** on the channel's row, or **Reconnect** on the channel page, and complete the Meta popup again. Sending resumes once the channel is connected.
+
+## Delete a channel
+
+Use the delete action on the channel's row and confirm. You see **Channel deleted successfully**.
+
+For a Coexistence number, FlowFlex then reminds you to finish on the phone: "To fully disconnect this number, open the WhatsApp Business app and go to Settings > Account > Business Platform > Disconnect Account."
 
 ## Grow the portfolio limit
 
@@ -52,7 +80,8 @@ After that, Meta raises the limit one level at a time (10K, 100K, Unlimited), wi
 
 | Message                        | Cause                                                                | Fix                                                                        |
 | ------------------------------ | -------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| Channel disconnected           | The WhatsApp Business app was uninstalled or logged out on the phone | Reconnect from the channel page.                                           |
+| **Disconnected**               | Meta removed FlowFlex's access, or the WhatsApp Business app number was disconnected | Hover the badge for the reason, then click **Connect**. See [If a channel is disconnected in Meta](connect-channel.md#if-a-channel-is-disconnected-in-meta). |
+| **WhatsApp signup timed out. Please restart connection.** | The Meta popup wasn't finished within 15 minutes | Start the connection again. |
 | Display name declined          | The name doesn't match the brand                                     | Rename it to match the website or signage, then resubmit.                  |
 | **Channel needs reconnecting** | The number is connected at Meta but FlowFlex can't send for it yet   | Reconnect the channel from the channel page, or click **Contact Support**. |
 

@@ -28,7 +28,7 @@ ff = FlowFlex(api_key=..., api_secret=..., integration_code=..., base_url=...)
 
 ## Send event
 
-Uploads any `file()` found in the payload, then sends the event.
+Uploads any `file()` found in the payload, then sends the event with Basic Auth and the `x-event` header. This works whatever the integration's **Options** tab says.
 
 <!-- tabs:start -->
 
@@ -40,10 +40,12 @@ Returns:
 
 ```ts
 {
-  response: unknown,                       // raw body from the events endpoint
+  response: unknown,                       // body from the events endpoint
   uploadedAssets: Record<string, string>,  // payload path → assetId
 }
 ```
+
+`response` is `{ ok: true, id: "…", idempotent: false }`. `idempotent` is `true` when the idempotency key was already processed.
 
 - `event`: the event name, also sent as the `x-event` header.
 - `payload`: any JSON; becomes `{{trigger.*}}` in the flow. May contain `file()` references.
@@ -56,9 +58,11 @@ Returns:
 Returns a `SendEventResult`:
 
 ```python
-result.response         # raw body from the events endpoint
+result.response         # body from the events endpoint
 result.uploaded_assets  # dict: payload path → assetId
 ```
+
+`result.response` is `{"ok": True, "id": "…", "idempotent": False}`. `idempotent` is `True` when the idempotency key was already processed.
 
 - `event`: the event name, also sent as the `x-event` header.
 - `payload`: any dict; becomes `{{trigger.*}}` in the flow. May contain `file()` references.
@@ -120,7 +124,7 @@ All errors extend `FlowFlexError`:
 | --- | --- |
 | `FlowFlexConfigError` | Bad/missing constructor options. |
 | `FlowFlexUploadError` | A file couldn't be read, or storage rejected it. |
-| `FlowFlexError` | API or network failure. `code` is the API error code (e.g. `MIME_NOT_ALLOWED`, `ASSET_FILE_MISSING`). |
+| `FlowFlexError` | API or network failure. `status` is the HTTP status. For uploads, `code` is the API error code (e.g. `MIME_NOT_ALLOWED`, `ASSET_FILE_MISSING`). |
 
 <!-- tabs:start -->
 
@@ -157,7 +161,7 @@ Properties: `message`, `status`, `code`, `details`.
 
 <!-- tabs:end -->
 
-For the full list of codes, see [Error codes](../api/events.md#error-codes).
+For the events endpoint's errors and their messages, see [Error codes](../api/events.md#error-codes). For upload errors, see [Upload assets](../api/assets.md).
 
 ## Security
 
@@ -170,7 +174,7 @@ The JavaScript SDK is server-only, and is blocked from the browser in two ways:
 
 Both SDKs also protect you in these ways:
 
-- **HTTPS enforced:** `baseUrl` / `base_url` must start with `https://` (only `localhost` may use `http`), so Basic-auth credentials are never sent in cleartext.
+- **HTTPS enforced:** `baseUrl` / `base_url` must start with `https://` (only `localhost` may use `http`), so Basic Auth credentials are never sent in cleartext.
 - **No credential leakage:** the `Authorization` header never appears in error messages, logs or `FlowFlexError` details.
 - **Header-injection safe:** `event` and `idempotencyKey` / `idempotency_key` are rejected if they contain control characters (CRLF).
 - **Path-injection safe:** `integrationCode` / `integration_code` is URL-encoded into the request path.

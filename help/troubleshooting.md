@@ -15,16 +15,16 @@ Usually the latest changes aren't published yet, or the trigger doesn't match th
 1. Open the flow and check which version is published. A saved draft isn't live until you publish it.
 2. Open **Trigger** and confirm it uses the event you intended.
 3. For a custom event, confirm your integration sends that event with the expected data.
-4. For WhatsApp incoming chats, check that the right channel and incoming-message campaign are set up and published.
+4. Check that an active worker runs the flow on the right WhatsApp number. Find workers in **Workflows** → **Workers**. For a custom event, the worker must start from **Custom integration**.
 
-See [Trigger setup](../flows/triggers-and-variables.md) and [Publishing](../flows/versions-and-portability.md).
+See [Trigger setup](../flows/triggers-and-variables.md), [Publishing](../flows/versions-and-portability.md) and [Workers](../flows/workers.md).
 
 ## Why didn't my WhatsApp message arrive?
 
 Usually the destination number is wrong, the channel isn't available, the customer's reply window has closed, or the template isn't approved or is missing a required field.
 
 1. Check that **Destination number** includes the country code and points to the intended customer.
-2. Check that the connected WhatsApp channel is available.
+2. Check that the WhatsApp channel is **Connected**. A channel disconnected in Meta can't send anything until you reconnect it.
 3. For free-form messages, confirm the customer's reply window is still open. Outside that window, use an approved template.
 4. For templates, check approval and availability, then fill every required placeholder and header field.
 5. Review any delivery error shown in FlowFlex before you try again.
@@ -37,6 +37,7 @@ When a message can't be sent from **Conversations**, FlowFlex keeps it in the ch
 
 - **Negative wallet balance:** agent replies can't be sent while your wallet balance is below zero. [Add message credits](../account/billing-and-wallet.md#add-message-credits), then send the reply again.
 - **Channel needs reconnecting:** the WhatsApp channel has to be reconnected. Go to **Channels** and reconnect it. See [Connect a WhatsApp channel](../whatsapp/connect-channel.md#common-problems).
+- **Number disconnected in Meta:** the reason reads "This WhatsApp number was disconnected from FlowFlex in Meta. Reconnect the channel to send messages." Meta removed FlowFlex's access to the number. Go to **Channels** and click **Connect** on the channel's row. See [If a channel is disconnected in Meta](../whatsapp/connect-channel.md#if-a-channel-is-disconnected-in-meta).
 
 ## Why can't I find my template?
 
@@ -102,7 +103,16 @@ Opted-out, invalid and duplicate contacts are skipped before sending. Contacts a
 
 ## Why does my channel show Disconnected or Limited?
 
-See [Common problems](../whatsapp/connect-channel.md#common-problems) in Connect a WhatsApp channel.
+**Disconnected** means Meta removed FlowFlex's access to the WhatsApp account, or a Coexistence number was disconnected. Hover the badge on the **Channels** page to see the reason. Common causes:
+
+- Someone removed FlowFlex's access to the WhatsApp account in Meta.
+- The number was disconnected from FlowFlex in the WhatsApp Business app, or re-registered on another device.
+- The WhatsApp Business app number was changed, or the app was inactive for too long.
+- The business account was downgraded in Meta.
+
+While it's disconnected, messages and broadcasts from that number stop. Click **Connect** on the channel's row to reconnect it. See [If a channel is disconnected in Meta](../whatsapp/connect-channel.md#if-a-channel-is-disconnected-in-meta).
+
+**Limited** or **Blocked** health means Meta is restricting the number. See [Common problems](../whatsapp/connect-channel.md#common-problems) in Connect a WhatsApp channel.
 
 ## Ask for help
 

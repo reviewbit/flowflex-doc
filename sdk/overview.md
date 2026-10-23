@@ -4,7 +4,7 @@ description: "Send custom-integration events, with files attached, from JavaScri
 
 # Install and use the SDK
 
-`flowflex` is the official SDK for the custom-integration API. It builds the Basic-auth header, uploads any files in your payload through presigned URLs, and sends the event, so you make one call instead of several. It's available for JavaScript/TypeScript and Python.
+`flowflex` is the official SDK for the custom-integration API. It builds the Basic Auth header, uploads any files in your payload through presigned URLs, and sends the event, so you make one call instead of several. It's available for JavaScript/TypeScript and Python.
 
 Rangoli Store's website uses the SDK to send `order.placed` when John Smith places order `RS-1042`. The confirmation flow reads the values as `{{trigger.name}}` and `{{trigger.order_id}}`.
 
@@ -75,6 +75,17 @@ ff.send_event("order.placed", payload={"name": "John Smith", "order_id": "RS-104
 <!-- tabs:end -->
 
 In the flow builder, the payload fields appear under `trigger`, for example `{{trigger.name}}` and `{{trigger.order_id}}`.
+
+The call returns the events endpoint's response as `response` (JavaScript) or `result.response` (Python):
+
+```json
+{ "ok": true, "id": "…", "idempotent": false }
+```
+
+`idempotent` is `true` when FlowFlex already processed an event with the same idempotency key. See [Send event](reference.md#send-event).
+
+> [!NOTE]
+> The SDK always sends the secret with Basic Auth and the event name in the `x-event` header. This works whatever the integration's **Options** tab says, so you don't need to change anything in FlowFlex to use the SDK.
 
 ## Constructor options
 
