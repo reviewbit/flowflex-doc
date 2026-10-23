@@ -22,22 +22,25 @@ Pick a **Connected** channel. The template is created in that channel's WABA.
 
 ### 2. Set up template
 
-1.  Choose a **Template category**. Meta charges by category, and it re-categorises templates whose content doesn't match the category you chose.
+Choose a **Template category**. Meta charges by category, and it re-categorises templates whose content doesn't match the category you chose.
 
-    * **Marketing:** promotions, offers, launches, re-engagement and newsletters, such as a sale announcement or an abandoned cart with a discount. Send only to customers who have opted in.
-    * **Utility:** updates about something the customer already did or bought, such as an order confirmation, shipping update or appointment reminder. One promotional sentence makes it Marketing.
-    * **Authentication:** one-time passwords only. Meta fixes the content.
+* **Marketing:** promotions, offers, launches, re-engagement and newsletters, such as a sale announcement or an abandoned cart with a discount. Send only to customers who have opted in.
+* **Utility:** updates about something the customer already did or bought, such as an order confirmation, shipping update or appointment reminder. One promotional sentence makes it Marketing.
+* **Authentication:** one-time passwords only. Meta fixes the content.
 
-    For worked examples, see [Choose the right category](../broadcasts/broadcast-guidelines.md#choose-the-right-category).
-2. Enter a **Template name**: lowercase letters, numbers and underscores only. Spaces become `_`. Use at least 5 characters and keep it under 100. Names must be unique in the WABA, so use a pattern such as `diwali_sale_2026_en` or `order_shipped_v1`.
-3. Pick the **Language** of the content. For several languages, create one template per language with the same name.
-4. For a Marketing template, pick a **Template format**: **Standard** (one message) or **Carousel** (2 to 10 swipeable cards).
+For worked examples, see [Choose the right category](../broadcasts/broadcast-guidelines.md#choose-the-right-category).
 
 ### 3. Edit template
 
 <figure><img src="../.gitbook/assets/template-edit.png" alt="Edit template step with the name diwali_sale_2026_en, English language, Standard format and the sale message body, beside a live WhatsApp preview"><figcaption><p>Create template: editing the Diwali sale template</p></figcaption></figure>
 
-Write the message. The preview shows how it will look on the customer's phone.
+First fill in **Template details**:
+
+1. Enter a **Template name**: 5 to 512 lowercase letters, numbers or underscores. Spaces become underscores. Names must be unique in the WABA for each language, so use a pattern such as `diwali_sale_2026_en` or `order_shipped_v1`.
+2. Pick the **Language** of the content. For several languages, create one template per language with the same name.
+3. For a Marketing template, pick a **Template format**: **Standard** (one message) or **Carousel** (2 to 10 swipeable cards).
+
+Then write the message. The preview shows how it will look on the customer's phone.
 
 | Part    | Required | Limits in FlowFlex                                                                                                                                                                                      |
 | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -54,9 +57,11 @@ Every variable needs a sample value. Meta reviews the template using these sampl
 | ------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Quick reply → **Marketing opt-out** (Recommended) | 1, Marketing only | The button text is your STOP keyword. Tapping it unsubscribes the contact automatically. Add it to every Marketing template.                                                         |
 | Quick reply → **Custom**                          | –                 | Free text such as "Yes, interested". Replies arrive in **Conversations**.                                                                                                            |
-| **Visit Website**                                 | 2                 | **Static** URL, or **Dynamic** URL that adds `{{1}}` at the end, for example `https://rangoli.example/order/{{1}}`. FlowFlex converts links to a tracked short link to count clicks. |
-| **Call Phone Number**                             | 1                 | Include the country code.                                                                                                                                                            |
+| **Visit Website**                                 | 2                 | The link starts with `https://` or `http://`. **Static** URL, or **Dynamic** URL that adds `{{1}}` at the end, for example `https://rangoli.example/order/{{1}}`. FlowFlex converts links to a tracked short link to count clicks. |
+| **Call Phone Number**                             | 1                 | Include the country code, digits only after the `+`, for example `+919000000001`.                                                                                                     |
 | **Copy offer Code**                               | 1, Marketing only | Up to 15 characters. Not shown on WhatsApp Web.                                                                                                                                      |
+
+Every button needs a label of up to 25 characters, and no two buttons can have the same label. FlowFlex groups quick replies together automatically, as WhatsApp requires.
 
 #### Carousel
 
@@ -66,9 +71,29 @@ A carousel has 2 to 10 cards. All cards use the same header type (all images or 
 
 The text is fixed. You can add a security recommendation and a code expiry time (1 to 90 minutes). A copy-code button is added automatically.
 
+### Check the template before you submit
+
+Beside the preview, FlowFlex checks the template against the rules WhatsApp reviews. The panel doesn't appear for Authentication or Carousel templates, or while the body is empty.
+
+* **Ready for WhatsApp review:** "No problems found with the rules WhatsApp checks."
+* **Before you submit:** a list of problems, each with a fix. **Will be rejected** means Meta will refuse the template as it is. **May be rejected** means Meta might refuse it, or treat it differently.
+
+Problems marked **Will be rejected** block **Review template** and **Submit for review**, and the first one shows in a red alert. Fix them to continue. A **May be rejected** problem doesn't stop you, but it's worth fixing. For example, a Utility template that reads like a promotion may be approved as Marketing instead: every send then costs the marketing rate, and customers who turned off marketing messages won't get it.
+
+For the full list of checks, see [Template guidelines](template-guidelines.md).
+
 ### 4. Submit for review
 
-Check the preview and click **Submit for review**. The template appears in **Templates** with the status **In Review**.
+Click **Review template**, check the template and the preview, and click **Submit for review**. You see **Template submitted for review.**, and the template appears in **Templates** with the status **In Review**.
+
+If Meta refuses the template straight away, step 4 shows **Template could not be submitted** with the reason in plain words. For example:
+
+* "A template with this name already exists in this language on WhatsApp. Use a different name."
+* "This WhatsApp account has reached its template limit. Delete unused templates and try again."
+* "A template with this name is still being deleted on WhatsApp. Use a different name or try again in 4 weeks."
+* "WhatsApp is limiting template creation for this account right now. Wait a few minutes and try again."
+
+Fix the problem and submit again. After a refusal like this, you can use the same name again.
 
 ## Track the review
 
@@ -80,7 +105,7 @@ FlowFlex receives status changes from Meta automatically. Click **Sync from Meta
 | --------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | In Review | Meta is reviewing it                                                              | Wait. You can't broadcast it yet.                                 |
 | Approved  | Ready to use. Quality shows **High**, **Medium**, **Low** or **Quality pending**. | Broadcast it, and watch for a quality drop.                       |
-| Rejected  | Meta refused it                                                                   | Read the reason, fix the content, and submit it under a new name. |
+| Rejected  | Meta refused it during review                                                     | Read the reason, fix the content, and submit it under a new name. |
 | Paused    | Paused after negative feedback or low read rates                                  | Running broadcasts pause. Rework the content and audience.        |
 | Disabled  | Disabled after repeated low quality                                               | Create a new, improved template.                                  |
 
