@@ -29,4 +29,4 @@ FlowFlex is a platform for businesses anywhere in the world to run their WhatsAp
 * [Build your first flow](flows/building-a-flow.md)
 * [Invite your team](account/teams.md) and [add message credits](account/billing-and-wallet.md)
 
-> **Need help?** Try [Troubleshooting](help/troubleshooting.md), search the docs above, or message FlowFlex support with the WhatsApp support button in the app.
+> **Need help?** Try [Troubleshooting](help/troubleshooting.md), search the docs above, or ask the [AI Assistant](help/ai-assistant.md) in the app.

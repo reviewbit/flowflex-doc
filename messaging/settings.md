@@ -22,13 +22,19 @@ See [Roles and permissions](../account/roles-and-permissions.md).
 
 ## Set business hours
 
-Business hours decide when the **Away Message** is sent. Set them in your business's local time.
+Business hours decide when the **Away Message** is sent. They're shown and applied in your organisation's time zone. The card shows which zone is used, in a note that starts **Times are in**.
 
 1. Pick a mode from the menu next to the **Business hours** title:
-   * **Open for selected hours:** each ticked day opens between **From** and **To**, in 24-hour time. The default is 09:00 to 17:30.
+   * **Open for selected hours:** each ticked day opens between **From** and **To**, in 24-hour time. The default is 09:00 to 18:00.
    * **Always open:** each ticked day is **Open 24 hours**.
-2. Tick the days you're open. An unticked day shows **Closed**.
+2. Tick the days you're open. An unticked day shows **Closed**, and the Away Message is sent all day. New organisations start with Monday to Friday ticked.
 3. For **Open for selected hours**, set **From** and **To** for each day, such as 10:00 to 20:00.
+
+To stay open past midnight, set a **To** time earlier than the **From** time. For example, 18:00 to 02:00 opens at 18:00 and closes at 02:00 the next morning.
+
+### Change the time zone
+
+If the hours look shifted, check the time zone. Click **Change the time zone in Organisation settings** on the card, or go to **Settings** → **Account**, and change **Time zone**. Business hours then follow the new zone. See [Organisation and personal settings](../account/organisation.md).
 
 ## Conversation assignment
 
@@ -78,7 +84,7 @@ A conversation counts as new when it is the customer's first message, or the cha
 | Ongoing conversation (activity in the last 24 hours)           | None                 |
 | The contact is currently in a running flow                     | None                 |
 
-Only one of the two is sent. If the Away Message is off, the greeting is sent outside hours too.
+Only one of the two is sent. If the Away Message is off, the greeting is sent outside hours too. If a customer sends several messages at once, they get one greeting or away message, not one per message.
 
 ## Subscription Auto Replies
 
@@ -104,7 +110,7 @@ To add a language:
 
 To remove a language, click the bin icon on its tab.
 
-The keyword must be the whole message or a button the customer taps. Matching ignores upper and lower case, so `stop` and `Stop` both work. A keyword message, such as STOP or START, never starts an automation campaign.
+The keyword must be the whole message or a button the customer taps. Matching ignores upper and lower case, so `stop` and `Stop` both work. A keyword message, such as STOP or START, never starts a [worker](../flows/workers.md).
 
 ### Link with the Marketing opt-out button
 

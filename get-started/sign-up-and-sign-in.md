@@ -108,9 +108,15 @@ What you see after signing in depends on how many organisations you belong to:
 
 * **None:** you see **No organisations found! Please create one** and go to organisation setup.
 * **One:** FlowFlex opens it straight away.
-* **More than one:** pick one on **Choose Your Organisation** and click **Continue**.
+* **More than one:** you see **Choose an organisation**.
 
-To create another organisation from this screen, click **Add an organisation**. Inside the app you can switch organisations at any time. See [Find your way around](find-your-way-around.md#organisation-switcher).
+On **Choose an organisation**:
+
+1. Check the count line, such as **You belong to 2 organisations. Pick one to continue.** Each row shows the organisation's logo or initials, its name and its industry.
+2. Click the organisation you want, such as **Rangoli Store**. A tick marks the selected one; the first organisation is selected to start with. If you belong to more than five, type in **Search organisations** to find it.
+3. Click **Continue**. You can also double-click a row to continue straight away.
+
+To create another organisation from this screen, click **+ Create a new organisation**. Inside the app you can switch organisations at any time. See [Find your way around](find-your-way-around.md#organisation-switcher).
 
 ## Reset a forgotten password
 

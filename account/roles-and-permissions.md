@@ -78,22 +78,22 @@ Permissions are grouped as they appear on the role screen.
 |              | **Template create**         | Create templates                                                          |
 |              | **Template edit**           | Edit templates                                                            |
 |              | **Template delete**         | Delete templates                                                          |
-| Broadcast    | **Broadcast view**          | Open **Broadcast** and see results                                        |
+| Broadcast    | **Broadcast view**          | Open **Broadcasts** and see results                                       |
 |              | **Broadcast create**        | Create broadcasts and drafts                                              |
 |              | **Broadcast edit**          | Edit broadcasts                                                           |
 |              | **Broadcast delete**        | Delete broadcasts                                                         |
 |              | **Broadcast publish**       | Publish a broadcast so it sends                                           |
 |              | **Broadcast export**        | Export broadcast reports                                                  |
-| Workflow     | **Workflow view**           | Open the Flow builder and **Automations**                                 |
+| Workflow     | **Workflow view**           | Open **Workflows** and its **Flows** tab                                  |
 |              | **Workflow create**         | Create flows                                                              |
 |              | **Workflow edit**           | Edit flows                                                                |
 |              | **Workflow delete**         | Delete flows                                                              |
 |              | **Workflow publish**        | Publish flows so they run                                                 |
-| Campaign     | **Campaign view**           | Open **Automations** → **All campaigns**                                  |
-|              | **Campaign create**         | Create campaigns                                                          |
-|              | **Campaign edit**           | Edit campaigns                                                            |
-|              | **Campaign delete**         | Delete campaigns                                                          |
-|              | **Campaign launch**         | Launch campaigns                                                          |
+| Campaign     | **Campaign view**           | Open **Workflows** → **Workers**                                          |
+|              | **Campaign create**         | Create workers                                                            |
+|              | **Campaign edit**           | Edit workers                                                              |
+|              | **Campaign delete**         | Delete workers                                                            |
+|              | **Campaign launch**         | Activate workers                                                          |
 | Member       | **View Team Members**       | View team members and their access setup                                  |
 |              | **Invite Team Members**     | Invite new members                                                        |
 |              | **Edit Team Members**       | Change a member's role and access                                         |
@@ -106,9 +106,9 @@ Permissions are grouped as they appear on the role screen.
 |              | **Integration edit**        | Change integrations                                                       |
 |              | **Integration delete**      | Remove integrations                                                       |
 
-If you don't see the Flow builder with **Workflow view**, contact FlowFlex support.
+Workers used to be called campaigns, so their permissions are still named **Campaign** on the Roles page. If you don't see **Workflows** or its **Flows** tab with **Workflow view**, contact FlowFlex support.
 
-More on each area: [Audience](../audience/overview.md), [Conversations](../messaging/conversations.md), [Messaging settings](../messaging/settings.md), [Connect a WhatsApp channel](../whatsapp/connect-channel.md), [Create a template](../whatsapp/create-template.md), [Send a broadcast](../broadcasts/send-broadcast.md) and [Campaigns](../flows/campaigns.md).
+More on each area: [Audience](../audience/overview.md), [Conversations](../messaging/conversations.md), [Messaging settings](../messaging/settings.md), [Connect a WhatsApp channel](../whatsapp/connect-channel.md), [Create a template](../whatsapp/create-template.md), [Send a broadcast](../broadcasts/send-broadcast.md) and [Workers](../flows/workers.md).
 
 ## Example roles
 
@@ -125,7 +125,7 @@ In [Teams](teams.md), Chris gets **Selected branches only** → **Kochi** and **
 
 ### Marketing manager
 
-Jordan Brown plans broadcasts and campaigns for both stores. The **Marketing manager** role turns on:
+Jordan Brown plans broadcasts and workers for both stores. The **Marketing manager** role turns on:
 
 * **Audience:** **Audience view**, **Audience create**, **Audience edit**, **Audience import**, **Audience export**
 * **Template:** **Template view**, **Template create**, **Template edit**
@@ -134,7 +134,7 @@ Jordan Brown plans broadcasts and campaigns for both stores. The **Marketing man
 * **Campaign:** **Campaign view**, **Campaign create**, **Campaign edit**, **Campaign launch**
 * **Channel:** **Channel view**
 
-Jordan gets **All current branches** or **Current and future branches**. **Workflow view** is needed for the **Automations** menu that holds **All campaigns**.
+Jordan gets **All current branches** or **Current and future branches**. With **Campaign view**, Jordan sees **Workflows** → **Workers**; **Workflow view** adds the **Flows** tab.
 
 > \[!TIP] Start from the smallest set of permissions. Add more when someone hits a page they need.
 
