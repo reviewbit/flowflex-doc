@@ -34,8 +34,8 @@ Creating and deleting tags needs edit access to Audience in the branch.
 
 You can also create a tag while you work:
 
-* **Contact drawer:** in **Quick add** or **Edit contact**, type a name in **Tags** and click **Create tag: name**.
-* **Bulk tagging:** in Profiles → **More actions** → **Manage Tags**, the same way.
+* **Contact drawer:** in **Add contact** or **Edit contact**, type a name in **Tags** and click **Create tag: name**.
+* **Bulk tagging:** in Profiles → **More actions** → **Add tag** or **Manage Tags**, type a new name. **Add tag** saves new names in lowercase.
 * **Filters and segments:** on the **Tags** field, click **Create : name**.
 * **Imports:** in a [Bulk Import](import-export.md), a **Tags** column creates any tag that doesn't exist yet.
 
@@ -61,7 +61,8 @@ New chats and messages from this channel now add these tags to the contact. Exis
 ## Add or remove tags on contacts
 
 * **One contact:** edit the contact and change **Tags**.
-* **Many contacts:** in **Profiles**, select them, then **More actions** → **Manage Tags**.
+* **Add tags to many contacts:** in **Profiles**, select them, then **More actions** → **Add tag**. The tags are added and every contact keeps the tags it already has. See [Add tags to many contacts](contacts.md#add-tags-to-many-contacts).
+* **Add or remove tags on many contacts:** in **Profiles**, select them, then **More actions** → **Manage Tags**. It shows the tags the selected contacts carry, so you can also remove one from all of them.
 * **From a flow:** use the tag action in [Audience actions](../flows/nodes/audience-actions.md).
 
 To use tags afterwards, branch a flow with [Contact-tag conditions](../flows/nodes/contact-tag-conditions.md), or build a segment with the **Tags** field. See [Segments](segments.md#fields).

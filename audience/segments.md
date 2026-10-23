@@ -20,7 +20,7 @@ Go to **Audience** → **Segments** to create and manage segments.
 
 ## Create a segment
 
-1. Click **Create new**. The **Create segment** drawer opens.
+1. Click **Create segment**. The **Create segment** drawer opens.
 2. Enter a **Title**, such as `Kochi repeat buyers who clicked the Diwali sale`. It needs 2 to 100 characters and must be unique in the branch.
 3. Build the conditions. See [Build conditions](segments.md#build-conditions).
 4. Click **Create**.
@@ -31,22 +31,27 @@ FlowFlex then works out who matches. See [While a segment computes](segments.md#
 
 <figure><img src="../.gitbook/assets/segment-builder.png" alt="Create segment drawer for a segment titled Bengaluru repeat buyers, with an empty condition group set to match all conditions"><figcaption><p>Building a repeat buyers segment</p></figcaption></figure>
 
-Conditions sit inside **condition groups**. Each condition has three parts: a property, a condition, and a value.
+Conditions sit inside groups, shown as cards named **Group 1**, **Group 2** and so on. Each condition has three parts: a property, a condition, and a value.
 
-1. In the first group, click **Select property** and pick a field, such as **Tags**.
+1. In **Group 1**, click **Select property** and pick a field, such as **Tags**.
 2. Click **Enter condition** and pick an operator, such as **Contains**.
 3. Enter or pick the value, such as `repeat-buyer`.
 4. Click **Add condition** to add another condition to the same group, or **Add condition group** to start a new group.
 
-Click the bin icon next to a condition to remove it, or **Clear all** to start over.
+To remove a condition, click its bin icon (**Remove condition**). With two or more groups, each group has a bin icon too (**Remove group**). Click **Clear all** at the top to start over.
 
-### Combine conditions with AND and OR
+Contact filters in **Profiles** and condition steps in flows use the same builder.
 
-You set the logic in two places. At the top of each group, **Match** decides how conditions inside that group combine: **ALL** means a contact must meet every condition (AND), and **ANY** means one is enough (OR). At the top of the builder, **Condition type** does the same for the groups themselves: **Match all of the condition groups** or **Match any of the condition groups**.
+### Combine conditions with and and or
 
-The builder shows **AND** or **OR** between conditions and groups, so you can read the logic at a glance.
+You set the logic in two places:
 
-> \[!TIP] To mix AND and OR, put the OR conditions in their own group set to **ANY**, and leave **Condition type** on **ALL**. The example below does this.
+* **Inside a group:** **Match** on the group card decides how its conditions combine. **All** means a contact must meet every condition, and **Any** means one is enough.
+* **Between groups:** the top row reads **Match** **All** or **Any** **of these groups**. **All** means a contact must match every group, and **Any** means one group is enough.
+
+The builder shows **and** or **or** between conditions and between groups, so you can read the logic at a glance.
+
+> \[!TIP] To mix "and" and "or", put the "or" conditions in their own group set to **Any**, and leave the top row on **Match All of these groups**. The example below does this.
 
 ### Fields
 
@@ -101,17 +106,17 @@ Each operator matches contacts who reached that status. There isn't a "did not r
 
 Rangoli Store wants to follow up with repeat buyers in Kochi or Kozhikode who read `Diwali sale – repeat buyers – Oct 2026`. The city is stored in a custom field named `city`, which came from an import.
 
-1. Click **Create new** and enter the title `Kochi and Kozhikode repeat buyers – read Diwali sale`.
-2. Leave **Condition type** on **ALL**.
-3. In group 1, leave **Match** on **ALL** and add two conditions:
+1. Click **Create segment** and enter the title `Kochi and Kozhikode repeat buyers – read Diwali sale`.
+2. Leave the top row on **Match All of these groups**.
+3. In **Group 1**, leave **Match** on **All** and add two conditions:
    * **Tags** → **Contains** → `repeat-buyer`
    * **Broadcast** → **Read** → `Diwali sale – repeat buyers – Oct 2026`
-4. Click **Add condition group**. In group 2, set **Match** to **ANY** and add:
+4. Click **Add condition group**. In **Group 2**, set **Match** to **Any** and add:
    * **city** → **Equals to Case Insensitive** → `Kochi`
    * **city** → **Equals to Case Insensitive** → `Kozhikode`
 5. Click **Create**.
 
-The segment now reads: (tagged repeat-buyer AND read the Diwali broadcast) AND (city is Kochi OR city is Kozhikode).
+The segment now reads: (tagged repeat-buyer and read the Diwali broadcast) and (city is Kochi or city is Kozhikode).
 
 John Smith, a repeat buyer in Kochi who read the message, joins the segment. Jane Doe read it too but lives in Chennai, so isn't included. Sam Wilson lives in Kozhikode and read it, but is tagged `new` rather than `repeat-buyer`, so Sam isn't in it either.
 
@@ -121,7 +126,7 @@ After you create or edit a segment, FlowFlex works out who matches. While it doe
 
 ## Find and open segments
 
-The Segments table lists each segment with its **Audience count** and **Created At** date. Click **+** to see a segment's conditions without opening it, and use **Search by segment name** to find one.
+The Segments table lists each segment with its **Audience count** and **Created At** date. Click **+** to see a segment's conditions without opening it, and use **Search segments** to find one.
 
 Click a segment's name to open it. The **Members** tab lists its contacts, and **Search segment** finds one. The **Conditions** tab shows the saved conditions; click **Edit** there to change them. To rename the segment, click the pencil next to its name.
 

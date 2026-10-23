@@ -4,18 +4,21 @@ description: "Get FlowFlex ready to send WhatsApp messages by connecting your nu
 
 # Set up your account
 
-You do these steps once, in this order. New to FlowFlex? Start with [Sign up and sign in](get-started/sign-up-and-sign-in.md). When you finish, you can send broadcasts and run flows.
+You do these steps once, in this order. New to FlowFlex? Start with [Sign up and sign in](get-started/sign-up-and-sign-in.md). When you finish, you can send broadcasts and run flows. If you get stuck on a step, ask the [AI Assistant](help/ai-assistant.md).
 
 Alex Lee, the admin at Rangoli Store, works through this list on day one. By the evening the store's WhatsApp number is connected, its repeat buyers are imported, a Diwali sale template is waiting for Meta's approval, and Chris Taylor and Jordan Brown have their invites.
 
 ## Set up FlowFlex
+
+The **Get started** checklist on the Home page tracks four milestones: **Set up your account**, **Connect your WhatsApp number**, **Connect your tools** and **Invite your team**. The button on the current step takes you where you need to go. See [Find your way around](get-started/find-your-way-around.md#get-started-checklist).
 
 1. **Connect WhatsApp.** Link your WhatsApp Business number through Meta. See [Connect a WhatsApp channel](whatsapp/connect-channel.md).
 2. **Complete your profile.** Add a description, address, email and website to the channel. See [Connect a WhatsApp channel](whatsapp/connect-channel.md#connect-the-number).
 3. **Add contacts.** Import contacts under **Audience**, or let them arrive from WhatsApp chats. See [Import and export](audience/import-export.md).
 4. **Create a template.** Write a message and get it approved by Meta. See [Create a template](whatsapp/create-template.md).
 5. **Add wallet balance.** Messages are paid from your wallet under **Billing**. See [Billing and wallet](account/billing-and-wallet.md).
-6. **Invite your team.** Add teammates and give each one a role. See [Teams](account/teams.md).
+6. **Connect your tools.** Optional: link the apps you already use, such as your online store. See [Integrations](integrations/overview.md).
+7. **Invite your team.** Add teammates and give each one a role. See [Teams](account/teams.md).
 
 ## Then choose what to do
 

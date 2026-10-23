@@ -4,7 +4,7 @@ description: "Read, reply to, assign and organise your customers' WhatsApp chats
 
 # Conversations
 
-**Messaging** → **Conversations** shows every chat your team can see. The screen has three parts: the conversation list on the left, the open chat in the middle with its header and composer, and the **Customer Details** panel, which opens when you click the contact's name.
+**Messaging** → **Conversations** shows every chat your team can see. The screen has three parts: the conversation list on the left, titled **Inbox**, the open chat in the middle with its header and composer, and the **Customer Details** panel, which opens when you click the contact's name.
 
 On a Monday morning, Chris Taylor, a support agent at Rangoli Store, opens **Unassigned** and finds a question from John Smith about a delayed order. Chris assigns the chat to themselves, replies with the `/hours` quick reply and a tracking update, and marks the chat **Resolved** once John confirms the parcel arrived.
 
@@ -22,17 +22,19 @@ What you can see depends on your role. With the **Conversation view all** permis
 
 ## Search and filter
 
-**Search chats** finds conversations by contact name or phone number.
+Type in **Search chats** to find conversations by contact name or phone number. The list updates when you pause typing; press **Enter** to search straight away. Clear the box to see all chats again.
 
 To filter the list:
 
-1. Click the filter icon (**Apply filter**). **Filter conversation** opens.
+1. Click the filter icon (**Filter conversations**). The **Filter conversations** panel opens.
 2. Choose any of these:
    * **Channels**: only chats on the selected WhatsApp numbers.
    * **Status**: **Open**, **Pending** or **Resolved**.
-   * **Tags**: contacts with any of the selected tags. See [Tags](../audience/tags.md).
+   * **Tags**: contacts with any of the selected tags (**Matches any selected tag.**). See [Tags](../audience/tags.md).
    * **Unread only**: only chats with unread messages.
-3. Click **Apply**. The filter icon becomes **Reset filters**; click it to clear all filters.
+3. Click **Apply**. The filter icon is highlighted while filters are on.
+
+To remove the filters, open the panel again and click **Clear all**.
 
 ## Act on a chat from the list
 
@@ -48,7 +50,7 @@ A folder is a saved view, such as "Open chats on the support number". Folders ar
 
 To create a folder:
 
-1. Click the folder icon (**Create folder**) next to the conversation title.
+1. Click the **Folders** icon next to the **Inbox** title, then click **Create folder**.
 2. Fill in the fields below.
 3. Click **Create folder**. The folder appears in the sidebar.
 
@@ -58,9 +60,9 @@ To create a folder:
 | **Channels**    | Required. One or more WhatsApp numbers.          |
 | **Status**      | Required. **Open**, **Pending** or **Resolved**. |
 
-To change a folder, open it from the sidebar, click the pencil icon (**Edit folder**), make your changes and click **Update folder**.
+To change a folder, open it from the sidebar, click the **Folders** icon → **Edit folder**, make your changes and click **Update folder**.
 
-To delete a folder, open it, click the red bin icon (**Delete folder**) and confirm. Deleting a folder doesn't delete any conversations.
+To delete a folder, open it, click the **Folders** icon → **Delete folder** and confirm. Deleting a folder doesn't delete any conversations.
 
 Inside a folder, the tabs and the filter are hidden.
 
@@ -68,7 +70,7 @@ Inside a folder, the tabs and the filter are hidden.
 
 You need the **Audience create** permission to start a chat.
 
-1. Click **+** (**New chat**) at the top of the list. When no chat is open, you can also click **New chat** in the middle of the screen.
+1. Click **+** (**New conversation**) next to the **Inbox** title. When no chat is open, you can also click **New chat** in the middle of the screen.
 2. In **Start new chat**, enter a **Name**, such as `Jane Doe`.
 3. Enter the **Mobile** number with the country code, such as `+919000000002`.
 4. Pick **Send from channel**.
@@ -90,7 +92,7 @@ On a phone, **⋮** also holds **Mark as pending** (or **Mark as reopened**) and
 
 ## Write a message
 
-<figure><img src="../.gitbook/assets/conversations-composer.png" alt="John Smith&#x27;s open chat about the Diwali sale, with his tags at the top and a reply about free exchanges typed in the message box"><figcaption><p>Replying to a customer in Conversations</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/conversations-composer.png" alt="John Smith&#x27;s open chat about the Diwali sale, with John's tags at the top and a reply about free exchanges typed in the message box"><figcaption><p>Replying to a customer in Conversations</p></figcaption></figure>
 
 Type in the composer and press **Enter** to send. Press **Shift+Enter** for a new line.
 
@@ -129,7 +131,7 @@ If the chat's WhatsApp channel can't send right now, the **Send** button is disa
 * **Channel authorization failed:** reconnect the number in **Channels**, or contact FlowFlex support.
 * **Channel disabled by your plan:** upgrade or add a channel in **Plans**.
 
-If a message can't be sent, it still stays in the chat history, marked as failed. Hover over the red icon next to it to see the reason, for example:
+If a message can't be sent, it still stays in the chat history, marked as failed. Hover over the red icon next to it to see the reason. When WhatsApp rejects a message, you see Meta's own reason instead of a general error. Other reasons include:
 
 * **Not sent: your wallet balance is negative. Add message credits in Billing to send messages.** This applies to agent replies in Conversations only; flows aren't affected. See [Billing and wallet](../account/billing-and-wallet.md).
 * **Not sent: channel authorization failed. Reconnect this WhatsApp channel in Channels, or contact FlowFlex support.**
@@ -141,6 +143,7 @@ Once you've fixed the cause, send your reply again.
 An internal note is visible to your team only. The customer never sees it.
 
 * To add a note, type it and click **Internal note**.
+* On a phone, switch the composer from **Reply to customer** to **Internal note** (**Only your team sees this**), type the note, and tap **Add note**. Switch back to **Reply to customer** and tap **Send** to message the customer.
 * To edit or delete your note, hover over it and click **Edit note** or **Delete note**.
 
 To hand a chat to a teammate, type `@` or click **Assign**, then pick a name, such as Alex Lee. The button changes to **Save note & assign**. Clicking it saves the note and assigns the chat to Alex Lee.

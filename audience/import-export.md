@@ -47,7 +47,7 @@ Go to **Audience** → **Bulk Import** → **Import**. The **Import audience** w
 
 The summary tells you what will happen:
 
-* **Phone column detected: phone** means FlowFlex found the phone column by its name.
+* **Phone column detected: phone** means FlowFlex found the phone column by its name. Many common names work, such as `Phone`, `Mobile No.`, `Contact No`, `WhatsApp number` or `MSISDN`. See [Step 2: Map columns](import-export.md#step-2-map-columns).
 * **No phone column auto-detected. Map the phone column in the next step.** means you choose the phone column yourself in step 2.
 * **N unique rows ready to import** counts rows with a valid, unique phone number.
 * **N local-format numbers will use India (+91)** means numbers without `+` get the default country code.
@@ -74,13 +74,16 @@ If the file can't be used, you see one of these errors. Click **Try a different 
 Each column in your file is one row here, and FlowFlex matches common column names for you. The counter shows how many columns are selected, such as **4 of 5 columns selected**, and the **Status** column shows a tick when a column is mapped.
 
 1. Tick **Import** for each column you want. Unticked columns are skipped.
-2. In **Import as**, pick the FlowFlex field for each column.
+2. In **Import as**, pick a field for each column. Type to search the list. It has three groups:
+   * **FlowFlex fields:** built-in fields such as **Phone**, **Name** and **Tags**.
+   * **Custom fields:** custom fields your branch already has. A column with the same name as one of them is mapped to it automatically. If a column also matches a built-in field, the built-in field wins.
+   * **New:** **New custom field** creates a custom field from the column. See [Keep other data as custom fields](import-export.md#keep-other-data-as-custom-fields).
 3. Make sure one column is imported as **Phone**. Until then you see **Phone is required. Check the phone column and import it as Phone before continuing.**
 4. Click **Next: Confirm**.
 
 | FlowFlex field                 | Column names matched automatically                                                                             | Notes                                                                                                                          |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| **Phone**                      | phone, phone number, mobile, mobile number, telephone, tel, whatsapp, whatsapp number, contact number, contact | Required. With country code, or use the default country.                                                                       |
+| **Phone**                      | phone, phone number, phone no, mobile, mobile number, mobile no, cell, telephone, tel, contact, contact number, contact no, whatsapp, whatsapp number, msisdn | Required. With country code, or use the default country.                                                                       |
 | **Name**                       | name, full name, contact name, first name, display name                                                        |                                                                                                                                |
 | **Email**                      | email, email address, email id, mail                                                                           | Invalid emails are left empty                                                                                                  |
 | **Country**                    | country, country name                                                                                          |                                                                                                                                |
@@ -90,21 +93,20 @@ Each column in your file is one row here, and FlowFlex matches common column nam
 | **Address line 1**             | address, address 1, address line 1, street                                                                     |                                                                                                                                |
 | **Address line 2**             | address 2, address line 2                                                                                      |                                                                                                                                |
 | **WhatsApp marketing consent** | whatsapp consent, whatsapp marketing consent, whatsapp subscribed                                              | `no`, `false`, `0`, `n`, `opt-out`, `opted out`, `unsubscribe` or `unsubscribed` means off. Anything else, or empty, means on. |
-| **Custom field**               | Any other column                                                                                               | Creates a custom field. See below.                                                                                             |
+| Custom fields                  | A column with the same name as an existing custom field                                                        | Under **Custom fields** in **Import as**. Any other column can become a **New custom field**. See below.                      |
 
-Matching ignores capitals, spaces and punctuation, so `Mobile Number` matches **Phone**.
+Matching ignores capitals, spaces and punctuation, so `Mobile Number` and `Mobile No.` both match **Phone**. Newer phone number ranges are recognised too.
 
 When you map **Country**, you can tick **Use this country column to detect phone country codes**. Numbers without `+` then use each row's country.
 
 #### Keep other data as custom fields
 
-Pick **Custom field** to keep any other data, such as `city` or `last_order_date`.
+Keep any other data, such as `city` or `last_order_date`, as a custom field.
 
-1. In **Import as**, choose **Custom field**.
-2. Check the **Custom field name**. FlowFlex suggests one from the column name, in lowercase with underscores.
-3. Change it if needed.
+* **The custom field already exists:** pick it under **Custom fields** in **Import as**. If the column has the same name, it's already picked for you.
+* **It's a new field:** under **New**, pick **New custom field**, then type the name in **Custom field name**. FlowFlex suggests one from the column name, in lowercase with underscores, such as `lead_source`. Change it if needed.
 
-The custom field is created when the import runs. It then appears as a column in **Profiles**, on the contact's **Other** tab, and as a field in filters and [segments](segments.md). Custom fields created by an import are text fields.
+A new custom field is created when the import runs. It then appears as a column in **Profiles**, on the contact's **Other** tab, and as a field in filters and [segments](segments.md). Custom fields created by an import are text fields.
 
 You can't use names already used by built-in fields, such as phone or email. You see **"name" is reserved — it would collide with a built-in field. Pick a different name.**
 
@@ -118,12 +120,15 @@ FlowFlex sends a notification when the import finishes, with a link to download 
 
 ## Contacts that already exist
 
-A row whose phone number already exists in the branch doesn't create a new contact. Instead:
+A row whose phone number already exists in the branch doesn't create a new contact. It updates the existing one instead:
 
+* **Name and mapped custom fields:** updated when the file has a value. An empty cell never erases what the contact already has. If the same phone number appears more than once in the file, the first row is used.
 * **Destination list:** the contact is added to the list.
 * **Owner:** set to the **Assign owner** choice, if you picked one.
 * **WhatsApp consent:** not changed, unless the consent column says `no`, which turns it off.
-* **Name, email, tags and other fields:** not changed.
+* **Email, tags, country, state, note and address:** not changed.
+
+When Alex imports the file again with a corrected name for Sam Wilson and a new `city` value, Sam's name and `city` are updated. Sam's email and tags stay as they were.
 
 > \[!NOTE] An import never re-subscribes a contact who opted out. FlowFlex keeps the opt-out even if the contact appears in a later import with `yes`. The contact can subscribe again only themselves, for example by sending the START keyword.
 

@@ -6,7 +6,7 @@ description: "Find, add, edit and act on the contacts in a branch from the Profi
 
 Each contact, or profile, holds a customer's phone number, name, email, tags, owner, marketing consent and any custom fields. Go to **Audience** → **Profiles** to see every contact in the selected branch.
 
-A new customer, Maria Garcia, phones Rangoli Store's Kochi branch to ask about a saree. Chris Taylor, a support agent, adds Maria with **Quick add**, tags the profile `new`, and opens a WhatsApp chat straight from Maria's contact page to send the photos.
+A new customer, Maria Garcia, phones Rangoli Store's Kochi branch to ask about a saree. Chris Taylor, a support agent, adds Maria with **Add contact**, tags the profile `new`, and opens a WhatsApp chat straight from Maria's contact page to send the photos.
 
 ## Overview cards
 
@@ -17,32 +17,32 @@ Four cards at the top count contacts in the selected branch:
 * **Phone Profiles:** contacts that have a phone number.
 * **Suppressed:** contacts with WhatsApp, SMS and Email consent all off. See [Suppressed contacts](overview.md#suppressed-contacts).
 
-Click **Refresh** to update the cards and the table.
+Click the refresh icon (**Refresh contacts**) next to **Columns** to update the cards and the list.
 
 ## Find contacts
 
-The **Audience List** table shows each contact's **Name**, **Phone** (with country code), **Subscribed to** (a green icon for each channel with marketing consent on), **Assigned to** (the owner, or **Unassigned**), **Address**, **Country**, the first two **Tags** (click **View all** for the rest) and **Created At** date. **Email** and one column per custom field are also available. Click a name to open the contact's page.
+The **Contacts** list shows how many contacts there are, such as **120 contacts**, and each contact's **Name**, **Phone** (with country code), **Subscribed to** (a green icon for each channel with marketing consent on), **Assigned to** (the owner, or **Unassigned**), **Address**, **Country**, the first two **Tags** (click **View all** for the rest) and **Created At** date. **Email** and one column per custom field are also available. Click a name to open the contact's page.
 
 Use the pager at the bottom to show 10, 20, 50, 100, 200 or 500 contacts per page.
 
 ### Search
 
-Type in **Search by email, mobile or name**. The table filters as you type.
+Type in **Search name, email or phone**. The list filters as you type, and a **Search: …** chip shows what you searched for. Click **×** on the chip to clear the search.
 
 ### Filter
 
-1. Click **Filter**.
-2. Choose a property, a condition and a value, such as **Tags** → **Contains** → `repeat-buyer`.
+1. Click **Filters**. The **Filter** drawer opens.
+2. In **Group 1**, choose a property, a condition and a value, such as **Tags** → **Contains** → `repeat-buyer`.
 3. Click **Add condition** to add more rules, or **Add condition group** to add a group.
-4. Click **Apply Filter**. The table shows only the contacts that match.
+4. Click **Apply filter**. The list shows only the contacts that match, and a **Contact filters applied** chip appears above it.
 
-The filter drawer uses the same builder as segments. See [Build conditions](segments.md#build-conditions) for every field and operator. To remove the filter, click **Clear Filter** next to the **Filter** button.
+The filter drawer uses the same builder as segments. See [Build conditions](segments.md#build-conditions) for every field and operator. To remove the filter, click **×** on the **Contact filters applied** chip. **Cancel** closes the drawer without applying anything.
 
 > \[!TIP] A filter is temporary. To keep a rule and reuse it in broadcasts, save it as a [segment](segments.md).
 
 ### Choose columns
 
-1. Click **Show Columns**.
+1. Click **Columns**.
 2. Tick the columns you want. Use **Search columns...** to find one.
 3. Click **Save**. Your choice is kept for next time.
 
@@ -50,13 +50,13 @@ The filter drawer uses the same builder as segments. See [Build conditions](segm
 
 ## Add a contact
 
-1. Click **Quick add**. The **Add new contact** drawer opens.
+1. Click **Add contact**. The **Add new contact** drawer opens.
 2. Fill in the fields below. For Maria Garcia, Chris enters the name, picks **India** and types `9000000004`, and adds the tag `new`.
-3. Check the consent checkbox, then click **Create profile**. The contact appears in the table.
+3. Check the consent checkbox, then click **Create profile**. The contact appears in the list.
 
-<figure><img src="../.gitbook/assets/add-contact-drawer.png" alt="Add new contact drawer filled in for John Smith with email, phone, state Karnataka and a Bengaluru address, beside the contact list"><figcaption><p>Adding a new contact with Quick add</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/add-contact-drawer.png" alt="Add new contact drawer filled in for John Smith with email, phone, state Karnataka and a Bengaluru address, beside the contact list"><figcaption><p>Adding a new contact</p></figcaption></figure>
 
-To change a contact, click the pencil icon in its row. The **Edit contact** drawer opens. Click **Update profile** to save.
+To change a contact, click the pencil icon in its row. The **Edit contact** drawer opens. Click **Update profile** to save. If you change **Assigned to**, see [Change a contact's owner](contacts.md#change-a-contacts-owner).
 
 | Field            | Rule                                                                                                                                                             |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -83,25 +83,55 @@ To change a contact, click the pencil icon in its row. The **Edit contact** draw
 
 ## Act on many contacts
 
-1. Tick the checkbox next to one or more contacts. The bar above the table shows how many are selected.
+1. Tick the checkbox next to one or more contacts. The bar above the list shows how many are selected.
 2. To act on every contact that matches the current search and filter, click **Select All**. Click **Undo** to go back.
 3. Click **More actions** and choose an action:
    * **Add to list:** adds the contacts to one or more lists. Type a new name to create a list. Subscription status doesn't change.
    * **Remove from list:** removes the contacts from the lists you pick. Subscription status doesn't change.
    * **Unsubscribe:** turns WhatsApp, SMS and Email consent off.
    * **Subscribe:** turns WhatsApp, SMS and Email consent on.
+   * **Add tag:** adds one or more tags to the contacts and keeps the tags they already have. See [Add tags to many contacts](contacts.md#add-tags-to-many-contacts).
    * **Manage Tags:** shows the tags on the selected contacts. Add a tag to add it to all of them, or remove one to remove it from all of them.
-   * **Assign owner:** sets the owner. Leave it at **Not assigned** to clear the owner.
+   * **Assign owner:** sets the owner. Leave it at **Not assigned** to clear the owner. This changes only the contact's owner; their conversations keep their current agent.
    * **Export:** starts a CSV export. Download it from the [Export tab](import-export.md#export-contacts) when it finishes.
    * **Delete:** deletes the contacts permanently.
 
 To delete one contact, click the bin icon in its row and confirm with **Yes**.
 
+### Add tags to many contacts
+
+Use **Add tag** to tag many contacts at once without touching the tags they already have. Rangoli Store, for example, selects everyone who bought during Diwali and adds `diwali-2026`.
+
+1. Select the contacts, or click **Select All** to use every contact that matches the current search and filter.
+2. Click **More actions** → **Add tag**. The **Add tags** dialog says how many contacts get the tags, such as **These tags will be added to 120 selected audience. Existing tags are kept.**
+3. In **Select or type a tag**, pick tags, or type a new name to create one. New tags are saved in lowercase.
+4. Click **Add**. You see **Tags are being added**.
+
+When it's done, you get a notification, such as **Add tag completed — 120 contacts updated.** **Add tag** only adds tags. To remove a tag from many contacts, use **Manage Tags**.
+
+## Change a contact's owner
+
+The owner is the team member in **Assigned to**. When you change it in a contact's **Edit contact** drawer, FlowFlex can move the contact's conversations to the new owner too.
+
+1. Click the pencil icon in the contact's row, and pick a new owner in **Assigned to**, such as Chris Taylor.
+2. Click **Update profile**.
+3. If the contact has several conversations that can move, **Reassign conversations?** opens. It says how many conversations the contact has. Choose one:
+   * **All chats:** gives every chat to the new owner. If some can't move, it reads **All chats that can be reassigned**, with a count such as **(2 of 3)**.
+   * **Selected chats:** tick the chats to move.
+   * **Only the audience:** changes the contact's owner and leaves every chat with its current agent.
+4. Click **Save**.
+
+A chat that can't move is greyed out, with the reason: **You can't reassign chats on this channel** or **The new owner can't access this channel**. If the new owner can't access the channel, give them access in [Teams](../account/teams.md) first.
+
+If only one conversation can move, it moves without asking. If none can, you see **None of this audience's conversations can move to the new owner, so only the audience owner will change.**
+
+**Assign owner** in **More actions** changes only the owner, and never moves conversations.
+
 ## Open a contact
 
 Click a contact's name to open its page. Click **Go back** to return.
 
-<figure><img src="../.gitbook/assets/contact-detail.png" alt="John Smith&#x27;s contact page with his customer details, the repeat-buyer and vip tags, a Bengaluru address and the two lists he belongs to"><figcaption><p>A contact's detail page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/contact-detail.png" alt="John Smith&#x27;s contact page with the customer details, the repeat-buyer and vip tags, a Bengaluru address and the two lists John belongs to"><figcaption><p>A contact's detail page</p></figcaption></figure>
 
 The buttons at the top:
 
