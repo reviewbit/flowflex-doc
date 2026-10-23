@@ -97,7 +97,7 @@ Fix the problem and submit again. After a refusal like this, you can use the sam
 
 ## Track the review
 
-<figure><img src="../.gitbook/assets/templates-list.png" alt="Template Management table with two approved English templates on the Rangoli Store channel: diwali_sale_2026_en (Marketing) and order_shipped_v1 (Utility)"><figcaption><p>Template Management listing the approved demo templates</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/templates-list.png" alt="Templates list with two approved English templates on the Rangoli Store channel: diwali_sale_2026_en (Marketing) and order_shipped_v1 (Utility)"><figcaption><p>Templates list with the approved demo templates</p></figcaption></figure>
 
 FlowFlex receives status changes from Meta automatically. Click **Sync from Meta** on a row, or **Refresh**, to pull them sooner.
 

@@ -4,15 +4,15 @@ description: "Add message credits, keep an eye on your WhatsApp spend, and downl
 
 # Billing and wallet
 
-WhatsApp messages are paid from your wallet in message credits. Your plan and add-ons are billed separately, on the [Plans](plans-and-add-ons.md) page. Go to **Billing** to manage both. Only Admins see it.
+WhatsApp messages are paid from your wallet in message credits. Your plan and add-ons are billed separately, on the [Plans](plans-and-add-ons.md) page. Go to **Billing** in the sidebar to manage both. Only Admins see it. The page has five tabs: **Overview**, **Wallet**, **Transactions**, **Invoices** and **Billing details**.
 
-What a message costs depends on its category (Marketing, Utility, Authentication or Service), the recipient's country, and your organisation's agreement with FlowFlex. The **WhatsApp message charges** link in **Billing** always shows your current rates.
+The **WhatsApp message charges** link, in the **Add credits** drawer and on **Plans**, shows your current rates.
 
 ## See your balance and spend
 
-**Billing Overview** shows your **Available message credits**, your **Current plan**, and **Current month spend**. Below them, a day-by-day breakdown shows how many messages of each category you sent and what they cost, and a monthly chart shows how your spend changes over time.
+The **Overview** tab shows your **Available message credits**, your **Current plan**, and **Current month spend**. Below them, a day-by-day breakdown shows how many messages of each category you sent and what they cost, and a monthly chart shows how your spend changes over time.
 
-If a WhatsApp channel has a billing problem at Meta, a red **Billing issues** bar appears on the overview. Click **Details** to see which channels are affected.
+If a WhatsApp channel has a billing problem at Meta, a red **Billing issues** bar appears on the **Overview** tab with the number of channels affected. Click **Details** to see which ones, or **Refresh** to check again.
 
 ## Add message credits
 
@@ -39,13 +39,13 @@ When your credits fall below the threshold, FlowFlex emails a reminder with a li
 
 ## Receipts and invoices
 
-The **Transactions** tab lists your subscription payments, with a receipt for each successful one. If a payment wasn't finished, click **Retry Payment** to complete it. If something has gone wrong with a payment or refund, contact FlowFlex support.
+The **Transactions** tab lists your wallet and subscription payments, with a **Type** for each and a receipt for each successful one. If a payment wasn't finished, click **Retry Payment** to complete it. If something has gone wrong with a payment or refund, contact FlowFlex support.
 
-The **Invoices** tab lists your invoices with their status. Download one, or tick several and click **Download all**. Use **Search invoices** to find a particular one.
+The **Invoices** tab lists your invoices with their status. Download one, or tick several and click **Download selected**. Use **Search invoices** to find a particular one.
 
 ## Billing details
 
-The details on the **Billing details** tab are printed on your receipts and invoices. Click the edit icon, update them, and click **Save**. **Billing email** is required. Tick **Use business address as billing address** to copy the address from [Organisation settings](organisation.md), and add your **GSTIN** if you want it on your invoices.
+The details on the **Billing details** tab are printed on your receipts and invoices. Click the edit icon, update them, and click **Save**. **Billing email** is required. Tick **Use business address as billing address** to copy the address from [Organisation settings](organisation.md), and, for organisations in India, add your **GSTIN (optional)** if you want it on your invoices.
 
 ## See also
 

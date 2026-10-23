@@ -18,7 +18,7 @@ Creating and deleting tags needs edit access to Audience in the branch.
 
 ## Create a tag
 
-1. Click **Create new**. The **Create tag** dialog opens.
+1. Click **Create tag**. The **Create tag** dialog opens.
 2. Enter a **Name**, such as `repeat-buyer`.
 3. Optionally add a **Description**, such as `Bought 2 or more times`.
 4. Click **Create tag**. The tag appears in the table with **Auto Tag** set to **No**.
