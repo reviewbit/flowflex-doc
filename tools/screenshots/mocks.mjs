@@ -79,6 +79,77 @@ export function buildRewriters(data, opts = {}) {
     { title: "Navratri preview – Draft", status: "draft", start: "2026-10-28T04:30:00.000Z", end: "2026-11-04T14:30:00.000Z", s: stats(0, 0, 0, 0, 0, 0), t: templates.marketing },
   ];
 
+  // ---- Broadcast report (demo broadcast ID(300)): numbers match the list row ----
+  const batchDays = [
+    { batch: 1, recipients: 1000, sent: 980, delivered: 955, read: 702, replied: 52, clicked: 214, failed: 20, at: "2026-10-20T04:30:00.000Z", done: "2026-10-20T05:12:00.000Z" },
+    { batch: 2, recipients: 878, sent: 860, delivered: 837, read: 609, replied: 44, clicked: 188, failed: 18, at: "2026-10-21T04:30:00.000Z", done: "2026-10-21T05:08:00.000Z" },
+  ];
+  const broadcastRow = (d, i, real = {}) => ({
+    ...real, _id: ID(300 + i), title: d.title, status: d.status, channel: ID(1),
+    start_date: d.start, end_date: d.end, timezone: broadcast.timeZone, batch_size: Number(broadcast.dailySendCount),
+    audience_cat: "list", list_ref: [ID(400)], segment_ref: [], manual_ref: [], jobs: [], stats: d.s,
+    audience_summary: { selected_count: d.s.total_recipients, eligible_count: d.s.total_recipients, excluded_count: 0, whatsapp_opted_out_count: 0 },
+    template: { type: "whatsapp", template_id: ID(200), template_json: { name: d.t.name, language: { code: "en" }, components: [] }, variableMappings: { 1: { mode: "field", value: "name" } } },
+  });
+  const broadcastDetail = () => ({
+    ...broadcastRow(demoBroadcasts[0], 0),
+    org_id: ID(900), branch_id: kochi, retry: false, pause_reason: null, resume_at: null, messaging_limit_tier: "TIER_2K",
+    list_ref: [{ _id: ID(400), title: demo.lists[0].title, audience_count: demo.lists[0].count }],
+    createdAt: "2026-10-18T09:00:00.000Z", updatedAt: "2026-10-21T05:08:00.000Z",
+    jobs: batchDays.map((b, i) => ({ batchNumber: b.batch, status: "completed", timestamp: batchDays[0].at, opts: { delay: i * 86400000 },
+      customerCount: b.recipients, processedCustomers: b.recipients, completedAt: b.done })),
+  });
+  const runTimeline = () => ({
+    status: "active", timezone: broadcast.timeZone, pauses: [], batches_total: 2, batches_done: 2, next_run_at: null, resume_at: null, days_span: 2, truncated: false,
+    batches: batchDays.map((b) => ({ batch: b.batch, status: "completed", scheduled_at: b.at, recipients: b.recipients, processed: b.recipients, completed_at: b.done,
+      failed_at: null, paused_at: null, error: null, sent: b.sent, delivered: b.delivered, read: b.read, replied: b.replied, failed: b.failed, retrying: 0 })),
+  });
+  // Hourly activity for 48 hours after the first batch: each batch's reads, replies and taps fade over the day.
+  const engagement = () => {
+    const HOUR = 3600000, t0 = Date.parse("2026-10-20T03:00:00.000Z");
+    const points = Array.from({ length: 49 }, (_, h) => ({ at: new Date(t0 + h * HOUR).toISOString(), sent: 0, read: 0, replied: 0, clicked: 0, failed: 0 }));
+    const spread = (start, key, total, decay) => {
+      const idx = Array.from({ length: 24 }, (_, k) => start + k).filter((k) => k < points.length);
+      const w = idx.map((k, j) => { const ist = (k + 3 + 5.5) % 24; const night = ist >= 23 || ist < 8 ? 0.15 : 1; return Math.exp(-j / decay) * night + (ist >= 19 && ist < 22 ? 0.06 : 0); });
+      const sum = w.reduce((a, b) => a + b, 0);
+      let left = total;
+      idx.forEach((k, j) => { const v = j === idx.length - 1 ? left : Math.round((total * w[j]) / sum); points[k][key] += Math.min(v, left); left -= Math.min(v, left); });
+    };
+    batchDays.forEach((b, i) => {
+      const start = i * 24 + 1;
+      points[start].sent += b.sent; points[start].failed += b.failed;
+      spread(start + 1, "read", b.read, 3); spread(start + 1, "replied", b.replied, 2.5); spread(start + 1, "clicked", b.clicked, 2.5);
+    });
+    return { granularity: "hour", points, truncated: false,
+      links: [{ short_code: "rngl-diwali", label: "Shop now", url: `${brand.website}/diwali`, clicks: 468, unique_people: 402 }] };
+  };
+  const failureReasons = [
+    { label: "Ecosystem health: Meta chose not to deliver", value: "code:131049", count: 26 },
+    { label: "Message undeliverable", value: "code:131026", count: 12 },
+  ];
+  const groupCounts = { total_sent: 1840, total_delivered: 1792, total_read: 1311, read_not_replied: 1215, delivered_not_read: 481, total_replied: 96, total_clicked: 402, total_failed: 38 };
+  const recipientRows = (group) => contacts.map((c, i) => {
+    const at = new Date(Date.parse("2026-10-20T05:00:00.000Z") + i * 37 * 60000).toISOString();
+    const status = group === "total_sent" ? (i % 3 ? "read" : "delivered") : group === "total_delivered" || group === "delivered_not_read" ? "delivered" : "read";
+    const detail = group === "total_failed" ? failureReasons[i % 3 === 2 ? 1 : 0].label : group === "total_clicked" ? "Shop now" : undefined;
+    return { name: c.name, phone: c.phone, status: group === "total_failed" ? "failed" : group === "total_replied" ? "replied" : status, detail, clicks: group === "total_clicked" ? 1 + (i % 2) : 0, at };
+  });
+
+  const demoFlows = [
+    { title: "Order status replies", description: "Answers \"Where is my order?\" with the latest tracking link.", topic: "whatsapp.incoming_message", published: true, updated: "2026-10-21T09:00:00.000Z" },
+    { title: "Diwali sale enquiries", description: "Replies to customers who ask about the Diwali Sale and shares the offer code.", topic: "whatsapp.incoming_message", published: true, updated: "2026-10-19T09:00:00.000Z" },
+    { title: "Order shipped updates", description: "Sends the shipping update when the website marks an order as shipped.", topic: "custom:order.shipped", event: "Order shipped", published: true, updated: "2026-10-14T09:00:00.000Z" },
+    { title: "Thank-you after order", description: "Thanks the customer and asks for feedback after each new order.", topic: "custom:order.placed", event: "Order placed", published: true, updated: "2026-10-08T09:00:00.000Z" },
+    { title: "Store visit booking", description: "Books a visit to the Kochi or Bengaluru store.", topic: "whatsapp.incoming_message", published: false, updated: "2026-10-06T09:00:00.000Z" },
+    { title: "Navratri collection launch", description: "Draft for the Navratri collection launch.", topic: "whatsapp.incoming_message", published: false, updated: "2026-09-30T09:00:00.000Z" },
+  ];
+  const demoWorkers = [
+    { title: "Order status replies – Rangoli Store", flow: "Order status replies", description: "Answers order questions on the Rangoli Store number.", status: "Active", start: "2026-10-01T00:00:00.000Z", end: "2026-12-31T23:59:00.000Z" },
+    { title: "Diwali sale enquiries – Kochi", flow: "Diwali sale enquiries", description: "Replies to Diwali Sale questions for the Kochi store.", status: "Active", start: "2026-10-15T00:00:00.000Z", end: "2026-10-27T23:59:00.000Z" },
+    { title: "Shipping updates – website orders", flow: "Order shipped updates", description: "Runs when an order shipped event arrives from the website.", status: "Paused", start: "2026-09-20T00:00:00.000Z", end: "2026-12-31T23:59:00.000Z" },
+    { title: "Thank-you messages", flow: "Thank-you after order", description: "Thanks customers after each new order.", status: "Draft", start: "2026-11-01T00:00:00.000Z", end: "2026-12-31T23:59:00.000Z" },
+  ];
+
   const userName = demoUser.name;
   const chatRows = () => demo.chats.map((c, i) => {
     const at = new Date(Date.parse("2026-10-16T09:58:00Z") - i * 23 * 60000).toISOString();
@@ -112,15 +183,25 @@ export function buildRewriters(data, opts = {}) {
     [/^\/api\/whatsapp-templates$/, (b) => ({ ...b, data: demoTemplates.map((t, i) => template(t, i, b.data?.[0])), pagination: { total: 2, page: 1, pageSize: 10, totalPages: 1, hasMore: false } })],
     [/^\/api\/broadcast$/, (b) => ({
       ...b,
-      data: demoBroadcasts.map((d, i) => ({
-        ...(b.data?.[0] || {}), _id: ID(300 + i), title: d.title, status: d.status, channel: ID(1),
-        start_date: d.start, end_date: d.end, timezone: broadcast.timeZone, batch_size: Number(broadcast.dailySendCount),
-        audience_cat: "list", list_ref: [ID(400)], segment_ref: [], manual_ref: [], jobs: [], stats: d.s,
-        audience_summary: { selected_count: d.s.total_recipients, eligible_count: d.s.total_recipients, excluded_count: 0, whatsapp_opted_out_count: 0 },
-        template: { type: "whatsapp", template_id: ID(200), template_json: { name: d.t.name, language: { code: "en" }, components: [] }, variableMappings: { 1: { mode: "field", value: "name" } } },
-      })),
+      data: demoBroadcasts.map((d, i) => broadcastRow(d, i, b.data?.[0] || {})),
       pagination: { ...(b.pagination || {}), total: demoBroadcasts.length, totalPages: 1 },
     })],
+    // Broadcast report: fully synthetic (the list rows use demo IDs the backend doesn't know).
+    [/^\/api\/broadcast\/[0-9a-f]{24}$/, () => ({ success: true, message: "OK", data: broadcastDetail() }), { synthetic: true }],
+    [/^\/api\/broadcast-stats\/[^/]+\/runs$/, () => ({ success: true, data: runTimeline() }), { synthetic: true }],
+    [/^\/api\/broadcast-stats\/[^/]+\/engagement$/, () => ({ success: true, data: engagement() }), { synthetic: true }],
+    [/^\/api\/broadcast-stats\/[^/]+\/failure-reasons$/, () => ({ success: true, data: failureReasons }), { synthetic: true }],
+    [/^\/api\/broadcast-stats\/[^/]+\/recipients$/, (b, url) => {
+      const group = url?.searchParams.get("group") || "total_failed";
+      return { success: true, data: recipientRows(group), pagination: { total: groupCounts[group] ?? contacts.length, page: 1, pageSize: 20 } };
+    }, { synthetic: true }],
+    [/^\/api\/whatsapp-template\/[^/]+$/, () => ({ success: true, message: "OK", data: template(templates.marketing, 0) }), { synthetic: true }],
+    [/^\/api\/timelines$/, () => ({ success: true, data: [
+      { _id: ID(980), status: "created", event_type: "user", title: "Broadcast created", details: `Created by ${demoUser.name}`, createdAt: "2026-10-18T09:00:00.000Z" },
+      { _id: ID(981), status: "scheduled", event_type: "user", title: "Broadcast scheduled", details: "Starts 20 Oct 2026, 10:00 AM (Asia/Kolkata)", createdAt: "2026-10-18T09:05:00.000Z" },
+      { _id: ID(982), status: "sent", event_type: "system", title: "Batch 1 sent", details: "1,000 people", createdAt: batchDays[0].done },
+      { _id: ID(983), status: "sent", event_type: "system", title: "Batch 2 sent", details: "878 people", createdAt: batchDays[1].done },
+    ], pagination: { page: 1, pageSize: 10, total: 4, totalPages: 1 } }), { synthetic: true }],
     [/^\/api\/broadcast-overview$/, (b) => ({ ...b, data: { ...(b.data || {}), ...stats(2800, 2743, 2181, 914, 137, 44) } })],
     [/^\/api\/wallet-details$/, (b) => ({ ...b, data: { ...(b.data || {}), balance: 5000, currentBalance: 5000, threshold: 1000, min_balance: 10, monthlyUsage: 1240.5, usageSinceLastRecharge: 2500, total_usage: 2500, total_recharged: 7500,
       usagePercentage: 33.33, lastRechargeAmount: 5000, business_name: brand.name, gst_number: "", additional_email: [], phone: [], lastDeduction: null } })],
@@ -151,7 +232,7 @@ export function buildRewriters(data, opts = {}) {
     [/^\/api\/tags?$/, (b) => ({ ...b, data: demo.tags.map((t, i) => ({ ...(Array.isArray(b.data) ? b.data[0] || {} : {}), _id: ID(500 + i), name: t.name, is_auto_tag: !!t.auto, type: "customer", description: t.description || "", created_at: "2026-09-02T09:00:00.000Z", createdAt: "2026-09-02T09:00:00.000Z", customer_count: t.count, count: t.count, usage_count: t.count })), ...(b.pagination ? { pagination: page(b.pagination, demo.tags.length) } : {}) })],
     [/^\/api\/audience-import-history$/, (b) => ({ ...b, data: demo.imports.map((m, i) => ({ ...(b.data?.[0] || {}), _id: ID(550 + i), title: m.title, status: m.status, customer_count: m.count, filecdn: "", errorcdn: "", column_mapping: [], createdAt: m.created, updatedAt: m.created })), pagination: page(b.pagination, demo.imports.length) })],
     [/^\/api\/customer-export-history$/, (b) => ({ ...b, data: demo.exports.map((m, i) => ({ ...(b.data?.[0] || {}), _id: ID(600 + i), title: m.title, status: "completed", customer_count: m.count, filecdn: "", createdAt: m.created })), pagination: page(b.pagination, demo.exports.length) })],
-    [/^\/api\/dynamic-fields$/, (b) => ({ ...b, data: Array.isArray(b.data) ? demo.customFields.map((f, i) => ({ ...(b.data[0] || {}), _id: ID(650 + i), label: f, name: f.toLowerCase().replace(/ /g, "_"), key: f.toLowerCase().replace(/ /g, "_"), source: "import" })) : b.data })],
+    [/^\/api\/dynamic-fields$/, (b) => ({ ...b, data: Array.isArray(b.data) ? demo.customFields.map((f, i) => ({ ...(b.data[0] || {}), _id: ID(650 + i), label: f, name: f.toLowerCase().replace(/ /g, "_"), key: f.toLowerCase().replace(/ /g, "_"), source: "import", platform: "custom" })) : b.data })],
     // Fully synthetic: answered without calling the backend (the real query is slow on the devbox).
     [/^\/api\/audience$/, (b) => ({ success: true, message: "OK", ...b, data: contactRows(), pagination: page(b.pagination, 2734) }), { synthetic: true }],
     [/^\/api\/audience\/overview$/, (b) => ({ ...b, data: { ...(b.data || {}), total_customers: 2734, total_email_subscribed: 2215, total_phone_subscribed: 2734, total_suppressed: 41 } })],
@@ -190,14 +271,22 @@ export function buildRewriters(data, opts = {}) {
     [/^\/api\/list-folders$/, (b) => ({ ...b, data: Array.isArray(b.data) ? [] : b.data })],
     // ---- Workflows ----
     [/^\/api\/flow-data-tables$/, (b) => ({ ...b, data: demo.dataTables.map((t, i) => ({ ...(b.data?.[0] || {}), _id: ID(700 + i), title: t.title, columns: t.columns, is_pinned: i === 0, createdAt: "2026-09-20T09:00:00.000Z", updatedAt: "2026-10-14T09:00:00.000Z" })) })],
-    [/^\/api\/campaigns$/, (b) => ({ success: true, message: "OK", ...b, data: [
-      { title: "Order status replies", description: "Answers \"Where is my order?\" with live tracking.", status: "Active", start_date: "2026-10-01T00:00:00.000Z", end_date: "2026-10-31T23:59:00.000Z" },
-      { title: "Diwali sale enquiries", description: "Replies to customers who message about the Diwali Sale.", status: "Active", start_date: "2026-10-15T00:00:00.000Z", end_date: "2026-10-27T23:59:00.000Z" },
-      { title: "Store visit booking", description: "Books a visit to the Kochi or Bengaluru store.", status: "Paused", start_date: "2026-09-20T00:00:00.000Z", end_date: "2026-10-20T23:59:00.000Z" },
-      { title: "Navratri preview", description: "Draft for the Navratri collection launch.", status: "Draft", start_date: "2026-10-28T00:00:00.000Z", end_date: "2026-11-10T23:59:00.000Z" },
-    ].map((c, i) => ({ _id: ID(720 + i), key: ID(720 + i), name: c.title, updated_at: "2026-10-14T09:00:00.000Z", updatedAt: "2026-10-14T09:00:00.000Z",
-      flow_versions: [], flows: [], errors: [], updates: 0, total_sent: 0, total_delivered: 0, total_opened: 0, total_failed: 0, ...c })),
-      pagination: page(b.pagination, 4), total: 4 }), { synthetic: true }],
+    // Flows tab: fully synthetic demo flows (WhatsApp and custom-integration triggers).
+    [/^\/api\/flows$/, () => ({ success: true, message: "OK", data: demoFlows.map((f, i) => ({
+      _id: ID(760 + i), title: f.title, description: f.description, trigger_topic: f.topic, is_active: !!f.published, custom_trigger_id: null,
+      published_version: f.published ? ID(770 + i) : null, is_disabled_by_plan: false, disabled_reason: null, updatedAt: f.updated,
+      fe_flow: { nodes: [{ id: "start", type: "start", position: { x: 0, y: 0 }, width: 240, height: 80, deletable: false, positionAbsolute: { x: 0, y: 0 },
+        data: f.topic === "whatsapp.incoming_message" ? { trigger: "whatsapp", topic: f.topic, title: "WhatsApp Incoming Chat", description: "" }
+          : { trigger: `custom_${ID(750)}`, topic: f.topic, trigger_topic_title: f.event, trigger_topic_description: "", description: "", integration_name: "Rangoli Order Events", integration_id: ID(750), title: f.event } }] },
+    })), pagination: { total: demoFlows.length, page: 1, pageSize: "12", totalPages: 1 } }), { synthetic: true }],
+    // Workers tab (served by /campaigns): each worker runs one of the demo flows above.
+    [/^\/api\/campaigns$/, (b) => ({ success: true, message: "OK", ...b, data: demoWorkers.map((c, i) => {
+      const flowIndex = demoFlows.findIndex((f) => f.title === c.flow);
+      const flowRef = { _id: ID(760 + flowIndex), title: c.flow };
+      return { _id: ID(720 + i), key: ID(720 + i), name: c.title, updated_at: "2026-10-14T09:00:00.000Z", updatedAt: "2026-10-14T09:00:00.000Z",
+        flow_ref: flowRef, flow_title: c.flow, flows: [flowRef], flow_versions: [], errors: [], updates: 0, total_sent: 0, total_delivered: 0, total_opened: 0, total_failed: 0,
+        title: c.title, description: c.description, status: c.status, start_date: c.start, end_date: c.end };
+    }), pagination: page(b.pagination, demoWorkers.length), total: demoWorkers.length }), { synthetic: true }],
     // ---- Integrations ----
     [/^\/api\/custom-integrations$/, (b) => ({ ...b, data: [demoIntegration(b.data?.[0])] })],
     [/^\/api\/__unused_custom_integrations$/, (b) => ({ ...b, data: [{ ...(b.data?.[0] || {}), _id: ID(750), name: "Rangoli Order Events", description: "Order and delivery events from the Rangoli Store website.", icon_url: null, api_key: "cik_xxxxxxxxxxxx", code: "ic_rangoli01", isActive: true,

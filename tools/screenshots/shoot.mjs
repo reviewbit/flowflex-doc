@@ -82,7 +82,7 @@ const shots = {
     mocking = true;
     return p;
   },
-  "get-started/app-shell": async (p) => { await go(p, "/"); await p.getByText("Get flowflex fully ready").waitFor(); },
+  "get-started/app-shell": async (p) => { await go(p, "/"); await p.getByText(/Get started/).first().waitFor({ timeout: 120000 }); await p.waitForTimeout(2000); },
   // ---- WhatsApp setup ----
   "whatsapp/channels-list": async (p) => { await go(p, "/channels"); await p.getByText(data.channel.displayName).first().waitFor(); },
   "whatsapp/templates-list": async (p) => { await go(p, "/templates"); await p.getByText(t.marketing.name).first().waitFor(); },
@@ -111,7 +111,7 @@ const shots = {
   "audience/overview-tabs": async (p) => { await go(p, "/audience/profiles"); await p.getByText("Audience overview").first().waitFor(); },
   "audience/add-contact-drawer": async (p) => {
     await go(p, "/audience/profiles");
-    await clickButton(p, "Quick add");
+    await clickButton(p, "Add contact");
     const d = p.locator(".ant-drawer-content:visible").last();
     await d.getByPlaceholder("Joey John").fill(data.contacts[0].name);
     await d.getByPlaceholder("joejohn@gmail.com").fill(data.contacts[0].email);
@@ -153,6 +153,28 @@ const shots = {
     await clickButton(p, /Review broadcast/); await snap(p, "review"); await clickButton(p, /Publish broadcast/); await p.waitForTimeout(1500);
   },
   // ---- Messaging ----
+  "broadcasts/report-overview": async (p) => {
+    await go(p, "/broadcast");
+    await p.getByText(data.broadcast.name).first().click();
+    await p.getByText("Overview", { exact: true }).first().waitFor({ timeout: 120000 });
+    await p.getByText("Sending schedule").first().waitFor({ timeout: 60000 });
+    await broadcastTitleCrumb(p);
+    // Whole report in one image: grow the page to the height of its content.
+    await p.setViewportSize({ width: data.viewport.width, height: 2800 });
+    await p.locator("canvas").first().waitFor({ timeout: 60000 }).catch(() => {});
+    await p.waitForTimeout(2500);
+    const bottom = await p.evaluate(() => Math.max(...[...document.querySelectorAll("section")].map((el) => el.getBoundingClientRect().bottom)));
+    await p.setViewportSize({ width: data.viewport.width, height: Math.min(2800, Math.ceil(bottom) + 32) });
+    await p.waitForTimeout(1500);
+  },
+  "broadcasts/report-recipients": async (p) => {
+    await go(p, "/broadcast");
+    await p.getByText(data.broadcast.name).first().click();
+    await p.getByRole("tab", { name: /Recipients/ }).first().click();
+    await p.getByText("Send follow-up").first().waitFor({ timeout: 60000 });
+    await broadcastTitleCrumb(p);
+    await p.waitForTimeout(1500);
+  },
   "messaging/conversations-inbox": async (p) => { await go(p, "/chat"); await p.getByText(m.chats[0].name).first().waitFor(); await p.waitForTimeout(1500); },
   "messaging/conversations-composer": async (p) => {
     await go(p, "/chat");
@@ -179,19 +201,21 @@ const shots = {
   },
   "messaging/quick-replies-table": async (p) => { await go(p, "/chat/settings"); await scrollTo(p, m.quickReplies[0].shortcut); },
   // ---- Workflows ----
-  "flows/campaigns-list": async (p) => { await go(p, "/campaigns"); await p.getByText("Order status replies").first().waitFor({ timeout: 120000 }); await p.waitForTimeout(1500); },
+  "flows/flows-list": async (p) => { await go(p, "/flows"); await p.getByText("Order status replies").first().waitFor({ timeout: 120000 }); await p.waitForTimeout(2000); },
+  "flows/workers-list": async (p) => { await go(p, "/flows?tab=workers"); await p.getByText("Order status replies – Rangoli Store").first().waitFor({ timeout: 120000 }); await p.waitForTimeout(2000); },
+  "help/ai-assistant": async (p) => {
+    await go(p, "/broadcast");
+    await p.getByRole("button", { name: "Open AI Assistant" }).first().click();
+    await p.getByText("How can I help today?").first().waitFor({ timeout: 60000 });
+    await p.waitForTimeout(1500);
+  },
   "flows/saved-data-tables": async (p) => { await go(p, "/flows/saved_data"); await p.getByText(m.dataTables[0].title).first().waitFor(); },
   // ---- Integrations ----
   "integrations/integrations-page": async (p) => {
     await go(p, "/integrations");
     await p.getByText("Custom integrations").first().waitFor();
-    // Shopify setup goes through FlowFlex support, so the docs don't show its card.
-    await p.evaluate(() => {
-      const h = [...document.querySelectorAll("body *")].find((el) => el.children.length === 0 && el.textContent.trim() === "Shopify");
-      let card = h; for (let i = 0; i < 6 && card && !/Connect/.test(card.textContent.replace("Shopify", "")); i++) card = card.parentElement;
-      while (card && card.parentElement && card.parentElement.textContent.trim().length <= card.textContent.trim().length + 5) card = card.parentElement;
-      if (card) card.style.display = "none";
-    });
+    // Shopify setup goes through FlowFlex support, so the docs don't show its card in the App directory.
+    await p.locator("article", { has: p.locator("h3", { hasText: /^Shopify$/ }) }).evaluateAll((cards) => cards.forEach((c) => { c.style.display = "none"; }));
   },
   "integrations/custom-integration-events": async (p) => {
     await go(p, "/integrations/custom");
@@ -200,7 +224,12 @@ const shots = {
     await p.getByPlaceholder("e.g. user.created").first().fill("order.placed").catch(() => {});
     await p.getByPlaceholder("e.g. User created").first().scrollIntoViewIfNeeded().catch(() => {});
   },
-  "integrations/custom-integration-live": async (p) => { await go(p, "/integrations"); await clickButton(p, "Manage"); await p.getByText("Rangoli Order Events").first().waitFor(); await p.waitForTimeout(1500); },
+  "integrations/custom-integration-live": async (p) => {
+    await go(p, "/integrations");
+    await p.locator("article", { hasText: "Rangoli Order Events" }).getByRole("button", { name: /Manage connection/ }).first().click();
+    await p.getByText("Credentials", { exact: true }).first().waitFor({ timeout: 120000 });
+    await p.waitForTimeout(1500);
+  },
   // ---- Account ----
   "account/set-credit-alert": async (p) => { await go(p, "/settings/billing/overview"); await clickButton(p, "Set alert"); },
   "account/account-settings": async (p) => { await go(p, "/settings/account"); await p.getByText("Organisation Details").first().waitFor(); },
@@ -225,6 +254,14 @@ const shots = {
   },
 };
 
+// The breadcrumb shows the broadcast's ID: show its name instead, as people know it.
+async function broadcastTitleCrumb(p) {
+  await p.evaluate(([id, title]) => {
+    const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    for (let n; (n = walk.nextNode()); ) if (n.nodeValue.trim() === id) n.nodeValue = title;
+  }, ["6a1b2c3d4e5f60718293a300", data.broadcast.name]);
+}
+
 async function broadcastStep1(p) {
   await go(p, "/broadcast/create");
   await p.getByLabel("Broadcast name").fill(b.name);
@@ -242,7 +279,7 @@ async function broadcastStep2(p) {
   await clickButton(p, "Continue");
   await p.locator("#timezone").waitFor();
   await pickOption(p, p.locator("#timezone"), "Kolkata").catch(() => {});
-  for (const [ph, v] of [["Select schedule date", "Oct 20, 2026 10:00 AM"], ["Select end date", "Oct 27, 2026 08:00 PM"]]) {
+  for (const [ph, v] of [["Select schedule date", "Nov 02, 2026 10:00 AM"], ["Select end date", "Nov 09, 2026 08:00 PM"]]) {
     const input = p.getByPlaceholder(new RegExp(ph)).first();
     await input.click();
     await input.fill(v);
@@ -283,6 +320,8 @@ const contextOptions = {
     : undefined,
 };
 let context = await browser.newContext(contextOptions);
+  // The AI Assistant teaser bubble would cover buttons in every shot: mark it as already seen.
+  await context.addInitScript(() => { try { localStorage.setItem("flowflex-support-assistant-teaser-seen", "1"); } catch {} });
 // The inbox keeps each chat's latest message under a deployment-specific key; read it from the
 // frontend's .env so previews render (the value is used in memory only, never printed).
 const chatMessageKey = (() => {
@@ -321,11 +360,11 @@ async function guard(route) {
     }
     return route.continue();
   }
-  if (rw.synthetic) return route.fulfill({ status: 200, contentType: "application/json", headers: { "access-control-allow-origin": req.headers()["origin"] || "*", "access-control-allow-credentials": "true" }, body: JSON.stringify(rw.fn({})) });
+  if (rw.synthetic) return route.fulfill({ status: 200, contentType: "application/json", headers: { "access-control-allow-origin": req.headers()["origin"] || "*", "access-control-allow-credentials": "true" }, body: JSON.stringify(rw.fn({}, url)) });
   const res = await route.fetch();
   let body;
   try { body = await res.json(); } catch { return route.fulfill({ response: res }); }
-  return route.fulfill({ response: res, json: rw.fn(body) });
+  return route.fulfill({ response: res, json: rw.fn(body, url) });
 }
 await context.route("**/*", guard);
 
@@ -388,6 +427,8 @@ async function relaunch() {
   },
 });
   context = await browser.newContext(contextOptions);
+  // The AI Assistant teaser bubble would cover buttons in every shot: mark it as already seen.
+  await context.addInitScript(() => { try { localStorage.setItem("flowflex-support-assistant-teaser-seen", "1"); } catch {} });
   await context.route("**/*", guard);
   page = await context.newPage();
   page.setDefaultTimeout(60000);
@@ -418,6 +459,7 @@ for (const [name, run] of Object.entries(shots)) {
     fs.mkdirSync(path.dirname(file), { recursive: true });
     await target.screenshot({ path: file });
     if (target !== page) await target.context().close();
+    else if (page.viewportSize()?.height !== data.viewport.height) await page.setViewportSize(data.viewport);
     console.log(`ok   ${name}`);
   } catch (e) {
     failed++;
@@ -485,7 +527,11 @@ async function selectBranch(p, name) {
   if (!box) throw new Error("profile block not found in top bar");
   await p.mouse.click(box.x, box.y);
   await p.waitForTimeout(1000);
-  await p.getByText("Switch branch", { exact: true }).click();
+  // Profile drawer: the organisation/branch card has a "Switch" button that opens "Switch branch".
+  const sw = p.getByText("Switch", { exact: true }).first();
+  if (await sw.isVisible().catch(() => false)) await sw.click();
+  else await p.getByText("Switch branch", { exact: true }).click();
+  await p.getByText("Switch branch", { exact: true }).last().waitFor({ timeout: 30000 }).catch(() => {});
   const drawer = p.locator(".ant-drawer-content:visible").last();
   await drawer.getByText(name, { exact: true }).first().click();
   await p.waitForTimeout(2000);
@@ -508,6 +554,12 @@ async function go(p, route) {
 // Last line of defence before a screenshot: devbox host names and real-looking database IDs on screen.
 async function scrubPage(p) {
   await p.addStyleTag({ content: "nextjs-portal, [data-nextjs-toast], #__next-build-watcher { display: none !important; }" }).catch(() => {});
+  // The floating AI Assistant button covers drawer footers: hide it except in the shot about it.
+  if (currentShot !== "help/ai-assistant") await p.evaluate(() => document.querySelectorAll('button[aria-label="Open AI Assistant"]').forEach((btn) => {
+    let el = btn;
+    while (el.parentElement && el.parentElement !== document.body && el.parentElement.children.length === 1) el = el.parentElement;
+    el.style.visibility = "hidden";
+  })).catch(() => {});
   // Trial length differs per agreement: never show it.
   await p.evaluate(() => document.querySelectorAll("body *").forEach((el) => {
     if (el.children.length <= 2 && /\d+[- ]day free trial/i.test(el.textContent || "") && (el.textContent || "").length < 80) el.style.visibility = "hidden";
