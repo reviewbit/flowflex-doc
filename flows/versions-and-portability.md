@@ -18,7 +18,7 @@ In view mode, **Publish** publishes the version on screen. **Show published** ta
 
 Fix errors before saving: the flow needs exactly one Trigger and one End, every node connected, and a connection from every output.
 
-Publishing a flow doesn't set up its campaign. Incoming-message campaigns are created and published separately. See [Campaigns](campaigns.md).
+Publishing a flow doesn't create a worker for it. Workers are created and activated separately. A worker keeps running the version it was set up with: after you publish a new version, the worker shows **New version available** and you choose **Update to vN** to switch it. See [Workers](workers.md#update-to-a-new-flow-version).
 
 ## Version history
 
@@ -38,6 +38,6 @@ Exports leave out settings that belong to your workspace. Read the notice, then 
 ## See also
 
 - [Build your first flow](building-a-flow.md)
-- [Campaigns](campaigns.md)
+- [Workers](workers.md)
 - [Learn flow builder](learning-the-builder.md)
 - [I cannot save the flow](../help/troubleshooting.md#why-cant-i-save-my-flow)

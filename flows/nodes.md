@@ -29,6 +29,7 @@ Several of these can wait for the customer's answer. See [Waiting for a reply](r
 - **[Condition branch](nodes/condition-branch.md):** route to one of several named paths.
 - **[Start loop / End loop](nodes/for-loop.md):** repeat steps for each item in a list.
 - **[Repeat until](nodes/repeat-until.md):** repeat steps until a condition is met or the attempt limit is reached.
+- **[Wait for agent reply](nodes/wait-for-agent-reply.md):** branch on whether a team member replies in time.
 
 Condition split and Condition branch can also check a contact's tags as they are when the flow runs. See [Contact-tag conditions](nodes/contact-tag-conditions.md).
 
@@ -42,7 +43,7 @@ Condition split and Condition branch can also check a contact's tags as they are
 - **[Save tag](nodes/audience-actions.md#save-tag):** add or remove a customer's tags.
 - **[Save audience](nodes/audience-actions.md#save-audience):** create a contact or update its profile fields.
 - **[Add Note](nodes/audience-actions.md#add-note):** save a private note on the conversation.
-- **[Assign agent](nodes/audience-actions.md#assign-agent):** hand the conversation to a specific agent, by round robin, or to the least busy agent.
+- **[Assign agent](nodes/audience-actions.md#assign-agent):** hand the conversation to an agent: chosen in each worker, by round robin, or the least busy agent.
 
 ## Other Blocks
 
@@ -60,6 +61,7 @@ Every output a node shows must connect to another node or to End:
 - **One output per button, row or condition:** for choices and branches.
 - **No response:** when the node waits for a reply.
 - **Success**, **Non-2xx response** and **Request failed:** on new API nodes.
+- **Agent replied** and **No agent reply:** on Wait for agent reply.
 
 An unconnected output is an error, which you fix before saving. See [Build your first flow](building-a-flow.md).
 

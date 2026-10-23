@@ -5,11 +5,17 @@ description: "Answer customers, collect details and look up orders automatically
 # Workflows overview
 
 > [!NOTE]
-> Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
+> Workflows is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
 
 A flow is a set of connected steps that runs on its own. Something starts it, such as a customer's WhatsApp message or a new order in a connected app, and each step does one job: send a message, wait for a reply, check a condition, call another service, or assign the chat to an agent.
 
 At Rangoli Store, most evening messages ask the same thing: "Where is my order?" So the team built a flow. When John Smith messages at 11 PM, the flow replies with two buttons, **Track order** and **Talk to the team**. John taps **Track order**, the flow looks up the latest order and replies with its status. Customers who tap **Talk to the team** are assigned to an agent, who picks up the chat the next morning with the whole conversation in front of them.
+
+You find everything under **Workflows** in the sidebar, on three tabs:
+
+- **Flows:** build and publish the steps.
+- **Workers:** connect a published flow to your customers, by choosing which WhatsApp messages or events start it. See [Workers](workers.md).
+- **Saved data:** the tables your flows fill in. See [Saved data](saved-data.md).
 
 ## How a flow works
 
@@ -24,13 +30,13 @@ Trigger → Button message → Track order → API → Status message → End
 
 Placing a node on the canvas doesn't connect it. Connect every button, choice and response output, or customers who pick that option reach a dead end.
 
-To start a flow from incoming WhatsApp messages, publish it and switch it on with a [campaign](campaigns.md). A saved draft, or a practice flow in Learn flow builder, doesn't message real customers.
+To put a flow to work, publish it and create a [worker](workers.md) for it. A saved draft, a published flow without an active worker, or a practice flow in Learn flow builder doesn't message real customers.
 
 ## Get started
 
 - [Learn flow builder](learning-the-builder.md): practise on guided lessons with sample data.
 - [Build your first flow](building-a-flow.md): build, test and publish a flow step by step.
-- [Campaigns](campaigns.md): switch a published flow on for incoming messages.
+- [Workers](workers.md): run a published flow for incoming messages or events.
 
 ## Common tasks
 
@@ -43,6 +49,7 @@ To start a flow from incoming WhatsApp messages, publish it and switch it on wit
 - [Set conditions and choose paths](setting-conditions.md): route by an answer, an order value or a tag.
 - [Waiting for a reply](response-wait.md): capture and check what the customer types.
 - [Versions and publishing](versions-and-portability.md): review drafts and publish changes.
+- [Wait for agent reply](nodes/wait-for-agent-reply.md): make sure a person answers after a handover.
 
 Every step you can add is listed in the [Node reference](nodes.md).
 

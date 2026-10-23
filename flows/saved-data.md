@@ -4,9 +4,9 @@ description: "Collect answers from your flows in tables, such as survey replies,
 
 # Saved data
 
-> \[!NOTE] Flow builder is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
+> \[!NOTE] Workflows is in Beta. If you don't see it in the sidebar, contact FlowFlex support.
 
-**Automations** → **Saved data** holds the data tables your flows fill in. A flow adds a row each time it reaches a [Save data](nodes/save-data.md) node. Tables belong to the current branch.
+The **Saved data** tab under **Workflows** holds the data tables your flows fill in. A flow adds a row each time it reaches a [Save data](nodes/save-data.md) node. Tables belong to the current branch.
 
 At the end of its order-tracking flow, Rangoli Store asks customers to rate their order. The team creates a table called `diwali_reviews` with the columns `customer_number`, `rating` and `comment`. When Maria Garcia replies with a rating, the flow saves a row, and the team reads all the ratings in one place.
 
@@ -52,7 +52,7 @@ Click a table's name. The rows view shows:
 
 Click **Tables** to go back to the list.
 
-If the flow hasn't written anything yet, you see **No rows yet** with "Rows are written when a flow with a Save data node referencing this table executes." Check that the flow is published and its campaign is **Active**. See [Campaigns](campaigns.md).
+If the flow hasn't written anything yet, you see **No rows yet** with "Rows are written when a flow with a Save data node referencing this table executes." Check that the flow is published and its worker is **Active**. See [Workers](workers.md).
 
 ## Delete a table
 
@@ -75,5 +75,5 @@ See [Roles and permissions](../account/roles-and-permissions.md).
 ## See also
 
 * [Save data](nodes/save-data.md)
-* [Campaigns](campaigns.md)
+* [Workers](workers.md)
 * [Wait for and validate a reply](response-wait.md)

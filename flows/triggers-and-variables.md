@@ -10,27 +10,36 @@ Rangoli Store's order-tracking flow uses **WhatsApp Incoming Chat**, so it start
 
 ## Choose an event
 
-1. Open **Trigger** on the canvas.
-2. Choose the source: a connected app, Custom, WhatsApp, or FlowFlex.
-3. Select the event you want.
-4. Review the event's example information, then save the trigger.
-5. Connect Trigger's **Next step** to your first action.
+1. Open **Trigger** on the canvas. You can give it a **Node label** and a **Description**.
+2. Under **Start this flow from**, choose the source:
+   - **Apps:** events from connected apps like Shopify or Zoho.
+   - **Custom:** events your own systems send to FlowFlex. It appears once you have a [custom integration](../integrations/custom-integration.md).
+   - **WhatsApp:** messages and chats on your WhatsApp numbers.
+   - **FlowFlex:** events in your FlowFlex account.
+3. For **Apps** or **Custom**, choose the app or integration. Use **Search apps** or **Search integrations** to find it.
+4. Select the event from the list. Use **Search events** to find it.
+5. Review the event's example information, then save the trigger.
+6. Connect Trigger's **Next step** to your first action.
+
+If you save without picking an event, you see **Please select a topic**. Pick an event and save again.
 
 Pick an event that matches the job. An order event suits an order confirmation, and **WhatsApp Incoming Chat** suits a reply to a customer.
 
 ## WhatsApp Incoming Chat
 
-Select **WhatsApp Incoming Chat** from the event list. To reply to the customer, use **Trigger** → **from** as the **Destination number**. Use **Trigger** → **name** in a greeting, and **Trigger** → **text** to check what the customer wrote.
+Choose **WhatsApp**, then select **WhatsApp Incoming Chat** from **WhatsApp events**. To reply to the customer, use **Trigger** → **from** as the **Destination number**. Use **Trigger** → **name** in a greeting, and **Trigger** → **text** to check what the customer wrote.
 
-A real flow starts from incoming messages only once its channel is set and its [campaign](campaigns.md) is published. Practice in Learn flow builder uses sample data and doesn't start a campaign.
+A real flow starts from incoming messages only once it's published and an [active worker](workers.md) runs it on a WhatsApp number. Practice in Learn flow builder uses sample data and doesn't start a worker.
 
 ## Connected app events
 
-Choose the connected app and the event. What information you get depends on the event: an order event may include a customer object and an item list, while another event has a different structure.
+Choose **Apps**, then the connected app and the event, listed under the app's events, such as **Shopify events**. What information you get depends on the event: an order event may include a customer object and an item list, while another event has a different structure.
 
 Open [Insert Variable](using-variables.md) to see the fields the event really has, rather than copying paths from another event.
 
 ## Custom events and sample JSON
+
+Choose **Custom**, then your integration and the event. The panel shows the **Webhook URL for this integration**: the address to POST events to, the `x-event` header value, and a sample body, each with a copy button. Give these to whoever builds your system's side.
 
 For a custom event, give a sample of the data your system sends. Include every field you want the flow to use, such as name, phone, order number and items.
 
@@ -44,10 +53,11 @@ For a custom event, give a sample of the data your system sends. Include every f
 
 The sample only describes the fields. Each real event brings its own values. With this sample, choose **Trigger** → **customer** → **phone** for **Destination number**.
 
-To send custom events from your system, see [SDK setup](../sdk/overview.md) or [Send events](../api/events.md).
+To send custom events from your system, see [SDK setup](../sdk/overview.md) or [Send events](../api/events.md). To start a flow for each event, create a worker with **Custom integration**. See [Workers](workers.md).
 
 ## See also
 
 - [Select and insert variables](using-variables.md)
 - [Build your first flow](building-a-flow.md)
+- [Workers](workers.md)
 - [The flow does not start](../help/troubleshooting.md#why-doesnt-my-flow-start)
