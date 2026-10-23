@@ -42,6 +42,10 @@ Set the start time a few minutes ahead. It can't be in the past.
 
 Complete Meta Business Verification, keep quality High, and keep reaching more unique recipients. See [Grow the Portfolio limit](../whatsapp/connect-channel.md#grow-the-portfolio-limit).
 
+### How do I follow up with people who clicked?
+
+Open the broadcast from **Broadcasts**, go to the **Recipients** tab, choose **Clicked a link** and click **Send follow-up**. FlowFlex creates a draft broadcast for those people; you choose the template and schedule before anything is sent. See [Follow up on a broadcast](results-and-errors.md#follow-up-on-a-broadcast).
+
 ### Do replies come into FlowFlex?
 
 Yes, in **Messaging** → **Conversations**. For 24 hours after a customer replies, your team can answer with free-form messages.

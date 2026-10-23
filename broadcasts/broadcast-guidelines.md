@@ -126,11 +126,11 @@ Meta's own advice is short: make each message personal and useful, avoid open-en
 
 ## Watch, learn and recover
 
-**Watch the first hour.** Open the broadcast after it starts and look at **Broadcast Insights** and **Error Messages**. If failures climb, or the channel or template quality drops, click **Pause**, find the cause, and only then **Resume**.
+**Watch the first hour.** Open the broadcast after it starts and look at the **Overview** tab, especially **Failed messages**. If failures climb, or the channel or template quality drops, choose **Actions** → **Pause**, find the cause, and only then **Resume**.
 
-**Read the results the next day.** Delivered, read, clicked and replied tell you what worked. A high read rate with few clicks means the message landed but the offer didn't. A low read rate means the audience or the timing was off.
+**Read the results the next day.** Delivered, read, replied and link taps tell you what worked, and the **Overview** tab compares each rate with your average. A high read rate with few clicks means the message landed but the offer didn't. A low read rate means the audience or the timing was off.
 
-**Follow up with the people who cared.** Build a segment from the last broadcast, for example everyone who **Clicked**, and send them a reminder a few days later. Sending more to people who engage, and less to people who don't, raises your quality for everyone.
+**Follow up with the people who cared.** In the broadcast's **Recipients** tab, choose a group such as **Clicked a link** and click **Send follow-up** to create a draft for just those people, then send them a reminder a few days later. You can also build a [segment](../audience/segments.md#broadcast-activity) from the broadcast, for example everyone who **Clicked**. Sending more to people who engage, and less to people who don't, raises your quality for everyone.
 
 **Clean your list as you go.** **Message undeliverable** usually means the number isn't on WhatsApp. Fix or remove those contacts before the next send, and keep numbers in international format, such as `+919876543210`.
 
