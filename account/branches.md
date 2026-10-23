@@ -10,7 +10,7 @@ Each branch has its own:
 
 * WhatsApp channels, and the templates of each channel's WhatsApp Business Account
 * broadcasts
-* flows and campaigns
+* flows and workers
 * audience: contacts, lists, segments, custom fields, imports and exports
 * tags
 * conversations and custom chat folders
