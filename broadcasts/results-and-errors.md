@@ -25,7 +25,7 @@ Each row shows the broadcast's **Status**, **Scheduled Date**, and its **Recipie
 
 Click a **Draft** to keep editing it in the create wizard. Click any other broadcast to open its report.
 
-<img src="assets/broadcasts/broadcast-list.png" alt="Broadcasts page with sent, delivered, read, failed and click rate cards above a table of three broadcasts: active, completed and draft">
+<figure><img src="../.gitbook/assets/broadcast-list.png" alt="Broadcasts page with sent, delivered, read, failed and click rate cards above a table of three broadcasts: active, completed and draft"><figcaption><p>The Broadcasts list with delivery, read and click stats</p></figcaption></figure>
 
 ## Statuses
 
@@ -63,8 +63,8 @@ Below the header are three tabs: **Overview**, **Recipients** and **Activity**.
    * **N people haven't opened it yet:** **Try another time**.
    * **N people tapped a link:** **Follow up**.
 
-   Each of these creates a follow-up draft (see [Follow up on a broadcast](broadcasts/results-and-errors.md?id=follow-up-on-a-broadcast)). If there's nothing to suggest, the card says **Nothing needs your attention.**
-7. **Check Failed messages.** Failures are grouped by reason, such as **Limited by Meta**, **Not on WhatsApp**, **Template problem**, **Opted out**, **Sending too fast** and **Other reasons**, each with a suggested fix and **See who**. [Common errors](broadcasts/results-and-errors.md?id=common-errors) explains each reason in detail. Failed messages aren't charged.
+   Each of these creates a follow-up draft (see [Follow up on a broadcast](results-and-errors.md#follow-up-on-a-broadcast)). If there's nothing to suggest, the card says **Nothing needs your attention.**
+7. **Check Failed messages.** Failures are grouped by reason, such as **Limited by Meta**, **Not on WhatsApp**, **Template problem**, **Opted out**, **Sending too fast** and **Other reasons**, each with a suggested fix and **See who**. [Common errors](results-and-errors.md#common-errors) explains each reason in detail. Failed messages aren't charged.
 
 The **Message** panel beside the tabs shows the message as customers see it, with the number of taps next to each link button. Below it are the broadcast's settings: **Channel**, **Template**, **Schedule**, **Audience** (including how many contacts were excluded) and **Sending limit**.
 
@@ -86,13 +86,13 @@ A follow-up is a new draft broadcast for one group of recipients, such as everyo
 1. In the **Recipients** tab, choose a group and click **Send follow-up**. You can also use an action under **What to do next** on the **Overview** tab.
 2. FlowFlex asks **Send a follow-up to "{group}"?** and shows how many people will get it. For the **Failed** group, if Meta limited delivery, wait at least 24 hours before sending, or use a Utility template.
 3. Click **Create draft**. The create wizard opens with a draft named after the original broadcast and the group, such as "Diwali sale – repeat buyers – Oct 2026 – follow-up (Clicked a link)". It uses the same channel and time zone, with the group as its audience.
-4. Choose the template and the schedule, then publish as usual. See [Send a broadcast](broadcasts/send-broadcast.md).
+4. Choose the template and the schedule, then publish as usual. See [Send a broadcast](send-broadcast.md).
 
 If the group is empty, FlowFlex shows **No contacts in this group to follow up with**.
 
 Jordan creates a follow-up for **Clicked a link** and schedules a reminder for three days later, so only customers who showed interest hear from Rangoli Store again.
 
-You can also build a [segment](audience/segments.md?id=broadcast-activity) with the **Broadcast** field and **Sent**, **Delivered**, **Read**, **Failed**, **Replied** or **Clicked**. A segment is useful when you want to combine broadcast activity with other conditions, or use the same group again later.
+You can also build a [segment](../audience/segments.md#broadcast-activity) with the **Broadcast** field and **Sent**, **Delivered**, **Read**, **Failed**, **Replied** or **Clicked**. A segment is useful when you want to combine broadcast activity with other conditions, or use the same group again later.
 
 ## Check the Activity tab
 
@@ -122,7 +122,7 @@ FlowFlex pauses a broadcast when continuing could harm your number or would fail
 * **Broadcast paused: Template quality low:** Meta rated the template as low quality. Edit the template and submit it for review again. You can resume once Meta approves it and its quality is no longer low.
 * **Broadcast paused: Template unavailable:** the template can't be sent right now, for example because it's no longer Approved. You can resume once it's Approved again.
 * **Broadcast paused: Template disabled:** Meta disabled the template. A disabled template can't be used again, so stop the broadcast and create a new one with a different template.
-* **Broadcast paused: Channel quality issue:** your number's quality rating dropped too low. You can resume once the quality recovers. See [Channel quality](broadcasts/broadcast-guidelines.md?id=channel-quality).
+* **Broadcast paused: Channel quality issue:** your number's quality rating dropped too low. You can resume once the quality recovers. See [Channel quality](broadcast-guidelines.md#channel-quality).
 * **Broadcast paused: WhatsApp number unavailable:** the number is blocked, disconnected or restricted. Check its status in WhatsApp Manager. You can resume once the number is available again.
 * **Broadcast paused: reupload media:** WhatsApp rejected the media during send. Click **Replace media**, upload a new file, send a test message if you like, then publish again.
 * **Broadcast paused by system:** FlowFlex paused the broadcast for another reason. Only **Stop** is available.
@@ -152,7 +152,7 @@ Each failed message has a reason. The **Failed messages** card and the **Failed*
 
 ## See also
 
-* [Send a broadcast](broadcasts/send-broadcast.md)
-* [Broadcast guidelines](broadcasts/broadcast-guidelines.md)
-* [Segments](audience/segments.md)
-* [Pre-send checklist](broadcasts/checklist-faq.md)
+* [Send a broadcast](send-broadcast.md)
+* [Broadcast guidelines](broadcast-guidelines.md)
+* [Segments](../audience/segments.md)
+* [Pre-send checklist](checklist-faq.md)
