@@ -96,5 +96,6 @@
 
 ## Help
 
+* [AI Assistant](help/ai-assistant.md)
 * [Troubleshooting](help/troubleshooting.md)
 * [Meta policies](help/meta-policies.md)
