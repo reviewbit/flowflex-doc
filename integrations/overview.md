@@ -24,6 +24,8 @@ Rangoli Store takes orders on its own website. The team creates a custom integra
 * **Your custom integrations** lists the integrations you've created, with the number of connections.
 * **App directory** lists ready-made apps. Apps marked **Not available yet** can't be connected yet.
 
+<figure><img src="../.gitbook/assets/integrations-page.png" alt="Integrations page with the Rangoli Order Events custom integration and an App directory with apps such as Google Sheets, NocoDB and Zoho"><figcaption><p>The Integrations page</p></figcaption></figure>
+
 ## What you can connect
 
 * **Custom integrations:** start flows from any system, such as your website, order system or CRM, through a webhook or the FlowFlex SDK. Each integration has its own API key and secret. See [Set up a custom integration](custom-integration.md).

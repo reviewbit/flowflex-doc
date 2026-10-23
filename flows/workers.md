@@ -65,6 +65,8 @@ Check the summary, then activate the worker. It becomes **Active** and starts re
 
 The **Workers** tab lists every worker with its **Worker**, **Flow**, **Status** and **Active dates**. Use **Search by worker name** to find one, and the **All statuses** filter to show one status.
 
+<figure><img src="../.gitbook/assets/workers-list.png" alt="Workers list with four workers, the flow each one runs, their active dates and status: two Active, one Paused and one Draft, with Pause, Resume and Finish setup actions"><figcaption><p>The Workers tab</p></figcaption></figure>
+
 Each worker's **Actions** include:
 
 - **Activate worker:** switch on a worker that isn't active yet.

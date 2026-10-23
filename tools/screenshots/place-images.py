@@ -22,8 +22,8 @@ SHOTS = {  # name: (caption shown under the image, alt text describing the scree
         "FlowFlex home page with the main sidebar, wallet balance and user in the top bar, a get-started banner and a setup checklist at 75%",
     ),
     "whatsapp/channels-list": (
-        "Channel Management with the connected Rangoli Store number",
-        "Channel Management table showing the Rangoli Store WhatsApp number as Connected, with its WABA ID, Available health and a 2K portfolio limit",
+        "Channels with the connected Rangoli Store number",
+        "Channels table showing the Rangoli Store WhatsApp number as Connected, with its WABA ID, Available health and a 2K portfolio limit",
     ),
     "whatsapp/template-select-channel": (
         "Create template, step 1: selecting the Rangoli Store channel",
@@ -34,8 +34,8 @@ SHOTS = {  # name: (caption shown under the image, alt text describing the scree
         "Edit template step with the name diwali_sale_2026_en, English language, Standard format and the sale message body, beside a live WhatsApp preview",
     ),
     "whatsapp/templates-list": (
-        "Template Management listing the approved demo templates",
-        "Template Management table with two approved English templates on the Rangoli Store channel: diwali_sale_2026_en (Marketing) and order_shipped_v1 (Utility)",
+        "Templates list with the approved demo templates",
+        "Templates list with two approved English templates on the Rangoli Store channel: diwali_sale_2026_en (Marketing) and order_shipped_v1 (Utility)",
     ),
     "audience/overview-tabs": (
         "The Audience page with its six tabs and overview cards",
@@ -85,6 +85,14 @@ SHOTS = {  # name: (caption shown under the image, alt text describing the scree
         "The Publish broadcast confirmation with a test message",
         "Publish broadcast confirmation dialog with a Send a test message button, over the broadcast summary",
     ),
+    "broadcasts/report-overview": (
+        "A broadcast report, Overview tab",
+        "Overview of the Diwali Sale broadcast: 1,311 of 1,878 people read it, read, reply and link tap rates, sent, delivered, read, replied, tapped and failed counts, a sending schedule with two daily batches, an hourly engagement chart, next steps, failure reasons and the message with its link taps",
+    ),
+    "broadcasts/report-recipients": (
+        "A broadcast report, Recipients tab",
+        "Recipients tab of the Diwali Sale broadcast with the recipient groups on the left, the Failed group selected with 38 people, its two failure reasons with what to do, Download and Send follow-up buttons, and the people table",
+    ),
     "messaging/conversations-inbox": (
         "The Conversations inbox",
         "Conversations inbox listing six customer chats with their status, channel and assigned agent, with no chat open",
@@ -105,17 +113,25 @@ SHOTS = {  # name: (caption shown under the image, alt text describing the scree
         "The Quick Reply table",
         "Quick Reply table with the hours, track and returns short codes and the reply text for each",
     ),
-    "flows/campaigns-list": (
-        "The Auto Campaign list",
-        "Auto Campaign list with four flow campaigns: two active, one paused and one draft",
+    "flows/flows-list": (
+        "The Flows tab with the demo flows",
+        "Workflows page on the Flows tab with six flow cards: published flows triggered by WhatsApp Incoming Chat, Order shipped and Order placed, and two drafts, each with Create worker and Open buttons",
+    ),
+    "flows/workers-list": (
+        "The Workers tab",
+        "Workers list with four workers, the flow each one runs, their active dates and status: two Active, one Paused and one Draft, with Pause, Resume and Finish setup actions",
     ),
     "flows/saved-data-tables": (
         "Saved data tables",
         "Saved data with two tables, Store visit requests and Feedback after delivery, and the columns each one collects",
     ),
+    "help/ai-assistant": (
+        "The AI Assistant panel",
+        "AI Assistant panel open over the Broadcasts page, greeting Alex with How can I help today?, three popular questions, step-by-step guides and a message box",
+    ),
     "integrations/integrations-page": (
         "The Integrations page",
-        "Integrations page with the Custom integrations card, the Rangoli Order Events integration and apps such as Google Sheet, NocoDB, Zoho and LeadSquared",
+        "Integrations page with the Rangoli Order Events custom integration and an App directory with apps such as Google Sheets, NocoDB and Zoho",
     ),
     "integrations/custom-integration-events": (
         "Adding events to a custom integration",
@@ -131,19 +147,19 @@ SHOTS = {  # name: (caption shown under the image, alt text describing the scree
     ),
     "account/account-settings": (
         "Organisation and personal settings",
-        "Account Settings with Rangoli Store's organisation name, website, India time zone, INR currency and admin notify email",
+        "Account settings with Rangoli Store's organisation name, website, India time zone, INR currency and admin notify email",
     ),
     "account/branches": (
         "Settings, Branches",
         "Branches table with the active Kochi and Bengaluru branches and their locations",
     ),
     "account/team-members": (
-        "Teams, All Users",
-        "Team Members list with Alex Lee and Chris Taylor as Admins and Jordan Brown as Channel Manager, with phone, status and last active time",
+        "Team page, Members tab",
+        "Team page, Members tab, with Alex Lee and Chris Taylor as Admins and Jordan Brown as Channel Manager, with phone, status and last active time",
     ),
     "account/invite-user": (
         "Inviting taylor@rangoli.example as a Support agent with access to the Kochi branch",
-        "Invite user form for taylor@rangoli.example with the Support agent role, the Kochi branch and access to current and future channels",
+        "Invite member page for taylor@rangoli.example with the Support agent role, the Kochi branch and access to current and future channels",
     ),
     "account/create-role": (
         "Creating the Support agent role",

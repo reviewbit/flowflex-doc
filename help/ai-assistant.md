@@ -14,6 +14,8 @@ The morning after Rangoli Store's Diwali sale, Jordan Brown, the marketing manag
 
 Open the panel in any of these ways:
 
+<figure><img src="../.gitbook/assets/ai-assistant.png" alt="AI Assistant panel open over the Broadcasts page, greeting Alex with How can I help today?, three popular questions, step-by-step guides and a message box"><figcaption><p>The AI Assistant panel</p></figcaption></figure>
+
 * **AI Assistant button:** click the round button with a robot logo in the bottom-right corner of the page. On the Conversations pages, a smaller button sits near the top right.
 * **Teaser:** when **Need a hand? Ask how to send a broadcast, fix a rejected template and more.** pops up next to the button, click it.
 * **Contact support:** click your name in the top bar, then **Contact support** under **Help**.

@@ -23,6 +23,8 @@ A practice lesson in Learn flow builder doesn't create or switch on a real flow.
 
 The **Flows** tab shows each flow as a card with its trigger, name, status (**Published** or **Draft**), description and when it was last updated. Use **Search by flow name** to find a flow, and **Refresh** to reload the list.
 
+<figure><img src="../.gitbook/assets/flows-list.png" alt="Workflows page on the Flows tab with six flow cards: published flows triggered by WhatsApp Incoming Chat, Order shipped and Order placed, and two drafts, each with Create worker and Open buttons"><figcaption><p>The Flows tab with the demo flows</p></figcaption></figure>
+
 - **Open:** open the flow in the builder.
 - **Create worker:** put the flow to work. Only published flows show this button.
 - **⋯** menu: **Edit details** to change the name or description, **Duplicate** to copy the flow, or **Delete**.

@@ -63,6 +63,8 @@ Below the header are three tabs: **Overview**, **Recipients** and **Activity**.
    * **N people haven't opened it yet:** **Try another time**.
    * **N people tapped a link:** **Follow up**.
 
+<figure><img src="../.gitbook/assets/report-overview.png" alt="Overview of the Diwali Sale broadcast: 1,311 of 1,878 people read it, read, reply and link tap rates, sent, delivered, read, replied, tapped and failed counts, a sending schedule with two daily batches, an hourly engagement chart, next steps, failure reasons and the message with its link taps"><figcaption><p>A broadcast report, Overview tab</p></figcaption></figure>
+
    Each of these creates a follow-up draft (see [Follow up on a broadcast](results-and-errors.md#follow-up-on-a-broadcast)). If there's nothing to suggest, the card says **Nothing needs your attention.**
 7. **Check Failed messages.** Failures are grouped by reason, such as **Limited by Meta**, **Not on WhatsApp**, **Template problem**, **Opted out**, **Sending too fast** and **Other reasons**, each with a suggested fix and **See who**. [Common errors](results-and-errors.md#common-errors) explains each reason in detail. Failed messages aren't charged.
 
@@ -73,6 +75,8 @@ Jordan sees "820 of 1,000 people read your message", a read rate above the usual
 ## See who got the message
 
 The **Recipients** tab lists the people behind each number. Choose a group: **Sent**, **Delivered**, **Read**, **Read, no reply**, **Delivered, not read**, **Replied**, **Clicked a link** or **Failed**.
+
+<figure><img src="../.gitbook/assets/report-recipients.png" alt="Recipients tab of the Diwali Sale broadcast with the recipient groups on the left, the Failed group selected with 38 people, its two failure reasons with what to do, Download and Send follow-up buttons, and the people table"><figcaption><p>A broadcast report, Recipients tab</p></figcaption></figure>
 
 Each group shows how many people are in it, what it means, and a tip. The **Failed** group also lists the reasons, with **What to do:** for each one. The table shows each contact's **Name**, **Number**, **Status** and **Last update**; use **Search name or number** to find someone.
 

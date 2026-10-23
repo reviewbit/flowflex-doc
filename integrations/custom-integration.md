@@ -18,6 +18,8 @@ Rangoli Store creates an integration called `Rangoli Order Events` with an `orde
 4. Optional: on the **Options** tab, choose where FlowFlex reads the secret, the event name and the idempotency key. Keep the defaults if the sending system can set custom headers. See [Inbound request](custom-integration.md#inbound-request).
 5. Click **Create integration**. FlowFlex shows your webhook URL and credentials. See [Your integration is live](custom-integration.md#your-integration-is-live).
 
+<figure><img src="../.gitbook/assets/custom-integration-events.png" alt="Create custom integration form for Rangoli Order Events with an order.placed event, beside the webhook URL, headers and a sample curl request"><figcaption><p>Adding events to a custom integration</p></figcaption></figure>
+
 Click **Cancel** or **Back to integrations** to leave without creating anything.
 
 ### Details
@@ -163,6 +165,8 @@ From then on, each matching event starts the flow with the event's data.
 ## Manage an integration
 
 On the **Integrations** page, click **Manage connection** on the integration's card. The page shows:
+
+<figure><img src="../.gitbook/assets/custom-integration-live.png" alt="Rangoli Order Events integration with its order.placed and order.shipped events and sample payloads, and the API key in the credentials panel"><figcaption><p>A live custom integration with its webhook details</p></figcaption></figure>
 
 * The name, description and logo.
 * An **Events** tab and an **Options** tab, with a summary of the settings.

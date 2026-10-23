@@ -90,7 +90,7 @@ curl -s -X POST "https://api.flowflex.ai/v1/events/ic_abc123" \
 - **Upload URL:** valid for 2 hours.
 - **File:** kept for 48 hours, then deleted.
 
-Because files expire after 48 hours, upload and send the event close together, and upload a fresh file for each send. Don't store an `assetId` to reuse later. Sending an event with an expired asset returns `ASSET_FILE_MISSING`. See [File lifetime and cleanup](../sdk/files.md#file-lifetime-and-cleanup).
+Because files expire after 48 hours, upload and send the event close together, and upload a fresh file for each send. Don't store an `assetId` to reuse later. If the file has expired, the event is still accepted, but the flow can't attach the file when it sends the message. See [File lifetime and cleanup](../sdk/files.md#file-lifetime-and-cleanup).
 
 ## See also
 
