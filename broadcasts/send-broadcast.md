@@ -6,11 +6,11 @@ description: "Create a broadcast, schedule it, test it on your own phone, and pu
 
 In this guide, Rangoli Store sends its approved Diwali template to repeat buyers. It starts on 20 October at 10:00 AM, greets each person by name, and keeps sending until the sale ends a week later.
 
-Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Details & message** → **Schedule & audience** → **Review & publish**. You can **Save as draft** at any step.
+Go to **Broadcasts** and click **Create broadcast**. The wizard has three steps: **Details & message** → **Schedule & audience** → **Review & publish**. You can **Save as draft** at any step.
 
 ## 1. Details & message
 
-<figure><img src="../.gitbook/assets/create-details.png" alt="Create broadcast step 1 with the broadcast name, the Rangoli Store channel and the diwali_sale_2026_en template, beside a live WhatsApp preview"><figcaption><p>Create broadcast, step 1: Details &amp; message</p></figcaption></figure>
+<img src="assets/broadcasts/create-details.png" alt="Create broadcast step 1 with the broadcast name, the Rangoli Store channel and the diwali_sale_2026_en template, beside a live WhatsApp preview">
 
 1. **Broadcast name**: an internal name, such as `Diwali sale – repeat buyers – Oct 2026`.
 2. **Select channel**: Connected channels only.
@@ -23,7 +23,7 @@ Go to **Broadcast** → **Create Broadcast**. The wizard has three steps: **Deta
 
 ## 2. Schedule & audience
 
-<figure><img src="../.gitbook/assets/create-schedule.png" alt="Create broadcast step 2 with start and end dates, a daily send count of 1,000 and the Repeat buyers – Oct 2026 list as the audience"><figcaption><p>Create broadcast, step 2: Schedule &amp; audience</p></figcaption></figure>
+<img src="assets/broadcasts/create-schedule.png" alt="Create broadcast step 2 with start and end dates, a daily send count of 1,000 and the Repeat buyers – Oct 2026 list as the audience">
 
 Now decide **when** it goes out and **who** gets it.
 
@@ -41,11 +41,11 @@ For **Marketing** templates, contacts who opted out of WhatsApp marketing are ex
 
 ## 3. Review & publish
 
-<figure><img src="../.gitbook/assets/publish-modal.png" alt="Publish broadcast confirmation dialog with a Send a test message button, over the broadcast summary"><figcaption><p>The Publish broadcast confirmation with a test message</p></figcaption></figure>
+<img src="assets/broadcasts/publish-modal.png" alt="Publish broadcast confirmation dialog with a Send a test message button, over the broadcast summary">
 
 1. Check the **Broadcast summary**.
-2. Click **Publish broadcast**. The confirmation shows the number of eligible contacts, the batch size, and the date range.
-3. **Send a test first.** Tick **Send a test message**, enter your own number with the country code, and check the message on your phone: variables, fallbacks, media, buttons, and links.
+2. Click **Publish broadcast**. The confirmation shows the number of eligible contacts, the daily batch size, and the date range, and warns you if part of the audience won't fit in the schedule.
+3. **Send a test first.** Click **Send a test message**, enter your own number with the country code in **Test recipient**, and click **Send**. FlowFlex confirms **Test message sent**. Check the message on your phone: variables, fallbacks, media, buttons, and links.
 4. Click **Yes, publish**.
 
 Publishing is blocked if:
@@ -57,14 +57,15 @@ Publishing is blocked if:
 
 ## Cost
 
-Each delivered message is paid from your wallet in message credits. Your rates are on the **WhatsApp message charges** page in **Billing**; see [Billing and wallet](../account/billing-and-wallet.md).
+Each delivered message is paid from your wallet in message credits. Your rates are on the **WhatsApp message charges** page in **Billing**; see [Billing and wallet](account/billing-and-wallet.md).
 
 ## What your customers see
 
-At 10:00 AM on 20 October, John Smith's phone lights up with "Hi John, the Rangoli Store Diwali Sale is live…", along with **Shop now**, an offer code to copy, and an opt-out button. A customer whose name you don't have sees "Hi there" instead. By the next morning, the broadcast shows who read it and who tapped **Shop now**.
+At 10:00 AM on 20 October, John Smith's phone lights up with "Hi John, the Rangoli Store Diwali Sale is live…", along with **Shop now**, an offer code to copy, and an opt-out button. A customer whose name you don't have sees "Hi there" instead. By the next morning, the broadcast's report shows who read it and who tapped **Shop now**, and the team can send a follow-up to just those people.
 
 ## See also
 
-* [Results and errors](results-and-errors.md): what each number and error means.
-* [Segments](../audience/segments.md): follow up with everyone who **Clicked** or **Read** this broadcast.
-* [Broadcast guidelines](broadcast-guidelines.md): keep your number healthy as you send more.
+* [Results and errors](broadcasts/results-and-errors.md): what each number and error means.
+* [Follow up on a broadcast](broadcasts/results-and-errors.md?id=follow-up-on-a-broadcast): send a follow-up to everyone who read, replied or tapped a link.
+* [Segments](audience/segments.md): build a segment of everyone who **Clicked** or **Read** this broadcast.
+* [Broadcast guidelines](broadcasts/broadcast-guidelines.md): keep your number healthy as you send more.
