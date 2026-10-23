@@ -8,7 +8,7 @@ A role is a named set of permissions. Every team member gets one role, and the b
 
 At Rangoli Store, Chris Taylor answers chats and doesn't need to see broadcasts or billing. Alex Lee creates a **Support agent** role with just the chat and contact permissions, and gives it to Chris.
 
-Go to **Settings** → **Teams** → **Roles** to create and manage roles.
+Go to **Settings** → **Teams** and open the **Roles** tab to create and manage roles.
 
 ## The Admin role
 
@@ -20,14 +20,14 @@ Admin is a default role: **Default roles cannot be edited** and **Default roles 
 
 <figure><img src="../.gitbook/assets/create-role.png" alt="Create new role form for Support agent with its description and the permission list, set to selected permissions only"><figcaption><p>Creating the Support agent role</p></figcaption></figure>
 
-1. Click **Create New Role**.
+1. Click **Create role**. The **Create new role** page opens.
 2. Enter a **Role name**, such as `Support agent`. Up to 30 characters.
 3. Optional: enter a **Description**, such as `Answers customer chats`. Up to 200 characters.
-4. Choose a permission mode. See [Permission modes](roles-and-permissions.md#permission-modes).
+4. Under **Permission scope**, choose a mode. See [Permission modes](roles-and-permissions.md#permission-modes).
 5. For **Selected permissions only**, open each group and turn on the permissions you need. Use **Search permissions** to find one. A group's switch turns on all its permissions.
-6. Click **Create role**.
+6. Click **Create role**. You see **Role created successfully**.
 
-The left panel shows **N of M enabled** and a count for each group. If nothing is selected, you see **Please select at least one permission.**
+The **Permissions** panel shows **N of M enabled** and a count for each group, and each permission has a short description. If nothing is selected, you see **Please select at least one permission.**
 
 ### Permission modes
 
@@ -35,15 +35,17 @@ The left panel shows **N of M enabled** and a count for each group. If nothing i
 * **All current permissions:** every permission that exists today. Permissions added later aren't included.
 * **Current and future permissions:** every permission today and any added later.
 
+In the two "all" modes the permission switches are turned on and locked, with a note explaining what the role includes.
+
 > \[!NOTE] **Current and future permissions** gives the role everything, including any permission FlowFlex adds later, the same as Admin. Billing, Plans, Teams and Branches are included. Pick **All current permissions** if new features shouldn't be granted automatically.
 
 ## Copy, edit or delete a role
 
-The roles list shows each role's **Name**, **Created Date**, **Last updated** and **Permissions**. Use **Search by name** to find one.
+The roles list shows each role's **Name**, **Created Date**, **Last updated** and **Permissions** (the first two, then **+N more**, or **No Permissions**). Use **Search roles** to find one.
 
-* **Copy:** click **Copy role**. **Copy role** opens with the name `Copy of …`. Click **Create copy**.
-* **Edit:** click **Edit role**, make your changes, and click **Update role**. Changes apply to everyone with the role.
-* **Delete:** click **Delete role**, then **Yes**. Default roles can't be deleted.
+* **Copy:** click **Copy role**. **Copy role** opens with the name `Copy of …`. Click **Create copy**. You see **Role copied successfully**.
+* **Edit:** click **Edit role**, make your changes, and click **Update role**. You see **Role updated successfully**. Changes apply to everyone with the role.
+* **Delete:** click **Delete role**. **Delete Role** asks you to confirm; click **Yes**. Default roles can't be deleted.
 
 ## Permissions
 
@@ -68,7 +70,6 @@ Permissions are grouped as they appear on the role screen.
 | Branch       | **Branch view**             | View branches                                                             |
 |              | **Branch create**           | Create branches                                                           |
 |              | **Branch edit**             | Edit branches                                                             |
-|              | **Branch delete**           | Delete branches                                                           |
 | Channel      | **Channel view**            | Open **Channels**                                                         |
 |              | **Channel create**          | Connect a new channel                                                     |
 |              | **Channel edit**            | Change channel settings                                                   |

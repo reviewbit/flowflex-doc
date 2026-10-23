@@ -23,7 +23,7 @@ Have these ready:
 
 ## Connect the number
 
-1. Go to **Channels** → **Add New Channel**. During onboarding, the Home page shows **Continue with Facebook** instead.
+1. Go to **Channels** and click **Connect channel**. During onboarding, the Home page shows **Continue with Facebook** instead.
 2. If you see **Channel limit reached**, your plan has no free channel. Add an extra channel under **Settings** → **Plans** → **Configure Add-ons**, or upgrade your plan. See [Plans and add-ons](../account/plans-and-add-ons.md).
 3. In the Meta popup, pick or create the Business portfolio and the WhatsApp Business Account. Add the number and verify it with the code Meta sends. You have up to 15 minutes to finish. After that you see **WhatsApp signup timed out. Please restart connection.**: start again from step 1.
 4. Wait for **WhatsApp number configured successfully**. If you see **Finalizing channel setup**, registration is still running. Click **Refresh status** after a minute.
@@ -31,7 +31,7 @@ Have these ready:
 
 ## Check the channel
 
-<figure><img src="../.gitbook/assets/channels-list.png" alt="Channel Management table showing the Rangoli Store WhatsApp number as Connected, with its WABA ID, Available health and a 2K portfolio limit"><figcaption><p>Channel Management with the connected Rangoli Store number</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/channels-list.png" alt="Channels table showing the Rangoli Store WhatsApp number as Connected, with its WABA ID, Available health and a 2K portfolio limit"><figcaption><p>Channels table with the connected Rangoli Store number</p></figcaption></figure>
 
 The Channels table shows the state of each number:
 

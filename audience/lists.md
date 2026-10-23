@@ -12,7 +12,7 @@ Go to **Audience** → **List** to create, merge and manage lists. The table sho
 
 ## Create a list
 
-1. Click **Create new**.
+1. Click **Create list**. The **Add New List** dialog opens.
 2. Enter a **Title**, such as `Repeat buyers – Oct 2026`.
 3. Click **Create list**. The new, empty list appears in the table.
 
