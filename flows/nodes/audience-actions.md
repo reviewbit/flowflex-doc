@@ -43,7 +43,7 @@ Add a private note to the customer's conversation. Your team sees it in the inbo
 
 1. Add **Add Note** and open it.
 2. Set **Contact number**.
-3. Write the **Note**. You can insert variables, such as the customer's answer or an order number.
+3. Write the **Note**. You can insert variables, such as the customer's answer or an order number, and add emoji with the **Emoji** button.
 4. Click **Submit**, then connect **Next step**, for example to **Assign agent**.
 
 The note needs an existing conversation with the customer. Use it in flows that reply to a customer's message.
@@ -57,13 +57,20 @@ Hand the conversation to a person on your team. The chat appears in that agent's
 1. Add **Assign agent** and open it.
 2. Set **Contact number**.
 3. In **Assign to**, choose how to pick the agent:
-   - **A specific agent:** always assign one person, such as Chris Taylor. Select them in **Agent**.
-   - **Round robin (next agent in rotation):** share chats across the branch's agents in turn.
+   - **Choose in each worker:** each [worker](../workers.md) that runs this flow picks who this step assigns to. Enter a **Name for this choice**, such as `Sales team`. Workers see this name when they answer **Who these steps assign to**.
+   - **Round robin (next agent in the branch):** share chats across the branch's agents in turn.
    - **Least busy (fewest open chats):** assign the agent with the fewest open chats.
-4. Select **Don't reassign if this chat already has an agent** to keep returning customers with the agent who already knows them.
-5. Click **Submit**, then connect **Next step**, usually to **End**.
+4. Select **Don't reassign if already assigned** to keep a returning customer with the agent who already has their chat, or who owns them in Audience when there's no chat yet.
+5. Leave **Also assign the audience owner** ticked to make the agent the contact's owner in Audience too. Untick it to assign the chat only.
+6. Click **Submit**, then connect **Next step**, usually to **End**.
 
-Only active agents with access to the branch are listed. If a customer's current agent has left the branch, the option you chose in **Assign to** picks a new one. The chat stays with the assigned agent until someone reassigns it in the inbox.
+Only active agents with access to the branch are picked. If the customer's current agent has left the branch, the option you chose in **Assign to** picks a new one. The chat stays with the assigned agent until someone reassigns it in the inbox.
+
+If the contact has no chat yet, for example a lead from an integration, only the audience owner is set. The agent sees the contact's chats once they start.
+
+Older flows may show **A specific agent (older setting)**. New Assign agent steps use the options above.
+
+To make sure someone actually answers, follow Assign agent with [Wait for agent reply](wait-for-agent-reply.md).
 
 The flow doesn't stop at the handover. Connect **Next step** to **End** if nothing else should happen.
 

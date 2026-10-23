@@ -12,7 +12,7 @@ Use a text message to reply during an open conversation, such as a greeting or a
 
 1. Add **Text message** from **WhatsApp Blocks** and open it. Give it a **Node label**, such as `Welcome`.
 2. In **Destination number**, insert the customer's number. For a flow started by an incoming WhatsApp message, use **Trigger** → **from**. The number must include the country code.
-3. In **Text message**, write the message and insert variables where needed. Rangoli Store types `Hi `, inserts **Trigger** → **name**, and adds `, thanks for messaging Rangoli Store.` The message can be up to 4,096 characters, including inserted values.
+3. In **Text message**, write the message and insert variables where needed. Rangoli Store types `Hi `, inserts **Trigger** → **name**, and adds `, thanks for messaging Rangoli Store.` The message can be up to 4,096 characters, including inserted values. To add an emoji, click **Emoji** in the editor's toolbar.
 4. Optionally, add an **Internal description** under **More message options** to explain the step to your team.
 5. Check the **Live WhatsApp preview** and click **Save changes**.
 

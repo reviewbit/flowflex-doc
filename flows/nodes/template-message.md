@@ -14,7 +14,7 @@ Create the template in **Templates** and wait for approval first. See [Create a 
 
 1. Add **Template message** from **WhatsApp Blocks** and open it. Give it a **Node label**, such as `Shipping update`.
 2. In **Destination number**, insert the customer's phone field from the trigger. For a reply to an incoming WhatsApp message, use **Trigger** → **from**.
-3. Under **Choose a template**, search for the template and select it, such as `order_shipped_v1` under **Utility**. Only approved templates for this flow's WhatsApp number are listed, under **Marketing**, **Utility** and **Authentication**.
+3. Under **Choose a template**, search for the template and select it, such as `order_shipped_v1` under **Utility**. Only approved templates are listed, under **Marketing**, **Utility** and **Authentication**.
 4. Check the body, header, buttons and language are the ones you expect.
 5. Fill each placeholder in the body with Insert Variable. `order_shipped_v1` reads `Hi {{1}}, your order {{2}} from Rangoli Store has been shipped. It should reach you by {{3}}.`, so set `{{1}}` to the customer's first name, `{{2}}` to the order number and `{{3}}` to the delivery date. Use fixed text only when everyone should see the same value. See [Fill a template placeholder](../using-variables.md#fill-a-template-placeholder).
 6. Fill the header if the template has one (see the table below).

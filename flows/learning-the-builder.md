@@ -4,7 +4,7 @@ description: "Practise building a flow on a sample customer, without sending any
 
 # Learn flow builder
 
-**Learn flow builder** has two parts: a guided demo you can watch, and a six-step lesson where you build a small flow yourself. Open it from the button on the **Flows** page or in the builder header. From the header it opens in a new tab, so the flow you're editing stays open.
+**Learn flow builder** has two parts: a guided demo you can watch, and a six-step lesson where you build a small flow yourself. Open it from the **Learn flow builder** link on the **Flows** tab, under **Workflows**, or from the builder header. From the header it opens in a new tab, so the flow you're editing stays open.
 
 Before building Rangoli Store's order-tracking flow, Jordan Brown works through the lesson in a spare ten minutes. Jordan picks the sample trigger, writes a greeting, connects the steps and tries the conversation, all on sample data.
 
@@ -31,7 +31,7 @@ Your progress is saved in this browser. If you change a setting or a connection,
 
 Click **Set up my real flow**. FlowFlex explains what you need, opens the form to create a flow, then guides you through setup in the real builder.
 
-Your practice isn't copied into the real flow, and nothing is published for you. In the real flow, set the trigger and channel, connect every step, then save and publish. To start the flow from incoming messages, also create and publish a [campaign](campaigns.md).
+Your practice isn't copied into the real flow, and nothing is published for you. In the real flow, set the trigger, connect every step, then save and publish. To start the flow from incoming messages, also create and activate a [worker](workers.md).
 
 ## See also
 

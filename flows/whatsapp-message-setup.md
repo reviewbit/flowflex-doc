@@ -10,7 +10,7 @@ In Rangoli Store's order-tracking flow, the first message is a Button message wi
 
 ## Before you start
 
-Choose the right WhatsApp channel for your flow. For conversations customers start, set up the [campaign](campaigns.md) that uses the flow. Saving or publishing the flow doesn't create that campaign.
+The WhatsApp number a flow uses is set on its [worker](workers.md). For conversations customers start, create and activate a worker that uses the flow. Saving or publishing the flow doesn't create that worker.
 
 Then choose the message type:
 
@@ -39,7 +39,10 @@ Use a variable for customer-specific messages. A fixed number sends every run to
 
 1. Fill in the node's required fields.
 2. Insert the name, order details or other variables where you need them.
-3. Check the **Live WhatsApp preview** for the layout, buttons and media.
+3. To add an emoji, click the **Emoji** button in the editor's toolbar, next to **Insert Variable**, and pick one or use **Search emoji**.
+4. Check the **Live WhatsApp preview** for the layout, buttons and media.
+
+The **Emoji** button is in the message editor of Text message, Button message, List message, Media message (for the caption), Location request, Link button and Add Note, and in the template editor of Template message.
 
 The preview doesn't confirm delivery. Check that the recipient and the inserted fields will have values when the flow runs.
 
