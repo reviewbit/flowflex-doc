@@ -10,6 +10,7 @@
 ## WhatsApp setup
 
 * [Connect a WhatsApp channel](whatsapp/connect-channel.md)
+* [Verify your business on Meta](whatsapp-setup/verify-business.md)
 * [Create a template](whatsapp/create-template.md)
 * [Template guidelines](whatsapp/template-guidelines.md)
 
